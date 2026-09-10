@@ -5,7 +5,7 @@ They use system fonts and have no scripts, external fonts, or linked images.
 
 | Asset | Purpose |
 |---|---|
-| `northstar-hero.svg` | README cover and the invitation to help preserve human control |
+| `northstar-hero.svg` | README cover and the mission to protect humanity’s freedom and future |
 | `northstar-share.png` | Browser-rendered cover export for a post or presentation |
 | `northstar-overview.svg` | The five archetype hypotheses and their control mechanisms |
 | `archetype-to-control-test.svg` | The proposed discovery-to-prevention study pipeline |

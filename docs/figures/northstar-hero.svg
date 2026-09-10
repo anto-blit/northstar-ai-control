@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
-<title id="title">NorthStar — Keep the future in human hands</title>
-<desc id="desc">A luminous north star guides branching paths. NorthStar invites people to build, challenge, and replicate research on meaningful human control over AI.</desc>
+<title id="title">NorthStar: Protecting humanity’s freedom and future in an AI world</title>
+<desc id="desc">A luminous north star guides branching paths. NorthStar invites people to build, challenge, and replicate research on safeguards against irreversible human disempowerment.</desc>
 <defs><radialGradient id="glow"><stop stop-color="#187f80" stop-opacity=".65"/><stop offset="1" stop-color="#071923" stop-opacity="0"/></radialGradient>
     <linearGradient id="route" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#2d676f"/><stop offset="1" stop-color="#83f1d2"/></linearGradient>
     <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#60818c" stroke-opacity=".09"/></pattern></defs>
@@ -44,15 +44,16 @@
 <text x="1514" y="87" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#7ba0a5" text-anchor="end" letter-spacing="1.8">AN OPEN RESEARCH PROJECT</text>
 <path d="M94 64 L98.18 81.82 L116 86 L98.18 90.18 L94 108 L89.82 90.18 L72 86 L89.82 81.82 Z" fill="#83f1d2"/>
 <text x="135" y="96" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#e5f4ef" text-anchor="start" letter-spacing="6">NORTHSTAR</text>
-<text x="80" y="246" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="79" font-weight="700" fill="#f6f4ee" text-anchor="start" letter-spacing="0">Keep the future</text>
-<text x="80" y="337" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="79" font-weight="700" fill="#f6f4ee" text-anchor="start" letter-spacing="0">in human hands.</text>
-<text x="84" y="411" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#bed1d2" text-anchor="start" letter-spacing="0">Build and test safeguards that preserve</text>
-<text x="84" y="451" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#bed1d2" text-anchor="start" letter-spacing="0">meaningful human control over AI.</text>
-<rect x="83" y="512" width="362" height="49" rx="25" fill="#153c44" stroke="#36666a"/>
-<circle cx="107" cy="537" r="5" fill="#83f1d2" stroke="none" stroke-width="2"/>
-<text x="127" y="544" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="16" font-weight="600" fill="#a6ead8" text-anchor="start" letter-spacing="0">BUILD  /  CHALLENGE  /  REPLICATE</text>
+<text x="80" y="218" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="66" font-weight="700" fill="#f6f4ee" text-anchor="start" letter-spacing="0">Protecting humanity’s</text>
+<text x="80" y="297" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="66" font-weight="700" fill="#f6f4ee" text-anchor="start" letter-spacing="0">freedom and future</text>
+<text x="80" y="376" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="66" font-weight="700" fill="#f6f4ee" text-anchor="start" letter-spacing="0">in an AI world.</text>
+<text x="84" y="443" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="28" font-weight="400" fill="#bed1d2" text-anchor="start" letter-spacing="0">Research on safeguards against</text>
+<text x="84" y="482" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="28" font-weight="400" fill="#bed1d2" text-anchor="start" letter-spacing="0">irreversible human disempowerment.</text>
+<rect x="83" y="528" width="362" height="49" rx="25" fill="#153c44" stroke="#36666a"/>
+<circle cx="107" cy="553" r="5" fill="#83f1d2" stroke="none" stroke-width="2"/>
+<text x="127" y="560" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="16" font-weight="600" fill="#a6ead8" text-anchor="start" letter-spacing="0">BUILD  /  CHALLENGE  /  REPLICATE</text>
 <path d="M84 618 H820" fill="none" stroke="#2d4852" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/>
-<text x="84" y="660" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#e7bc90" text-anchor="start" letter-spacing="0">‘A 10 percent chance.’ Really? Never tell me the odds.</text>
+<text x="84" y="660" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#e7bc90" text-anchor="start" letter-spacing="0">github.com/anto-blit/northstar-ai-control</text>
 <rect x="1110" y="581" width="303" height="47" rx="8" fill="#102e38" stroke="#3d6870"/>
-<text x="1261" y="611" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="18" font-weight="600" fill="#b8e4d8" text-anchor="middle" letter-spacing="2">HUMAN AUTHORITY</text>
+<text x="1261" y="611" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="18" font-weight="600" fill="#b8e4d8" text-anchor="middle" letter-spacing="2">HUMAN FREEDOM</text>
 </svg>

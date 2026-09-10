@@ -10,10 +10,10 @@ Graphic: [download the cover](figures/northstar-share.png).
 
 ## Launch post
 
-**Keep the future in human hands.**
+**NorthStar: Protecting humanity’s freedom and future in an AI world.**
 
-I'm opening NorthStar, a research project about preserving meaningful human
-control over consequential AI.
+I'm opening NorthStar, a research project investigating safeguards against
+irreversible human disempowerment as AI becomes more capable.
 
 An AI stop button is only useful if the consequences stop too. Permissions can
 accumulate. A useful component can bring an unexpected effect. Delegated work
@@ -38,9 +38,9 @@ https://github.com/anto-blit/northstar-ai-control
 
 ## Short version
 
-I'm building NorthStar: open research on keeping consequential AI within
-meaningful human control. We're turning old failure patterns into executable
-experiments and testing whether they lead to better safeguards.
+I'm building NorthStar to help protect humanity’s freedom and future in an AI
+world. We're turning old failure patterns into executable experiments and
+testing whether they lead to better safeguards against human disempowerment.
 
 Working synthetic experiments are public. The big hypothesis is still open.
 Builders, skeptics, and independent replicators are welcome:

@@ -1,6 +1,6 @@
 # Help build NorthStar
 
-NorthStar asks how people can retain meaningful control over consequential AI.
+NorthStar’s mission is to protect humanity’s freedom and future in an AI world.
 You can help by building a safeguard, finding a counterexample, testing the research
 method, reproducing a result, or making the work easier to understand.
 

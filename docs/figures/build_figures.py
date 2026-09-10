@@ -73,18 +73,19 @@ def hero():
           text(1514,61,"CALIBRATED VISION",16,"#a9c9c8",600,anchor="end",spacing=2),
           text(1514,87,"AN OPEN RESEARCH PROJECT",12,"#7ba0a5",anchor="end",spacing=1.8),
           star(94,86,22,"#83f1d2"), text(135,96,"NORTHSTAR",27,"#e5f4ef",700,spacing=6),
-          text(80,246,"Keep the future",79,"#f6f4ee",700),
-          text(80,337,"in human hands.",79,"#f6f4ee",700),
-          text(84,411,"Build and test safeguards that preserve",29,"#bed1d2"),
-          text(84,451,"meaningful human control over AI.",29,"#bed1d2"),
-          rect(83,512,362,49,"#153c44","#36666a",25),
-          circle(107,537,5,"#83f1d2"), text(127,544,"BUILD  /  CHALLENGE  /  REPLICATE",16,"#a6ead8",600),
+          text(80,218,"Protecting humanity’s",66,"#f6f4ee",700),
+          text(80,297,"freedom and future",66,"#f6f4ee",700),
+          text(80,376,"in an AI world.",66,"#f6f4ee",700),
+          text(84,443,"Research on safeguards against",28,"#bed1d2"),
+          text(84,482,"irreversible human disempowerment.",28,"#bed1d2"),
+          rect(83,528,362,49,"#153c44","#36666a",25),
+          circle(107,553,5,"#83f1d2"), text(127,560,"BUILD  /  CHALLENGE  /  REPLICATE",16,"#a6ead8",600),
           path("M84 618 H820","#2d4852",1),
-          text(84,660,"‘A 10 percent chance.’ Really? Never tell me the odds.",22,"#e7bc90"),
+          text(84,660,"github.com/anto-blit/northstar-ai-control",22,"#e7bc90"),
           rect(1110,581,303,47,"#102e38","#3d6870",8),
-          text(1261,611,"HUMAN AUTHORITY",18,"#b8e4d8",600,anchor="middle",spacing=2)]
-    write_svg("northstar-hero.svg", "NorthStar — Keep the future in human hands",
-              "A luminous north star guides branching paths. NorthStar invites people to build, challenge, and replicate research on meaningful human control over AI.",
+          text(1261,611,"HUMAN FREEDOM",18,"#b8e4d8",600,anchor="middle",spacing=2)]
+    write_svg("northstar-hero.svg", "NorthStar: Protecting humanity’s freedom and future in an AI world",
+              "A luminous north star guides branching paths. NorthStar invites people to build, challenge, and replicate research on safeguards against irreversible human disempowerment.",
               b, 720, "#071923", defs)
 
 
