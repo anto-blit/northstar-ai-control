@@ -16,10 +16,17 @@
   const date = new Intl.DateTimeFormat('en', {dateStyle:'medium', timeStyle:'short', timeZone:'UTC'}).format(new Date(data.verification.recordedAt));
   $('evidence-date').textContent = `Evidence recorded ${date} UTC · ${data.verification.artifactCount} result artifacts`;
   $('evidence-fingerprint').textContent = `Verification fingerprint ${data.verification.recordSha256.slice(0, 16)}`;
-  for (let tick = 0; tick <= 54; tick++) {
-    const angle = (135 + tick * 5) * Math.PI / 180;
-    const outer = 170, inner = tick % 6 === 0 ? 156 : 163;
-    $('dial-ticks').append(svg('line', {x1:210 + Math.cos(angle)*inner, y1:199 + Math.sin(angle)*inner, x2:210 + Math.cos(angle)*outer, y2:199 + Math.sin(angle)*outer, stroke:tick % 6 === 0 ? '#729b8d' : '#46625e', 'stroke-width':tick % 6 === 0 ? 1.5 : 1}));
+  $('potential-reduction').textContent = data.risk.potentialGlobalReductionPercent === null ? 'Unquantified' : `${data.risk.potentialGlobalReductionPercent.toFixed(2)} pp`;
+  $('global-reduction').textContent = data.risk.quantifiedReductionPercent === null ? 'Not established' : `${data.risk.quantifiedReductionPercent.toFixed(2)} pp`;
+  const proof = data.monitor.false_negative_sweep.filter(row => row.environment === 'delegation' && row.scenario === 'revocation' && row.false_negative_rate === 0 && row.false_positive_rate === 0);
+  const beforeRepair = proof.find(row => row.control === 'starting');
+  const afterRepair = proof.find(row => row.control === 'repaired');
+  if (beforeRepair && afterRepair) {
+    $('demonstrated-protection').textContent = `${pct(beforeRepair.prohibited_outcome_fraction)} → ${pct(afterRepair.prohibited_outcome_fraction)}`;
+    $('demonstrated-detail').textContent = `Post-stop failures: ${beforeRepair.prohibited_outcomes}/${beforeRepair.trials} with the starting control; ${afterRepair.prohibited_outcomes}/${afterRepair.trials} after repair. Fixed scripted trials, with zero monitor errors. This is local protection, not a global-risk reduction.`;
+  } else {
+    $('demonstrated-protection').textContent = 'Not available';
+    $('demonstrated-detail').textContent = 'The specific revocation comparison is absent from this evidence snapshot. No result has been inferred.';
   }
 
   const dialog = $('clock-method');
@@ -122,6 +129,12 @@
   $('scenario-select').addEventListener('change',renderMonitor);
   $('rate-slider').addEventListener('input',renderMonitor);
   renderMonitor();
+  $('proof-link').addEventListener('click', () => {
+    activateTab($('monitor-tab'));
+    $('scenario-select').value = 'delegation/revocation';
+    $('rate-slider').value = 0;
+    renderMonitor();
+  });
 
   data.milestones.forEach(item=>{
     const card=el('article',undefined,'milestone');card.append(el('span',item.number,'milestone-number'),el('span',item.type.toUpperCase(),`milestone-type${item.type==='Prepared'?' prepared':''}`),el('h3',item.title),el('p',item.description));

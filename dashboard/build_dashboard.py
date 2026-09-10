@@ -1,8 +1,9 @@
 """Build a portable dashboard from hash-checked, committed experiment evidence.
 
-The clock's 10% baseline is a founder-supplied assumption. Experiment counts and
-outcomes never feed a humanity-wide probability estimate. No external packages
-or network calls are needed to build or open the exported HTML.
+The thermometer uses 10% as a project reference, the lower end of Hinton's
+subjective 10-20% extinction estimate discussed in the linked interview.
+Experiment counts and outcomes never feed a humanity-wide probability estimate.
+No external packages or network calls are needed to build or open the exported HTML.
 """
 import argparse
 from hashlib import sha256
@@ -45,7 +46,15 @@ def load_evidence(root=ROOT):
             "aspirationPercent": 0.0,
             "currentEstimatePercent": None,
             "quantifiedReductionPercent": None,
-            "basis": "Founder-supplied starting assumption; no calibrated event horizon or aggregate impact estimate.",
+            "potentialGlobalReductionPercent": None,
+            "claimedEvent": "AI destroys humanity",
+            "claimSource": "https://www.wbur.org/onpoint/2025/12/29/godfather-of-ai-geoffrey-hinton",
+            "claimAttribution": "Geoffrey Hinton",
+            "claimRangePercent": [10.0, 20.0],
+            "claimInterviewDate": "2025-01-10",
+            "claimTimeHorizon": "Within 30 years, as discussed in the cited interview; not a rolling horizon",
+            "demonstratedProtectionScope": "Fixed synthetic broker comparisons only",
+            "basis": "The project selects the lower end of Hinton's subjective range as a reference assumption, not a current assessment or expert consensus. Global reduction is unestimated.",
         },
         "verification": {
             "tests": verification["tests_run"],

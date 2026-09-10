@@ -38,6 +38,12 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(data["risk"]["assumedBaselinePercent"], 10)
         self.assertIsNone(data["risk"]["currentEstimatePercent"])
         self.assertIsNone(data["risk"]["quantifiedReductionPercent"])
+        self.assertIsNone(data["risk"]["potentialGlobalReductionPercent"])
+        self.assertEqual(data["risk"]["claimAttribution"], "Geoffrey Hinton")
+        self.assertEqual(data["risk"]["claimRangePercent"], [10, 20])
+        self.assertIn("wbur.org/onpoint/", data["risk"]["claimSource"])
+        self.assertIn("not a rolling horizon", data["risk"]["claimTimeHorizon"])
+        self.assertEqual(data["risk"]["demonstratedProtectionScope"], "Fixed synthetic broker comparisons only")
 
     def test_more_passing_tests_do_not_subtract_from_extinction_risk(self):
         before = deepcopy(dashboard.load_evidence(self.root)["risk"])

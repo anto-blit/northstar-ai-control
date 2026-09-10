@@ -126,8 +126,9 @@ Neither set is a preregistered discovery-method study.
 ## Comparative study readiness
 
 The [progress dashboard](https://anto-blit.github.io/northstar-ai-control/)
-visualizes these recorded results and the project milestones. Its 10% clock is
-an assumed starting point, not a risk estimate. Eight separate dashboard checks
+visualizes these recorded results and the project milestones. Its thermometer
+uses a sourced 10% reference; it separates potential global impact, demonstrated
+simulation protection, and global reduction (unestablished). Eight separate dashboard checks
 cover provenance and separation of project progress from risk claims; they do
 not add to the displayed 90 mechanism/regression checks.
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## Risk thermometer and impact context — September 9, 2026
+
+- Replace the clock with a warm thermometer that names the extinction concern,
+  cites Hinton's subjective range, and identifies 10% as a chosen reference.
+- Separate potential global reduction, recorded protection in simulation, and
+  demonstrated global reduction. Keep both global-reduction quantities unknown.
+- Link the local improvement card to its exact revocation comparison and explain
+  the proposed path from failure discovery to safeguards, challenge and adoption.
+- Add sources and context for the historical risk estimates supplied by the founder.
+
+Presentation and attribution changes add no experimental evidence or measured
+humanity-wide reduction. The recorded mechanism suite remains at 90 checks.
+
 ## Progress dashboard — September 9, 2026
 
 - Add a portable, responsive NorthStar Clock with a labeled assumed 10% baseline,

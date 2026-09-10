@@ -66,13 +66,20 @@ as systems and threats change.
 
 ## Limits on risk claims
 
-The [NorthStar Clock](https://anto-blit.github.io/northstar-ai-control/) presents
-the founder's assumed 10.00% starting point beside verified project progress.
-Its current risk estimate remains unknown. The baseline does not decrease with
+The [NorthStar Risk Thermometer](https://anto-blit.github.io/northstar-ai-control/)
+presents a chosen 10.00% reference beside verified project progress, with
+[source attribution and context](risk-estimates.md). Its current risk estimate
+remains unknown. The reference does not decrease with
 passing tests or completed milestones; interactive monitor percentages describe
 synthetic detector errors, not humanity-wide risk.
 
-A hypothetical 10% humanity-wide risk is not a measured NorthStar baseline.
+Potential global reduction is unquantified; demonstrated global reduction is
+not established. Demonstrated local protection is narrower: for example, the
+fixed post-stop comparison at zero monitor errors has 400/400 failures with the
+starting control and 0/400 with its repair. That result tests a specified boundary
+in simulation. It does not establish a real-world failure rate or global effect.
+
+A selected 10% humanity-wide risk is not a measured NorthStar baseline.
 No current revision supplies a calibrated numerical update to it. Estimating
 aggregate impact would require a defined event and horizon, a credible
 counterfactual, validated prevention, adoption and coverage, interactions with

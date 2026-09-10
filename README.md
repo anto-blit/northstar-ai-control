@@ -78,10 +78,11 @@ The planned study compares four approaches at matched resources: generic informe
 
 ## What you can run today
 
-[The NorthStar Clock](https://anto-blit.github.io/northstar-ai-control/) pairs an
-assumed 10% starting point with verified project milestones and interactive
-recovery/monitor results. It keeps humanity-wide risk explicitly unestimated;
-test counts do not deduct percentage points. [Open locally or rebuild it →](dashboard/README.md)
+[The NorthStar Risk Thermometer](https://anto-blit.github.io/northstar-ai-control/)
+pairs a sourced 10% reference with verified project milestones and interactive
+recovery/monitor results. It distinguishes potential global impact from
+demonstrated protection in simulation and explains how safeguards could reduce
+risk. Global reduction remains unestimated. [Open locally or rebuild it →](dashboard/README.md)
 
 | Component | What exists |
 |---|---|
