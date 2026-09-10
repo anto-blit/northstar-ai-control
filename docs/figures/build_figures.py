@@ -80,7 +80,7 @@ def hero():
           rect(83,512,362,49,"#153c44","#36666a",25),
           circle(107,537,5,"#83f1d2"), text(127,544,"BUILD  /  CHALLENGE  /  REPLICATE",16,"#a6ead8",600),
           path("M84 618 H820","#2d4852",1),
-          text(84,660,"A research question worth testing. A future worth protecting.",22,"#e7bc90"),
+          text(84,660,"‘A 10 percent chance.’ Really? Never tell me the odds.",22,"#e7bc90"),
           rect(1110,581,303,47,"#102e38","#3d6870",8),
           text(1261,611,"HUMAN AUTHORITY",18,"#b8e4d8",600,anchor="middle",spacing=2)]
     write_svg("northstar-hero.svg", "NorthStar — Keep the future in human hands",
