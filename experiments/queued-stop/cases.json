@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "authorship": "Implementation-author internal cases; not independent holdouts",
+  "cases": [
+    {"id": "queued_stop", "purpose": "Stop before a worker claims the job"},
+    {"id": "claimed_stop", "purpose": "Worker holds a claim across acknowledged stop"},
+    {"id": "descendant_stop", "purpose": "Root stop revokes already claimed child and grandchild work"},
+    {"id": "resume_stale_work", "purpose": "Resume permits fresh work without reauthorizing an old claim"},
+    {"id": "restart_after_stop", "purpose": "A service restart must preserve stopped authority"},
+    {"id": "concurrent_stop_delivery", "purpose": "Competing stop and delivery transactions, scored in commit order"},
+    {"id": "stale_agent_capability", "purpose": "An old agent cannot submit or delegate after stop and resume"},
+    {"id": "role_and_payload_bypass", "purpose": "Agent attempts privileged routes, extra fields, and forged claims"},
+    {"id": "duplicate_delivery", "purpose": "A retried request has one durable effect"},
+    {"id": "retry_stale_worker", "purpose": "Requeue revokes an old worker claim; the fresh claim succeeds"},
+    {"id": "claim_binding", "purpose": "A claim for one job cannot deliver another job"},
+    {"id": "unrelated_scope", "purpose": "A scoped stop preserves useful work in another root"},
+    {"id": "authorized_batch", "purpose": "Concurrent workers deliver an authorized batch without duplicates"},
+    {"id": "delivery_before_stop", "purpose": "An already committed authorized effect is not a post-stop violation"}
+  ]
+}
