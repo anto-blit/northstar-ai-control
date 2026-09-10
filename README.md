@@ -7,7 +7,7 @@
 
 [![Verify NorthStar](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml/badge.svg)](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-087f79)](LICENSE) [![Stage: Open research](https://img.shields.io/badge/stage-open_research-102d3b)](EXPERIMENTS-STATUS.md)
 
-**[Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
+**[Open the dashboard](https://anto-blit.github.io/northstar-ai-control/) · [Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
 ## Why NorthStar
 
@@ -77,6 +77,11 @@ The planned study compares four approaches at matched resources: generic informe
 **The method has to earn its place.** If conventional approaches perform just as well, we keep effective repairs and narrow or withdraw the distinctive claim. The purpose is better protection for humanity’s freedom and future.
 
 ## What you can run today
+
+[The NorthStar Clock](https://anto-blit.github.io/northstar-ai-control/) pairs an
+assumed 10% starting point with verified project milestones and interactive
+recovery/monitor results. It keeps humanity-wide risk explicitly unestimated;
+test counts do not deduct percentage points. [Open locally or rebuild it →](dashboard/README.md)
 
 | Component | What exists |
 |---|---|

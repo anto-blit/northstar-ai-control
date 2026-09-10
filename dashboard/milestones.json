@@ -1,0 +1,7 @@
+[
+  {"number":"01","title":"Working safeguards","type":"Executed","description":"Release and delegated-stop simulators expose failures and exercise their repairs.","source":"results/baseline-comparison.json"},
+  {"number":"02","title":"Reproducible evidence","type":"Executed","description":"Regression checks and source fingerprints make the recorded results inspectable.","source":"results/verification.json"},
+  {"number":"03","title":"A fair comparison design","type":"Prepared","description":"Four methods share resource budgets. The independent comparison is still ahead.","source":"experiments/discovery-study/PILOT.md"},
+  {"number":"04","title":"Recovery boundaries","type":"Executed","description":"Explicit safe targets reveal when intervention can still work, and when timing defeats it.","source":"results/recoverability.json"},
+  {"number":"05","title":"Approval put to the test","type":"Executed","description":"Monitor errors and permission revoked after approval are tested as separate failure conditions.","source":"results/monitor-sweep.json"}
+]

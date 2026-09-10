@@ -1,5 +1,17 @@
 # Changelog
 
+## Progress dashboard — September 9, 2026
+
+- Add a portable, responsive NorthStar Clock with a labeled assumed 10% baseline,
+  verified milestones, and an explicitly unestimated current humanity-wide risk.
+- Visualize all 24 recovery configurations and 56 monitor result cells, with
+  accessible controls, source links and declared experimental assumptions.
+- Check saved evidence hashes before building; add eight dashboard integrity
+  checks and publish the static export through GitHub Pages.
+
+This presentation adds no experimental evidence or numerical risk reduction.
+The recorded mechanism suite remains at 90 checks.
+
 ## Recovery and monitor analyses — September 9, 2026
 
 - Add bounded reach-avoid games with explicit, closed safe fallbacks. Expiration

@@ -125,6 +125,12 @@ Neither set is a preregistered discovery-method study.
 
 ## Comparative study readiness
 
+The [progress dashboard](https://anto-blit.github.io/northstar-ai-control/)
+visualizes these recorded results and the project milestones. Its 10% clock is
+an assumed starting point, not a risk estimate. Eight separate dashboard checks
+cover provenance and separation of project progress from risk claims; they do
+not add to the displayed 90 mechanism/regression checks.
+
 Implemented: [four method packets](protocol/study-arms/), frozen JSON plans and
 source hashes, equal budget ceilings, family/pair split validation, opaque online
 case IDs, adaptive development submissions with accumulated costs, resume with
