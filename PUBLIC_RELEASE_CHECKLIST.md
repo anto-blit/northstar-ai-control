@@ -14,5 +14,5 @@
 - [ ] Recruit independent environment authors, reviewers, and search participants.
 - [ ] Freeze a fully specified comparative study before collecting its research results.
 - [ ] Refresh the related-work review.
-- [ ] Create a DOI-backed release (for example via Zenodo) once v1.0 is ready.
+- [ ] Publish a clearly labeled research-preview release and archive it with a DOI; see the [draft release notes and archive steps](docs/releases/research-preview-1.md). A preview need not wait for v1.0 or the independent study.
 - [ ] Launch LinkedIn post pointing to the repository/DOI, not to an unsupported catastrophe claim.

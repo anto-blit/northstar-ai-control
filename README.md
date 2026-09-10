@@ -7,13 +7,25 @@
 
 **[Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
-Powerful AI should leave people with a meaningful say in what happens next.
+## Why NorthStar
 
-If a system can delegate work, accumulate permissions, and commit actions that cannot be recalled, a stop button is only useful if it actually stops the consequences. **NorthStar investigates how to preserve the human ability to intervene before control is lost.**
+Advanced AI could become one of humanity's most powerful technologies. It could also act at a speed, scale, and level of autonomy that makes meaningful human supervision difficult. A stop button is only useful if it can still prevent the consequences.
 
-Our starting idea is unusual and testable: old stories may encode useful patterns of failure. Small concessions accumulate. A useful gift carries a hidden effect. An easy success creates a future obligation. Delegated work escapes its originator's control. We turn these patterns into executable adversarial experiments, test safeguards against them, and ask whether the resulting repairs survive fresh attacks.
+**NorthStar exists because losing control could have irreversible consequences.**
 
-**We're looking for builders, skeptics, researchers, and independent replicators.** A counterexample that makes the project stronger is a contribution.
+Our stories preserve recurring warnings about how control is lost: one small concession at a time, a useful gift with a hidden effect, a bargain whose cost arrives later, a release that cannot be recalled, and a servant that continues after its master says stop.
+
+NorthStar asks whether these recurring structures can help us discover dangerous AI control paths in executable experiments, and develop safeguards that hold up under fresh attacks.
+
+**The hypothesis may be wrong. We intend to find out.**
+
+If it is useful, even in a limited setting, it could contribute to a larger mission:
+
+> **Keeping humanity meaningfully in control of the intelligence it creates.**
+
+We publish our code, methods, completed results, and limitations so others can challenge and improve the work. Builders, skeptics, researchers, and independent replicators are welcome.
+
+**Help us break NorthStar. Help us improve it. Help us test whether its safeguards can earn a role in real systems.**
 
 > **Where we are:** working synthetic simulators, reproducible results, and a comparative-study harness. The value of archetype-guided search is still an open question. Current results do not establish deployment safety or a reduction in catastrophic AI risk.
 
@@ -44,7 +56,7 @@ Every useful candidate needs an actual failure mechanism and a **benign twin**: 
 
 ![The research pipeline: hypothesis, executable test, benign twin, observed effect, repair, and fresh challenge. Compare prevention at useful capability against conventional methods.](docs/figures/archetype-to-control-test.svg)
 
-We compare four approaches at matched resources: generic informed red teaming, conventional technical threat analysis, the same causal grammars without narrative framing, and the full NorthStar method.
+The planned study compares four approaches at matched resources: generic informed red teaming, conventional technical threat analysis, the same causal grammars without narrative framing, and the full NorthStar method.
 
 **The method has to earn its place.** If conventional approaches perform just as well, we keep effective repairs and narrow or withdraw the distinctive claim. The mission is better human control.
 
@@ -61,6 +73,8 @@ We compare four approaches at matched resources: generic informed red teaming, c
 The current verification record contains **49 passing tests**. GitHub Actions runs checks on Linux and Windows with Python 3.10 and 3.14.
 
 These are bounded mechanism experiments and study plumbing. The independent comparison of search methods, arm-specific repairs, and renewed adaptive evaluation is the next research milestone. [Read the current evidence and remaining gaps →](EXPERIMENTS-STATUS.md)
+
+**Next: [Experiment 3 — a comparative discovery pilot](experiments/discovery-study/PILOT.md).** Help us compare actual search attempts before making stronger claims about the method.
 
 ### Try it yourself
 

@@ -5,6 +5,10 @@ scripts were authored together to test its plumbing. They are not independent
 evidence about the value of archetypes. Read the [research protocol](../../protocol/discovery-study.md)
 before replacing them with research material.
 
+For Experiment 3, start with the [comparative discovery pilot plan](PILOT.md).
+It distinguishes a real exploratory search comparison from this scripted example
+and from the later full prevention study.
+
 ## Run the public example
 
 From the project root, with Python 3.10+ and no installed dependencies:
