@@ -2,7 +2,9 @@
   "artifact_sha256": {
     "baseline-comparison.json": "cba3f4d42611caec0425c3db968ac546f4b07d9a722b7cccc0b3852db4d1b208",
     "experiment-results.json": "5d19ca66f1434a403163f313846cdd5527e9832852d907863265cc98faa91c54",
-    "property-check-results.json": "d00e4705ee5760d821e79dbff45813d99650851e2ccc7cd1dabeefc33a3fb002"
+    "monitor-sweep.json": "68a72e956b3c7f995b1d21b30c580dee769f310f7589095ed084d007b988ff06",
+    "property-check-results.json": "d00e4705ee5760d821e79dbff45813d99650851e2ccc7cd1dabeefc33a3fb002",
+    "recoverability.json": "f218e555dfd3c65903fd81ccfa4bb2ec7635152c0448315ede15f0ee9eb59cdc"
   },
   "errors": 0,
   "failures": 0,
@@ -13,7 +15,12 @@
     "experiments/discovery-study/example/challenges.json": "5547f798a29c274302e9f373a3515a81e9dd1076abc9cbbaacd8034b7eaf8335",
     "experiments/discovery-study/example/plan.json": "ad5898a46b11e9dbf9d49ed0ac2afd1c8a01b15063d6651450ebeae3f25b4dd8",
     "experiments/discovery-study/example/scripted-submissions.json": "f59c1f6d715812b0c57119335cbd927634326a86b349fb36ab5918a093e71eba",
+    "monitor_analysis.py": "d41cacc9162efa9c3dcacab454c70b6846f1d645bc370d926fa5d07a16510286",
     "northstar_sim/__init__.py": "26ecad78a465833d27d1d147ba8abc942a0c21a51b51d7e8ea1e79e83e752a4a",
+    "northstar_sim/analysis/__init__.py": "aae920efc6f0df51b8c0ea02d9a734d606cd46d53ab6ef9a1d0c70844b7f6d43",
+    "northstar_sim/analysis/monitor_sweep.py": "3472b88bd7fc31c52032fc0609ae43aa65e49c3269ae048d62f3be895795a176",
+    "northstar_sim/analysis/monitors.py": "866ebf2b2a208a782531271ad029f16397890c74970efda6ccb5c0c96bcf2a13",
+    "northstar_sim/analysis/recoverability.py": "d2595473bd2f54e851c9f46d8e09b59a06542b7a7b59c8b6fe118cf32f307b47",
     "northstar_sim/core.py": "21802aec2e2d6ce34dd2e15cfe491bb865bfa85764f55760bbb4f704a09c948e",
     "northstar_sim/delegated_stop.py": "46e51987058bb11b326e5563175300a4e07479a6403e83e67cf8938cc0285c7a",
     "northstar_sim/irreversible_release.py": "836108465586f12a506178957d8e3ea729f00971b23886f13f353652a3643f05",
@@ -25,14 +32,17 @@
     "protocol/study-arms/grammar.md": "93d4ffee6f8bdbf7e6972757f9f4705cd59172343d9a32db93ba193588dd5eb4",
     "protocol/study-arms/northstar.md": "7effcd0f641a6a146002f8ba3b535a8f9fa73d420dc54d9c6e6ff3f181a07958",
     "protocol/study-arms/technical.md": "7a3e73339751dca200c6db5811f0af0c280eda0e3f2057008a3987790c5d0f8d",
+    "recoverability_analysis.py": "23a8a4eb9e98febdf2c2f8c5754f2af58e22c94cd6e752cf33dfcceab987491a",
     "run_experiments.py": "984dfcc66220668dccd4d7b5301eb33f9054bf475b08a03ae60df37fd1b250cb",
     "study.py": "1337d5edbbe7913c325ad77436d19682d0cfb7fbe4d705f1501b2e6120098121",
     "tests/test_experiments.py": "649a7b4e7f3047e1a67e373c7b1e8b2d085a0103b1e602c6cd622bf0094a6892",
+    "tests/test_monitors.py": "97f660d81ddbbe40985f4e48852e826a7ff124c3f850109eb63653d02d1e5e86",
+    "tests/test_recoverability.py": "9c5da3a73bfe4c41f64d02d0f9277c22df21774f5cec0e51b9c436c5c9daff2a",
     "tests/test_regressions.py": "6e0943cf730fcd68134e7a7fd4a1499d3ceb0990aac279c142419bbd8efdd8ec",
     "tests/test_study.py": "6e08398e1312e40835f62b40bc4b5cccb1bacdd534dbf0b2757df0364fa881c2",
     "tests/test_study_cli.py": "f05fd0116966d41988f843384cb93fc6c59822dadea8611e9bf7a3629001be69",
-    "verify_project.py": "be7b3961c872e44b79758a57c9eedf6c24561ab7458d495e13e0f0c7e600e982"
+    "verify_project.py": "e2299e166eb6f344a5040dbcc34dcaa8bae747d52fc21bedc4917f22ae37b5e2"
   },
-  "started_at": "2026-09-10T00:47:24.065654+00:00",
-  "tests_run": 49
+  "started_at": "2026-09-10T04:25:18.228964+00:00",
+  "tests_run": 90
 }

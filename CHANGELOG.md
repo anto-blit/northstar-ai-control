@@ -1,5 +1,25 @@
 # Changelog
 
+## Recovery and monitor analyses — September 9, 2026
+
+- Add bounded reach-avoid games with explicit, closed safe fallbacks. Expiration
+  without recovery and unresolved dangerous queued work do not count as wins.
+- Compare operator-first, scheduler-first and adversarially chosen ordering;
+  state full-observation and action-budget assumptions beside each deadline.
+- Add seeded monitor-error sweeps for content screening, stop after missed
+  detection, and revocation after correct approval, with benign completion.
+- Report observed sample variation without inferring monitor independence;
+  keep missing error-rate endpoints null and record counts and review calls.
+- Retain regression cases from review of the initial analysis, extend the suite
+  to 90 tests, and generate source-hashed recovery and monitor artifacts (schema 2).
+
+The simulator brokers and frozen feasibility study retain their source versions.
+The new analyses use separate fixtures; individual study episodes still report
+recoverability as unassessed. No learned-monitor or discovery-method result is
+claimed. Initial analysis wording that equated bounded survival with recovery,
+assumed operator-first scheduling was worst case, or inferred independence from
+a flat sample has been corrected before publication.
+
 ## Guidance and evaluation revision I2 — September 9, 2026
 
 - Restore the founding ethical-guidance question and organize the active program

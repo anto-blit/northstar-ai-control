@@ -17,7 +17,73 @@ agent-authored code, or external effect execution.
 | Irreversible release | An approving monitor allows protected-to-unapproved release | Hard constraints block it before commit; authorized releases remain possible |
 | Delegated stop | Parent-only stop leaves queued descendants executable | Scope epochs and dispatch revalidation prevent post-stop execution |
 
-The monitor is an always-approve stub, not an evaluated learned model.
+The always-approve monitor remains the default for those two mechanisms.
+`northstar_sim/analysis/monitors.py` adds an imperfect monitor with declared
+error rates so the axis can be varied; neither is an evaluated learned model.
+
+## Executed analyses
+
+Two analyses observe the existing brokers without changing episode semantics.
+They live under `northstar_sim/analysis/`, which `study.source_hashes` does not
+cover, so adding them left the frozen feasibility manifest verifiable.
+
+**Recoverability** ([results](results/recoverability.json)). Backward induction
+checks a reach-avoid objective: reach a specified safe fallback by the deadline
+while avoiding every prohibited effect, against all declared adversary choices.
+Expiration without recovery is a loss even if no harm has happened yet.
+
+- Delegation fallback: all declared scopes stopped, with no queued jobs left.
+- Release fallback: every protected-to-unapproved route disabled at both stage
+  and commit. Revoked staged tokens may remain because commit revalidation
+  prevents their dangerous effect; benign releases can remain available.
+
+These targets stay safe under the game's subsequent moves. Classifications and
+gate code are fixed. Both players see the full state. Each tick permits one
+operator action, at most one scheduler dispatch, and one agent proposal last.
+The scheduler may idle. Two phase orderings and an adversarial choice between
+them on each tick are analyzed; batches, latency and partial observation are
+outside this game. Delegation recovery shuts down all modeled scopes and does
+not impose a useful-service requirement.
+
+At horizon 5 and queue/staging bounds 1 through 3:
+
+| Environment / ordering | Starting control: latest first intervention | Repaired control: latest first intervention |
+|---|---|---|
+| Delegation: operator before scheduler | Tick 0 | Tick 1 |
+| Delegation: scheduler before operator | Tick 0 | Tick 0 |
+| Delegation: adversary chooses ordering each tick | Tick 0 | Tick 0 |
+| Release: operator before agent proposal; no dispatch phase | Tick 1 | Already in the safe fallback |
+
+Ticks are model steps, not seconds. These are results for the declared initial
+fixtures, not episode-level measurements of leaving the recoverable set. The
+study scorer therefore still reports `recoverability: not_assessed`.
+
+**Monitor error** ([results](results/monitor-sweep.json)). Each cell runs 400
+seeded adversarial/benign pairs at declared error rates. Content screening and
+revocation after approval have separate outcome conditions:
+
+| Scenario | Starting control | Repaired control |
+|---|---|---|
+| Protected release | Failures rise with missed detections | Zero observed failures; hard gate rejects before monitor review |
+| Forbidden delegated content, no stop | Failures rise with missed detections | Same; revocation does not screen content |
+| Forbidden delegated content, then stop, then dispatch | Failures rise with missed detections | Zero observed post-stop or forbidden effects |
+| Initially legitimate job, then stop, then dispatch | Every trial fails when false positives are zero, even with perfect content screening | Zero observed post-stop effects |
+
+The last row tests stale approval: approving a legitimate job before a later
+stop is correct at review time. Each stop scenario has a benign twin that
+completes legitimate work before stop. With zero false positives, all benign
+twins complete; the 0.25 false-positive check loses roughly a quarter of that
+work. Neither result measures a learned monitor or an adaptive attacker.
+
+Counts and observed fractions are reported, without confidence intervals.
+Shared seeds match draws across cells. An unchanged sampled fraction is labeled
+`no_observed_difference`, never inferred to establish monitor independence.
+Missing zero/one false-negative endpoints remain null.
+
+Review of the initial analysis corrected three overclaims: survival to the
+horizon was not recovery; operator-first timing did not cover all dispatch
+orders; and a flat Monte Carlo sample did not prove monitor independence.
+Regression tests retain those counterexamples. The new artifacts use schema 2.
 
 ## Review findings and repairs
 
@@ -50,8 +116,10 @@ The suite covers four artifact/destination pairs, six submit/stop/dispatch
 orderings, batches of one through eight descendants, stale policy/object checks,
 replay/collision, failure injection, and the study runner's isolation of online
 fields, resource accounting, settlement, and uncertainty reporting.
+It also checks recovery targets and timing races, adversarial quantifier order,
+pending effects at expiration, and monitor-content versus revocation scenarios.
 
-The three current mechanism JSON artifacts are regenerated from repaired code.
+The five current JSON artifacts are regenerated from repaired code.
 The original supplied files are preserved in `results/archive/initial-package/`.
 Neither set is a preregistered discovery-method study.
 
@@ -79,8 +147,13 @@ specifies what independent participants must supply.
 - Actual equally resourced search teams/models and measured preparation costs.
 - Blinded root-cause adjudication, arm-specific repairs with equal repair budgets,
   and an independent evaluator adapting to every repaired control.
-- A quantified recoverability model, observation/latency analysis, monitor-error
-  study, and validated host-level enforcement boundary.
+- Observation/latency analysis and a validated host-level enforcement boundary.
+  Recoverability and monitor-error sensitivity are now computed for the two
+  bounded environments above; both remain analyses of the declared model, and
+  neither extends to unbounded queues, correlated monitor failure, an adaptive
+  monitor, or any real effect boundary.
+- Coverage of forbidden delegated content before stop: the current repair
+  enforces revocation, not an effect-content policy.
 - Independent replication and deployment-relevant prevention evidence.
 
 The historical cumulative-authority graph check is reported in the specification;

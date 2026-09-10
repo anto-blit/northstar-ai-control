@@ -45,6 +45,7 @@ Git times below use America/Los_Angeles.
 | Mission and technical subtitle, through [df4a207](https://github.com/anto-blit/northstar-ai-control/commit/df4a207) | September 9, 2026, 18:44 | Clearer purpose, contributor entry points and presentation |
 | Instrumentation revision I1, [2606fde](https://github.com/anto-blit/northstar-ai-control/commit/2606fde) | September 9, 2026 | Restores paired evaluation and exploratory representation proposals; corrects metrics and unsupported guarantees |
 | Guidance and evaluation revision I2 | September 9, 2026 | Restores the moral-guidance question, defines a direct comparator, and defers speculative branches; no new model experiment |
+| Recovery and monitor analyses, including review corrections | September 9, 2026 | Explicit safe targets, three delegation timing models, content/revocation comparisons and 90 tests; no study-episode recoverability or learned-monitor result |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not

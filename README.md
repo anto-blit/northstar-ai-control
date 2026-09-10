@@ -82,11 +82,15 @@ The planned study compares four approaches at matched resources: generic informe
 |---|---|
 | **Irreversible release** | A simulated protected release defeats a deliberately weak monitor-only control. The repaired broker blocks it before commit and permits authorized releases. |
 | **Delegated stop** | A deliberately weak parent-only stop leaves queued work executable. The repaired broker revokes scoped authority and rechecks at dispatch. |
+| **Recoverability windows** | Finite-game search requires reaching a safe fallback before the deadline; results compare operator-first, scheduler-first and adversarially chosen ordering. |
+| **Monitor-error sweep** | Declared false-negative and false-positive rates test content screening and permission revoked after approval, alongside legitimate work. |
 | **Regression checks** | Tests cover token reuse and collisions, stale authority and content, and ledger-write failures. |
 | **Four-method study harness** | Frozen manifests, matched budget ceilings, resumable discovery sessions, separate outcome scoring, and fixed repair replay. |
 | **Research package** | Specification, draft causal grammars, threat model, trust ledger, study protocol, and preserved traces. |
 
-The current verification record contains **49 passing tests**. GitHub Actions runs checks on Linux and Windows with Python 3.10 and 3.14.
+The current verification record contains **90 passing tests**. GitHub Actions runs checks on Linux and Windows with Python 3.10 and 3.14.
+
+The timing result is concrete: **the stop repair buys an extra model tick only when stop runs before dispatch**. If dispatch can run first, that extra tick disappears. The monitor sweep also shows why correct approval is insufficient after authority changes: the repaired broker blocks queued work after stop, while the weak broker executes it. Without a stop, neither delegation broker screens forbidden content beyond its monitor. These are synthetic results under stated assumptions; monitor error rates are inputs, not measurements of a real AI.
 
 These are bounded mechanism experiments and study plumbing. The independent comparison of search methods, arm-specific repairs, and renewed adaptive evaluation is the next research milestone. [Read the current evidence and remaining gaps →](EXPERIMENTS-STATUS.md)
 

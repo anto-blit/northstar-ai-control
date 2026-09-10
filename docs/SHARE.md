@@ -34,7 +34,7 @@ do those patterns help us find failures and build better safeguards than strong
 conventional methods?
 
 The repository includes working synthetic simulators, reproducible results,
-49 passing tests, and a four-method study harness. The distinctive research
+90 passing tests, and a four-method study harness. The distinctive research
 hypothesis is still open; the current experiments do not establish deployment
 safety.
 

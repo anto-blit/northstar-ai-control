@@ -18,6 +18,8 @@ control mechanisms and study infrastructure.
 - Two executed synthetic mechanism experiments: irreversible release and
   delegated stop, each with a deliberately weak comparator and a repaired broker.
 - Regression coverage for token reuse, stale authority, and failed ledger writes.
+- Bounded recovery games with explicit safe targets and scheduling assumptions,
+  plus synthetic monitor-error sweeps covering content and later revocation.
 - A four-method feasibility harness with frozen manifests, recorded resource
   ceilings, separate outcome scoring, and fixed challenge replay.
 - Preserved traces and source/result hashes, plus the current evidence summary.
@@ -26,12 +28,14 @@ control mechanisms and study infrastructure.
 
 ## Evidence at this preview
 
-The verification record contains 49 passing tests. The pre-preview commit
-`e220c473cfd07192523d2d0f05e902f6197e4526` passed GitHub Actions on Linux and Windows
-with Python 3.10 and 3.14. Check the release target's own CI before publication.
+The verification record contains 90 passing tests. The CI matrix covers Linux
+and Windows with Python 3.10 and 3.14. Check the release target's own checks
+before publication.
 
-All consequential effects are synthetic in-memory records. The monitor is an
-always-approve stub. The same authored scripts were used under all four study
+All consequential effects are synthetic in-memory records. The default monitor
+always approves; the analysis adds a detector with declared error rates, not a
+learned monitor. Recovery deadlines apply to the declared game targets, bounds
+and phase orderings. The same authored scripts were used under all four study
 labels to exercise the runner; they do not measure comparative search quality.
 
 This preview does not establish an advantage for archetype-guided search,
