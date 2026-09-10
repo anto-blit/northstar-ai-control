@@ -12,6 +12,8 @@ Graphic: [download the cover](figures/northstar-share.png).
 
 **NorthStar: Protecting humanity’s freedom and future in an AI world.**
 
+*Archetype-guided AI control research for preserving human recoverability.*
+
 I'm opening NorthStar, a research project investigating safeguards against
 irreversible human disempowerment as AI becomes more capable.
 

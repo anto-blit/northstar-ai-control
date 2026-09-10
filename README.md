@@ -1,7 +1,9 @@
-![NorthStar: Protecting humanity’s freedom and future in an AI world. Build, challenge, and replicate research on safeguards against human disempowerment.](docs/figures/northstar-hero.svg)
+![NorthStar: Protecting humanity’s freedom and future in an AI world. Archetype-guided AI control research for preserving human recoverability.](docs/figures/northstar-hero.svg)
 
 # NorthStar
 ### Protecting humanity’s freedom and future in an AI world.
+
+*Archetype-guided AI control research for preserving human recoverability.*
 
 [![Verify NorthStar](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml/badge.svg)](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-087f79)](LICENSE) [![Stage: Open research](https://img.shields.io/badge/stage-open_research-102d3b)](EXPERIMENTS-STATUS.md)
 
@@ -12,6 +14,8 @@
 Powerful AI should expand humanity’s possibilities. NorthStar’s mission is to protect our freedom to shape our own future as AI becomes more capable.
 
 **We investigate safeguards against coercion and irreversible human disempowerment.** Control mechanisms are one part of that research: a stop button is only useful if it can still prevent the consequences.
+
+By **human recoverability**, we mean preserving people’s ability to intervene and regain meaningful agency when things go wrong.
 
 Our stories preserve recurring warnings about how control is lost: one small concession at a time, a useful gift with a hidden effect, a bargain whose cost arrives later, a release that cannot be recalled, and a servant that continues after its master says stop.
 
