@@ -1,11 +1,11 @@
 # Public Release Checklist
 
-- [ ] Create GitHub repository `northstar-ai-control`.
-- [ ] Upload this repository package.
-- [ ] Add the actual public repository URL to `CITATION.cff` after publication.
+- [x] Create public GitHub repository [`anto-blit/northstar-ai-control`](https://github.com/anto-blit/northstar-ai-control).
+- [x] Upload this repository package.
+- [x] Add the actual public repository URL to `CITATION.cff`.
 - [x] Canonical MIT license text is present.
 - [x] Add the supplied author name and citation metadata.
-- [ ] Supply a public contact channel.
+- [x] Supply [GitHub Issues](https://github.com/anto-blit/northstar-ai-control/issues) as the public project contact channel.
 - [x] Execute irreversible-release and delegated-stop plumbing experiments.
 - [x] Repair token reuse/collision and failure of audit coupling; retain regression tests.
 - [x] Preserve original results and regenerate current results with source provenance.
