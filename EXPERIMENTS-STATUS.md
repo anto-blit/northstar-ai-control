@@ -2,7 +2,7 @@
 
 Research specification: v0.3.1. Simulator: v0.2.0. Updated September 9, 2026.
 
-Companion instrumentation protocol: [revision I1](protocol/instrumentation.md),
+Companion guidance and evaluation protocol: [revision I2](protocol/instrumentation.md),
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
@@ -90,22 +90,26 @@ deferred-obligation experiment remains a proposal.
 No current result establishes archetype search advantage, deployment safety, or
 a reduction in extinction risk.
 
-## Restored instrumentation track
+## Guidance and behavioral evaluation
 
-[Instrumentation revision I1](protocol/instrumentation.md) recovers matched-pair
-behavioral evaluation, transposition across three settings, and exploratory
-graph/probe ideas from the [historical Draft 0.1](spec/archive/NorthStar-draft-0.1.md).
-It corrects the claim that pair discrimination identifies a model's goal, defines
-separate chance baselines and correctness/consistency metrics, and withdraws the
-claimed anti-gaming guarantees. Graph residuals are proposed review signals;
-evaluation awareness is not a label for deception.
+[Revision I2](protocol/instrumentation.md) restores the founding moral-guidance
+question: do principles illustrated through stories improve ethical decisions?
+It proposes a prompt comparison of principles alone, principles with structured
+examples, and principles with narrative versions of the same examples. The main
+guidance contrast is stories versus structured examples. It uses matched-pair
+and cross-setting evaluation with declared labels, independent review, and costs.
 
-No reviewed narrative corpus, model-generalization result, representation graph,
-activation probe, or runtime monitoring result has been produced. The illustrative
-72-scenario pilot is a proposed authoring scale, not a dataset or power calculation.
-The four-method study compares discovery methods; the behavioral track evaluates
-target models. The existing harness does not already implement both.
+No reviewed guidance package, narrative corpus, narrative scorer, trained
+story-based AI, or model-generalization result is supplied by this repository.
+The illustrative 72-scenario pilot is a proposed authoring scale, not a dataset
+or power calculation. Experiment 3 compares four discovery methods; its frozen
+packets are unchanged. The guidance comparison is a separate proposed experiment.
 
-See [evidence progress](docs/evidence-progress.md) for the version history and a
-defined evidence-stage assessment. No revision supports a numerical reduction
-from a hypothetical 10% humanity-wide risk. That remains unestimated.
+Graph operators, activation probes, and anti-gaming strategies are deferred from
+the active plan. Historical proposals and their corrections remain available in
+[Draft 0.1](spec/archive/NorthStar-draft-0.1.md) and
+[I1](https://github.com/anto-blit/northstar-ai-control/blob/2606fde04966ed86b86d523838c2da5d16358d72/protocol/instrumentation.md).
+
+See [research progress](docs/evidence-progress.md) for the factual version history,
+the reasons to test this direction, and its unresolved questions. Humanity-wide
+risk reduction remains unestimated.

@@ -3,10 +3,11 @@
 Status: preparation plan, not an executed experiment. The existing four-arm
 example submits identical scripts and demonstrates runner operation only.
 
-Experiment 3 retains this meaning. The restored [behavioral instrumentation
-pilot](../../protocol/instrumentation.md) asks a different question about target
-models' responses to changed facts and settings. No result from one track should
-be presented as a result from the other.
+Experiment 3 retains this meaning. The separate [guidance and evaluation
+pilot](../../protocol/instrumentation.md) compares ethical guidance and target
+models' responses to changed facts and settings. Its P/E/S guidance conditions
+are not these four search methods. No result from one track should be presented
+as a result from the other.
 
 ## The first question
 

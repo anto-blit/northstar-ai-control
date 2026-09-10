@@ -12,6 +12,8 @@
 - [x] Preserve original results and regenerate current results with source provenance.
 - [x] Build and execute a frozen feasibility study harness with preserved traces.
 - [x] Preserve Draft 0.1 and document the revised instrumentation track with corrected claims and metrics.
+- [x] Restore the ethical-guidance question in revision I2 and defer speculative graph/probe/anti-gaming work.
+- [ ] Independently review the principles and matched narrative/structured guidance examples.
 - [ ] Author and independently review the behavioral pilot corpus; freeze its plan before model evaluation.
 - [ ] Recruit independent environment authors, reviewers, and search participants.
 - [ ] Freeze a fully specified comparative study before collecting its research results.

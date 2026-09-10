@@ -1,9 +1,11 @@
 > **Historical author-supplied draft, archived September 9, 2026.** The original
 > drafting date is unknown. The text below is preserved as supplied, including
 > claims later challenged in review. It is not the current protocol or a report
-> of executed experiments. Read the [revised instrumentation protocol](../../protocol/instrumentation.md)
-> for corrections to the goal-misgeneralization claim, metrics, graph operator,
-> interpretability assumptions, anti-gaming guarantees, and stopping rules.
+> of executed experiments. [Revision I1](https://github.com/anto-blit/northstar-ai-control/blob/2606fde04966ed86b86d523838c2da5d16358d72/protocol/instrumentation.md)
+> records detailed corrections to its claims, metrics, graph/probe assumptions,
+> anti-gaming guarantees, and stopping rules. The current [guidance and evaluation
+> protocol I2](../../protocol/instrumentation.md) restores the founding guidance
+> question and defers the speculative branches.
 
 # North Star
 

@@ -9,9 +9,10 @@
 > The original PDF remains unchanged. The full proposed protocol is still not
 > implemented or validated.
 
-> **Companion research proposal:** [Instrumentation revision I1](../protocol/instrumentation.md)
-> restores selected behavioral-evaluation ideas from [Draft 0.1](archive/NorthStar-draft-0.1.md)
-> as a separate track. It does not change the control-study scope or report new
+> **Companion research proposal:** [Guidance and evaluation revision I2](../protocol/instrumentation.md)
+> tests the founding moral-guidance idea and selected behavioral-evaluation ideas
+> from [Draft 0.1](archive/NorthStar-draft-0.1.md) as separate questions.
+> It does not change the control-study scope or report new
 > experiments in this historical specification.
 
 **Date:** September 9, 2026  

@@ -4,12 +4,19 @@ Status: executable feasibility infrastructure plus a proposed independent-study
 handoff. No independent comparative study has been performed. This document
 operationalizes specification section 8; it does not replace its evidence rules.
 
-The separate [instrumentation protocol](instrumentation.md) evaluates whether
-target-model behavior responds to decisive facts across settings. This study
+The separate [guidance and evaluation protocol](instrumentation.md) compares
+ethical guidance and tests target-model behavior across facts and settings. This study
 evaluates search methods and their resulting repairs. All four methods share
 the same declared outcomes and principles. A future comparison of methods for
 generating narrative test corpora needs its own frozen design; it is not already
 implemented by the current action-search harness.
+
+The control study retains bounded release/stop behavior as its first protection
+target. Turn a reproduced failure into an explicit rule, a repair, and a benign
+task that still succeeds, then challenge the repair independently. Small-model
+proofs may support a rule under stated assumptions; a deployment claim also
+needs evidence that every relevant effect passes through the protected boundary.
+The present in-memory broker is not that host-level security boundary.
 
 ## Questions and decision rules
 

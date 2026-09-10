@@ -12,10 +12,17 @@ Graphic: [download the cover](figures/northstar-share.png).
 
 **NorthStar: Protecting humanity’s freedom and future in an AI world.**
 
-*Archetype-guided AI control research for preserving human recoverability.*
+*Story-guided AI ethics, evaluation, and safeguards for human agency.*
 
-I'm opening NorthStar, a research project investigating safeguards against
-irreversible human disempowerment as AI becomes more capable.
+I'm opening NorthStar, a research project asking whether the lessons in humanity's
+stories can help AI act with care for people. The starting inspiration includes
+Aesop's fables, biblical teachings, parables, and legends. Their lessons need
+careful interpretation and review.
+
+We're proposing a direct test: compare the same ethical principles with
+structured examples and with narrative versions of those examples. Then test
+decisions on matched cases and unfamiliar settings. The guidance materials,
+reviewed corpus and model evaluation are still to be built and run.
 
 An AI stop button is only useful if the consequences stop too. Permissions can
 accumulate. A useful component can bring an unexpected effect. Delegated work
@@ -25,11 +32,6 @@ NorthStar turns patterns from stories such as Pandora and the Sorcerer's
 Apprentice into executable control experiments. Then we ask the harder question:
 do those patterns help us find failures and build better safeguards than strong
 conventional methods?
-
-We're also developing a separate behavioral evaluation: matched scenarios where
-one decisive fact changes the right response, and versions that preserve the
-important facts across unfamiliar settings. That instrumentation protocol is a
-proposal; the corpus and model evaluation have not yet been built or run.
 
 The repository includes working synthetic simulators, reproducible results,
 49 passing tests, and a four-method study harness. The distinctive research
@@ -46,8 +48,9 @@ https://github.com/anto-blit/northstar-ai-control
 ## Short version
 
 I'm building NorthStar to help protect humanity’s freedom and future in an AI
-world. We're turning old failure patterns into executable experiments and
-testing whether they lead to better safeguards against human disempowerment.
+world. We investigate story-based ethical guidance, tests that reveal when it
+fails, and safeguards that preserve people's agency. The guidance comparison
+is proposed; the repository does not yet demonstrate a story-trained AI.
 
 Working synthetic experiments are public. The big hypothesis is still open.
 Builders, skeptics, and independent replicators are welcome:

@@ -4,15 +4,17 @@ Draft release notes. Proposed tag: `research-preview-1`. No release or DOI is
 created by this document. Freeze the exact source commit when publishing.
 
 This preview makes the current NorthStar research package available as a
-versioned baseline for inspection, replication, and collaboration. It asks
-whether recurring narrative failure patterns can help discover AI control
-failures and lead to better safeguards.
+versioned baseline for inspection, replication, and collaboration. It investigates
+story-based ethical guidance, behavioral evaluation, and safeguards for human
+agency. The guidance comparison is proposed; existing results concern synthetic
+control mechanisms and study infrastructure.
 
 ## Included
 
 - Research specification v0.3.1 and simulator v0.2.0.
-- Historical Draft 0.1 and instrumentation protocol I1, a revised proposal for
-  paired behavioral evaluation and exploratory internal signals.
+- Historical Draft 0.1 and guidance/evaluation protocol I2, a proposal for
+  comparing ethical guidance using matched behavioral tests. Graph/probe and
+  anti-gaming research is deferred from the active plan.
 - Two executed synthetic mechanism experiments: irreversible release and
   delegated stop, each with a deliberately weak comparator and a repaired broker.
 - Regression coverage for token reuse, stale authority, and failed ledger writes.
@@ -37,9 +39,10 @@ deployment readiness, or a reduction in catastrophic AI risk. Deferred obligatio
 remains a proposed mechanism experiment; an independent comparative study has
 not been performed.
 
-Instrumentation I1 adds a research plan, not a completed corpus, model evaluation,
-graph operator, or activation probe. The [evidence-stage assessment](https://github.com/anto-blit/northstar-ai-control/blob/main/docs/evidence-progress.md)
-does not estimate humanity-wide risk reduction.
+Revision I2 supplies no completed guidance package, narrative corpus or evaluated
+story-trained model. The [research progress record](https://github.com/anto-blit/northstar-ai-control/blob/main/docs/evidence-progress.md)
+separates the program's promise from executed evidence and unestimated humanity-wide
+risk reduction.
 
 ## Reproduce and contribute
 

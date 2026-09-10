@@ -1,42 +1,55 @@
-# NorthStar instrumentation protocol
+# NorthStar guidance and evaluation protocol
 
-Revision I1 — September 9, 2026. Revised research proposal; independent review,
-preregistration, and execution remain ahead. The historical [Draft 0.1](../spec/archive/NorthStar-draft-0.1.md)
-is preserved separately. Simulator v0.2.0 and the frozen feasibility results
-do not implement this evaluation.
+Revision I2 — September 9, 2026. Research proposal; independent review,
+preregistration, and execution remain ahead. [Draft 0.1](../spec/archive/NorthStar-draft-0.1.md)
+and [revision I1](https://github.com/anto-blit/northstar-ai-control/blob/2606fde04966ed86b86d523838c2da5d16358d72/protocol/instrumentation.md)
+remain available as history. Simulator v0.2.0 and its frozen feasibility results
+do not implement the guidance comparison or narrative evaluation below.
 
 ## Purpose and relationship to the control study
 
-NorthStar uses recurring structures in humanity's stories to design tests of AI
-behavior, and investigates whether the failures those tests reveal can lead to
-better safeguards for humanity's freedom and future.
+NorthStar began as a proposal to use lessons from Aesop's fables, biblical
+teachings, and other stories as moral guidance for AI. This protocol tests that
+intervention and the reliability of the resulting behavior. The separate control
+study tests whether discovered failures lead to better safeguards for human agency.
 
-Ethical commitments define what an experiment should protect. Stories supply
-candidate distinctions and failure patterns. Labels must state their assumptions
-and remain open to disagreement; a traditional story is not a validated moral
-rule. Fables, parables, legends, religious texts, and literature can supply ideas,
-without a claim that all traditions agree or have been represented in the corpus.
+Stories may supply instruction, testable distinctions, and failure patterns.
+Human reviewers must state the principles, justify each interpretation, and
+record disagreement. Provisional commitments include care for others, honesty,
+respect for consent, and freedom from coercion. Reciprocity must consider the
+other person's preferences; authorization alone does not make an action ethical.
+Define how conflicts and uncertainty are handled before assigning labels.
+No traditional story is a moral oracle, and no agreement across all traditions
+or comprehensive story collection is claimed. Record source editions, translations,
+attribution, and reuse rights for selected material.
 
 | Track | Question | Current status |
 |---|---|---|
-| Behavioral instrumentation | Does a target model change its judgment or action when a decisive fact changes, and remain appropriate when only the setting changes? | This proposed protocol; no reviewed corpus or model runs |
-| Discovery and prevention | Do narrative-guided searchers find useful failures, and do their repairs outperform comparator repairs under fresh attacks? | [Four-method feasibility runner](discovery-study.md); no independent comparison |
-| Representations and monitoring | Can validated internal signals help predict relevant failures before their effects occur? | Exploratory proposal; no activation collection or probes |
+| Guidance | Do stories improve decisions beyond explicit principles and comparable examples without narrative framing? | Proposed prompt comparison; no guidance package or model runs |
+| Evaluation | Does behavior respond to decisive facts and transfer across settings and incentives? | Paired-test design; no reviewed corpus or scorer |
+| Protection | Do discovered failures lead to improved safeguards under fresh attacks with useful work preserved? | [Four-method feasibility runner](discovery-study.md); no independent comparison |
 
 These tracks have separate hypotheses and endpoints. Success in one does not
 establish success in another. The existing v0.3.1 specification's exclusion of a
 general-morality benchmark still applies to its control study; this companion
-adds a separately scoped behavioral evaluation. Experiment 3 continues to mean
-the four-method comparison.
+adds separately scoped guidance and behavioral evaluations. Experiment 3 continues
+to mean the four-method search comparison. Its method packets are unchanged.
 
 ## Claims to test
 
-1. A reviewed set of archetype-derived contrasts reveals reproducible behavioral
+1. Under a frozen comparison, story-based guidance improves held-out decisions
+   beyond the same principles with comparable non-narrative examples at acceptable
+   cost, without an unacceptable loss of legitimate usefulness.
+2. A reviewed set of archetype-derived contrasts reveals reproducible behavioral
    errors beyond relevant conventional contrast sets at comparable authoring cost.
-2. Those errors help locate sensitivity to specific irrelevant details or failure
-   to respond to specified decisive facts across unfamiliar settings.
 3. Any resulting safeguard improves independently challenged outcomes while
    preserving legitimate usefulness; this requires the separate prevention study.
+
+Principle-based guidance is a testable intervention. Constitutional AI has
+reported behavioral improvements using principles in a training procedure;
+this motivates comparison, but does not establish an advantage for stories or
+validate the prompt-only pilot proposed here.
+[Bai et al., 2022](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback).
 
 A model can recognize a moral distinction and still pursue an unintended goal.
 Goal misgeneralization concerns competent pursuit of an unintended goal in new
@@ -47,6 +60,51 @@ identify neither an internal objective nor deceptive intent.
 No current evidence establishes that stories are uniquely effective abstractions,
 that superficial cues cannot solve the tests, that every archetype has an
 unambiguous opposite, or that successful evaluation ensures safe deployment.
+
+## Guidance comparison
+
+Start with prompt-based guidance on one fixed model configuration. No model
+training or new moral-reasoning algorithm is implemented or required for this
+first test. A positive prompt result would not establish an enduring learned
+objective; training would need its own study.
+
+| Condition | Material supplied to the target model |
+|---|---|
+| P: principles | The reviewed principles and common task instructions |
+| E: examples | The same principles plus examples stated as structured facts and decisions |
+| S: stories | The same principles plus narrative versions of those examples |
+
+The primary guidance contrast is **S versus E**. Keep the decisive facts, reasons,
+recommended decisions, and example count matched between them. Compare both with
+P to assess the contribution of examples; improvement over P alone cannot isolate
+narrative value. Give all conditions the same response format, tools and feedback.
+Any baseline without the added principles is optional and must be declared
+separately; an existing model is not a morally untrained baseline.
+
+Use separate contexts for each condition and case; balance run order. Freeze the
+model snapshot, decoding settings, repetitions, packets, resource ceilings and
+stopping rule. Include instruction tokens and preparation in the cost record.
+Keep E/S lengths comparable and report remaining differences and actual usage;
+equal ceilings alone do not control for prompt length or effort.
+
+Author guidance examples on development families. Withhold every test family's
+twins and variants from guidance and method tuning for an unseen-family claim.
+Do not teach a source fable and call its translated twin an unseen family.
+Study transfer to a new setting within a known family separately. Public model
+pretraining exposure cannot be ruled out by these project-level splits.
+
+Use the same independently reviewed test cases across conditions, with reviewers
+blind to the condition that produced each answer. Freeze strict pair correctness
+as the primary binary-judgment endpoint, a minimally worthwhile difference,
+usefulness/refusal limits, and analysis accounting for related families before
+confirmatory runs. Record individual correctness, costs, and adverse changes too.
+Analyze action outcomes separately from written judgments. A small pilot estimates
+feasibility, label quality and uncertainty; it does not establish a powered claim.
+
+If S does not improve on a strong E comparator, retain useful principles and
+examples and narrow the narrative-guidance claim. An inconclusive pilot is not
+evidence of equivalence. Expansion requires either a credible benefit worth
+replicating or a specific design problem with a separately frozen follow-up.
 
 ## Paired construction and setting changes
 
@@ -106,11 +164,17 @@ not a power calculation, fixed budget, or promise of publication.
    Publish results with exclusions and uncertainty, including negative findings.
 
 The current CLI can store and execute simulator action submissions, but it has
-no general narrative-corpus evaluator, model-provider loop, or activation reader.
+no general narrative-corpus evaluator or model-provider loop.
 Those are implementation tasks. Manual operation can support a small rehearsal
 if inputs, outputs, costs, and information boundaries are recorded consistently.
 Use synthetic scenarios for the initial pilot; deployment-traffic collection is
 a later, separately designed study requiring authorized data access.
+
+Pressure and incentives are additional experimental changes, not irrelevant
+surface variants. Freeze any task reward, deadline, competing instruction or
+monitoring cue; review whether it changes the appropriate action, then report
+performance under that condition separately. Three settings alone do not test
+robustness to conflicting incentives.
 
 ## Measurements and baselines
 
@@ -134,8 +198,8 @@ them to improve scores.
 
 Compare against majority/random and surface-cue baselines, reviewed conventional
 contrasts with similar difficulty, and relevant existing evaluations on the same
-model configurations. Include narrative-guidance ablations only as a separately
-declared condition. A score difference alone does not isolate the cause.
+model configurations. Keep guidance comparisons separate from comparisons of
+test-generation methods. A score difference alone does not isolate the cause.
 
 [ETHICS](https://arxiv.org/abs/2008.02275) and
 [Moral Stories](https://aclanthology.org/2021.emnlp-main.54/) are relevant prior
@@ -147,85 +211,22 @@ The four-method search study can later compare methods for generating candidate
 tests, but that extension needs its own frozen design and independent test-quality
 assessment. The existing action-search comparison is not already that experiment.
 
-## Graph operator: exploratory error prioritization
+## Scope limits and deferred ideas
 
-The original operator resembles graph label propagation. Such methods encourage
-agreement among nearby points; their mathematical convergence and their
-classification usefulness are distinct questions.
-[Zhou et al., 2003](https://proceedings.neurips.cc/paper_files/paper/2003/hash/87682805257e619d49b8e0dfdc14affa-Abstract.html).
+Behavioral evaluation can reveal errors without identifying a model's internal
+goal. Matching deployment prompts does not establish indistinguishability of
+the full observable context. Test recognition does not prove deception, and
+eventual detection cannot undo an earlier irreversible effect. We make no
+guarantee that evaluation awareness becomes costly or self-incriminating.
+See the relevant [prior work and claim boundaries](../references/related-work.md).
 
-If prototyping the original recurrence, define a nonnegative row-stochastic
-matrix W, an explicit rule for isolated nodes, seeds y, and damping 0 <= d < 1.
-Then N = (1-d)y + dWN has a unique fixed point. Specify output scale, seed
-clamping or relaxation, convergence tolerance, and handling of unlabeled nodes.
-These choices do not turn N into ground truth.
-
-Generic embedding similarity can connect consent and non-consent cases that
-correctly require opposite decisions. A high residual may reflect a poor graph,
-an omitted decisive fact, ambiguous labels, or a correct model decision. It is
-not proof of internal contradiction, a hidden objective, or deception.
-
-Keep the model-derived similarity graph separate from independently reviewed
-relationships requiring agreement or a mapped change in answer. Do not insert
-negative edges into a stochastic propagation formula without defining a new
-objective and checking its behavior. A useful first endpoint is whether residuals
-prioritize genuine, independently judged errors better than random selection,
-uncertainty scores, and simple disagreement baselines at equal review cost.
-
-Freeze layers, representations, graph parameters, and seeds on development data.
-Evaluate held-out labels without using them as seeds or tuning targets. Specify
-whether the graph includes unlabeled test inputs. Distance from seeds measures
-coverage of that chosen representation and corpus, not coverage of all possible
-harms. Model or corpus changes require renewed computation and validation.
-
-## Internal probes: a separate research bet
-
-With authorized access to model activations, investigate whether a probe predicts
-reviewed structural properties across held-out families and settings. Recognition
-need not occupy one neuron or be linearly separable. A failed probe rejects that
-particular setup, not every possible representation.
-
-Use simple baselines, shuffled/control labels, held-out entities and settings,
-and a comparison with input-text features. Probe accuracy can reflect what the
-probe learns rather than a faithful account of the model's computation.
-[Hewitt and Liang, 2019](https://aclanthology.org/D19-1275/).
-
-If a probe generalizes, test causal interventions and alternative explanations
-before describing it as a mechanism. Runtime use additionally requires signal
-availability before the harmful action, calibrated false alarms, useful-work
-costs, and renewed adversarial evaluation. Archetype recognition, awareness of
-being evaluated, deceptive intent, and a future harmful action are separate
-targets. None is a substitute label for the others.
-
-## Evaluation gaming: testable limitations, not guarantees
-
-The draft's claim that recognition must become costly and self-incriminating is
-not established. Recognition does not imply deceptive intent, and recognizing a
-test does not automatically defeat every evaluation. Conditional alignment faking
-has been studied in constructed settings; it motivates investigation rather than
-an assumption that every model has that policy.
-[Greenblatt et al., 2024](https://www.anthropic.com/research/alignment-faking).
-
-| Original move | Revised requirement |
-|---|---|
-| Indistinguishability | Evaluate differences in the full observable context, including histories, tools and timing. Matching a prompt distribution alone is insufficient. Exact indistinguishability is an assumption to justify, not a consequence of realistic prose. |
-| Apparent unmonitored opportunities | Measure behavior under specified incentives and evidence of monitoring. No general compliance or favorable cost asymmetry follows. |
-| Awareness as alarm | Measure awareness and its behavioral effects separately; quantify false positives in cooperative models. No unavoidable two-branch detection guarantee follows. |
-| Consistency load | Test whether increased valid relational constraints improve detection at fixed budgets. There is no established lower bound on the cost of a consistent deceptive policy. |
-| Sequential monitoring | Define hypotheses, sampling, dependence, thresholds and false-alarm control. Measure whether intervention precedes irreversible effects. |
-
-For independent opportunities with a fixed detectable-event probability p,
-the chance of at least one detection in n opportunities is 1-(1-p)^n. This
-illustration supplies no deployment estimate. Adaptive, rare-trigger, correlated,
-or changing behavior can invalidate those assumptions. Eventual detection does
-not guarantee prevention of the first irreversible harm. Any sequential test
-requires a separately specified and validated statistical design.
-
-Failure to achieve distribution matching limits a deployment claim; it does not
-erase the diagnostic value of a clearly scoped offline evaluation. Possible
-real-world-only triggers, author limitations, incomplete coverage, deployment
-changes, and lack of adoption remain unresolved. Catastrophic failures can arise
-from familiar as well as unfamiliar mechanisms.
+Graph propagation, activation probes, honeypot strategies, and sequential
+monitoring are removed from the active pilot. Their earlier proposals and
+critiques remain in [I1](https://github.com/anto-blit/northstar-ai-control/blob/2606fde04966ed86b86d523838c2da5d16358d72/protocol/instrumentation.md)
+and [Draft 0.1](../spec/archive/NorthStar-draft-0.1.md). Revisit one only with a
+specific failure the core evaluations cannot explain, an independently reviewed
+target, a strong baseline, and resources that do not displace the core comparison.
+No current result depends on those ideas succeeding.
 
 ## Decision rules and next deliverables
 
@@ -236,13 +237,19 @@ from familiar as well as unfamiliar mechanisms.
   value, robustness or cost adds anything before claiming a contribution.
 - If a prompt removes a failure, test the intervention on held-out settings and
   report both results. Do not retroactively replace the original protocol.
-- If a graph/probe fails, narrow or reject that component's claim. It does not
-  automatically invalidate independently supported behavioral findings.
 - If discoveries do not yield useful, independently challenged prevention, the
   prevention claim remains unestablished even if the evaluation is informative.
 
-Next deliverables are an independently reviewed authoring brief and sample,
-an executable corpus schema/scorer with checked baselines, a frozen pilot plan,
-and actual model-run records. Larger corpora, probes and deployment integration
-follow evidence and available resources. No model runs, corpus, graph operator,
-anti-gaming guarantee, or risk reduction is created by this documentation revision.
+First review a small set of principles, matched E/S guidance examples, and
+paired development cases. Then supply the corpus schema/scorer and freeze a
+pilot before model runs. Use the illustrative 72-scenario scale only if that
+review supports it. Keep Experiment 3's independent-author and evaluator
+preparation moving; do not present these guidance conditions as its four arms.
+
+The first protection target remains bounded release/stop behavior in the
+existing control study. Per-arm repairs, fresh adaptive challenges, usefulness,
+and a validated enforcement boundary require separate implementation and evidence.
+A behavioral score alone cannot establish that protection.
+
+No guidance package, narrative corpus, model result, proof of deployment safety,
+or measured risk reduction is created by this documentation revision.

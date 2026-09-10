@@ -7,13 +7,15 @@ body:
   - type: markdown
     attributes:
       value: |
-        Help us test whether NorthStar can make human control more reliable.
+        Help us test story-based ethical guidance, evaluate AI behavior, and build safeguards for human agency.
         A few sentences are enough. This opens a public conversation with Anthony More (@anto-blit).
   - type: dropdown
     id: interest
     attributes:
       label: What interests you?
       options:
+        - Ethical guidance or story interpretation
+        - Matched cases or behavioral evaluation
         - Building or testing safeguards
         - Red teaming or challenging assumptions
         - Independent experiments or replication

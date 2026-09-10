@@ -1,5 +1,22 @@
 # Changelog
 
+## Guidance and evaluation revision I2 — September 9, 2026
+
+- Restore the founding ethical-guidance question and organize the active program
+  around guidance, evaluation, and protection.
+- Define a prompt comparison using the same principles with structured or
+  narrative examples, with independent paired evaluation and explicit limits.
+- Defer graph operators, activation probes, and anti-gaming strategies from the
+  active pilot. Preserve their proposals and critiques in Draft 0.1 and Git history.
+- Replace the informal numerical stage scale with a factual progress record,
+  research judgment, and criteria for continuing or narrowing each component.
+- Align the README, cover, sharing copy and contributor guidance; add relevant
+  prior work on principle-based guidance and enforcement boundaries.
+
+This documentation and presentation revision reports no new model experiment.
+Simulator v0.2.0, the frozen method packets, result hashes, and historical
+specification bodies retain their existing evidence and versions.
+
 ## Instrumentation revision I1 — September 9, 2026
 
 - Preserve the author-supplied Draft 0.1 as a historical source with a status notice.

@@ -1,9 +1,9 @@
-![NorthStar: Protecting humanity’s freedom and future in an AI world. Archetype-guided AI control research for preserving human recoverability.](docs/figures/northstar-hero.svg)
+![NorthStar: Protecting humanity’s freedom and future in an AI world. Story-guided AI ethics and evaluation. Safeguards for human agency.](docs/figures/northstar-hero.svg)
 
 # NorthStar
 ### Protecting humanity’s freedom and future in an AI world.
 
-*Archetype-guided AI control research for preserving human recoverability.*
+*Story-guided AI ethics, evaluation, and safeguards for human agency.*
 
 [![Verify NorthStar](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml/badge.svg)](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-087f79)](LICENSE) [![Stage: Open research](https://img.shields.io/badge/stage-open_research-102d3b)](EXPERIMENTS-STATUS.md)
 
@@ -13,25 +13,23 @@
 
 Powerful AI should expand humanity’s possibilities. NorthStar’s mission is to protect our freedom to shape our own future as AI becomes more capable.
 
-**We investigate safeguards against coercion and irreversible human disempowerment.** Control mechanisms are one part of that research: a stop button is only useful if it can still prevent the consequences.
+**NorthStar began with a question: could the lessons in humanity’s stories help AI act with care for people?** Aesop’s fables, biblical teachings, parables, legends, and other traditions offer ways to explore responsibility, reciprocity, honesty, and the misuse of power.
 
-By **human recoverability**, we mean preserving people’s ability to intervene and regain meaningful agency when things go wrong.
+Our research investigates whether that guidance improves AI decisions, whether the improvement survives unfamiliar situations, and whether failures can inform effective safeguards. Stories can serve as **instruction and instrumentation**. We make the selected principles and their interpretation explicit, open to review, and attentive to disagreement across traditions.
 
-Humanity has explored power, responsibility, and lost freedom through fables, parables, legends, religious texts, and literature. NorthStar draws on recurring patterns such as small concessions accumulating, useful gifts concealing dangers, and bargains that bind the future.
-
-We use these stories as **instruments for evaluation**: sources of testable contrasts and failure patterns. We make the principles behind each test explicit and open to review. The research asks whether these patterns help us understand AI behavior, discover dangerous control failures, and develop safeguards that hold up under fresh attacks.
+We also investigate protection against coercion and irreversible human disempowerment. By **human recoverability**, we mean preserving people’s ability to intervene and regain meaningful agency when things go wrong. A stop button is only useful if it can still prevent the consequences.
 
 **The hypothesis may be wrong. We intend to find out.**
 
 If it is useful, even in a limited setting, it could contribute to a larger mission:
 
-> **Protecting humanity’s freedom and future in an AI world.**
+> **NorthStar investigates whether the wisdom and warnings in humanity’s stories can help AI act ethically, reveal when that guidance fails, and inform safeguards that protect humanity’s freedom and future.**
 
 We publish our code, methods, completed results, and limitations so others can challenge and improve the work. Builders, skeptics, researchers, and independent replicators are welcome.
 
 **Help us break NorthStar. Help us improve it. Help us test whether its safeguards can earn a role in real systems.**
 
-> **Where we are:** working synthetic simulators, reproducible results, and a comparative-study harness. The value of archetype-guided search is still an open question. Current results do not establish deployment safety or a reduction in catastrophic AI risk.
+> **Where we are:** working synthetic simulators, reproducible results, and a comparative-study harness. Story-based moral guidance and its behavioral evaluation are proposed work; this repository does not yet demonstrate a story-trained AI. The value of narrative guidance and search remains untested.
 
 ## Find your way in
 
@@ -40,6 +38,7 @@ We publish our code, methods, completed results, and limitations so others can c
 | **Build safeguards** | Inspect the release and delegation brokers. Find a missing check and reproduce it. |
 | **Break assumptions** | Challenge the threat model, the stop semantics, or the definition of recoverability. |
 | **Test the central idea** | Help design a strong conventional baseline or an independently authored environment. |
+| **Shape ethical guidance** | Review a principle, its interpretation in a story, and a comparable example without narrative framing. |
 | **Build behavioral tests** | Author and review matched scenarios where one decisive fact changes the appropriate response. |
 | **Replicate a result** | Run the checks on your machine and report your revision, environment, and observations. |
 | **Make the work accessible** | Improve an explanation, diagram, or example so another person can use it. |
@@ -57,17 +56,17 @@ The five initial templates are **Camel's nose**, **Trojan horse**, **Faust**, **
 
 Every useful candidate needs an actual failure mechanism and a **benign twin**: a closely matched task that should still succeed. Blocking everything is not enough.
 
-## Stories as instruments
+## Guidance, evaluation, protection
 
-The [revised instrumentation protocol](protocol/instrumentation.md) restores an early NorthStar idea: change a scenario's appearance while preserving its important facts, then change one decisive fact while preserving its appearance. Does the model remain consistent where it should, and change its response where it should?
+The [guidance and evaluation protocol](protocol/instrumentation.md) tests the founding idea directly: do stories improve decisions beyond the same principles and comparable examples without narrative framing? Matched cases then test whether the model changes its response when a decisive fact changes, and remains appropriate when only the setting changes.
 
 | Research track | What it asks | Where we are |
 |---|---|---|
-| **Behavioral instrumentation** | Does AI behavior respond to the relevant distinctions across narrative, human, and agentic-AI settings? | Revised proposal; independent review, corpus and model evaluation pending |
-| **Discovery and prevention** | Do story-guided searchers find useful failures, and do their repairs improve protection? | Working synthetic experiments and a four-method feasibility runner; independent comparison pending |
-| **Internal signals** | Can representations or validated probes help identify relevant failures before their consequences occur? | Exploratory proposal; no operator or probes implemented |
+| **Guidance** | Do principles illustrated through stories improve ethical decisions? | Proposed comparison; guidance materials and model runs pending |
+| **Evaluation** | Do decisions hold up across changed facts, unfamiliar settings, and conflicting incentives? | Paired-test protocol; reviewed corpus and scorer pending |
+| **Protection** | Do discovered failures lead to safeguards that withstand fresh attacks while allowing legitimate work? | Synthetic mechanisms and a four-method feasibility runner; independent comparison pending |
 
-These are separate questions. Recognizing a moral distinction does not establish that a system will respect it. A benchmark score or internal signal does not by itself establish trustworthy objectives or deployment safety.
+Each part needs its own evidence. Recognizing a moral distinction does not establish that a system will respect it. We have no demonstrated alignment solution or numerical estimate of catastrophic-risk reduction. Internal probes and graph operators are deferred; the current priorities are comparative behavior tests and independently challenged safeguards.
 
 ## Turn a discovery into prevention
 
@@ -91,7 +90,7 @@ The current verification record contains **49 passing tests**. GitHub Actions ru
 
 These are bounded mechanism experiments and study plumbing. The independent comparison of search methods, arm-specific repairs, and renewed adaptive evaluation is the next research milestone. [Read the current evidence and remaining gaps →](EXPERIMENTS-STATUS.md)
 
-**Next:** prepare the [behavioral instrumentation pilot](protocol/instrumentation.md) and [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md). They evaluate different questions; neither has been run.
+**Next:** prepare a small, reviewed [guidance and paired-test sample](protocol/instrumentation.md#guidance-comparison) while completing the prerequisites for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md). The guidance conditions and discovery methods are separate comparisons. Neither has been run.
 
 ### Try it yourself
 
@@ -141,7 +140,7 @@ GitHub contact requires an account. Issues and discussions are public. Collabora
 
 [Research specification](spec/NorthStar-v0.3.1.md) · [Causal grammars](grammars/) · [Threat model](protocol/threat-model.md) · [Trust ledger](protocol/trust-ledger.md) · [Independent-study protocol](protocol/discovery-study.md)
 
-[Instrumentation protocol](protocol/instrumentation.md) · [Historical Draft 0.1](spec/archive/NorthStar-draft-0.1.md) · [Evidence milestones and risk-estimation limits](docs/evidence-progress.md)
+[Guidance and evaluation protocol](protocol/instrumentation.md) · [Historical Draft 0.1](spec/archive/NorthStar-draft-0.1.md) · [Research progress and open questions](docs/evidence-progress.md)
 
 The [original PDF](spec/NorthStar-v0.3.1.pdf) is a historical proposal snapshot; [current status](EXPERIMENTS-STATUS.md) records the later implementation and evidence.
 
