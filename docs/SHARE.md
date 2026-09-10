@@ -26,6 +26,11 @@ Apprentice into executable control experiments. Then we ask the harder question:
 do those patterns help us find failures and build better safeguards than strong
 conventional methods?
 
+We're also developing a separate behavioral evaluation: matched scenarios where
+one decisive fact changes the right response, and versions that preserve the
+important facts across unfamiliar settings. That instrumentation protocol is a
+proposal; the corpus and model evaluation have not yet been built or run.
+
 The repository includes working synthetic simulators, reproducible results,
 49 passing tests, and a four-method study harness. The distinctive research
 hypothesis is still open; the current experiments do not establish deployment

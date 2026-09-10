@@ -11,6 +11,8 @@
 - [x] Repair token reuse/collision and failure of audit coupling; retain regression tests.
 - [x] Preserve original results and regenerate current results with source provenance.
 - [x] Build and execute a frozen feasibility study harness with preserved traces.
+- [x] Preserve Draft 0.1 and document the revised instrumentation track with corrected claims and metrics.
+- [ ] Author and independently review the behavioral pilot corpus; freeze its plan before model evaluation.
 - [ ] Recruit independent environment authors, reviewers, and search participants.
 - [ ] Freeze a fully specified comparative study before collecting its research results.
 - [ ] Refresh the related-work review.

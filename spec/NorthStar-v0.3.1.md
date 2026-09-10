@@ -9,6 +9,11 @@
 > The original PDF remains unchanged. The full proposed protocol is still not
 > implemented or validated.
 
+> **Companion research proposal:** [Instrumentation revision I1](../protocol/instrumentation.md)
+> restores selected behavioral-evaluation ideas from [Draft 0.1](archive/NorthStar-draft-0.1.md)
+> as a separate track. It does not change the control-study scope or report new
+> experiments in this historical specification.
+
 **Date:** September 9, 2026  
 **Status:** Proposed research and reference-protocol specification, not a deployed safeguard or an alignment certificate. This revision tightens scope and endpoints; it does not report a new experiment.  
 **Origin:** The user's synthesis: archetypes supply the attack-path hypothesis generator; control evaluation supplies conditional evidence about the safeguards. This separate revision incorporates the subsequently supplied Claude handoff. Draft 0.1, v0.2, and v0.3 remain unchanged.

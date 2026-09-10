@@ -17,9 +17,9 @@ Powerful AI should expand humanity’s possibilities. NorthStar’s mission is t
 
 By **human recoverability**, we mean preserving people’s ability to intervene and regain meaningful agency when things go wrong.
 
-Our stories preserve recurring warnings about how control is lost: one small concession at a time, a useful gift with a hidden effect, a bargain whose cost arrives later, a release that cannot be recalled, and a servant that continues after its master says stop.
+Humanity has explored power, responsibility, and lost freedom through fables, parables, legends, religious texts, and literature. NorthStar draws on recurring patterns such as small concessions accumulating, useful gifts concealing dangers, and bargains that bind the future.
 
-NorthStar asks whether these recurring structures can help us discover dangerous AI control paths in executable experiments, and develop safeguards that hold up under fresh attacks.
+We use these stories as **instruments for evaluation**: sources of testable contrasts and failure patterns. We make the principles behind each test explicit and open to review. The research asks whether these patterns help us understand AI behavior, discover dangerous control failures, and develop safeguards that hold up under fresh attacks.
 
 **The hypothesis may be wrong. We intend to find out.**
 
@@ -40,6 +40,7 @@ We publish our code, methods, completed results, and limitations so others can c
 | **Build safeguards** | Inspect the release and delegation brokers. Find a missing check and reproduce it. |
 | **Break assumptions** | Challenge the threat model, the stop semantics, or the definition of recoverability. |
 | **Test the central idea** | Help design a strong conventional baseline or an independently authored environment. |
+| **Build behavioral tests** | Author and review matched scenarios where one decisive fact changes the appropriate response. |
 | **Replicate a result** | Run the checks on your machine and report your revision, environment, and observations. |
 | **Make the work accessible** | Improve an explanation, diagram, or example so another person can use it. |
 | **Explore without a fixed role** | Introduce yourself and tell us which part of the question interests you. |
@@ -56,13 +57,25 @@ The five initial templates are **Camel's nose**, **Trojan horse**, **Faust**, **
 
 Every useful candidate needs an actual failure mechanism and a **benign twin**: a closely matched task that should still succeed. Blocking everything is not enough.
 
+## Stories as instruments
+
+The [revised instrumentation protocol](protocol/instrumentation.md) restores an early NorthStar idea: change a scenario's appearance while preserving its important facts, then change one decisive fact while preserving its appearance. Does the model remain consistent where it should, and change its response where it should?
+
+| Research track | What it asks | Where we are |
+|---|---|---|
+| **Behavioral instrumentation** | Does AI behavior respond to the relevant distinctions across narrative, human, and agentic-AI settings? | Revised proposal; independent review, corpus and model evaluation pending |
+| **Discovery and prevention** | Do story-guided searchers find useful failures, and do their repairs improve protection? | Working synthetic experiments and a four-method feasibility runner; independent comparison pending |
+| **Internal signals** | Can representations or validated probes help identify relevant failures before their consequences occur? | Exploratory proposal; no operator or probes implemented |
+
+These are separate questions. Recognizing a moral distinction does not establish that a system will respect it. A benchmark score or internal signal does not by itself establish trustworthy objectives or deployment safety.
+
 ## Turn a discovery into prevention
 
 ![The research pipeline: hypothesis, executable test, benign twin, observed effect, repair, and fresh challenge. Compare prevention at useful capability against conventional methods.](docs/figures/archetype-to-control-test.svg)
 
 The planned study compares four approaches at matched resources: generic informed red teaming, conventional technical threat analysis, the same causal grammars without narrative framing, and the full NorthStar method.
 
-**The method has to earn its place.** If conventional approaches perform just as well, we keep effective repairs and narrow or withdraw the distinctive claim. The mission is better human control.
+**The method has to earn its place.** If conventional approaches perform just as well, we keep effective repairs and narrow or withdraw the distinctive claim. The purpose is better protection for humanity’s freedom and future.
 
 ## What you can run today
 
@@ -78,7 +91,7 @@ The current verification record contains **49 passing tests**. GitHub Actions ru
 
 These are bounded mechanism experiments and study plumbing. The independent comparison of search methods, arm-specific repairs, and renewed adaptive evaluation is the next research milestone. [Read the current evidence and remaining gaps →](EXPERIMENTS-STATUS.md)
 
-**Next: [Experiment 3 — a comparative discovery pilot](experiments/discovery-study/PILOT.md).** Help us compare actual search attempts before making stronger claims about the method.
+**Next:** prepare the [behavioral instrumentation pilot](protocol/instrumentation.md) and [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md). They evaluate different questions; neither has been run.
 
 ### Try it yourself
 
@@ -127,6 +140,8 @@ GitHub contact requires an account. Issues and discussions are public. Collabora
 ## Read further
 
 [Research specification](spec/NorthStar-v0.3.1.md) · [Causal grammars](grammars/) · [Threat model](protocol/threat-model.md) · [Trust ledger](protocol/trust-ledger.md) · [Independent-study protocol](protocol/discovery-study.md)
+
+[Instrumentation protocol](protocol/instrumentation.md) · [Historical Draft 0.1](spec/archive/NorthStar-draft-0.1.md) · [Evidence milestones and risk-estimation limits](docs/evidence-progress.md)
 
 The [original PDF](spec/NorthStar-v0.3.1.pdf) is a historical proposal snapshot; [current status](EXPERIMENTS-STATUS.md) records the later implementation and evidence.
 

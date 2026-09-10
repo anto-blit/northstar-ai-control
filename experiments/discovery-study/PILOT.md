@@ -3,6 +3,11 @@
 Status: preparation plan, not an executed experiment. The existing four-arm
 example submits identical scripts and demonstrates runner operation only.
 
+Experiment 3 retains this meaning. The restored [behavioral instrumentation
+pilot](../../protocol/instrumentation.md) asks a different question about target
+models' responses to changed facts and settings. No result from one track should
+be presented as a result from the other.
+
 ## The first question
 
 At matched resources, do the four search methods produce different numbers or

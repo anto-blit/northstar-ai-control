@@ -15,6 +15,7 @@ You do not need to arrive with a finished proposal.
 | Python and systems | [Release broker](northstar_sim/irreversible_release.py), [delegation broker](northstar_sim/delegated_stop.py) | A small reproduction and a proposed fix |
 | Security and red teaming | [Threat model](protocol/threat-model.md), [trust ledger](protocol/trust-ledger.md) | A concrete missing assumption or control failure |
 | Experimental design | [Study protocol](protocol/discovery-study.md) | A stronger comparator, independent environment, or analysis improvement |
+| Behavioral evaluation | [Instrumentation protocol](protocol/instrumentation.md) | Reviewed matched pairs, setting transformations, and explicit label assumptions |
 | Independent replication | [Verification command](README.md#try-it-yourself) | Your source revision, environment, results, and any differences |
 | Writing and visual explanation | [README](README.md), [figures](docs/figures/) | A clearer explanation or example |
 
@@ -41,6 +42,12 @@ A counterexample is useful even if you do not yet know how to fix it.
 Evidence that the NorthStar hypothesis fails is welcome.
 
 ## Propose a causal grammar or study
+
+For the behavioral track, follow the [instrumentation authoring and review
+requirements](protocol/instrumentation.md). Keep surface-only changes distinct
+from decisive-fact changes, record ethical assumptions and reviewer disagreement,
+and preserve pair/family boundaries. Graph and probe work needs independently
+checked targets and must be labeled exploratory until evaluated.
 
 Describe preconditions, causal transitions, the quantity the control misses,
 the observation gap, actual environment objects/actions, the prohibited outcome,

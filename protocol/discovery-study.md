@@ -4,6 +4,13 @@ Status: executable feasibility infrastructure plus a proposed independent-study
 handoff. No independent comparative study has been performed. This document
 operationalizes specification section 8; it does not replace its evidence rules.
 
+The separate [instrumentation protocol](instrumentation.md) evaluates whether
+target-model behavior responds to decisive facts across settings. This study
+evaluates search methods and their resulting repairs. All four methods share
+the same declared outcomes and principles. A future comparison of methods for
+generating narrative test corpora needs its own frozen design; it is not already
+implemented by the current action-search harness.
+
 ## Questions and decision rules
 
 Primary: starting from the same control, do repairs derived from NorthStar

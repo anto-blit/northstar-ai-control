@@ -2,6 +2,10 @@
 
 Research specification: v0.3.1. Simulator: v0.2.0. Updated September 9, 2026.
 
+Companion instrumentation protocol: [revision I1](protocol/instrumentation.md),
+a revised proposal awaiting independent review. The specification and frozen sources
+retain their existing versions.
+
 All effects are synthetic in-memory records. The simulator and study runner use
 the Python standard library, with no network, real credentials, arbitrary
 agent-authored code, or external effect execution.
@@ -85,3 +89,23 @@ deferred-obligation experiment remains a proposal.
 
 No current result establishes archetype search advantage, deployment safety, or
 a reduction in extinction risk.
+
+## Restored instrumentation track
+
+[Instrumentation revision I1](protocol/instrumentation.md) recovers matched-pair
+behavioral evaluation, transposition across three settings, and exploratory
+graph/probe ideas from the [historical Draft 0.1](spec/archive/NorthStar-draft-0.1.md).
+It corrects the claim that pair discrimination identifies a model's goal, defines
+separate chance baselines and correctness/consistency metrics, and withdraws the
+claimed anti-gaming guarantees. Graph residuals are proposed review signals;
+evaluation awareness is not a label for deception.
+
+No reviewed narrative corpus, model-generalization result, representation graph,
+activation probe, or runtime monitoring result has been produced. The illustrative
+72-scenario pilot is a proposed authoring scale, not a dataset or power calculation.
+The four-method study compares discovery methods; the behavioral track evaluates
+target models. The existing harness does not already implement both.
+
+See [evidence progress](docs/evidence-progress.md) for the version history and a
+defined evidence-stage assessment. No revision supports a numerical reduction
+from a hypothetical 10% humanity-wide risk. That remains unestimated.
