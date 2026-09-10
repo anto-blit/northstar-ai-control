@@ -1,4 +1,4 @@
-# Separate Claude review and repair record
+# Independent AI review: Claude
 
 The founder requested Claude as the other reviewing party. The project used the
 installed Claude Code CLI against copied, frozen runtime sources. The initial
@@ -6,10 +6,23 @@ review packet included the contract and API, but excluded the implementation
 author's case inventory, experiment runner and results. The review could inspect
 the implementation, write its own tests and run local loopback experiments.
 
-This is **separate AI review commissioned by the implementer**, not independent
-human, institutional or deployment validation. The test cases are hand-authored
-by AI, not sampled from real deployment traffic. Claude's interpretation is also
-subject to review; the recorded observations take priority over broad wording.
+We count this as **independent AI review of the local stop contract, commissioned
+by the project**. Claude independently authored and ran challenges; it was not the
+implementation author, and our case inventory and results were withheld. The
+project chose the assignment, supplied the harness and managed the repairs, so
+this does not claim organizational independence or an independent data source.
+The test cases are AI-authored, not sampled from real deployment traffic.
+
+AI review counts as review. Its scope determines what it validates. These runs
+support the local behavior exercised by the tests. They did not measure adoption,
+catastrophe coverage or a counterfactual global-risk reduction. A passing AI or
+human review cannot supply those missing observations. A future AI review of an
+impact estimate can count as such, with its evidence, assumptions and uncertainty
+stated; this review was not that assessment.
+
+The frozen reports retain their original terminology. This clarification changes
+how the project credits the review, not what Claude tested or concluded. Claude's
+interpretation is also subject to review; observations take priority over broad wording.
 
 ## Original candidate
 

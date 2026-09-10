@@ -38,6 +38,8 @@ fault injection confirms rollback on a failed mailbox write. An explicit direct
 database write also demonstrates that a same-account filesystem actor can bypass
 the broker; process separation must not be described as verified OS isolation.
 
-The separate Claude review is commissioned AI review with a frozen candidate and
-recorded tests, not independent human validation. The original simulator's
+The [Claude review](../experiments/queued-stop/claude-review/README.md) counts as
+independent AI review of the local stop contract: separate test authorship and
+execution, commissioned by the project using its harness. Global impact was not
+evaluated. The original simulator's
 verification record and 90-test count remain separate from this evidence.

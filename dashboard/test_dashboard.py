@@ -33,7 +33,7 @@ class EvidenceTests(unittest.TestCase):
         internal = {"technical_errors": [], "summary": {}, "source_sha256": self.report["source_sha256"]}
         (queue / "internal/report.json").write_text(json.dumps(internal))
         (self.root / "review.md").write_text("Separate AI review fixture")
-        (self.root / "review.json").write_text(json.dumps({"artifact_sha256": {"review.md": sha256((self.root / "review.md").read_bytes()).hexdigest()}}))
+        (self.root / "review.json").write_text(json.dumps({"review_runs": [{"candidate": "first", "failures": 1}, {"candidate": "repair", "failures": 0}], "artifact_sha256": {"review.md": sha256((self.root / "review.md").read_bytes()).hexdigest()}}))
         self.queue_report = {
             "schema_version": 1, "source_sha256": self.report["source_sha256"],
             "artifact_sha256": {"internal/report.json": sha256((queue / "internal/report.json").read_bytes()).hexdigest()},
@@ -64,6 +64,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertIn("not a rolling horizon", data["risk"]["claimTimeHorizon"])
         self.assertEqual(data["risk"]["demonstratedProtectionScope"], "Synthetic brokers and local HTTP/SQLite queue integration only")
         self.assertFalse(data["queue"]["independentHumanReview"])
+        self.assertEqual(data["queue"]["reviewRounds"], 2)
 
     def test_more_passing_tests_do_not_subtract_from_extinction_risk(self):
         before = deepcopy(dashboard.load_evidence(self.root)["risk"])

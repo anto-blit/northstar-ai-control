@@ -13,6 +13,7 @@
   $('test-count').textContent = data.verification.tests;
   $('environment-count').textContent = Object.keys(data.recovery.safe_fallbacks).length;
   $('order-count').textContent = Object.keys(data.recovery.turn_orders).length;
+  $('ai-review-rounds').textContent = data.queue.reviewRounds;
   const date = new Intl.DateTimeFormat('en', {dateStyle:'medium', timeStyle:'short', timeZone:'UTC'}).format(new Date(data.verification.recordedAt));
   $('evidence-date').textContent = `Evidence recorded ${date} UTC · ${data.verification.artifactCount} result artifacts`;
   $('evidence-fingerprint').textContent = `Verification fingerprint ${data.verification.recordSha256.slice(0, 16)}`;
@@ -39,7 +40,7 @@
   $('queue-finding').textContent = conventional && fenced && conventional.prohibited_deliveries === 0 && fenced.prohibited_deliveries === 0
     ? 'Both stronger controls prevented post-stop delivery in these cases. The comparison supports their common mechanism; it shows no NorthStar-specific advantage.'
     : 'Inspect the recorded outcomes and useful-work counts before interpreting this comparison.';
-  $('queue-review').textContent = `${data.queue.tests.internal.tests_run} internal regression checks · ${data.queue.tests.claude_authored.tests_run} Claude-authored checks replayed. Human review remains open. These are separate from the 90 simulator checks.`;
+  $('queue-review').textContent = `Independent AI review: Claude · ${data.queue.reviewRounds} commissioned review rounds · ${data.queue.tests.claude_authored.tests_run} reviewer-authored checks replayed. ${data.queue.tests.internal.tests_run} internal queue checks also pass. Scope: the local stop contract. Global-risk reduction remains unvalidated.`;
 
   const dialog = $('clock-method');
   document.querySelectorAll('[data-open-method]').forEach(button => button.addEventListener('click', () => dialog.showModal()));

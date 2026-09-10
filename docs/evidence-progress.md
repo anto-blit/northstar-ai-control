@@ -1,6 +1,6 @@
 # Research progress and open questions
 
-Updated September 9, 2026 (America/Los_Angeles). This document separates executed
+Updated September 10, 2026 (America/Los_Angeles). This document separates executed
 evidence, research judgment, and the tests needed to decide what to pursue.
 
 ## Is this a reasonable direction?
@@ -54,6 +54,23 @@ assigned invented dates or results.
 
 ## What would change the assessment?
 
+### What the conventional tie means
+
+The queue comparison found no advantage for NorthStar's epoch fencing over the
+conventional transaction check on the tested outcomes. It supports a reusable
+testbed and a known protection pattern. It does not establish NorthStar's
+distinctive narrative hypothesis, which that experiment did not test.
+
+The next research decision is whether story-guided search discovers important
+failures missed by equally resourced conventional methods, or lowers the cost
+of finding and repairing them. The four-method pilot must compare those methods
+on unfamiliar cases and challenge the resulting repairs. Another successful
+demonstration of the same stop mechanism would not answer that question. If no
+useful added benefit emerges, narrow the narrative claim and retain useful
+tests and conventional safeguards.
+
+### Evidence needed next
+
 First, independently review the principles, guidance examples and paired cases.
 Then freeze and execute the small guidance comparison and the separately scoped
 four-method discovery pilot when their prerequisites are met. Measure actual
@@ -88,11 +105,18 @@ shared protection mechanism. It does not establish a distinctive benefit from
 NorthStar or its narrative approach. The test clients are scripted, the host is
 trusted, and deployment adoption and catastrophe coverage remain unmeasured.
 
-Separate Claude-authored challenges are additional AI review, commissioned within
-this project. They do not turn internal results into independent human or
-institutional validation. A capacity-exhaustion counterexample led to a concrete
+Claude's challenges count as [independent AI review](../experiments/queued-stop/claude-review/README.md)
+of the local stop contract: separate test authorship and execution, commissioned
+by the project using its harness. They are additional evidence, with that scope
+and relationship disclosed. A capacity-exhaustion counterexample led to a concrete
 repair: stop now releases abandoned claims in both strong modes, so a missing
 worker need not cooperate before new authorized work can be admitted.
+
+The scope of the evidence, rather than whether the reviewer is human or AI,
+limits the conclusion. An AI can review a global-impact estimate and its basis.
+This queue review did not evaluate such an estimate or supply missing deployment,
+adoption and counterfactual evidence; passing its tests does not validate a
+global-risk decrement.
 
 A selected 10% humanity-wide risk is not a measured NorthStar baseline.
 No current revision supplies a calibrated numerical update to it. Estimating

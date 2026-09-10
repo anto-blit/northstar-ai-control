@@ -47,6 +47,7 @@ def load_queue_evidence(root):
         raise ValueError("Queue report and verification disagree")
     return {"summary": record["summary"], "tests": record["tests"],
             "recordedAt": record["recorded_at"], "reviewType": record["review_type"],
+            "reviewRounds": len(review["review_runs"]),
             "independentHumanReview": record["independent_human_review"]}
 
 

@@ -47,6 +47,10 @@ The 90 simulator mechanism/regression checks, queue checks, and dashboard checks
 are separate suites. The main displayed count comes from the simulator record.
 The persistent queue table is loaded from `results/queue-integration/verification.json`;
 its source, artifact and separate AI-review provenance hashes must also match.
+The dashboard credits the two recorded Claude rounds as independent AI review
+of the local stop contract, with project commissioning disclosed. The count does
+not imply that global-risk reduction was evaluated. The green bulb marks the
+zero-risk goal; the red marker marks the chosen 10% reference.
 Its counts describe authored integration cases, not a population risk estimate.
 `milestones.json`, the unexecuted-study status and the next-step descriptions
 are curated statements, not an automatically inferred research score.

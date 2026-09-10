@@ -64,7 +64,7 @@ The [guidance and evaluation protocol](protocol/instrumentation.md) tests the fo
 |---|---|---|
 | **Guidance** | Do principles illustrated through stories improve ethical decisions? | Proposed comparison; guidance materials and model runs pending |
 | **Evaluation** | Do decisions hold up across changed facts, unfamiliar settings, and conflicting incentives? | Paired-test protocol; reviewed corpus and scorer pending |
-| **Protection** | Do discovered failures lead to safeguards that withstand fresh attacks while allowing legitimate work? | Synthetic mechanisms, a persistent queue pilot and a four-method feasibility runner; independent human review and method comparison pending |
+| **Protection** | Do discovered failures lead to safeguards that withstand fresh attacks while allowing legitimate work? | Synthetic mechanisms and a persistent queue pilot with commissioned independent AI review; four-method comparison pending |
 
 Each part needs its own evidence. Recognizing a moral distinction does not establish that a system will respect it. We have no demonstrated alignment solution or numerical estimate of catastrophic-risk reduction. Internal probes and graph operators are deferred; the current priorities are comparative behavior tests and independently challenged safeguards.
 
@@ -103,11 +103,17 @@ The [persistent queue pilot](experiments/queued-stop/README.md) adds real proces
 HTTP and database boundaries with harmless local effects. Its internal comparison
 finds post-stop delivery under cooperative cancellation; both stronger controls
 prevent it while completing the required useful work. **The strong conventional
-comparator ties NorthStar.** The [separate Claude review and repair record](experiments/queued-stop/claude-review/README.md)
-preserves additional AI-authored challenges and the distinction from human review.
+comparator ties NorthStar.** The [independent AI review by Claude](experiments/queued-stop/claude-review/README.md)
+preserves independently authored challenges, the project's commissioning role, and the local scope of validation.
 The separate queue verification passes **10 internal and 53 Claude-authored checks**.
 
 These are bounded mechanism experiments and study plumbing. The independent comparison of search methods, arm-specific repairs, and renewed adaptive evaluation is the next research milestone. [Read the current evidence and remaining gaps →](EXPERIMENTS-STATUS.md)
+
+**What NorthStar still needs to demonstrate:** that story-guided search finds
+important failures missed by equally resourced conventional methods, or finds
+and repairs them at lower cost. The queue comparison did not test that idea.
+If the narrative approach adds no useful benefit, narrow that claim and keep
+the reusable tests and safeguards.
 
 **Next:** prepare a small, reviewed [guidance and paired-test sample](protocol/instrumentation.md#guidance-comparison) while completing the prerequisites for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md). The guidance conditions and discovery methods are separate comparisons. Neither has been run.
 

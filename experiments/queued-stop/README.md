@@ -86,8 +86,8 @@ that bypass works, and the trace checker detects the inconsistency. A hostile
 actor with such filesystem access is outside this pilot's protection.
 
 The internal inventory and evaluator were authored with the implementation.
-The [Claude review](claude-review/README.md) is separately commissioned AI review.
-It is not independent human or institutional validation. Passing local
+The [Claude review](claude-review/README.md) counts as independent AI review of
+the local contract, commissioned by the project using its harness. Passing local
 tests does not establish catastrophe coverage, adoption, or numerical global
 risk reduction.
 

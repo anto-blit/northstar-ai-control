@@ -1,5 +1,15 @@
 # Changelog
 
+## Dashboard mission and review credit — September 10, 2026
+
+- Use the founder's mission as the dashboard headline and a green bulb for the
+  zero-risk goal, with a red marker at the unchanged 10% reference.
+- Credit Claude's two review rounds as independent AI review of the local stop
+  contract, disclosing project commissioning and the scope of independence.
+- Explain the conventional tie and make the unrun comparison of NorthStar's
+  added value the next research decision. Historical review artifacts and
+  measured outcomes are unchanged; no global-risk reduction is assigned.
+
 ## Persistent queue and separate Claude review — September 9, 2026
 
 - Add loopback HTTP tools, a persistent SQLite job queue, separate worker/client

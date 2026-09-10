@@ -143,13 +143,17 @@ h1,h2,h3,p {
   margin-top:0
 }
 h1 {
-  font:normal 68px/1.04 var(--serif);
-  letter-spacing:-2.8px;
+  font:normal 54px/1.1 var(--serif);
+  letter-spacing:-1.8px;
+  text-wrap:balance;
   margin-bottom:25px
 }
 h1 em {
   font-weight:normal;
   color:var(--mint)
+}
+.hero-world {
+  white-space:nowrap;
 }
 .hero-description {
   color:var(--muted);
@@ -321,6 +325,28 @@ h1 em {
 }
 #queue-evidence table {
   min-width:560px;
+}
+.table-hint {
+  display:none;
+  font-size:11px;
+  color:var(--muted);
+}
+.next-question {
+  margin-top:26px;
+  padding-top:25px;
+  border-top:1px solid var(--line);
+}
+.next-question .eyebrow {
+  margin-bottom:12px;
+}
+.next-question h3 {
+  font-size:21px;
+  margin-bottom:12px;
+}
+.next-question>p:not(.eyebrow) {
+  color:var(--muted);
+  font-size:13px;
+  max-width:850px;
 }
 .tabs {
   padding:0 30px;
@@ -846,6 +872,9 @@ dialog strong {
 .goal-scale {
   fill:var(--mint);
 }
+.reference-scale {
+  fill:#ed7468;
+}
 .risk-reading .eyebrow {
   font-size:8px;
   color:#efab91;
@@ -1039,7 +1068,7 @@ dialog strong {
     gap:95px
   }
   h1 {
-    font-size:74px
+    font-size:60px
   }
 }
 @media(max-width:1050px) {
@@ -1050,7 +1079,7 @@ dialog strong {
     gap:32px
   }
   h1 {
-    font-size:58px
+    font-size:43px
   }
   .hero-actions {
     gap:14px
@@ -1130,8 +1159,15 @@ dialog strong {
     letter-spacing:1.4px
   }
   h1 {
-    font-size:57px;
-    letter-spacing:-2px
+    font-size:44px;
+    letter-spacing:-1.3px
+  }
+  .table-hint {
+    display:block;
+    margin:0 0 9px;
+  }
+  #queue-evidence .evidence-shell {
+    padding:22px 18px;
   }
   .hero-description {
     font-size:14px;
@@ -1350,7 +1386,7 @@ dialog strong {
 }
 @media(max-width:380px) {
   h1 {
-    font-size:49px
+    font-size:39px
   }
   .risk-panel {
     padding:15px
