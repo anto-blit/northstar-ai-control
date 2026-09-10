@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+<title id="title">NorthStar — Keep the future in human hands</title>
+<desc id="desc">A luminous north star guides branching paths. NorthStar invites people to build, challenge, and replicate research on meaningful human control over AI.</desc>
+<defs><radialGradient id="glow"><stop stop-color="#187f80" stop-opacity=".65"/><stop offset="1" stop-color="#071923" stop-opacity="0"/></radialGradient>
+    <linearGradient id="route" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#2d676f"/><stop offset="1" stop-color="#83f1d2"/></linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#60818c" stroke-opacity=".09"/></pattern></defs>
+<rect width="1600" height="720" fill="#071923"/>
+<rect width="1600" height="720" fill="url(#grid)"/>
+<ellipse cx="1260" cy="320" rx="460" ry="440" fill="url(#glow)"/>
+<circle cx="1258" cy="289" r="125" fill="none" stroke="#24505c" stroke-width="1.5"/>
+<circle cx="1258" cy="289" r="210" fill="none" stroke="#24505c" stroke-width="1.5"/>
+<circle cx="1258" cy="289" r="298" fill="none" stroke="#24505c" stroke-width="1.5"/>
+<path d="M948 720 C924 545 1060 569 1127 456 S1208 375 1258 289" fill="none" stroke="url(#route)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/>
+<path d="M1080 710 C1140 580 1270 629 1355 516 S1447 375 1258 289" fill="none" stroke="#316675" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/>
+<path d="M1600 442 L1450 390 L1375 223 L1258 289 L1097 197 L989 70" fill="none" stroke="#3e737a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/>
+<path d="M1135 91 L1258 289 L1475 113" fill="none" stroke="#335c65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 10"/>
+<path d="M1097 197 L1114 371 L1258 289 L1409 438" fill="none" stroke="#4c8e8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/>
+<circle cx="948" cy="650" r="14" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="948" cy="650" r="7" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1050" cy="530" r="13" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1050" cy="530" r="6" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1127" cy="456" r="15" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1127" cy="456" r="8" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1200" cy="364" r="12" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1200" cy="364" r="5" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1097" cy="197" r="12" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1097" cy="197" r="5" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1114" cy="371" r="11" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1114" cy="371" r="4" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1375" cy="223" r="13" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1375" cy="223" r="6" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1450" cy="390" r="12" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1450" cy="390" r="5" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1355" cy="516" r="13" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1355" cy="516" r="6" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1135" cy="91" r="11" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1135" cy="91" r="4" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1475" cy="113" r="12" fill="#0d2631" stroke="none" stroke-width="2"/>
+<circle cx="1475" cy="113" r="5" fill="#69c6b4" stroke="none" stroke-width="2"/>
+<circle cx="1258" cy="289" r="60" fill="#0e3841" stroke="#589b97" stroke-width="1"/>
+<path d="M1258 200 L1274.91 272.09 L1347 289 L1274.91 305.91 L1258 378 L1241.09 305.91 L1169 289 L1241.09 272.09 Z" fill="#c0fff0"/>
+<path d="M1258 246 L1266.17 280.83 L1301 289 L1266.17 297.17 L1258 332 L1249.83 297.17 L1215 289 L1249.83 280.83 Z" fill="#ffffff"/>
+<text x="1514" y="61" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="16" font-weight="600" fill="#a9c9c8" text-anchor="end" letter-spacing="2">CALIBRATED VISION</text>
+<text x="1514" y="87" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="12" font-weight="400" fill="#7ba0a5" text-anchor="end" letter-spacing="1.8">AN OPEN RESEARCH PROJECT</text>
+<path d="M94 64 L98.18 81.82 L116 86 L98.18 90.18 L94 108 L89.82 90.18 L72 86 L89.82 81.82 Z" fill="#83f1d2"/>
+<text x="135" y="96" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="27" font-weight="700" fill="#e5f4ef" text-anchor="start" letter-spacing="6">NORTHSTAR</text>
+<text x="80" y="246" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="79" font-weight="700" fill="#f6f4ee" text-anchor="start" letter-spacing="0">Keep the future</text>
+<text x="80" y="337" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="79" font-weight="700" fill="#f6f4ee" text-anchor="start" letter-spacing="0">in human hands.</text>
+<text x="84" y="411" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#bed1d2" text-anchor="start" letter-spacing="0">Build and test safeguards that preserve</text>
+<text x="84" y="451" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="29" font-weight="400" fill="#bed1d2" text-anchor="start" letter-spacing="0">meaningful human control over AI.</text>
+<rect x="83" y="512" width="362" height="49" rx="25" fill="#153c44" stroke="#36666a"/>
+<circle cx="107" cy="537" r="5" fill="#83f1d2" stroke="none" stroke-width="2"/>
+<text x="127" y="544" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="16" font-weight="600" fill="#a6ead8" text-anchor="start" letter-spacing="0">BUILD  /  CHALLENGE  /  REPLICATE</text>
+<path d="M84 618 H820" fill="none" stroke="#2d4852" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/>
+<text x="84" y="660" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="22" font-weight="400" fill="#e7bc90" text-anchor="start" letter-spacing="0">A research question worth testing. A future worth protecting.</text>
+<rect x="1110" y="581" width="303" height="47" rx="8" fill="#102e38" stroke="#3d6870"/>
+<text x="1261" y="611" font-family="Segoe UI,Arial,Helvetica,sans-serif" font-size="18" font-weight="600" fill="#b8e4d8" text-anchor="middle" letter-spacing="2">HUMAN AUTHORITY</text>
+</svg>

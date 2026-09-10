@@ -5,7 +5,8 @@
 - [x] Add the actual public repository URL to `CITATION.cff`.
 - [x] Canonical MIT license text is present.
 - [x] Add the supplied author name and citation metadata.
-- [x] Supply [GitHub Issues](https://github.com/anto-blit/northstar-ai-control/issues) as the public project contact channel.
+- [x] Supply a [collaboration form](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml), a failure-report form, and [Discussions](https://github.com/anto-blit/northstar-ai-control/discussions) as public GitHub contact channels.
+- [x] Add an inviting introduction, redesigned explanatory graphics, and [draft sharing copy](docs/SHARE.md).
 - [x] Execute irreversible-release and delegated-stop plumbing experiments.
 - [x] Repair token reuse/collision and failure of audit coupling; retain regression tests.
 - [x] Preserve original results and regenerate current results with source provenance.

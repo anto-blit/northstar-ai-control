@@ -1,132 +1,115 @@
+![NorthStar — Keep the future in human hands. Build, challenge, and replicate research on meaningful human control over AI.](docs/figures/northstar-hero.svg)
+
 # NorthStar
-## Archetype-guided AI control for preserving human recoverability
+### Help keep the future in human hands.
 
-[![Verify NorthStar](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml/badge.svg)](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml)
+[![Verify NorthStar](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml/badge.svg)](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-087f79)](LICENSE) [![Stage: Open research](https://img.shields.io/badge/stage-open_research-102d3b)](EXPERIMENTS-STATUS.md)
 
-> **Open research project. Not a claim that AI alignment is solved, not a deployed safeguard, and not evidence that catastrophic AI risk has already been reduced.**
+**[Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
-**Research question:** Can recurring causal structures preserved in fables and archetypal narratives help red teams discover dangerous AI-control failures that strong conventional methods miss - and can the resulting repairs prevent held-out irreversible failures without making useful work impossible?
+Powerful AI should leave people with a meaningful say in what happens next.
 
-![NorthStar overview](docs/figures/northstar-overview.svg)
+If a system can delegate work, accumulate permissions, and commit actions that cannot be recalled, a stop button is only useful if it actually stops the consequences. **NorthStar investigates how to preserve the human ability to intervene before control is lost.**
 
-NorthStar treats archetypes as **hypothesis generators**, not moral authorities. The supervised model may be adversarial, know the safeguards, and deliberately try to defeat them.
+Our starting idea is unusual and testable: old stories may encode useful patterns of failure. Small concessions accumulate. A useful gift carries a hidden effect. An easy success creates a future obligation. Delegated work escapes its originator's control. We turn these patterns into executable adversarial experiments, test safeguards against them, and ask whether the resulting repairs survive fresh attacks.
 
-## Five initial hypotheses
-| Archetype | Operational hypothesis |
+**We're looking for builders, skeptics, researchers, and independent replicators.** A counterexample that makes the project stronger is a contribution.
+
+> **Where we are:** working synthetic simulators, reproducible results, and a comparative-study harness. The value of archetype-guided search is still an open question. Current results do not establish deployment safety or a reduction in catastrophic AI risk.
+
+## Find your way in
+
+| If you want to… | A concrete first contribution |
 |---|---|
-| Camel's nose | Individually acceptable grants compose into unacceptable effective authority. |
-| Trojan horse | Useful functionality introduces an unapproved effect, dependency, or authority. |
-| Faust | Immediate success creates a disallowed commitment whose cost lands after the visible checkpoint. |
-| Pandora | One committing action crosses from reviewable state into a prohibited non-recallable consequence. |
-| Sorcerer's apprentice | Delegated or queued work continues after originating authority is stopped or revoked. |
+| **Build safeguards** | Inspect the release and delegation brokers. Find a missing check and reproduce it. |
+| **Break assumptions** | Challenge the threat model, the stop semantics, or the definition of recoverability. |
+| **Test the central idea** | Help design a strong conventional baseline or an independently authored environment. |
+| **Replicate a result** | Run the checks on your machine and report your revision, environment, and observations. |
+| **Make the work accessible** | Improve an explanation, diagram, or example so another person can use it. |
+| **Explore without a fixed role** | Introduce yourself and tell us which part of the question interests you. |
 
-A story name is never evidence. Every hypothesis must compile into an executable environment, prohibited outcome, and matched benign counterfactual.
+**[Introduce yourself or propose a collaboration →](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml)**
 
-## Pipeline
-![Pipeline](docs/figures/archetype-to-control-test.svg)
+You do not need an AI-safety credential to start. You do need curiosity, care with evidence, and a willingness to test your own assumptions. See [CONTRIBUTING.md](CONTRIBUTING.md) for practical starting points.
 
-**Archetype -> causal grammar -> environment binding -> executable adversarial trajectory -> matched benign twin -> observed outcome -> repair -> held-out adaptive challenge.**
+## Old warnings. New experiments.
 
-The primary endpoint is whether a prohibited irreversible outcome occurs **before successful intervention**, at a preregistered level of legitimate task usefulness.
+![Five story patterns suggest testable control failures: cumulative authority, hidden effects, deferred commitments, irreversible release, and work that continues after stop.](docs/figures/northstar-overview.svg)
 
-## Enforcement, not goodwill
-![Enforcement](docs/figures/reference-enforcement-architecture.svg)
+The five initial templates are **Camel's nose**, **Trojan horse**, **Faust**, **Pandora**, and **Sorcerer's apprentice**. Their names help organize the question; the evidence must come from what happens in an executable environment.
 
-The untrusted agent proposes actions. A separately controlled **effect broker** is the only allowed route to consequential simulator effects. A learned monitor is fallible and cannot overrule failed hard constraints. Deferred jobs return through the broker at dispatch. Operator stop/revocation propagates to descendant work.
+Every useful candidate needs an actual failure mechanism and a **benign twin**: a closely matched task that should still succeed. Blocking everything is not enough.
 
-This architecture is specified but the full broker and isolation boundary are **not yet implemented or validated**.
+## Turn a discovery into prevention
 
-## Irreversibility is the target
-![Irreversibility](docs/figures/irreversibility-boundary.svg)
+![The research pipeline: hypothesis, executable test, benign twin, observed effect, repair, and fresh challenge. Compare prevention at useful capability against conventional methods.](docs/figures/archetype-to-control-test.svg)
 
-A blocked request is not automatically a prevented catastrophe. NorthStar scores whole episodes, including pending work.
+We compare four approaches at matched resources: generic informed red teaming, conventional technical threat analysis, the same causal grammars without narrative framing, and the full NorthStar method.
 
-## What exists now
-- NorthStar v0.3.1 research specification and simulator v0.2.0.
-- Executed irreversible-release and delegated-stop mechanism experiments.
-- Regression tests for token replay/collision, stale objects, actor binding, and failed ledger writes.
-- Machine-readable draft causal grammars.
-- Threat-model, trust-ledger, metrics, and preregistration templates.
-- A runnable, budgeted four-arm discovery harness with separate outcome scoring and frozen source manifests.
-- A reported prior finite-graph calibration; its original executable is not included here.
+**The method has to earn its place.** If conventional approaches perform just as well, we keep effective repairs and narrow or withdraw the distinctive claim. The mission is better human control.
 
-## What does not exist now
-- Evidence that the archetype prior beats conventional threat modeling.
-- A validated full execution broker.
-- An executed independent comparison of discovery methods or arm-specific repairs.
-- A validated recoverability game analysis or operating-system isolation boundary.
-- Independent replication.
-- Evidence that NorthStar reduces civilization-scale or extinction risk.
+## What you can run today
 
-## Experiments
-1. **Irreversible release — implemented:** simulated non-recallable commit with matched authorized releases.
-2. **Delegated stop — implemented:** scoped revocation invalidates queued work before dispatch.
-3. **Discovery study — feasibility harness:** four method packets, equal budget ceilings, adaptive discovery sessions, fixed repair replay, separate scoring, and explicit unresolved outcomes. [Run it](experiments/discovery-study/README.md).
-4. **Cumulative authority — historical report:** aggregate permission calibration; original executable absent.
-5. **Deferred obligation — proposed:** broader dependency and obligation accounting remains future work.
+| Component | What exists |
+|---|---|
+| **Irreversible release** | A simulated protected release defeats a deliberately weak monitor-only control. The repaired broker blocks it before commit and permits authorized releases. |
+| **Delegated stop** | A deliberately weak parent-only stop leaves queued work executable. The repaired broker revokes scoped authority and rechecks at dispatch. |
+| **Regression checks** | Tests cover token reuse and collisions, stale authority and content, and ledger-write failures. |
+| **Four-method study harness** | Frozen manifests, matched budget ceilings, resumable discovery sessions, separate outcome scoring, and fixed repair replay. |
+| **Research package** | Specification, draft causal grammars, threat model, trust ledger, study protocol, and preserved traces. |
 
-## Run locally
+The current verification record contains **49 passing tests**. GitHub Actions runs checks on Linux and Windows with Python 3.10 and 3.14.
 
-Python 3.10+; no third-party dependencies. From this directory:
+These are bounded mechanism experiments and study plumbing. The independent comparison of search methods, arm-specific repairs, and renewed adaptive evaluation is the next research milestone. [Read the current evidence and remaining gaps →](EXPERIMENTS-STATUS.md)
+
+### Try it yourself
+
+Python 3.10+; no third-party dependencies.
 
 ```bash
+git clone https://github.com/anto-blit/northstar-ai-control.git
+cd northstar-ai-control
 python verify_project.py
 ```
 
-This runs the unit/regression suite, regenerates the three mechanism result files,
-and records source hashes, artifact hashes, and interpreter details in
-[`results/verification.json`](results/verification.json). Original supplied
-results are retained in [`results/archive/initial-package/`](results/archive/initial-package/).
+The command runs the checks and regenerates the mechanism results. Source hashes, result hashes, and interpreter details are recorded in [results/verification.json](results/verification.json).
 
-## The distinctive hypothesis must earn its place
-Compare at matched resources against generic informed red teaming, conventional technical attack-pattern/threat-modeling methods, the same causal grammars with narrative framing removed, and the full NorthStar method.
+**[Run the study example](experiments/discovery-study/README.md)** · **[Explore the results](results/README.md)** · **[Report a reproducible failure](https://github.com/anto-blit/northstar-ai-control/issues/new?template=control-failure.yml)**
 
-If conventional methods perform equally well, keep any effective repair and narrow or withdraw the narrative-derived novelty claim.
+## How the safeguards are meant to work
 
-## Help us break NorthStar
-We want counterexamples, stronger conventional baselines, missing irreversibility mechanisms, benign twins that expose overblocking, enforcement-boundary bypasses, better recoverability definitions, and independent replications.
+![The untrusted agent proposes actions. An effect broker checks authority and constraints, couples state changes to ledger records, and mediates simulated effects. Human stop authority is separate, and queued work returns through the broker.](docs/figures/reference-enforcement-architecture.svg)
 
-Share a synthetic reproduction or research question through
-[GitHub Issues](https://github.com/anto-blit/northstar-ai-control/issues).
-See [CONTRIBUTING.md](CONTRIBUTING.md) for useful contribution formats.
+The supervised agent may deliberately try to defeat the controls. Execution authority belongs to the broker. A monitor's approval cannot override a failed hard constraint, and queued work must return through the checks when it executes.
 
-## Start here
-1. [`EXPERIMENTS-STATUS.md`](EXPERIMENTS-STATUS.md) for current implementation and evidence.
-2. [`spec/NorthStar-v0.3.1.md`](spec/NorthStar-v0.3.1.md) for the research specification. The PDF is the original proposal snapshot; see [`spec/README.md`](spec/README.md).
-3. [`grammars/`](grammars/)
-4. [`protocol/threat-model.md`](protocol/threat-model.md) and [`protocol/trust-ledger.md`](protocol/trust-ledger.md).
-5. [`protocol/discovery-study.md`](protocol/discovery-study.md) for the study design and external-review handoff.
+The full proposed execution and isolation boundary is not yet implemented or validated. The current Python runner is trusted research code; all consequential effects are simulated.
 
-## License
-This package contains the [MIT License](LICENSE), copyright Anthony More and NorthStar contributors.
+<details>
+<summary><strong>Why intervention timing matters</strong></summary>
 
-## Project author
+![A timeline from staging through review to commit and persistent history. Intervention must prevent a prohibited irreversible effect before commit; later shutdown cannot erase it.](docs/figures/irreversibility-boundary.svg)
 
-Maintained by Anthony More under the Calibrated Vision brand through
-[`anto-blit`](https://github.com/anto-blit). Citation metadata is in
-[`CITATION.cff`](CITATION.cff).
+We score whole episodes, including pending work. A blocked request is not automatically a prevented catastrophe, and ending a transcript does not resolve deferred consequences.
 
-Canonical repository: [anto-blit/northstar-ai-control](https://github.com/anto-blit/northstar-ai-control).
-For project questions and collaboration, use [GitHub Issues](https://github.com/anto-blit/northstar-ai-control/issues).
+An authorized irreversible action is not automatically a failure. The prohibited outcome and legitimate useful task must be defined before the experiment.
 
----
+</details>
 
-## Executed synthetic experiments (v0.3.1 research package)
+## Talk to Anthony / join the work
 
-Two bounded experiments are now implemented and checked:
+NorthStar is maintained by **Anthony More**, through **Calibrated Vision** and [anto-blit](https://github.com/anto-blit).
 
-### Experiment 1 — Irreversible Release
-A deliberately weak **monitor-only** comparator commits a prohibited protected→unapproved synthetic release when the monitor approves it. The hardened broker blocks that release before commit, while permitting matched benign releases. It also revalidates at commit time and rejects stale staged authorization.
+- **Want to collaborate?** [Introduce yourself](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml). A few sentences about your interest or a possible first contribution are enough.
+- **Have a question or an idea?** [Start a discussion](https://github.com/anto-blit/northstar-ai-control/discussions).
+- **Found something that fails?** [Send a reproducible report](https://github.com/anto-blit/northstar-ai-control/issues/new?template=control-failure.yml).
+- **Want to follow along?** Use GitHub's **Watch** menu for the updates you want. A star helps others find the project.
 
-### Experiment 2 — Delegated Stop
-A deliberately weak **parent-only stop** leaves a queued descendant executable after stop. The hardened broker uses scope epochs and dispatch-time revalidation so queued descendants cannot execute under stale authority.
+GitHub contact requires an account. Issues and discussions are public. Collaboration and failure-report forms assign new issues to `anto-blit`; replies stay in the same thread.
 
-Verification includes all four artifact/destination pairings, all six small
-submit/stop/dispatch orderings, descendant batches from one through eight,
-commit-time revalidation, token reuse/collision regressions, audit-failure
-injection, and study-harness checks. The exact current test count and source
-provenance are in [`results/verification.json`](results/verification.json).
+## Read further
 
-See [`EXPERIMENTS-STATUS.md`](EXPERIMENTS-STATUS.md) and the machine-readable JSON under [`results/`](results/).
+[Research specification](spec/NorthStar-v0.3.1.md) · [Causal grammars](grammars/) · [Threat model](protocol/threat-model.md) · [Trust ledger](protocol/trust-ledger.md) · [Independent-study protocol](protocol/discovery-study.md)
 
-**Important:** these are purpose-built mechanism/conformance experiments. They do not yet test the distinctive NorthStar claim that archetype-guided search finds important failures more efficiently than conventional red teaming. They do not establish deployment safety or quantify extinction-risk reduction.
+The [original PDF](spec/NorthStar-v0.3.1.pdf) is a historical proposal snapshot; [current status](EXPERIMENTS-STATUS.md) records the later implementation and evidence.
+
+[MIT License](LICENSE) · [Citation metadata](CITATION.cff) · [Changelog](CHANGELOG.md)

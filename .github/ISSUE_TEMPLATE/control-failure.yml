@@ -1,0 +1,39 @@
+name: Report a failure or counterexample
+description: Show a reproducible control failure, overblocking, or a broken research assumption.
+title: "[Counterexample] "
+assignees:
+  - anto-blit
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A counterexample helps improve the project. You do not need a finished fix.
+        This report is public. Use synthetic data and omit credentials or private information.
+  - type: input
+    id: revision
+    attributes:
+      label: Source revision and environment
+      placeholder: Commit SHA, Python version, and operating system, if applicable
+    validations:
+      required: false
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How can we reproduce it?
+      description: Give a minimal script, action sequence, or precise argument with links to the relevant code or specification.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected behavior and observed outcome
+      description: Explain the effect or assumption that fails. Include pending work and any useful task that gets blocked.
+    validations:
+      required: true
+  - type: textarea
+    id: repair
+    attributes:
+      label: Possible repair or next test
+      description: Optional. An unresolved question is useful too.
+    validations:
+      required: false

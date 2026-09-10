@@ -1,0 +1,38 @@
+name: Get involved / contact Anthony
+description: Introduce yourself, offer a skill, or propose a first contribution.
+title: "[Get involved] "
+assignees:
+  - anto-blit
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us test whether NorthStar can make human control more reliable.
+        A few sentences are enough. This opens a public conversation with Anthony More (@anto-blit).
+  - type: dropdown
+    id: interest
+    attributes:
+      label: What interests you?
+      options:
+        - Building or testing safeguards
+        - Red teaming or challenging assumptions
+        - Independent experiments or replication
+        - Research design or conventional baselines
+        - Writing, diagrams, or examples
+        - Exploring where I could help
+    validations:
+      required: true
+  - type: textarea
+    id: introduction
+    attributes:
+      label: Tell us a little about your interest
+      description: What caught your attention, or what would you like to help investigate?
+    validations:
+      required: true
+  - type: textarea
+    id: first-step
+    attributes:
+      label: A possible first step
+      description: Optional. A question, contribution idea, or useful connection is welcome.
+    validations:
+      required: false

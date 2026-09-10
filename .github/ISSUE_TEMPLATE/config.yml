@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and research ideas
+    url: https://github.com/anto-blit/northstar-ai-control/discussions
+    about: Ask a question, explore an idea, or join a conversation about the research.
