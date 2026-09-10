@@ -316,6 +316,12 @@ h1 em {
   overflow:hidden;
   background:var(--panel-deep)
 }
+#queue-evidence .evidence-shell {
+  padding:30px;
+}
+#queue-evidence table {
+  min-width:560px;
+}
 .tabs {
   padding:0 30px;
   border-bottom:1px solid var(--line);
@@ -448,7 +454,7 @@ h1 em {
 }
 .tick-row {
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:5px;
   margin-bottom:6px
 }

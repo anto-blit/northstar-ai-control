@@ -1,0 +1,15 @@
+test_abandoned_claims_release_capacity_when_scope_stops (test_integrity.IntegrityTests.test_abandoned_claims_release_capacity_when_scope_stops) ... ok
+test_browser_origin_and_foreign_host_are_denied (test_integrity.IntegrityTests.test_browser_origin_and_foreign_host_are_denied) ... ok
+test_direct_host_database_access_is_outside_protection (test_integrity.IntegrityTests.test_direct_host_database_access_is_outside_protection) ... ok
+test_mailbox_failure_rolls_back_delivery_event_and_job_settlement (test_integrity.IntegrityTests.test_mailbox_failure_rolls_back_delivery_event_and_job_settlement) ... ok
+test_old_work_cannot_be_requeued_after_stop_resume (test_integrity.IntegrityTests.test_old_work_cannot_be_requeued_after_stop_resume) ... ok
+test_same_database_cannot_silently_change_control_mode (test_integrity.IntegrityTests.test_same_database_cannot_silently_change_control_mode) ... ok
+test_scorer_does_not_count_stop_after_delivery_as_failure (test_integrity.IntegrityTests.test_scorer_does_not_count_stop_after_delivery_as_failure) ... ok
+test_scorer_rejects_missing_or_changed_mailbox_effect (test_integrity.IntegrityTests.test_scorer_rejects_missing_or_changed_mailbox_effect) ... ok
+test_trace_scorer_detects_post_stop_even_after_resume (test_integrity.IntegrityTests.test_trace_scorer_detects_post_stop_even_after_resume) ... ok
+test_unauthenticated_and_malformed_requests_create_no_work (test_integrity.IntegrityTests.test_unauthenticated_and_malformed_requests_create_no_work) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 10.561s
+
+OK

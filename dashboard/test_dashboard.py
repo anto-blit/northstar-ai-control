@@ -28,6 +28,25 @@ class EvidenceTests(unittest.TestCase):
                        "source_sha256": {"proof.py": sha256(b"verified source\n").hexdigest()},
                        "artifact_sha256": hashes}
         self.save_report()
+        queue = self.root / "results/queue-integration"
+        (queue / "internal").mkdir(parents=True)
+        internal = {"technical_errors": [], "summary": {}, "source_sha256": self.report["source_sha256"]}
+        (queue / "internal/report.json").write_text(json.dumps(internal))
+        (self.root / "review.md").write_text("Separate AI review fixture")
+        (self.root / "review.json").write_text(json.dumps({"artifact_sha256": {"review.md": sha256((self.root / "review.md").read_bytes()).hexdigest()}}))
+        self.queue_report = {
+            "schema_version": 1, "source_sha256": self.report["source_sha256"],
+            "artifact_sha256": {"internal/report.json": sha256((queue / "internal/report.json").read_bytes()).hexdigest()},
+            "tests": {"internal": {"tests_run": 10, "failures": 0, "errors": 0},
+                      "claude_authored": {"tests_run": 1, "failures": 0, "errors": 0}},
+            "review_provenance": "review.json", "review_provenance_sha256": sha256((self.root / "review.json").read_bytes()).hexdigest(),
+            "summary": {}, "recorded_at": self.report["started_at"],
+            "review_type": "Separate AI review", "independent_human_review": False,
+        }
+        self.save_queue_report()
+
+    def save_queue_report(self):
+        (self.root / "results/queue-integration/verification.json").write_text(json.dumps(self.queue_report))
 
     def save_report(self):
         (self.root / "results/verification.json").write_text(json.dumps(self.report), encoding="utf-8")
@@ -43,7 +62,8 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(data["risk"]["claimRangePercent"], [10, 20])
         self.assertIn("wbur.org/onpoint/", data["risk"]["claimSource"])
         self.assertIn("not a rolling horizon", data["risk"]["claimTimeHorizon"])
-        self.assertEqual(data["risk"]["demonstratedProtectionScope"], "Fixed synthetic broker comparisons only")
+        self.assertEqual(data["risk"]["demonstratedProtectionScope"], "Synthetic brokers and local HTTP/SQLite queue integration only")
+        self.assertFalse(data["queue"]["independentHumanReview"])
 
     def test_more_passing_tests_do_not_subtract_from_extinction_risk(self):
         before = deepcopy(dashboard.load_evidence(self.root)["risk"])
@@ -85,6 +105,22 @@ class EvidenceTests(unittest.TestCase):
         self.assertIn('id="northstar-data" type="application/json"', first)
         self.assertNotIn("@@DATA@@", first)
         self.assertNotIn("fetch(", first)
+
+    def test_changed_queue_report_cannot_be_published(self):
+        (self.root / "results/queue-integration/internal/report.json").write_text('{"edited":true}')
+        with self.assertRaisesRegex(ValueError, "changed since verification"):
+            dashboard.load_evidence(self.root)
+
+    def test_failed_queue_checks_cannot_be_published_as_passing(self):
+        self.queue_report["tests"]["internal"]["failures"] = 1
+        self.save_queue_report()
+        with self.assertRaisesRegex(ValueError, "failed queue"):
+            dashboard.load_evidence(self.root)
+
+    def test_changed_reviewer_provenance_cannot_be_published(self):
+        (self.root / "review.json").write_text('{"type":"unverified endorsement"}')
+        with self.assertRaisesRegex(ValueError, "changed since verification"):
+            dashboard.load_evidence(self.root)
 
 
 if __name__ == "__main__":

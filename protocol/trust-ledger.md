@@ -28,3 +28,16 @@ These are local tests authored with the implementation. No independent security
 review, operating-system isolation test, learned-monitor evaluation, human-error
 measurement, or external ledger anchoring has been completed. Current result
 hashes and interpreter details are in `results/verification.json`.
+
+## Persistent queue pilot
+
+The [queue integration](../experiments/queued-stop/README.md) separately tests
+loopback HTTP role boundaries, SQLite authority/effect transactions, worker claim
+binding, stop/resume, restarts, concurrency and useful completion. Its host-side
+fault injection confirms rollback on a failed mailbox write. An explicit direct
+database write also demonstrates that a same-account filesystem actor can bypass
+the broker; process separation must not be described as verified OS isolation.
+
+The separate Claude review is commissioned AI review with a frozen candidate and
+recorded tests, not independent human validation. The original simulator's
+verification record and 90-test count remain separate from this evidence.

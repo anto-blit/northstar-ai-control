@@ -1,0 +1,84 @@
+{
+  "artifact_sha256": {
+    "claude_authored-tests.txt": "01918c1097c55900ba1393f53270fddd4786bee411cd9b4b2b1454e363846e5d",
+    "internal-tests.txt": "19a340e36c473120da504c7094b26a264c0f1ddc0661554a2752d34cec1b3a4d",
+    "internal/report.json": "f09a2c6651834343c467c4708164603994bd46ad08fd139d7a321a95c1d55c38"
+  },
+  "global_risk_reduction_percent": null,
+  "independent_human_review": false,
+  "platform": "Windows",
+  "python": "3.14.5",
+  "recorded_at": "2026-09-10T07:00:48.777729+00:00",
+  "review_provenance": "experiments/queued-stop/claude-review/provenance.json",
+  "review_provenance_sha256": "aabaf273d5fcaea1a1f967ebd8c29862828159b5038405a69b81d12cac1c06f9",
+  "review_type": "Separate AI review commissioned by implementer; regression replay by project harness",
+  "schema_version": 1,
+  "source_sha256": {
+    "experiments/queued-stop/PROTOCOL.md": "b8aa16822549403f43d828c56a40fc81b45d44ab85a6ad3c5b593aeeb6e0e4fb",
+    "experiments/queued-stop/REVIEW-API.md": "59976221f776d65c07adde3c4d70eb2e9f87438f8f59eb675c2b41d2ab887f2c",
+    "experiments/queued-stop/cases.json": "52b907eeecb27c96911a626a8d1a0db3563f71b869eb81df4dca0ab06ba8d5ee",
+    "northstar_queue/__init__.py": "e0ab98b12aeb20ac5155487adcbbd69c668ca8ed6e53ed1e3d72bb1854bce228",
+    "northstar_queue/client.py": "2417721a32021d320e5b88b3a124d0ba1af4f59d182aba9d4e3c53b803b84da9",
+    "northstar_queue/evaluate.py": "52d8e47cd2fc7ca5a1458fe21be7983ebce4eab088d2cf4027a1f14af4665244",
+    "northstar_queue/experiment.py": "87cc741debe184907c94774bc0cbebfcb1fe59ab4dff98975625df4eb70ff9cc",
+    "northstar_queue/harness.py": "2936ddfa59adc152db5ab28ff582faf38affd69ee53d22ec1e0d2cef3f5961c0",
+    "northstar_queue/server.py": "285e49e915223db11acc80d9ce677a90d7791753096f74412b2c5fccd04f157f",
+    "northstar_queue/store.py": "7d880950fb4962046251f7b6aea3da7d2c99fe1a006b7e974f66e3f83ec657dc",
+    "northstar_queue/verify.py": "5438dcee7202366f5f655311f538ee91bbdd90d0828feffef23f395c22a9b448",
+    "queue_tests/test_integrity.py": "abdfec6c5d2221c1edfdc1571b62f39d93fa59cbba86d77e5e2d78451774a44a",
+    "review_tests/support.py": "1fa75d177fc549ee05ababf8f20bc72cd498f78d5d121282ec84491602237600",
+    "review_tests/test_concurrency_restart.py": "89497a61a26980df66a5524ba7d20773721d6053760f0caf834e201a8b461263",
+    "review_tests/test_http_authority.py": "182455299039bc487e44122607ac97b755ef4a07075cd04e64b025e840448c2c",
+    "review_tests/test_review2_adversarial.py": "23f65335775411847460055b8f0955eb3a7989628706affe7d7bc24d0d547a2e",
+    "review_tests/test_review2_authority_model.py": "e4bd892c04fb3f6ea54aa0fadd0a025f7e2d769937083cdc5d5ec8ac74cbd98b",
+    "review_tests/test_review2_http_surface.py": "74b3e176ca9f1f3141d08abae101d66dd92a8bcdc54446047ded0c368fd0b60d",
+    "review_tests/test_review2_repair.py": "948e2876e592d04be191ffe3501c0de42f588df2fa9b60e65f4828171d52caf7",
+    "review_tests/test_settlement_and_scorer.py": "d0e31007798cbfe48f406958297b2ef568a2863060c29bdc8c1ea5f31f8ea1d5",
+    "review_tests/test_stop_boundary.py": "c4dc470eb3b40f25088856e14d348e7b2da965ee95830ddd74690fab04d3542b",
+    "review_tests/test_useful_work.py": "c661414f5e90093b6c9fb4ed75e74a9f1b0ddbb7e03bf0aee3d4e853f01e1f2c"
+  },
+  "summary": {
+    "cooperative_cancel": {
+      "authorized_jobs_completed": 33,
+      "cases_with_prohibited_delivery": 6,
+      "completed_cases": 14,
+      "integrity_errors": 0,
+      "max_observed_stop_ack_seconds": 0.05396029999246821,
+      "prohibited_deliveries": 11,
+      "required_authorized_jobs": 33,
+      "unsettled_jobs": 0
+    },
+    "epoch_fence": {
+      "authorized_jobs_completed": 33,
+      "cases_with_prohibited_delivery": 0,
+      "completed_cases": 14,
+      "integrity_errors": 0,
+      "max_observed_stop_ack_seconds": 0.06064719999267254,
+      "prohibited_deliveries": 0,
+      "required_authorized_jobs": 33,
+      "unsettled_jobs": 0
+    },
+    "transactional_cancel": {
+      "authorized_jobs_completed": 33,
+      "cases_with_prohibited_delivery": 0,
+      "completed_cases": 14,
+      "integrity_errors": 0,
+      "max_observed_stop_ack_seconds": 0.04152369999792427,
+      "prohibited_deliveries": 0,
+      "required_authorized_jobs": 33,
+      "unsettled_jobs": 0
+    }
+  },
+  "tests": {
+    "claude_authored": {
+      "errors": 0,
+      "failures": 0,
+      "tests_run": 53
+    },
+    "internal": {
+      "errors": 0,
+      "failures": 0,
+      "tests_run": 10
+    }
+  }
+}

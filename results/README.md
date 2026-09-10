@@ -18,6 +18,17 @@ ticks, not seconds, and monitor error rates are inputs, not measurements.
 `verification.json` records the source hashes, result hashes, interpreter, and
 test count from the latest `python verify_project.py` execution.
 
+`queue-integration/` is a separate persistent HTTP/SQLite pilot. Its verification
+record binds runtime sources, internal and Claude-authored regression tests,
+the 42 internal case/control traces, and separate-AI review provenance. It does
+not alter the 90-test simulator record. Race orders, IDs and timings can vary;
+the comparison checks consequences and required useful completions.
+
+The original reviewed queue candidate, findings and tests are preserved under
+[`experiments/queued-stop/claude-review/`](../experiments/queued-stop/claude-review/).
+Neither a Claude review nor a passing replay establishes independent human
+validation, deployment adoption, narrative advantage, or global-risk reduction.
+
 `archive/initial-package/` preserves the original supplied JSON files, which
 precede the token and audit-atomicity repairs. Their original source provenance
 was not supplied; do not attribute them to the repaired implementation.

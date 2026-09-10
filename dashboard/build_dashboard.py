@@ -23,6 +23,33 @@ def checked_file(root, relative, expected):
     return path
 
 
+def load_queue_evidence(root):
+    folder = "results/queue-integration/"
+    record = json.loads((root / folder / "verification.json").read_text(encoding="utf-8"))
+    if record["schema_version"] != 1 or not record["source_sha256"] or not record["artifact_sha256"]:
+        raise ValueError("Queue evidence requires versioned provenance")
+    if set(record["tests"]) != {"internal", "claude_authored"} or any(
+            not suite["tests_run"] or suite["failures"] or suite["errors"] for suite in record["tests"].values()):
+        raise ValueError("Cannot publish failed queue verification as passing")
+    for path, digest in record["source_sha256"].items():
+        checked_file(root, path, digest)
+    for path, digest in record["artifact_sha256"].items():
+        checked_file(root, folder + path, digest)
+    review_path = checked_file(root, record["review_provenance"], record["review_provenance_sha256"])
+    review = json.loads(review_path.read_text(encoding="utf-8"))
+    if not review["artifact_sha256"]:
+        raise ValueError("Review evidence requires artifact provenance")
+    for path, digest in review["artifact_sha256"].items():
+        checked_file(root, path, digest)
+    report = json.loads((root / folder / "internal/report.json").read_text(encoding="utf-8"))
+    if (report["technical_errors"] or report["summary"] != record["summary"]
+            or report["source_sha256"] != record["source_sha256"]):
+        raise ValueError("Queue report and verification disagree")
+    return {"summary": record["summary"], "tests": record["tests"],
+            "recordedAt": record["recorded_at"], "reviewType": record["review_type"],
+            "independentHumanReview": record["independent_human_review"]}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -53,7 +80,7 @@ def load_evidence(root=ROOT):
             "claimRangePercent": [10.0, 20.0],
             "claimInterviewDate": "2025-01-10",
             "claimTimeHorizon": "Within 30 years, as discussed in the cited interview; not a rolling horizon",
-            "demonstratedProtectionScope": "Fixed synthetic broker comparisons only",
+            "demonstratedProtectionScope": "Synthetic brokers and local HTTP/SQLite queue integration only",
             "basis": "The project selects the lower end of Hinton's subjective range as a reference assumption, not a current assessment or expert consensus. Global reduction is unestimated.",
         },
         "verification": {
@@ -67,6 +94,7 @@ def load_evidence(root=ROOT):
         },
         "recovery": recovery,
         "monitor": monitor,
+        "queue": load_queue_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

@@ -34,7 +34,7 @@ independent measurements. These are reasons to investigate the danger, not
 evidence of NorthStar's effectiveness.
 
 The dashboard separately reports potential global reduction as **unquantified**,
-protection demonstrated in the simulations, and global reduction as **not
+protection demonstrated in simulations and the local queue pilot, and global reduction as **not
 established**. [Assessment rules](evidence-progress.md#limits-on-risk-claims)
 explain what evidence a future update would require. New evidence could raise
 a risk estimate as well as lower it; zero remains an aspiration.

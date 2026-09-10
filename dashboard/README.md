@@ -43,8 +43,11 @@ sources, changed results or absent provenance stop the build. The dashboard
 uses schema-2 recovery and monitor results; it does not rerun or reinterpret
 them as a discovery-method comparison.
 
-The 90 mechanism/regression checks and the eight dashboard checks are separate
-suites. The displayed count comes from the mechanism verification record.
+The 90 simulator mechanism/regression checks, queue checks, and dashboard checks
+are separate suites. The main displayed count comes from the simulator record.
+The persistent queue table is loaded from `results/queue-integration/verification.json`;
+its source, artifact and separate AI-review provenance hashes must also match.
+Its counts describe authored integration cases, not a population risk estimate.
 `milestones.json`, the unexecuted-study status and the next-step descriptions
 are curated statements, not an automatically inferred research score.
 

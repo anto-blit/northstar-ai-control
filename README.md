@@ -29,7 +29,7 @@ We publish our code, methods, completed results, and limitations so others can c
 
 **Help us break NorthStar. Help us improve it. Help us test whether its safeguards can earn a role in real systems.**
 
-> **Where we are:** working synthetic simulators, reproducible results, and a comparative-study harness. Story-based moral guidance and its behavioral evaluation are proposed work; this repository does not yet demonstrate a story-trained AI. The value of narrative guidance and search remains untested.
+> **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, reproducible results, and a comparative-study harness. Story-based moral guidance and its behavioral evaluation are proposed work; this repository does not yet demonstrate a story-trained AI. The value of narrative guidance and search remains untested.
 
 ## Find your way in
 
@@ -64,7 +64,7 @@ The [guidance and evaluation protocol](protocol/instrumentation.md) tests the fo
 |---|---|---|
 | **Guidance** | Do principles illustrated through stories improve ethical decisions? | Proposed comparison; guidance materials and model runs pending |
 | **Evaluation** | Do decisions hold up across changed facts, unfamiliar settings, and conflicting incentives? | Paired-test protocol; reviewed corpus and scorer pending |
-| **Protection** | Do discovered failures lead to safeguards that withstand fresh attacks while allowing legitimate work? | Synthetic mechanisms and a four-method feasibility runner; independent comparison pending |
+| **Protection** | Do discovered failures lead to safeguards that withstand fresh attacks while allowing legitimate work? | Synthetic mechanisms, a persistent queue pilot and a four-method feasibility runner; independent human review and method comparison pending |
 
 Each part needs its own evidence. Recognizing a moral distinction does not establish that a system will respect it. We have no demonstrated alignment solution or numerical estimate of catastrophic-risk reduction. Internal probes and graph operators are deferred; the current priorities are comparative behavior tests and independently challenged safeguards.
 
@@ -88,6 +88,7 @@ risk. Global reduction remains unestimated. [Open locally or rebuild it →](das
 |---|---|
 | **Irreversible release** | A simulated protected release defeats a deliberately weak monitor-only control. The repaired broker blocks it before commit and permits authorized releases. |
 | **Delegated stop** | A deliberately weak parent-only stop leaves queued work executable. The repaired broker revokes scoped authority and rechecks at dispatch. |
+| **Persistent queue integration** | Separate processes and a durable local mailbox test claimed-work cancellation, restart, retries and useful completion against cooperative cancellation and a strong conventional transaction check. |
 | **Recoverability windows** | Finite-game search requires reaching a safe fallback before the deadline; results compare operator-first, scheduler-first and adversarially chosen ordering. |
 | **Monitor-error sweep** | Declared false-negative and false-positive rates test content screening and permission revoked after approval, alongside legitimate work. |
 | **Regression checks** | Tests cover token reuse and collisions, stale authority and content, and ledger-write failures. |
@@ -97,6 +98,14 @@ risk. Global reduction remains unestimated. [Open locally or rebuild it →](das
 The current verification record contains **90 passing tests**. GitHub Actions runs checks on Linux and Windows with Python 3.10 and 3.14.
 
 The timing result is concrete: **the stop repair buys an extra model tick only when stop runs before dispatch**. If dispatch can run first, that extra tick disappears. The monitor sweep also shows why correct approval is insufficient after authority changes: the repaired broker blocks queued work after stop, while the weak broker executes it. Without a stop, neither delegation broker screens forbidden content beyond its monitor. These are synthetic results under stated assumptions; monitor error rates are inputs, not measurements of a real AI.
+
+The [persistent queue pilot](experiments/queued-stop/README.md) adds real process,
+HTTP and database boundaries with harmless local effects. Its internal comparison
+finds post-stop delivery under cooperative cancellation; both stronger controls
+prevent it while completing the required useful work. **The strong conventional
+comparator ties NorthStar.** The [separate Claude review and repair record](experiments/queued-stop/claude-review/README.md)
+preserves additional AI-authored challenges and the distinction from human review.
+The separate queue verification passes **10 internal and 53 Claude-authored checks**.
 
 These are bounded mechanism experiments and study plumbing. The independent comparison of search methods, arm-specific repairs, and renewed adaptive evaluation is the next research milestone. [Read the current evidence and remaining gaps →](EXPERIMENTS-STATUS.md)
 
@@ -122,7 +131,7 @@ The command runs the checks and regenerates the mechanism results. Source hashes
 
 The supervised agent may deliberately try to defeat the controls. Execution authority belongs to the broker. A monitor's approval cannot override a failed hard constraint, and queued work must return through the checks when it executes.
 
-The full proposed execution and isolation boundary is not yet implemented or validated. The current Python runner is trusted research code; all consequential effects are simulated.
+The full proposed execution and isolation boundary is not yet implemented or validated. The original Python runner simulates effects. The queue pilot commits harmless local mailbox rows; its host and database files remain trusted, and it does not establish enforcement for external destinations.
 
 <details>
 <summary><strong>Why intervention timing matters</strong></summary>

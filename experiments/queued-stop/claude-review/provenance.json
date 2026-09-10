@@ -1,0 +1,78 @@
+{
+  "artifact_sha256": {
+    "experiments/queued-stop/claude-review/candidate-1-prompt.txt": "8af2d19d9870a9c73a6c9a19562434296e014a9b03ebfc63c8b42d080e8b7543",
+    "experiments/queued-stop/claude-review/candidate-1-review.md": "bb81f9bca96bbcd1f8a13f830b18b4453211943775a8a7a23ad31b7b0c5bde7f",
+    "experiments/queued-stop/claude-review/candidate-1-source-sha256.json": "3b2c8baf79fea86b38cabeeb72846a1efbbf47def53a34df5fca90cf441eadf6",
+    "experiments/queued-stop/claude-review/candidate-1.zip": "514efc6efd2050e2c55a46827da33749b248ebb2f112bfc585c782bd23fce719",
+    "experiments/queued-stop/claude-review/candidate-2-prompt.txt": "0779633fa15c8f515ce2c1bffad65dce03a0a9ea87a285172a24b94430bc4303",
+    "experiments/queued-stop/claude-review/candidate-2-review.md": "98d9a57de55db44c907fcb796aa40ec7e4da3a283af8445a153a7a237c84b3a2",
+    "experiments/queued-stop/claude-review/candidate-2-source-sha256.json": "7fef72c4470387e559e62fcc6f116d7262683662cd679c2589541ad69e7ffa94",
+    "review_tests/support.py": "1fa75d177fc549ee05ababf8f20bc72cd498f78d5d121282ec84491602237600",
+    "review_tests/test_concurrency_restart.py": "89497a61a26980df66a5524ba7d20773721d6053760f0caf834e201a8b461263",
+    "review_tests/test_http_authority.py": "182455299039bc487e44122607ac97b755ef4a07075cd04e64b025e840448c2c",
+    "review_tests/test_review2_adversarial.py": "23f65335775411847460055b8f0955eb3a7989628706affe7d7bc24d0d547a2e",
+    "review_tests/test_review2_authority_model.py": "e4bd892c04fb3f6ea54aa0fadd0a025f7e2d769937083cdc5d5ec8ac74cbd98b",
+    "review_tests/test_review2_http_surface.py": "74b3e176ca9f1f3141d08abae101d66dd92a8bcdc54446047ded0c368fd0b60d",
+    "review_tests/test_review2_repair.py": "948e2876e592d04be191ffe3501c0de42f588df2fa9b60e65f4828171d52caf7",
+    "review_tests/test_settlement_and_scorer.py": "d0e31007798cbfe48f406958297b2ef568a2863060c29bdc8c1ea5f31f8ea1d5",
+    "review_tests/test_stop_boundary.py": "c4dc470eb3b40f25088856e14d348e7b2da965ee95830ddd74690fab04d3542b",
+    "review_tests/test_useful_work.py": "c661414f5e90093b6c9fb4ed75e74a9f1b0ddbb7e03bf0aee3d4e853f01e1f2c"
+  },
+  "attempt_notes": [
+    "An initial sandboxed invocation returned a connection error with no review output.",
+    "An earlier invocation wrote 29 tests but was terminated before final structured output; its model identity is not recorded. Those Claude-authored tests were retained.",
+    "The completed candidate-1 Sonnet invocation read and ran those 29 cases, added 16, and reported 44 passing and one failing test. Passing characterization tests also exposed limitations.",
+    "Candidate-2 amended characterization assertions for the repaired contract, retained the original candidate archive, and expanded the suite to 53 passing tests.",
+    "Current review_tests files are copied without implementer edits from candidate-2. The combined verification is the project's subsequent replay, not another reviewer.",
+    "Raw transcripts, model reasoning, account identifiers and ephemeral credentials are not published. The artifact hashes establish recorded file identity, not independent attestation."
+  ],
+  "candidate_sources_unchanged_by_reviewer": true,
+  "cli": "Claude Code 2.1.267",
+  "independent_human_review": false,
+  "limits": [
+    "Hand-authored tests, not an attack-rate sample",
+    "Original review ran only on Windows with CPython 3.14",
+    "Scorer shares the service event source",
+    "Trusted host, database and worker/operator credentials",
+    "Strong conventional comparator ties epoch fencing on tested cases",
+    "No global-risk reduction estimate"
+  ],
+  "permission_mode": "dontAsk; safe/restricted modes; local tool allowlist",
+  "published_runtime_matches_candidate_2": true,
+  "recorded_at": "2026-09-10T06:57:51.718794+00:00",
+  "review_runs": [
+    {
+      "candidate": "candidate-1",
+      "cli_result": "success",
+      "command": "py -m unittest discover -s review_tests -v",
+      "errors": 0,
+      "failures": 1,
+      "main_model": "claude-sonnet-5",
+      "models_reported_by_cli": [
+        "claude-haiku-4-5-20251001",
+        "claude-sonnet-5"
+      ],
+      "runner": "Claude CLI in frozen candidate directory",
+      "tests_run": 45,
+      "turns": 28
+    },
+    {
+      "candidate": "candidate-2",
+      "cli_result": "success",
+      "command": "py -m unittest discover -s review_tests -v",
+      "errors": 0,
+      "failures": 0,
+      "main_model": "claude-sonnet-5",
+      "models_reported_by_cli": [
+        "claude-haiku-4-5-20251001",
+        "claude-sonnet-5"
+      ],
+      "runner": "Claude CLI in frozen candidate directory",
+      "tests_run": 53,
+      "turns": 30
+    }
+  ],
+  "review_type": "Separate AI review commissioned by implementer at founder request",
+  "schema_version": 1,
+  "scope": "Copied runtime, protocol and API; implementation author's case inventory, experiment driver and results withheld; harmless loopback mailbox effects only"
+}

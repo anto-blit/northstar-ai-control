@@ -46,6 +46,7 @@ Git times below use America/Los_Angeles.
 | Instrumentation revision I1, [2606fde](https://github.com/anto-blit/northstar-ai-control/commit/2606fde) | September 9, 2026 | Restores paired evaluation and exploratory representation proposals; corrects metrics and unsupported guarantees |
 | Guidance and evaluation revision I2 | September 9, 2026 | Restores the moral-guidance question, defines a direct comparator, and defers speculative branches; no new model experiment |
 | Recovery and monitor analyses, including review corrections | September 9, 2026 | Explicit safe targets, three delegation timing models, content/revocation comparisons and 90 tests; no study-episode recoverability or learned-monitor result |
+| Persistent delegated-stop integration | September 9, 2026 | HTTP tools, separate processes, a durable SQLite mailbox and conventional comparators; internal experiments and a separately commissioned Claude review, with no independent human validation or global-impact estimate |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not
@@ -78,6 +79,20 @@ not established. Demonstrated local protection is narrower: for example, the
 fixed post-stop comparison at zero monitor errors has 400/400 failures with the
 starting control and 0/400 with its repair. That result tests a specified boundary
 in simulation. It does not establish a real-world failure rate or global effect.
+
+The [persistent queue pilot](../experiments/queued-stop/README.md) tests the same
+kind of boundary with local HTTP calls and database commits. Both strong controls
+prevent post-stop deliveries in the internal inventory, and the conventional
+transactional check ties the epoch-fenced implementation. This supports the
+shared protection mechanism. It does not establish a distinctive benefit from
+NorthStar or its narrative approach. The test clients are scripted, the host is
+trusted, and deployment adoption and catastrophe coverage remain unmeasured.
+
+Separate Claude-authored challenges are additional AI review, commissioned within
+this project. They do not turn internal results into independent human or
+institutional validation. A capacity-exhaustion counterexample led to a concrete
+repair: stop now releases abandoned claims in both strong modes, so a missing
+worker need not cooperate before new authorized work can be admitted.
 
 A selected 10% humanity-wide risk is not a measured NorthStar baseline.
 No current revision supplies a calibrated numerical update to it. Estimating

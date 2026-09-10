@@ -1,6 +1,7 @@
 # Persistent delegated-stop integration: internal pilot
 
-Prepared before implementation and execution. This is an author-run engineering
+Initially prepared before implementation and execution; amendments are recorded
+below. This is an author-run engineering
 pilot, not an independently authored evaluation or a preregistered research study.
 The four-method discovery comparison remains a separate, unexecuted study.
 
@@ -20,6 +21,20 @@ HTTP interface, persistent SQLite queue, workload and worker privileges under:
    checks the job's captured version and current activity in the same transaction
    as the mailbox write. This carries NorthStar's simulator pattern into a
    persistent integration. It is not a novel concurrency primitive.
+
+Amendment after the first internal run: epoch fencing also marks claimed work
+cancelled on stop. A reproduced counterexample exhausted the 128-job admission
+limit with abandoned claims; version checks alone blocked delivery but did not
+release capacity. The regression preserves that failure. This amendment is not
+presented as part of the initial pre-implementation protocol.
+
+Amendments following Claude's candidate-1 review: incomplete HTTP bodies now
+receive a bounded error response after a two-second local read deadline;
+resuming a scope reactivates only that scope; admission is limited to 64
+outstanding jobs per root family as well as 128 globally. A root family may
+contain at most 64 scopes. Descendants share those limits, preventing delegation
+from bypassing them. These bounds preserve room for another root in this small
+lab; they are not a general fairness or denial-of-service guarantee.
 
 All modes revoke agent capabilities on stop, distinguish operator/worker/agent
 roles, bind worker claims to jobs, and support idempotent submissions/deliveries.

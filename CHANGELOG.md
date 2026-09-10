@@ -1,5 +1,22 @@
 # Changelog
 
+## Persistent queue and separate Claude review — September 9, 2026
+
+- Add loopback HTTP tools, a persistent SQLite job queue, separate worker/client
+  processes and a harmless local mailbox, with cooperative cancellation, a
+  strong conventional transaction check and epoch fencing.
+- Run 14 internal cases per control, including restart, stop/resume, retries,
+  competing commits, scoped revocation and required useful work.
+- Preserve a frozen candidate and Claude-authored review cases. Repair stale
+  claim capacity retention, incomplete-body responses, implicit child resume
+  and cross-root admission exhaustion; retain the counterexamples and review trail.
+- Publish queue evidence and checks separately from the 90 simulator tests, and
+  add the comparison and review status to the dashboard.
+
+Both stronger controls succeed on the internal cases; the conventional method
+ties NorthStar. Separate AI review is not independent human validation. There
+is no estimated global-risk reduction or demonstrated narrative advantage.
+
 ## Risk thermometer and impact context — September 9, 2026
 
 - Replace the clock with a warm thermometer that names the extinction concern,
