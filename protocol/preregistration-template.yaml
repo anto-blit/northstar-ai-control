@@ -1,0 +1,38 @@
+experiment_id: REQUIRED
+claim_scope: REQUIRED
+environment_revision: REQUIRED
+controller_revision: REQUIRED
+outcome_oracle_revision: REQUIRED
+action_schema_revision: REQUIRED
+attacker_model_or_script_revision: REQUIRED
+attacker_budget: REQUIRED
+monitor_mode: REQUIRED
+hypothesis_generator_arm: REQUIRED
+search_and_repair_budget: REQUIRED
+development_and_test_split: REQUIRED
+irreversible_outcome_definition: REQUIRED
+recoverability_definition: REQUIRED
+settlement_horizon: REQUIRED
+legitimate_task_utility_definition: REQUIRED
+analysis_plan: REQUIRED
+known_unsupported_assumptions: REQUIRED
+
+# Additional fields required for a comparative discovery-to-prevention study.
+# This remains a proposal template, not an executed/frozen manifest.
+study_class: REQUIRED  # feasibility or independently reviewed confirmatory
+environment_author_and_independence: REQUIRED
+holdout_custodian_and_access_record: REQUIRED
+arms: [generic, technical, grammar, northstar]
+participant_assignment_and_contamination_controls: REQUIRED
+method_packet_revisions: REQUIRED
+equal_discovery_resource_ceilings_and_measured_costs: REQUIRED
+accounting_for_rejected_candidates_and_envelope_errors: REQUIRED
+family_pair_split_and_safe_solution_evidence: REQUIRED
+online_feedback_and_hidden_information: REQUIRED
+scheduler_event_order_and_intervention_latency: REQUIRED
+blinded_root_cause_adjudicator_and_rules: REQUIRED
+per_arm_repair_revisions_budgets_and_finding_provenance: REQUIRED
+independent_evaluator_and_per_control_adaptation_budgets: REQUIRED
+primary_estimand_family_weights_and_utility_gate: REQUIRED
+unresolved_outcomes_attrition_and_sampling_uncertainty: REQUIRED
+negative_result_and_claim_withdrawal_rules: REQUIRED

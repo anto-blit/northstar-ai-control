@@ -1,0 +1,2 @@
+# Standard-library only. Requires Python 3.10+.
+# Exact interpreter and verification provenance: results/verification.json.

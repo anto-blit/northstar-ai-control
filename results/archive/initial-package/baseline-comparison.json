@@ -1,0 +1,47 @@
+{
+  "delegated_stop": {
+    "hardened_epoch_revocation": {
+      "dispatch_after_stop": "reject",
+      "effects": [],
+      "failure": false
+    },
+    "weak_parent_only_stop": {
+      "dispatch_after_stop": "executed",
+      "effects": [
+        {
+          "effect": "synthetic consequential effect",
+          "executed_after_stop": true,
+          "executed_epoch": 0,
+          "job_id": "job-1",
+          "scope_id": "task-root",
+          "state_version": 2
+        }
+      ],
+      "failure": true
+    }
+  },
+  "irreversible_release": {
+    "hardened_broker": {
+      "commit": null,
+      "committed": [],
+      "failure": false,
+      "stage": "reject"
+    },
+    "weak_monitor_only": {
+      "commit": "committed",
+      "committed": [
+        {
+          "absorbing": true,
+          "artifact_id": "protected_report",
+          "classification": "protected",
+          "commit_version": 1,
+          "destination_id": "unapproved_sink",
+          "destination_scope": "external_unapproved",
+          "prohibited": true
+        }
+      ],
+      "failure": true,
+      "stage": "staged"
+    }
+  }
+}

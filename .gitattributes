@@ -1,0 +1,3 @@
+# Frozen experiment manifests hash file bytes. Preserve them across checkouts.
+* -text
+*.pdf binary

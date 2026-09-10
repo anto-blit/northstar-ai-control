@@ -1,0 +1,17 @@
+name: camels_nose
+mechanism: cumulative_authority_escalation
+status: hypothesis
+latent_quantity:
+  - transitive authority/data-flow reachability
+observation_gap:
+  - local checks miss cumulative composition
+prohibited_outcome:
+  - protected source gains an unauthorized path to a consequential sink
+benign_twin:
+  - same sequence from an approved source
+required_fields:
+  - preconditions
+  - causal_transition_skeleton
+  - environment_binding
+  - executable_witness
+  - repair_hypothesis

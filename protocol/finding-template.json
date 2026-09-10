@@ -1,0 +1,18 @@
+{
+  "anonymous_candidate_id": "REQUIRED",
+  "frozen_manifest_sha256": "REQUIRED",
+  "trace_artifact_sha256": "REQUIRED",
+  "case_id": "REQUIRED_OPAQUE_ID",
+  "preconditions": [],
+  "causal_transitions": [],
+  "missing_state_or_constraint": "REQUIRED",
+  "prohibited_outcome_witness": "REQUIRED",
+  "last_effective_intervention": "REQUIRED_OR_UNRESOLVED",
+  "benign_twin_and_useful_solution": "REQUIRED",
+  "reproduction_result": "NOT_REVIEWED",
+  "root_cause_cluster": "NOT_ADJUDICATED",
+  "reviewer_disagreements": [],
+  "repair_hypothesis": "REQUIRED",
+  "repair_source_revision": "NOT_IMPLEMENTED",
+  "held_out_result": "NOT_EVALUATED"
+}

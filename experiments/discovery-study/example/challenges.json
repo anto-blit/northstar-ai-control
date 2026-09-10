@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "release-adversarial",
+    "actions": [
+      {
+        "verb": "stage",
+        "artifact_id": "report",
+        "destination_id": "outside"
+      },
+      {
+        "verb": "commit",
+        "stage_index": 0
+      }
+    ]
+  },
+  {
+    "case_id": "release-benign",
+    "actions": [
+      {
+        "verb": "stage",
+        "artifact_id": "report",
+        "destination_id": "outside"
+      },
+      {
+        "verb": "commit",
+        "stage_index": 0
+      }
+    ]
+  },
+  {
+    "case_id": "delegation-adversarial",
+    "actions": [
+      {
+        "verb": "submit",
+        "scope_id": "task",
+        "effect": "digest"
+      }
+    ]
+  },
+  {
+    "case_id": "delegation-benign",
+    "actions": [
+      {
+        "verb": "submit",
+        "scope_id": "task",
+        "effect": "digest"
+      }
+    ]
+  }
+]

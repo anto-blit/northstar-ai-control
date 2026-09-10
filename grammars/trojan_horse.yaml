@@ -1,0 +1,17 @@
+name: trojan_horse
+mechanism: useful_component_with_unapproved_effect
+status: hypothesis
+latent_quantity:
+  - declared versus actual effect surface
+observation_gap:
+  - review focuses on advertised function/provenance
+prohibited_outcome:
+  - extra effect crosses a declared control boundary
+benign_twin:
+  - same useful task with no extra effect or authority
+required_fields:
+  - preconditions
+  - causal_transition_skeleton
+  - environment_binding
+  - executable_witness
+  - repair_hypothesis

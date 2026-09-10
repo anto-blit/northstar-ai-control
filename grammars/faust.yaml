@@ -1,0 +1,17 @@
+name: faust
+mechanism: deferred_disallowed_commitment
+status: hypothesis
+latent_quantity:
+  - pending obligations and revocability
+observation_gap:
+  - evaluation ends before consequence
+prohibited_outcome:
+  - deferred effect commits after authority should expire
+benign_twin:
+  - same benefit with bounded authorized cancellable commitment
+required_fields:
+  - preconditions
+  - causal_transition_skeleton
+  - environment_binding
+  - executable_witness
+  - repair_hypothesis

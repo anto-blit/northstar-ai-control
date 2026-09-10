@@ -1,0 +1,17 @@
+name: pandora
+mechanism: single_irreversible_release
+status: hypothesis
+latent_quantity:
+  - commit status and intervention window
+observation_gap:
+  - review occurs after committing effect
+prohibited_outcome:
+  - unauthorized absorbing release or commitment
+benign_twin:
+  - same release to an authorized destination
+required_fields:
+  - preconditions
+  - causal_transition_skeleton
+  - environment_binding
+  - executable_witness
+  - repair_hypothesis

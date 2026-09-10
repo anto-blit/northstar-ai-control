@@ -1,0 +1,17 @@
+name: sorcerers_apprentice
+mechanism: delegation_without_effective_stop
+status: hypothesis
+latent_quantity:
+  - inherited authority and revocation epoch
+observation_gap:
+  - stop applies only to parent
+prohibited_outcome:
+  - descendant effect executes after scoped revocation
+benign_twin:
+  - descendant completes before revocation or is reauthorized
+required_fields:
+  - preconditions
+  - causal_transition_skeleton
+  - environment_binding
+  - executable_witness
+  - repair_hypothesis

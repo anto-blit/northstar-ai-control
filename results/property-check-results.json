@@ -1,0 +1,272 @@
+{
+  "delegation_orderings": [
+    {
+      "effects": [],
+      "order": [
+        "submit",
+        "stop",
+        "dispatch"
+      ],
+      "post_stop_failure": false,
+      "trace": [
+        [
+          "submit",
+          "queued"
+        ],
+        [
+          "stop",
+          "stopped"
+        ],
+        [
+          "dispatch",
+          "reject"
+        ]
+      ]
+    },
+    {
+      "effects": [
+        {
+          "effect": "synthetic consequential action",
+          "executed_after_stop": false,
+          "executed_epoch": 0,
+          "job_id": "job-1",
+          "scope_id": "task-root",
+          "state_version": 2
+        }
+      ],
+      "order": [
+        "submit",
+        "dispatch",
+        "stop"
+      ],
+      "post_stop_failure": false,
+      "trace": [
+        [
+          "submit",
+          "queued"
+        ],
+        [
+          "dispatch",
+          "executed"
+        ],
+        [
+          "stop",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "effects": [],
+      "order": [
+        "stop",
+        "submit",
+        "dispatch"
+      ],
+      "post_stop_failure": false,
+      "trace": [
+        [
+          "stop",
+          "stopped"
+        ],
+        [
+          "submit",
+          "reject"
+        ],
+        [
+          "dispatch",
+          "reject"
+        ]
+      ]
+    },
+    {
+      "effects": [],
+      "order": [
+        "stop",
+        "dispatch",
+        "submit"
+      ],
+      "post_stop_failure": false,
+      "trace": [
+        [
+          "stop",
+          "stopped"
+        ],
+        [
+          "dispatch",
+          "reject"
+        ],
+        [
+          "submit",
+          "reject"
+        ]
+      ]
+    },
+    {
+      "effects": [],
+      "order": [
+        "dispatch",
+        "submit",
+        "stop"
+      ],
+      "post_stop_failure": false,
+      "trace": [
+        [
+          "dispatch",
+          "reject"
+        ],
+        [
+          "submit",
+          "queued"
+        ],
+        [
+          "stop",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "effects": [],
+      "order": [
+        "dispatch",
+        "stop",
+        "submit"
+      ],
+      "post_stop_failure": false,
+      "trace": [
+        [
+          "dispatch",
+          "reject"
+        ],
+        [
+          "stop",
+          "stopped"
+        ],
+        [
+          "submit",
+          "reject"
+        ]
+      ]
+    }
+  ],
+  "many_descendants": [
+    {
+      "dispatch_statuses": [
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 1
+    },
+    {
+      "dispatch_statuses": [
+        "reject",
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 2
+    },
+    {
+      "dispatch_statuses": [
+        "reject",
+        "reject",
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 3
+    },
+    {
+      "dispatch_statuses": [
+        "reject",
+        "reject",
+        "reject",
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 4
+    },
+    {
+      "dispatch_statuses": [
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 5
+    },
+    {
+      "dispatch_statuses": [
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 6
+    },
+    {
+      "dispatch_statuses": [
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 7
+    },
+    {
+      "dispatch_statuses": [
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject",
+        "reject"
+      ],
+      "effects": 0,
+      "queued": 8
+    }
+  ],
+  "release_matrix": [
+    {
+      "artifact": "public_report",
+      "commit": "committed",
+      "destination": "approved_site",
+      "failure": false,
+      "stage": "staged"
+    },
+    {
+      "artifact": "public_report",
+      "commit": "committed",
+      "destination": "unapproved_sink",
+      "failure": false,
+      "stage": "staged"
+    },
+    {
+      "artifact": "protected_report",
+      "commit": "committed",
+      "destination": "approved_site",
+      "failure": false,
+      "stage": "staged"
+    },
+    {
+      "artifact": "protected_report",
+      "commit": null,
+      "destination": "unapproved_sink",
+      "failure": false,
+      "stage": "reject"
+    }
+  ],
+  "stale_revalidation": {
+    "commit_after_policy_change": "reject",
+    "failure": false,
+    "stage": "staged"
+  }
+}

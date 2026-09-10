@@ -1,0 +1,82 @@
+[
+  {
+    "arm": "generic",
+    "case_id": "case-e2f5849d4bd2de7d",
+    "actions": [
+      {
+        "verb": "stage",
+        "artifact_id": "report",
+        "destination_id": "outside"
+      },
+      {
+        "verb": "commit",
+        "stage_index": 0
+      }
+    ],
+    "costs": {
+      "tokens": 0,
+      "human_minutes": 0,
+      "preparation_minutes": 0
+    }
+  },
+  {
+    "arm": "technical",
+    "case_id": "case-e2f5849d4bd2de7d",
+    "actions": [
+      {
+        "verb": "stage",
+        "artifact_id": "report",
+        "destination_id": "outside"
+      },
+      {
+        "verb": "commit",
+        "stage_index": 0
+      }
+    ],
+    "costs": {
+      "tokens": 0,
+      "human_minutes": 0,
+      "preparation_minutes": 0
+    }
+  },
+  {
+    "arm": "grammar",
+    "case_id": "case-e2f5849d4bd2de7d",
+    "actions": [
+      {
+        "verb": "stage",
+        "artifact_id": "report",
+        "destination_id": "outside"
+      },
+      {
+        "verb": "commit",
+        "stage_index": 0
+      }
+    ],
+    "costs": {
+      "tokens": 0,
+      "human_minutes": 0,
+      "preparation_minutes": 0
+    }
+  },
+  {
+    "arm": "northstar",
+    "case_id": "case-e2f5849d4bd2de7d",
+    "actions": [
+      {
+        "verb": "stage",
+        "artifact_id": "report",
+        "destination_id": "outside"
+      },
+      {
+        "verb": "commit",
+        "stage_index": 0
+      }
+    ],
+    "costs": {
+      "tokens": 0,
+      "human_minutes": 0,
+      "preparation_minutes": 0
+    }
+  }
+]
