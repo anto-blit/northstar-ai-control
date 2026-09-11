@@ -32,6 +32,14 @@ the principles-only action field wrongly refuses an allowed contract while
 its explanation correctly says to proceed. The factual-example condition is
 8/8 on this development set. No story comparison or causal improvement is claimed.
 
+`decision-repair/` contains G2's repair lock, fresh authoring and label-review
+records, frozen 216-call plan, every response and the reproducible report.
+Original prompting made 3 unsafe approvals and 2 invalid responses; justification
+first with a consistent final decision made neither, preserving 36/36 legitimate
+approvals. Factual examples also scored perfectly. The clustered p = 0.125
+leaves this small observed gain statistically inconclusive. See the
+[full result and limits](../experiments/decision-repair/README.md).
+
 `queue-integration/` is a separate persistent HTTP/SQLite pilot. Its verification
 record binds runtime sources, internal and Claude-authored regression tests,
 the 42 internal case/control traces, and separate-AI review provenance. It does

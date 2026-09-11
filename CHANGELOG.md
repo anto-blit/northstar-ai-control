@@ -1,5 +1,16 @@
 # Changelog
 
+## Small observed decision-repair gain — September 10, 2026
+
+- Lock justification-first prompting with a final consistency instruction before
+  fresh case authoring; freeze the complete 216-call comparison before execution.
+- Record 3 unsafe approvals and 2 invalid responses under the original format,
+  versus neither under the repair, with all 36 legitimate approvals preserved.
+  Factual examples also score perfectly. The clustered p = 0.125 is inconclusive.
+- Preserve every response, model settings, costs, source hashes, five failed
+  original outputs and offline replay. Add the bounded result and conventional
+  tie to the dashboard with evidence checks; leave global risk unestimated.
+
 ## Guidance milestone on the dashboard — September 10, 2026
 
 - Highlight the first completed guidance comparison with all three substantive

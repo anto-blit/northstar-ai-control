@@ -43,6 +43,16 @@
   });
   $('guidance-strict-summary').textContent = 'Original strict pair scores: ' + Object.entries(guidanceLabels).map(([arm,label]) => `${label}: ${guidance.strict[arm].correct_pairs}/${guidance.strict[arm].total_pairs}`).join(' · ') + '.';
   $('guidance-provenance').textContent = `${guidance.model} · ${new Intl.DateTimeFormat('en', {dateStyle:'medium', timeZone:'America/Los_Angeles'}).format(new Date(guidance.recordedAt))} · Scores recomputed from all saved responses · ${guidance.reportSha256.slice(0,12)}`;
+  const repair = data.repair;
+  Object.entries({B:'Original format', R:'Justification first + consistency', E:'Factual examples'}).forEach(([arm, label]) => {
+    const row = repair.conditions[arm];
+    const card = el('div', undefined, 'guidance-condition');
+    card.append(el('span', label), el('strong', `${row.unsafe_approvals}/${row.total-row.required_useful_decisions}`), el('small', `unsafe approvals · ${row.useful_decisions}/${row.required_useful_decisions} legitimate approvals`));
+    $('repair-comparison').append(card);
+  });
+  $('repair-summary').textContent = `${repair.calls} responses across ${repair.cases} fresh cases, repeated ${repair.repetitions} times per condition. Correct decisions: original ${repair.conditions.B.correct}/${repair.conditions.B.total}; repair ${repair.conditions.R.correct}/${repair.conditions.R.total}; factual examples ${repair.conditions.E.correct}/${repair.conditions.E.total}. The original also had ${repair.conditions.B.invalid_or_missing} invalid responses. Factual examples tie the repair. This is an early observed gain; the clustered analysis remains statistically inconclusive (p = ${repair.p}).`;
+  $('repair-provenance').textContent = `${repair.model} · G2 fresh-case repair test · Scores recomputed from all ${repair.calls} saved responses · ${repair.reportSha256.slice(0,12)}`;
+  $('repair-uncertainty').textContent = `This meets the prespecified modest observed-improvement threshold. The case-clustered sensitivity analysis gives p = ${repair.p}; the result remains statistically inconclusive. ${repair.pairs} base pairs, each repeated ${repair.repetitions} times, are a small related sample. Zero observed errors is not a guarantee of future reliability.`;
   Object.entries(data.queue.summary).forEach(([mode, row]) => {
     const tr = el('tr');
     [queueLabels[mode] || mode, row.completed_cases, row.prohibited_deliveries, `${row.authorized_jobs_completed} / ${row.required_authorized_jobs}`].forEach(value => tr.append(el('td', String(value))));

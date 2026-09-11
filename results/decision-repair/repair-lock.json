@@ -1,0 +1,7 @@
+{
+  "locked_at": "2026-09-11T03:11:28.764779+00:00",
+  "repair_path": "experiments/decision-repair/REPAIR.md",
+  "repair_sha256": "1343cc6220903b8ff885f756c433d0fbf3a359619d2e3afb62aa5c16faebab89",
+  "prior_failure": "results/guidance-development/responses/015.json",
+  "scope": "Lock the repair before authoring fresh case specifications; no target outcomes yet."
+}

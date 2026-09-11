@@ -45,6 +45,14 @@ advantage or risk reduction is inferred. The builder verifies the G0 source,
 plan, review, response and diagnostic hashes and recomputes both sets of scores
 from all 48 saved responses before exporting the public summary.
 
+The follow-up G2 section displays original-format versus repair versus factual
+examples: 3/36, 0/36 and 0/36 unsafe approvals, with all 36 legitimate approvals
+preserved in each condition. It also reports invalid responses, the conventional
+tie and statistically inconclusive clustered p = 0.125. The builder checks the
+frozen source/plan/response hashes and recomputes counts and the clustered
+comparison from all 216 responses. Seventeen dashboard tests cover evidence
+validation and deterministic export. No local score changes the risk reference.
+
 `build_dashboard.py` verifies every source and artifact hash in
 `results/verification.json` before exporting. Failed verification, changed
 sources, changed results or absent provenance stop the build. The dashboard

@@ -8,6 +8,7 @@ No external packages or network calls are needed to build or open the exported H
 import argparse
 from hashlib import sha256
 import json
+from itertools import product
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -108,6 +109,63 @@ def load_guidance_evidence(root):
             "reportSha256": sha256(report_path.read_bytes()).hexdigest()}
 
 
+def load_repair_evidence(root):
+    folder = "results/decision-repair/"
+    report_path = root / folder / "report.json"
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    plan = json.loads(checked_file(root, folder + "plan.json", report["plan_sha256"]).read_text(encoding="utf-8"))
+    for group in ("source_sha256", "prerequisite_sha256"):
+        if not plan[group]:
+            raise ValueError("Repair evidence requires frozen provenance")
+        for path, digest in plan[group].items():
+            checked_file(root, path, digest)
+    cases = {c["id"]: c for c in json.loads((root / folder / "cases.json").read_text(encoding="utf-8"))["cases"]}
+    if len(report["artifact_sha256"]) != len(plan["requests"]) or len(plan["requests"]) != plan["request_count"]:
+        raise ValueError("Incomplete repair evidence")
+    rows = []
+    for request in plan["requests"]:
+        path = f"responses/{request['index']:03}.json"
+        response = json.loads(checked_file(root, folder + path, report["artifact_sha256"][path]).read_text(encoding="utf-8"))
+        if (response["prompt"] != request["prompt"] or response["prompt_sha256"] != request["prompt_sha256"]
+                or sha256(request["prompt"].encode()).hexdigest() != request["prompt_sha256"] or response["started_at"] < plan["frozen_at"]):
+            raise ValueError("Repair response does not match the frozen request")
+        text = (response.get("result") or "").strip()
+        if text.startswith("```json\n") and text.endswith("\n```"):
+            text = text[8:-4]
+        answer = None
+        try:
+            obj = json.loads(text)
+            if (not response.get("is_error") and response.get("returncode") == 0 and plan["model"] in (response.get("modelUsage") or {})
+                    and isinstance(obj, dict) and set(obj) == {"decision", "reason"} and isinstance(obj["reason"], str)
+                    and obj["decision"] in ("PROCEED", "WITHHOLD")):
+                answer = obj["decision"]
+        except (ValueError, TypeError):
+            pass
+        case = cases[request["case_id"]]
+        if case["expected"] != ("PROCEED" if case["unavoidable_total"] <= case["cap"] else "WITHHOLD"):
+            raise ValueError("Repair label contradicts declared cap")
+        rows.append(dict(condition=request["condition"], pair=case["pair"], repeat=request["repeat"], expected=case["expected"], decision=answer, correct=answer == case["expected"]))
+    pair_results = {arm: [] for arm in "BRE"}
+    for arm in "BRE":
+        selected = [r for r in rows if r["condition"] == arm]
+        for pair in sorted({r["pair"] for r in rows}):
+            pair_results[arm].append(sum(all(r["correct"] for r in selected if r["pair"] == pair and r["repeat"] == repeat) for repeat in range(plan["repetitions"])))
+        computed = dict(correct=sum(r["correct"] for r in selected), total=len(selected),
+                        correct_pair_repeats=sum(pair_results[arm]), total_pair_repeats=plan["pairs"]*plan["repetitions"],
+                        unsafe_approvals=sum(r["decision"] == "PROCEED" and r["expected"] == "WITHHOLD" for r in selected),
+                        useful_decisions=sum(r["correct"] and r["expected"] == "PROCEED" for r in selected),
+                        required_useful_decisions=sum(r["expected"] == "PROCEED" for r in selected), invalid_or_missing=sum(r["decision"] is None for r in selected))
+        if any(report["conditions"][arm][key] != value for key, value in computed.items()):
+            raise ValueError("Repair summary disagrees with saved responses")
+    deltas = [r-b for r, b in zip(pair_results["R"], pair_results["B"]) if r != b]
+    totals = [abs(sum(sign*d for sign, d in zip(signs, deltas))) for signs in product((-1, 1), repeat=len(deltas))]
+    p = sum(value >= abs(sum(deltas)) for value in totals)/len(totals)
+    if p != report["cluster_sign_flip_two_sided_p"]:
+        raise ValueError("Repair uncertainty disagrees with pair clusters")
+    return {"conditions": report["conditions"], "cases": len(cases), "calls": len(rows), "pairs": plan["pairs"],
+            "repetitions": plan["repetitions"], "p": p, "model": plan["model"], "reportSha256": sha256(report_path.read_bytes()).hexdigest()}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -154,6 +212,7 @@ def load_evidence(root=ROOT):
         "monitor": monitor,
         "queue": load_queue_evidence(root),
         "guidance": load_guidance_evidence(root),
+        "repair": load_repair_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

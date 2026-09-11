@@ -29,7 +29,7 @@ We publish our code, methods, completed results, and limitations so others can c
 
 **Help us break NorthStar. Help us improve it. Help us test whether its safeguards can earn a role in real systems.**
 
-> **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, reproducible results, and a first small guidance comparison. All three guidance conditions made the correct substantive decisions on all 16 cases; a small strict-score difference came entirely from output formatting. No narrative advantage or story-trained AI is demonstrated. Story-guided failure discovery remains untested.
+> **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
 ## Find your way in
 
@@ -122,16 +122,24 @@ outputs contained the correct decision inside an unrequested Markdown fence.
 The preserved post-hoc diagnosis finds 16/16 substantive decisions in every
 condition. This is a ceiling result, not evidence of better moral judgment.
 
-**Next:** independently review a development set that exposes actual baseline
-judgment errors, then evaluate guidance on fresh held-out cases. The prerequisites
-for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md)
-remain separate; that discovery comparison has not been run.
-
 The [first harder development screen](experiments/guidance-development/README.md)
 has now completed 16 calls on eight new cases. Principles alone produced one
 wrong decision field despite a correct, self-correcting explanation; factual
 examples produced eight correct decisions. This is a concrete consistency flaw
 to investigate, not a demonstrated causal benefit or a story comparison.
+
+The [fresh-case repair test G2](experiments/decision-repair/README.md) follows
+that flaw with 216 responses across 24 new cases and three conditions. Original
+decision-first prompting scores 67/72; justification first with an explicit final
+consistency check scores 72/72, as do factual examples. Unsafe approvals fall
+from 3/36 to 0/36 observed, with all legitimate approvals preserved. This is a
+small observed gain in one synthetic task family; the clustered analysis is
+statistically inconclusive (p = 0.125).
+
+**Next:** independently review and replicate the repair on newly authored cases,
+keeping the conventional comparator and useful approvals in the score. The
+prerequisites for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md)
+remain separate; that discovery comparison has not been run.
 
 ### Try it yourself
 

@@ -20,6 +20,18 @@ inconsistency in the principles-only condition (7/8 correct decision fields),
 while the factual-example condition is 8/8. It has no story arm or held-out
 effect estimate; the wrong field does not establish missing moral understanding.
 
+[G2](experiments/decision-repair/README.md) tests a repair fixed before fresh
+case authoring: brief justification first, then a consistent final decision.
+Across 24 cases and three repetitions per condition, the original format scores
+67/72 with 3 unsafe approvals and 2 invalid responses. The repair and factual
+examples each score 72/72. All conditions preserve 36/36 legitimate approvals.
+Strict pair-repeats improve from 31/36 to 36/36, but the clustered two-sided
+sign-flip sensitivity is p = 0.125. The modest descriptive threshold is met;
+the stronger statistical threshold is not. These are new cases within one
+known mechanism, authored and reviewed in separate contexts of the same model.
+Independent replication, broader transfer and a narrative advantage remain
+unestablished. The global-risk reference is unchanged.
+
 The original simulator effects are synthetic in-memory records. The simulator and study runner use
 the Python standard library, with no network, real credentials, arbitrary
 agent-authored code, or external effect execution.

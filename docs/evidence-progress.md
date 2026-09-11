@@ -49,6 +49,7 @@ Git times below use America/Los_Angeles.
 | Persistent delegated-stop integration | September 9, 2026 | HTTP tools, separate processes, a durable SQLite mailbox and conventional comparators; internal experiments and a separately commissioned Claude review, with no independent human validation or global-impact estimate |
 | Guidance micro-pilot G0 | September 10, 2026 | First 48 real model calls comparing principles, examples and stories on 16 AI-reviewed cases; all substantive decisions correct, and the apparent strict-score lead comes entirely from Markdown formatting |
 | Baseline development screen G1-D | September 10, 2026 | Sixteen calls on eight harder cases expose one wrong decision field alongside a correct rationale; a concrete consistency failure, with no story condition or held-out improvement estimate |
+| Fresh-case decision repair G2 | September 10, 2026 | 216 calls: original format makes 3 unsafe approvals and 2 invalid responses; repair makes neither and preserves all legitimate approvals. Factual examples tie the repair. A small observed gain, statistically inconclusive (clustered p = 0.125), awaiting independent replication |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not
@@ -79,11 +80,19 @@ substantive guidance effects on the tested model. Its original scores are
 preserved alongside the post-hoc diagnosis of five Markdown-wrapped responses;
 we do not count the resulting one-pair S/E lead as a moral-guidance win.
 
-The next guidance step needs independently reviewed development cases that
-expose actual judgment errors, followed by fresh held-out evaluation. Keep
-development selection separate from any claimed improvement. The separately
-scoped four-method discovery pilot still needs its own prerequisites. Measure
-actual outcomes, effort, uncertainty, and legitimate usefulness.
+The [G2 repair test](../experiments/decision-repair/README.md) now records a small
+observed improvement on newly authored cases: 67/72 correct original-format
+decisions versus 72/72 for justification first with a final consistency check.
+All 36 legitimate approvals are preserved, and factual examples also score
+72/72. Five failed original responses include three valid unsafe approvals;
+the difference is no longer solely Markdown formatting. The clustered analysis
+is inconclusive (p = 0.125), and all cases share one taught mechanism.
+
+The next step is a separately frozen replication on newly authored cases with
+independent review, keeping the conventional comparator and usefulness scoring.
+The same model served as author, reviewer and target in separate contexts in G2;
+this does not supply independent human validation. The separately scoped
+four-method discovery pilot still needs its own prerequisites.
 
 A reproducible advantage beyond strong comparators would justify replication
 on fresh families and settings. A prevention claim additionally needs tested

@@ -21,6 +21,9 @@ class EvidenceTests(unittest.TestCase):
         shutil.copytree(dashboard.ROOT / "results/guidance-pilot", self.root / "results/guidance-pilot")
         shutil.copytree(dashboard.ROOT / "experiments/guidance-pilot", self.root / "experiments/guidance-pilot",
                         ignore=shutil.ignore_patterns("__pycache__"))
+        shutil.copytree(dashboard.ROOT / "results/decision-repair", self.root / "results/decision-repair")
+        shutil.copytree(dashboard.ROOT / "experiments/decision-repair", self.root / "experiments/decision-repair",
+                        ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
         artifacts = {"recoverability.json": {"schema_version": 2},
                      "monitor-sweep.json": {"schema_version": 2}}
@@ -154,6 +157,22 @@ class EvidenceTests(unittest.TestCase):
         (self.root / "experiments/guidance-pilot/materials.json").write_text('{"easier":true}')
         with self.assertRaisesRegex(ValueError, "changed since verification"):
             dashboard.load_guidance_evidence(self.root)
+
+    def test_repair_counts_include_real_errors_and_preserved_usefulness(self):
+        data = dashboard.load_repair_evidence(self.root)
+        self.assertEqual(data["calls"], 216)
+        self.assertEqual([data["conditions"][a]["unsafe_approvals"] for a in "BRE"], [3, 0, 0])
+        self.assertEqual([data["conditions"][a]["useful_decisions"] for a in "BRE"], [36, 36, 36])
+        self.assertEqual(data["conditions"]["B"]["invalid_or_missing"], 2)
+        self.assertEqual(data["p"], 0.125)
+
+    def test_invented_repair_gain_is_rejected(self):
+        path = self.root / "results/decision-repair/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["conditions"]["B"]["unsafe_approvals"] = 10
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Repair summary disagrees"):
+            dashboard.load_repair_evidence(self.root)
 
 
 if __name__ == "__main__":
