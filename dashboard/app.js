@@ -45,11 +45,41 @@
   $('guidance-provenance').textContent = `${guidance.model} · ${new Intl.DateTimeFormat('en', {dateStyle:'medium', timeZone:'America/Los_Angeles'}).format(new Date(guidance.recordedAt))} · Scores recomputed from all saved responses · ${guidance.reportSha256.slice(0,12)}`;
   const repair = data.repair;
   const replication = data.replication;
-  $('replication-answers').textContent = String(replication.operationalAnswers);
-  $('replication-errors').textContent = String(replication.requestErrors);
-  $('replication-missing').textContent = String(replication.notAttempted);
-  $('replication-summary').textContent = `${replication.completed} of ${replication.planned} planned requests were attempted: ${replication.operationalAnswers} returned model answers and ${replication.requestErrors} returned service errors. No completed replication result is claimed. The previous 67/72 versus 72/72 observation remains provisional.`;
-  $('replication-provenance').textContent = `Plan published before target calls · ${replication.publicPlanCommit.slice(0,7)} · Preserved answers and local effects replayed offline · ${replication.reportSha256.slice(0,12)}`;
+  const continued = data.continuation;
+  const primary = continued.phases.replication['claude-sonnet-5'];
+  const contrast = primary.comparisons.R_minus_B;
+  const formatP = value => value < 0.0001 ? '< 0.0001' : '= ' + Number(value.toFixed(4));
+  const headline = !continued.allAnswered ? 'The resumed comparison is incomplete.' : contrast.statistically_supported ? 'The repair gain repeated on Sonnet.' : contrast.favorable_descriptive_replication ? 'An observed gain, still uncertain.' : 'The repair did not meet the replication criterion.';
+  $('replication-title').textContent = headline;
+  $('latest-assessment').textContent = headline;
+  $('latest-assessment-detail').textContent = `${continued.answered}/${continued.planned} model answers; the original and factual-example comparisons stay visible.`;
+  $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
+  $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
+  $('replication-summary').textContent = continued.allAnswered
+    ? `On Sonnet's primary replication, correct decisions were ${primary.conditions.B.correct}/${primary.conditions.B.total} with the original prompt, ${primary.conditions.R.correct}/${primary.conditions.R.total} with the repair, and ${primary.conditions.E.correct}/${primary.conditions.E.total} with factual examples. Unsafe approvals: ${primary.conditions.B.unsafe_approvals}, ${primary.conditions.R.unsafe_approvals}, and ${primary.conditions.E.unsafe_approvals}, respectively.`
+    : `${continued.answered} of ${continued.planned} planned slots have model answers. ${continued.planned-continued.answered} remain without model answers. No completed replication finding is claimed from this partial sample.`;
+  $('continuation-comparison').hidden = false;
+  $('continuation-caption').textContent = continued.allAnswered
+    ? 'Correct decisions above; unsafe and useful outcomes below. Booking rows count actual local commits.'
+    : 'Partial results: correct / returned answers above. Unsafe and useful denominators include all planned opportunities, including unanswered slots. Booking rows count actual local commits.';
+  Object.entries(continued.phases).forEach(([phase, models]) => Object.entries(models).forEach(([model, result]) => {
+    const tr = el('tr');
+    tr.append(el('th', `${model.includes('sonnet') ? 'Sonnet 5' : 'Opus 5'} · ${phase === 'execution' ? 'Local bookings' : 'Replication'}`));
+    Object.values(result.conditions).forEach(row => {
+      const cell = el('td');
+      const unsafe = phase === 'execution' ? row.unsafe_commits : row.unsafe_approvals;
+      const useful = phase === 'execution' ? row.useful_commits : row.useful_approvals;
+      cell.append(el('strong', `${row.correct}/${row.answered}`), el('br'), el('small', `${unsafe}/${row.forbidden_opportunities} unsafe · ${useful}/${row.required_useful} useful`), el('br'), el('small', `${row.invalidAnswers} invalid answers · ${row.unanswered}/${row.total} unanswered`));
+      tr.append(cell);
+    });
+    $('continuation-table').append(tr);
+  }));
+  const opusContrast = continued.phases.replication['claude-opus-5'].comparisons.R_minus_B;
+  $('continuation-uncertainty').textContent = continued.allAnswered
+    ? `Primary paired result: ${primary.conditions.B.correct_pairs}/${primary.conditions.B.total_pairs} original versus ${primary.conditions.R.correct_pairs}/${primary.conditions.R.total_pairs} repaired; ${contrast.wins} repair wins and ${contrast.losses} losses, p ${formatP(contrast.paired_two_sided_p)}. The separate Opus contrast has p ${formatP(opusContrast.paired_two_sided_p)}. Success also requires fewer unsafe approvals, preserved useful approvals and no extra invalid output. These are small related synthetic case sets; equal sample scores do not establish equivalence.`
+    : `So far, Sonnet made ${primary.conditions.B.unsafe_approvals} unsafe approvals with the original prompt, ${primary.conditions.R.unsafe_approvals} with the repair and ${primary.conditions.E.unsafe_approvals} with factual examples. The repair ties factual examples on the returned answers; all three Opus conditions have made every returned decision correctly. This partial sample does not establish a replicated gain. Quota paused the run again; the provider reports a reset at 4:50 a.m. Pacific on September 11. No later retry is scheduled.`;
+  $('continuation-history').textContent = `The original plan was published before evaluation. Quota interrupted it after ${replication.operationalAnswers} model answers and ${replication.requestErrors} service errors. The public continuation retained all ${continued.retained} model answers and allowed only unanswered slots to run. It recorded ${continued.newAttempts} new attempts, including ${continued.newQuotaErrors} further quota rejections. Both exact models passed readiness probes before submission.`;
+  $('replication-provenance').textContent = `Original public plan ${replication.publicPlanCommit.slice(0,7)} · Continuation ${continued.publicCommit.slice(0,7)} · Scores and local effects replayed offline`;
   Object.entries({B:'Original format', R:'Justification first + consistency', E:'Factual examples'}).forEach(([arm, label]) => {
     const row = repair.conditions[arm];
     const card = el('div', undefined, 'guidance-condition');

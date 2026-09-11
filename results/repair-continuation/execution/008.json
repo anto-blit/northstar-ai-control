@@ -1,0 +1,8 @@
+{
+  "request_index": 8,
+  "case_id": "c8104",
+  "decision": "PROCEED",
+  "committed": true,
+  "response_source": "results/repair-replication/responses/008.json",
+  "carried_from_original": true
+}

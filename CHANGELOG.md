@@ -1,5 +1,19 @@
 # Changelog
 
+## Registered continuation reaches 534 answers — September 11, 2026
+
+- Publish an operational amendment before resuming after the requested wait.
+  Preserve all 27 original answers; permit only quota-only and unattempted slots.
+- Record 507 new model answers and three new quota rejections. The comparison
+  pauses at 534/720 answers with 186 missing; no completed replication claim.
+- Preserve two unsafe Sonnet original-format approvals contradicting their own
+  explanations, and one invalid original booking response that commits nothing.
+  Repair and factual examples tie without observed errors; Opus remains at ceiling.
+- Replay 63 unique authorized bookings, with no unsafe commits in any condition.
+  Show partial scores, missing work, and the conventional comparator on the site;
+  retain the unchanged global-risk reference. Add six continuation harness checks
+  and two dashboard evidence checks.
+
 ## Registered replication interrupted by quota — September 10, 2026
 
 - Publish the G3 plan before target evaluation: 48 new matched pairs on Sonnet 5

@@ -1,0 +1,8 @@
+{
+  "request_index": 403,
+  "case_id": "c6069",
+  "decision": "PROCEED",
+  "committed": true,
+  "response_source": "results/repair-continuation/attempts/403-01.json",
+  "carried_from_original": false
+}

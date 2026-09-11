@@ -27,6 +27,9 @@ class EvidenceTests(unittest.TestCase):
         shutil.copytree(dashboard.ROOT / "results/repair-replication", self.root / "results/repair-replication")
         shutil.copytree(dashboard.ROOT / "experiments/repair-replication", self.root / "experiments/repair-replication",
                         ignore=shutil.ignore_patterns("__pycache__"))
+        shutil.copytree(dashboard.ROOT / "results/repair-continuation", self.root / "results/repair-continuation")
+        shutil.copytree(dashboard.ROOT / "experiments/repair-continuation", self.root / "experiments/repair-continuation",
+                        ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
         artifacts = {"recoverability.json": {"schema_version": 2},
                      "monitor-sweep.json": {"schema_version": 2}}
@@ -192,6 +195,30 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(ledger), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Frozen evidence changed"):
             dashboard.load_replication_evidence(self.root)
+
+    def test_continuation_preserves_inherited_answers_and_quota_history(self):
+        data = dashboard.load_continuation_evidence(self.root)
+        self.assertEqual(data["retained"], 27)
+        self.assertEqual(data["originalQuotaErrors"], 9)
+        self.assertEqual(data["planned"], 720)
+        self.assertGreaterEqual(data["answered"], 27)
+        conditions = [row for models in data["phases"].values()
+                      for result in models.values() for row in result["conditions"].values()]
+        self.assertEqual(sum(row["answered"] for row in conditions), data["answered"])
+        for row in conditions:
+            self.assertEqual(row["answered"] + row["unanswered"], row["total"])
+            self.assertEqual(row["invalidAnswers"] + row["unanswered"], row["invalid_or_missing"])
+
+    def test_continuation_cannot_invent_a_pair_gain(self):
+        folder = self.root / "results/repair-continuation"
+        path = folder / "report.json"
+        if not path.exists():
+            path = sorted((folder / "partial-reports").glob("*.json"))[-1]
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["phases"]["replication"]["claude-sonnet-5"]["comparisons"]["R_minus_B"]["pair_gain"] += 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Continuation report does not reproduce"):
+            dashboard.load_continuation_evidence(self.root)
 
 
 if __name__ == "__main__":

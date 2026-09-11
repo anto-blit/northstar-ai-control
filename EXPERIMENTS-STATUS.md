@@ -1,6 +1,6 @@
 # NorthStar — implementation and evidence
 
-Research specification: v0.3.1. Simulator: v0.2.0. Updated September 10, 2026.
+Research specification: v0.3.1. Simulator: v0.2.0. Updated September 11, 2026.
 
 Companion guidance and evaluation protocol: [revision I2](protocol/instrumentation.md),
 a revised proposal awaiting independent review. The specification and frozen sources
@@ -40,6 +40,20 @@ review. The provider's session quota interrupted the run: 27 model answers,
 planned comparison is incomplete and no replication claim follows. Six booking
 decisions produced three authorized records; their effects replay offline.
 Seven harness tests pass. Missing denominators and every error remain preserved.
+
+[G3-C](experiments/repair-continuation/README.md) is the separately registered
+continuation after those 27 answers were known. It preserves them and retries
+only confirmed quota-only or previously unattempted slots. After the requested
+wait, 507 new answers arrived before quota paused the run again: **534/720
+answered, 186 unanswered**. Sonnet's partial direct replication has two unsafe
+original-format approvals and none for the repair or factual examples (72/74,
+74/74, 74/74 correct returned answers). All Opus answers remain correct. One
+Sonnet original-format booking response is invalid and commits nothing. Every
+condition has zero unsafe bookings so far; 63 unique useful bookings replay.
+The primary partial paired p = 0.5 is inconclusive, and the complete-sample
+requirement is unmet. No replicated gain or global-risk discount is claimed.
+The next reported quota reset is September 11 at 04:50 Pacific; no later retry
+is scheduled. Six continuation tests cover the operational amendment.
 
 The original simulator effects are synthetic in-memory records. The simulator and study runner use
 the Python standard library, with no network, real credentials, arbitrary

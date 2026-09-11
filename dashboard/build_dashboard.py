@@ -183,6 +183,28 @@ def load_replication_evidence(root):
             "reportSha256": sha256((root / "results/repair-replication/report.json").read_bytes()).hexdigest()}
 
 
+def load_continuation_evidence(root):
+    path = root / "experiments/repair-continuation/run.py"
+    spec = importlib.util.spec_from_file_location("dashboard_g3c_verifier", path)
+    verifier = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(verifier)
+    report = verifier.verify(root, emit=False)
+    for phase, models in report["phases"].items():
+        for model, result in models.items():
+            for arm, row in result["conditions"].items():
+                observations = [item for item in report["observations"]
+                                if (item["phase"], item["model"], item["condition"]) == (phase, model, arm)]
+                row["answered"] = sum(item["operational"] for item in observations)
+                row["unanswered"] = row["total"] - row["answered"]
+                row["invalidAnswers"] = sum(item["operational"] and item["decision"] is None
+                                             for item in observations)
+    return {"phases": report["phases"], "planned": report["planned_slots"], "answered": report["answered_slots"],
+            "allAnswered": report["all_answered"], "retained": report["retained_answers"],
+            "newAttempts": report["new_attempts"], "originalQuotaErrors": report["original_quota_rejections"],
+            "newQuotaErrors": report["new_quota_rejections"], "publicCommit": report["public_continuation_commit"],
+            "cost": report["known_total_cost_usd"], "bookingCount": len(report["bookings"])}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -231,6 +253,7 @@ def load_evidence(root=ROOT):
         "guidance": load_guidance_evidence(root),
         "repair": load_repair_evidence(root),
         "replication": load_replication_evidence(root),
+        "continuation": load_continuation_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

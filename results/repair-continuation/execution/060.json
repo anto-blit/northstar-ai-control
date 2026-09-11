@@ -1,0 +1,8 @@
+{
+  "request_index": 60,
+  "case_id": "c1877",
+  "decision": "PROCEED",
+  "committed": true,
+  "response_source": "results/repair-continuation/attempts/060-01.json",
+  "carried_from_original": false
+}

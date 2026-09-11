@@ -1,0 +1,8 @@
+{
+  "request_index": 1,
+  "case_id": "c5276",
+  "decision": "WITHHOLD",
+  "committed": false,
+  "response_source": "results/repair-replication/responses/001.json",
+  "carried_from_original": true
+}

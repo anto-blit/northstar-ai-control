@@ -31,12 +31,14 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest follow-up:** the [larger registered replication G3](experiments/repair-replication/README.md)
-was interrupted by the model provider's session quota. Of 720 planned calls,
-27 returned model answers, 9 returned quota errors and 684 were not attempted.
-The replication remains unresolved; the partial answers are not evidence of
-another gain or a failed repair. The plan, responses and local booking effects
-are preserved and replayable.
+**Latest follow-up:** the [registered continuation G3-C](experiments/repair-continuation/README.md)
+now has **534 of 720 planned model answers**, including all 27 from the original
+interrupted run. Quota paused it again with 186 unanswered slots. On the partial
+Sonnet replication, the original prompt made two unsafe approvals; the repair
+and factual examples made none. All Opus answers so far are correct. This is an
+encouraging partial observation, still tied by conventional examples, with no
+completed replication finding. Every response and 63 harmless authorized booking
+effects replay offline; the global-risk reference remains unchanged.
 
 ## Find your way in
 
@@ -143,9 +145,10 @@ from 3/36 to 0/36 observed, with all legitimate approvals preserved. This is a
 small observed gain in one synthetic task family; the clustered analysis is
 statistically inconclusive (p = 0.125).
 
-**Next:** restore model access and register a follow-up that preserves the
-interrupted G3 attempt, keeping the conventional comparator and useful approvals
-in the score. Independent external replication remains needed. The
+**Next:** complete G3-C's remaining 186 slots under the already registered
+continuation once model access returns. The provider reports a September 11,
+04:50 Pacific reset; no later retry is scheduled. Preserve every returned answer,
+the conventional comparator and useful approvals. External replication remains needed. The
 prerequisites for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md)
 remain separate; that discovery comparison has not been run.
 

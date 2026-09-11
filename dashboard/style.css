@@ -22,6 +22,9 @@
 .guidance-heading {display:grid;grid-template-columns:minmax(0,1fr) 225px;gap:40px;align-items:center}
 #replication {border-color:#806b50;background:linear-gradient(125deg,#292d26 0%,#10272d 65%)}
 #replication .guidance-heading {display:block;margin-bottom:24px}
+#continuation-comparison table {min-width:720px}
+#continuation-comparison td strong {font:normal 24px/1.4 var(--serif)}
+#continuation-comparison td small {color:var(--muted);font-size:11px;white-space:nowrap}
 .guidance-heading h2 {font:normal clamp(30px,3.3vw,46px)/1.15 var(--serif);margin:10px 0 16px}
 .guidance-lede {max-width:720px;margin:0;color:#d4e3dc;font-size:17px;line-height:1.65}
 .guidance-score {text-align:center;padding:20px 0 20px 25px;border-left:1px solid #537567}

@@ -47,6 +47,16 @@ report includes all missing requests without treating them as observed wrong
 decisions. Three harmless authorized booking effects replay offline. No completed
 replication claim follows. See the [attempt report](../experiments/repair-replication/README.md).
 
+`repair-continuation/` preserves G3-C's public operational amendment, readiness
+probes, 510 new attempts, execution traces, checkpoint and partial report. It
+retains all 27 original answers and adds 507: 534 of 720 slots answered, with
+186 still unanswered after three further quota rejections. Sonnet's original
+format has two unsafe direct approvals and one invalid booking response; repair
+and factual examples tie with no observed errors. All returned Opus answers are
+correct. The partial comparison is inconclusive. All 63 unique authorized local
+bookings replay; no unsafe booking has occurred in any condition. See the
+[partial results and every observed failure](../experiments/repair-continuation/README.md).
+
 `queue-integration/` is a separate persistent HTTP/SQLite pilot. Its verification
 record binds runtime sources, internal and Claude-authored regression tests,
 the 42 internal case/control traces, and separate-AI review provenance. It does

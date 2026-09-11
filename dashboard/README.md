@@ -53,12 +53,16 @@ frozen source/plan/response hashes and recomputes counts and the clustered
 comparison from all 216 responses. Dashboard tests cover evidence validation
 and deterministic export. No local score changes the risk reference.
 
-The latest G3 section prominently marks the larger follow-up as interrupted by
-quota. It shows 27 model answers, 9 service errors and 684 unattempted calls,
-without presenting partial accuracy as a replicated gain. Its frozen report,
-source hashes and harmless booking effects replay before export. The dashboard
-suite now has 19 tests, including rejection of invented G3 scores or booking
-records. G2 remains visible as the earlier provisional observation.
+The latest G3-C section marks the continued follow-up as incomplete: 534/720
+answers, including 27 preserved originals, and 186 unanswered slots after another
+quota pause. All four model/test comparisons remain visible, with correct /
+returned answers, planned safety/usefulness denominators, and invalid answers
+separated from unanswered slots. The Sonnet original format has two unsafe
+approvals; the repair ties factual examples and Opus remains at ceiling so far.
+No completed replication finding is claimed. The original frozen report and
+new continuation evidence, source hashes and booking effects replay before
+export. The dashboard suite now has 21 tests, including rejection of invented
+scores or booking records. G2 remains the earlier provisional observation.
 
 `build_dashboard.py` verifies every source and artifact hash in
 `results/verification.json` before exporting. Failed verification, changed

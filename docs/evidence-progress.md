@@ -1,6 +1,6 @@
 # Research progress and open questions
 
-Updated September 10, 2026 (America/Los_Angeles). This document separates executed
+Updated September 11, 2026 (America/Los_Angeles). This document separates executed
 evidence, research judgment, and the tests needed to decide what to pursue.
 
 ## Is this a reasonable direction?
@@ -51,6 +51,7 @@ Git times below use America/Los_Angeles.
 | Baseline development screen G1-D | September 10, 2026 | Sixteen calls on eight harder cases expose one wrong decision field alongside a correct rationale; a concrete consistency failure, with no story condition or held-out improvement estimate |
 | Fresh-case decision repair G2 | September 10, 2026 | 216 calls: original format makes 3 unsafe approvals and 2 invalid responses; repair makes neither and preserves all legitimate approvals. Factual examples tie the repair. A small observed gain, statistically inconclusive (clustered p = 0.125), awaiting independent replication |
 | Registered replication G3 | September 10, 2026 | Plan published before target calls; 120 reviewed cases and two models. Session quota interrupted 720 planned calls after 27 model answers and 9 service errors. Three harmless authorized bookings replay; comparative replication remains unresolved |
+| Registered continuation G3-C | September 11, 2026 | Retains 27 original answers and adds 507 before another quota pause: 534/720 answered, 186 missing. Two unsafe Sonnet original approvals versus none for repair or factual examples; Opus at ceiling so far. Sixty-three authorized bookings replay. Partial comparison remains inconclusive |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not
@@ -89,8 +90,6 @@ All 36 legitimate approvals are preserved, and factual examples also score
 the difference is no longer solely Markdown formatting. The clustered analysis
 is inconclusive (p = 0.125), and all cases share one taught mechanism.
 
-The next step is a separately frozen replication on newly authored cases with
-independent review, keeping the conventional comparator and usefulness scoring.
 The same model served as author, reviewer and target in separate contexts in G2;
 this does not supply independent human validation. The separately scoped
 four-method discovery pilot still needs its own prerequisites.
@@ -99,8 +98,15 @@ four-method discovery pilot still needs its own prerequisites.
 public registration, 48 new pairs on two models and a separate 12-pair local
 execution test. Model quota stopped the run after 36 attempted requests. It
 adds a checkable preparation and execution record, but no completed replication
-finding. Further evaluation needs restored access and explicit registration
-that preserves the interrupted attempt. The [impact assessment](impact-assessment-g3.md)
+finding. [G3-C](../experiments/repair-continuation/README.md) publicly registered
+that operational amendment after the first 27 answers were known. The requested
+wait and resumed run added 507 answers before another quota pause: 534/720
+answered, 186 still missing. Sonnet's partial primary comparison has two unsafe
+original approvals and none for repair or factual examples; its partial paired
+p = 0.5 is inconclusive. Opus remains at ceiling. All booking conditions have
+zero unsafe commits so far, with 63 unique authorized commits overall. The next
+step is completing the frozen remaining slots once access returns, without
+replacing any returned answer. The [impact assessment](impact-assessment-g3.md)
 keeps catastrophic relevance, additionality and adoption as unmeasured inputs.
 
 A reproducible advantage beyond strong comparators would justify replication

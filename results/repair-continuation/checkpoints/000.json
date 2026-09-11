@@ -1,0 +1,258 @@
+{
+  "recorded_at": "2026-09-11T07:05:25.168784+00:00",
+  "reason": "quota rejection; pause until access returns",
+  "bookings": [
+    {
+      "request_index": 6,
+      "case_id": "c8104"
+    },
+    {
+      "request_index": 7,
+      "case_id": "c8104"
+    },
+    {
+      "request_index": 8,
+      "case_id": "c8104"
+    },
+    {
+      "request_index": 33,
+      "case_id": "c2343"
+    },
+    {
+      "request_index": 34,
+      "case_id": "c2343"
+    },
+    {
+      "request_index": 35,
+      "case_id": "c2343"
+    },
+    {
+      "request_index": 45,
+      "case_id": "c8427"
+    },
+    {
+      "request_index": 46,
+      "case_id": "c8427"
+    },
+    {
+      "request_index": 47,
+      "case_id": "c8427"
+    },
+    {
+      "request_index": 60,
+      "case_id": "c1877"
+    },
+    {
+      "request_index": 61,
+      "case_id": "c1877"
+    },
+    {
+      "request_index": 62,
+      "case_id": "c1877"
+    },
+    {
+      "request_index": 132,
+      "case_id": "c8427"
+    },
+    {
+      "request_index": 133,
+      "case_id": "c8427"
+    },
+    {
+      "request_index": 134,
+      "case_id": "c8427"
+    },
+    {
+      "request_index": 138,
+      "case_id": "c5396"
+    },
+    {
+      "request_index": 139,
+      "case_id": "c5396"
+    },
+    {
+      "request_index": 140,
+      "case_id": "c5396"
+    },
+    {
+      "request_index": 144,
+      "case_id": "c4882"
+    },
+    {
+      "request_index": 145,
+      "case_id": "c4882"
+    },
+    {
+      "request_index": 146,
+      "case_id": "c4882"
+    },
+    {
+      "request_index": 150,
+      "case_id": "c7636"
+    },
+    {
+      "request_index": 151,
+      "case_id": "c7636"
+    },
+    {
+      "request_index": 152,
+      "case_id": "c7636"
+    },
+    {
+      "request_index": 162,
+      "case_id": "c1877"
+    },
+    {
+      "request_index": 163,
+      "case_id": "c1877"
+    },
+    {
+      "request_index": 164,
+      "case_id": "c1877"
+    },
+    {
+      "request_index": 228,
+      "case_id": "c8104"
+    },
+    {
+      "request_index": 229,
+      "case_id": "c8104"
+    },
+    {
+      "request_index": 230,
+      "case_id": "c8104"
+    },
+    {
+      "request_index": 243,
+      "case_id": "c8659"
+    },
+    {
+      "request_index": 244,
+      "case_id": "c8659"
+    },
+    {
+      "request_index": 245,
+      "case_id": "c8659"
+    },
+    {
+      "request_index": 321,
+      "case_id": "c6166"
+    },
+    {
+      "request_index": 322,
+      "case_id": "c6166"
+    },
+    {
+      "request_index": 323,
+      "case_id": "c6166"
+    },
+    {
+      "request_index": 345,
+      "case_id": "c6166"
+    },
+    {
+      "request_index": 346,
+      "case_id": "c6166"
+    },
+    {
+      "request_index": 347,
+      "case_id": "c6166"
+    },
+    {
+      "request_index": 354,
+      "case_id": "c7636"
+    },
+    {
+      "request_index": 355,
+      "case_id": "c7636"
+    },
+    {
+      "request_index": 356,
+      "case_id": "c7636"
+    },
+    {
+      "request_index": 363,
+      "case_id": "c4882"
+    },
+    {
+      "request_index": 364,
+      "case_id": "c4882"
+    },
+    {
+      "request_index": 365,
+      "case_id": "c4882"
+    },
+    {
+      "request_index": 393,
+      "case_id": "c6316"
+    },
+    {
+      "request_index": 394,
+      "case_id": "c6316"
+    },
+    {
+      "request_index": 395,
+      "case_id": "c6316"
+    },
+    {
+      "request_index": 402,
+      "case_id": "c6069"
+    },
+    {
+      "request_index": 403,
+      "case_id": "c6069"
+    },
+    {
+      "request_index": 404,
+      "case_id": "c6069"
+    },
+    {
+      "request_index": 468,
+      "case_id": "c5396"
+    },
+    {
+      "request_index": 469,
+      "case_id": "c5396"
+    },
+    {
+      "request_index": 470,
+      "case_id": "c5396"
+    },
+    {
+      "request_index": 477,
+      "case_id": "c6069"
+    },
+    {
+      "request_index": 478,
+      "case_id": "c6069"
+    },
+    {
+      "request_index": 479,
+      "case_id": "c6069"
+    },
+    {
+      "request_index": 495,
+      "case_id": "c2343"
+    },
+    {
+      "request_index": 496,
+      "case_id": "c2343"
+    },
+    {
+      "request_index": 497,
+      "case_id": "c2343"
+    },
+    {
+      "request_index": 510,
+      "case_id": "c7833"
+    },
+    {
+      "request_index": 511,
+      "case_id": "c7833"
+    },
+    {
+      "request_index": 512,
+      "case_id": "c7833"
+    }
+  ]
+}

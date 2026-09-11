@@ -4,11 +4,16 @@ This assessment accompanies the [fixed replication](../experiments/repair-replic
 It records missing evidence as unknown rather than choosing assumptions to reach
 a desired thermometer value. It is a project assessment, not external review.
 
-G3 was interrupted by the provider's session quota after 27 model answers and
-9 service errors out of 720 planned requests. Its three harmless authorized
-booking records replay correctly, but the comparative experiment is incomplete.
-It supplies no new estimate of repair effectiveness or global-risk reduction.
-See the [preserved attempt](../experiments/repair-replication/README.md).
+G3 was interrupted after 27 model answers. Its separately registered
+[continuation G3-C](../experiments/repair-continuation/README.md) now has 534 of
+720 answers, including all 27 originals, before another quota pause. The partial
+Sonnet comparison has two unsafe original-format approvals versus none under
+the repair or factual examples; Opus remains at ceiling. Sixty-three harmless
+authorized bookings replay, with no unsafe commits in any condition so far.
+The remaining 186 answers are missing. This is an incomplete, inconclusive
+comparison, with no demonstrated advantage over factual examples or measured
+improvement in booking safety. It supplies no global-risk reduction estimate.
+The [original attempt](../experiments/repair-replication/README.md) is preserved.
 
 ## Quantity we would need to estimate
 
