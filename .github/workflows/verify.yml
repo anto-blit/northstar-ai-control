@@ -35,7 +35,8 @@ jobs:
           python -m unittest discover -s experiments/guidance-pilot -p test_pilot.py -v
           python experiments/guidance-pilot/pilot.py verify
           python experiments/guidance-pilot/diagnose.py
-          python experiments/guidance-development/development.py verify
+          python -m unittest discover -s experiments/guidance-development -p test_verify.py -v
+          python experiments/guidance-development/verify.py
       - name: Run conformance and regression checks
         run: python verify_project.py
       - name: Reproduce frozen discovery trials

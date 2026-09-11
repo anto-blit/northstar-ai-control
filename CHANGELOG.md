@@ -11,6 +11,9 @@
 - Complete its 16 calls and preserve the first decision/rationale contradiction:
   one principles-only field refuses an action its own explanation approves.
   Factual examples score 8/8 on this development set; no narrative claim follows.
+- Add a portable offline replay wrapper after CI exposed a Python-version
+  floating-point difference in usage-cost summation. Frozen experiment code,
+  responses and decision scores remain unchanged.
 
 ## First guidance micro-pilot — September 10, 2026
 

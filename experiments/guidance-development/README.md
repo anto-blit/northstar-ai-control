@@ -62,9 +62,18 @@ amounts are not necessarily subscription charges. The model was
 Recompute the saved report without model calls:
 
 ```powershell
-py experiments/guidance-development/development.py verify
+py experiments/guidance-development/verify.py
 ```
 
 Frozen files and all response bytes are checked. `run` reuses existing responses
 and only supplies missing ones; it is not an independent replication. A new
 study requires a new version and results location.
+
+The portable verifier uses `math.fsum` for the frozen code's floating-point
+cost totals. CI found that Python 3.10's older `sum` algorithm reports the E total
+as 0.08133099999999999 instead of the saved 0.081331. This wrapper preserves the
+original source bytes and exact report while stabilizing that cost-only arithmetic;
+it does not change decision parsing or any outcome. The original direct `verify`
+command is retained in the frozen script and can fail that byte-independent
+numeric equality check on older interpreters. Two regression checks cover the
+actual discrepancy and complete portable replay.
