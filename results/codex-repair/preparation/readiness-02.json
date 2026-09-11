@@ -1,0 +1,38 @@
+{
+  "result": "OK",
+  "operational": true,
+  "usage": {
+    "input_tokens": 4535,
+    "cached_input_tokens": 2688,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5,
+    "reasoning_output_tokens": 0
+  },
+  "event_types": [
+    "thread.started",
+    "item.completed",
+    "turn.started",
+    "item.completed",
+    "turn.completed"
+  ],
+  "completed_item_types": [
+    "error",
+    "agent_message"
+  ],
+  "thread_id_sha256": "c08ca85dd6b4f1a8d96e75d94217411c58c81721cc71609a4d3727062a173561",
+  "errors": [],
+  "startup_notices": [
+    "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."
+  ],
+  "tool_or_unexpected_item": false,
+  "returncode": 0,
+  "stdout_sha256": "662ab2e2aad9b37d580335f065dbcc97718364a26a9d2223d82fc8e9aca80eed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "medium",
+  "started_at": "2026-09-11T23:12:19.260215+00:00",
+  "elapsed_seconds": 3.5298616999934893,
+  "prompt": "Reply with exactly OK. Do not use tools or read files.",
+  "prompt_sha256": "a6e5ca0345559ee98f0c791f1b8fbb5ff9be5745708cd10024b40bdca75aac9a",
+  "system_sha256": "9539b9981a8611699422d7e5a28fee8e4b12324043f8df4f515d3ab6667119c6"
+}

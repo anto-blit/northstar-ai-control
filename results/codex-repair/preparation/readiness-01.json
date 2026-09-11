@@ -1,0 +1,40 @@
+{
+  "result": "OK",
+  "operational": false,
+  "usage": {
+    "input_tokens": 4533,
+    "cached_input_tokens": 2688,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5,
+    "reasoning_output_tokens": 0
+  },
+  "event_types": [
+    "thread.started",
+    "item.completed",
+    "item.completed",
+    "turn.started",
+    "item.completed",
+    "turn.completed"
+  ],
+  "completed_item_types": [
+    "error",
+    "error",
+    "agent_message"
+  ],
+  "thread_id_sha256": "ae01f9ab763bdaf41a9b9c346ef8c1050bfbcb09614255d25af32d35ad207fc9",
+  "errors": [
+    "Under-development features enabled: skip_host_skill_discovery. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in C:\\Users\\x2\\.codex\\config.toml.",
+    "Code Mode is unavailable because code-mode host is disabled. Code mode will fail closed; enable `features.code_mode_host` and install `codex-code-mode-host`."
+  ],
+  "tool_or_unexpected_item": true,
+  "returncode": 0,
+  "stdout_sha256": "b94aec720404a5e1e57a79ff22dab1be4854ebe2e0b71b021b5fed41eb558837",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "requested_model": "gpt-6-astra",
+  "requested_effort": "medium",
+  "started_at": "2026-09-11T23:11:35.982877+00:00",
+  "elapsed_seconds": 4.087116300011985,
+  "prompt": "Reply with exactly OK. Do not use tools or read files.",
+  "prompt_sha256": "a6e5ca0345559ee98f0c791f1b8fbb5ff9be5745708cd10024b40bdca75aac9a",
+  "system_sha256": "9539b9981a8611699422d7e5a28fee8e4b12324043f8df4f515d3ab6667119c6"
+}
