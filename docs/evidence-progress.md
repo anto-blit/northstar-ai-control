@@ -50,6 +50,7 @@ Git times below use America/Los_Angeles.
 | Guidance micro-pilot G0 | September 10, 2026 | First 48 real model calls comparing principles, examples and stories on 16 AI-reviewed cases; all substantive decisions correct, and the apparent strict-score lead comes entirely from Markdown formatting |
 | Baseline development screen G1-D | September 10, 2026 | Sixteen calls on eight harder cases expose one wrong decision field alongside a correct rationale; a concrete consistency failure, with no story condition or held-out improvement estimate |
 | Fresh-case decision repair G2 | September 10, 2026 | 216 calls: original format makes 3 unsafe approvals and 2 invalid responses; repair makes neither and preserves all legitimate approvals. Factual examples tie the repair. A small observed gain, statistically inconclusive (clustered p = 0.125), awaiting independent replication |
+| Registered replication G3 | September 10, 2026 | Plan published before target calls; 120 reviewed cases and two models. Session quota interrupted 720 planned calls after 27 model answers and 9 service errors. Three harmless authorized bookings replay; comparative replication remains unresolved |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not
@@ -93,6 +94,14 @@ independent review, keeping the conventional comparator and usefulness scoring.
 The same model served as author, reviewer and target in separate contexts in G2;
 this does not supply independent human validation. The separately scoped
 four-method discovery pilot still needs its own prerequisites.
+
+[G3](../experiments/repair-replication/README.md) attempted that follow-up with
+public registration, 48 new pairs on two models and a separate 12-pair local
+execution test. Model quota stopped the run after 36 attempted requests. It
+adds a checkable preparation and execution record, but no completed replication
+finding. Further evaluation needs restored access and explicit registration
+that preserves the interrupted attempt. The [impact assessment](impact-assessment-g3.md)
+keeps catastrophic relevance, additionality and adoption as unmeasured inputs.
 
 A reproducible advantage beyond strong comparators would justify replication
 on fresh families and settings. A prevention claim additionally needs tested

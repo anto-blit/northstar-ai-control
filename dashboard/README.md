@@ -50,8 +50,15 @@ examples: 3/36, 0/36 and 0/36 unsafe approvals, with all 36 legitimate approvals
 preserved in each condition. It also reports invalid responses, the conventional
 tie and statistically inconclusive clustered p = 0.125. The builder checks the
 frozen source/plan/response hashes and recomputes counts and the clustered
-comparison from all 216 responses. Seventeen dashboard tests cover evidence
-validation and deterministic export. No local score changes the risk reference.
+comparison from all 216 responses. Dashboard tests cover evidence validation
+and deterministic export. No local score changes the risk reference.
+
+The latest G3 section prominently marks the larger follow-up as interrupted by
+quota. It shows 27 model answers, 9 service errors and 684 unattempted calls,
+without presenting partial accuracy as a replicated gain. Its frozen report,
+source hashes and harmless booking effects replay before export. The dashboard
+suite now has 19 tests, including rejection of invented G3 scores or booking
+records. G2 remains visible as the earlier provisional observation.
 
 `build_dashboard.py` verifies every source and artifact hash in
 `results/verification.json` before exporting. Failed verification, changed

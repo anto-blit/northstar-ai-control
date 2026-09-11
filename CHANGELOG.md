@@ -1,5 +1,17 @@
 # Changelog
 
+## Registered replication interrupted by quota — September 10, 2026
+
+- Publish the G3 plan before target evaluation: 48 new matched pairs on Sonnet 5
+  and Opus 5, plus 12 separate pairs controlling harmless local booking effects.
+- Review all 120 cases, preserve three syntax-only authoring corrections, and
+  freeze the complete 720-call sample and success criteria.
+- Stop under the registered operational rule after 27 model answers and 9 quota
+  errors. Preserve the 684 unattempted denominators and three authorized booking
+  records. The partial run supports no completed replication finding.
+- Add offline replay, seven harness tests, a visible interrupted status on the
+  site and an impact assessment identifying the missing global-risk evidence.
+
 ## Small observed decision-repair gain — September 10, 2026
 
 - Lock justification-first prompting with a final consistency instruction before

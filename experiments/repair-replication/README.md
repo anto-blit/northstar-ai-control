@@ -1,7 +1,38 @@
 # G3: replication and controlled booking execution
 
-Status: all 120 cases passed pre-run label review. The 720-call target plan is
-frozen for public registration; no target result yet.
+**Status: interrupted by the provider's session quota. No completed replication
+result is available.** Executed September 10, 2026 (America/Los_Angeles).
+
+The [plan was public before any target call](https://github.com/anto-blit/northstar-ai-control/commit/b2c2f54183420736b95fcc974bac119394217f4f).
+All 120 cases passed blind label review. The run attempted 36 of 720 scheduled
+requests: **27 returned usable model answers, 9 returned quota errors, and 684
+were never attempted**. The preset stop rule ended the run after consecutive
+operational errors, allowing already submitted requests to finish.
+
+The model service reported: "You've hit your session limit" and a reset at
+11:50 p.m. September 10, 2026, America/Los_Angeles. No targets were retried,
+substituted or added, and the interrupted report remains frozen.
+
+## What this attempt establishes
+
+The 27 returned model answers were correct. That is a partial descriptive fact,
+not a valid completed comparison or replication of the earlier improvement.
+The missing cases, model coverage and paired outcomes prevent the intended
+comparison. Reported p-values and fixed-denominator scores in the raw report
+are mechanical accounting outputs for an incomplete run; they do not establish
+either a benefit, equivalence, or a failure of the repair.
+
+Six execution-phase decisions ran and produced three authorized local booking
+records. Offline replay checks each recorded effect against the model decision.
+This exercises a small part of the executor but supplies no comparative safety
+claim, broader agent evaluation or real-world adoption evidence.
+
+Known provider-reported list-price-equivalent usage totals **$0.999544**:
+$0.651804 for preparation and the model probe, and $0.347740 for target requests.
+These are not necessarily subscription charges. None of this changes the 10%
+global-risk reference. G2 remains a provisional observation awaiting replication.
+
+## The fixed design
 
 G2 observed fewer unsafe approvals with justification-first prompting, but its
 small sample was statistically inconclusive and factual examples tied the repair.
@@ -40,12 +71,34 @@ Offline harness tests require Python 3.10+ and no third-party packages:
 py -m unittest discover -s experiments/repair-replication -p test_run.py -v
 ```
 
-After the completed run is published, all scores and local effects can be
-replayed without a model login:
+The interrupted report and local effects can be replayed without a model login:
 
 ```powershell
 py experiments/repair-replication/run.py verify
 ```
+
+The seven harness tests check wrong decisions despite correct reasons, actual
+commit mapping, invalid-output behavior, repeated dispatch, exact paired-test
+thresholds, preservation of usefulness and the fresh case inventory. Verification
+preserves all 720 denominators, including the 684 unattempted calls. The raw
+`invalid_or_missing` and `operational_errors` counters include those unattempted
+requests; they must not be described as observed model decision failures.
+
+## Preserved evidence and next step
+
+- [Public registration record](../../results/repair-replication/registration.json)
+- [Frozen plan and prompts](../../results/repair-replication/plan.json)
+- [Reviewed cases](../../results/repair-replication/cases.json)
+- [All 36 request records](../../results/repair-replication/responses/)
+- [Operational stop](../../results/repair-replication/operational-stop.json)
+- [Partial report with fixed denominators](../../results/repair-replication/report.json)
+- [Local booking export](../../results/repair-replication/ledger.json)
+
+Model access must be restored before further target evaluation. Any continuation
+or replacement run needs an explicit public registration that preserves this
+attempt and explains handling of quota failures and previously exposed cases.
+The existing runner deliberately refuses automatic continuation after its stop.
+The next run's sample and analysis must be fixed before its outcomes are observed.
 
 The [impact assessment](../../docs/impact-assessment-g3.md) records the separate
 evidence needed to connect any local improvement to global risk. No G3 result

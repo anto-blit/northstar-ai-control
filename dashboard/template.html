@@ -16,7 +16,7 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z"/></svg>
       <span>NORTHSTAR<small>THE PROGRESS OBSERVATORY</small></span>
     </a>
-    <nav aria-label="Main navigation"><a href="#guidance">First guidance result</a><button class="text-button" data-open-method>About the estimate</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#replication">Latest experiment</a><button class="text-button" data-open-method>About the estimate</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
@@ -25,7 +25,7 @@
         <h1 id="hero-title">Protecting humanity’s <em>freedom and future</em> <span class="hero-world">in an AI world</span></h1>
         <p class="hero-description">NorthStar began with a frightening possibility: AI could destroy humanity. Our mission is to help bring that danger down through ethical guidance, better tests, and safeguards that hold when they matter.</p>
         <div class="hero-actions"><a class="primary-link" href="#impact">See potential &amp; evidence <span aria-hidden="true">↓</span></a><a class="text-button" href="#mechanism">How could we reduce the risk?</a></div>
-        <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong>Our first guidance comparison is complete.</strong><br>Stories matched both baselines on all 16 judgments. <a href="#guidance">See the small step forward ↓</a></p></div>
+        <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong>Our larger follow-up is interrupted.</strong><br>A model quota stopped the run before we could assess whether the small repair gain repeats. <a href="#replication">See the current evidence ↓</a></p></div>
       </div>
       <div class="risk-panel">
         <div class="risk-topline"><span>THE NORTHSTAR THERMOMETER</span><span class="tag">REFERENCE POINT</span></div>
@@ -54,6 +54,15 @@
       </div>
     </section>
 
+    <section id="replication" class="guidance-section" aria-labelledby="replication-title">
+      <div class="guidance-heading"><div><p class="eyebrow">LATEST FOLLOW-UP · INTERRUPTED</p><h2 id="replication-title">The replication is still unresolved.</h2><p class="guidance-lede">We published the larger test plan before collecting answers. The model service then reached its session quota. This attempt cannot tell us whether the earlier gain repeats.</p></div></div>
+      <div class="guidance-comparison" aria-label="Replication run completion, not accuracy"><div class="guidance-condition"><span>Usable model answers</span><strong id="replication-answers">—</strong><small>Too few for the planned comparison</small></div><div class="guidance-condition"><span>Requests blocked by quota</span><strong id="replication-errors">—</strong><small>Service errors, not wrong decisions</small></div><div class="guidance-condition"><span>Calls not attempted</span><strong id="replication-missing">—</strong><small>The fixed stop rule ended the run</small></div></div>
+      <p id="replication-summary" class="guidance-takeaway"></p>
+      <details class="evidence-details"><summary>What was ready, and what actually ran?</summary><p>The plan covers 48 new matched pairs on Sonnet 5 and Opus 5, comparing original prompting, the frozen repair and factual examples. A separate 12-pair test lets each decision control a harmless local booking ledger. All 120 cases passed blind label review by a separate model context before target calls.</p><p>The 27 returned model answers were correct, but most planned cases and comparisons are missing. We do not present that partial accuracy as a replicated gain. Six booking decisions ran and produced three authorized local records. These verify a small part of the execution setup; they do not establish a safety advantage.</p><p>The run stopped after consecutive quota errors, following the published rule. Every answer, error, missing denominator and local effect remains recorded. The review uses two models from one provider and was commissioned by the project; independent human replication and real deployment remain outstanding.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/repair-replication/README.md">Public plan, interruption and preserved evidence ↗</a></details>
+      <div class="guidance-next"><div><h3>Next: complete a registered follow-up when access is available.</h3><p>The earlier small gain remains provisional. The interrupted attempt adds no measured global-risk reduction.</p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/repair-replication/README.md">Inspect this attempt <span aria-hidden="true">↗</span></a></div>
+      <p id="replication-provenance" class="guidance-provenance"></p>
+    </section>
+
     <section id="guidance" class="guidance-section" aria-labelledby="guidance-title">
       <div class="guidance-heading"><div><p class="eyebrow"><span class="status-dot"></span> NEW RESULT · SEPTEMBER 10, 2026</p><h2 id="guidance-title">A small step. A real test.</h2><p class="guidance-lede">Our first story-guidance comparison is complete. The story condition got every substantive judgment right, including when useful work should go ahead. Both baselines did too.</p></div><div class="guidance-score"><strong id="guidance-story-score">—</strong><span>correct judgments with stories</span><small>Post-hoc check of decision content</small></div></div>
       <div class="guidance-facts"><span><strong id="guidance-call-count">—</strong> model responses</span><span><strong>8</strong> matched scenario pairs</span><span><strong>3</strong> guidance conditions</span></div>
@@ -65,7 +74,7 @@
       <div class="guidance-comparison" id="repair-comparison" aria-label="Unsafe approvals and useful approvals in the fresh repair comparison"></div>
       <p class="guidance-takeaway" id="repair-summary"></p>
       <details class="evidence-details guidance-details"><summary>How much confidence does this earn?</summary><p id="repair-uncertainty"></p><p>Two original responses approved an over-limit action despite correctly concluding that permission was absent; a third counted a credit twice. Two further responses emitted conflicting JSON objects and were invalid. The repair and factual examples avoided those failures in this run. These are written decisions in synthetic contract cases; no real action was executed.</p><p>The repair was fixed before fresh case authoring. Case author, label reviewer and target were the same model in separate contexts. This is an observed gain needing independent replication. It establishes neither a narrative advantage nor a reduction in global risk.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/decision-repair/README.md">Protocol, uncertainty and every failed response ↗</a></details>
-      <p class="guidance-takeaway"><strong>Next: a separately frozen replication.</strong> Keep the strong comparator, use newly authored cases, and check that the gain repeats.</p>
+      <p class="guidance-takeaway"><strong>Follow-up attempted:</strong> the <a href="#replication">larger registered replication</a> was interrupted by a model quota. This earlier gain remains provisional.</p>
       <p class="guidance-provenance" id="repair-provenance"></p>
     </section>
 

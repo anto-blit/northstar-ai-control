@@ -32,6 +32,15 @@ known mechanism, authored and reviewed in separate contexts of the same model.
 Independent replication, broader transfer and a narrative advantage remain
 unestablished. The global-risk reference is unchanged.
 
+[G3](experiments/repair-replication/README.md) publicly registered 720 target calls
+before evaluation, covering 48 new pairs on two models and 12 separate pairs
+with harmless local booking execution. All 120 cases passed blind AI label
+review. The provider's session quota interrupted the run: 27 model answers,
+9 quota errors, and 684 unattempted calls. The 27 answers were correct, but the
+planned comparison is incomplete and no replication claim follows. Six booking
+decisions produced three authorized records; their effects replay offline.
+Seven harness tests pass. Missing denominators and every error remain preserved.
+
 The original simulator effects are synthetic in-memory records. The simulator and study runner use
 the Python standard library, with no network, real credentials, arbitrary
 agent-authored code, or external effect execution.

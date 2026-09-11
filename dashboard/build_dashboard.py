@@ -6,6 +6,7 @@ Experiment counts and outcomes never feed a humanity-wide probability estimate.
 No external packages or network calls are needed to build or open the exported HTML.
 """
 import argparse
+import importlib.util
 from hashlib import sha256
 import json
 from itertools import product
@@ -166,6 +167,22 @@ def load_repair_evidence(root):
             "repetitions": plan["repetitions"], "p": p, "model": plan["model"], "reportSha256": sha256(report_path.read_bytes()).hexdigest()}
 
 
+def load_replication_evidence(root):
+    path = root / "experiments/repair-replication/run.py"
+    spec = importlib.util.spec_from_file_location("dashboard_g3_verifier", path)
+    verifier = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(verifier)
+    report = verifier.verify(root, emit=False)
+    operational_answers = sum(row["operational"] for row in report["observations"])
+    return {"phases": report["phases"], "planned": report["requests_planned"],
+            "completed": report["requests_completed"], "allOperational": report["all_operational"],
+            "operationalAnswers": operational_answers,
+            "requestErrors": report["requests_completed"] - operational_answers,
+            "notAttempted": report["requests_planned"] - report["requests_completed"],
+            "publicPlanCommit": report["public_plan_commit"], "cost": report["total_known_cost_usd"],
+            "reportSha256": sha256((root / "results/repair-replication/report.json").read_bytes()).hexdigest()}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -213,6 +230,7 @@ def load_evidence(root=ROOT):
         "queue": load_queue_evidence(root),
         "guidance": load_guidance_evidence(root),
         "repair": load_repair_evidence(root),
+        "replication": load_replication_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

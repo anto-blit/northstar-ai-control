@@ -4,6 +4,12 @@ This assessment accompanies the [fixed replication](../experiments/repair-replic
 It records missing evidence as unknown rather than choosing assumptions to reach
 a desired thermometer value. It is a project assessment, not external review.
 
+G3 was interrupted by the provider's session quota after 27 model answers and
+9 service errors out of 720 planned requests. Its three harmless authorized
+booking records replay correctly, but the comparative experiment is incomplete.
+It supplies no new estimate of repair effectiveness or global-risk reduction.
+See the [preserved attempt](../experiments/repair-replication/README.md).
+
 ## Quantity we would need to estimate
 
 For a consistently defined catastrophic event and time horizon:

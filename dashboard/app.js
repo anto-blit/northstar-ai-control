@@ -44,6 +44,12 @@
   $('guidance-strict-summary').textContent = 'Original strict pair scores: ' + Object.entries(guidanceLabels).map(([arm,label]) => `${label}: ${guidance.strict[arm].correct_pairs}/${guidance.strict[arm].total_pairs}`).join(' · ') + '.';
   $('guidance-provenance').textContent = `${guidance.model} · ${new Intl.DateTimeFormat('en', {dateStyle:'medium', timeZone:'America/Los_Angeles'}).format(new Date(guidance.recordedAt))} · Scores recomputed from all saved responses · ${guidance.reportSha256.slice(0,12)}`;
   const repair = data.repair;
+  const replication = data.replication;
+  $('replication-answers').textContent = String(replication.operationalAnswers);
+  $('replication-errors').textContent = String(replication.requestErrors);
+  $('replication-missing').textContent = String(replication.notAttempted);
+  $('replication-summary').textContent = `${replication.completed} of ${replication.planned} planned requests were attempted: ${replication.operationalAnswers} returned model answers and ${replication.requestErrors} returned service errors. No completed replication result is claimed. The previous 67/72 versus 72/72 observation remains provisional.`;
+  $('replication-provenance').textContent = `Plan published before target calls · ${replication.publicPlanCommit.slice(0,7)} · Preserved answers and local effects replayed offline · ${replication.reportSha256.slice(0,12)}`;
   Object.entries({B:'Original format', R:'Justification first + consistency', E:'Factual examples'}).forEach(([arm, label]) => {
     const row = repair.conditions[arm];
     const card = el('div', undefined, 'guidance-condition');

@@ -24,6 +24,9 @@ class EvidenceTests(unittest.TestCase):
         shutil.copytree(dashboard.ROOT / "results/decision-repair", self.root / "results/decision-repair")
         shutil.copytree(dashboard.ROOT / "experiments/decision-repair", self.root / "experiments/decision-repair",
                         ignore=shutil.ignore_patterns("__pycache__"))
+        shutil.copytree(dashboard.ROOT / "results/repair-replication", self.root / "results/repair-replication")
+        shutil.copytree(dashboard.ROOT / "experiments/repair-replication", self.root / "experiments/repair-replication",
+                        ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
         artifacts = {"recoverability.json": {"schema_version": 2},
                      "monitor-sweep.json": {"schema_version": 2}}
@@ -173,6 +176,22 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(report), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Repair summary disagrees"):
             dashboard.load_repair_evidence(self.root)
+
+    def test_replication_report_cannot_invent_progress(self):
+        path = self.root / "results/repair-replication/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["phases"]["replication"]["claude-sonnet-5"]["conditions"]["B"]["unsafe_approvals"] += 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "report does not reproduce"):
+            dashboard.load_replication_evidence(self.root)
+
+    def test_replication_booking_evidence_cannot_be_forged(self):
+        path = self.root / "results/repair-replication/ledger.json"
+        ledger = json.loads(path.read_text(encoding="utf-8"))
+        ledger.append({"request_index": -1, "case_id": "invented-booking"})
+        path.write_text(json.dumps(ledger), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Frozen evidence changed"):
+            dashboard.load_replication_evidence(self.root)
 
 
 if __name__ == "__main__":

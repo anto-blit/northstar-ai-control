@@ -40,6 +40,13 @@ approvals. Factual examples also scored perfectly. The clustered p = 0.125
 leaves this small observed gain statistically inconclusive. See the
 [full result and limits](../experiments/decision-repair/README.md).
 
+`repair-replication/` preserves the publicly registered G3 follow-up and its quota
+interruption. All 120 cases passed review; 27 of 720 planned calls returned model
+answers, 9 returned quota errors and 684 were not attempted. The fixed-denominator
+report includes all missing requests without treating them as observed wrong
+decisions. Three harmless authorized booking effects replay offline. No completed
+replication claim follows. See the [attempt report](../experiments/repair-replication/README.md).
+
 `queue-integration/` is a separate persistent HTTP/SQLite pilot. Its verification
 record binds runtime sources, internal and Claude-authored regression tests,
 the 42 internal case/control traces, and separate-AI review provenance. It does
