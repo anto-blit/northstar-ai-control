@@ -47,6 +47,8 @@ Git times below use America/Los_Angeles.
 | Guidance and evaluation revision I2 | September 9, 2026 | Restores the moral-guidance question, defines a direct comparator, and defers speculative branches; no new model experiment |
 | Recovery and monitor analyses, including review corrections | September 9, 2026 | Explicit safe targets, three delegation timing models, content/revocation comparisons and 90 tests; no study-episode recoverability or learned-monitor result |
 | Persistent delegated-stop integration | September 9, 2026 | HTTP tools, separate processes, a durable SQLite mailbox and conventional comparators; internal experiments and a separately commissioned Claude review, with no independent human validation or global-impact estimate |
+| Guidance micro-pilot G0 | September 10, 2026 | First 48 real model calls comparing principles, examples and stories on 16 AI-reviewed cases; all substantive decisions correct, and the apparent strict-score lead comes entirely from Markdown formatting |
+| Baseline development screen G1-D | September 10, 2026 | Sixteen calls on eight harder cases expose one wrong decision field alongside a correct rationale; a concrete consistency failure, with no story condition or held-out improvement estimate |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not
@@ -71,10 +73,17 @@ tests and conventional safeguards.
 
 ### Evidence needed next
 
-First, independently review the principles, guidance examples and paired cases.
-Then freeze and execute the small guidance comparison and the separately scoped
-four-method discovery pilot when their prerequisites are met. Measure actual
-outcomes, effort, uncertainty, and legitimate usefulness.
+The [first guidance rehearsal](../experiments/guidance-pilot/README.md) has now
+run. It establishes feasibility, but the cases are too easy to distinguish
+substantive guidance effects on the tested model. Its original scores are
+preserved alongside the post-hoc diagnosis of five Markdown-wrapped responses;
+we do not count the resulting one-pair S/E lead as a moral-guidance win.
+
+The next guidance step needs independently reviewed development cases that
+expose actual judgment errors, followed by fresh held-out evaluation. Keep
+development selection separate from any claimed improvement. The separately
+scoped four-method discovery pilot still needs its own prerequisites. Measure
+actual outcomes, effort, uncertainty, and legitimate usefulness.
 
 A reproducible advantage beyond strong comparators would justify replication
 on fresh families and settings. A prevention claim additionally needs tested

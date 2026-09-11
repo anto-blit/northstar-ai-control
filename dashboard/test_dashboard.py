@@ -2,6 +2,7 @@
 from copy import deepcopy
 from hashlib import sha256
 import json
+import shutil
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -15,6 +16,11 @@ class EvidenceTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         (self.root / "results").mkdir()
+        # The guidance fixture preserves the actual frozen 48-call record so
+        # corruption tests exercise the same graph of hashes as publication.
+        shutil.copytree(dashboard.ROOT / "results/guidance-pilot", self.root / "results/guidance-pilot")
+        shutil.copytree(dashboard.ROOT / "experiments/guidance-pilot", self.root / "experiments/guidance-pilot",
+                        ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
         artifacts = {"recoverability.json": {"schema_version": 2},
                      "monitor-sweep.json": {"schema_version": 2}}
@@ -122,6 +128,32 @@ class EvidenceTests(unittest.TestCase):
         (self.root / "review.json").write_text('{"type":"unverified endorsement"}')
         with self.assertRaisesRegex(ValueError, "changed since verification"):
             dashboard.load_evidence(self.root)
+
+    def test_guidance_preserves_strict_scores_and_explains_substantive_tie(self):
+        data = dashboard.load_guidance_evidence(self.root)
+        self.assertEqual(data["calls"], 48)
+        self.assertEqual(data["strict"]["E"]["correct_pairs"], 6)
+        self.assertEqual(data["strict"]["S"]["correct_pairs"], 7)
+        self.assertEqual([data["substantive"][a]["correct"] for a in "PES"], [16, 16, 16])
+        self.assertTrue(data["formattingOnlyDifference"])
+
+    def test_changed_guidance_response_is_rejected(self):
+        (self.root / "results/guidance-pilot/responses/000.json").write_text('{"result":"improved"}')
+        with self.assertRaisesRegex(ValueError, "changed since verification"):
+            dashboard.load_guidance_evidence(self.root)
+
+    def test_inflated_diagnostic_score_is_rejected(self):
+        path = self.root / "results/guidance-pilot/format-diagnosis.json"
+        data = json.loads(path.read_text())
+        data["conditions"]["S"]["correct"] = 17
+        path.write_text(json.dumps(data))
+        with self.assertRaisesRegex(ValueError, "summary disagrees"):
+            dashboard.load_guidance_evidence(self.root)
+
+    def test_changed_guidance_source_is_rejected(self):
+        (self.root / "experiments/guidance-pilot/materials.json").write_text('{"easier":true}')
+        with self.assertRaisesRegex(ValueError, "changed since verification"):
+            dashboard.load_guidance_evidence(self.root)
 
 
 if __name__ == "__main__":

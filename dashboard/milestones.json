@@ -4,5 +4,6 @@
   {"number":"03","title":"A fair comparison design","type":"Prepared","description":"Four methods share resource budgets. The independent comparison is still ahead.","source":"experiments/discovery-study/PILOT.md"},
   {"number":"04","title":"Recovery boundaries","type":"Executed","description":"Explicit safe targets reveal when intervention can still work, and when timing defeats it.","source":"results/recoverability.json"},
   {"number":"05","title":"Approval put to the test","type":"Executed","description":"Monitor errors and permission revoked after approval are tested as separate failure conditions.","source":"results/monitor-sweep.json"},
-  {"number":"06","title":"Persistent queue & AI review","type":"Executed","description":"Two commissioned independent AI review rounds by Claude challenge the local stop contract and verify repairs. Global impact was not evaluated.","source":"experiments/queued-stop/claude-review/README.md"}
+  {"number":"06","title":"Persistent queue & AI review","type":"Executed","description":"Two commissioned independent AI review rounds by Claude challenge the local stop contract and verify repairs. Global impact was not evaluated.","source":"experiments/queued-stop/claude-review/README.md"},
+  {"number":"07","title":"First guidance comparison","type":"Executed","description":"48 model responses. Stories and both baselines made all 16 substantive judgments correctly. A completed experiment; no demonstrated narrative advantage.","source":"experiments/guidance-pilot/README.md"}
 ]

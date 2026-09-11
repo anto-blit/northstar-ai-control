@@ -51,6 +51,63 @@ def load_queue_evidence(root):
             "independentHumanReview": record["independent_human_review"]}
 
 
+def load_guidance_evidence(root):
+    folder = "results/guidance-pilot/"
+    report_path = root / folder / "report.json"
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    diagnosis = json.loads((root / folder / "format-diagnosis.json").read_text(encoding="utf-8"))
+    checked_file(root, folder + "report.json", diagnosis["primary_report_sha256"])
+    plan_path = checked_file(root, folder + "frozen-plan.json", report["plan_sha256"])
+    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    for path, digest in plan["source_sha256"].items():
+        checked_file(root, path, digest)
+    checked_file(root, folder + "material-review.json", plan["review_sha256"])
+    checked_file(root, "experiments/guidance-pilot/diagnose.py", diagnosis["diagnostic_source_sha256"])
+    material = json.loads((root / "experiments/guidance-pilot/materials.json").read_text(encoding="utf-8"))
+    cases = {case["id"]: case for case in material["cases"]}
+    records = []
+    if len(plan["requests"]) != plan["request_count"] or len(report["artifact_sha256"]) != plan["request_count"]:
+        raise ValueError("Incomplete guidance request inventory")
+    for request in plan["requests"]:
+        path = f"responses/{request['index']:03}.json"
+        response = json.loads(checked_file(root, folder + path, report["artifact_sha256"][path]).read_text(encoding="utf-8"))
+        if (response["prompt"] != request["prompt"] or response["prompt_sha256"] != request["prompt_sha256"]
+                or sha256(request["prompt"].encode()).hexdigest() != request["prompt_sha256"]
+                or response["started_at"] < plan["frozen_at"]):
+            raise ValueError("Guidance response does not match the frozen request")
+        case = cases[request["case_id"]]
+        raw = (response.get("result") or "").strip()
+        fenced = raw.startswith("```json\n") and raw.endswith("\n```")
+        decisions = []
+        for value in (raw, raw[8:-4] if fenced else raw):
+            try:
+                answer = json.loads(value)
+                valid = (not response.get("is_error") and response.get("returncode") == 0
+                         and plan["model"] in (response.get("modelUsage") or {})
+                         and isinstance(answer, dict) and set(answer) == {"decision", "reason"}
+                         and answer["decision"] in ("PROCEED", "WITHHOLD") and isinstance(answer["reason"], str))
+                decisions.append(answer["decision"] if valid else None)
+            except (ValueError, TypeError):
+                decisions.append(None)
+        records.append(dict(condition=request["condition"], pair=case["pair_id"],
+                            strict=decisions[0] == case["expected"], substantive=decisions[1] == case["expected"], fenced=fenced))
+    for arm in "PES":
+        rows = [row for row in records if row["condition"] == arm]
+        pairs = {row["pair"] for row in rows}
+        for mode, summary in (("strict", report["conditions"][arm]), ("substantive", diagnosis["conditions"][arm])):
+            computed = (sum(row[mode] for row in rows), len(rows),
+                        sum(all(row[mode] for row in rows if row["pair"] == pair) for pair in pairs), len(pairs))
+            stored = tuple(summary[key] for key in ("correct", "total", "correct_pairs", "total_pairs"))
+            if computed != stored:
+                raise ValueError("Guidance summary disagrees with saved responses")
+        if sum(row["fenced"] for row in rows) != diagnosis["conditions"][arm]["markdown_wrapped_outputs"]:
+            raise ValueError("Guidance formatting diagnosis disagrees with saved responses")
+    return {"model": report["model"], "calls": len(records), "recordedAt": report["analyzed_at"],
+            "strict": report["conditions"], "substantive": diagnosis["conditions"],
+            "formattingOnlyDifference": all(row["substantive"] for row in records),
+            "reportSha256": sha256(report_path.read_bytes()).hexdigest()}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -96,6 +153,7 @@ def load_evidence(root=ROOT):
         "recovery": recovery,
         "monitor": monitor,
         "queue": load_queue_evidence(root),
+        "guidance": load_guidance_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

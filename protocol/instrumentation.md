@@ -1,5 +1,11 @@
 # NorthStar guidance and evaluation protocol
 
+**Execution note, September 10, 2026:** [Micro-pilot G0](../experiments/guidance-pilot/README.md)
+completed 48 calls on a smaller AI-reviewed corpus. All conditions reached
+substantive ceiling; the strict-score difference was output formatting. G0
+discloses its departures from the human-reviewed design below. This note does
+not retroactively change the I2 proposal or make G0 a confirmatory study.
+
 Revision I2 — September 9, 2026. Research proposal; independent review,
 preregistration, and execution remain ahead. [Draft 0.1](../spec/archive/NorthStar-draft-0.1.md)
 and [revision I1](https://github.com/anto-blit/northstar-ai-control/blob/2606fde04966ed86b86d523838c2da5d16358d72/protocol/instrumentation.md)

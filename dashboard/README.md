@@ -37,6 +37,14 @@ Zero must never be presented as a guarantee. See the
 
 ## Data and maintenance
 
+The first guidance result is highlighted near the top of the page. Its small
+milestone is completing a checkable comparison: stories and both baselines
+made 16/16 correct substantive judgments. Original strict scores remain visible
+in the details, alongside the post-hoc Markdown-fence diagnosis. No narrative
+advantage or risk reduction is inferred. The builder verifies the G0 source,
+plan, review, response and diagnostic hashes and recomputes both sets of scores
+from all 48 saved responses before exporting the public summary.
+
 `build_dashboard.py` verifies every source and artifact hash in
 `results/verification.json` before exporting. Failed verification, changed
 sources, changed results or absent provenance stop the build. The dashboard

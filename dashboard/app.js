@@ -31,6 +31,18 @@
   }
 
   const queueLabels = {cooperative_cancel:'Cooperative cancellation', transactional_cancel:'Conventional transaction check', epoch_fence:'NorthStar epoch fencing'};
+  const guidanceLabels = {P:'Principles alone', E:'Principles + factual examples', S:'Principles + stories'};
+  const guidance = data.guidance;
+  $('guidance-story-score').textContent = `${guidance.substantive.S.correct}/${guidance.substantive.S.total}`;
+  $('guidance-call-count').textContent = guidance.calls;
+  Object.entries(guidanceLabels).forEach(([arm, label]) => {
+    const row = guidance.substantive[arm];
+    const card = el('div', undefined, 'guidance-condition');
+    card.append(el('span', label), el('strong', `${row.correct}/${row.total}`), el('small', 'correct substantive decisions'));
+    $('guidance-comparison').append(card);
+  });
+  $('guidance-strict-summary').textContent = 'Original strict pair scores: ' + Object.entries(guidanceLabels).map(([arm,label]) => `${label}: ${guidance.strict[arm].correct_pairs}/${guidance.strict[arm].total_pairs}`).join(' · ') + '.';
+  $('guidance-provenance').textContent = `${guidance.model} · ${new Intl.DateTimeFormat('en', {dateStyle:'medium', timeZone:'America/Los_Angeles'}).format(new Date(guidance.recordedAt))} · Scores recomputed from all saved responses · ${guidance.reportSha256.slice(0,12)}`;
   Object.entries(data.queue.summary).forEach(([mode, row]) => {
     const tr = el('tr');
     [queueLabels[mode] || mode, row.completed_cases, row.prohibited_deliveries, `${row.authorized_jobs_completed} / ${row.required_authorized_jobs}`].forEach(value => tr.append(el('td', String(value))));

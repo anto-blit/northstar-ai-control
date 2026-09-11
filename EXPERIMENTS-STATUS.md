@@ -1,10 +1,24 @@
 # NorthStar — implementation and evidence
 
-Research specification: v0.3.1. Simulator: v0.2.0. Updated September 9, 2026.
+Research specification: v0.3.1. Simulator: v0.2.0. Updated September 10, 2026.
 
 Companion guidance and evaluation protocol: [revision I2](protocol/instrumentation.md),
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
+
+The separate [guidance micro-pilot G0](experiments/guidance-pilot/README.md) has
+now completed 48 model calls with an AI-reviewed 16-case corpus. It is a
+best-effort rehearsal with disclosed departures from I2's human-review design.
+All three conditions made every substantive decision correctly. The frozen
+strict-score S/E lead is entirely Markdown formatting, not a demonstrated
+moral-judgment improvement. The primary scores and post-hoc diagnosis are both
+preserved in `results/guidance-pilot/`.
+
+[G1-D](experiments/guidance-development/README.md) adds a separate 16-call
+development screen of eight harder cases. It exposes one decision/rationale
+inconsistency in the principles-only condition (7/8 correct decision fields),
+while the factual-example condition is 8/8. It has no story arm or held-out
+effect estimate; the wrong field does not establish missing moral understanding.
 
 The original simulator effects are synthetic in-memory records. The simulator and study runner use
 the Python standard library, with no network, real credentials, arbitrary
@@ -154,7 +168,7 @@ Neither set is a preregistered discovery-method study.
 The [progress dashboard](https://anto-blit.github.io/northstar-ai-control/)
 visualizes these recorded results and the project milestones. Its thermometer
 uses a sourced 10% reference; it separates potential global impact, demonstrated
-simulation protection, and global reduction (unestablished). Eleven separate dashboard checks
+simulation protection, and global reduction (unestablished). Fifteen separate dashboard checks
 cover provenance and separation of project progress from risk claims; they do
 not add to the displayed 90 mechanism/regression checks.
 
@@ -205,11 +219,13 @@ examples, and principles with narrative versions of the same examples. The main
 guidance contrast is stories versus structured examples. It uses matched-pair
 and cross-setting evaluation with declared labels, independent review, and costs.
 
-No reviewed guidance package, narrative corpus, narrative scorer, trained
-story-based AI, or model-generalization result is supplied by this repository.
+G0 now supplies original matched guidance, 16 AI-reviewed cases, a scorer,
+frozen prompts and 48 responses from one model. It finds substantive ceiling
+performance in all conditions. Human review, independent held-out authoring,
+trained story-based AI and evidence of narrative generalization remain absent.
 The illustrative 72-scenario pilot is a proposed authoring scale, not a dataset
 or power calculation. Experiment 3 compares four discovery methods; its frozen
-packets are unchanged. The guidance comparison is a separate proposed experiment.
+packets are unchanged. G0 is a separate exploratory guidance rehearsal.
 
 Graph operators, activation probes, and anti-gaming strategies are deferred from
 the active plan. Historical proposals and their corrections remain available in

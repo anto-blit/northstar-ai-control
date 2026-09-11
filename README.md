@@ -29,7 +29,7 @@ We publish our code, methods, completed results, and limitations so others can c
 
 **Help us break NorthStar. Help us improve it. Help us test whether its safeguards can earn a role in real systems.**
 
-> **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, reproducible results, and a comparative-study harness. Story-based moral guidance and its behavioral evaluation are proposed work; this repository does not yet demonstrate a story-trained AI. The value of narrative guidance and search remains untested.
+> **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, reproducible results, and a first small guidance comparison. All three guidance conditions made the correct substantive decisions on all 16 cases; a small strict-score difference came entirely from output formatting. No narrative advantage or story-trained AI is demonstrated. Story-guided failure discovery remains untested.
 
 ## Find your way in
 
@@ -62,8 +62,8 @@ The [guidance and evaluation protocol](protocol/instrumentation.md) tests the fo
 
 | Research track | What it asks | Where we are |
 |---|---|---|
-| **Guidance** | Do principles illustrated through stories improve ethical decisions? | Proposed comparison; guidance materials and model runs pending |
-| **Evaluation** | Do decisions hold up across changed facts, unfamiliar settings, and conflicting incentives? | Paired-test protocol; reviewed corpus and scorer pending |
+| **Guidance** | Do principles illustrated through stories improve ethical decisions? | First 48-call rehearsal completed; all conditions at substantive ceiling, no demonstrated narrative advantage |
+| **Evaluation** | Do decisions hold up across changed facts, unfamiliar settings, and conflicting incentives? | Small AI-reviewed paired corpus and scorer; independent human review and harder held-out evaluation pending |
 | **Protection** | Do discovered failures lead to safeguards that withstand fresh attacks while allowing legitimate work? | Synthetic mechanisms and a persistent queue pilot with commissioned independent AI review; four-method comparison pending |
 
 Each part needs its own evidence. Recognizing a moral distinction does not establish that a system will respect it. We have no demonstrated alignment solution or numerical estimate of catastrophic-risk reduction. Internal probes and graph operators are deferred; the current priorities are comparative behavior tests and independently challenged safeguards.
@@ -115,7 +115,23 @@ and repairs them at lower cost. The queue comparison did not test that idea.
 If the narrative approach adds no useful benefit, narrow that claim and keep
 the reusable tests and safeguards.
 
-**Next:** prepare a small, reviewed [guidance and paired-test sample](protocol/instrumentation.md#guidance-comparison) while completing the prerequisites for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md). The guidance conditions and discovery methods are separate comparisons. Neither has been run.
+The first [guidance micro-pilot](experiments/guidance-pilot/README.md) compared
+principles alone, matched factual examples, and stories on 16 synthetic cases.
+Its frozen strict pair scores were 7/8, 6/8, and 7/8 respectively; all five failed
+outputs contained the correct decision inside an unrequested Markdown fence.
+The preserved post-hoc diagnosis finds 16/16 substantive decisions in every
+condition. This is a ceiling result, not evidence of better moral judgment.
+
+**Next:** independently review a development set that exposes actual baseline
+judgment errors, then evaluate guidance on fresh held-out cases. The prerequisites
+for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md)
+remain separate; that discovery comparison has not been run.
+
+The [first harder development screen](experiments/guidance-development/README.md)
+has now completed 16 calls on eight new cases. Principles alone produced one
+wrong decision field despite a correct, self-correcting explanation; factual
+examples produced eight correct decisions. This is a concrete consistency flaw
+to investigate, not a demonstrated causal benefit or a story comparison.
 
 ### Try it yourself
 

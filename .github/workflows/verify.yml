@@ -30,6 +30,12 @@ jobs:
         run: python dashboard/build_dashboard.py --check
       - name: Check dashboard integrity and risk separation
         run: python -m unittest discover -s dashboard -p test_dashboard.py -v
+      - name: Verify preserved guidance results without model calls
+        run: |
+          python -m unittest discover -s experiments/guidance-pilot -p test_pilot.py -v
+          python experiments/guidance-pilot/pilot.py verify
+          python experiments/guidance-pilot/diagnose.py
+          python experiments/guidance-development/development.py verify
       - name: Run conformance and regression checks
         run: python verify_project.py
       - name: Reproduce frozen discovery trials

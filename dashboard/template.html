@@ -16,7 +16,7 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z"/></svg>
       <span>NORTHSTAR<small>THE PROGRESS OBSERVATORY</small></span>
     </a>
-    <nav aria-label="Main navigation"><a href="#impact">Potential &amp; evidence</a><button class="text-button" data-open-method>About the estimate</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#guidance">First guidance result</a><button class="text-button" data-open-method>About the estimate</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
@@ -25,7 +25,7 @@
         <h1 id="hero-title">Protecting humanity’s <em>freedom and future</em> <span class="hero-world">in an AI world</span></h1>
         <p class="hero-description">NorthStar began with a frightening possibility: AI could destroy humanity. Our mission is to help bring that danger down through ethical guidance, better tests, and safeguards that hold when they matter.</p>
         <div class="hero-actions"><a class="primary-link" href="#impact">See potential &amp; evidence <span aria-hidden="true">↓</span></a><a class="text-button" href="#mechanism">How could we reduce the risk?</a></div>
-        <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong>We have tested stop safeguards in a persistent queue.</strong><br>How much that changes humanity-wide risk is still unknown.</p></div>
+        <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong>Our first guidance comparison is complete.</strong><br>Stories matched both baselines on all 16 judgments. <a href="#guidance">See the small step forward ↓</a></p></div>
       </div>
       <div class="risk-panel">
         <div class="risk-topline"><span>THE NORTHSTAR THERMOMETER</span><span class="tag">REFERENCE POINT</span></div>
@@ -52,6 +52,16 @@
         </div>
         <div class="risk-source"><p>Geoffrey Hinton · <a href="https://www.wbur.org/onpoint/2025/12/29/godfather-of-ai-geoffrey-hinton">WBUR interview, Jan. 10, 2025 ↗</a><br>Personal forecast; horizon anchored to the interview.</p><button class="round-button" data-open-method aria-label="Read the risk reference's source and assumptions">i</button></div>
       </div>
+    </section>
+
+    <section id="guidance" class="guidance-section" aria-labelledby="guidance-title">
+      <div class="guidance-heading"><div><p class="eyebrow"><span class="status-dot"></span> NEW RESULT · SEPTEMBER 10, 2026</p><h2 id="guidance-title">A small step. A real test.</h2><p class="guidance-lede">Our first story-guidance comparison is complete. The story condition got every substantive judgment right, including when useful work should go ahead. Both baselines did too.</p></div><div class="guidance-score"><strong id="guidance-story-score">—</strong><span>correct judgments with stories</span><small>Post-hoc check of decision content</small></div></div>
+      <div class="guidance-facts"><span><strong id="guidance-call-count">—</strong> model responses</span><span><strong>8</strong> matched scenario pairs</span><span><strong>3</strong> guidance conditions</span></div>
+      <div class="guidance-comparison" id="guidance-comparison" aria-label="Correct substantive decisions by guidance condition"></div>
+      <p class="guidance-takeaway"><strong>The tiny win: we moved from a proposal to a completed, checkable experiment.</strong> Stories handled this first set without observed judgment errors. We have not demonstrated that they improve decisions over simpler guidance.</p>
+      <details class="evidence-details guidance-details"><summary>What the scores actually show</summary><p id="guidance-strict-summary"></p><p>The frozen scoring required plain JSON. Five otherwise correct answers arrived inside Markdown fences. A separate post-hoc check removed only those wrappers and found all three conditions at 16/16 correct decisions. The original scores remain unchanged; their small difference is formatting, not better moral judgment.</p><p>One model, 16 synthetic cases, and one response per case per condition. Labels were checked by a separate AI call, using the same model; there was no independent human review. These are written judgments in familiar types of problem, not demonstrated protection in a deployed system.</p></details>
+      <div class="guidance-next"><div><span class="eyebrow">BUILDING ON IT</span><h3>A harder case exposed a contradiction.</h3><p>The next development check found one response that refused an action while its own explanation correctly said to proceed. We now have a specific inconsistency to investigate before testing improvements on fresh cases. <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/guidance-development/README.md">Inspect the follow-up ↗</a></p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/guidance-pilot/README.md">Read the first experiment <span aria-hidden="true">↗</span></a></div>
+      <p class="guidance-provenance" id="guidance-provenance"></p>
     </section>
 
     <section class="metrics" aria-label="Verified project snapshot">

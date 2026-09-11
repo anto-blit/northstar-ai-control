@@ -1,5 +1,27 @@
 # Changelog
 
+## Guidance milestone on the dashboard — September 10, 2026
+
+- Highlight the first completed guidance comparison with all three substantive
+  scores side by side and the original strict scores in the accompanying detail.
+- Recompute displayed guidance counts from hash-checked saved responses, test
+  rejection of changed sources or inflated summaries, and check mobile layouts.
+- Begin G1-D, a separate fixed development screen of harder cases against the
+  principles and factual-example baselines, without reusing it as held-out evidence.
+- Complete its 16 calls and preserve the first decision/rationale contradiction:
+  one principles-only field refuses an action its own explanation approves.
+  Factual examples score 8/8 on this development set; no narrative claim follows.
+
+## First guidance micro-pilot — September 10, 2026
+
+- Execute a frozen 48-call comparison of principles, matched factual examples,
+  and original short stories on 16 synthetic cases with pre-run AI label review.
+- Preserve all prompts, responses, usage, source hashes and primary scores.
+  Add offline checks for strict pair scoring, invalid outputs and material balance.
+- Diagnose the apparent one-pair story/example lead as output formatting:
+  all conditions made every substantive decision correctly. Preserve that
+  ceiling result without claiming a moral-guidance advantage or rerunning cases.
+
 ## Dashboard mission and review credit — September 10, 2026
 
 - Use the founder's mission as the dashboard headline and a green bulb for the

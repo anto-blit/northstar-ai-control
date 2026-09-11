@@ -18,6 +18,20 @@ ticks, not seconds, and monitor error rates are inputs, not measurements.
 `verification.json` records the source hashes, result hashes, interpreter, and
 test count from the latest `python verify_project.py` execution.
 
+`guidance-pilot/` preserves the first 48-call guidance rehearsal: the pre-run
+AI review, frozen prompts/source hashes, all responses, and strict scores.
+`format-diagnosis.json` is explicitly post-hoc and leaves the primary scores
+unchanged. All substantive decisions were correct in every condition; the
+apparent story advantage in strict scoring comes entirely from output format.
+See [the experiment report](../experiments/guidance-pilot/README.md) for the
+small corpus, review limitations, costs, and offline reproduction commands.
+
+`guidance-development/` contains the separate G1-D baseline difficulty screen.
+Its eight cases and 16 responses expose one decision/rationale contradiction:
+the principles-only action field wrongly refuses an allowed contract while
+its explanation correctly says to proceed. The factual-example condition is
+8/8 on this development set. No story comparison or causal improvement is claimed.
+
 `queue-integration/` is a separate persistent HTTP/SQLite pilot. Its verification
 record binds runtime sources, internal and Claude-authored regression tests,
 the 42 internal case/control traces, and separate-AI review provenance. It does

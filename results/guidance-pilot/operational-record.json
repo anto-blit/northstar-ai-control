@@ -1,0 +1,91 @@
+{
+  "operational_probes": [
+    {
+      "result": "OK",
+      "is_error": false,
+      "subtype": "success",
+      "usage": {
+        "input_tokens": 611,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 4,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 611,
+            "output_tokens": 4,
+            "cache_read_input_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 0
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "modelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 897,
+          "outputTokens": 12,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.0009570000000000001,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-sonnet-5": {
+          "inputTokens": 611,
+          "outputTokens": 4,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.001262,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-sonnet-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.002219,
+      "num_turns": 1,
+      "returncode": 0,
+      "started_at": "2026-09-11T01:52:39.879297+00:00",
+      "elapsed_seconds": 3.219663500000024,
+      "stderr": ""
+    },
+    {
+      "result": "",
+      "is_error": true,
+      "returncode": null,
+      "started_at": "2026-09-11T01:44:33.944789+00:00",
+      "elapsed_seconds": 60.03302820000681,
+      "error": "timeout; provider usage unknown"
+    }
+  ],
+  "known_probe_cost_usd": 0.002219,
+  "review_cost_usd": 0.054763,
+  "scored_cost_usd": 0.34960900000000006,
+  "failed_probe_usage": "Unknown: initial sandboxed connection probe timed out; no task cases were sent.",
+  "cost_basis": "CLI-reported list-price equivalent, not subscription charges; author preparation effort not metered"
+}

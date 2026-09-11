@@ -1,0 +1,9 @@
+{
+  "review_sha256": "5c0244e5ce863c65a1342300e402731bcb28b9bd5ff18c4cb94cd3f96b4bbdaa",
+  "author_label_changes": [],
+  "unresolved_substantive_matching_issues": [],
+  "matching_issues_disposition": "The reviewer placed two positive findings in matching_issues: identical facts/decisions/reasons and comparable lengths. Neither alleges a substantive mismatch. The raw response is retained unchanged; accepting these statements is author adjudication, not an additional independent review.",
+  "difficulty_disposition": "Accept the warning that explicit facts may produce ceiling performance. Proceed with the fixed small rehearsal and report any ceiling; no harder cases are substituted.",
+  "content_disposition": "The reviewer notes this does not compare different guidance content. Correct: content is deliberately matched to isolate narrative presentation. This is a limited test of these original short stories, not a test of all narrative styles or traditional story familiarity.",
+  "reviewer_scope": "One separate tool-free model call, same requested model as target, no human review. The author key was withheld."
+}
