@@ -5,15 +5,22 @@ It records missing evidence as unknown rather than choosing assumptions to reach
 a desired thermometer value. It is a project assessment, not external review.
 
 G3 was interrupted after 27 model answers. Its separately registered
-[continuation G3-C](../experiments/repair-continuation/README.md) now has 534 of
-720 answers, including all 27 originals, before another quota pause. The partial
-Sonnet comparison has two unsafe original-format approvals versus none under
-the repair or factual examples; Opus remains at ceiling. Sixty-three harmless
-authorized bookings replay, with no unsafe commits in any condition so far.
-The remaining 186 answers are missing. This is an incomplete, inconclusive
-comparison, with no demonstrated advantage over factual examples or measured
-improvement in booking safety. It supplies no global-risk reduction estimate.
+[continuation G3-C](../experiments/repair-continuation/README.md) now has all
+720 answers, retaining every earlier answer and the interrupted checkpoint.
+The complete Sonnet comparison has two unsafe original-format approvals versus
+none under repair or factual examples, with all legitimate approvals preserved.
+This small descriptive gain remains statistically inconclusive (paired p = 0.5).
+Opus remains at ceiling. Seventy-two harmless authorized bookings replay, with
+no unsafe commits in any condition. Completion leaves no missing answers, but
+does not demonstrate advantage over factual examples or improved booking safety.
+It supplies no global-risk reduction estimate.
 The [original attempt](../experiments/repair-replication/README.md) is preserved.
+
+The separate [Codex comparison G4](../experiments/codex-repair/README.md) completed
+288 answers on the same 96 direct-decision cases. All three approaches scored
+96/96. This supplies no observed added repair benefit on Codex and no reason
+to generalize the small Sonnet difference to all models. The CLI contexts differ
+across providers, and no model outcomes are pooled into a stronger estimate.
 
 ## Quantity we would need to estimate
 

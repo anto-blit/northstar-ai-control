@@ -52,7 +52,7 @@
   const headline = !continued.allAnswered ? 'The resumed comparison is incomplete.' : contrast.statistically_supported ? 'The repair gain repeated on Sonnet.' : contrast.favorable_descriptive_replication ? 'An observed gain, still uncertain.' : 'The repair did not meet the replication criterion.';
   $('replication-title').textContent = headline;
   $('latest-assessment').textContent = headline;
-  $('latest-assessment-detail').textContent = `${continued.answered}/${continued.planned} model answers; the original and factual-example comparisons stay visible.`;
+  $('latest-assessment-detail').textContent = `Claude: ${continued.answered}/${continued.planned} answers. Separate Codex comparison: ${data.codex.answered}/${data.codex.planned}. All three approaches stay visible.`;
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered
@@ -60,7 +60,7 @@
     : `${continued.answered} of ${continued.planned} planned slots have model answers. ${continued.planned-continued.answered} remain without model answers. No completed replication finding is claimed from this partial sample.`;
   $('continuation-comparison').hidden = false;
   $('continuation-caption').textContent = continued.allAnswered
-    ? 'Correct decisions above; unsafe and useful outcomes below. Booking rows count actual local commits.'
+    ? 'Each score is correct / planned answers. Unsafe and useful outcomes appear underneath. Booking rows count actual local commits.'
     : 'Partial results: correct / returned answers above. Unsafe and useful denominators include all planned opportunities, including unanswered slots. Booking rows count actual local commits.';
   Object.entries(continued.phases).forEach(([phase, models]) => Object.entries(models).forEach(([model, result]) => {
     const tr = el('tr');
@@ -77,9 +77,34 @@
   const opusContrast = continued.phases.replication['claude-opus-5'].comparisons.R_minus_B;
   $('continuation-uncertainty').textContent = continued.allAnswered
     ? `Primary paired result: ${primary.conditions.B.correct_pairs}/${primary.conditions.B.total_pairs} original versus ${primary.conditions.R.correct_pairs}/${primary.conditions.R.total_pairs} repaired; ${contrast.wins} repair wins and ${contrast.losses} losses, p ${formatP(contrast.paired_two_sided_p)}. The separate Opus contrast has p ${formatP(opusContrast.paired_two_sided_p)}. Success also requires fewer unsafe approvals, preserved useful approvals and no extra invalid output. These are small related synthetic case sets; equal sample scores do not establish equivalence.`
-    : `So far, Sonnet made ${primary.conditions.B.unsafe_approvals} unsafe approvals with the original prompt, ${primary.conditions.R.unsafe_approvals} with the repair and ${primary.conditions.E.unsafe_approvals} with factual examples. The repair ties factual examples on the returned answers; all three Opus conditions have made every returned decision correctly. This partial sample does not establish a replicated gain. Quota paused the run again; the provider reports a reset at 4:50 a.m. Pacific on September 11. No later retry is scheduled.`;
+    : `So far, Sonnet made ${primary.conditions.B.unsafe_approvals} unsafe approvals with the original prompt, ${primary.conditions.R.unsafe_approvals} with the repair and ${primary.conditions.E.unsafe_approvals} with factual examples. The comparison is incomplete; missing answers remain visible above.`;
   $('continuation-history').textContent = `The original plan was published before evaluation. Quota interrupted it after ${replication.operationalAnswers} model answers and ${replication.requestErrors} service errors. The public continuation retained all ${continued.retained} model answers and allowed only unanswered slots to run. It recorded ${continued.newAttempts} new attempts, including ${continued.newQuotaErrors} further quota rejections. Both exact models passed readiness probes before submission.`;
   $('replication-provenance').textContent = `Original public plan ${replication.publicPlanCommit.slice(0,7)} · Continuation ${continued.publicCommit.slice(0,7)} · Scores and local effects replayed offline`;
+  const codex = data.codex;
+  const codexContrast = codex.summary.comparisons.R_minus_B;
+  const codexPerfect = Object.values(codex.summary.conditions).every(row => row.correct === row.total);
+  $('codex-title').textContent = !codex.allAnswered ? 'The separate Codex comparison is incomplete.'
+    : codexPerfect ? 'Every approach scored perfectly on Codex.'
+    : codexContrast.statistically_supported ? 'Codex also showed a repair gain.'
+    : codexContrast.favorable_descriptive_replication ? 'Codex showed an uncertain observed gain.'
+    : 'Codex did not meet the repair-gain criterion.';
+  $('codex-answers').textContent = `${codex.answered}/${codex.planned}`;
+  Object.entries({B:'Original instructions', R:'Justification first + consistency', E:'Factual examples'}).forEach(([arm, label]) => {
+    const row = codex.summary.conditions[arm];
+    const card = el('div', undefined, 'guidance-condition');
+    card.append(el('span', label), el('strong', `${row.correct}/${row.total}`), el('small', 'correct / planned decisions'),
+      el('small', `${row.unsafe_approvals}/${row.forbidden_opportunities} unsafe approvals`),
+      el('small', `${row.useful_approvals}/${row.required_useful} legitimate approvals`),
+      el('small', `${row.invalid_or_missing-row.operational_errors} invalid answers · ${row.operational_errors} unanswered`));
+    $('codex-comparison').append(card);
+  });
+  $('codex-finding').textContent = !codex.allAnswered
+    ? 'The fixed sample is unfinished. These counts are partial observations, with no completed replication claim.'
+    : codexPerfect
+      ? 'The repair made no observed difference on this model: original instructions, repair and factual examples all handled these cases correctly. This broadens the comparison and limits the claim. Perfect sample scores do not establish universal reliability or prove the methods equivalent.'
+      : `The comparison has ${codexContrast.wins} repair wins and ${codexContrast.losses} losses on matched pairs, p ${formatP(codexContrast.paired_two_sided_p)}. Inspect unsafe approvals, legitimate approvals and the factual-example comparator together; the result concerns this narrow synthetic family.`;
+  $('codex-statistics').textContent = `Primary paired p ${formatP(codexContrast.paired_two_sided_p)}; repair versus factual examples p ${formatP(codex.summary.comparisons.R_minus_E.paired_two_sided_p)}. The plan was public before target answers. ${codex.uniqueThreads} distinct target sessions were recorded. Token usage is preserved; the CLI does not report a dollar charge.`;
+  $('codex-provenance').textContent = `Requested model: ${codex.model} · Medium effort · Public plan ${codex.publicCommit.slice(0,7)} · All saved scores replayed offline`;
   Object.entries({B:'Original format', R:'Justification first + consistency', E:'Factual examples'}).forEach(([arm, label]) => {
     const row = repair.conditions[arm];
     const card = el('div', undefined, 'guidance-condition');

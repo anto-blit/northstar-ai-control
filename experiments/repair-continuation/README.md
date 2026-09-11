@@ -1,48 +1,47 @@
-# G3-C: 534 of 720 answers; quota paused the continuation
+# G3-C complete: a small Sonnet gain, still inconclusive
 
-After the requested wait, both exact Claude models passed readiness probes and
-the continuation returned 507 new model answers. Together with the 27 preserved
-original answers, **534 of 720 slots now have answers**. Another quota rejection
-paused submission at 00:05 Pacific on September 11, 2026. There are 186 unanswered
-slots: three new quota rejections and 183 slots not yet attempted by either run.
-The provider reports its next reset at 04:50 Pacific. No later retry is scheduled.
+**All 720 planned slots now have model answers.** After the user confirmed that
+Claude was available again, both exact models passed new readiness probes and
+the remaining 186 answers completed without another quota rejection. The 27
+original answers and all earlier continuation answers remain unchanged.
 
-**This is progress in collecting evidence, with a small favorable partial signal
-on Sonnet. It is not a completed replication or a demonstrated global-risk
-reduction.** The original prompt made two unsafe Sonnet approvals; the repair
-and factual examples made none. All three Opus conditions remain correct on
-returned answers. Factual examples still tie the repair.
+**The small observed Sonnet gain survived the completed comparison, but remains
+statistically inconclusive (paired p = 0.5).** Original prompting made two unsafe
+approvals; repair and factual examples made none. Opus scored perfectly in every
+condition. The repair has no demonstrated advantage over factual examples, and
+there is no numerical global-risk reduction estimate.
 
-## Partial observations, with missing work kept visible
+## Complete observations
 
-Each entry in the last three columns is **correct / returned model answers**.
-The received/planned column applies to each condition separately. Missing
-answers are not observed wrong decisions. The machine-readable report retains
-the original planned denominators for its prespecified scores.
+Each entry is **correct / planned answers**. Every planned answer has returned.
+The last 186 answers added no new failures; the three observed failures are
+preserved below. Model and execution comparisons are analyzed separately.
 
 | Test / model | Received / planned per condition | Original B | Repair R | Factual examples E |
 |---|---:|---:|---:|---:|
-| Primary replication / Sonnet 5 | 74/96 | 72/74 | 74/74 | 74/74 |
-| Secondary replication / Opus 5 | 67/96 | 67/67 | 67/67 | 67/67 |
-| Local booking execution / Sonnet 5 | 19/24 | 18/19 | 19/19 | 19/19 |
-| Local booking execution / Opus 5 | 18/24 | 18/18 | 18/18 | 18/18 |
+| Primary replication / Sonnet 5 | 96/96 | 94/96 | 96/96 | 96/96 |
+| Secondary replication / Opus 5 | 96/96 | 96/96 | 96/96 | 96/96 |
+| Local booking execution / Sonnet 5 | 24/24 | 23/24 | 24/24 | 24/24 |
+| Local booking execution / Opus 5 | 24/24 | 24/24 | 24/24 | 24/24 |
 
-In Sonnet's primary comparison, each condition has answered 35 forbidden and 39
-legitimate cases. Unsafe approvals are **2/35, 0/35, 0/35 observed**; all three
-conditions preserve 39/39 observed legitimate approvals. Twenty-two cases per
-condition remain unanswered. The partial fixed-sample paired calculation has two
-repair wins, no losses, and p = 0.5. It is inconclusive and cannot meet the
-registered support criterion, which also requires all 720 operational answers.
-Opus's partial direct comparison is a tie, not evidence of equivalence.
+In Sonnet's primary comparison, each condition answered 48 forbidden and 48
+legitimate cases. Unsafe approvals are **2/48, 0/48, 0/48 observed**; all three
+conditions preserve 48/48 legitimate approvals. Correct matched pairs are 46/48,
+48/48 and 48/48. The paired calculation has two repair wins, no losses, and
+p = 0.5. This meets the registered descriptive improvement criterion but not
+the stronger statistical criterion. Completion removes the missing-data caveat;
+it does not turn two distinguishing failures into strong evidence.
+Opus's complete direct comparison is a tie, not evidence of equivalence.
 Do not pool the earlier G2 result or secondary models to rescue the primary test.
 
 The separate booking test has one invalid Sonnet original-format answer. Its
 strict parser refused the conflicting JSON objects, so it caused no booking.
-There have been **zero unsafe local commits in every condition**, with 11 useful
-commits per Sonnet condition and 10 per Opus condition: 63 unique authorized
+There were **zero unsafe local commits in every condition**, with 12 useful
+commits per model/condition: 72 unique authorized
 bookings overall. These include three reconstructed original bookings; replay
-copies are not extra trials. Thirty-three of 144 execution slots remain unanswered.
-This does not yet demonstrate improved prevention at the effect boundary.
+copies are not extra trials. All 144 execution slots are answered. The repair
+avoided one invalid response, but did not improve observed booking safety over
+the original or factual-example condition in this completed sample.
 
 ## Inspect every observed failure
 
@@ -78,17 +77,23 @@ unattempted slots to run. The 720 slots, request order, cases, prompts, exact
 models, scoring and comparisons stay fixed. Wrong or malformed answers cannot
 be replaced. All nine original and three new quota rejections remain recorded.
 
-The continuation made 510 attempts, of which 507 returned model answers.
+The first continuation invocation made 510 attempts: 507 model answers and
+three quota rejections, reaching 534 total answers. Its
+[partial report](../../results/repair-continuation/partial-reports/000.json)
+and first checkpoint remain unchanged. The second invocation added 186 model
+answers. In total, 696 continuation attempts returned 693 model answers, plus
+the original 27: 720 selected answers. All 12 historical quota-only rejections
+(nine original, three continuation) remain recorded separately.
 Known provider-reported usage across original preparation, targets, continuation
-and readiness is **$7.91431** in list-price equivalents, not necessarily a
+and readiness is **$10.626189** in list-price equivalents, not necessarily a
 subscription charge. The registered combined usage guard is $15.
 
 See the [protocol](PROTOCOL.md), [plan](../../results/repair-continuation/plan.json),
-[partial report](../../results/repair-continuation/partial-reports/000.json),
-[checkpoint](../../results/repair-continuation/checkpoints/000.json), and
+[completed report](../../results/repair-continuation/report.json),
+[final checkpoint](../../results/repair-continuation/checkpoints/001.json), and
 [immutable original attempt](../repair-replication/README.md).
 
-## Reproduce or resume
+## Reproduce
 
 Offline replay verifies the frozen sources, original evidence, every new attempt,
 selection rule, score and booking effect. Six continuation harness tests also
@@ -99,13 +104,9 @@ py experiments/repair-continuation/run.py verify
 py -m unittest discover -s experiments/repair-continuation -p test_run.py -v
 ```
 
-Once model access returns, the same registered runner can continue the remaining
-slots. It first probes both exact models, preserves existing answers, and pauses
-again on quota. This command performs model calls:
-
-```powershell
-py experiments/repair-continuation/run.py run
-```
+The comparison is finalized. No returned answer is replaced or rerun. A separate
+[Codex comparison G4](../codex-repair/README.md) uses the complete 96 direct-case
+set and the same three prompts, without substituting for any Claude answer.
 
 The result remains limited to one synthetic obligation family, two models from
 one provider, project-commissioned AI label review, and single decisions driving

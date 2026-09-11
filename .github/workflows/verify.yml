@@ -43,6 +43,8 @@ jobs:
           python experiments/repair-replication/run.py verify
           python -m unittest discover -s experiments/repair-continuation -p test_run.py -v
           python experiments/repair-continuation/run.py verify
+          python -m unittest discover -s experiments/codex-repair -p test_run.py -v
+          python experiments/codex-repair/run.py verify
       - name: Run conformance and regression checks
         run: python verify_project.py
       - name: Reproduce frozen discovery trials

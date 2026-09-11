@@ -51,7 +51,8 @@ Git times below use America/Los_Angeles.
 | Baseline development screen G1-D | September 10, 2026 | Sixteen calls on eight harder cases expose one wrong decision field alongside a correct rationale; a concrete consistency failure, with no story condition or held-out improvement estimate |
 | Fresh-case decision repair G2 | September 10, 2026 | 216 calls: original format makes 3 unsafe approvals and 2 invalid responses; repair makes neither and preserves all legitimate approvals. Factual examples tie the repair. A small observed gain, statistically inconclusive (clustered p = 0.125), awaiting independent replication |
 | Registered replication G3 | September 10, 2026 | Plan published before target calls; 120 reviewed cases and two models. Session quota interrupted 720 planned calls after 27 model answers and 9 service errors. Three harmless authorized bookings replay; comparative replication remains unresolved |
-| Registered continuation G3-C | September 11, 2026 | Retains 27 original answers and adds 507 before another quota pause: 534/720 answered, 186 missing. Two unsafe Sonnet original approvals versus none for repair or factual examples; Opus at ceiling so far. Sixty-three authorized bookings replay. Partial comparison remains inconclusive |
+| Completed registered continuation G3-C | September 11, 2026 | All 720 answers returned, preserving the earlier 534-answer checkpoint. Sonnet original 94/96 versus repair and examples 96/96; two unsafe approvals versus none, usefulness preserved. Paired p = 0.5 remains inconclusive. Opus at ceiling, 72 authorized bookings and no unsafe commits in any condition |
+| Separate Codex comparison G4 | September 11, 2026 | Publicly registered 288 calls on all 96 G3 direct cases. Requested GPT-6 Astra scores 96/96 under original, repair and factual examples, with usefulness preserved and no unsafe or invalid answers. No observed added repair benefit; no pooling with Claude |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not
@@ -100,13 +101,19 @@ execution test. Model quota stopped the run after 36 attempted requests. It
 adds a checkable preparation and execution record, but no completed replication
 finding. [G3-C](../experiments/repair-continuation/README.md) publicly registered
 that operational amendment after the first 27 answers were known. The requested
-wait and resumed run added 507 answers before another quota pause: 534/720
-answered, 186 still missing. Sonnet's partial primary comparison has two unsafe
-original approvals and none for repair or factual examples; its partial paired
-p = 0.5 is inconclusive. Opus remains at ceiling. All booking conditions have
-zero unsafe commits so far, with 63 unique authorized commits overall. The next
-step is completing the frozen remaining slots once access returns, without
-replacing any returned answer. The [impact assessment](impact-assessment-g3.md)
+wait and resumed run first reached 534 answers. A second invocation completed
+the remaining 186 without replacing any answer. Sonnet's complete primary
+comparison has two unsafe original approvals and none for repair or factual
+examples, with all 48 legitimate approvals preserved in each condition. Paired
+p = 0.5 remains inconclusive; completion did not increase the two distinguishing
+failures. Opus remains at ceiling. All booking conditions have zero unsafe commits,
+with 72 unique authorized commits overall. The separate Codex comparison uses
+every direct case with fresh model contexts and a public plan, testing whether
+the repair helps another provider's model. It has completed all 288 answers:
+96/96 correct for every approach, with no observed repair advantage. This
+broadens model coverage while narrowing the positive claim to the small Sonnet
+observation. Repeating easy cases until a favorable result appears would not
+resolve that limitation. The [impact assessment](impact-assessment-g3.md)
 keeps catastrophic relevance, additionality and adoption as unmeasured inputs.
 
 A reproducible advantage beyond strong comparators would justify replication

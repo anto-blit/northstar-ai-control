@@ -1,5 +1,30 @@
 # Changelog
 
+## Separate Codex comparison completed at ceiling — September 11, 2026
+
+- Complete all 288 preregistered Codex calls on the full 96-case G3 direct set,
+  with a fresh session per answer and no answer keys or prior-results context.
+- Record 96/96 correct decisions for original instructions, repair and factual
+  examples, with zero unsafe/invalid answers and all legitimate approvals.
+  Both paired comparisons are ties (p = 1.0); no added repair benefit is observed.
+- Preserve every response, unique thread hashes, token usage, requested model
+  identity limitations and offline verification. No model outcomes are pooled.
+- Publish the completed Claude and Codex findings together, with 23 dashboard
+  integrity checks and the unchanged global-risk reference.
+
+## Claude continuation completed — September 11, 2026
+
+- Complete the final 186 slots without replacing any earlier model answer.
+  All 720 planned slots now have answers; preserve the prior 534-answer checkpoint.
+- Sonnet scores 94/96 with original prompting and 96/96 with repair or factual
+  examples. The two unsafe original approvals remain the only direct-decision
+  failures; all legitimate approvals are preserved. Paired p = 0.5 is inconclusive.
+- Opus scores perfectly. Sonnet has one invalid original booking response;
+  all conditions produce zero unsafe commits and complete all useful bookings.
+  Replay 72 unique authorized bookings. No global-risk discount follows.
+- Publicly register a separate 288-answer Codex comparison on every G3 direct
+  case. Preserve Claude's completed study and report Codex separately.
+
 ## Registered continuation reaches 534 answers — September 11, 2026
 
 - Publish an operational amendment before resuming after the requested wait.

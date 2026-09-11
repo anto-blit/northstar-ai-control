@@ -43,17 +43,27 @@ Seven harness tests pass. Missing denominators and every error remain preserved.
 
 [G3-C](experiments/repair-continuation/README.md) is the separately registered
 continuation after those 27 answers were known. It preserves them and retries
-only confirmed quota-only or previously unattempted slots. After the requested
-wait, 507 new answers arrived before quota paused the run again: **534/720
-answered, 186 unanswered**. Sonnet's partial direct replication has two unsafe
-original-format approvals and none for the repair or factual examples (72/74,
-74/74, 74/74 correct returned answers). All Opus answers remain correct. One
-Sonnet original-format booking response is invalid and commits nothing. Every
-condition has zero unsafe bookings so far; 63 unique useful bookings replay.
-The primary partial paired p = 0.5 is inconclusive, and the complete-sample
-requirement is unmet. No replicated gain or global-risk discount is claimed.
-The next reported quota reset is September 11 at 04:50 Pacific; no later retry
-is scheduled. Six continuation tests cover the operational amendment.
+only confirmed quota-only or previously unattempted slots. Its first invocation
+reached 534 answers before another quota pause; the preserved partial report
+records that stage. A second invocation completed the last 186: **720/720
+answered**. Sonnet's direct replication has two unsafe original-format approvals
+and none for repair or factual examples (94/96, 96/96, 96/96 correct). Every
+condition preserves 48/48 legitimate approvals. Opus remains perfect. One Sonnet
+original-format booking response is invalid and commits nothing. All conditions
+have zero unsafe bookings and preserve all useful approvals; 72 unique useful
+bookings replay. The descriptive improvement criterion is met on Sonnet, but
+paired p = 0.5 remains inconclusive after completion. No global-risk discount
+is claimed. Six continuation tests cover the operational amendment.
+
+[G4](experiments/codex-repair/README.md) separately registered all 96 G3 direct
+cases under B/R/E on requested `gpt-6-astra`, medium effort. All 288 fresh Codex
+sessions completed: every condition scored 96/96, with zero unsafe or invalid
+answers and 48/48 legitimate approvals. Both paired comparisons have p = 1.0.
+This ceiling shows no repair advantage on Codex in these cases. The project knew
+the Claude results before G4, but target sessions saw no prior results or labels;
+all cases were included without outcome-based selection. Model results remain
+separate. Six harness tests and offline replay preserve this negative finding
+for added benefit. No broader model equivalence or global-risk reduction follows.
 
 The original simulator effects are synthetic in-memory records. The simulator and study runner use
 the Python standard library, with no network, real credentials, arbitrary

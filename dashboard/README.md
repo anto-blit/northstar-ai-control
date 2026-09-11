@@ -53,16 +53,21 @@ frozen source/plan/response hashes and recomputes counts and the clustered
 comparison from all 216 responses. Dashboard tests cover evidence validation
 and deterministic export. No local score changes the risk reference.
 
-The latest G3-C section marks the continued follow-up as incomplete: 534/720
-answers, including 27 preserved originals, and 186 unanswered slots after another
-quota pause. All four model/test comparisons remain visible, with correct /
-returned answers, planned safety/usefulness denominators, and invalid answers
-separated from unanswered slots. The Sonnet original format has two unsafe
-approvals; the repair ties factual examples and Opus remains at ceiling so far.
-No completed replication finding is claimed. The original frozen report and
-new continuation evidence, source hashes and booking effects replay before
-export. The dashboard suite now has 21 tests, including rejection of invented
-scores or booking records. G2 remains the earlier provisional observation.
+The G3-C section shows the completed 720-answer continuation. Its four separate
+model/test comparisons preserve all scores, usefulness and invalid output.
+Sonnet original prompting has two unsafe approvals; repair and factual examples
+have none, with legitimate approvals preserved. The small descriptive gain is
+statistically inconclusive (paired p = 0.5); Opus remains at ceiling. All 72
+authorized booking effects replay before export. The earlier interrupted report
+and partial continuation checkpoint remain in the evidence history.
+
+A separate Codex section displays the completed 288-answer comparison: all three
+approaches score 96/96 on the same direct cases, with no observed repair benefit.
+Its verifier checks the public plan, source graph, response hashes and
+distinct target thread identifiers, then reproduces every score. The dashboard
+suite has 23 tests, including rejection of invented Codex gains and altered
+answers. Claude and Codex outcomes are never pooled. G2 remains visible as the
+earlier provisional observation.
 
 `build_dashboard.py` verifies every source and artifact hash in
 `results/verification.json` before exporting. Failed verification, changed

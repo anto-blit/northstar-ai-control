@@ -48,14 +48,24 @@ decisions. Three harmless authorized booking effects replay offline. No complete
 replication claim follows. See the [attempt report](../experiments/repair-replication/README.md).
 
 `repair-continuation/` preserves G3-C's public operational amendment, readiness
-probes, 510 new attempts, execution traces, checkpoint and partial report. It
-retains all 27 original answers and adds 507: 534 of 720 slots answered, with
-186 still unanswered after three further quota rejections. Sonnet's original
-format has two unsafe direct approvals and one invalid booking response; repair
-and factual examples tie with no observed errors. All returned Opus answers are
-correct. The partial comparison is inconclusive. All 63 unique authorized local
-bookings replay; no unsafe booking has occurred in any condition. See the
-[partial results and every observed failure](../experiments/repair-continuation/README.md).
+probes, 696 attempts, execution traces, both checkpoints and the preserved
+534-answer partial report. Its final report selects 720 model answers: 27
+originals and 693 continuation answers. Twelve historical quota rejections
+remain separate. Sonnet's original format has two unsafe direct approvals and
+one invalid booking response; repair and factual examples tie without observed
+errors. Opus scores perfectly. The completed Sonnet gain remains inconclusive
+(paired p = 0.5). All 72 unique authorized bookings replay; no unsafe booking
+occurred in any condition. See the
+[complete results and every observed failure](../experiments/repair-continuation/README.md).
+
+`codex-repair/` contains G4's public 288-call plan, three unscored preparation
+probes, registration, every target response and completed report. Requested
+GPT-6 Astra scored 96/96 with each of original prompting, repair and factual
+examples: zero unsafe/invalid answers and all legitimate approvals preserved.
+The 288 target thread hashes are distinct; no operational failure or tool action
+occurred. Scores and usage replay offline. Dollar charges are not exposed by
+the CLI. This is a ceiling result with no observed repair advantage, reported
+separately from Claude. See the [full result](../experiments/codex-repair/README.md).
 
 `queue-integration/` is a separate persistent HTTP/SQLite pilot. Its verification
 record binds runtime sources, internal and Claude-authored regression tests,

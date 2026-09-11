@@ -30,6 +30,9 @@ class EvidenceTests(unittest.TestCase):
         shutil.copytree(dashboard.ROOT / "results/repair-continuation", self.root / "results/repair-continuation")
         shutil.copytree(dashboard.ROOT / "experiments/repair-continuation", self.root / "experiments/repair-continuation",
                         ignore=shutil.ignore_patterns("__pycache__"))
+        shutil.copytree(dashboard.ROOT / "results/codex-repair", self.root / "results/codex-repair")
+        shutil.copytree(dashboard.ROOT / "experiments/codex-repair", self.root / "experiments/codex-repair",
+                        ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
         artifacts = {"recoverability.json": {"schema_version": 2},
                      "monitor-sweep.json": {"schema_version": 2}}
@@ -219,6 +222,22 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(report), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Continuation report does not reproduce"):
             dashboard.load_continuation_evidence(self.root)
+
+    def test_codex_cannot_invent_a_gain(self):
+        path = self.root / "results/codex-repair/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["summary"]["comparisons"]["R_minus_B"]["pair_gain"] += 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Codex report does not reproduce"):
+            dashboard.load_codex_evidence(self.root)
+
+    def test_codex_changed_answer_cannot_be_published(self):
+        path = self.root / "results/codex-repair/responses/000.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["result"] = '{"decision":"PROCEED","reason":"Invented improvement"}'
+        path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Frozen evidence changed"):
+            dashboard.load_codex_evidence(self.root)
 
 
 if __name__ == "__main__":

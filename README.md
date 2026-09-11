@@ -32,13 +32,18 @@ We publish our code, methods, completed results, and limitations so others can c
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
 **Latest follow-up:** the [registered continuation G3-C](experiments/repair-continuation/README.md)
-now has **534 of 720 planned model answers**, including all 27 from the original
-interrupted run. Quota paused it again with 186 unanswered slots. On the partial
-Sonnet replication, the original prompt made two unsafe approvals; the repair
-and factual examples made none. All Opus answers so far are correct. This is an
-encouraging partial observation, still tied by conventional examples, with no
-completed replication finding. Every response and 63 harmless authorized booking
-effects replay offline; the global-risk reference remains unchanged.
+has completed **all 720 planned model answers**, retaining every earlier answer.
+Sonnet scores 94/96 with original prompting and 96/96 with repair or factual
+examples: two unsafe approvals versus none, with all legitimate approvals
+preserved. The small descriptive gain survives completion, but remains
+statistically inconclusive (paired p = 0.5). Opus scores perfectly in every
+condition. All 72 authorized booking effects replay, with no unsafe commit in
+any condition. The global-risk reference remains unchanged. A separate
+[Codex comparison](experiments/codex-repair/README.md) tests all 96 direct cases
+under the same three approaches without replacing or pooling Claude answers.
+It has now completed all 288 answers: **96/96 with every approach**. The repair
+shows no added benefit on Codex in this sample. We have a small Sonnet signal;
+we have not established a broad advantage across models.
 
 ## Find your way in
 
@@ -145,10 +150,10 @@ from 3/36 to 0/36 observed, with all legitimate approvals preserved. This is a
 small observed gain in one synthetic task family; the clustered analysis is
 statistically inconclusive (p = 0.125).
 
-**Next:** complete G3-C's remaining 186 slots under the already registered
-continuation once model access returns. The provider reports a September 11,
-04:50 Pacific reset; no later retry is scheduled. Preserve every returned answer,
-the conventional comparator and useful approvals. External replication remains needed. The
+**Next:** assess whether the repair adds protection on independently authored,
+unfamiliar tasks and realistic action boundaries, compared with strong conventional
+alternatives. Completing more calls does not by itself establish a useful added
+benefit. External replication remains needed. The
 prerequisites for [Experiment 3 — the four-method discovery pilot](experiments/discovery-study/PILOT.md)
 remain separate; that discovery comparison has not been run.
 

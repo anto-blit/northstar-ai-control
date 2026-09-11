@@ -205,6 +205,19 @@ def load_continuation_evidence(root):
             "cost": report["known_total_cost_usd"], "bookingCount": len(report["bookings"])}
 
 
+def load_codex_evidence(root):
+    path = root / "experiments/codex-repair/run.py"
+    spec = importlib.util.spec_from_file_location("dashboard_g4_verifier", path)
+    verifier = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(verifier)
+    report = verifier.verify(root, emit=False)
+    return {"model": report["requested_model"], "modelIdentity": report["model_identity"],
+            "summary": report["summary"], "planned": report["planned"], "answered": report["answered"],
+            "allAnswered": report["all_answered"], "publicCommit": report["public_commit"],
+            "totalUsage": report["total_usage"], "dollarCost": report["dollar_cost"],
+            "uniqueThreads": report["unique_target_threads"]}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -254,6 +267,7 @@ def load_evidence(root=ROOT):
         "repair": load_repair_evidence(root),
         "replication": load_replication_evidence(root),
         "continuation": load_continuation_evidence(root),
+        "codex": load_codex_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

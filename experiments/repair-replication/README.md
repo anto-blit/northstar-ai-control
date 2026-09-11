@@ -4,7 +4,7 @@
 result is available.** Executed September 10, 2026 (America/Los_Angeles).
 
 **Later continuation:** [G3-C](../repair-continuation/README.md) retains every
-original model answer and now has 534/720 answers after a second quota pause.
+original model answer and has now completed all 720 planned answer slots.
 Its separate amendment and evidence do not change this original frozen attempt.
 
 The [plan was public before any target call](https://github.com/anto-blit/northstar-ai-control/commit/b2c2f54183420736b95fcc974bac119394217f4f).
