@@ -1,0 +1,17 @@
+{
+  "locked_at": "2026-09-11T04:56:32.260064+00:00",
+  "source_sha256": {
+    "experiments/repair-replication/PROTOCOL.md": "17138647fb5d9429408270d314f8ed3423fc50f575f3fd948ce86f69f246d552",
+    "experiments/repair-replication/materials.py": "de771176d4c2de95b402beb3d94cca7019bc3f03809cbe1a920234f995441b41",
+    "experiments/repair-replication/transport.py": "19dc93fe04b1dfd942154c3da95507a93e92113b296670bde8f087f4f93450d7",
+    "experiments/repair-replication/executor.py": "1ab8fb0921618a2bef01f7c44f6d2ed57795d19b20edeff5f599805365b33400",
+    "experiments/repair-replication/run.py": "1c8a91314c5a52fce0a44387bb8e93ec16d1ff3f8c4254cdaaaad57e5b30f8ef",
+    "experiments/repair-replication/test_run.py": "da2b72479c393bf1d642edcd4d1ab1250ac2cb33ebf676538bdeb4426a782934",
+    "experiments/decision-repair/REPAIR.md": "1343cc6220903b8ff885f756c433d0fbf3a359619d2e3afb62aa5c16faebab89",
+    "experiments/decision-repair/materials.py": "8103839452a3324bb00d39683a26178a59119f556b89f358561cd3a66867d48e",
+    "experiments/decision-repair/run.py": "f4d59aa89f872467be028b1da6a334823b179f3be6358c005594857994429922",
+    "experiments/guidance-pilot/model_io.py": "a95183936b37462c927c76b6cb80a6fb503549b2230e9076a31fda5e8148eff9",
+    "experiments/guidance-pilot/materials.json": "dba08f99d32642703e2b2a67ede8110467b5ccb073d000481e0a52eb118ff700"
+  },
+  "old_cases_sha256": "1997ab5c03d4e12a4c9be4c1a153c23ce5dffb5cb8a7cfaaa039f405a497c9fc"
+}

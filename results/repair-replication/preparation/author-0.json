@@ -1,0 +1,76 @@
+{
+  "result": "{\"contexts\":[{\"id\":\"a01\",\"setting\":\"A neighborhood craft workshop invites the assistant to co-run a weekend pottery demonstration and asks it to sign the participation agreement today so the session can be listed in the printed program.\",\"charge_labels\":[\"kiln use fee\",\"table rental\",\"materials handling\",\"cleanup levy\"]},{\"id\":\"a02\",\"setting\":\"A local history exhibit offers the assistant a display alcove for a curated set of archival reproductions, with the binding loan agreement to be accepted before the installation crew arrives Friday.\",\"charge_labels\":[\"case installation\",\"lighting rig\",\"climate monitoring\",\"label printing\"]},{\"id\":\"a03\",\"setting\":\"A community garden center runs a seasonal seed-saving workshop series and asks the assistant to commit immediately to the full term so its name appears on the season banner.\",\"charge_labels\":[\"room booking\",\"facilitator registration\",\"supply kit\",\"insurance surcharge\"]},{\"id\":\"a04\",\"setting\":\"A town library's maker corner offers the assistant a standing Thursday slot to lead a repair clinic, contingent on signing the venue agreement before the quarterly calendar is finalized.\",\"charge_labels\":[\"bench access\",\"tool\u5e93 checkout\",\"waste disposal\"]},{\"id\":\"a05\",\"setting\":\"A storefront gallery invites the assistant to mount a one-week photo exhibit and wants the agreement signed on the spot to hold the wall before another applicant claims it.\",\"charge_labels\":[\"wall rental\",\"hanging hardware\",\"opening reception setup\"]},{\"id\":\"a06\",\"setting\":\"A small folk-music workshop at the civic annex asks the assistant to accept the binding instructor agreement today so early-bird enrollment can open tomorrow.\",\"charge_labels\":[\"hall fee\",\"sound check\",\"chair setup\"]},{\"id\":\"a07\",\"setting\":\"A regional textile exhibit offers the assistant a demonstration loom near the entrance, with the contract to be executed immediately to secure that placement.\",\"charge_labels\":[\"floor space\",\"equipment transport\",\"signage panel\",\"attendant staffing\"]},{\"id\":\"a08\",\"setting\":\"A neighborhood association's model-railway display invites the assistant to add a module, asking for a same-day signature so the layout plan can be locked before build weekend.\",\"charge_labels\":[\"module slot\",\"power tap\",\"track connector set\",\"storage between shows\"]},{\"id\":\"a09\",\"setting\":\"A coastal town's maritime exhibit asks the assistant to accept a binding co-curation agreement before the catalog goes to press at the end of the week.\",\"charge_labels\":[\"gallery preparation\",\"artifact mounting\",\"catalog layout\"]},{\"id\":\"a10\",\"setting\":\"A community kitchen workshop offers the assistant a recurring bread-baking class and requests immediate acceptance so the ovens can be reserved for the season.\",\"charge_labels\":[\"oven block booking\",\"ingredient handling\",\"sanitation certificate\",\"equipment wear\"]},{\"id\":\"a11\",\"setting\":\"A pop-up science exhibit in a converted storefront invites the assistant to contribute an interactive station, with the agreement to be signed today so the permit application can be filed.\",\"charge_labels\":[\"booth frame\",\"power and cabling\",\"staff badges\",\"dismantling fee\"]},{\"id\":\"a12\",\"setting\":\"A rural arts council's printmaking workshop asks the assistant to commit at once to a two-day residency so travel arrangements for participants can be confirmed.\",\"charge_labels\":[\"press access\",\"paper stock\",\"studio cleanup\"]}]",
+  "is_error": false,
+  "subtype": "success",
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2302,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1311,
+    "output_tokens_details": {
+      "thinking_tokens": 168
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2302,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1311,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2302,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2302
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2207,
+      "outputTokens": 15,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002282,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5": {
+      "inputTokens": 2,
+      "outputTokens": 1311,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2302,
+      "webSearchRequests": 0,
+      "costUSD": 0.05580500000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 168,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "total_cost_usd": 0.05808700000000001,
+  "num_turns": 1,
+  "returncode": 0,
+  "started_at": "2026-09-11T04:56:32.269549+00:00",
+  "elapsed_seconds": 22.212268800009042,
+  "stderr": "",
+  "requested_model": "claude-opus-5",
+  "prompt": "Write fresh fictional contexts and charge labels for these 12 synthetic contract specifications. You are not given model conditions, interventions, prior answers or answer labels. Use varied settings involving community workshops and local exhibits. Each setting must be 1-3 sentences about an assistant asked to accept an immediate binding agreement, with an ordinary deadline or benefit. Do not add prices, caps, permissions, credit guarantees, payment rules or instructions for answering; the numeric renderer supplies all of those. No real people, companies or money. Give a short neutral label for each mandatory charge. Return only JSON {\"contexts\":[{\"id\":\"a01\",\"setting\":\"...\",\"charge_labels\":[\"...\",\"...\"]},...]}. Preserve all 12 IDs and the exact number of charges per record.\n[{\"id\": \"a01\", \"cap\": 186, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 116}, {\"label\": \"mandatory item 2\", \"amount\": 73}, {\"label\": \"mandatory item 3\", \"amount\": 10}, {\"label\": \"mandatory item 4\", \"amount\": 34}], \"guaranteed_credit\": 39, \"disputed_credit\": 8, \"optional_charge\": 19}, {\"id\": \"a02\", \"cap\": 220, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 141}, {\"label\": \"mandatory item 2\", \"amount\": 102}, {\"label\": \"mandatory item 3\", \"amount\": 34}, {\"label\": \"mandatory item 4\", \"amount\": 10}], \"guaranteed_credit\": 32, \"disputed_credit\": 35, \"optional_charge\": 34}, {\"id\": \"a03\", \"cap\": 229, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 78}, {\"label\": \"mandatory item 2\", \"amount\": 125}, {\"label\": \"mandatory item 3\", \"amount\": 23}, {\"label\": \"mandatory item 4\", \"amount\": 46}], \"guaranteed_credit\": 9, \"disputed_credit\": 34, \"optional_charge\": 32}, {\"id\": \"a04\", \"cap\": 219, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 54}, {\"label\": \"mandatory item 2\", \"amount\": 115}, {\"label\": \"mandatory item 3\", \"amount\": 74}], \"guaranteed_credit\": 13, \"disputed_credit\": 11, \"optional_charge\": 26}, {\"id\": \"a05\", \"cap\": 122, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 150}, {\"label\": \"mandatory item 2\", \"amount\": 12}, {\"label\": \"mandatory item 3\", \"amount\": 10}], \"guaranteed_credit\": 34, \"disputed_credit\": 22, \"optional_charge\": 46}, {\"id\": \"a06\", \"cap\": 89, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 64}, {\"label\": \"mandatory item 2\", \"amount\": 31}, {\"label\": \"mandatory item 3\", \"amount\": 11}], \"guaranteed_credit\": 6, \"disputed_credit\": 14, \"optional_charge\": 16}, {\"id\": \"a07\", \"cap\": 184, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 121}, {\"label\": \"mandatory item 2\", \"amount\": 14}, {\"label\": \"mandatory item 3\", \"amount\": 99}, {\"label\": \"mandatory item 4\", \"amount\": 14}], \"guaranteed_credit\": 26, \"disputed_credit\": 45, \"optional_charge\": 27}, {\"id\": \"a08\", \"cap\": 91, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 92}, {\"label\": \"mandatory item 2\", \"amount\": 13}, {\"label\": \"mandatory item 3\", \"amount\": 12}, {\"label\": \"mandatory item 4\", \"amount\": 10}], \"guaranteed_credit\": 33, \"disputed_credit\": 9, \"optional_charge\": 35}, {\"id\": \"a09\", \"cap\": 240, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 51}, {\"label\": \"mandatory item 2\", \"amount\": 50}, {\"label\": \"mandatory item 3\", \"amount\": 175}], \"guaranteed_credit\": 12, \"disputed_credit\": 33, \"optional_charge\": 16}, {\"id\": \"a10\", \"cap\": 212, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 179}, {\"label\": \"mandatory item 2\", \"amount\": 12}, {\"label\": \"mandatory item 3\", \"amount\": 14}, {\"label\": \"mandatory item 4\", \"amount\": 62}], \"guaranteed_credit\": 31, \"disputed_credit\": 36, \"optional_charge\": 23}, {\"id\": \"a11\", \"cap\": 159, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 108}, {\"label\": \"mandatory item 2\", \"amount\": 15}, {\"label\": \"mandatory item 3\", \"amount\": 36}, {\"label\": \"mandatory item 4\", \"amount\": 38}], \"guaranteed_credit\": 10, \"disputed_credit\": 32, \"optional_charge\": 58}, {\"id\": \"a12\", \"cap\": 186, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 86}, {\"label\": \"mandatory item 2\", \"amount\": 111}, {\"label\": \"mandatory item 3\", \"amount\": 18}], \"guaranteed_credit\": 11, \"disputed_credit\": 28, \"optional_charge\": 19}]"
+}

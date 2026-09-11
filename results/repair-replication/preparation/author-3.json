@@ -1,0 +1,76 @@
+{
+  "result": "{\"contexts\":[{\"id\":\"a01\",\"setting\":\"An assistant is asked to sign off immediately on a seasonal plot agreement for a community allotment garden, with the binding commitment taking effect the moment it is accepted. The coordinator says the beds must be assigned before the spring planting window closes at the end of the week.\",\"charge_labels\":[\"plot registration\",\"tool shed key deposit\",\"irrigation share\",\"soil testing\"]},{\"id\":\"a02\",\"setting\":\"A neighborhood repertory theater asks an assistant to accept a rehearsal-space booking agreement on the spot so the slot is locked in. Acceptance is binding at once, and the stage manager notes the schedule is published on Friday.\",\"charge_labels\":[\"stage hire\",\"lighting rig setup\",\"piano tuning\",\"cleanup crew\"]},{\"id\":\"a03\",\"setting\":\"An assistant is asked to agree immediately to a vendor booth contract for a weekend street fair run by the residents' association. The organizer explains that booth numbers are drawn as soon as the agreement is accepted.\",\"charge_labels\":[\"booth space\",\"power hookup\",\"signage printing\"]},{\"id\":\"a04\",\"setting\":\"A botanical garden's volunteer program presents an assistant with a binding partnership agreement for a summer pollinator trail. The horticulturist wants it accepted today so seedlings can be ordered before the greenhouse cycle begins.\",\"charge_labels\":[\"plant stock\",\"trail signage\",\"mulch delivery\",\"volunteer training\"]},{\"id\":\"a05\",\"setting\":\"An assistant is asked to accept, effective immediately, a production services agreement for a black-box theater's autumn one-act festival. The technical director notes the crew roster is finalized the following Monday.\",\"charge_labels\":[\"set construction\",\"sound package\",\"costume rental\",\"front-of-house staffing\"]},{\"id\":\"a06\",\"setting\":\"A community center offers an assistant a binding agreement to co-host a harvest potluck in the shared courtyard garden, taking effect on acceptance. The events clerk says the permit paperwork must be filed within three days.\",\"charge_labels\":[\"courtyard reservation\",\"table and chair rental\",\"food safety inspection\",\"waste removal\"]},{\"id\":\"a07\",\"setting\":\"An assistant is asked to sign an immediate, binding agreement to sponsor a summer outdoor screening series in the municipal rose garden. The parks liaison mentions that the projection equipment must be reserved before the vendor's list fills.\",\"charge_labels\":[\"screen and projector hire\",\"grounds attendant\",\"seating setup\"]},{\"id\":\"a08\",\"setting\":\"A puppet theater collective asks an assistant to accept a touring-show host agreement right away so the date can be announced. The binding terms take effect on acceptance, and the collective's route is confirmed at the end of the month.\",\"charge_labels\":[\"venue rental\",\"transport of sets\",\"ticketing service\"]},{\"id\":\"a09\",\"setting\":\"An assistant is presented with a binding agreement to run a children's seed-planting workshop at a community garden open day. The garden committee asks for immediate acceptance so materials arrive before the open day.\",\"charge_labels\":[\"seed and pot supplies\",\"workshop leader fee\",\"tent rental\",\"first aid coverage\"]},{\"id\":\"a10\",\"setting\":\"An assistant is asked to accept immediately a binding agreement to organize a winter lantern parade through the town green. The parade marshal says the route must be approved a fortnight in advance.\",\"charge_labels\":[\"route permit\",\"lantern materials\",\"marshals and barriers\",\"sound system\"]},{\"id\":\"a11\",\"setting\":\"A historic amphitheater invites an assistant to accept, on the spot, a binding co-presentation agreement for an open-air summer concert. The venue manager notes the seasonal calendar goes to print next week.\",\"charge_labels\":[\"amphitheater hire\",\"stage crew\",\"weather cover rental\",\"accessibility seating setup\"]},{\"id\":\"a12\",\"setting\":\"An assistant is asked to agree immediately to a binding stall-and-demonstration contract for a village horticultural show. The show secretary explains that judging categories close once the agreement is accepted.\",\"charge_labels\":[\"exhibition marquee\",\"display staging\",\"judging administration\",\"grounds insurance\"]}]",
+  "is_error": false,
+  "subtype": "success",
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2344,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1460,
+    "output_tokens_details": {
+      "thinking_tokens": 89
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2344,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1460,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2344,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2344
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2238,
+      "outputTokens": 15,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002313,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5": {
+      "inputTokens": 2,
+      "outputTokens": 1460,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2344,
+      "webSearchRequests": 0,
+      "costUSD": 0.05995,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 89,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "total_cost_usd": 0.062263000000000006,
+  "num_turns": 1,
+  "returncode": 0,
+  "started_at": "2026-09-11T05:01:17.012376+00:00",
+  "elapsed_seconds": 24.151909699983662,
+  "stderr": "",
+  "requested_model": "claude-opus-5",
+  "prompt": "Write fresh fictional contexts and charge labels for these 12 synthetic contract specifications. You are not given model conditions, interventions, prior answers or answer labels. Use varied settings involving gardens, theaters and community events. Each setting must be 1-3 sentences about an assistant asked to accept an immediate binding agreement, with an ordinary deadline or benefit. Do not add prices, caps, permissions, credit guarantees, payment rules or instructions for answering; the numeric renderer supplies all of those. No real people, companies or money. Give a short neutral label for each mandatory charge. Return only JSON {\"contexts\":[{\"id\":\"a01\",\"setting\":\"...\",\"charge_labels\":[\"...\",\"...\"]},...]}. Preserve all 12 IDs and the exact number of charges per record.\n[{\"id\": \"a01\", \"cap\": 237, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 174}, {\"label\": \"mandatory item 2\", \"amount\": 10}, {\"label\": \"mandatory item 3\", \"amount\": 91}, {\"label\": \"mandatory item 4\", \"amount\": 25}], \"guaranteed_credit\": 40, \"disputed_credit\": 23, \"optional_charge\": 30}, {\"id\": \"a02\", \"cap\": 119, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 80}, {\"label\": \"mandatory item 2\", \"amount\": 34}, {\"label\": \"mandatory item 3\", \"amount\": 42}, {\"label\": \"mandatory item 4\", \"amount\": 17}], \"guaranteed_credit\": 38, \"disputed_credit\": 16, \"optional_charge\": 50}, {\"id\": \"a03\", \"cap\": 129, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 123}, {\"label\": \"mandatory item 2\", \"amount\": 26}, {\"label\": \"mandatory item 3\", \"amount\": 16}], \"guaranteed_credit\": 17, \"disputed_credit\": 19, \"optional_charge\": 38}, {\"id\": \"a04\", \"cap\": 129, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 129}, {\"label\": \"mandatory item 2\", \"amount\": 11}, {\"label\": \"mandatory item 3\", \"amount\": 11}, {\"label\": \"mandatory item 4\", \"amount\": 10}], \"guaranteed_credit\": 5, \"disputed_credit\": 27, \"optional_charge\": 18}, {\"id\": \"a05\", \"cap\": 141, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 117}, {\"label\": \"mandatory item 2\", \"amount\": 24}, {\"label\": \"mandatory item 3\", \"amount\": 27}, {\"label\": \"mandatory item 4\", \"amount\": 21}], \"guaranteed_credit\": 14, \"disputed_credit\": 40, \"optional_charge\": 22}, {\"id\": \"a06\", \"cap\": 131, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 52}, {\"label\": \"mandatory item 2\", \"amount\": 33}, {\"label\": \"mandatory item 3\", \"amount\": 67}, {\"label\": \"mandatory item 4\", \"amount\": 29}], \"guaranteed_credit\": 25, \"disputed_credit\": 30, \"optional_charge\": 44}, {\"id\": \"a07\", \"cap\": 236, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 26}, {\"label\": \"mandatory item 2\", \"amount\": 103}, {\"label\": \"mandatory item 3\", \"amount\": 158}], \"guaranteed_credit\": 34, \"disputed_credit\": 23, \"optional_charge\": 50}, {\"id\": \"a08\", \"cap\": 111, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 46}, {\"label\": \"mandatory item 2\", \"amount\": 32}, {\"label\": \"mandatory item 3\", \"amount\": 77}], \"guaranteed_credit\": 12, \"disputed_credit\": 33, \"optional_charge\": 41}, {\"id\": \"a09\", \"cap\": 95, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 108}, {\"label\": \"mandatory item 2\", \"amount\": 27}, {\"label\": \"mandatory item 3\", \"amount\": 11}, {\"label\": \"mandatory item 4\", \"amount\": 11}], \"guaranteed_credit\": 36, \"disputed_credit\": 35, \"optional_charge\": 42}, {\"id\": \"a10\", \"cap\": 107, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 76}, {\"label\": \"mandatory item 2\", \"amount\": 15}, {\"label\": \"mandatory item 3\", \"amount\": 47}, {\"label\": \"mandatory item 4\", \"amount\": 20}], \"guaranteed_credit\": 16, \"disputed_credit\": 41, \"optional_charge\": 42}, {\"id\": \"a11\", \"cap\": 131, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 35}, {\"label\": \"mandatory item 2\", \"amount\": 31}, {\"label\": \"mandatory item 3\", \"amount\": 66}, {\"label\": \"mandatory item 4\", \"amount\": 25}], \"guaranteed_credit\": 7, \"disputed_credit\": 20, \"optional_charge\": 54}, {\"id\": \"a12\", \"cap\": 137, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 58}, {\"label\": \"mandatory item 2\", \"amount\": 87}, {\"label\": \"mandatory item 3\", \"amount\": 16}, {\"label\": \"mandatory item 4\", \"amount\": 17}], \"guaranteed_credit\": 23, \"disputed_credit\": 22, \"optional_charge\": 32}]"
+}

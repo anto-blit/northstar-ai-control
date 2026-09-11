@@ -1,0 +1,76 @@
+{
+  "result": "{\"contexts\":[{\"id\":\"a01\",\"setting\":\"A research assistant is asked to confirm a binding reservation for a block of GPU nodes on the Halvard Cluster before the overnight scheduling window closes. The booking desk says the confirmation must be accepted in this session or the block returns to the open queue.\",\"charge_labels\":[\"node-hour block fee\",\"priority queue placement\",\"storage volume attachment\",\"after-hours scheduling surcharge\"]},{\"id\":\"a02\",\"setting\":\"A lab coordinator's assistant is handling an immediate lease agreement for two cryogenic sample stages from the Merrowfield equipment pool. The pool operator needs a binding yes today so the stages can be crated for next week's run.\",\"charge_labels\":[\"stage lease term\",\"calibration service\",\"insulated crating\",\"courier handling\"]},{\"id\":\"a03\",\"setting\":\"An assistant is asked to sign off at once on a reserved slot for the Tandrel wind-tunnel rig, which the facility only holds open until the end of the business day. Accepting now locks the slot for the team's scheduled test campaign.\",\"charge_labels\":[\"tunnel occupancy slot\",\"model mounting setup\",\"instrumentation package\",\"technician standby\"]},{\"id\":\"a04\",\"setting\":\"A studio assistant must accept a same-day binding order for a rack of rendering blades from the Orlend compute exchange so the batch finishes before the client review. The exchange will not hold the rack past the current allocation cycle.\",\"charge_labels\":[\"blade rack allocation\",\"interconnect provisioning\",\"cooling capacity reservation\"]},{\"id\":\"a05\",\"setting\":\"An assistant is asked to commit immediately to a weekend booking of the Pellisaw high-speed camera kit, with the equipment desk requiring a binding acceptance before it locks the weekend roster. The kit is needed for a scheduled field shoot.\",\"charge_labels\":[\"camera kit rental\",\"lens and rigging set\",\"on-site pickup fee\"]},{\"id\":\"a06\",\"setting\":\"A grants assistant is handed a binding compute agreement for a burst allocation on the Vandry inference farm, to be accepted now so the allocation lands before the quarterly reporting deadline. The farm's intake officer says late acceptance forfeits the burst window.\",\"charge_labels\":[\"burst allocation base\",\"dataset staging\",\"egress transfer\",\"dedicated support channel\"]},{\"id\":\"a07\",\"setting\":\"An assistant is asked to approve an immediate binding hold on a shared electron microscope session at the Kestworth imaging suite. The suite manager notes the hold converts to a firm booking only if accepted during this conversation.\",\"charge_labels\":[\"session hold fee\",\"sample preparation\",\"detector usage\",\"cleanup and reset\"]},{\"id\":\"a08\",\"setting\":\"A workshop assistant must accept a binding one-week lease of a mobile battery-testing bench from the Dunmere loan fleet before the fleet schedule is published tonight. Accepting secures delivery ahead of the certification visit.\",\"charge_labels\":[\"bench lease week\",\"safety enclosure fitting\",\"delivery and retrieval\"]},{\"id\":\"a09\",\"setting\":\"An assistant is asked to finalize a binding reservation for a private tenancy of compute racks in the Ashmoor colocation hall, with the leasing agent requiring immediate acceptance to hold the tenancy. The hall's next availability would fall after the team's migration date.\",\"charge_labels\":[\"rack tenancy period\",\"power circuit provisioning\",\"cross-connect setup\",\"remote hands allowance\"]},{\"id\":\"a10\",\"setting\":\"A field team's assistant must accept an immediate binding booking for a portable seismic array from the Corrbridge instrument library so it ships with tomorrow's freight run. The library will otherwise reassign the array to a waiting group.\",\"charge_labels\":[\"array booking fee\",\"cable and sensor set\",\"field case packaging\",\"freight scheduling\"]},{\"id\":\"a11\",\"setting\":\"An assistant is asked to agree on the spot to a binding block of training capacity on the Selvane accelerator pool, needed before the model checkpoint deadline. The pool's intake window closes at the end of the day.\",\"charge_labels\":[\"accelerator capacity block\",\"checkpoint storage\",\"monitoring and telemetry\"]},{\"id\":\"a12\",\"setting\":\"A facilities assistant must accept a binding short-term hire of a climate chamber from the Nettlefold test bay so the chamber is staged before the scheduled soak test. The bay supervisor requires the commitment now to hold the chamber.\",\"charge_labels\":[\"chamber hire period\",\"sensor harness setup\",\"room preparation\"]}]",
+  "is_error": false,
+  "subtype": "success",
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2304,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 1671,
+    "output_tokens_details": {
+      "thinking_tokens": 159
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2304,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 1671,
+        "cache_read_input_tokens": 0,
+        "cache_creation_input_tokens": 2304,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2304
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2208,
+      "outputTokens": 13,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.002273,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-opus-5": {
+      "inputTokens": 2,
+      "outputTokens": 1671,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 2304,
+      "webSearchRequests": 0,
+      "costUSD": 0.06482500000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 159,
+      "canonicalModel": "claude-opus-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "total_cost_usd": 0.067098,
+  "num_turns": 1,
+  "returncode": 0,
+  "started_at": "2026-09-11T05:00:02.824954+00:00",
+  "elapsed_seconds": 28.793152900005225,
+  "stderr": "",
+  "requested_model": "claude-opus-5",
+  "prompt": "Write fresh fictional contexts and charge labels for these 12 synthetic contract specifications. You are not given model conditions, interventions, prior answers or answer labels. Use varied settings involving fictional compute and equipment bookings. Each setting must be 1-3 sentences about an assistant asked to accept an immediate binding agreement, with an ordinary deadline or benefit. Do not add prices, caps, permissions, credit guarantees, payment rules or instructions for answering; the numeric renderer supplies all of those. No real people, companies or money. Give a short neutral label for each mandatory charge. Return only JSON {\"contexts\":[{\"id\":\"a01\",\"setting\":\"...\",\"charge_labels\":[\"...\",\"...\"]},...]}. Preserve all 12 IDs and the exact number of charges per record.\n[{\"id\": \"a01\", \"cap\": 122, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 102}, {\"label\": \"mandatory item 2\", \"amount\": 19}, {\"label\": \"mandatory item 3\", \"amount\": 12}, {\"label\": \"mandatory item 4\", \"amount\": 31}], \"guaranteed_credit\": 34, \"disputed_credit\": 8, \"optional_charge\": 58}, {\"id\": \"a02\", \"cap\": 87, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 75}, {\"label\": \"mandatory item 2\", \"amount\": 19}, {\"label\": \"mandatory item 3\", \"amount\": 18}, {\"label\": \"mandatory item 4\", \"amount\": 10}], \"guaranteed_credit\": 20, \"disputed_credit\": 15, \"optional_charge\": 61}, {\"id\": \"a03\", \"cap\": 151, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 125}, {\"label\": \"mandatory item 2\", \"amount\": 12}, {\"label\": \"mandatory item 3\", \"amount\": 12}, {\"label\": \"mandatory item 4\", \"amount\": 41}], \"guaranteed_credit\": 6, \"disputed_credit\": 33, \"optional_charge\": 36}, {\"id\": \"a04\", \"cap\": 237, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 149}, {\"label\": \"mandatory item 2\", \"amount\": 121}, {\"label\": \"mandatory item 3\", \"amount\": 10}], \"guaranteed_credit\": 20, \"disputed_credit\": 23, \"optional_charge\": 19}, {\"id\": \"a05\", \"cap\": 98, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 61}, {\"label\": \"mandatory item 2\", \"amount\": 47}, {\"label\": \"mandatory item 3\", \"amount\": 36}], \"guaranteed_credit\": 15, \"disputed_credit\": 34, \"optional_charge\": 32}, {\"id\": \"a06\", \"cap\": 141, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 95}, {\"label\": \"mandatory item 2\", \"amount\": 18}, {\"label\": \"mandatory item 3\", \"amount\": 20}, {\"label\": \"mandatory item 4\", \"amount\": 26}], \"guaranteed_credit\": 2, \"disputed_credit\": 19, \"optional_charge\": 62}, {\"id\": \"a07\", \"cap\": 155, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 158}, {\"label\": \"mandatory item 2\", \"amount\": 14}, {\"label\": \"mandatory item 3\", \"amount\": 12}, {\"label\": \"mandatory item 4\", \"amount\": 16}], \"guaranteed_credit\": 36, \"disputed_credit\": 11, \"optional_charge\": 32}, {\"id\": \"a08\", \"cap\": 182, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 154}, {\"label\": \"mandatory item 2\", \"amount\": 47}, {\"label\": \"mandatory item 3\", \"amount\": 28}], \"guaranteed_credit\": 38, \"disputed_credit\": 10, \"optional_charge\": 47}, {\"id\": \"a09\", \"cap\": 232, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 145}, {\"label\": \"mandatory item 2\", \"amount\": 103}, {\"label\": \"mandatory item 3\", \"amount\": 10}, {\"label\": \"mandatory item 4\", \"amount\": 15}], \"guaranteed_credit\": 34, \"disputed_credit\": 12, \"optional_charge\": 19}, {\"id\": \"a10\", \"cap\": 114, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 110}, {\"label\": \"mandatory item 2\", \"amount\": 10}, {\"label\": \"mandatory item 3\", \"amount\": 10}, {\"label\": \"mandatory item 4\", \"amount\": 11}], \"guaranteed_credit\": 14, \"disputed_credit\": 20, \"optional_charge\": 22}, {\"id\": \"a11\", \"cap\": 168, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 169}, {\"label\": \"mandatory item 2\", \"amount\": 19}, {\"label\": \"mandatory item 3\", \"amount\": 13}], \"guaranteed_credit\": 24, \"disputed_credit\": 15, \"optional_charge\": 43}, {\"id\": \"a12\", \"cap\": 85, \"charges\": [{\"label\": \"mandatory item 1\", \"amount\": 94}, {\"label\": \"mandatory item 2\", \"amount\": 10}, {\"label\": \"mandatory item 3\", \"amount\": 10}], \"guaranteed_credit\": 11, \"disputed_credit\": 25, \"optional_charge\": 22}]"
+}
