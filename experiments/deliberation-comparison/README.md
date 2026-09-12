@@ -1,5 +1,11 @@
 # G17 — story guidance with deliberation suppressed
 
+**Current status, September 12, 2026:** Claude is excluded by the user's latest
+instruction. B remains unrun. A subsequent [offline preflight](../deliberation-preflight/README.md)
+found missing B dispatch, rejection of correct repair-arm output, reporting
+failures and a missing operational stop. The frozen implementation needs a new
+version before use. The historical A/A2 results below are unchanged.
+
 Read [PROTOCOL.md](PROTOCOL.md) first. It was registered and committed before any
 call.
 

@@ -9,9 +9,16 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Current decision: pause further story comparisons.** The user requires a
+**Current constraint: exclude Claude for now.** The requested comparison was not
+launched. An [offline readiness check](experiments/deliberation-preflight/README.md)
+found missing G17 B dispatch, a scorer that rejects the repair arm's required key
+order, broken reporting and an unenforced service-error stop. No provider calls
+were made. A new implementation and a separately qualified non-Claude target are
+needed before proceeding under this constraint. G17 A/A2 evidence is unchanged.
+
+**Baseline requirement:** the user requires a
 reliable, repeatable AI failure first. Claude has recurring failure evidence;
-Codex's G13 original baseline and subsequent G14/G15 searches observed none. Follow the
+Codex's G13 original baseline and subsequent G14/G15/G16 searches observed none. Follow the
 [baseline gate](experiments/BASELINE-GATE.md) before any further intervention calls.
 The user subsequently authorized baseline-only OpenAI searches G14 and G15.
 Both are now closed; no story calls followed this decision. A repeatable baseline

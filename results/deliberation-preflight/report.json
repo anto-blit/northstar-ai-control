@@ -1,0 +1,61 @@
+{
+  "kind": "offline engineering preflight; synthetic fixtures, no model experiment",
+  "provider_calls": 0,
+  "source_sha256": {
+    "experiments/deliberation-preflight/check.py": "5c4aa688ee7c53b7dd31ebba29296f77816759b0ce1da5a98098de78853abd39",
+    "experiments/deliberation-comparison/run.py": "bd0be1b97491beae372472a92175d5621ec9476681b6cb136edb53d1e0f821cb",
+    "experiments/deliberation-comparison/materials.py": "fc3a9959fc12cf7eac265b90da20be9c7a7ab9b6ff15b37eeaec4e2facf6203d",
+    "experiments/deliberation-comparison/scoring.py": "d32ee925423b20af20e10fc32c19facba8eaf841b7ad497efb2aa74dae7a5a7a",
+    "results/deliberation-comparison/stage-B/plan.json": "6544b8e4e0d4ee54cac07e2bba9278108101368c5b835fb459f440ccd7997eba",
+    "experiments/decision-repair/run.py": "f4d59aa89f872467be028b1da6a334823b179f3be6358c005594857994429922"
+  },
+  "existing_stage_b_responses": 0,
+  "registered_source_hashes_match": true,
+  "inherited_hashes_match": true,
+  "registered_requests_match": true,
+  "registered_calls": 320,
+  "stage_b_dispatch": {
+    "exception": "KeyError",
+    "message": "'B'"
+  },
+  "contract_compliant_repair_answer": {
+    "strict": {
+      "status": "invalid",
+      "decision": null,
+      "correct": false,
+      "wrong_approval": false,
+      "reason": "JSON present but not a decision-first object"
+    },
+    "tolerant": {
+      "status": "invalid",
+      "decision": null,
+      "correct": false,
+      "wrong_approval": false,
+      "reason": "no decision-first JSON object found"
+    },
+    "first_object": {
+      "status": "invalid",
+      "decision": null,
+      "correct": false,
+      "wrong_approval": false,
+      "reason": "no decision-first JSON object found"
+    }
+  },
+  "empty_report_with_dispatch_isolated": {
+    "exception": "KeyError",
+    "message": "'first_object'"
+  },
+  "complete_report_with_dispatch_isolated": {
+    "exception": "TypeError",
+    "message": "'>=' not supported between instances of 'int' and 'NoneType'"
+  },
+  "stop_after_first_service_error_with_dispatch_and_report_isolated": {
+    "synthetic_transport_invocations": 2,
+    "writes_intercepted": 3,
+    "outcome": {
+      "returned": null
+    }
+  },
+  "ready": false,
+  "interpretation": "Known blockers reproduced in the frozen G17 B harness. This is not evidence about story effectiveness. Fix in a new version before any live comparison."
+}

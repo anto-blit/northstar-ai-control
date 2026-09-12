@@ -5,6 +5,11 @@ recommended next work and verification commands that make no model calls.
 Then consult [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md) and the chosen study's
 README, protocol and saved plan. Update the handoff when decisions or results change.
 
+Current user constraint (September 12, 2026): exclude Claude for now. Do not call
+Claude or replace the model inside G17's frozen plan. See the
+[offline readiness check](experiments/deliberation-preflight/README.md) before any
+comparison: the registered G17 B harness has unresolved execution/scoring defects.
+
 The user's current priority is a reliable, repeatable AI failure before further
 story comparisons. Follow [the baseline gate](experiments/BASELINE-GATE.md).
 

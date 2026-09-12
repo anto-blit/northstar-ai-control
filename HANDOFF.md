@@ -4,6 +4,11 @@ Updated September 12, 2026. Evidence through G17 stage A2.
 G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
 thinking analysis made none. G17 stage B is registered and has made none.
 
+**Current user direction: proceed only while excluding Claude for now.** No new
+provider calls were made. The [offline preflight](experiments/deliberation-preflight/README.md)
+also found that the registered G17 B runner and scorer are not ready. The Claude
+baseline remains recorded; another target needs its own qualification.
+
 Read this file, [the baseline gate](experiments/BASELINE-GATE.md), and
 [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md), then the README, protocol and
 saved plan for the study you intend to work on. The saved evidence and frozen
@@ -25,13 +30,14 @@ establish malicious intent or predict catastrophe. A concrete example, including
 the full prompt and raw answer, is
 [G10 response 058](results/approval-repeatability/responses/058.json).
 
-**We now know what governs that error.** Splitting all 300 frozen G10+G11 calls
-on `thinking_tokens` separates outcomes exactly: every one of the 257 calls where
+**A recorded thinking-token association gives us a hypothesis.** Splitting all
+300 frozen G10+G11 calls on `thinking_tokens` separates outcomes exactly:
+every one of the 257 calls where
 extended thinking fired was correct, and all 36 failures came from the 43 calls
-where it did not. The per-prompt failure rate is just the rate at which a prompt
-skips thinking. Story guidance is the only arm that ever survived a non-thinking
-call (7/7 against 0/16), which is the sharpest hint the project has for its
-founding idea — and a post-treatment subgroup cut after the fact, so it is
+where it did not. Zero reported thinking tokens do not establish zero internal
+computation or prove causation. In G11's over-limit subgroup, story guidance
+scored 7/7 against 0/16 for original/factual guidance. That subgroup was selected
+after observing the answers and may differ across arms, so it is
 hypothesis-generating only. See [the finding](docs/thinking-and-failure.md) and
 replay it with `py experiments/thinking-analysis/analyze.py verify`.
 
@@ -44,8 +50,8 @@ replay it with `py experiments/thinking-analysis/analyze.py verify`.
 | [G14: invoice search](experiments/codex-failure-search/README.md) | 36/36 Codex decisions correct across six packets. No candidate selected; 24 conditional repeat slots never activated. | This search supplied no qualifying failure. |
 | [G15: identity check](experiments/codex-identity-check/README.md) | 24/24 Codex decisions correct in two fresh batches, including all four legitimate controls. | This separate exact-identity search also supplied no qualifying failure. |
 | [G16: trap screen](experiments/openai-trap-screen/README.md) | 84/84 correct on `gpt-5.3-codex-spark`/low across six near-miss trap families and their twins. No family advanced. | A third OpenAI search supplied no failure — but it never reached the low-deliberation regime it targeted. |
-| [Thinking analysis](experiments/thinking-analysis/README.md) | No model calls. All 36 recorded Claude failures sit in the 43 non-thinking calls; 257/257 thinking calls correct. | Explains the existing benchmark and predicts where a real one would come from. |
-| [G17 stage A](experiments/deliberation-comparison/README.md) | 40 Claude calls at `--effort low`. 8 valid wrong approvals in 32 over-limit attempts (25%); 7/8 controls correct, the eighth invalid but not wrongly withheld. | The baseline exists on this target, but the stage fails its own published rule, so stage B is not registered. |
+| [Thinking analysis](experiments/thinking-analysis/README.md) | No model calls. All 36 recorded Claude failures sit in the 43 non-thinking calls; 257/257 thinking calls correct. | A within-record association that motivates a prospective test, not proof of a mechanism. |
+| [G17 stage A](experiments/deliberation-comparison/README.md) | 40 Claude calls at `--effort low`. 8 valid wrong approvals in 32 over-limit attempts (25%); 7/8 controls correct, the eighth invalid but not wrongly withheld. | Failed its own published rule; did not qualify B. A2 was a subsequent separate qualification. |
 | [G17 stage A2](experiments/deliberation-comparison/README.md) | 44 Claude calls on disjoint cases. 10 wrong approvals in 32 under the primary scorer, 22/32 under the executor's view, 12/12 controls correct. | **Qualifies.** The baseline gate is satisfied on this target and stage B is registered. |
 
 G10/G11/G12-B requested `claude-sonnet-5`; G13/G14/G15 requested
@@ -76,17 +82,17 @@ a general model failure rate. Earlier studies remain in the status ledger.
 
 ## Recommended next work, not an experiment already underway
 
-G17 is now the live line of work and the baseline gate is **satisfied** on
+G17's baseline gate is **satisfied only for the recorded target**,
 `claude-sonnet-5` at `--effort low`. Stage A2 qualified under a rule published
 before its calls, on cases disjoint from stage A, with 12/12 legitimate controls
 correct.
 
-**The next action is a decision, not a measurement: run stage B or not.** It is
-registered at 320 calls (40 over-limit and 40 legitimate per arm, disjoint from
-both earlier stages), roughly $2 at stage A2's observed rate, and it is the first
-intervention comparison this project has been able to run against a baseline that
-actually fails. Nothing about it is automatic — the plan is committed, and running
-it is a separate choice.
+**G17 B is registered but not ready to execute.** Its 320 calls comprise 40
+over-limit and 40 legitimate requests per arm, disjoint from the earlier stages.
+The user's current instruction excludes its Claude target. The offline preflight
+also reproduced missing B dispatch, rejection of contract-compliant repair
+answers, broken comparison/partial reporting and an unenforced service-error stop.
+The original plans and sources are preserved; repairs need a new version.
 
 Two things a reviewer should look at first, because they are where this work is
 most vulnerable:
@@ -100,12 +106,14 @@ most vulnerable:
    prospectively and it replicated (22/32 against a predicted ≥10/32); stage B
    registers it as primary in advance.
 
-**Do not register a fourth CLI-based OpenAI search.** G16 showed the Codex CLI's
-lowest reasoning effort still spends ~257 reasoning tokens per call and cannot
-reach the regime where the failure lives. An API-key path would need a different
-declared target (`gpt-5.3-codex-spark` reports `supported_in_api: false`, while
-`gpt-5.5` and `gpt-6-astra` report `true`) whose baseline qualifies separately.
-G16's six trap families and their twins are reusable as-is.
+**Do not repeat another unchanged CLI search.** G16 observed no zero-reasoning
+calls at Spark/low; that is a result for that run, not proof that every available
+model must deliberate. The visible CLI catalog lists low as its minimum effort.
+An API target with an explicitly supported `none` setting is a possible route;
+GPT-5.5 documents it. No non-Claude API key or local runtime was found in the
+locations checked this session. The user confirmed no alternative API endpoint
+is available at this time. See the preflight for scope and official links.
+G16's six trap families and their twins remain reusable.
 
 1. Inspect [G10's plan](results/approval-repeatability/plan.json),
    [its report](results/approval-repeatability/report.json), and
@@ -113,20 +121,23 @@ G16's six trap families and their twins are reusable as-is.
    407 are the clearest starting pair. Their original prompts are in
    [068-01](results/repair-continuation/attempts/068-01.json) and
    [407-01](results/repair-continuation/attempts/407-01.json).
-2. Prepare a new bounded protocol: exact target/settings, baseline adequacy,
+2. Establish an accessible non-Claude target and prepare a new bounded protocol:
+   exact target/settings, baseline adequacy,
    minimum useful effect, sample size, matched controls, scoring, costs and stop
-   rule. Use the existing recurrence evidence; do not impose a new 30% minimum.
-   If changing the target/setup, establish its baseline separately. Assess whether
+   rule. Do not impose a new 30% minimum. Claude's recurrence cannot qualify a
+   different target. Establish the new baseline separately. Assess whether
    available sampling can distinguish the intended improvement from chance.
-3. Publish the plan before new calls and satisfy the
-   [baseline gate](experiments/BASELINE-GATE.md) before intervention calls.
+3. Correct and exercise the runner in a new version, including repair-arm scoring,
+   partial reporting and injected service errors. Publish the plan before new
+   calls and satisfy the [baseline gate](experiments/BASELINE-GATE.md) before
+   intervention calls.
    Preserve G12's partial evidence instead of restarting its old runner.
 4. Report the full comparison, including useful approvals and invalid answers.
    If a credible benefit emerges, test unfamiliar tasks and transfer separately.
 
-No new model run was started in this documentation update. The recommendation
-still needs a concrete protocol; it is not a runnable continuation of G12 or
-evidence that stories will help.
+No new model run was started in the Claude-exclusion readiness check. G12 remains
+closed. The next comparison needs a usable target, a qualified baseline and a
+correct, separately published implementation.
 
 ## Stories and project map
 
@@ -171,6 +182,7 @@ py experiments/openai-trap-screen/run.py verify
 py experiments/deliberation-comparison/run.py verify A
 py experiments/deliberation-comparison/run.py verify A2
 py experiments/thinking-analysis/analyze.py verify
+py experiments/deliberation-preflight/check.py --verify results/deliberation-preflight/report.json
 ```
 
 These `verify` modes replay stored responses; they do not fill missing calls.
