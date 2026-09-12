@@ -1,0 +1,4 @@
+{
+  "commit": "8fb5c8225067d266bd55c742ce29043280d09eee",
+  "scope": "Repeatability-only protocol, 120 exact requests, source hashes and fixed stopping rule published before all G10 target calls."
+}

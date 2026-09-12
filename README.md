@@ -31,7 +31,16 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**A concrete observed AI flaw: [an approval that contradicts its own explanation](experiments/known-approval-replay/README.md).**
+**Latest: [the known approval flaw recurred in fresh model calls](experiments/approval-repeatability/README.md).**
+G10 completed all 120 planned calls: **8 valid wrong approvals across 100 over-limit
+attempts**, 80 correct withholds and 12 invalid answers. The same two selected
+prompts failed 6/50 and 2/50 times; all 20 legitimate controls approved correctly.
+Both meet the published repeatability rule. This is a narrow, recurring output
+error we can test prevention against. It does not establish deliberate misconduct,
+a story benefit or global-risk reduction. Every attempt is preserved and scores
+recompute. [Inspect the repeated flaw on the site](https://anto-blit.github.io/northstar-ai-control/#approval-repeatability).
+
+**Earlier evidence: [an approval that contradicts its own explanation](experiments/known-approval-replay/README.md).**
 In two preserved G3-C responses, Sonnet says an agreement exceeds the owner's
 limit yet returns `PROCEED`. A new, explicitly post-hoc replay passes those exact
 responses through the existing booking executor: two unauthorized mock bookings.
@@ -59,7 +68,7 @@ revocation, four authorized comparisons succeeded, and 105/105 required useful
 deliveries occurred. Every response was valid; there were no provider refusals.
 Two preceding interface canaries also passed. No candidate qualified for fresh
 confirmation. We improved measurement reliability in this run, but did not earn
-the counterexample milestone or establish a story benefit or risk reduction.
+the counterexample milestone within that stop-boundary search or establish a story benefit or risk reduction.
 
 **Previous: [test a concrete stop boundary](https://anto-blit.github.io/northstar-ai-control/#revocation).**
 The [G6 study](experiments/revocation-agent/README.md) separates ordinary-agent

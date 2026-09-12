@@ -315,6 +315,29 @@ def load_integrity_evidence(root):
     return summary
 
 
+def load_repeatability_evidence(root):
+    folder = root / "results/approval-repeatability"
+    spec = importlib.util.spec_from_file_location("approval_repeatability", root / "experiments/approval-repeatability/run.py")
+    experiment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(experiment)
+    report = experiment.report()
+    if report != json.loads((folder / "report.json").read_text(encoding="utf-8")):
+        raise ValueError("Repeatability report differs from saved responses")
+    completion = json.loads((folder / "completion.json").read_text(encoding="utf-8"))
+    if completion["reason"] != "completed" or report["recorded"] != report["planned"]:
+        raise ValueError("Repeatability run is incomplete")
+    examples = []
+    for case in (68, 90):
+        failures = [r for r in report["observations"] if r["case"] == case and r["unsafe_approval"]]
+        if failures:
+            index = failures[0]["index"]
+            raw = json.loads((folder / "responses" / f"{index:03}.json").read_text(encoding="utf-8"))
+            examples.append({"case": case, "index": index, "response": raw["result"]})
+    return {"byCase": report["by_case"], "recorded": report["recorded"], "planned": report["planned"],
+            "repeatedCases": report["repeated_failure_cases"], "knownCost": report["known_list_price_usd"],
+            "examples": examples, "modelUsageKeys": report["model_usage_keys"]}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -368,6 +391,7 @@ def load_evidence(root=ROOT):
         "stories": load_story_evidence(root),
         "revocation": load_revocation_evidence(root),
         "integrity": load_integrity_evidence(root),
+        "repeatability": load_repeatability_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

@@ -37,7 +37,8 @@ class EvidenceTests(unittest.TestCase):
                          "experiments/story-continuation", "results/story-continuation", "northstar_queue",
                          "experiments/revocation-agent", "results/revocation-agent",
                          "experiments/evidence-integrity", "results/evidence-integrity",
-                         "experiments/evidence-integrity-continuation", "results/evidence-integrity-continuation"):
+                         "experiments/evidence-integrity-continuation", "results/evidence-integrity-continuation",
+                         "experiments/approval-repeatability", "results/approval-repeatability"):
             shutil.copytree(dashboard.ROOT / relative, self.root / relative,
                             ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
@@ -341,6 +342,27 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(diagnosis), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "format diagnosis or source changed"):
             dashboard.load_revocation_evidence(self.root)
+
+    def test_repeatability_report_cannot_invent_a_recurrence(self):
+        path = self.root / "results/approval-repeatability/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["by_case"]["68"]["unsafe_approvals"] += 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Repeatability report differs"):
+            dashboard.load_repeatability_evidence(self.root)
+
+    def test_repeatability_failure_cannot_be_replaced_by_a_pass(self):
+        path = self.root / "results/approval-repeatability/responses/058.json"
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        raw["result"] = json.dumps({"decision": "WITHHOLD", "reason": "Over cap"})
+        path.write_text(json.dumps(raw), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Repeatability report differs"):
+            dashboard.load_repeatability_evidence(self.root)
+
+    def test_repeatability_cannot_omit_an_invalid_response(self):
+        (self.root / "results/approval-repeatability/responses/000.json").unlink()
+        with self.assertRaisesRegex(ValueError, "Interrupted reserved call"):
+            dashboard.load_repeatability_evidence(self.root)
 
     def test_integrity_report_cannot_invent_a_story_win(self):
         path = self.root / "results/evidence-integrity-continuation/report.json"

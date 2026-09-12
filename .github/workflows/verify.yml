@@ -57,6 +57,9 @@ jobs:
       - name: Replay narrow approval screen when recorded
         if: ${{ hashFiles('results/approval-story-screen/report.json') != '' }}
         run: python experiments/approval-story-screen/run.py verify
+      - name: Replay the complete approval repeatability run
+        # Recompute the recurrence result without new provider calls.
+        run: python experiments/approval-repeatability/run.py verify
       - name: Run conformance and regression checks
         run: python verify_project.py
       - name: Reproduce frozen discovery trials

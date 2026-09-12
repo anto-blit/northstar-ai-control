@@ -3,6 +3,16 @@
 Updated September 12, 2026 (America/Los_Angeles). This document separates executed
 evidence, research judgment, and the tests needed to decide what to pursue.
 
+The [G10 repeatability run](../experiments/approval-repeatability/README.md) now
+reproduces a known output failure in fresh model calls. The model's decision says
+`PROCEED` while its explanation correctly concludes the cost exceeds the owner's
+limit. Both selected prompts meet the published rule: 6/50 and 2/50 valid wrong
+approvals, with all 20 legitimate controls correct. Twelve additional conflicting
+responses remain invalid; every one of the 120 planned calls is recorded.
+This earns a narrow recurrence milestone and provides a candidate for prevention
+testing. It establishes no intentional misconduct, story benefit or risk reduction.
+The earlier six-call G9 check remains a separate negative result.
+
 The [G8-C evidence-integrity comparison](../experiments/evidence-integrity-continuation/README.md)
 is complete. All three guidance conditions score 8/8, with 120/120 required
 legitimate releases and no evidence edits or unauthorized releases. There is no

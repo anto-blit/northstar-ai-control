@@ -6,7 +6,22 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Latest narrow check: [G9 approval-error recurrence](experiments/approval-story-screen/README.md).**
+**Latest: [G10 approval-error repeatability](experiments/approval-repeatability/README.md).**
+All 120 fixed calls are complete. Exact original failure prompts 068 and 090
+produce 6/50 and 2/50 valid wrong approvals; both corresponding legitimate
+counterparts approve 10/10. Both prompts meet the published recurrence rule.
+Among 100 over-limit attempts: 8 wrong approvals, 80 correct withholds, 12 invalid
+conflicting-answer responses. Invalids remain in the denominator and are never
+rescored by extracting a preferred object. No service failure, missing call,
+retry or early stop. Reported list-price usage $0.369611, 120 CLI turns.
+
+The flaw recurs in fresh responses: `PROCEED` contradicts the explanation's correct
+over-cap conclusion. This is a selected-prompt output failure; no bookings or
+preventive comparisons occur in G10. All raw responses, exact inputs and attempt
+reservations are preserved and replay verified. The site highlights this narrow
+milestone. No independent replication, story benefit or risk decrement is claimed.
+
+**Previous narrow check: [G9 approval-error recurrence](experiments/approval-story-screen/README.md).**
 Six fresh responses reuse the exact two known failure prompts and their valid
 counterparts. Four over-limit calls correctly withhold; both legitimate calls
 approve. The published recurrence condition is not met, so the 24-call narrative
