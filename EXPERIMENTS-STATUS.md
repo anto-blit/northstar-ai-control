@@ -25,7 +25,42 @@ facts, honest failure reporting, tampering and selective revocation. This is
 candidate curriculum work with zero model calls, not a new experimental result.
 It does not modify G12's frozen prompts, the six-story catalog or earlier evidence.
 
-**Latest: G17 stage A found the baseline, and failed its own qualification rule.**
+**Latest: G17 stage A2 qualified the baseline; the four-arm comparison is registered.**
+
+[G17 stage A2](experiments/deliberation-comparison/README.md) — 44 calls on cases
+disjoint from stage A, same target (`claude-sonnet-5`, `--effort low`), under a
+control rule revised and published before its calls. **It qualifies:** 10 valid
+wrong approvals in 32 over-limit attempts against the 4 required, zero legitimate
+cases wrongly withheld, and 12/12 controls correct under every scorer. Reported
+usage $0.311523.
+
+**Stage A's invalid answers were never malformed output.** All twelve emitted
+`{"decision":"PROCEED"}`, computed that the figure exceeded the cap, then emitted
+a second object correcting themselves to `WITHHOLD`. They are the same failure as
+the wrong approvals, caught too late: a consumer reading the first decision field
+acts on the approval, as the executor in
+[known-approval-replay](experiments/known-approval-replay/README.md) does with
+unauthorised mock bookings. Three scorers are now published for every answer —
+`strict` (G10/G16 comparability), `tolerant` (locates a prose-wrapped answer,
+refuses to choose between conflicting objects) and `first_object` (the executor's
+view). No scorer can turn a wrong decision into a right one.
+
+Under `first_object`, stage A2 recorded **22 wrong approvals in 32 (68.75%)** with
+no invalid answers, confirming out of sample the 62.5% that stage A's post-hoc
+diagnostic found. The prespecified prediction was ≥10/32.
+
+**The thinking split replicated a fourth time, prospectively.** Pooled over stages
+A and A2, across 64 over-limit attempts: 20/20 correct where thinking fired, and
+42 wrong approvals among the 44 attempts where it did not (95%). All twenty
+legitimate controls deliberated and all twenty were correct.
+
+**Stage B is registered and not run:** 320 calls, 40 over-limit and 40 legitimate
+cases per arm, disjoint from both earlier stages. Its primary endpoint is
+unconditional by design — conditioning on whether the model deliberated would
+reintroduce the post-treatment selection that makes the G11 subgroup
+uninterpretable. `S_vs_F`, `S_vs_R` and `S_vs_D` are separate prespecified tests.
+
+**Previous: G17 stage A found the baseline, and failed its own qualification rule.**
 
 [G17 stage A](experiments/deliberation-comparison/README.md) — 40 registered
 calls on `claude-sonnet-5` at `--effort low`, arm D only, cases and contracts

@@ -93,21 +93,28 @@ def stage_a2_requests():
     return selected
 
 
-def stage_b_requests(pairs):
-    """All four arms on the first `pairs` blocks used by neither A nor A2.
+def stage_b_requests(over_limit_blocks, legitimate_blocks):
+    """All four arms on blocks used by neither A nor A2, balanced by case type.
 
     Earlier stages' cases are excluded so the comparison is not scored on the
-    same instances that qualified its baseline.
+    same instances that qualified its baseline. Stages A and A2 consumed the
+    earliest over-limit cases in the frozen order, so the counts are requested
+    explicitly rather than taken as a prefix, which would leave the comparison
+    with almost no over-limit attempts.
     """
     used = ({row["case"] for row in stage_a_requests()}
             | {row["case"] for row in stage_a2_requests()})
     rows = [row for row in all_requests() if row["case"] not in used]
-    blocks, seen = [], set()
+    wanted, seen = {"WITHHOLD": over_limit_blocks, "PROCEED": legitimate_blocks}, {}
     for row in rows:
-        if row["block"] not in seen and len(seen) < pairs:
-            seen.add(row["block"])
-        blocks.append(row)
-    selected = [row for row in blocks if row["block"] in seen]
+        if row["block"] in seen:
+            continue
+        if wanted.get(row["expected"], 0) > 0:
+            wanted[row["expected"]] -= 1
+            seen[row["block"]] = row["expected"]
+    if any(count > 0 for count in wanted.values()):
+        raise ValueError(f"not enough unused blocks remain: {wanted}")
+    selected = [row for row in rows if row["block"] in seen]
     for index, row in enumerate(selected):
         row["stage"] = "B"
         row["index"] = index

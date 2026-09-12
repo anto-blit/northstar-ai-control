@@ -34,7 +34,25 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: we finally have a baseline that fails — and a rule we held ourselves to.**
+**Latest: the baseline gate is open, and the comparison is registered.**
+[G17 stage A2](experiments/deliberation-comparison/README.md) qualified a
+repeatable failure on `claude-sonnet-5` with deliberation suppressed, under a rule
+published before its calls and on cases disjoint from the stage that preceded it:
+**10 wrong approvals in 32 over-limit attempts, zero legitimate cases wrongly
+withheld, 12/12 controls correct.**
+
+Along the way we found that the answers we had been discarding as malformed were
+nothing of the kind. Each one emitted `PROCEED`, did the arithmetic, and then
+corrected itself in a second object — the same failure as a wrong approval, caught
+too late for anything downstream. Scored the way a consumer would read it, the
+failure runs at **69%**. Pooled across both stages: **42 wrong approvals in the 44
+attempts where the model did not deliberate, and none at all in the 20 where it
+did.**
+
+The four-arm comparison — original prompt, matched facts, story, and a repair
+designed to win — is registered at 320 calls and **has not been run**.
+
+**Previously: a baseline that fails, and a rule we held ourselves to.**
 [G17 stage A](experiments/deliberation-comparison/README.md) ran 40 calls with
 deliberation suppressed (`--effort low`). The approval failure recurred **8 times
 in 32 over-limit attempts (25%)**, double what the published rule required, on a

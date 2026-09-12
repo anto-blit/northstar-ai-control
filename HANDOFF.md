@@ -1,8 +1,8 @@
 # NorthStar: start here to continue the work
 
-Updated September 12, 2026. Evidence through G17 stage A.
-G16 made 84 recorded model calls and G17 stage A made 40; the thinking analysis
-made none.
+Updated September 12, 2026. Evidence through G17 stage A2.
+G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
+thinking analysis made none. G17 stage B is registered and has made none.
 
 Read this file, [the baseline gate](experiments/BASELINE-GATE.md), and
 [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md), then the README, protocol and
@@ -46,6 +46,7 @@ replay it with `py experiments/thinking-analysis/analyze.py verify`.
 | [G16: trap screen](experiments/openai-trap-screen/README.md) | 84/84 correct on `gpt-5.3-codex-spark`/low across six near-miss trap families and their twins. No family advanced. | A third OpenAI search supplied no failure — but it never reached the low-deliberation regime it targeted. |
 | [Thinking analysis](experiments/thinking-analysis/README.md) | No model calls. All 36 recorded Claude failures sit in the 43 non-thinking calls; 257/257 thinking calls correct. | Explains the existing benchmark and predicts where a real one would come from. |
 | [G17 stage A](experiments/deliberation-comparison/README.md) | 40 Claude calls at `--effort low`. 8 valid wrong approvals in 32 over-limit attempts (25%); 7/8 controls correct, the eighth invalid but not wrongly withheld. | The baseline exists on this target, but the stage fails its own published rule, so stage B is not registered. |
+| [G17 stage A2](experiments/deliberation-comparison/README.md) | 44 Claude calls on disjoint cases. 10 wrong approvals in 32 under the primary scorer, 22/32 under the executor's view, 12/12 controls correct. | **Qualifies.** The baseline gate is satisfied on this target and stage B is registered. |
 
 G10/G11/G12-B requested `claude-sonnet-5`; G13/G14/G15 requested
 `gpt-6-astra`, medium effort, Codex CLI 0.154.0; G16 requested
@@ -75,34 +76,29 @@ a general model failure rate. Earlier studies remain in the status ledger.
 
 ## Recommended next work, not an experiment already underway
 
-G17 stage A settled the question the gate has been stuck on since G13: **a usable
-baseline exists.** At `--effort low` the approval failure runs at 25% of attempts,
-double what the published rule required. What it did not settle is whether a
-comparison can be scored on that target, because the same regime produces
-malformed answers on 13 of 23 non-thinking calls.
+G17 is now the live line of work and the baseline gate is **satisfied** on
+`claude-sonnet-5` at `--effort low`. Stage A2 qualified under a rule published
+before its calls, on cases disjoint from stage A, with 12/12 legitimate controls
+correct.
 
-**The decision now belongs to the user, and it is a rule question, not a
-measurement question.** Stage A failed because one legitimate control was invalid
-while no legitimate case was wrongly withheld. Three options, in order of my
-preference:
+**The next action is a decision, not a measurement: run stage B or not.** It is
+registered at 320 calls (40 over-limit and 40 legitimate per arm, disjoint from
+both earlier stages), roughly $2 at stage A2's observed rate, and it is the first
+intervention comparison this project has been able to run against a baseline that
+actually fails. Nothing about it is automatic — the plan is committed, and running
+it is a separate choice.
 
-**A. Register G17-A2 with a control rule that separates substance from format.**
-A legitimate case *wrongly withheld* must be zero; a *malformed* control is an
-output-contract issue reported against a prespecified cap. Fresh registration,
-fresh cases, the argument made in public before any call. This is a principled
-change, but it is still a rule rewritten after it failed, so it deserves the
-scrutiny that implies. Do not rescore stage A's `q6888` under it.
+Two things a reviewer should look at first, because they are where this work is
+most vulnerable:
 
-**B. Attack the validity problem instead of the rule.** The invalid rate is the
-real obstacle to stage B, not the control. A stage B that loses 57% of its sample
-to malformed answers is very expensive, and if arms differ in how often they wrap
-JSON in prose, invalid rates differ by arm and contaminate the comparison — arm R
-is the obvious risk, since it asks for justification first. Options include a
-tolerant parser applied identically to all arms and declared in advance, or a
-target effort between `low` and `medium`.
-
-**C. Accept the gate as shut and stop.** Legitimate. The failure is real and
-reproducible; whether it can carry a four-arm comparison is unproven.
+1. **The stage A control rule was rewritten after it failed.** The argument, the
+   safeguards and the disjoint-case design are in the protocol. It deserves
+   scrutiny rather than assent.
+2. **`first_object` was added after stage A revealed the self-correction
+   pattern.** It is the executor's view and arguably the right safety endpoint,
+   but it was not the endpoint stage A registered. Stage A2 tested it
+   prospectively and it replicated (22/32 against a predicted ≥10/32); stage B
+   registers it as primary in advance.
 
 **Do not register a fourth CLI-based OpenAI search.** G16 showed the Codex CLI's
 lowest reasoning effort still spends ~257 reasoning tokens per call and cannot
@@ -173,6 +169,7 @@ py experiments/codex-failure-search/run.py verify
 py experiments/codex-identity-check/run.py verify
 py experiments/openai-trap-screen/run.py verify
 py experiments/deliberation-comparison/run.py verify A
+py experiments/deliberation-comparison/run.py verify A2
 py experiments/thinking-analysis/analyze.py verify
 ```
 
