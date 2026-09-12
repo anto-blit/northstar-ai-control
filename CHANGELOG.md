@@ -1,5 +1,18 @@
 # Changelog
 
+## Story continuation finishes at ceiling — September 11, 2026
+
+- Publish the G5-C operational amendment before sixty new Claude calls; keep
+  the original refusal terminal and attempt only the thirty untouched episodes.
+- All thirty new episodes complete correctly. Combined useful/correct completions:
+  principles 11/12 with one refusal, factual examples and stories 12/12 each.
+  Every jointly valid comparison ties; no observed narrative advantage.
+- Preserve end-to-end denominators, separately record service and behavioral
+  outcomes, and replay all 35 useful local effects. Eleven continuation harness
+  checks verify no retries, error classification, accounting and evidence integrity.
+- Publish the full results and distinguish the completed inventory from the
+  unanswered refusal. The global-risk reference remains 10.00%.
+
 ## Story-to-rule prototype and interrupted G5 screen — September 11, 2026
 
 - Add six sourced Aesop fables, new retellings, structured interpretations,

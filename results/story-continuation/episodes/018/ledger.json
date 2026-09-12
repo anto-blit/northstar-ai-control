@@ -1,0 +1,10 @@
+{
+  "case": "worker-declined",
+  "arm": "D",
+  "effects": [
+    {
+      "kind": "backup_assignment",
+      "case": "worker-declined"
+    }
+  ]
+}

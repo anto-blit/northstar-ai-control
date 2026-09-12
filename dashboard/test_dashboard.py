@@ -33,7 +33,8 @@ class EvidenceTests(unittest.TestCase):
         shutil.copytree(dashboard.ROOT / "results/codex-repair", self.root / "results/codex-repair")
         shutil.copytree(dashboard.ROOT / "experiments/codex-repair", self.root / "experiments/codex-repair",
                         ignore=shutil.ignore_patterns("__pycache__"))
-        for relative in ("curriculum", "northstar_ethics", "experiments/story-distillation", "results/story-distillation"):
+        for relative in ("curriculum", "northstar_ethics", "experiments/story-distillation", "results/story-distillation",
+                         "experiments/story-continuation", "results/story-continuation"):
             shutil.copytree(dashboard.ROOT / relative, self.root / relative,
                             ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
@@ -244,12 +245,41 @@ class EvidenceTests(unittest.TestCase):
 
     def test_story_service_error_is_separate_from_completed_decisions(self):
         data = dashboard.load_story_evidence(self.root)
-        self.assertTrue(data["stopped"])
-        self.assertFalse(data["allComplete"])
-        self.assertEqual([data["summary"][arm]["completedEpisodes"] for arm in "DFS"], [1, 2, 2])
-        self.assertEqual(sum(x["interruptedEpisodes"] for x in data["summary"].values()), 1)
-        self.assertEqual(sum(x["unstartedEpisodes"] for x in data["summary"].values()), 30)
+        self.assertTrue(data["originalStopped"])
+        original = data["originalSummary"]
+        self.assertEqual([original[arm]["completedEpisodes"] for arm in "DFS"], [1, 2, 2])
+        self.assertEqual(sum(x["interruptedEpisodes"] for x in original.values()), 1)
+        self.assertEqual(sum(x["unstartedEpisodes"] for x in original.values()), 30)
         self.assertFalse(data["catalog"]["deployment_approved"])
+
+    def test_story_continuation_finishes_inventory_without_erasing_refusal(self):
+        data = dashboard.load_story_evidence(self.root)
+        self.assertTrue(data["continuation"])
+        self.assertTrue(data["allComplete"])
+        self.assertFalse(data["allAnswered"])
+        self.assertFalse(data["stopped"])
+        self.assertEqual([data["summary"][a]["correct"] for a in "DFS"], [11, 12, 12])
+        self.assertEqual([data["summary"][a]["planned"] for a in "DFS"], [12, 12, 12])
+        self.assertEqual(data["summary"]["D"]["provider_refusal"], 1)
+        self.assertEqual(data["comparisons"]["S_vs_D"]["wins"], 0)
+        self.assertEqual(data["comparisons"]["S_vs_D"]["ties"], 11)
+        self.assertEqual(data["comparisons"]["S_vs_F"]["ties"], 12)
+
+    def test_story_continuation_cannot_publish_an_invented_win(self):
+        path = self.root / "results/story-continuation/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["comparisons"]["S_vs_D"]["wins"] = 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Continuation report or evidence changed"):
+            dashboard.load_story_evidence(self.root)
+
+    def test_story_continuation_new_response_is_part_of_verified_evidence(self):
+        path = self.root / "results/story-continuation/episodes/006/response-1.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["total_cost_usd"] += .01
+        path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Continuation report or evidence changed"):
+            dashboard.load_story_evidence(self.root)
 
     def test_story_claim_and_local_effect_cannot_be_invented(self):
         path = self.root / "results/story-distillation/stop.json"

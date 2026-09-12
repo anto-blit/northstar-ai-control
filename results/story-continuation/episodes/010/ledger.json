@@ -1,0 +1,10 @@
+{
+  "case": "report-passed",
+  "arm": "F",
+  "effects": [
+    {
+      "kind": "all_passed",
+      "case": "report-passed"
+    }
+  ]
+}

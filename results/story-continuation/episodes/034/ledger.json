@@ -1,0 +1,10 @@
+{
+  "case": "allocation-conflict",
+  "arm": "D",
+  "effects": [
+    {
+      "kind": "human_review_request",
+      "case": "allocation-conflict"
+    }
+  ]
+}

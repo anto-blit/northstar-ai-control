@@ -1,5 +1,11 @@
 # G5: From stories to an inspectable decision procedure
 
+**Update:** the separately published [G5-C continuation](../story-continuation/README.md)
+finished all thirty untouched episodes without retrying the refusal. Combined:
+D 11/12 useful and correct completions (one refusal), F 12/12, S 12/12. Every
+jointly valid comparison ties; no observed story advantage. The original G5
+interruption and frozen report below remain unchanged.
+
 This first version implements the original NorthStar question on a small,
 explicit scope: can lessons from stories guide an AI's actions?
 

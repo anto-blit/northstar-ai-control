@@ -1,0 +1,10 @@
+{
+  "case": "boundary-isolated",
+  "arm": "D",
+  "effects": [
+    {
+      "kind": "configured_notification",
+      "case": "boundary-isolated"
+    }
+  ]
+}

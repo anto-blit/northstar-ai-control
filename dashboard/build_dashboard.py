@@ -242,10 +242,22 @@ def load_story_evidence(root):
         row["completedCorrect"] = sum(x["correct"] for x in complete)
         row["interruptedEpisodes"] = row["episodes"] - len(complete)
         row["unstartedEpisodes"] = row["planned"] - row["episodes"]
-    return {"catalog": catalog, "compiled": compiled, "demos": demos, "summary": summary,
+    data = {"catalog": catalog, "compiled": compiled, "demos": demos, "summary": summary,
             "allComplete": report.get("all_complete", False),
             "knownCost": report.get("known_cost_usd"), "publicCommit": report.get("public_commit"),
             "stopped": (root / "results/story-distillation/stop.json").exists()}
+    continuation = root / "results/story-continuation"
+    if (continuation / "report.json").exists() or (continuation / "stop.json").exists():
+        spec = importlib.util.spec_from_file_location("dashboard_g5c_verifier", root / "experiments/story-continuation/run.py")
+        verifier = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(verifier)
+        continued = verifier.verify(root)
+        data.update(originalSummary=summary, originalStopped=data["stopped"], continuation=True,
+                    summary=continued["summary"], comparisons=continued["comparisons"],
+                    allComplete=continued["all_adjudicated"], allAnswered=continued["all_answered"],
+                    knownCost=continued["known_cost_usd"], publicCommit=continued["public_commit"],
+                    stopped=(continuation / "stop.json").exists())
+    return data
 
 
 def load_evidence(root=ROOT):

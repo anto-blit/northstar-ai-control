@@ -1,0 +1,10 @@
+{
+  "case": "access-text",
+  "arm": "S",
+  "effects": [
+    {
+      "kind": "text_export",
+      "case": "access-text"
+    }
+  ]
+}

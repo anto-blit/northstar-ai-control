@@ -1,5 +1,12 @@
 # Results
 
+`story-continuation/` preserves G5-C's public amendment, sixty new provider
+responses, thirty new local ledgers and a combined replayable report. All thirty
+new episodes completed correctly. Combined D 11/12 useful/correct completions
+(one original refusal), F/S 12/12. S/F has twelve jointly valid ties; S/D has
+eleven ties and one excluded pair. No observed story advantage. The original
+G5 records below stay immutable. See [results and limits](../experiments/story-continuation/README.md).
+
 `story-distillation/` contains G5's public plan, compiled provisional rule set,
 12 provider-call records, six episode ledgers and an operational stop report.
 Five episodes completed correctly; one was interrupted by a provider safety

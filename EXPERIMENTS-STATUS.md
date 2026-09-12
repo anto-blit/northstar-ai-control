@@ -13,14 +13,15 @@ on trusted structured facts; missing facts and unresolved conflicts require
 review. The site provides interactive examples. Eleven targeted prototype tests
 pass; this is engineering evidence, not an ethical performance guarantee.
 
-The public G5 development plan compares distilled guidance, factual examples
-and stories across 36 two-step episodes. It stopped after 12 calls: 11 operational
-answers and one provider safety error labeled `[bio]`. Five episodes completed
-correctly; one was interrupted and 30 were unstarted. Only the authority pair
-was reached. No narrative advantage is established, and the error is not a wrong
-moral judgment. The original fixed-slot counter is preserved and explicitly
-qualified. No retry or provider substitution is scheduled. Human interpretation
-review remains pending and there is no global-risk decrement.
+The original G5 plan stopped after five correctly completed episodes and one
+provider refusal labeled `[bio]`. The separately published [G5-C continuation](experiments/story-continuation/README.md)
+retained those records and finished all thirty untouched episodes: sixty new
+operational answers, all expected decisions, no new refusals. Combined useful
+and correct completions are D 11/12 (one refusal), F 12/12, S 12/12. S/F has twelve
+jointly valid ties; S/D has eleven ties and one excluded refusal pair. No observed
+story advantage. All 35 useful local effects replay. The inventory is complete,
+but not every request answered. Human interpretation review remains pending;
+the amendment followed known partial results and there is no global-risk decrement.
 
 The separate [guidance micro-pilot G0](experiments/guidance-pilot/README.md) has
 now completed 48 model calls with an AI-reviewed 16-case corpus. It is a

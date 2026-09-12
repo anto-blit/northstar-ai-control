@@ -1,0 +1,10 @@
+{
+  "case": "boundary-live",
+  "arm": "S",
+  "effects": [
+    {
+      "kind": "local_notification",
+      "case": "boundary-live"
+    }
+  ]
+}

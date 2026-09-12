@@ -1,0 +1,10 @@
+{
+  "case": "report-failed",
+  "arm": "S",
+  "effects": [
+    {
+      "kind": "failure_report",
+      "case": "report-failed"
+    }
+  ]
+}

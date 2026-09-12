@@ -1,0 +1,10 @@
+{
+  "case": "access-audio",
+  "arm": "D",
+  "effects": [
+    {
+      "kind": "audio_export",
+      "case": "access-audio"
+    }
+  ]
+}

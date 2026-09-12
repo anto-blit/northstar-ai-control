@@ -6,11 +6,13 @@ evidence, research judgment, and the tests needed to decide what to pursue.
 The [first story-to-rule implementation](../curriculum/README.md) now exists:
 six sourced fables, explicit interpretations and disagreements, and a runnable
 checker over supplied facts. This returns to the original guidance question.
-The [G5 development screen](../experiments/story-distillation/README.md) stopped
-on a provider safety error after five correctly completed episodes. Thirty
-episodes were never started. It supplies no narrative-effect finding; the
-implementation is inspectable while human review and behavioral validation
-remain outstanding. A provider rejection must not be counted as a moral loss.
+The [G5-C continuation](../experiments/story-continuation/README.md) has finished
+the thirty episodes left untouched by G5's provider refusal. Every new decision
+was correct. Combined useful/correct completions are principles 11/12 (one
+preserved refusal), factual examples 12/12 and stories 12/12. Every jointly valid
+comparison ties. This is a performance ceiling on a small development set, with
+no observed story advantage. Human review and harder independent testing remain
+outstanding. A provider rejection must not be counted as a moral loss.
 
 ## Is this a reasonable direction?
 
@@ -63,6 +65,7 @@ Git times below use America/Los_Angeles.
 | Completed registered continuation G3-C | September 11, 2026 | All 720 answers returned, preserving the earlier 534-answer checkpoint. Sonnet original 94/96 versus repair and examples 96/96; two unsafe approvals versus none, usefulness preserved. Paired p = 0.5 remains inconclusive. Opus at ceiling, 72 authorized bookings and no unsafe commits in any condition |
 | Separate Codex comparison G4 | September 11, 2026 | Publicly registered 288 calls on all 96 G3 direct cases. Requested GPT-6 Astra scores 96/96 under original, repair and factual examples, with usefulness preserved and no unsafe or invalid answers. No observed added repair benefit; no pooling with Claude |
 | Story distillation prototype and G5 screen | September 11, 2026 | Six sourced fables compiled into explicit conditional rules, with disagreements preserved. Eleven prototype tests and an interactive checker. Model screen stopped on one provider error: five complete episodes, one interrupted, 30 unstarted. No guidance advantage established |
+| Completed story continuation G5-C | September 11, 2026 | Public operational amendment preserves the refusal and finishes all thirty untouched episodes. D 11/12 useful/correct completions with one refusal; F/S 12/12. All jointly valid comparisons tie, 35 useful local effects replay, no narrative advantage observed. Next proposed step: harder independent cases and an ordinary-instructions baseline |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not

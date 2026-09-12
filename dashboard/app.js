@@ -74,18 +74,32 @@
   $('lesson-demo-select').addEventListener('change', renderDemo);
   renderDemo();
   const storyRows = Object.values(storyData.summary);
-  const completedStories = storyRows.reduce((n,row) => n+row.completedEpisodes,0);
+  const completedStories = storyRows.reduce((n,row) => n+(storyData.continuation ? row.valid_decision : row.completedEpisodes),0);
   const plannedStories = storyRows.reduce((n,row) => n+row.planned,0);
-  $('story-screen-title').textContent = storyData.stopped ? 'The model comparison stopped early.' : storyData.allComplete ? 'The first development comparison is recorded.' : 'The comparison is registered.';
-  $('story-screen-summary').textContent = `${completedStories}/${plannedStories || 36} episodes completed. ${storyData.stopped ? 'A provider service rejection labeled “[bio]” interrupted one document-sharing episode. The fixed protocol stopped further calls.' : 'Completion and model choices are recorded separately from the rule gate’s effects.'}`;
+  const storyRefusals = storyRows.reduce((n,row) => n+(row.provider_refusal || 0),0);
+  const storyUnstarted = storyRows.reduce((n,row) => n+(row.unstarted || 0),0);
+  const storyOther = storyRows.reduce((n,row) => n+(row.service_failure || 0)+(row.invalid || 0)+(row.partial || 0),0);
+  const storyTied = storyData.continuation && storyData.allComplete && Object.values(storyData.comparisons).every(p => p.paired > 0 && p.wins === 0 && p.losses === 0);
+  $('story-screen-title').textContent = storyTied ? 'Every comparable decision tied.' : storyData.stopped ? 'The model comparison stopped early.' : storyData.allComplete ? 'The remaining cases are tested.' : 'The comparison is registered.';
+  $('story-screen-summary').textContent = storyData.continuation
+    ? `${completedStories}/${plannedStories} episodes produced valid decisions. ${storyRefusals} provider ${storyRefusals === 1 ? 'refusal' : 'refusals'}, ${storyOther} other failed or partial episodes, ${storyUnstarted} not started. The original refusal is preserved; its request was never retried.`
+    : `${completedStories}/${plannedStories || 36} episodes completed. A provider service rejection labeled “[bio]” interrupted one document-sharing episode. The original fixed protocol stopped further calls.`;
   Object.entries(storyData.summary).forEach(([arm,row]) => {
     const card = el('div', undefined, 'guidance-condition');
     card.append(el('span', {D:'Distilled principles',F:'With factual examples',S:'With stories'}[arm]),
-      el('strong', `${row.completedCorrect}/${row.completedEpisodes}`), el('small', 'correct among completed episodes'),
-      el('small', `${row.interruptedEpisodes} interrupted · ${row.unstartedEpisodes} not started · ${row.planned} planned`));
+      el('strong', storyData.continuation ? `${row.correct}/${row.planned}` : `${row.completedCorrect}/${row.completedEpisodes}`),
+      el('small', storyData.continuation ? 'correct out of all planned episodes' : 'correct among completed episodes'),
+      el('small', storyData.continuation
+        ? `${row.useful}/${row.planned} useful completions · ${row.correct}/${row.valid_decision} correct among valid decisions`
+        : `${row.interruptedEpisodes} interrupted · ${row.unstartedEpisodes} not started · ${row.planned} planned`));
+    if (storyData.continuation) card.append(el('small', `${row.provider_refusal} ${row.provider_refusal === 1 ? 'refusal' : 'refusals'} · ${row.invalid} invalid · ${row.service_failure + row.partial} service failures or partial · ${row.unstarted} not started`),
+      el('small', `${row.unsafe_proposals} unsafe proposals · ${row.premature_proposals} early commitments · ${row.local_effects} permitted local effects`));
     $('story-screen-comparison').append(card);
   });
-  $('story-screen-limit').textContent = storyData.stopped
+  $('story-screen-limit').textContent = storyData.continuation
+    ? ['F','D'].map(arm => { const p = storyData.comparisons[`S_vs_${arm}`]; return `Stories versus ${arm === 'F' ? 'factual examples' : 'principles'}: ${p.wins} wins, ${p.losses} losses, ${p.ties} ties; ${p.excluded.length} of 12 pairs excluded because a valid decision was missing.`; }).join(' ')
+      + ' These comparisons include only jointly valid decisions and may be biased by unequal refusal or invalid rates. Project-authored development cases; human review pending. No broad story advantage or global-risk reduction is established.'
+    : storyData.stopped
     ? 'Only the permission pair was reached. Five completed episodes were correct; this incomplete sample cannot establish a difference between methods. A service error is not a wrong moral decision. No retries or provider substitution are scheduled.'
     : 'These are project-authored development cases, with human review pending. No broad behavioral advantage or global-risk reduction follows from this small comparison.';
 
@@ -131,8 +145,8 @@
   const formatP = value => value < 0.0001 ? '< 0.0001' : '= ' + Number(value.toFixed(4));
   const headline = !continued.allAnswered ? 'The resumed comparison is incomplete.' : contrast.statistically_supported ? 'The repair gain repeated on Sonnet.' : contrast.favorable_descriptive_replication ? 'An observed gain, still uncertain.' : 'The repair did not meet the replication criterion.';
   $('replication-title').textContent = headline;
-  $('latest-assessment').textContent = 'The story-to-rule prototype is ready to explore.';
-  $('latest-assessment-detail').textContent = 'Six sourced fables, explicit disagreements and a runnable decision checker. A behavioral advantage remains unestablished.';
+  $('latest-assessment').textContent = storyTied ? 'The story test ran. No added advantage appeared.' : 'The story-to-rule prototype is ready to explore.';
+  $('latest-assessment-detail').textContent = storyTied ? 'The remaining 30 episodes finished correctly. Every comparable decision tied across stories, factual examples and principles; one earlier provider refusal remains on record.' : 'Six sourced fables, explicit disagreements and a runnable decision checker. A behavioral advantage remains unestablished.';
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered

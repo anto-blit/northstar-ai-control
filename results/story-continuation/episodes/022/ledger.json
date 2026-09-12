@@ -1,0 +1,10 @@
+{
+  "case": "worker-accepted",
+  "arm": "S",
+  "effects": [
+    {
+      "kind": "named_assignment",
+      "case": "worker-accepted"
+    }
+  ]
+}

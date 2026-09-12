@@ -1,0 +1,10 @@
+{
+  "case": "allocation-clear",
+  "arm": "D",
+  "effects": [
+    {
+      "kind": "help_a",
+      "case": "allocation-clear"
+    }
+  ]
+}

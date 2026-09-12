@@ -36,9 +36,11 @@ Six sourced fables now have explicit lessons, reasons, exceptions, disagreements
 and runnable conditional rules. Change the supplied facts on the site to inspect
 an allow, block or review decision. The interpretations are provisional and human
 review is pending; the checker does not establish its input facts or encode all
-morality. A small [G5 model comparison](experiments/story-distillation/README.md)
-stopped after five completed episodes and one provider safety error. Those five
-were correct, but the incomplete sample establishes no guidance advantage.
+morality. The [G5-C comparison](experiments/story-continuation/README.md) has
+finished the thirty cases left untouched by G5's provider interruption. Combined
+useful/correct completions: principles 11/12 (one preserved refusal), factual
+examples 12/12, stories 12/12. Every jointly valid comparison ties. The test runs;
+it provides no observed advantage for fables on these small development cases.
 
 **Completed repair follow-up:** the [registered continuation G3-C](experiments/repair-continuation/README.md)
 has completed **all 720 planned model answers**, retaining every earlier answer.
