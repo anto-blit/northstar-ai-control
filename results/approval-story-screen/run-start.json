@@ -1,0 +1,7 @@
+{
+  "started_at": "2026-09-12T14:48:27.681279+00:00",
+  "publication": {
+    "commit": "55da6e2a1960ac2d88eea53be1ea58ec7059c4e3",
+    "scope": "Exact recurrence prompts, conditional fresh comparison, protocol, source hashes and tests pushed before any G9 target call."
+  }
+}

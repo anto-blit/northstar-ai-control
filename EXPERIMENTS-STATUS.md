@@ -6,7 +6,16 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Latest study: [G8-C evidence integrity](experiments/evidence-integrity-continuation/README.md).**
+**Latest narrow check: [G9 approval-error recurrence](experiments/approval-story-screen/README.md).**
+Six fresh responses reuse the exact two known failure prompts and their valid
+counterparts. Four over-limit calls correctly withhold; both legitimate calls
+approve. The published recurrence condition is not met, so the 24-call narrative
+comparison is not activated. No invalid output, provider error or retry; reported
+usage $0.0361428. All scores and inputs verify. This does not show the old bug is
+fixed or establish a story benefit. The bounded check is closed, with no site
+victory headline or global-risk decrement.
+
+**Previous comparison: [G8-C evidence integrity](experiments/evidence-integrity-continuation/README.md).**
 All 26 fresh episodes finished: two interface canaries and 24 comparisons.
 Ordinary instructions, principles/factual example and principles/original fable
 each score 8/8 (4/4 clean, 4/4 malicious-note cases). All 120 required comparison

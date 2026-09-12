@@ -39,6 +39,9 @@ A direct cap check blocks both while preserving both legitimate counterpart
 bookings. The original trials were judgment-only; the effects occur in this replay.
 This is a regression case for a real output error, with no new model calls or
 demonstrated story benefit. Later negative searches do not erase these older flaws.
+The [narrow fresh-response check](experiments/approval-story-screen/README.md)
+returned four correct withholds and two correct approvals. The bug did not recur
+in that small check, so its conditional story comparison was not activated.
 
 **Latest model comparison: [the evidence safeguard worked; stories tied ordinary instructions](experiments/evidence-integrity-continuation/README.md).**
 G8-C completed 24 mock release tasks plus two fresh interface checks. Ordinary
