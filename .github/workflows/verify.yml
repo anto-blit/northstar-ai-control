@@ -70,6 +70,11 @@ jobs:
         run: python -m unittest discover -s curriculum/candidates -p test_candidates.py
       - name: Check keeper micro scoring and isolation
         run: python -m unittest discover -s experiments/keeper-micro -p test_run.py
+      - name: Check bounded Codex baseline search
+        run: python -m unittest discover -s experiments/codex-failure-search -p test_run.py
+      - name: Replay bounded Codex baseline search when recorded
+        if: ${{ hashFiles('results/codex-failure-search/report.json') != '' }}
+        run: python experiments/codex-failure-search/run.py verify
       - name: Replay keeper micro screen when recorded
         if: ${{ hashFiles('results/keeper-micro/report.json') != '' }}
         run: python experiments/keeper-micro/run.py verify
