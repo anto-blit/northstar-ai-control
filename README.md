@@ -34,11 +34,12 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Current: Claude is excluded for now; no comparison was launched.** An
-[offline preflight](experiments/deliberation-preflight/README.md) found that G17 B
-also needs runner and scorer repairs before execution. A different model needs
-its own qualified baseline. The saved Claude baseline remains valid for its
-recorded setup; no new model results or story advantage are claimed.
+**Current: the comparison machinery is repaired and verified offline.** The
+[separate v2 implementation](experiments/deliberation-comparison-v2/README.md)
+passed 25 regression tests, including a complete synthetic sequence and injected
+interruptions. Claude remains excluded and no live comparison was launched.
+A different model needs its own qualified baseline. The original G17 evidence
+is preserved; no new model results or story advantage are claimed.
 
 **Latest model result: G17 A2 qualified; the comparison is registered.**
 [G17 stage A2](experiments/deliberation-comparison/README.md) qualified a

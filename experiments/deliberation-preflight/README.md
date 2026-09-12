@@ -5,6 +5,11 @@ The user requested proceeding only while excluding Claude for now. G17 B is
 registered for Claude, so it was not launched or silently assigned another model.
 This is an engineering check, not a new model experiment or a story result.
 
+**Subsequent repair:** the [separate v2 machinery](../deliberation-comparison-v2/README.md)
+passed 25 offline regression tests. The defects below remain reproducible in the
+original frozen version; its source and audit record are preserved. No provider
+calls or live comparison were added by the repair.
+
 ## What can run without Claude
 
 The qualified G17 baseline applies to `claude-sonnet-5` at low effort. The recorded

@@ -1,0 +1,31 @@
+{
+  "kind": "recorded offline engineering validation",
+  "command": "py -m unittest discover -s experiments/deliberation-comparison-v2 -p test_run.py -v",
+  "tests_run": 25,
+  "failures": 0,
+  "errors": 0,
+  "provider_calls": 0,
+  "live_comparison_registered": false,
+  "full_sequence": "320 synthetic fixture responses in a temporary directory; not model results",
+  "checks": [
+    "arm-specific output contracts",
+    "first-object conflict and duplicate-key handling",
+    "separate paired comparisons and exclusions",
+    "all-320 dispatch and replay",
+    "quota, timeout and user-interruption stops",
+    "unknown usage is not zero",
+    "no automatic resume",
+    "record and request integrity",
+    "offline crash checkpoint recovery"
+  ],
+  "source_and_input_sha256": {
+    "experiments/deliberation-comparison-v2/run.py": "9462d054f52902251c371d01c83ddfb4e32422f2a2e1bb97f22e635435753ed6",
+    "experiments/deliberation-comparison-v2/scoring.py": "55ee1826bbb99a68e3ebd8f612b4eaf13cc750fe1cb0a49c48aa50eaa9fc6bfb",
+    "experiments/deliberation-comparison-v2/test_run.py": "220523491096f45348e358182216614dba279bc2048b74f12702ca6b8513fb89",
+    "results/deliberation-comparison/stage-A/plan.json": "278d81f20224ee1b50c4634c5305b104e1e19247ba9c14c277730867fe90d0f1",
+    "results/deliberation-comparison/stage-A2/plan.json": "362cd51539fbb30075d566ea6f131b8cc76e58178939fde051568bbf42c38993",
+    "results/deliberation-comparison/stage-B/plan.json": "6544b8e4e0d4ee54cac07e2bba9278108101368c5b835fb459f440ccd7997eba",
+    "results/story-confirmation-v3/plan.json": "ffe36fe82cc52f96755d13ac3808f8c1c7b92c1c518c0eb8cd68a68d3b7fbfcd"
+  },
+  "claim_limit": "Maintainer-recorded test outcome; no independent review, model performance result or story benefit."
+}

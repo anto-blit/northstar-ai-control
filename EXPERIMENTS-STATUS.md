@@ -10,11 +10,14 @@ a revised proposal awaiting independent review. The specification and frozen sou
 retain their existing versions.
 
 **Current constraint: exclude Claude for now.** The requested comparison was not
-launched. An [offline readiness check](experiments/deliberation-preflight/README.md)
-found missing G17 B dispatch, a scorer that rejects the repair arm's required key
-order, broken reporting and an unenforced service-error stop. No provider calls
-were made. A new implementation and a separately qualified non-Claude target are
-needed before proceeding under this constraint. G17 A/A2 evidence is unchanged.
+launched. The user subsequently selected the machinery repair only. The
+[corrected v2 implementation](experiments/deliberation-comparison-v2/README.md)
+passed 25 offline tests covering dispatch, repair-arm scoring, per-arm comparisons,
+partial reports and operational stops. The 320-response full-path test used
+synthetic fixtures, not AI calls. No provider calls or new story findings.
+The original [preflight defects](experiments/deliberation-preflight/README.md)
+and G17 A/A2 evidence remain unchanged. A permitted target, its own baseline and
+a new scientific plan/adapter are still needed for live testing.
 
 **Baseline requirement:** the user requires a
 reliable, repeatable AI failure first. Claude has recurring failure evidence;

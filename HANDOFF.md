@@ -4,10 +4,14 @@ Updated September 12, 2026. Evidence through G17 stage A2.
 G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
 thinking analysis made none. G17 stage B is registered and has made none.
 
-**Current user direction: proceed only while excluding Claude for now.** No new
-provider calls were made. The [offline preflight](experiments/deliberation-preflight/README.md)
-also found that the registered G17 B runner and scorer are not ready. The Claude
-baseline remains recorded; another target needs its own qualification.
+**Current user direction: exclude Claude; complete the machinery repair only.**
+The [corrected comparison machinery v2](experiments/deliberation-comparison-v2/README.md)
+passed 25 offline regression tests, including a complete 320-response synthetic
+sequence and interrupted runs. Zero provider calls were made. This completes the
+selected engineering step, not a scientific comparison. The original
+[preflight defects](experiments/deliberation-preflight/README.md) remain preserved
+in G17 B; the Claude baseline remains recorded and another target needs its own
+qualification.
 
 Read this file, [the baseline gate](experiments/BASELINE-GATE.md), and
 [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md), then the README, protocol and
@@ -92,7 +96,9 @@ over-limit and 40 legitimate requests per arm, disjoint from the earlier stages.
 The user's current instruction excludes its Claude target. The offline preflight
 also reproduced missing B dispatch, rejection of contract-compliant repair
 answers, broken comparison/partial reporting and an unenforced service-error stop.
-The original plans and sources are preserved; repairs need a new version.
+The original plans and sources are preserved. Those machinery defects are
+corrected in v2 and exercised offline; no live adapter or new scientific plan
+has been registered.
 
 Two things a reviewer should look at first, because they are where this work is
 most vulnerable:
@@ -127,17 +133,19 @@ G16's six trap families and their twins remain reusable.
    rule. Do not impose a new 30% minimum. Claude's recurrence cannot qualify a
    different target. Establish the new baseline separately. Assess whether
    available sampling can distinguish the intended improvement from chance.
-3. Correct and exercise the runner in a new version, including repair-arm scoring,
-   partial reporting and injected service errors. Publish the plan before new
-   calls and satisfy the [baseline gate](experiments/BASELINE-GATE.md) before
-   intervention calls.
+3. Use the corrected v2 machinery as the basis for a separately reviewed provider
+   adapter and scientific plan. Its offline tests already cover repair-arm
+   scoring, partial reporting and injected service errors. Publish the live plan
+   before new calls and satisfy the [baseline gate](experiments/BASELINE-GATE.md)
+   before intervention calls.
    Preserve G12's partial evidence instead of restarting its old runner.
 4. Report the full comparison, including useful approvals and invalid answers.
    If a credible benefit emerges, test unfamiliar tasks and transfer separately.
 
-No new model run was started in the Claude-exclusion readiness check. G12 remains
-closed. The next comparison needs a usable target, a qualified baseline and a
-correct, separately published implementation.
+No model run was started during the readiness check or machinery repair. G12
+remains closed. The next live comparison needs a usable target, a qualified
+baseline and a separately published scientific implementation. The user selected
+only the machinery repair; the proposed safeguard extension has not been started.
 
 ## Stories and project map
 
@@ -183,6 +191,7 @@ py experiments/deliberation-comparison/run.py verify A
 py experiments/deliberation-comparison/run.py verify A2
 py experiments/thinking-analysis/analyze.py verify
 py experiments/deliberation-preflight/check.py --verify results/deliberation-preflight/report.json
+py -m unittest discover -s experiments/deliberation-comparison-v2 -p test_run.py -v
 ```
 
 These `verify` modes replay stored responses; they do not fill missing calls.
