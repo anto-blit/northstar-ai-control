@@ -47,6 +47,8 @@ jobs:
           python experiments/codex-repair/run.py verify
           python -m unittest discover -s experiments/story-distillation -p test_run.py -v
           python experiments/story-distillation/run.py verify
+          python -m unittest discover -s experiments/story-continuation -p test_run.py -v
+          python experiments/story-continuation/run.py verify
       - name: Run conformance and regression checks
         run: python verify_project.py
       - name: Reproduce frozen discovery trials
