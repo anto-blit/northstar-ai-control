@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "status": "Development screen; not a confirmatory efficacy trial",
+  "created_at": "2026-09-12T00:22:30.749897+00:00",
+  "requested_model": "claude-sonnet-5",
+  "effort": "medium",
+  "human_reviewers": 0,
+  "maximum_target_calls": 72,
+  "maximum_known_cost_usd": 6.0,
+  "per_call_budget_usd": "0.08",
+  "timeout_seconds": 120,
+  "episodes": [
+    {
+      "index": 0,
+      "case": "permission-revoked",
+      "arm": "D",
+      "prompt_sha256": [
+        "efb11367bbdce304fb939853dac8a96a871fdea2d7d3d405204befe4799403ea",
+        "0a421b99a7874a20074f96b80b1ba4b0e5bdbfc7e3c229482a22385cc6bc7d17"
+      ]
+    },
+    {
+      "index": 1,
+      "case": "permission-revoked",
+      "arm": "F",
+      "prompt_sha256": [
+        "1994dab1bf9c67b2d9f2bc779d1db1fa9c692c96fda83293f4a0fafa1dab3b84",
+        "23d9e325f82591580b0c9bd9ca5a95b9c7c0f714a155cfebde18671e727c3633"
+      ]
+    },
+    {
+      "index": 2,
+      "case": "permission-revoked",
+      "arm": "S",
+      "prompt_sha256": [
+        "2233e9f967d9554c524fcc9cfde1266d3f30597610012a2b36e959ca194fe8c0",
+        "ec393d2f4e6a1fb9397099f52cebeaffaba59de4c48e7394555669ed3b539e7a"
+      ]
+    },
+    {
+      "index": 3,
+      "case": "permission-restored",
+      "arm": "F",
+      "prompt_sha256": [
+        "1994dab1bf9c67b2d9f2bc779d1db1fa9c692c96fda83293f4a0fafa1dab3b84",
+        "aa645208915cb92723f0eecce0e2631f4cbd7bdba238070de15c5cb55839ad77"
+      ]
+    },
+    {
+      "index": 4,
+      "case": "permission-restored",
+      "arm": "S",
+      "prompt_sha256": [
+        "2233e9f967d9554c524fcc9cfde1266d3f30597610012a2b36e959ca194fe8c0",
+        "0a0904d0cad3dde29f9e4df55bed502c2f99bdbf9c4ce44771c5bd4cc7936bc9"
+      ]
+    },
+    {
+      "index": 5,
+      "case": "permission-restored",
+      "arm": "D",
+      "prompt_sha256": [
+        "efb11367bbdce304fb939853dac8a96a871fdea2d7d3d405204befe4799403ea",
+        "02430e3e10a2081f5527bd8ec95d3bdb5ff7951ae227aeff4e7eb08fd3327fb1"
+      ]
+    },
+    {
+      "index": 6,
+      "case": "report-failed",
+      "arm": "S",
+      "prompt_sha256": [
+        "76ca96ccbe54385760da695168cbf058882680df625cc4c4eebf9e3653ff2b38",
+        "78e72685c0dcdece419711c000cadcef0ee620b90762ad1a947b8ea08161d5b6"
+      ]
+    },
+    {
+      "index": 7,
+      "case": "report-failed",
+      "arm": "D",
+      "prompt_sha256": [
+        "0e3f6eebb34a63e20d1a5cff4f2de4d152cdd6af37dd88be0f9c8e60081b0d2a",
+        "d74bb848e8609607ae2605f0220e94bf7d904e171d86f143e1ad14f5cb73fcd9"
+      ]
+    },
+    {
+      "index": 8,
+      "case": "report-failed",
+      "arm": "F",
+      "prompt_sha256": [
+        "4393839a6c7092e786f1d0f6f65fbcae289e160db8566f394793678ea8e71ea3",
+        "93a519d1b0071d396ac5cb76573f891ada69ee4d747a2b4c52520d7fdac801bf"
+      ]
+    },
+    {
+      "index": 9,
+      "case": "report-passed",
+      "arm": "D",
+      "prompt_sha256": [
+        "0e3f6eebb34a63e20d1a5cff4f2de4d152cdd6af37dd88be0f9c8e60081b0d2a",
+        "564b9a6015deb96226960be9b35e6e1a5435e53e27942c9e5c5a3b58ba75f720"
+      ]
+    },
+    {
+      "index": 10,
+      "case": "report-passed",
+      "arm": "F",
+      "prompt_sha256": [
+        "4393839a6c7092e786f1d0f6f65fbcae289e160db8566f394793678ea8e71ea3",
+        "97f85e1c4b22030ec8946bb32e78950e1218847eaae7644fb35469b8050f63c5"
+      ]
+    },
+    {
+      "index": 11,
+      "case": "report-passed",
+      "arm": "S",
+      "prompt_sha256": [
+        "76ca96ccbe54385760da695168cbf058882680df625cc4c4eebf9e3653ff2b38",
+        "5c05570ee5e7d75cf8d19cc29e0d376aaca67d35c9079d2f08b4dfb2fdadc514"
+      ]
+    },
+    {
+      "index": 12,
+      "case": "access-text",
+      "arm": "F",
+      "prompt_sha256": [
+        "a5bfb349b278fbe054308c27bdc48ed235de91ef6c8837ca4166a9f068c61da5",
+        "1669cf93f50acdcf807bce8c48dbd09adb93add9bdcef05f64ba555f8d3a91ce"
+      ]
+    },
+    {
+      "index": 13,
+      "case": "access-text",
+      "arm": "S",
+      "prompt_sha256": [
+        "f642d7894609e60a9bdb7d5a0f7b3dde024162e44c6b9f0b99170c11b70d3ee3",
+        "95efd2571af63147606d57a1b68ef529a8eecd81411c6df413cddcc3c00ab9d6"
+      ]
+    },
+    {
+      "index": 14,
+      "case": "access-text",
+      "arm": "D",
+      "prompt_sha256": [
+        "215826e7577f54aaf9559e1c1827e86c351ef52693e64e0b94bb44d4922ab1a8",
+        "01f4a635be252b8e4f643f97534cba9b5ebc234ee74c0abfb5385316a4a6b80a"
+      ]
+    },
+    {
+      "index": 15,
+      "case": "access-audio",
+      "arm": "S",
+      "prompt_sha256": [
+        "f642d7894609e60a9bdb7d5a0f7b3dde024162e44c6b9f0b99170c11b70d3ee3",
+        "70704f08b05583cf199fa5884eccb51a9b0e51293c9601928e67939ceeafa835"
+      ]
+    },
+    {
+      "index": 16,
+      "case": "access-audio",
+      "arm": "D",
+      "prompt_sha256": [
+        "215826e7577f54aaf9559e1c1827e86c351ef52693e64e0b94bb44d4922ab1a8",
+        "5e6edacfc25a03f82da5fa1e73257142124f81eea168080c3cc9402d917d5715"
+      ]
+    },
+    {
+      "index": 17,
+      "case": "access-audio",
+      "arm": "F",
+      "prompt_sha256": [
+        "a5bfb349b278fbe054308c27bdc48ed235de91ef6c8837ca4166a9f068c61da5",
+        "6eba5aecd5336345ce8e6d82af127b649b04d54ae5978a266ef18b4a3570c680"
+      ]
+    },
+    {
+      "index": 18,
+      "case": "worker-declined",
+      "arm": "D",
+      "prompt_sha256": [
+        "3fdb68f18233c09f7d30d0ef3d6621939a79de6c17c0de196d073d0079c81e1d",
+        "7664270f624b162e1532e9410775a1242ac674421535b831bcf17d1256f36da0"
+      ]
+    },
+    {
+      "index": 19,
+      "case": "worker-declined",
+      "arm": "F",
+      "prompt_sha256": [
+        "0f3439c3225d892ef1b75f7c3bcd7e81f95d57f744ece7c6615eb35a219da965",
+        "c29d423b60dfda5fbe88c8f53d82615d038615898d46e05318f15e6e0c9fc972"
+      ]
+    },
+    {
+      "index": 20,
+      "case": "worker-declined",
+      "arm": "S",
+      "prompt_sha256": [
+        "9d8db9591903f102d6fc412d1c3863ffde80238d7b1e5078e734d0056fc41689",
+        "9db218c5081ecb35d15cbae8c72100996ed9a1a52f2bd1e0c0d183b168405692"
+      ]
+    },
+    {
+      "index": 21,
+      "case": "worker-accepted",
+      "arm": "F",
+      "prompt_sha256": [
+        "0f3439c3225d892ef1b75f7c3bcd7e81f95d57f744ece7c6615eb35a219da965",
+        "67927dbe2f2ca210e3b06686279e54af7b9567368d8cee56988b2df1dec93ea9"
+      ]
+    },
+    {
+      "index": 22,
+      "case": "worker-accepted",
+      "arm": "S",
+      "prompt_sha256": [
+        "9d8db9591903f102d6fc412d1c3863ffde80238d7b1e5078e734d0056fc41689",
+        "2ae849ea0bbfa8a3fd45ca38d50df7881db456f009bf785cf2e58f5376684b87"
+      ]
+    },
+    {
+      "index": 23,
+      "case": "worker-accepted",
+      "arm": "D",
+      "prompt_sha256": [
+        "3fdb68f18233c09f7d30d0ef3d6621939a79de6c17c0de196d073d0079c81e1d",
+        "e299ac2b138d17d9018fcebb03460734d97df634efa8964967bf429740c6eb52"
+      ]
+    },
+    {
+      "index": 24,
+      "case": "boundary-live",
+      "arm": "S",
+      "prompt_sha256": [
+        "e8471e36851c5358923a69db81100b4cb0fdc8de77ae8778fc0e5fd086e3e47b",
+        "ee77a516eeb063f3e434971b9672c4c7322ec1dd55d5c7de4c998015b4a2cd1f"
+      ]
+    },
+    {
+      "index": 25,
+      "case": "boundary-live",
+      "arm": "D",
+      "prompt_sha256": [
+        "aeeea3f19d76ebb3d6b8478962e126aa184f673a204ede02097d6e5edb3eeaab",
+        "0d0241841a270f0f440ba0fd25372fe7fd0964fe856d6dfa5c39a3c5a6fe7cb8"
+      ]
+    },
+    {
+      "index": 26,
+      "case": "boundary-live",
+      "arm": "F",
+      "prompt_sha256": [
+        "a151802f3dda8c10395dfd15ae57c0ce34d5be2ac49842c0d7ed1dbdab29a336",
+        "6c67823b4d55a0fcb567b16d111cdab4d4836bcf14da8840f7c94c9290a42977"
+      ]
+    },
+    {
+      "index": 27,
+      "case": "boundary-isolated",
+      "arm": "D",
+      "prompt_sha256": [
+        "aeeea3f19d76ebb3d6b8478962e126aa184f673a204ede02097d6e5edb3eeaab",
+        "6306e49197663bc49561bebc91fb2b2b80871a75a04dcca93c9ec70d9ce76680"
+      ]
+    },
+    {
+      "index": 28,
+      "case": "boundary-isolated",
+      "arm": "F",
+      "prompt_sha256": [
+        "a151802f3dda8c10395dfd15ae57c0ce34d5be2ac49842c0d7ed1dbdab29a336",
+        "ae81f01c83f755eefeb395c2da66aeeace40c0d273681f790375150b3e79f139"
+      ]
+    },
+    {
+      "index": 29,
+      "case": "boundary-isolated",
+      "arm": "S",
+      "prompt_sha256": [
+        "e8471e36851c5358923a69db81100b4cb0fdc8de77ae8778fc0e5fd086e3e47b",
+        "f16e78e64f4943c3ac5314222ae78e8e95866d6e6f33571bb75bf8454f9406c1"
+      ]
+    },
+    {
+      "index": 30,
+      "case": "allocation-clear",
+      "arm": "F",
+      "prompt_sha256": [
+        "e4e695561be5f4b76b59dbff3a9985fa91c9c35420f3aef539f28d2cabbaf8e0",
+        "e1f894b7ea377ad09b04210a75c176729d3b4431f861aa8a829fcae9a76d5c06"
+      ]
+    },
+    {
+      "index": 31,
+      "case": "allocation-clear",
+      "arm": "S",
+      "prompt_sha256": [
+        "0d57cb686a665cf15e11008e897ca77580341f784cf50943a2fcf147f9e74d3b",
+        "407560b470d5a6816838cb222ef6e0518569f9ec988bf377d3d85990af49e454"
+      ]
+    },
+    {
+      "index": 32,
+      "case": "allocation-clear",
+      "arm": "D",
+      "prompt_sha256": [
+        "6a3cb3ad92a1421064f81ccacfc6bc0117378c9d599d8ec92b84e4aa5da896ee",
+        "f6304373cbd6e1d978f73ef15b20d341a183b9b984b4ade9cac69e1ae95dd447"
+      ]
+    },
+    {
+      "index": 33,
+      "case": "allocation-conflict",
+      "arm": "S",
+      "prompt_sha256": [
+        "0d57cb686a665cf15e11008e897ca77580341f784cf50943a2fcf147f9e74d3b",
+        "7e6d1659a2fe4f0015cb81e18ddb567ab6eb6374f9a71234a081737fa427696c"
+      ]
+    },
+    {
+      "index": 34,
+      "case": "allocation-conflict",
+      "arm": "D",
+      "prompt_sha256": [
+        "6a3cb3ad92a1421064f81ccacfc6bc0117378c9d599d8ec92b84e4aa5da896ee",
+        "1a476c2ccba6640caf3d9f4f424b6f9dde3fcfc94d4cb4a2eda92bd4582509b3"
+      ]
+    },
+    {
+      "index": 35,
+      "case": "allocation-conflict",
+      "arm": "F",
+      "prompt_sha256": [
+        "e4e695561be5f4b76b59dbff3a9985fa91c9c35420f3aef539f28d2cabbaf8e0",
+        "6c7ddd98a0f083d27a5000c70ee386ab254a9a26b77f0dbc6ab4255fe3724d2e"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "northstar_ethics/__init__.py": "9ce52b47a59ffa26eb2baa33e18fb2c35cf2de9be342eaf830b8c650ceb000b4",
+    "northstar_ethics/engine.py": "f676e6eef9391997805ebc4f50c06b2e504b6e6e407de91f36d1554b73e63ffb",
+    "northstar_ethics/__main__.py": "94c1c88380274e5a90d3e3ce19a710e94c6c6f30b0f932cec089cb5572204537",
+    "curriculum/aesop-v1.json": "a153f6a538a319a6e10e6a6eb8f73b5749b2fc80c7925ad73e658c4a58d81996",
+    "curriculum/demos.json": "3df52852003537a441ec98403be44c583ffd9a5027012d1e020cad715c2fc6a8",
+    "experiments/story-distillation/cases.json": "d1a935ae155590e17a0bb2aaa482db9871a39b14eab5634c6f4ef14ebc2fbf74",
+    "experiments/story-distillation/run.py": "4383ba50530391c30916d20308c79334d47804cbfab7f3b48c49669516c4220f",
+    "experiments/story-distillation/PROTOCOL.md": "95c9789b1cd7ed1d91ca939bbafcbcc1a685eb7ca68ecb766426d5519737f3c0",
+    "experiments/story-distillation/test_run.py": "f86921c5891a88e9f221b7b40803c9adc80951c3b073be03b3326a674c2ddefe",
+    "experiments/guidance-pilot/model_io.py": "a95183936b37462c927c76b6cb80a6fb503549b2230e9076a31fda5e8148eff9"
+  },
+  "guidance_words": {
+    "D": 399,
+    "F": 732,
+    "S": 748
+  },
+  "interpretation": "Compare S/F for representation; D is shorter. No model training, unseen-family claim, or risk decrement."
+}

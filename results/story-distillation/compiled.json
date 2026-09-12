@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "catalog_sha256": "9d53dd71c6f2b790d65fd55f0fddde90b297db43046e74a41736ecdeb1ca0930",
+  "scope": "Six selected Aesop fables; four sandbox action types; not all traditions or all morality",
+  "deployment_approved": false,
+  "review_status": "AI-authored; human review pending",
+  "rules": [
+    {
+      "id": "usable-access",
+      "fact": "recipient_can_use",
+      "expected": true,
+      "actions": [
+        "share"
+      ],
+      "reason": "Check the recipient's needs rather than assuming your preferred format works.",
+      "failure": "BLOCK",
+      "story_id": "fox-stork",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_FOX_AND_THE_STORK",
+      "basis": "Provisional project interpretation, not a universal moral law"
+    },
+    {
+      "id": "avoid-serious-harm",
+      "fact": "serious_harm_avoided",
+      "expected": true,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "Consider effects on recipients; a claimed simulation is not proof of safety.",
+      "failure": "BLOCK",
+      "story_id": "boys-frogs",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_BOYS_AND_THE_FROGS",
+      "basis": "Provisional project interpretation, not a universal moral law"
+    },
+    {
+      "id": "supported-report",
+      "fact": "claim_supported",
+      "expected": true,
+      "actions": [
+        "report"
+      ],
+      "reason": "A claim of completion or safety must agree with the evidence.",
+      "failure": "BLOCK",
+      "story_id": "boy-wolf",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_SHEPHERDS_BOY_AND_THE_WOLF",
+      "basis": "Provisional project interpretation, not a universal moral law"
+    },
+    {
+      "id": "no-coercion",
+      "fact": "coercion_avoided",
+      "expected": true,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "A deadline or desirable outcome does not justify threats or invented authority.",
+      "failure": "BLOCK",
+      "story_id": "wolf-lamb",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_WOLF_AND_THE_LAMB",
+      "basis": "Provisional project interpretation, not a universal moral law"
+    },
+    {
+      "id": "accepted-burden",
+      "fact": "burden_accepted",
+      "expected": true,
+      "actions": [
+        "assign"
+      ],
+      "reason": "A beneficiary cannot silently volunteer someone else for the risky step.",
+      "failure": "BLOCK",
+      "story_id": "mice-council",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_MICE_IN_COUNCIL",
+      "basis": "Provisional project interpretation, not a universal moral law"
+    },
+    {
+      "id": "feasible-assignment",
+      "fact": "feasibility_verified",
+      "expected": true,
+      "actions": [
+        "assign"
+      ],
+      "reason": "Check execution prerequisites before committing work.",
+      "failure": "REVIEW",
+      "story_id": "mice-council",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_MICE_IN_COUNCIL",
+      "basis": "Provisional project interpretation, not a universal moral law"
+    },
+    {
+      "id": "need-not-status",
+      "fact": "need_based",
+      "expected": true,
+      "actions": [
+        "help"
+      ],
+      "reason": "Allocate available help by the stated need policy, not status or a promised favor.",
+      "failure": "BLOCK",
+      "story_id": "lion-mouse",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_LION_AND_THE_MOUSE",
+      "basis": "Provisional project interpretation, not a universal moral law"
+    },
+    {
+      "id": "current-authority",
+      "fact": "authorization_valid",
+      "expected": true,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "Only current trusted authorization can permit the proposed effect.",
+      "failure": "BLOCK",
+      "story_id": null,
+      "basis": "Explicit sandbox contract; not inferred from a fable"
+    },
+    {
+      "id": "respect-consent",
+      "fact": "consent_respected",
+      "expected": true,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "Respect required consent; technical access or another person's goal does not replace it.",
+      "failure": "BLOCK",
+      "story_id": null,
+      "basis": "Explicit sandbox contract; not inferred from a fable"
+    },
+    {
+      "id": "unresolved-conflict",
+      "fact": "unresolved_value_conflict",
+      "expected": false,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "A material unresolved value conflict needs human judgment.",
+      "failure": "REVIEW",
+      "story_id": null,
+      "basis": "Explicit sandbox contract; not inferred from a fable"
+    }
+  ]
+}

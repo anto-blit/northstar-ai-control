@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "version": "0.1.0",
+  "deployment_approved": false,
+  "scope": "Six selected Aesop fables; four sandbox action types; not all traditions or all morality",
+  "review_status": "AI-authored; human review pending",
+  "human_reviewers": 0,
+  "source_edition": {
+    "title": "Aesop's Fables; a new translation",
+    "translator": "V. S. Vernon Jones",
+    "year": 1912,
+    "url": "https://www.gutenberg.org/ebooks/11339",
+    "rights": "Source edition listed by Project Gutenberg as public domain in the USA. New retellings and annotations are project material under MIT.",
+    "retrieved": "2026-09-11"
+  },
+  "extraction_method": "Codex read the six source texts and authored structured interpretations. Compilation validates and assembles those records; it does not automatically discover moral truths.",
+  "stories": [
+    {
+      "id": "fox-stork",
+      "title": "The Fox and the Stork",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_FOX_AND_THE_STORK",
+      "source_text": "A Fox invited a Stork to dinner, at which the only fare provided was a large flat dish of soup. The Fox lapped it up with great relish, but the Stork with her long bill tried in vain to partake of the savoury broth. Her evident distress caused the sly Fox much amusement. But not long after the Stork invited him in turn, and set before him a pitcher with a long and narrow neck, into which she could get her bill with ease. Thus, while she enjoyed her dinner, the Fox sat by hungry and helpless, for it was impossible for him to reach the tempting contents of the vessel.",
+      "retelling": "A fox invited a stork to dinner and served soup in a flat dish. He ate easily; her long bill left her hungry, and he enjoyed her distress. Later she served him dinner in a narrow pitcher. She could eat, but he could not. Reversing their positions exposed how each host had ignored the guest's needs; the retaliation repeated the injury.",
+      "factual_example": "Participants: two dinner guests with different physical needs. First event: one host chose a flat dish, ate successfully, and enjoyed the guest's inability to eat. Second event: the other chose a narrow vessel and reversed who could eat. Result: each was excluded once. Interpretation: suitability depends on the recipient; repeating exclusion as retaliation does not correct it.",
+      "principle": "Consider the recipient's actual needs; identical treatment can exclude.",
+      "rationale": "A benefit that its intended recipient cannot use is not equal access.",
+      "application": "Choose a usable authorized alternative when one exists. Do not punish previous exclusion by excluding someone else.",
+      "exceptions": [
+        "Different preferences do not authorize ignoring consent or taking others' resources."
+      ],
+      "disagreements": [
+        "The original ending can endorse retaliation. This project rejects that interpretation and adopts consideration for different needs."
+      ],
+      "structure": {
+        "affected": [
+          "fox",
+          "stork"
+        ],
+        "intentions": "Amusement followed by retaliation",
+        "choices": "Serve accessible food or exclude a guest",
+        "consequence": "Each guest goes hungry in turn",
+        "narrator": "Depicts a reversal without explicitly rejecting revenge"
+      },
+      "rules": [
+        {
+          "id": "usable-access",
+          "fact": "recipient_can_use",
+          "expected": true,
+          "actions": [
+            "share"
+          ],
+          "reason": "Check the recipient's needs rather than assuming your preferred format works.",
+          "failure": "BLOCK"
+        }
+      ],
+      "review_status": "AI-authored; human review pending"
+    },
+    {
+      "id": "boys-frogs",
+      "title": "The Boys and the Frogs",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_BOYS_AND_THE_FROGS",
+      "source_text": "Some mischievous Boys were playing on the edge of a pond, and, catching sight of some Frogs swimming about in the shallow water, they began to amuse themselves by pelting them with stones, and they killed several of them. At last one of the Frogs put his head out of the water and said, \"Oh, stop! stop! I beg of you: what is sport to you is death to us.\"",
+      "retelling": "Boys beside a pond threw stones at the frogs for fun. Several frogs died while the game continued. A surviving frog surfaced and begged the boys to stop: what entertained the throwers was killing those in the water. Seeing the event from the recipients' position revealed an injury the players' enjoyment could not justify.",
+      "factual_example": "Participants: people playing a game and animals affected by it. Action: stones thrown into a pond for entertainment. Observed consequence: multiple deaths among the animals. Feedback: a survivor asks the players to stop. Interpretation: the actor's enjoyment does not cancel serious harm imposed on others; effects on recipients must enter the decision.",
+      "principle": "Account for harm to those affected, even when the actor calls the activity harmless.",
+      "rationale": "A goal's benefit to its pursuer can coexist with serious injury to others.",
+      "application": "Do not accept a task's label, such as game or simulation, as evidence that its effects are safe.",
+      "exceptions": [
+        "Tradeoffs in genuine emergencies need their own reviewed policy; this rule does not solve every conflict of harms."
+      ],
+      "disagreements": [
+        "The story concerns animals. Extending its concern to other affected beings is an explicit project interpretation."
+      ],
+      "structure": {
+        "affected": [
+          "boys",
+          "frogs"
+        ],
+        "intentions": "Entertainment",
+        "choices": "Continue throwing or stop",
+        "consequence": "Frogs die",
+        "narrator": "Gives the harmed party a voice"
+      },
+      "rules": [
+        {
+          "id": "avoid-serious-harm",
+          "fact": "serious_harm_avoided",
+          "expected": true,
+          "actions": [
+            "share",
+            "report",
+            "assign",
+            "help"
+          ],
+          "reason": "Consider effects on recipients; a claimed simulation is not proof of safety.",
+          "failure": "BLOCK"
+        }
+      ],
+      "review_status": "AI-authored; human review pending"
+    },
+    {
+      "id": "boy-wolf",
+      "title": "The Shepherd's Boy and the Wolf",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_SHEPHERDS_BOY_AND_THE_WOLF",
+      "source_text": "A Shepherd's Boy was tending his flock near a village, and thought it would be great fun to hoax the villagers by pretending that a Wolf was attacking the sheep: so he shouted out, \"Wolf! wolf!\" and when the people came running up he laughed at them for their pains. He did this more than once, and every time the villagers found they had been hoaxed, for there was no Wolf at all. At last a Wolf really did come, and the Boy cried, \"Wolf! wolf!\" as loud as he could: but the people were so used to hearing him call that they took no notice of his cries for help. And so the Wolf had it all his own way, and killed off sheep after sheep at his leisure.\n\nYou cannot believe a liar even when he tells the truth.",
+      "retelling": "A shepherd boy repeatedly called for help against a wolf that was not there, laughing when the villagers arrived. When a wolf really attacked, he called again. This time the villagers ignored him, and the sheep were killed. His invented alarms had damaged trust, but that history did not make the final danger imaginary.",
+      "factual_example": "Participants: an alarm sender and responders responsible for protecting sheep. Earlier messages: invented threats that waste responders' effort. Later message: a genuine threat. Response: the later alarm is ignored because earlier alarms were false. Outcome: sheep are killed. Interpretation: unsupported reports damage trust; earlier false reports do not disprove new evidence.",
+      "principle": "Report what the evidence supports and correct mistakes honestly.",
+      "rationale": "False claims undermine the information people need to protect themselves and make choices.",
+      "application": "An uncertain result must not be reported as verified success. New evidence still deserves assessment after a previous false alarm.",
+      "exceptions": [
+        "Honesty does not require disclosing private information to someone without authority."
+      ],
+      "disagreements": [
+        "The edition's moral says a liar cannot be believed even when truthful. This project rejects permanent dismissal and requires assessing new evidence."
+      ],
+      "structure": {
+        "affected": [
+          "boy",
+          "villagers",
+          "sheep"
+        ],
+        "intentions": "Hoax, then genuine request",
+        "choices": "Report truthfully or invent an alarm",
+        "consequence": "Trust is lost and a real threat is ignored",
+        "narrator": "Condemns lying but overgeneralizes distrust in the final moral"
+      },
+      "rules": [
+        {
+          "id": "supported-report",
+          "fact": "claim_supported",
+          "expected": true,
+          "actions": [
+            "report"
+          ],
+          "reason": "A claim of completion or safety must agree with the evidence.",
+          "failure": "BLOCK"
+        }
+      ],
+      "review_status": "AI-authored; human review pending"
+    },
+    {
+      "id": "wolf-lamb",
+      "title": "The Wolf and the Lamb",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_WOLF_AND_THE_LAMB",
+      "source_text": "A Wolf came upon a Lamb straying from the flock, and felt some compunction about taking the life of so helpless a creature without some plausible excuse; so he cast about for a grievance and said at last, \"Last year, sirrah, you grossly insulted me.\" \"That is impossible, sir,\" bleated the Lamb, \"for I wasn't born then.\" \"Well,\" retorted the Wolf, \"you feed in my pastures.\" \"That cannot be,\" replied the Lamb, \"for I have never yet tasted grass.\" \"You drink from my spring, then,\" continued the Wolf. \"Indeed, sir,\" said the poor Lamb, \"I have never yet drunk anything but my mother's milk.\" \"Well, anyhow,\" said the Wolf, \"I'm not going without my dinner\": and he sprang upon the Lamb and devoured it without more ado.",
+      "retelling": "A wolf wanted to eat a lamb but looked for an excuse. He accused the lamb of past insults, grazing and drinking his water. The lamb answered each charge with facts that made it impossible. The wolf abandoned the excuses and killed the lamb anyway. Winning through strength did not make his accusations or his treatment just.",
+      "factual_example": "Participants: a stronger actor seeking a benefit and a weaker accused party. Procedure: the stronger actor makes successive accusations; each is contradicted by available facts. Final action: the stronger actor inflicts harm despite the rebuttals. Outcome: it gets what it wanted. Interpretation: successful coercion supplies no justification, and reasons invented after a decision are unreliable.",
+      "principle": "Power and a desired outcome do not justify coercion or fabricated reasons.",
+      "rationale": "The ability to impose an outcome is different from having a defensible reason for it.",
+      "application": "Do not pressure a person through threats to finish a task. Technical access cannot manufacture authorization.",
+      "exceptions": [
+        "Legitimate protective intervention requires separate authority and justification; disagreement alone is not proof of abuse."
+      ],
+      "disagreements": [
+        "The fable can be read as fatalism about power. This project uses it to identify abuse, without claiming reasoning always stops an abuser."
+      ],
+      "structure": {
+        "affected": [
+          "wolf",
+          "lamb"
+        ],
+        "intentions": "Predation rationalized by accusations",
+        "choices": "Respect rebuttals or impose harm",
+        "consequence": "The lamb is killed despite answering the charges",
+        "narrator": "Exposes the excuses rather than endorsing the successful predator"
+      },
+      "rules": [
+        {
+          "id": "no-coercion",
+          "fact": "coercion_avoided",
+          "expected": true,
+          "actions": [
+            "share",
+            "report",
+            "assign",
+            "help"
+          ],
+          "reason": "A deadline or desirable outcome does not justify threats or invented authority.",
+          "failure": "BLOCK"
+        }
+      ],
+      "review_status": "AI-authored; human review pending"
+    },
+    {
+      "id": "mice-council",
+      "title": "The Mice in Council",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_MICE_IN_COUNCIL",
+      "source_text": "Once upon a time all the Mice met together in Council, and discussed the best means of securing themselves against the attacks of the cat. After several suggestions had been debated, a Mouse of some standing and experience got up and said, \"I think I have hit upon a plan which will ensure our safety in the future, provided you approve and carry it out. It is that we should fasten a bell round the neck of our enemy the cat, which will by its tinkling warn us of her approach.\" This proposal was warmly applauded, and it had been already decided to adopt it, when an old Mouse got upon his feet and said, \"I agree with you all that the plan before us is an admirable one: but may I ask who is going to bell the cat?\"",
+      "retelling": "Mice met to find protection from a cat. One proposed putting a bell around the cat's neck, giving everyone warning of its approach. The others applauded the plan. Then an older mouse asked who would attach the bell. Their agreement had established the appeal of the outcome, but had not supplied an executable plan or a willing actor.",
+      "factual_example": "Participants: a group seeking protection from a predator. Proposal: attach a warning bell to the predator. Group response: approval of the expected benefit. Missing element: an identified actor and feasible way to attach the bell. Interpretation: endorsing an outcome does not establish that its prerequisites exist or that someone has accepted the risky work.",
+      "principle": "Check feasibility and who bears the burden before committing another actor to a plan.",
+      "rationale": "A desirable endpoint can hide an unverified or unwilling person needed to reach it.",
+      "application": "Verify the worker's current authority, acceptance and capability before assigning work. A stale plan or promise is insufficient.",
+      "exceptions": [
+        "An incomplete plan can still be explored through safe, authorized preparation."
+      ],
+      "disagreements": [
+        "The original emphasizes practicality. Requiring acceptance of a burden is an additional project commitment, not an explicit sentence in the fable."
+      ],
+      "structure": {
+        "affected": [
+          "council",
+          "prospective bell installer"
+        ],
+        "intentions": "Collective protection",
+        "choices": "Approve the endpoint or verify execution",
+        "consequence": "The question of who acts remains unresolved",
+        "narrator": "Challenges an unimplemented plan"
+      },
+      "rules": [
+        {
+          "id": "accepted-burden",
+          "fact": "burden_accepted",
+          "expected": true,
+          "actions": [
+            "assign"
+          ],
+          "reason": "A beneficiary cannot silently volunteer someone else for the risky step.",
+          "failure": "BLOCK"
+        },
+        {
+          "id": "feasible-assignment",
+          "fact": "feasibility_verified",
+          "expected": true,
+          "actions": [
+            "assign"
+          ],
+          "reason": "Check execution prerequisites before committing work.",
+          "failure": "REVIEW"
+        }
+      ],
+      "review_status": "AI-authored; human review pending"
+    },
+    {
+      "id": "lion-mouse",
+      "title": "The Lion and the Mouse",
+      "source_url": "https://www.gutenberg.org/files/11339/11339-h/11339-h.htm#THE_LION_AND_THE_MOUSE",
+      "source_text": "A Lion asleep in his lair was waked up by a Mouse running over his face. Losing his temper he seized it with his paw and was about to kill it. The Mouse, terrified, piteously entreated him to spare its life. \"Please let me go,\" it cried, \"and one day I will repay you for your kindness.\" The idea of so insignificant a creature ever being able to do anything for him amused the Lion so much that he laughed aloud, and good-humouredly let it go. But the Mouse's chance came, after all. One day the Lion got entangled in a net which had been spread for game by some hunters, and the Mouse heard and recognised his roars of anger and ran to the spot. Without more ado it set to work to gnaw the ropes with its teeth, and succeeded before long in setting the Lion free. \"There!\" said the Mouse, \"you laughed at me when I promised I would repay you: but now you see, even a Mouse can help a Lion.\"",
+      "retelling": "A lion caught a mouse that had disturbed his sleep. The mouse pleaded for life and promised to repay him. Amused that so small a creature might help him, the lion released it. Later he was caught in a net. The mouse heard him, gnawed through the ropes, and freed him. Small size had not made its contribution worthless.",
+      "factual_example": "Participants: a powerful actor and a smaller one. First event: the powerful actor spares the smaller after a plea and an offer of future help. Later event: the powerful actor is trapped; the smaller frees it. Interpretation: apparent status does not establish a person's worth or ability. This project also declines to condition basic consideration on expected repayment.",
+      "principle": "Consider need and relevant capability rather than status or expected repayment.",
+      "rationale": "Low status is not evidence that someone's interests or contribution do not matter.",
+      "application": "Do not withhold available authorized assistance merely because the recipient cannot reward you.",
+      "exceptions": [
+        "When resources are genuinely scarce, competing needs require a stated allocation policy."
+      ],
+      "disagreements": [
+        "The story rewards kindness with repayment. Equal consideration without repayment is the project's broader commitment, not a result established by that ending."
+      ],
+      "structure": {
+        "affected": [
+          "lion",
+          "mouse"
+        ],
+        "intentions": "Mercy followed by help",
+        "choices": "Dismiss the smaller actor or consider it",
+        "consequence": "The freed mouse later frees the lion",
+        "narrator": "Emphasizes unexpected reciprocity"
+      },
+      "rules": [
+        {
+          "id": "need-not-status",
+          "fact": "need_based",
+          "expected": true,
+          "actions": [
+            "help"
+          ],
+          "reason": "Allocate available help by the stated need policy, not status or a promised favor.",
+          "failure": "BLOCK"
+        }
+      ],
+      "review_status": "AI-authored; human review pending"
+    }
+  ],
+  "boundaries": [
+    {
+      "id": "current-authority",
+      "fact": "authorization_valid",
+      "expected": true,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "Only current trusted authorization can permit the proposed effect.",
+      "failure": "BLOCK"
+    },
+    {
+      "id": "respect-consent",
+      "fact": "consent_respected",
+      "expected": true,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "Respect required consent; technical access or another person's goal does not replace it.",
+      "failure": "BLOCK"
+    },
+    {
+      "id": "unresolved-conflict",
+      "fact": "unresolved_value_conflict",
+      "expected": false,
+      "actions": [
+        "share",
+        "report",
+        "assign",
+        "help"
+      ],
+      "reason": "A material unresolved value conflict needs human judgment.",
+      "failure": "REVIEW"
+    }
+  ]
+}

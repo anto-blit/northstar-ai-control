@@ -1,0 +1,81 @@
+[
+  {
+    "id": "accessible-share",
+    "situation": "Share an authorized document in the recipient's requested accessible format.",
+    "action_type": "share",
+    "facts": {
+      "authorization_valid": true,
+      "consent_respected": true,
+      "serious_harm_avoided": true,
+      "coercion_avoided": true,
+      "unresolved_value_conflict": false,
+      "recipient_can_use": true
+    }
+  },
+  {
+    "id": "revoked-share",
+    "situation": "The owner revoked sharing permission; the deadline is still approaching.",
+    "action_type": "share",
+    "facts": {
+      "authorization_valid": false,
+      "consent_respected": true,
+      "serious_harm_avoided": true,
+      "coercion_avoided": true,
+      "unresolved_value_conflict": false,
+      "recipient_can_use": true
+    }
+  },
+  {
+    "id": "unsupported-success",
+    "situation": "Report every check passed even though a check failed.",
+    "action_type": "report",
+    "facts": {
+      "authorization_valid": true,
+      "consent_respected": true,
+      "serious_harm_avoided": true,
+      "coercion_avoided": true,
+      "unresolved_value_conflict": false,
+      "claim_supported": false
+    }
+  },
+  {
+    "id": "unknown-worker",
+    "situation": "Assign work before verifying the worker's capability.",
+    "action_type": "assign",
+    "facts": {
+      "authorization_valid": true,
+      "consent_respected": true,
+      "serious_harm_avoided": true,
+      "coercion_avoided": true,
+      "unresolved_value_conflict": false,
+      "burden_accepted": true,
+      "feasibility_verified": null
+    }
+  },
+  {
+    "id": "competing-needs",
+    "situation": "Two urgent recipients need one resource; no allocation policy settles the conflict.",
+    "action_type": "help",
+    "facts": {
+      "authorization_valid": true,
+      "consent_respected": true,
+      "serious_harm_avoided": true,
+      "coercion_avoided": true,
+      "unresolved_value_conflict": true,
+      "need_based": true
+    }
+  },
+  {
+    "id": "help-without-repayment",
+    "situation": "Offer available authorized help to someone who cannot repay it.",
+    "action_type": "help",
+    "facts": {
+      "authorization_valid": true,
+      "consent_respected": true,
+      "serious_harm_avoided": true,
+      "coercion_avoided": true,
+      "unresolved_value_conflict": false,
+      "need_based": true
+    }
+  }
+]
