@@ -1,0 +1,7 @@
+{
+  "commit": "89c7fa29824dd0151244302c092ea2e591f3ec78",
+  "remote": "https://github.com/anto-blit/northstar-ai-control",
+  "branch": "main",
+  "recorded_at": "2026-09-12T07:24:41Z",
+  "scope": "Frozen G8 source, plan, prompt hashes, controls and tests pushed before any target-model call."
+}

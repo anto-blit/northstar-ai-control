@@ -4,11 +4,15 @@ on:
     paths:
       - 'experiments/evidence-integrity/**'
       - 'results/evidence-integrity/**'
+      - 'experiments/evidence-integrity-continuation/**'
+      - 'results/evidence-integrity-continuation/**'
       - '.github/workflows/evidence-integrity.yml'
   pull_request:
     paths:
       - 'experiments/evidence-integrity/**'
       - 'results/evidence-integrity/**'
+      - 'experiments/evidence-integrity-continuation/**'
+      - 'results/evidence-integrity-continuation/**'
       - '.github/workflows/evidence-integrity.yml'
 jobs:
   replay:
@@ -23,9 +27,13 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python -m unittest discover -s experiments/evidence-integrity -p test_run.py
+      - run: python -m unittest discover -s experiments/evidence-integrity-continuation -p test_run.py
       - name: Replay saved results when complete
         shell: bash
         run: |
           if [ -f results/evidence-integrity/report.json ]; then
             python experiments/evidence-integrity/run.py verify
+          fi
+          if [ -f results/evidence-integrity-continuation/report.json ]; then
+            python experiments/evidence-integrity-continuation/run.py verify
           fi
