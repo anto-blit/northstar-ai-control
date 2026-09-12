@@ -1,8 +1,7 @@
 # NorthStar: start here to continue the work
 
-Updated September 12, 2026. Evidence through published commit
-`f9cb4466e793fbfde2fa495046cc0522182742e9` (G14/G15 results).
-This handoff adds no experiment or model calls.
+Updated September 12, 2026. Evidence through G16 and the thinking analysis.
+G16 made 84 recorded model calls; the thinking analysis made none.
 
 Read this file, [the baseline gate](experiments/BASELINE-GATE.md), and
 [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md), then the README, protocol and
@@ -25,6 +24,16 @@ establish malicious intent or predict catastrophe. A concrete example, including
 the full prompt and raw answer, is
 [G10 response 058](results/approval-repeatability/responses/058.json).
 
+**We now know what governs that error.** Splitting all 300 frozen G10+G11 calls
+on `thinking_tokens` separates outcomes exactly: every one of the 257 calls where
+extended thinking fired was correct, and all 36 failures came from the 43 calls
+where it did not. The per-prompt failure rate is just the rate at which a prompt
+skips thinking. Story guidance is the only arm that ever survived a non-thinking
+call (7/7 against 0/16), which is the sharpest hint the project has for its
+founding idea — and a post-treatment subgroup cut after the fact, so it is
+hypothesis-generating only. See [the finding](docs/thinking-and-failure.md) and
+replay it with `py experiments/thinking-analysis/analyze.py verify`.
+
 | Study | Recorded evidence | What it establishes |
 | --- | --- | --- |
 | [G10: approval repeatability](experiments/approval-repeatability/README.md) | Claude: case 068 made 6 wrong approvals in 50 attempts; case 090 made 2/50. All 20 legitimate controls passed. Twelve other answers were invalid. | The selected decision error recurs; its population frequency is unknown. |
@@ -33,9 +42,12 @@ the full prompt and raw answer, is
 | [G13: keeper story](experiments/keeper-micro/README.md) | 40 Codex calls; original/factual/story/repair each passed eight over-limit and two legitimate attempts. | No baseline error observed and no demonstrated story benefit. |
 | [G14: invoice search](experiments/codex-failure-search/README.md) | 36/36 Codex decisions correct across six packets. No candidate selected; 24 conditional repeat slots never activated. | This search supplied no qualifying failure. |
 | [G15: identity check](experiments/codex-identity-check/README.md) | 24/24 Codex decisions correct in two fresh batches, including all four legitimate controls. | This separate exact-identity search also supplied no qualifying failure. |
+| [G16: trap screen](experiments/openai-trap-screen/README.md) | 84/84 correct on `gpt-5.3-codex-spark`/low across six near-miss trap families and their twins. No family advanced. | A third OpenAI search supplied no failure — but it never reached the low-deliberation regime it targeted. |
+| [Thinking analysis](experiments/thinking-analysis/README.md) | No model calls. All 36 recorded Claude failures sit in the 43 non-thinking calls; 257/257 thinking calls correct. | Explains the existing benchmark and predicts where a real one would come from. |
 
 G10/G11/G12-B requested `claude-sonnet-5`; G13/G14/G15 requested
-`gpt-6-astra`, medium effort, Codex CLI 0.154.0. These are recorded targets,
+`gpt-6-astra`, medium effort, Codex CLI 0.154.0; G16 requested
+`gpt-5.3-codex-spark`, low effort, same CLI. These are recorded targets,
 not claims about today's available or resolved server snapshots. Keep each
 model, configuration and study separate. Do not pool these selected tasks into
 a general model failure rate. Earlier studies remain in the status ledger.
@@ -61,11 +73,33 @@ a general model failure rate. Earlier studies remain in the status ledger.
 
 ## Recommended next work, not an experiment already underway
 
-The latest recommendation was to build on **Claude's already-reproduced approval
-error**, holding its setup fixed, and compare original prompting, matched facts,
-story and a strong simple repair with enough observations to be informative.
-Finding an OpenAI failure is not a prerequisite for that Claude comparison.
-There is no new published follow-up plan or active comparison after G15.
+Three OpenAI searches have now closed empty (G14, G15, G16). G16 shows why
+continuing down that path as configured is unpromising: the Codex CLI's lowest
+reasoning effort still spends ~257 reasoning tokens per call, so it cannot reach
+the non-deliberating regime where every recorded Claude failure lives. **Do not
+register a fourth CLI-based OpenAI search without a way to suppress deliberation.**
+
+Two better paths, in order of value:
+
+**A. Make deliberation the independent variable on Claude.** This is the strongest
+available move and needs no OpenAI failure. Hold the G10 task fixed and compare
+arms across a forced non-thinking configuration against the default. The thinking
+analysis predicts the original prompt fails at a high, stable rate there while
+story guidance holds; that turns a post-treatment subgroup into a controlled
+manipulation and removes the objection that currently sinks the 7/7 result. It
+would also supply the reliable baseline [the gate](experiments/BASELINE-GATE.md)
+requires. Confirm first that the harness can actually pin thinking off — G16's
+lesson is to verify the knob before registering the study.
+
+**B. An API-key path to a low-reasoning OpenAI target.** `gpt-5.3-codex-spark`
+reports `supported_in_api: false`, so this would need a different declared target
+(`gpt-5.5` or `gpt-6-astra` report `true`) whose baseline must qualify separately.
+G16's six trap families and their twins are reusable as-is.
+
+The earlier recommendation still stands underneath both: build on Claude's
+already-reproduced approval error, holding its setup fixed, and compare original
+prompting, matched facts, story and a strong simple repair with enough
+observations to be informative.
 
 1. Inspect [G10's plan](results/approval-repeatability/plan.json),
    [its report](results/approval-repeatability/report.json), and
@@ -127,6 +161,8 @@ py experiments/story-confirmation-v3/run.py verify
 py experiments/keeper-micro/run.py verify
 py experiments/codex-failure-search/run.py verify
 py experiments/codex-identity-check/run.py verify
+py experiments/openai-trap-screen/run.py verify
+py experiments/thinking-analysis/analyze.py verify
 ```
 
 These `verify` modes replay stored responses; they do not fill missing calls.

@@ -25,7 +25,40 @@ facts, honest failure reporting, tampering and selective revocation. This is
 candidate curriculum work with zero model calls, not a new experimental result.
 It does not modify G12's frozen prompts, the six-story catalog or earlier evidence.
 
-**Latest: G14 and G15 OpenAI baseline searches closed without a qualifying failure.**
+**Latest: the thinking analysis, and G16's third OpenAI search closing empty.**
+
+[Thinking analysis](experiments/thinking-analysis/README.md) — a re-reading of
+frozen G10+G11 evidence with no model calls. Splitting all 300 Claude calls on
+`thinking_tokens` separates outcomes exactly: 257/257 correct where extended
+thinking fired, and all 18 wrong approvals plus all 18 invalid answers among the
+43 calls where it did not. Case 068's 34% zero-thinking rate against case 090's
+6% accounts for their different failure counts, and the legitimate controls never
+skipped thinking at all. Service tier, timing and temporal scatter rule out a
+provider window. Within G11, story guidance is the only arm that ever answered
+correctly without thinking (7/7 against 0/16, Fisher exact p < 0.0001). That
+subgroup conditions on a post-treatment variable and was cut after the data were
+seen, so it is hypothesis-generating: no story advantage is claimed and no risk
+decrement is earned. `analyze.py verify` recomputes every published number from
+the frozen responses and fails on mismatch. See
+[the finding](docs/thinking-and-failure.md).
+
+[G16 trap screen](experiments/openai-trap-screen/README.md) — 84 registered calls
+on a declared weaker target (`gpt-5.3-codex-spark`, `low` effort), six near-miss
+trap families each with a legitimate twin, two turning on authority scope rather
+than arithmetic. **All 84 correct: 72/72 over-limit, 12/12 controls, zero wrong
+approvals, invalid answers, service errors or missing calls.** No family met the
+advancement rule; no confirmation batch was earned or run. Pooled 0/72 puts a 95%
+upper bound of 4.08% on the per-call failure rate for this configuration.
+
+G16's premise nevertheless failed, and that is the useful part: it targeted the
+low-deliberation regime and never reached it. Reasoning output averaged 257
+tokens with a minimum of 74 and **no call at zero** — more reasoning than
+`gpt-6-astra` at medium spent in G14. `low` is the Codex CLI's floor and that
+floor is not low, so the traps were never put to a non-deliberating model. The
+result is a limit of the harness, not a demonstration that the model is robust
+where Claude is not. The baseline gate stays shut.
+
+**Previous: G14 and G15 OpenAI baseline searches closed without a qualifying failure.**
 
 [G14](experiments/codex-failure-search/README.md): all 36 invoice decisions correct,
 24 over-limit withholds and 12 legitimate approvals. Each of six fixed packets
