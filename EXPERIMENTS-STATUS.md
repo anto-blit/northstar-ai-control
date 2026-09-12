@@ -6,7 +6,15 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
+**Separate preparation:** the [cross-cultural candidates](curriculum/candidates/README.md)
+map five proposed themes and develop two new adaptations with matched factual
+examples and twelve runnable rule cases. Six preparation tests exercise unknown
+facts, honest failure reporting, tampering and selective revocation. This is
+candidate curriculum work with zero model calls, not a new experimental result.
+It does not modify G12's frozen prompts, the six-story catalog or earlier evidence.
+
 **Latest: [G12-B confirmation interrupted by provider quota](experiments/story-confirmation-v3/README.md).**
+
 The passing Opus method audit and sixteen blind label reviews agreed on all 256
 cases before targets. The fixed 1,024-call comparison stopped at 72 attempts after
 two Sonnet calls returned session-limit errors reporting a noon Pacific reset.

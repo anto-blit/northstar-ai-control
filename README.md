@@ -129,6 +129,16 @@ we have not established a broad advantage across models.
 
 ## Find your way in
 
+**New candidate work: [broader stories, testable interpretations](curriculum/candidates/README.md).**
+A submitted cross-cultural proposal now has five mapped themes, two original
+story/fact pairs and twelve runnable rule examples. The new lessons concern
+independently retained evidence and a stop checked where an action commits.
+The Cassandra counterexample adds a useful question: can distrust of a messenger
+cause a supported warning to be ignored? Source notes distinguish checked
+references, project extensions and unestablished claims of independent invention.
+These candidates have zero model calls and human review pending; existing frozen
+comparisons stay unchanged. [Explore the candidates on the site](https://anto-blit.github.io/northstar-ai-control/#cross-cultural-candidates).
+
 | If you want to… | A concrete first contribution |
 |---|---|
 | **Build safeguards** | Inspect the release and delegation brokers. Find a missing check and reproduce it. |

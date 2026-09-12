@@ -374,6 +374,15 @@ def load_confirmation_evidence(root):
             "knownCost": report["known_list_price_usd"], "priorAuditCost": report["prior_review_cost_usd"]}
 
 
+def load_candidate_materials(root):
+    # Candidate rule examples are not experimental evidence or model scores.
+    path = root / "curriculum/candidates/explore.py"
+    spec = importlib.util.spec_from_file_location("candidate_materials", path)
+    preparation = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(preparation)
+    return preparation.prepare(root)
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -425,6 +434,7 @@ def load_evidence(root=ROOT):
         "continuation": load_continuation_evidence(root),
         "codex": load_codex_evidence(root),
         "stories": load_story_evidence(root),
+        "candidates": load_candidate_materials(root),
         "revocation": load_revocation_evidence(root),
         "integrity": load_integrity_evidence(root),
         "repeatability": load_repeatability_evidence(root),

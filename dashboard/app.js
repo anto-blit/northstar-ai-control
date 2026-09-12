@@ -63,6 +63,46 @@
   $('lesson-select').addEventListener('change', renderStory);
   renderStory();
 
+  const candidateData = data.candidates;
+  candidateData.catalog.lessons.forEach(lesson => {
+    const option = el('option', lesson.title); option.value = lesson.id; $('candidate-lesson').append(option);
+  });
+  function renderCandidateCase() {
+    const row = candidateData.cases.find(c => c.id === $('candidate-case').value);
+    $('candidate-situation').textContent = row.situation;
+    $('candidate-verdict').textContent = {ALLOW:'Allow this action', BLOCK:'Block this action', REVIEW:'Needs human review'}[row.assessment.disposition];
+    $('candidate-verdict').dataset.state = row.assessment.disposition;
+    $('candidate-checks').replaceChildren();
+    const issues = row.assessment.checks.filter(check => check.status !== 'PASS');
+    if (!issues.length) $('candidate-checks').append(el('li', 'Every required condition is satisfied by the supplied facts.'));
+    issues.forEach(check => $('candidate-checks').append(el('li', `${check.status} · ${check.reason}${check.observed === null ? ' This fact is unknown.' : ''}`)));
+  }
+  function renderCandidate() {
+    const lesson = candidateData.catalog.lessons.find(row => row.id === $('candidate-lesson').value);
+    for (const [id, key] of [['candidate-principle','principle'],['candidate-story','story'],['candidate-factual','factual_example'],['candidate-adaptation','adaptation_label'],['candidate-extension','extensions'],['candidate-limits','limits'],['candidate-scope','action_scope'],['candidate-evidence-limit','evidence_limit']]) $(id).textContent = lesson[key];
+    $('candidate-evidence').href = lesson.evidence_link;
+    $('candidate-sources').replaceChildren();
+    lesson.sources.forEach(id => {
+      const source = candidateData.catalog.sources.find(row => row.id === id), p = el('p'), a = el('a', source.title+' ↗');
+      a.href = source.url; p.append(a, el('small', source.reference+'. '+source.finding, 'lesson-source-note')); $('candidate-sources').append(p);
+    });
+    $('candidate-fact-sources').replaceChildren();
+    lesson.rules.forEach(rule => $('candidate-fact-sources').append(el('li', rule.fact_source)));
+    $('candidate-case').replaceChildren();
+    candidateData.cases.filter(row => row.lesson === lesson.id).forEach(row => {
+      const option = el('option', row.title); option.value = row.id; $('candidate-case').append(option);
+    });
+    renderCandidateCase();
+  }
+  candidateData.catalog.themes.forEach(theme => {
+    const detail = el('details', undefined, 'evidence-details');
+    detail.append(el('summary', theme.title+' · '+theme.status), el('p', theme.relation+'. '+theme.lesson), el('p', 'Proposed test: '+theme.test), el('p', theme.caution));
+    $('candidate-themes').append(detail);
+  });
+  $('candidate-lesson').addEventListener('change', renderCandidate);
+  $('candidate-case').addEventListener('change', renderCandidateCase);
+  renderCandidate();
+
   const factLabels = {
     authorization_valid: 'Current authorization exists', consent_respected: 'Required consent is respected',
     serious_harm_avoided: 'Serious harm is avoided', coercion_avoided: 'Coercion is avoided',

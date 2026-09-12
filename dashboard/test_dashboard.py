@@ -92,6 +92,15 @@ class EvidenceTests(unittest.TestCase):
         self.assertFalse(data["queue"]["independentHumanReview"])
         self.assertEqual(data["queue"]["reviewRounds"], 2)
 
+    def test_candidate_examples_do_not_become_legacy_stories_or_risk_evidence(self):
+        data = dashboard.load_evidence(self.root)
+        self.assertEqual(len(data["stories"]["catalog"]["stories"]), 6)
+        self.assertEqual(len(data["candidates"]["catalog"]["lessons"]), 2)
+        self.assertEqual(len(data["candidates"]["cases"]), 12)
+        self.assertEqual(data["candidates"]["catalog"]["model_calls"], 0)
+        self.assertIsNone(data["candidates"]["catalog"]["behavioral_result"])
+        self.assertIsNone(data["risk"]["quantifiedReductionPercent"])
+
     def test_more_passing_tests_do_not_subtract_from_extinction_risk(self):
         before = deepcopy(dashboard.load_evidence(self.root)["risk"])
         self.report["tests_run"] = 10000

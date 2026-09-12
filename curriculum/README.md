@@ -22,6 +22,12 @@ domain in the USA. The six source passages were read before Codex authored the
 annotations. New retellings are labeled as such. This single tradition does not
 stand in for cultural consensus. Extensions beyond the text are recorded.
 
+There is also a separate [cross-cultural candidate collection](candidates/README.md):
+five mapped themes, two new project adaptations with factual counterparts, and
+twelve runnable contract examples. Its source notes qualify the submitted
+proposal's historical claims. These candidates have not entered this six-story
+catalog or any frozen model comparison; their examples are not AI test results.
+
 ## Run the algorithm
 
 From the repository root, Python 3.10+, no extra dependencies:
