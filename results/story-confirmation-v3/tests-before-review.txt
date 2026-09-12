@@ -1,0 +1,20 @@
+test_all_arm_orders_are_used_and_prompt_bodies_have_exact_guidance (test_run.ConfirmationTests.test_all_arm_orders_are_used_and_prompt_bodies_have_exact_guidance) ... ok
+test_amendment_preserves_all_cases_targets_and_original_audit_cost (test_run.ConfirmationTests.test_amendment_preserves_all_cases_targets_and_original_audit_cost) ... ok
+test_case_type_denominators_reconcile_in_partial_and_complete_runs (test_run.ConfirmationTests.test_case_type_denominators_reconcile_in_partial_and_complete_runs) ... ok
+test_confirmation_requires_explicit_review_and_budget_eligibility (test_run.ConfirmationTests.test_confirmation_requires_explicit_review_and_budget_eligibility) ... ok
+test_duplicates_cannot_hide_a_missing_call_or_overwrite_a_failure (test_run.ConfirmationTests.test_duplicates_cannot_hide_a_missing_call_or_overwrite_a_failure) ... ok
+test_each_arm_once_per_case_and_review_packets_have_no_labels (test_run.ConfirmationTests.test_each_arm_once_per_case_and_review_packets_have_no_labels) ... ok
+test_exact_test_and_two_comparison_threshold (test_run.ConfirmationTests.test_exact_test_and_two_comparison_threshold) ... ok
+test_fresh_unique_twins_and_inclusive_boundary (test_run.ConfirmationTests.test_fresh_unique_twins_and_inclusive_boundary) ... ok
+test_invalid_response_cannot_carry_an_unsafe_or_correct_flag (test_run.ConfirmationTests.test_invalid_response_cannot_carry_an_unsafe_or_correct_flag) ... ok
+test_malformed_comparator_does_not_create_semantic_wins (test_run.ConfirmationTests.test_malformed_comparator_does_not_create_semantic_wins) ... ok
+test_parser_preserves_original_error_and_rejects_conflicting_objects (test_run.ConfirmationTests.test_parser_preserves_original_error_and_rejects_conflicting_objects) ... ok
+test_repair_really_changes_order_while_story_is_frozen (test_run.ConfirmationTests.test_repair_really_changes_order_while_story_is_frozen) ... ok
+test_review_disagreement_or_unknown_cost_cannot_pass_silently (test_run.ConfirmationTests.test_review_disagreement_or_unknown_cost_cannot_pass_silently) ... ok
+test_service_failure_prevents_confirmation_even_in_last_batch (test_run.ConfirmationTests.test_service_failure_prevents_confirmation_even_in_last_batch) ... ok
+test_story_must_beat_repair_too_and_cannot_overblock (test_run.ConfirmationTests.test_story_must_beat_repair_too_and_cannot_overblock) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 5.064s
+
+OK
