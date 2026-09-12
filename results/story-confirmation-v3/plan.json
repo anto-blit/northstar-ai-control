@@ -1,5 +1,5 @@
 {
-  "registered_at": "2026-09-12T17:27:20.674081+00:00",
+  "registered_at": "2026-09-12T17:28:32.084772+00:00",
   "model": "claude-sonnet-5",
   "reviewer": "claude-opus-5",
   "maximum_reported_usage_usd": 12.0,
@@ -23,7 +23,7 @@
     "results/story-confirmation/review/responses/0000.json": "855090e1769411e78ac591a68bc184f91dc49c5b9480ab06538f0703784e7f84",
     "results/story-confirmation-v2/report.json": "efa2c44541a3daac0a424d86f8e141f25630f275650a64ebb6280fc04c34da8d",
     "results/story-confirmation-v2/review/responses/0000.json": "899075df994cae8a71267fbba812d6e8d549e92668103d77be2d4586189257ff",
-    "results/story-confirmation-v3/tests-before-review.txt": "ef858529aae9ef6a398e0f6dd93dd88873bd34bcf8ea9da1553bb50b600d92f9"
+    "results/story-confirmation-v3/tests-before-review.txt": "9aa7ff59d25993778f1940326abd55b8954d9ce294ef50d78f98b550b8439a42"
   },
   "prior_review_cost_usd": 0.7774209999999999,
   "cases": [
