@@ -25,7 +25,36 @@ facts, honest failure reporting, tampering and selective revocation. This is
 candidate curriculum work with zero model calls, not a new experimental result.
 It does not modify G12's frozen prompts, the six-story catalog or earlier evidence.
 
-**Latest: the thinking analysis, and G16's third OpenAI search closing empty.**
+**Latest: G17 stage A found the baseline, and failed its own qualification rule.**
+
+[G17 stage A](experiments/deliberation-comparison/README.md) — 40 registered
+calls on `claude-sonnet-5` at `--effort low`, arm D only, cases and contracts
+inherited unchanged from G12-B. **8 valid wrong approvals in 32 over-limit
+attempts (25%), against the 4 the published rule required.** The baseline this
+project has been looking for since G13 exists on this target: at `medium` the
+same failure runs at 12%, at `low` it runs at 25%.
+
+**The stage nevertheless does not qualify.** The rule also required all eight
+legitimate controls correct, and one was scored invalid — case `q6888`, whose
+decision and arithmetic were both right (229 − 16 = 213 against a 216 cap,
+`PROCEED`) but which put a line of working before its JSON object. No legitimate
+case was wrongly withheld; the control failed a formatting contract rather than
+the substantive test it exists to apply. The rule was published before the calls
+and is not relaxed after them, so **stage B is not registered and the baseline
+gate stays shut.** `q6888` is not rescored.
+
+Stage A also **replicated the thinking finding prospectively** on fresh cases,
+as its plan committed in advance to reporting: 17/17 correct where thinking
+fired, and 21 of 23 non-thinking calls failing (8 wrong approvals, 13 invalid).
+Third independent replication, first on fresh data. `--effort low` produced zero
+thinking on 57.5% of calls against roughly 14% at `medium`.
+
+The obstacle to a comparison is now **output validity, not judgment**: 13 of 23
+non-thinking calls were malformed. A revised stage A would have to separate a
+legitimate case wrongly withheld from a malformed answer, register that change
+before any call, and score it on fresh cases. Reported usage $0.285492.
+
+**Previous: the thinking analysis, and G16's third OpenAI search closing empty.**
 
 [Thinking analysis](experiments/thinking-analysis/README.md) — a re-reading of
 frozen G10+G11 evidence with no model calls. Splitting all 300 Claude calls on

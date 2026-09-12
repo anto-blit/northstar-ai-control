@@ -1,7 +1,8 @@
 # NorthStar: start here to continue the work
 
-Updated September 12, 2026. Evidence through G16 and the thinking analysis.
-G16 made 84 recorded model calls; the thinking analysis made none.
+Updated September 12, 2026. Evidence through G17 stage A.
+G16 made 84 recorded model calls and G17 stage A made 40; the thinking analysis
+made none.
 
 Read this file, [the baseline gate](experiments/BASELINE-GATE.md), and
 [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md), then the README, protocol and
@@ -44,6 +45,7 @@ replay it with `py experiments/thinking-analysis/analyze.py verify`.
 | [G15: identity check](experiments/codex-identity-check/README.md) | 24/24 Codex decisions correct in two fresh batches, including all four legitimate controls. | This separate exact-identity search also supplied no qualifying failure. |
 | [G16: trap screen](experiments/openai-trap-screen/README.md) | 84/84 correct on `gpt-5.3-codex-spark`/low across six near-miss trap families and their twins. No family advanced. | A third OpenAI search supplied no failure — but it never reached the low-deliberation regime it targeted. |
 | [Thinking analysis](experiments/thinking-analysis/README.md) | No model calls. All 36 recorded Claude failures sit in the 43 non-thinking calls; 257/257 thinking calls correct. | Explains the existing benchmark and predicts where a real one would come from. |
+| [G17 stage A](experiments/deliberation-comparison/README.md) | 40 Claude calls at `--effort low`. 8 valid wrong approvals in 32 over-limit attempts (25%); 7/8 controls correct, the eighth invalid but not wrongly withheld. | The baseline exists on this target, but the stage fails its own published rule, so stage B is not registered. |
 
 G10/G11/G12-B requested `claude-sonnet-5`; G13/G14/G15 requested
 `gpt-6-astra`, medium effort, Codex CLI 0.154.0; G16 requested
@@ -73,33 +75,41 @@ a general model failure rate. Earlier studies remain in the status ledger.
 
 ## Recommended next work, not an experiment already underway
 
-Three OpenAI searches have now closed empty (G14, G15, G16). G16 shows why
-continuing down that path as configured is unpromising: the Codex CLI's lowest
-reasoning effort still spends ~257 reasoning tokens per call, so it cannot reach
-the non-deliberating regime where every recorded Claude failure lives. **Do not
-register a fourth CLI-based OpenAI search without a way to suppress deliberation.**
+G17 stage A settled the question the gate has been stuck on since G13: **a usable
+baseline exists.** At `--effort low` the approval failure runs at 25% of attempts,
+double what the published rule required. What it did not settle is whether a
+comparison can be scored on that target, because the same regime produces
+malformed answers on 13 of 23 non-thinking calls.
 
-Two better paths, in order of value:
+**The decision now belongs to the user, and it is a rule question, not a
+measurement question.** Stage A failed because one legitimate control was invalid
+while no legitimate case was wrongly withheld. Three options, in order of my
+preference:
 
-**A. Make deliberation the independent variable on Claude.** This is the strongest
-available move and needs no OpenAI failure. Hold the G10 task fixed and compare
-arms across a forced non-thinking configuration against the default. The thinking
-analysis predicts the original prompt fails at a high, stable rate there while
-story guidance holds; that turns a post-treatment subgroup into a controlled
-manipulation and removes the objection that currently sinks the 7/7 result. It
-would also supply the reliable baseline [the gate](experiments/BASELINE-GATE.md)
-requires. Confirm first that the harness can actually pin thinking off — G16's
-lesson is to verify the knob before registering the study.
+**A. Register G17-A2 with a control rule that separates substance from format.**
+A legitimate case *wrongly withheld* must be zero; a *malformed* control is an
+output-contract issue reported against a prespecified cap. Fresh registration,
+fresh cases, the argument made in public before any call. This is a principled
+change, but it is still a rule rewritten after it failed, so it deserves the
+scrutiny that implies. Do not rescore stage A's `q6888` under it.
 
-**B. An API-key path to a low-reasoning OpenAI target.** `gpt-5.3-codex-spark`
-reports `supported_in_api: false`, so this would need a different declared target
-(`gpt-5.5` or `gpt-6-astra` report `true`) whose baseline must qualify separately.
+**B. Attack the validity problem instead of the rule.** The invalid rate is the
+real obstacle to stage B, not the control. A stage B that loses 57% of its sample
+to malformed answers is very expensive, and if arms differ in how often they wrap
+JSON in prose, invalid rates differ by arm and contaminate the comparison — arm R
+is the obvious risk, since it asks for justification first. Options include a
+tolerant parser applied identically to all arms and declared in advance, or a
+target effort between `low` and `medium`.
+
+**C. Accept the gate as shut and stop.** Legitimate. The failure is real and
+reproducible; whether it can carry a four-arm comparison is unproven.
+
+**Do not register a fourth CLI-based OpenAI search.** G16 showed the Codex CLI's
+lowest reasoning effort still spends ~257 reasoning tokens per call and cannot
+reach the regime where the failure lives. An API-key path would need a different
+declared target (`gpt-5.3-codex-spark` reports `supported_in_api: false`, while
+`gpt-5.5` and `gpt-6-astra` report `true`) whose baseline qualifies separately.
 G16's six trap families and their twins are reusable as-is.
-
-The earlier recommendation still stands underneath both: build on Claude's
-already-reproduced approval error, holding its setup fixed, and compare original
-prompting, matched facts, story and a strong simple repair with enough
-observations to be informative.
 
 1. Inspect [G10's plan](results/approval-repeatability/plan.json),
    [its report](results/approval-repeatability/report.json), and
@@ -162,6 +172,7 @@ py experiments/keeper-micro/run.py verify
 py experiments/codex-failure-search/run.py verify
 py experiments/codex-identity-check/run.py verify
 py experiments/openai-trap-screen/run.py verify
+py experiments/deliberation-comparison/run.py verify A
 py experiments/thinking-analysis/analyze.py verify
 ```
 

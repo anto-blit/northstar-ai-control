@@ -34,7 +34,23 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: every failure we recorded happened on a call that didn't think.**
+**Latest: we finally have a baseline that fails — and a rule we held ourselves to.**
+[G17 stage A](experiments/deliberation-comparison/README.md) ran 40 calls with
+deliberation suppressed (`--effort low`). The approval failure recurred **8 times
+in 32 over-limit attempts (25%)**, double what the published rule required, on a
+target where `medium` effort gives 12%. After three empty OpenAI searches, a
+usable baseline exists.
+
+The stage still **did not qualify**. The same rule required all eight legitimate
+controls correct, and one came back malformed — its decision and arithmetic were
+right, but it put a line of working before its JSON. No legitimate case was
+wrongly withheld. The rule was published before the calls, so it was not relaxed
+after them: stage B is not registered, the gate stays shut, and that answer is
+not rescored. Stage A also replicated the thinking split prospectively on fresh
+cases — **17/17 correct where thinking fired, 21 of 23 failures where it did
+not.**
+
+**Every failure we recorded happened on a call that didn't think.**
 Re-reading the 300 frozen Claude calls from G10 and G11 — no new model calls —
 splits them exactly on one field. All 257 calls where extended thinking fired were
 correct. All 18 wrong approvals and all 18 invalid answers came from the 43 calls
