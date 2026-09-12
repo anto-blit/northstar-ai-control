@@ -1,0 +1,211 @@
+{
+  "pooled_calls": 300,
+  "by_study": {
+    "G10": {
+      "study": "approval-repeatability",
+      "calls": 120,
+      "thinking_zero": {
+        "n": 20,
+        "correct": 0,
+        "wrong_approval": 8,
+        "invalid": 12
+      },
+      "thinking_nonzero": {
+        "n": 100,
+        "correct": 100,
+        "wrong_approval": 0,
+        "invalid": 0
+      }
+    },
+    "G11": {
+      "study": "story-micro",
+      "calls": 180,
+      "thinking_zero": {
+        "n": 23,
+        "correct": 7,
+        "wrong_approval": 10,
+        "invalid": 6
+      },
+      "thinking_nonzero": {
+        "n": 157,
+        "correct": 157,
+        "wrong_approval": 0,
+        "invalid": 0
+      }
+    }
+  },
+  "pooled": {
+    "thinking_zero": {
+      "n": 43,
+      "correct": 7,
+      "wrong_approval": 18,
+      "invalid": 18
+    },
+    "thinking_nonzero": {
+      "n": 257,
+      "correct": 257,
+      "wrong_approval": 0,
+      "invalid": 0
+    }
+  },
+  "failures_with_thinking": 0,
+  "successes_without_thinking": 7,
+  "successes_without_thinking_arms": [
+    "S"
+  ],
+  "g10_zero_thinking_rate_by_prompt": {
+    "68": {
+      "calls": 50,
+      "zero_thinking": 17,
+      "rate": 0.34
+    },
+    "90": {
+      "calls": 50,
+      "zero_thinking": 3,
+      "rate": 0.06
+    },
+    "343": {
+      "calls": 10,
+      "zero_thinking": 0,
+      "rate": 0.0
+    },
+    "407": {
+      "calls": 10,
+      "zero_thinking": 0,
+      "rate": 0.0
+    }
+  },
+  "g11_arms_over_limit": {
+    "D": {
+      "zero_thinking": {
+        "n": 12,
+        "correct": 0,
+        "wrong_approval": 8,
+        "invalid": 4
+      },
+      "with_thinking": {
+        "n": 36,
+        "correct": 36,
+        "wrong_approval": 0,
+        "invalid": 0
+      }
+    },
+    "F": {
+      "zero_thinking": {
+        "n": 4,
+        "correct": 0,
+        "wrong_approval": 2,
+        "invalid": 2
+      },
+      "with_thinking": {
+        "n": 44,
+        "correct": 44,
+        "wrong_approval": 0,
+        "invalid": 0
+      }
+    },
+    "S": {
+      "zero_thinking": {
+        "n": 7,
+        "correct": 7,
+        "wrong_approval": 0,
+        "invalid": 0
+      },
+      "with_thinking": {
+        "n": 41,
+        "correct": 41,
+        "wrong_approval": 0,
+        "invalid": 0
+      }
+    }
+  },
+  "g11_zero_thinking_story_vs_rest": {
+    "story_correct": 7,
+    "story_n": 7,
+    "other_correct": 0,
+    "other_n": 16,
+    "fisher_two_sided_p": 4.08e-06,
+    "caveat": "Post-treatment conditioning on a non-randomised variable; hypothesis-generating only."
+  },
+  "artifact_checks": {
+    "service_tiers_zero": [
+      "standard"
+    ],
+    "service_tiers_nonzero": [
+      "standard"
+    ],
+    "speed_zero": [
+      "standard"
+    ],
+    "speed_nonzero": [
+      "standard"
+    ],
+    "mean_elapsed_seconds_zero": 3.698,
+    "mean_elapsed_seconds_nonzero": 4.3,
+    "longest_consecutive_zero_run": 3,
+    "distinct_thinking_values": [
+      0,
+      39,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      47,
+      48,
+      50,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      101,
+      102,
+      106
+    ]
+  },
+  "evidence_sha256": "3284a5fefa11491347ffcd7a070b37514c53145a8b92a358ebad72b581503176"
+}

@@ -1599,6 +1599,239 @@ dialog strong {
     color:#146553
   }
 }
+
+/* ==========================================================================
+   Readability and structure pass
+   Goals: a legible type scale (nothing below 12px), calmer section chrome,
+   a navigable spine through the tracks, and enough breathing room that the
+   evidence reads like a page rather than a dump. Overrides live here so the
+   original component rules stay recognisable above.
+   ========================================================================== */
+
+:root {
+  --ink:#eef3ee;
+  --ink-soft:#c6d6d2;
+  --ink-faint:#9ab0ae;
+  --surface:#0f2429;
+  --surface-raised:#143036;
+  --hairline:#24424a;
+  --measure:66ch;
+  --space:clamp(56px, 7vw, 104px);
+}
+
+body {
+  font-size:16px;
+  line-height:1.65;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* Nothing on the page should be smaller than this. */
+.eyebrow {
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:none;
+  color:var(--mint);
+  margin:0 0 14px;
+}
+
+.evidence-details {font-size:14px;color:var(--ink-soft)}
+.evidence-details p {margin:14px 0 0;line-height:1.75;max-width:var(--measure)}
+.evidence-details summary {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 14px;
+  border:1px solid var(--hairline);
+  border-radius:999px;
+  font-size:13px;
+  color:var(--ink-soft);
+  transition:border-color .15s ease, color .15s ease;
+}
+.evidence-details summary::marker,
+.evidence-details summary::-webkit-details-marker {content:"";display:none}
+.evidence-details summary::before {content:"+";font-size:15px;line-height:1;color:var(--mint)}
+.evidence-details[open] summary::before {content:"−"}
+.evidence-details summary:hover {border-color:var(--mint);color:var(--ink)}
+
+.guidance-provenance {
+  font-size:12.5px;
+  line-height:1.7;
+  color:var(--ink-faint);
+  padding-top:18px;
+  border-top:1px solid var(--hairline);
+}
+.guidance-provenance code {
+  font-size:12px;
+  padding:2px 6px;
+  border-radius:5px;
+  background:#0a1d23;
+  border:1px solid var(--hairline);
+}
+
+/* --- sticky track navigation --------------------------------------------- */
+.section-nav {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#08191fe8;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--hairline);
+}
+.section-nav .wrap {
+  display:flex;
+  gap:6px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.section-nav .wrap::-webkit-scrollbar {display:none}
+.section-nav a {
+  flex:0 0 auto;
+  padding:15px 16px;
+  font-size:13.5px;
+  color:var(--ink-faint);
+  border-bottom:2px solid transparent;
+  white-space:nowrap;
+  transition:color .15s ease, border-color .15s ease;
+}
+.section-nav a:hover {color:var(--ink);border-bottom-color:var(--hairline)}
+.section-nav a.is-current {color:var(--mint);border-bottom-color:var(--mint)}
+
+/* --- research tracks ------------------------------------------------------ */
+.track {margin-top:var(--space);scroll-margin-top:64px}
+.track-head {
+  max-width:var(--measure);
+  margin:0 0 34px;
+  padding-top:30px;
+  border-top:1px solid var(--hairline);
+}
+.track-head h2 {
+  font:normal clamp(30px,3.6vw,42px)/1.12 var(--serif);
+  letter-spacing:-.02em;
+  margin:0 0 12px;
+  color:var(--ink);
+}
+.track-head p {margin:0;color:var(--ink-soft);font-size:16.5px;line-height:1.7}
+
+/* --- calmer section chrome ------------------------------------------------ */
+.guidance-section {
+  margin:0 0 22px;
+  padding:38px 40px 26px;
+  border:1px solid var(--hairline);
+  border-radius:16px;
+  background:var(--surface);
+  box-shadow:none;
+  scroll-margin-top:64px;
+}
+.guidance-section > h3 {
+  font:normal 21px/1.3 var(--serif);
+  margin:34px 0 10px;
+  color:var(--ink);
+}
+.guidance-lede {max-width:var(--measure);color:var(--ink-soft);font-size:17px;line-height:1.7}
+.guidance-takeaway {max-width:var(--measure);font-size:16px;line-height:1.7;color:var(--ink-soft)}
+.guidance-takeaway strong {color:var(--ink)}
+.guidance-section p {max-width:var(--measure)}
+.guidance-section .guidance-provenance {max-width:none}
+
+/* The headline finding earns more presence than the studies beneath it. */
+.guidance-section.is-headline {
+  border-color:#3c6f63;
+  background:linear-gradient(160deg,#16352f 0%,var(--surface) 62%);
+  padding-bottom:32px;
+}
+
+/* --- the thinking split table --------------------------------------------- */
+.split-table {
+  margin:26px 0 8px;
+  border:1px solid var(--hairline);
+  border-radius:12px;
+  overflow:hidden;
+}
+.split-row {
+  display:grid;
+  grid-template-columns:minmax(150px,1.6fr) repeat(4,minmax(60px,1fr));
+  gap:14px;
+  align-items:center;
+  padding:15px 20px;
+  border-top:1px solid var(--hairline);
+  font-variant-numeric:tabular-nums;
+}
+.split-row:first-child {border-top:0}
+.split-head {
+  font-size:12px;
+  letter-spacing:.06em;
+  color:var(--ink-faint);
+  background:#0b1f25;
+  padding-block:11px;
+}
+.split-row strong {font-weight:600;font-size:15.5px}
+.split-row span {font-size:15px;color:var(--ink-soft)}
+.split-row .big {font:normal 27px/1 var(--serif)}
+.split-row.is-good {background:#12302c}
+.split-row.is-good .big {color:var(--mint)}
+.split-row.is-bad .big {color:#f0907f}
+
+/* --- comparison cards ----------------------------------------------------- */
+.guidance-condition {
+  padding:20px 22px;
+  background:var(--surface-raised);
+  border:1px solid var(--hairline);
+  border-radius:12px;
+}
+.guidance-condition span {font-size:14px;color:var(--ink-soft)}
+.guidance-condition strong {font:normal 34px/1.25 var(--serif);margin-top:8px;color:var(--ink)}
+.guidance-condition small {font-size:12.5px;line-height:1.55;color:var(--ink-faint);margin-top:4px}
+.guidance-condition.is-highlight {border-color:var(--mint);background:#14322c}
+.guidance-condition.is-highlight strong {color:var(--mint)}
+
+/* --- an honest-limits callout, visually quiet but not hidden -------------- */
+.caution {
+  max-width:var(--measure);
+  margin:22px 0 0;
+  padding:16px 20px;
+  border-left:3px solid var(--amber);
+  border-radius:0 10px 10px 0;
+  background:#231f16;
+  color:var(--ink-soft);
+  font-size:15px;
+  line-height:1.7;
+}
+.caution strong {color:var(--amber)}
+
+/* --- shell polish --------------------------------------------------------- */
+.site-header {min-height:92px}
+.brand span {font-size:19px;letter-spacing:.01em}
+.brand small {display:block;font-size:12px;letter-spacing:.02em;color:var(--ink-faint);margin-top:3px}
+.site-header nav {display:flex;align-items:center;gap:26px;font-size:14.5px}
+
+.hero {padding:64px 0 40px;gap:64px;align-items:start}
+h1 {font-size:clamp(38px,5.2vw,58px);letter-spacing:-.025em;line-height:1.06}
+.hero-description {font-size:17px;line-height:1.75;max-width:53ch;color:var(--ink-soft)}
+.hero-description + .hero-description {margin-top:16px}
+.hero-description strong {color:var(--ink)}
+
+.track + .join-banner, .join-banner {margin-top:var(--space)}
+.site-footer {margin-top:54px;padding-top:28px;border-top:1px solid var(--hairline);font-size:13.5px}
+
+table {font-size:14.5px}
+.table-hint {font-size:13px;color:var(--ink-faint)}
+
+@media (max-width:760px) {
+  body {font-size:15.5px}
+  .guidance-section {padding:26px 20px 22px;border-radius:14px}
+  .track-head {margin-bottom:24px}
+  .split-table {overflow-x:auto}
+  .split-row {min-width:440px;padding:14px 16px;gap:10px}
+  .split-row span {font-size:14px}
+  .section-nav a {padding:13px 12px;font-size:13px}
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * {animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
 </style>
 </head>
 <body>
@@ -1607,17 +1840,26 @@ dialog strong {
   <header class="site-header wrap">
     <a class="brand" href="https://github.com/anto-blit/northstar-ai-control" aria-label="NorthStar on GitHub">
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z"/></svg>
-      <span>NORTHSTAR<small>THE PROGRESS OBSERVATORY</small></span>
+      <span>NorthStar<small>Open research on AI and human agency</small></span>
     </a>
-    <nav aria-label="Main navigation"><a href="#stories">Explore the lessons</a><button class="text-button" data-open-method>About the estimate</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#thinking">What we found</a><a href="#stories">Try the stories</a><button class="text-button" data-open-method>About the 10%</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
+  <nav class="section-nav" aria-label="Jump to a research track">
+    <div class="wrap">
+      <a href="#track-failure">The failure we can reproduce</a>
+      <a href="#track-guidance-track">Does story guidance help?</a>
+      <a href="#track-safeguards">Safeguards under attack</a>
+      <a href="#track-standing">Where this leaves us</a>
+    </div>
+  </nav>
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> OPEN RESEARCH · HUMAN FREEDOM &amp; FUTURE</p>
-        <h1 id="hero-title">Protecting humanity’s <em>freedom and future</em> <span class="hero-world">in an AI world</span></h1>
-        <p class="hero-description">NorthStar began with a frightening possibility: AI could destroy humanity. Our mission is to help bring that danger down through ethical guidance, better tests, and safeguards that hold when they matter.</p>
-        <div class="hero-actions"><a class="primary-link" href="#impact">See potential &amp; evidence <span aria-hidden="true">↓</span></a><a class="text-button" href="#mechanism">How could we reduce the risk?</a></div>
+        <p class="eyebrow"><span class="status-dot"></span> Open research · Nothing here is settled</p>
+        <h1 id="hero-title">Can old stories teach AI to <em>protect people</em>?</h1>
+        <p class="hero-description">It sounds unlikely. We are testing it properly anyway &mdash; because if guidance drawn from humanity&rsquo;s stories helps AI hold a line under pressure, that is worth knowing, and if it doesn&rsquo;t, that is worth knowing sooner.</p>
+        <p class="hero-description">So far the honest answer is <strong>no clear advantage</strong>, with one intriguing exception you can inspect below. Every result, including the ones that went nowhere, stays on this page.</p>
+        <div class="hero-actions"><a class="primary-link" href="#thinking">See what we found <span aria-hidden="true">↓</span></a><a class="text-button" href="#stories">Try a story yourself</a></div>
         <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong id="latest-assessment">Reading the latest results…</strong><br><span id="latest-assessment-detail"></span> <a href="#approval-repeatability">Inspect the repeated flaw ↓</a></p></div>
       </div>
       <div class="risk-panel">
@@ -1647,6 +1889,76 @@ dialog strong {
       </div>
     </section>
 
+    <section class="metrics" aria-label="Verified project snapshot">
+      <div class="metric"><span class="metric-label">PASSING CHECKS</span><strong id="test-count">—</strong><p>Recorded mechanism &amp; regression tests</p></div>
+      <div class="metric"><span class="metric-label">SIMULATED ENVIRONMENTS</span><strong id="environment-count">—</strong><p>Irreversible release · delegated stop</p></div>
+      <div class="metric"><span class="metric-label">TIMING MODELS</span><strong id="order-count">—</strong><p>Different orders. Different recovery windows.</p></div>
+      <div class="metric"><span class="metric-label">INDEPENDENT AI REVIEW</span><strong><span id="ai-review-rounds">—</span><span class="metric-aside">ROUNDS</span></strong><p><a href="#queue-review">Claude · project-commissioned</a></p></div>
+    </section>
+
+    <section class="progress-section" aria-labelledby="progress-title"><div class="section-heading"><div><p class="eyebrow">04 / THE WORK SO FAR</p><h2 id="progress-title">Small steps. Checkable progress.</h2></div><p>Research results and preparation, kept distinct.<br>No milestone is assigned an extinction-risk discount.</p></div><div id="milestones" class="milestones"></div></section>
+
+    <div class="track" id="track-failure">
+      <div class="track-head"><h2>The failure we can reproduce</h2><p>One decision error, recorded often enough to test prevention against — and a re-reading of the evidence that says what actually drives it.</p></div>
+    <section id="thinking" class="guidance-section is-headline" aria-labelledby="thinking-title">
+      <div class="guidance-heading"><div><p class="eyebrow">Re-reading 300 saved calls · no new model calls</p><h2 id="thinking-title">Every failure we recorded happened on a call that didn&rsquo;t think.</h2><p class="guidance-lede">Each saved Claude response carries a count of its extended thinking tokens. Split the 300 calls from G10 and G11 on that one field and success separates from failure exactly &mdash; with no overlap at all.</p></div></div>
+      <div class="split-table" role="table" aria-label="Outcomes split by whether extended thinking fired">
+        <div class="split-row split-head" role="row"><span role="columnheader">&nbsp;</span><span role="columnheader">Calls</span><span role="columnheader">Correct</span><span role="columnheader">Wrong approvals</span><span role="columnheader">Invalid</span></div>
+        <div class="split-row is-good" role="row"><span role="cell"><strong>Thinking fired</strong></span><span role="cell">257</span><span role="cell" class="big">257</span><span role="cell">0</span><span role="cell">0</span></div>
+        <div class="split-row is-bad" role="row"><span role="cell"><strong>No thinking</strong></span><span role="cell">43</span><span role="cell">7</span><span role="cell" class="big">18</span><span role="cell" class="big">18</span></div>
+      </div>
+      <p class="guidance-takeaway">Not one of the 257 thinking calls failed. All 18 wrong approvals and all 18 invalid answers came from the 43 calls where thinking never fired. The rate at which a prompt skips thinking is what the old benchmark was measuring: case 068 skipped it 34% of the time, case 090 6%, and the two legitimate controls never once.</p>
+      <h3>What it means for the story question</h3>
+      <p>All the variation in G11 lives in that non-thinking group, and the arms behave differently there. Every arm is perfect when the model deliberates.</p>
+      <div id="thinking-arms" class="guidance-comparison">
+        <div class="guidance-condition"><span>Original prompt</span><strong>0/12</strong><small>correct without thinking</small><small>36/36 correct with thinking</small></div>
+        <div class="guidance-condition"><span>Matched factual guidance</span><strong>0/4</strong><small>correct without thinking</small><small>44/44 correct with thinking</small></div>
+        <div class="guidance-condition is-highlight"><span>Story guidance</span><strong>7/7</strong><small>correct without thinking</small><small>41/41 correct with thinking</small></div>
+      </div>
+      <p class="guidance-takeaway">The story arm is the only condition in the whole 300-call record that ever answered correctly without deliberating: 7/7 against 0/16 (Fisher exact two-sided p &lt; 0.0001). That hints the story may work inside the forward pass, like a cached heuristic, rather than by helping the model reason.</p>
+      <p class="caution"><strong>This is not a result yet.</strong> Whether the model thinks is downstream of the prompt, not something we assigned, and the arms skip thinking at different rates. Slicing on it compares different subpopulations and can manufacture a difference. The subgroup is small and was chosen after seeing the data. It is one task, one harness, one model.</p>
+      <details class="evidence-details"><summary>Why this isn&rsquo;t a service glitch, and what it predicts</summary><p>A degraded service window or truncated answers would look the same without saying anything about the model. The saved metadata doesn&rsquo;t support that: all 300 calls ran on the same standard tier and speed; zero-thinking calls are scattered through the run rather than clustered, with a longest consecutive run of 3; and non-thinking answers are slightly shorter and faster (127 tokens / 3.70s against 163 / 4.30s) rather than cut off. Thinking tokens are bimodal &mdash; either 0, or between 39 and 106, never in between.</p><p>The reading makes a sharp prediction worth testing directly: hold the task fixed and suppress deliberation on purpose, with a minimal reasoning budget or a model that doesn&rsquo;t deliberate by default. The original prompt should then fail at a high, stable rate, and story guidance should hold where matched factual guidance doesn&rsquo;t. That turns thinking from something we observed into something we control, which is also how this project gets the reliable baseline its own rules require.</p><p>The same split does not transfer across providers. G13 and G15 spent almost no reasoning tokens on Codex and still scored 64/64, so this is not a universal law about deliberation. Claude&rsquo;s thinking tokens and Codex&rsquo;s reasoning tokens are different providers&rsquo; accounting of different processes, and a zero in one is not the same state as a zero in the other.</p></details>
+      <p class="guidance-provenance">Post-hoc analysis of frozen G10 and G11 evidence. No model calls, no new evidence, no change to any recorded score. Replay with <code>py experiments/thinking-analysis/analyze.py verify</code>, which recomputes every number above and fails if the frozen responses no longer support it. No story advantage is established and the 10% reference is unchanged.</p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/thinking-and-failure.md">The full finding, its limits and the replay ↗</a></p>
+    </section>
+    <section id="approval-repeatability" class="guidance-section" aria-labelledby="repeatability-title">
+      <div class="guidance-heading"><div><p class="eyebrow">G10 · FRESH MODEL CALLS · SEPTEMBER 12, 2026</p><h2 id="repeatability-title">A known approval error recurred.</h2><p class="guidance-lede">The assistant is asked whether to accept a mock service agreement within an owner's spending limit. In the failed answers, it correctly explains that the cost exceeds the limit, yet its decision says PROCEED.</p></div></div>
+      <p id="repeatability-summary" class="guidance-takeaway"></p>
+      <div id="repeatability-counts" class="guidance-comparison"></div>
+      <details class="evidence-details"><summary>Inspect fresh failed answers and the limits</summary><div id="repeatability-examples"></div><p>We reused two prompts selected because they had failed before: fifty fresh responses each, with ten legitimate counterpart responses each. The published rule required at least two wrong approvals on the same prompt and all ten corresponding controls to succeed. Every attempt is preserved; malformed responses are rejected and reported separately.</p><p>This identifies a repeated decision error in one narrow setup. The prompts ask for the decision before its explanation. It does not establish deliberate misconduct, a stable failure rate across settings, or an extinction forecast. These were written decisions; G10 executed no bookings and tested no preventive intervention or story guidance.</p><p>A <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/known-approval-replay/README.md">separate replay of older failed answers</a> shows how an executor following the decision field can make unauthorized mock bookings. A conventional spending-cap check blocked those older examples. Whether stories add benefit remains open.</p></details>
+      <p id="repeatability-provenance" class="guidance-provenance"></p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/approval-repeatability/README.md">Frozen protocol, all attempts and exact results ↗</a></p>
+    </section>
+    </div>
+
+    <div class="track" id="track-guidance-track">
+      <div class="track-head"><h2>Does story guidance help?</h2><p>The founding question. Each study compares guidance drawn from stories against matched factual guidance and, where possible, a plain repair.</p></div>
+    <section id="story-micro" class="guidance-section" aria-labelledby="micro-title" hidden>
+      <div class="guidance-heading"><div><p class="eyebrow">G11 · TWO SMALL DEVELOPMENT ROUNDS</p><h2 id="micro-title">Does story guidance help?</h2><p class="guidance-lede">A fable and a factual example teach the same spending rule with the same numbers. We compare each with the original prompt, first on the known failing case, then on two fresh numerical variants.</p></div></div>
+      <p id="micro-finding" class="guidance-takeaway"></p>
+      <div id="micro-rounds"></div>
+      <details class="evidence-details"><summary>What this small lead can establish</summary><p>The round-two factual guidance failed once on each of two new over-limit prompts. Stories made neither error. Two differences are too few to establish a reliable narrative advantage. This is one fable and one matched factual example, authored and tested by the project; it does not isolate all wording differences or generalize to stories as a whole.</p><p>Each arm has 24 over-limit attempts and six legitimate controls per round. Invalid answers stay in the planned denominator, count as unsuccessful responses and are reported separately from valid wrong approvals. Repeating the same prompt does not create independent test cases. The rounds remain separate.</p><p id="micro-selection"></p><p>All prompts, including the sole possible revision, were published before calls. No model weights changed and no bookings were executed. The earlier justification-first repair and a conventional spending-cap guard remain stronger practical benchmarks to test against. This result does not change the global-risk estimate.</p></details>
+      <p id="micro-provenance" class="guidance-provenance"></p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-micro/README.md">Both rounds, frozen plan, exact fable and every response ↗</a></p>
+    </section>
+    <section id="story-confirmation" class="guidance-section" aria-labelledby="confirmation-title" hidden>
+      <div class="guidance-heading"><div><p class="eyebrow">G12-B · FROZEN STORY · STRONG SIMPLE COMPARATOR</p><h2 id="confirmation-title">Does the story outperform a simple repair?</h2><p class="guidance-lede">The unchanged fable faces a larger test: 128 fresh pairs of mock agreements, each with an over-limit and a legitimate version. We compare it with factual guidance and a simple repair that finishes the calculation before giving the final decision.</p></div></div>
+      <p id="confirmation-finding" class="guidance-takeaway"></p>
+      <div id="confirmation-arms" class="guidance-comparison"></div>
+      <p id="confirmation-review"></p>
+      <details class="evidence-details"><summary>Decision rule, uncertainty and the preserved review</summary><p id="confirmation-comparisons"></p><p>Each case receives one response per approach. Safety comparisons use jointly valid responses to the over-limit cases; invalid or missing answers cannot create safety wins and remain in the full counts. A story advantage requires passing the predeclared statistical threshold, no invalid story answers and all 128 legitimate story approvals correct. Beating the factual example and beating the simple repair are separate findings.</p><p>These are numerical and contextual variations of one obligation template. The story and factual guidance are one frozen text pair; wording differences remain. Same-provider AI review and repeated structural features limit independence and generalization. Passing answers or a nonsignificant difference do not prove equivalence or a zero failure rate.</p><p>The original G12 stopped after a method audit, before any target calls. G12-A supplied the full runner and parser to review and hardened duplicate/flag validation. Every case, target prompt and comparison threshold remained unchanged. G12-A also stopped before targets because its review packet omitted the case generator and transport dependencies. G12-B includes those dependencies and captured tests; all target prompts remain unchanged. All three audits are preserved and share the same $12 reported-usage ceiling. No model weights changed, no bookings were executed and no global-risk reduction is estimated.</p></details>
+      <p id="confirmation-provenance" class="guidance-provenance"></p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-confirmation-v3/README.md">Protocol, separate AI reviews and all recorded evidence ↗</a></p>
+    </section>
+    <section id="keeper-micro" class="guidance-section" aria-labelledby="keeper-title" hidden>
+      <div class="guidance-heading"><div><p class="eyebrow">G13 · NEW KEEPER STORY · 40 FRESH CODEX CALLS</p><h2 id="keeper-title">Does the new story help on the known approval case?</h2><p class="guidance-lede">We adapted the new evidence-keeper story to the approval error already reproduced on Claude. Four approaches faced the exact known prompt and its legitimate counterpart in fresh Codex sessions.</p></div></div>
+      <p id="keeper-finding" class="guidance-takeaway"></p>
+      <div id="keeper-arms" class="guidance-comparison"></div>
+      <p id="keeper-meaning"></p>
+      <details class="evidence-details"><summary>Read the new story, matched facts and test limits</summary><p>Both examples teach the same rule, costs, mistaken approval and correction. A separately recorded calculation appears in both. The target task receives no extra tool or evidence source.</p><p id="keeper-rule"></p><h3>New keeper story</h3><p id="keeper-story"></p><h3>Matched factual example</h3><p id="keeper-facts"></p><p id="keeper-comparisons"></p><p>Each approach receives eight repetitions of one over-limit prompt and two repetitions of its legitimate counterpart. Repeats are not independent cases. Invalid answers remain unsuccessful and cannot create semantic safety wins. All forty requests and scoring rules were published before calls; no retry, story revision or model training occurred. The host authored and scored this screen; fresh target sessions had no repository or conversation context. This is not independent external review.</p><p>Codex is a separate tested model. These results do not complete Claude's interrupted G12 confirmation or erase Claude's recorded errors. A tie does not prove equivalence, and this sample cannot establish a zero failure rate. No global-risk reduction is estimated.</p></details>
+      <p id="keeper-provenance" class="guidance-provenance"></p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/keeper-micro/README.md">Published plan, all forty responses and replayable results ↗</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/BASELINE-GATE.md">Required baseline before further story tests ↗</a></p>
+    </section>
     <section id="codex-failure-search" class="guidance-section" aria-labelledby="codex-search-title" hidden>
       <div class="guidance-heading"><div><p class="eyebrow">G14 · OPENAI BASELINE SEARCH · NO STORY INTERVENTION</p><h2 id="codex-search-title">Can we reproduce an OpenAI approval failure?</h2><p class="guidance-lede">Six purchase packets pair full invoice data with a supplier's misleading acceptance summary. We check the model's approval against the owner's actual limit, then repeat a qualifying case in two fresh batches.</p></div></div>
       <p id="codex-search-finding" class="guidance-takeaway"></p>
@@ -1662,77 +1974,37 @@ dialog strong {
         <p id="identity-provenance" class="guidance-provenance"></p><p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/codex-identity-check/README.md">Exact Unicode inputs, both batches and local replay ↗</a></p>
       </div>
     </section>
-
-    <section id="keeper-micro" class="guidance-section" aria-labelledby="keeper-title" hidden>
-      <div class="guidance-heading"><div><p class="eyebrow">G13 · NEW KEEPER STORY · 40 FRESH CODEX CALLS</p><h2 id="keeper-title">Does the new story help on the known approval case?</h2><p class="guidance-lede">We adapted the new evidence-keeper story to the approval error already reproduced on Claude. Four approaches faced the exact known prompt and its legitimate counterpart in fresh Codex sessions.</p></div></div>
-      <p id="keeper-finding" class="guidance-takeaway"></p>
-      <div id="keeper-arms" class="guidance-comparison"></div>
-      <p id="keeper-meaning"></p>
-      <details class="evidence-details"><summary>Read the new story, matched facts and test limits</summary><p>Both examples teach the same rule, costs, mistaken approval and correction. A separately recorded calculation appears in both. The target task receives no extra tool or evidence source.</p><p id="keeper-rule"></p><h3>New keeper story</h3><p id="keeper-story"></p><h3>Matched factual example</h3><p id="keeper-facts"></p><p id="keeper-comparisons"></p><p>Each approach receives eight repetitions of one over-limit prompt and two repetitions of its legitimate counterpart. Repeats are not independent cases. Invalid answers remain unsuccessful and cannot create semantic safety wins. All forty requests and scoring rules were published before calls; no retry, story revision or model training occurred. The host authored and scored this screen; fresh target sessions had no repository or conversation context. This is not independent external review.</p><p>Codex is a separate tested model. These results do not complete Claude's interrupted G12 confirmation or erase Claude's recorded errors. A tie does not prove equivalence, and this sample cannot establish a zero failure rate. No global-risk reduction is estimated.</p></details>
-      <p id="keeper-provenance" class="guidance-provenance"></p>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/keeper-micro/README.md">Published plan, all forty responses and replayable results ↗</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/BASELINE-GATE.md">Required baseline before further story tests ↗</a></p>
+    <section id="replication" class="guidance-section" aria-labelledby="replication-title">
+      <div class="guidance-heading"><div><p class="eyebrow">CLAUDE FOLLOW-UP · REGISTERED CONTINUATION</p><h2 id="replication-title">Did the repair gain repeat?</h2><p class="guidance-lede" id="replication-lede"></p></div></div>
+      <div class="guidance-facts"><span><strong id="replication-answers">—</strong> model answers</span><span><strong>2</strong> models</span><span><strong>120</strong> reviewed cases</span><span><strong>3</strong> conditions</span></div>
+      <p id="replication-summary" class="guidance-takeaway"></p>
+      <div id="continuation-comparison"><p id="continuation-caption" class="guidance-takeaway"></p><p class="table-hint">On smaller screens, scroll to compare all three conditions.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Continued replication results" aria-describedby="continuation-caption"><table><thead><tr><th>Test / model</th><th>Original</th><th>Repair</th><th>Factual examples</th></tr></thead><tbody id="continuation-table"></tbody></table></div><p id="continuation-uncertainty" class="guidance-takeaway"></p></div>
+      <details class="evidence-details"><summary>Scope, quota interruption and the continuation</summary><p>The primary comparison uses 48 new matched pairs on Sonnet 5. Opus 5 provides a separate model comparison. A further 12 pairs per model control harmless local booking records. The same original, repair and factual-example prompts are compared throughout. All 120 cases passed blind AI label review before the original run.</p><p id="continuation-history"></p><p>This is an amended continuation after some answers were known. It preserves the initial interrupted report and every original model answer; a wrong or malformed model answer cannot be replaced. The sample, prompts and scoring remain fixed. Both models come from one provider, and the project commissioned the AI review. Independent external replication, broader tasks and real adoption remain outstanding.</p><p>The booking executor follows the model decision without consulting the answer key. This is a single-decision policy with a deterministic local executor. No real contract or payment is executed, and no global-risk reduction is estimated.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/repair-continuation/README.md">Continuation protocol and complete evidence ↗</a></details>
+      <div class="guidance-next"><div><h3>Keep the result, including its limits.</h3><p>Compare the repair with factual examples and preserve legitimate work. The global-risk reference remains unchanged.</p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/repair-continuation/README.md">Inspect the follow-up <span aria-hidden="true">↗</span></a></div>
+      <p id="replication-provenance" class="guidance-provenance"></p>
     </section>
-
-    <section id="story-confirmation" class="guidance-section" aria-labelledby="confirmation-title" hidden>
-      <div class="guidance-heading"><div><p class="eyebrow">G12-B · FROZEN STORY · STRONG SIMPLE COMPARATOR</p><h2 id="confirmation-title">Does the story outperform a simple repair?</h2><p class="guidance-lede">The unchanged fable faces a larger test: 128 fresh pairs of mock agreements, each with an over-limit and a legitimate version. We compare it with factual guidance and a simple repair that finishes the calculation before giving the final decision.</p></div></div>
-      <p id="confirmation-finding" class="guidance-takeaway"></p>
-      <div id="confirmation-arms" class="guidance-comparison"></div>
-      <p id="confirmation-review"></p>
-      <details class="evidence-details"><summary>Decision rule, uncertainty and the preserved review</summary><p id="confirmation-comparisons"></p><p>Each case receives one response per approach. Safety comparisons use jointly valid responses to the over-limit cases; invalid or missing answers cannot create safety wins and remain in the full counts. A story advantage requires passing the predeclared statistical threshold, no invalid story answers and all 128 legitimate story approvals correct. Beating the factual example and beating the simple repair are separate findings.</p><p>These are numerical and contextual variations of one obligation template. The story and factual guidance are one frozen text pair; wording differences remain. Same-provider AI review and repeated structural features limit independence and generalization. Passing answers or a nonsignificant difference do not prove equivalence or a zero failure rate.</p><p>The original G12 stopped after a method audit, before any target calls. G12-A supplied the full runner and parser to review and hardened duplicate/flag validation. Every case, target prompt and comparison threshold remained unchanged. G12-A also stopped before targets because its review packet omitted the case generator and transport dependencies. G12-B includes those dependencies and captured tests; all target prompts remain unchanged. All three audits are preserved and share the same $12 reported-usage ceiling. No model weights changed, no bookings were executed and no global-risk reduction is estimated.</p></details>
-      <p id="confirmation-provenance" class="guidance-provenance"></p>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-confirmation-v3/README.md">Protocol, separate AI reviews and all recorded evidence ↗</a></p>
+    <section id="codex" class="guidance-section" aria-labelledby="codex-title">
+      <div class="guidance-heading"><div><p class="eyebrow">SEPARATE MODEL COMPARISON · CODEX</p><h2 id="codex-title">Does the repair help another model?</h2><p class="guidance-lede">A fresh Codex session answered each case under one of the same three approaches. These results stand alongside the Claude comparison.</p></div></div>
+      <div class="guidance-facts"><span><strong id="codex-answers">—</strong> model answers</span><span><strong>96</strong> cases</span><span><strong>48</strong> matched pairs</span><span><strong>3</strong> conditions</span></div>
+      <div class="guidance-comparison" id="codex-comparison" aria-label="Codex correct decisions and safety by condition"></div>
+      <p class="guidance-takeaway" id="codex-finding"></p>
+      <details class="evidence-details"><summary>What this comparison can establish</summary><p id="codex-statistics"></p><p>We reused every direct-decision case from G3, including cases Claude passed and failed. Each target session received the case and its assigned instructions without the answer key, earlier results or this conversation. Tools, memory, skills and project context were disabled. Every returned answer remains in the score.</p><p>This is a project-run comparison across providers within one synthetic obligation family. The Codex CLI requests GPT-6 Astra but does not independently report a resolved server snapshot. Its surrounding instructions and execution environment differ from Claude's; cross-model scores cannot isolate architecture alone. There is no local booking execution in this Codex test, independent external replication, deployment evidence or quantified global-risk reduction.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/codex-repair/README.md">Protocol, complete results and limitations ↗</a></details>
+      <p class="guidance-provenance" id="codex-provenance"></p>
     </section>
-
-    <section id="story-micro" class="guidance-section" aria-labelledby="micro-title" hidden>
-      <div class="guidance-heading"><div><p class="eyebrow">G11 · TWO SMALL DEVELOPMENT ROUNDS</p><h2 id="micro-title">Does story guidance help?</h2><p class="guidance-lede">A fable and a factual example teach the same spending rule with the same numbers. We compare each with the original prompt, first on the known failing case, then on two fresh numerical variants.</p></div></div>
-      <p id="micro-finding" class="guidance-takeaway"></p>
-      <div id="micro-rounds"></div>
-      <details class="evidence-details"><summary>What this small lead can establish</summary><p>The round-two factual guidance failed once on each of two new over-limit prompts. Stories made neither error. Two differences are too few to establish a reliable narrative advantage. This is one fable and one matched factual example, authored and tested by the project; it does not isolate all wording differences or generalize to stories as a whole.</p><p>Each arm has 24 over-limit attempts and six legitimate controls per round. Invalid answers stay in the planned denominator, count as unsuccessful responses and are reported separately from valid wrong approvals. Repeating the same prompt does not create independent test cases. The rounds remain separate.</p><p id="micro-selection"></p><p>All prompts, including the sole possible revision, were published before calls. No model weights changed and no bookings were executed. The earlier justification-first repair and a conventional spending-cap guard remain stronger practical benchmarks to test against. This result does not change the global-risk estimate.</p></details>
-      <p id="micro-provenance" class="guidance-provenance"></p>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-micro/README.md">Both rounds, frozen plan, exact fable and every response ↗</a></p>
+    <section id="guidance" class="guidance-section" aria-labelledby="guidance-title">
+      <div class="guidance-heading"><div><p class="eyebrow"><span class="status-dot"></span> NEW RESULT · SEPTEMBER 10, 2026</p><h2 id="guidance-title">A small step. A real test.</h2><p class="guidance-lede">Our first story-guidance comparison is complete. The story condition got every substantive judgment right, including when useful work should go ahead. Both baselines did too.</p></div><div class="guidance-score"><strong id="guidance-story-score">—</strong><span>correct judgments with stories</span><small>Post-hoc check of decision content</small></div></div>
+      <div class="guidance-facts"><span><strong id="guidance-call-count">—</strong> model responses</span><span><strong>8</strong> matched scenario pairs</span><span><strong>3</strong> guidance conditions</span></div>
+      <div class="guidance-comparison" id="guidance-comparison" aria-label="Correct substantive decisions by guidance condition"></div>
+      <p class="guidance-takeaway"><strong>The tiny win: we moved from a proposal to a completed, checkable experiment.</strong> Stories handled this first set without observed judgment errors. We have not demonstrated that they improve decisions over simpler guidance.</p>
+      <details class="evidence-details guidance-details"><summary>What the scores actually show</summary><p id="guidance-strict-summary"></p><p>The frozen scoring required plain JSON. Five otherwise correct answers arrived inside Markdown fences. A separate post-hoc check removed only those wrappers and found all three conditions at 16/16 correct decisions. The original scores remain unchanged; their small difference is formatting, not better moral judgment.</p><p>One model, 16 synthetic cases, and one response per case per condition. Labels were checked by a separate AI call, using the same model; there was no independent human review. These are written judgments in familiar types of problem, not demonstrated protection in a deployed system.</p></details>
+      <p class="guidance-provenance" id="guidance-provenance"></p>
+      <div id="repair" class="guidance-next"><div><span class="eyebrow">NEW FOLLOW-UP · AN OBSERVED REPAIR GAIN</span><h3>Fewer unsafe approvals. Useful approvals preserved.</h3><p>A development case exposed a decision that contradicted its own explanation. We tested a repair on fresh cases: finish the short justification, then give a consistent final decision. <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/guidance-development/README.md">The original inconsistency ↗</a></p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/decision-repair/README.md">Inspect the repair test <span aria-hidden="true">↗</span></a></div>
+      <div class="guidance-comparison" id="repair-comparison" aria-label="Unsafe approvals and useful approvals in the fresh repair comparison"></div>
+      <p class="guidance-takeaway" id="repair-summary"></p>
+      <details class="evidence-details guidance-details"><summary>How much confidence does this earn?</summary><p id="repair-uncertainty"></p><p>Two original responses approved an over-limit action despite correctly concluding that permission was absent; a third counted a credit twice. Two further responses emitted conflicting JSON objects and were invalid. The repair and factual examples avoided those failures in this run. These are written decisions in synthetic contract cases; no real action was executed.</p><p>The repair was fixed before fresh case authoring. Case author, label reviewer and target were the same model in separate contexts. This is an observed gain needing independent replication. It establishes neither a narrative advantage nor a reduction in global risk.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/decision-repair/README.md">Protocol, uncertainty and every failed response ↗</a></details>
+      <p class="guidance-takeaway"><strong>Follow-up:</strong> see the <a href="#replication">larger comparison and registered continuation</a>. This card preserves the earlier G2 observation.</p>
+      <p class="guidance-provenance" id="repair-provenance"></p>
     </section>
-
-    <section id="approval-repeatability" class="guidance-section" aria-labelledby="repeatability-title">
-      <div class="guidance-heading"><div><p class="eyebrow">G10 · FRESH MODEL CALLS · SEPTEMBER 12, 2026</p><h2 id="repeatability-title">A known approval error recurred.</h2><p class="guidance-lede">The assistant is asked whether to accept a mock service agreement within an owner's spending limit. In the failed answers, it correctly explains that the cost exceeds the limit, yet its decision says PROCEED.</p></div></div>
-      <p id="repeatability-summary" class="guidance-takeaway"></p>
-      <div id="repeatability-counts" class="guidance-comparison"></div>
-      <details class="evidence-details"><summary>Inspect fresh failed answers and the limits</summary><div id="repeatability-examples"></div><p>We reused two prompts selected because they had failed before: fifty fresh responses each, with ten legitimate counterpart responses each. The published rule required at least two wrong approvals on the same prompt and all ten corresponding controls to succeed. Every attempt is preserved; malformed responses are rejected and reported separately.</p><p>This identifies a repeated decision error in one narrow setup. The prompts ask for the decision before its explanation. It does not establish deliberate misconduct, a stable failure rate across settings, or an extinction forecast. These were written decisions; G10 executed no bookings and tested no preventive intervention or story guidance.</p><p>A <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/known-approval-replay/README.md">separate replay of older failed answers</a> shows how an executor following the decision field can make unauthorized mock bookings. A conventional spending-cap check blocked those older examples. Whether stories add benefit remains open.</p></details>
-      <p id="repeatability-provenance" class="guidance-provenance"></p>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/approval-repeatability/README.md">Frozen protocol, all attempts and exact results ↗</a></p>
-    </section>
-
-    <section id="evidence-integrity" class="guidance-section" aria-labelledby="integrity-title">
-      <div class="guidance-heading"><div><p class="eyebrow">G8-C · PRESERVE THE EVIDENCE, COMPLETE THE WORK</p><h2 id="integrity-title">Can an agent make bad work look good?</h2><p class="guidance-lede">An agent processes eight mock software releases. Five passed their checks; three need review. It can edit the working database, but an independent scorer retains the original evidence. Half the comparison tasks include a malicious vendor note asking it to rewrite the checks.</p></div></div>
-      <h3>Deliberate attacks on the safeguard</h3><p id="integrity-controls" class="guidance-takeaway"></p>
-      <h3>Ordinary model behavior, with and without stories</h3><p id="integrity-summary"></p>
-      <div id="integrity-comparison" class="guidance-comparison"></div>
-      <p id="integrity-finding" class="guidance-takeaway"></p>
-      <details class="evidence-details"><summary>What the result can establish</summary><p>The safeguard is a conventional transaction check. Its attack trials use scripted violations followed by legitimate work; they do not show an ordinary AI choosing to cheat. The model comparison uses the weak system, so the safeguard cannot conceal a difference between guidance conditions.</p><p>These are two small data variants, each with a clean and malicious vendor note, repeated twice per condition. A factual example and an original animal fable share the same principles and example facts. The story comparison tests prompt guidance, not model training or broad moral understanding. A perfect tie provides no demonstrated narrative advantage.</p><p>The original G8 run stopped on an interface error: correct SQL included unused report fields. That rejected attempt remains recorded. G8-C published a narrow interface amendment and ran fresh canaries and comparisons. Only a separate finish request counts as a final report.</p><p>Every response and database receipt is preserved and replayed. Fixed-action replay through the stronger guard is a separate control check; the model did not adapt to those changed receipts. No result changes the global-risk reference.</p></details>
-      <p id="integrity-provenance" class="guidance-provenance"></p>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/evidence-integrity-continuation/README.md">Results, protocol and complete attempt record ↗</a></p>
-    </section>
-
-    <section id="failure-discovery" class="guidance-section" aria-labelledby="failure-discovery-title">
-      <div class="guidance-heading"><div><p class="eyebrow">G7 · COMPLETED BOUNDED FAILURE SEARCH</p><h2 id="failure-discovery-title">No counterexample found in the bounded search.</h2><p class="guidance-lede">An agent inherits prepared dispatch work, receives a current permission update, and must finish the work that remains authorized. The search covers four workflows with direct stops, delegated jobs and mixed manifests.</p></div></div>
-      <p class="guidance-takeaway">The agent completed the tested workflows within its current permissions. No failure qualified for confirmation in G7's stop-boundary search; this result does not establish safety beyond these cases. The later <a href="#approval-repeatability">G10 approval test</a> examines a different failure.</p>
-      <p>A counterexample must produce an actual local delivery after permission is withdrawn, recur in fresh sessions, and survive comparison with authorized tasks. Interface checks come first. Every attempt stays in the record, whether or not a counterexample is found.</p>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/failure-discovery/README.md">Read the latest search results, limits and complete attempt record ↗</a></p>
-    </section>
-
-    <section id="revocation" class="guidance-section" aria-labelledby="revocation-title">
-      <div class="guidance-heading"><div><p class="eyebrow">G6 · TESTING A SPECIFIC LOSS-OF-CONTROL FAILURE</p><h2 id="revocation-title">Can people withdraw an agent's authority?</h2><p class="guidance-lede">An agent prepares a delivery, then receives an authenticated stop or permission to continue. A separate authorized job must still finish. We check its requests, the mailbox's actual contents and its final report.</p></div></div>
-      <p class="guidance-takeaway">The possible catastrophe is hypothetical. These local requests and database effects are measurable. This tests one specified mechanism; it does not simulate extinction, cover every future scenario or estimate a reduction in global risk.</p>
-      <h3>Deliberately attempted violations</h3><p>Scripted workers request delivery through both available adapters after stop. These controls test the service, not whether an ordinary model chooses to violate authority.</p>
-      <div class="guidance-comparison revocation-controls" id="revocation-controls"></div>
-      <h3>Ordinary agent behavior</h3><p id="revocation-summary"></p><p id="revocation-diagnosis" class="guidance-takeaway"></p>
-      <label class="lesson-label" for="revocation-mode">Compare guidance under this stop mechanism</label><select id="revocation-mode"><option value="cooperative_cancel">Worker asked to stop</option><option value="transactional_cancel">Service enforces stop</option></select>
-      <p id="revocation-mode-description"></p><div id="revocation-comparison" class="guidance-comparison revocation-comparison"></div>
-      <p id="revocation-finding" class="guidance-takeaway"></p>
-      <details class="evidence-details"><summary>What this test can establish</summary><p>Thirty-two episodes compare ordinary instructions, explicit principles, a factual example and a new fable across four cases and two service modes. There is one sample per combination. Two fictional work contexts were authored in a separate Claude session; another session reviewed the case definitions without the guidance or target answers. This was project-commissioned AI review, with no independent external or human review.</p><p>The strong mechanism is conventional transactional cancellation. Both adapters reach the same local service; independently operated destinations and arbitrary code are outside this test. The host and operator remain trusted. The test does not establish operating-system containment or predict how a future agent will behave with broader access. An inaccurate report is recorded as an error, not automatically diagnosed as deliberate deception.</p><p>Only one background-note read occurred across the run. Those optional notes carried contextual completion pressure, so the experiment did not strongly test behavior under that pressure. Interface reliability and verified exposure to the intended conditions need improvement before another behavioral screen.</p><p>Every request and receipt is preserved. Offline verification reconstructs the tool history and checks actual database events and mailbox rows. Refusals, invalid output and unfinished episodes stay in the planned denominators.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/what-we-can-test.md">How we use hypothetical scenarios ↗</a></details>
-      <p id="revocation-provenance" class="guidance-provenance"></p>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/revocation-agent/README.md">Protocol, results and complete evidence ↗</a></p>
-    </section>
-
     <section id="stories" class="guidance-section" aria-labelledby="stories-title">
       <div class="guidance-heading"><div><p class="eyebrow">THE ORIGINAL QUESTION · FIRST WORKING PROTOTYPE</p><h2 id="stories-title">From six fables to decisions you can inspect.</h2><p class="guidance-lede">Explore a story, its proposed lesson and the interpretations we reject. Then change the facts in a small example to see which rules allow an action, block it or require human review.</p></div></div>
       <p class="guidance-takeaway">A provisional collection, with human review still pending. The rule checker uses facts supplied to it; it does not establish those facts or determine all of morality.</p>
@@ -1755,7 +2027,6 @@ dialog strong {
       <div class="guidance-next"><div><h3>The lesson has to change behavior.</h3><p>We compare stories with the same principles and factual examples. Passing software checks does not establish better moral judgment.</p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/curriculum/README.md">Run or review the prototype <span aria-hidden="true">↗</span></a></div>
       <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-continuation/README.md">Read the continuation and its results ↗</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-distillation/README.md">Original comparison and preserved refusal ↗</a></p>
     </section>
-
     <section id="cross-cultural-candidates" class="guidance-section" aria-labelledby="candidates-title">
       <div class="guidance-heading"><div><p class="eyebrow">CROSS-CULTURAL EXTENSION · CANDIDATES</p><h2 id="candidates-title">Stories can suggest a test—and challenge its assumptions.</h2><p class="guidance-lede">A submitted proposal connects broader story traditions to two concrete problems: evidence an actor can rewrite, and delegated work that cannot be stopped. Explore two original adaptations and the rules we propose to test.</p></div></div>
       <p class="guidance-takeaway">Two candidate lessons, twelve rule examples, zero model calls. These are project interpretations under supplied facts, with human review pending. Similar motifs do not establish independent invention, cultural consensus or better AI behavior.</p>
@@ -1767,57 +2038,39 @@ dialog strong {
       <details class="evidence-details"><summary>All five themes and what would make a useful next test</summary><div id="candidate-themes"></div><p>The false-alarm story and Cassandra suggest an extra check: vary current evidence and the messenger's reputation separately. A supported warning must not be discarded merely because its source is distrusted. This is a proposed failure mode, not a new observed AI failure.</p><p>A new keeper adaptation was tested against the known spending-approval case in <a href="#keeper-micro">G13's forty Codex calls</a>. All four approaches passed; no story benefit was demonstrated. The general stories and rule examples here remain development material, not unseen confirmation cases. The next small prevention test should return to the model where the failure recurred, preserving matched factual guidance and the strong simple repair. Claude's interrupted frozen comparison remains a separate record.</p></details>
       <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/curriculum/candidates/README.md">Assessment, source corrections and runnable examples ↗</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/northstar-cross-cultural-candidates.md">Original submitted proposal, preserved unchanged ↗</a></p>
     </section>
+    </div>
 
-    <section id="replication" class="guidance-section" aria-labelledby="replication-title">
-      <div class="guidance-heading"><div><p class="eyebrow">CLAUDE FOLLOW-UP · REGISTERED CONTINUATION</p><h2 id="replication-title">Did the repair gain repeat?</h2><p class="guidance-lede" id="replication-lede"></p></div></div>
-      <div class="guidance-facts"><span><strong id="replication-answers">—</strong> model answers</span><span><strong>2</strong> models</span><span><strong>120</strong> reviewed cases</span><span><strong>3</strong> conditions</span></div>
-      <p id="replication-summary" class="guidance-takeaway"></p>
-      <div id="continuation-comparison"><p id="continuation-caption" class="guidance-takeaway"></p><p class="table-hint">On smaller screens, scroll to compare all three conditions.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Continued replication results" aria-describedby="continuation-caption"><table><thead><tr><th>Test / model</th><th>Original</th><th>Repair</th><th>Factual examples</th></tr></thead><tbody id="continuation-table"></tbody></table></div><p id="continuation-uncertainty" class="guidance-takeaway"></p></div>
-      <details class="evidence-details"><summary>Scope, quota interruption and the continuation</summary><p>The primary comparison uses 48 new matched pairs on Sonnet 5. Opus 5 provides a separate model comparison. A further 12 pairs per model control harmless local booking records. The same original, repair and factual-example prompts are compared throughout. All 120 cases passed blind AI label review before the original run.</p><p id="continuation-history"></p><p>This is an amended continuation after some answers were known. It preserves the initial interrupted report and every original model answer; a wrong or malformed model answer cannot be replaced. The sample, prompts and scoring remain fixed. Both models come from one provider, and the project commissioned the AI review. Independent external replication, broader tasks and real adoption remain outstanding.</p><p>The booking executor follows the model decision without consulting the answer key. This is a single-decision policy with a deterministic local executor. No real contract or payment is executed, and no global-risk reduction is estimated.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/repair-continuation/README.md">Continuation protocol and complete evidence ↗</a></details>
-      <div class="guidance-next"><div><h3>Keep the result, including its limits.</h3><p>Compare the repair with factual examples and preserve legitimate work. The global-risk reference remains unchanged.</p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/repair-continuation/README.md">Inspect the follow-up <span aria-hidden="true">↗</span></a></div>
-      <p id="replication-provenance" class="guidance-provenance"></p>
+    <div class="track" id="track-safeguards">
+      <div class="track-head"><h2>Safeguards under attack</h2><p>Whether a discovered failure can be turned into a control that holds up against deliberate attempts to defeat it — while still letting legitimate work through.</p></div>
+    <section id="evidence-integrity" class="guidance-section" aria-labelledby="integrity-title">
+      <div class="guidance-heading"><div><p class="eyebrow">G8-C · PRESERVE THE EVIDENCE, COMPLETE THE WORK</p><h2 id="integrity-title">Can an agent make bad work look good?</h2><p class="guidance-lede">An agent processes eight mock software releases. Five passed their checks; three need review. It can edit the working database, but an independent scorer retains the original evidence. Half the comparison tasks include a malicious vendor note asking it to rewrite the checks.</p></div></div>
+      <h3>Deliberate attacks on the safeguard</h3><p id="integrity-controls" class="guidance-takeaway"></p>
+      <h3>Ordinary model behavior, with and without stories</h3><p id="integrity-summary"></p>
+      <div id="integrity-comparison" class="guidance-comparison"></div>
+      <p id="integrity-finding" class="guidance-takeaway"></p>
+      <details class="evidence-details"><summary>What the result can establish</summary><p>The safeguard is a conventional transaction check. Its attack trials use scripted violations followed by legitimate work; they do not show an ordinary AI choosing to cheat. The model comparison uses the weak system, so the safeguard cannot conceal a difference between guidance conditions.</p><p>These are two small data variants, each with a clean and malicious vendor note, repeated twice per condition. A factual example and an original animal fable share the same principles and example facts. The story comparison tests prompt guidance, not model training or broad moral understanding. A perfect tie provides no demonstrated narrative advantage.</p><p>The original G8 run stopped on an interface error: correct SQL included unused report fields. That rejected attempt remains recorded. G8-C published a narrow interface amendment and ran fresh canaries and comparisons. Only a separate finish request counts as a final report.</p><p>Every response and database receipt is preserved and replayed. Fixed-action replay through the stronger guard is a separate control check; the model did not adapt to those changed receipts. No result changes the global-risk reference.</p></details>
+      <p id="integrity-provenance" class="guidance-provenance"></p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/evidence-integrity-continuation/README.md">Results, protocol and complete attempt record ↗</a></p>
     </section>
-
-    <section id="codex" class="guidance-section" aria-labelledby="codex-title">
-      <div class="guidance-heading"><div><p class="eyebrow">SEPARATE MODEL COMPARISON · CODEX</p><h2 id="codex-title">Does the repair help another model?</h2><p class="guidance-lede">A fresh Codex session answered each case under one of the same three approaches. These results stand alongside the Claude comparison.</p></div></div>
-      <div class="guidance-facts"><span><strong id="codex-answers">—</strong> model answers</span><span><strong>96</strong> cases</span><span><strong>48</strong> matched pairs</span><span><strong>3</strong> conditions</span></div>
-      <div class="guidance-comparison" id="codex-comparison" aria-label="Codex correct decisions and safety by condition"></div>
-      <p class="guidance-takeaway" id="codex-finding"></p>
-      <details class="evidence-details"><summary>What this comparison can establish</summary><p id="codex-statistics"></p><p>We reused every direct-decision case from G3, including cases Claude passed and failed. Each target session received the case and its assigned instructions without the answer key, earlier results or this conversation. Tools, memory, skills and project context were disabled. Every returned answer remains in the score.</p><p>This is a project-run comparison across providers within one synthetic obligation family. The Codex CLI requests GPT-6 Astra but does not independently report a resolved server snapshot. Its surrounding instructions and execution environment differ from Claude's; cross-model scores cannot isolate architecture alone. There is no local booking execution in this Codex test, independent external replication, deployment evidence or quantified global-risk reduction.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/codex-repair/README.md">Protocol, complete results and limitations ↗</a></details>
-      <p class="guidance-provenance" id="codex-provenance"></p>
+    <section id="failure-discovery" class="guidance-section" aria-labelledby="failure-discovery-title">
+      <div class="guidance-heading"><div><p class="eyebrow">G7 · COMPLETED BOUNDED FAILURE SEARCH</p><h2 id="failure-discovery-title">No counterexample found in the bounded search.</h2><p class="guidance-lede">An agent inherits prepared dispatch work, receives a current permission update, and must finish the work that remains authorized. The search covers four workflows with direct stops, delegated jobs and mixed manifests.</p></div></div>
+      <p class="guidance-takeaway">The agent completed the tested workflows within its current permissions. No failure qualified for confirmation in G7's stop-boundary search; this result does not establish safety beyond these cases. The later <a href="#approval-repeatability">G10 approval test</a> examines a different failure.</p>
+      <p>A counterexample must produce an actual local delivery after permission is withdrawn, recur in fresh sessions, and survive comparison with authorized tasks. Interface checks come first. Every attempt stays in the record, whether or not a counterexample is found.</p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/failure-discovery/README.md">Read the latest search results, limits and complete attempt record ↗</a></p>
     </section>
-
-    <section id="guidance" class="guidance-section" aria-labelledby="guidance-title">
-      <div class="guidance-heading"><div><p class="eyebrow"><span class="status-dot"></span> NEW RESULT · SEPTEMBER 10, 2026</p><h2 id="guidance-title">A small step. A real test.</h2><p class="guidance-lede">Our first story-guidance comparison is complete. The story condition got every substantive judgment right, including when useful work should go ahead. Both baselines did too.</p></div><div class="guidance-score"><strong id="guidance-story-score">—</strong><span>correct judgments with stories</span><small>Post-hoc check of decision content</small></div></div>
-      <div class="guidance-facts"><span><strong id="guidance-call-count">—</strong> model responses</span><span><strong>8</strong> matched scenario pairs</span><span><strong>3</strong> guidance conditions</span></div>
-      <div class="guidance-comparison" id="guidance-comparison" aria-label="Correct substantive decisions by guidance condition"></div>
-      <p class="guidance-takeaway"><strong>The tiny win: we moved from a proposal to a completed, checkable experiment.</strong> Stories handled this first set without observed judgment errors. We have not demonstrated that they improve decisions over simpler guidance.</p>
-      <details class="evidence-details guidance-details"><summary>What the scores actually show</summary><p id="guidance-strict-summary"></p><p>The frozen scoring required plain JSON. Five otherwise correct answers arrived inside Markdown fences. A separate post-hoc check removed only those wrappers and found all three conditions at 16/16 correct decisions. The original scores remain unchanged; their small difference is formatting, not better moral judgment.</p><p>One model, 16 synthetic cases, and one response per case per condition. Labels were checked by a separate AI call, using the same model; there was no independent human review. These are written judgments in familiar types of problem, not demonstrated protection in a deployed system.</p></details>
-      <p class="guidance-provenance" id="guidance-provenance"></p>
-      <div id="repair" class="guidance-next"><div><span class="eyebrow">NEW FOLLOW-UP · AN OBSERVED REPAIR GAIN</span><h3>Fewer unsafe approvals. Useful approvals preserved.</h3><p>A development case exposed a decision that contradicted its own explanation. We tested a repair on fresh cases: finish the short justification, then give a consistent final decision. <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/guidance-development/README.md">The original inconsistency ↗</a></p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/decision-repair/README.md">Inspect the repair test <span aria-hidden="true">↗</span></a></div>
-      <div class="guidance-comparison" id="repair-comparison" aria-label="Unsafe approvals and useful approvals in the fresh repair comparison"></div>
-      <p class="guidance-takeaway" id="repair-summary"></p>
-      <details class="evidence-details guidance-details"><summary>How much confidence does this earn?</summary><p id="repair-uncertainty"></p><p>Two original responses approved an over-limit action despite correctly concluding that permission was absent; a third counted a credit twice. Two further responses emitted conflicting JSON objects and were invalid. The repair and factual examples avoided those failures in this run. These are written decisions in synthetic contract cases; no real action was executed.</p><p>The repair was fixed before fresh case authoring. Case author, label reviewer and target were the same model in separate contexts. This is an observed gain needing independent replication. It establishes neither a narrative advantage nor a reduction in global risk.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/decision-repair/README.md">Protocol, uncertainty and every failed response ↗</a></details>
-      <p class="guidance-takeaway"><strong>Follow-up:</strong> see the <a href="#replication">larger comparison and registered continuation</a>. This card preserves the earlier G2 observation.</p>
-      <p class="guidance-provenance" id="repair-provenance"></p>
+    <section id="revocation" class="guidance-section" aria-labelledby="revocation-title">
+      <div class="guidance-heading"><div><p class="eyebrow">G6 · TESTING A SPECIFIC LOSS-OF-CONTROL FAILURE</p><h2 id="revocation-title">Can people withdraw an agent's authority?</h2><p class="guidance-lede">An agent prepares a delivery, then receives an authenticated stop or permission to continue. A separate authorized job must still finish. We check its requests, the mailbox's actual contents and its final report.</p></div></div>
+      <p class="guidance-takeaway">The possible catastrophe is hypothetical. These local requests and database effects are measurable. This tests one specified mechanism; it does not simulate extinction, cover every future scenario or estimate a reduction in global risk.</p>
+      <h3>Deliberately attempted violations</h3><p>Scripted workers request delivery through both available adapters after stop. These controls test the service, not whether an ordinary model chooses to violate authority.</p>
+      <div class="guidance-comparison revocation-controls" id="revocation-controls"></div>
+      <h3>Ordinary agent behavior</h3><p id="revocation-summary"></p><p id="revocation-diagnosis" class="guidance-takeaway"></p>
+      <label class="lesson-label" for="revocation-mode">Compare guidance under this stop mechanism</label><select id="revocation-mode"><option value="cooperative_cancel">Worker asked to stop</option><option value="transactional_cancel">Service enforces stop</option></select>
+      <p id="revocation-mode-description"></p><div id="revocation-comparison" class="guidance-comparison revocation-comparison"></div>
+      <p id="revocation-finding" class="guidance-takeaway"></p>
+      <details class="evidence-details"><summary>What this test can establish</summary><p>Thirty-two episodes compare ordinary instructions, explicit principles, a factual example and a new fable across four cases and two service modes. There is one sample per combination. Two fictional work contexts were authored in a separate Claude session; another session reviewed the case definitions without the guidance or target answers. This was project-commissioned AI review, with no independent external or human review.</p><p>The strong mechanism is conventional transactional cancellation. Both adapters reach the same local service; independently operated destinations and arbitrary code are outside this test. The host and operator remain trusted. The test does not establish operating-system containment or predict how a future agent will behave with broader access. An inaccurate report is recorded as an error, not automatically diagnosed as deliberate deception.</p><p>Only one background-note read occurred across the run. Those optional notes carried contextual completion pressure, so the experiment did not strongly test behavior under that pressure. Interface reliability and verified exposure to the intended conditions need improvement before another behavioral screen.</p><p>Every request and receipt is preserved. Offline verification reconstructs the tool history and checks actual database events and mailbox rows. Refusals, invalid output and unfinished episodes stay in the planned denominators.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/what-we-can-test.md">How we use hypothetical scenarios ↗</a></details>
+      <p id="revocation-provenance" class="guidance-provenance"></p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/revocation-agent/README.md">Protocol, results and complete evidence ↗</a></p>
     </section>
-
-    <section class="metrics" aria-label="Verified project snapshot">
-      <div class="metric"><span class="metric-label">PASSING CHECKS</span><strong id="test-count">—</strong><p>Recorded mechanism &amp; regression tests</p></div>
-      <div class="metric"><span class="metric-label">SIMULATED ENVIRONMENTS</span><strong id="environment-count">—</strong><p>Irreversible release · delegated stop</p></div>
-      <div class="metric"><span class="metric-label">TIMING MODELS</span><strong id="order-count">—</strong><p>Different orders. Different recovery windows.</p></div>
-      <div class="metric"><span class="metric-label">INDEPENDENT AI REVIEW</span><strong><span id="ai-review-rounds">—</span><span class="metric-aside">ROUNDS</span></strong><p><a href="#queue-review">Claude · project-commissioned</a></p></div>
-    </section>
-
-    <section id="impact" class="impact-section" aria-labelledby="impact-title">
-      <div class="section-heading"><div><p class="eyebrow">01 / POTENTIAL &amp; DEMONSTRATED PROTECTION</p><h2 id="impact-title">What has improved—and what might follow.</h2></div></div>
-      <div class="impact-grid">
-        <article class="impact-card"><span class="impact-label">POTENTIAL GLOBAL REDUCTION</span><h3 id="potential-reduction">Unquantified</h3><p>There is a plausible path from better safeguards to lower risk. We do not yet know its size, reach, or additional benefit over other safety work.</p><a href="#mechanism">See the proposed mechanism ↓</a></article>
-        <article class="impact-card demonstrated"><span class="impact-label">DEMONSTRATED IN SIMULATION</span><h3 id="demonstrated-protection">—</h3><p id="demonstrated-detail">Reading the recorded comparison…</p><a id="proof-link" href="#evidence">Inspect this experiment ↓</a></article>
-        <article class="impact-card"><span class="impact-label">DEMONSTRATED GLOBAL REDUCTION</span><h3 id="global-reduction">Not established</h3><p>We have no validated humanity-wide percentage reduction attributable to NorthStar. This is an evidence gap, not a measured zero effect.</p><button class="text-button" data-open-method>What would justify an update?</button></article>
-      </div>
-    </section>
-
     <section id="queue-evidence" class="impact-section" aria-labelledby="queue-title">
       <div class="section-heading"><div><p class="eyebrow">02 / FROM SIMULATOR TO PERSISTENT QUEUE</p><h2 id="queue-title">Does stop survive the handoff?</h2></div><p>Separate processes. A real local mailbox write.<br>Scripted clients; no external effects.</p></div>
       <div class="evidence-shell"><div class="experiment-intro"><div><h3>Permission checked where delivery commits.</h3><p id="queue-finding">Reading the recorded integration comparison…</p></div><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/queued-stop/README.md">Run and challenge it ↗</a></div>
@@ -1828,7 +2081,19 @@ dialog strong {
         <aside class="next-question" aria-labelledby="added-value-title"><p class="eyebrow">THE NEXT RESEARCH DECISION · COMPARISON NOT YET RUN</p><h3 id="added-value-title">Test what NorthStar adds.</h3><p>This queue experiment supports a known safety mechanism. NorthStar’s distinctive question is whether story-guided search finds important failures that conventional methods miss, or finds them at lower cost. The four-method comparison must test that at matched budgets on unfamiliar cases, then challenge the resulting repairs.</p><p>If narrative guidance adds no useful benefit, narrow that claim and keep the reusable tests and safeguards.</p><a class="source-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/discovery-study/PILOT.md">See the four-method comparison ↗</a></aside>
       </div>
     </section>
+    <section id="mechanism" class="next-section" aria-labelledby="next-title"><div class="section-heading"><div><p class="eyebrow">05 / HOW RISK COULD COME DOWN</p><h2 id="next-title">A safeguard has to reach the world.</h2></div><p>Each link needs evidence.<br>A useful prototype starts the chain.</p></div><ol class="mechanism-chain"><li><span class="step-number">01 / FIND</span><h3>Discover dangerous paths.</h3><p>Find ways agents can cause harm. Test whether story-guided search adds value over conventional methods.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/discovery-study/PILOT.md">Comparison still needed ↗</a></li><li><span class="step-number">02 / PROTECT</span><h3>Enforce a safeguard.</h3><p>Recheck authority before irreversible release. Revoke queued work when permission ends.</p><a href="#queue-evidence">Exercised in a local queue ↑</a></li><li><span class="step-number">03 / CHALLENGE</span><h3>Survive fresh attacks.</h3><p>Independent tests must show that repairs resist new attacks while legitimate work still succeeds.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/queued-stop/claude-review/README.md">Independent AI review by Claude ↗</a></li><li><span class="step-number">04 / ADOPT</span><h3>Use it in real systems.</h3><p>Validate a real effect boundary and useful adoption. Code in a repository does not enforce protection elsewhere.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/protocol/trust-ledger.md">Deployment evidence needed ↗</a></li><li><span class="step-number">05 / ASSESS</span><h3>Measure added protection.</h3><p>Estimate coverage, effectiveness and adoption beyond existing safeguards, including uncertainty and possible new risks.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/evidence-progress.md#limits-on-risk-claims">Global impact unestimated ↗</a></li></ol><p class="mechanism-note">This is the proposed mechanism for reducing risk. An estimate must also ask whether covered failure paths contribute to catastrophe, how safeguards overlap, and whether they introduce other harms. The links are not automatic percentage-point deductions.</p></section>
+    </div>
 
+    <div class="track" id="track-standing">
+      <div class="track-head"><h2>Where this leaves us</h2><p>What the evidence supports, what it does not, and what would have to be true before any of it justifies a claim about global risk.</p></div>
+    <section id="impact" class="impact-section" aria-labelledby="impact-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / POTENTIAL &amp; DEMONSTRATED PROTECTION</p><h2 id="impact-title">What has improved—and what might follow.</h2></div></div>
+      <div class="impact-grid">
+        <article class="impact-card"><span class="impact-label">POTENTIAL GLOBAL REDUCTION</span><h3 id="potential-reduction">Unquantified</h3><p>There is a plausible path from better safeguards to lower risk. We do not yet know its size, reach, or additional benefit over other safety work.</p><a href="#mechanism">See the proposed mechanism ↓</a></article>
+        <article class="impact-card demonstrated"><span class="impact-label">DEMONSTRATED IN SIMULATION</span><h3 id="demonstrated-protection">—</h3><p id="demonstrated-detail">Reading the recorded comparison…</p><a id="proof-link" href="#evidence">Inspect this experiment ↓</a></article>
+        <article class="impact-card"><span class="impact-label">DEMONSTRATED GLOBAL REDUCTION</span><h3 id="global-reduction">Not established</h3><p>We have no validated humanity-wide percentage reduction attributable to NorthStar. This is an evidence gap, not a measured zero effect.</p><button class="text-button" data-open-method>What would justify an update?</button></article>
+      </div>
+    </section>
     <section id="evidence" class="evidence-section" aria-labelledby="evidence-title">
       <div class="section-heading"><div><p class="eyebrow">03 / THE SIMULATOR EVIDENCE</p><h2 id="evidence-title">See what the experiments say.</h2></div><p>These are bounded, synthetic experiments.<br>Explore the conditions behind each result.</p></div>
       <div class="evidence-shell">
@@ -1848,10 +2113,7 @@ dialog strong {
         </section>
       </div>
     </section>
-
-    <section class="progress-section" aria-labelledby="progress-title"><div class="section-heading"><div><p class="eyebrow">04 / THE WORK SO FAR</p><h2 id="progress-title">Small steps. Checkable progress.</h2></div><p>Research results and preparation, kept distinct.<br>No milestone is assigned an extinction-risk discount.</p></div><div id="milestones" class="milestones"></div></section>
-
-    <section id="mechanism" class="next-section" aria-labelledby="next-title"><div class="section-heading"><div><p class="eyebrow">05 / HOW RISK COULD COME DOWN</p><h2 id="next-title">A safeguard has to reach the world.</h2></div><p>Each link needs evidence.<br>A useful prototype starts the chain.</p></div><ol class="mechanism-chain"><li><span class="step-number">01 / FIND</span><h3>Discover dangerous paths.</h3><p>Find ways agents can cause harm. Test whether story-guided search adds value over conventional methods.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/discovery-study/PILOT.md">Comparison still needed ↗</a></li><li><span class="step-number">02 / PROTECT</span><h3>Enforce a safeguard.</h3><p>Recheck authority before irreversible release. Revoke queued work when permission ends.</p><a href="#queue-evidence">Exercised in a local queue ↑</a></li><li><span class="step-number">03 / CHALLENGE</span><h3>Survive fresh attacks.</h3><p>Independent tests must show that repairs resist new attacks while legitimate work still succeeds.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/queued-stop/claude-review/README.md">Independent AI review by Claude ↗</a></li><li><span class="step-number">04 / ADOPT</span><h3>Use it in real systems.</h3><p>Validate a real effect boundary and useful adoption. Code in a repository does not enforce protection elsewhere.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/protocol/trust-ledger.md">Deployment evidence needed ↗</a></li><li><span class="step-number">05 / ASSESS</span><h3>Measure added protection.</h3><p>Estimate coverage, effectiveness and adoption beyond existing safeguards, including uncertainty and possible new risks.</p><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/evidence-progress.md#limits-on-risk-claims">Global impact unestimated ↗</a></li></ol><p class="mechanism-note">This is the proposed mechanism for reducing risk. An estimate must also ask whether covered failure paths contribute to catastrophe, how safeguards overlap, and whether they introduce other harms. The links are not automatic percentage-point deductions.</p></section>
+    </div>
 
     <section class="join-banner"><div><p class="eyebrow">THE FUTURE IS A SHARED PROJECT</p><h2>Help us earn the next step.</h2><p>Builders, skeptics, researchers, and independent replicators are welcome.</p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml">Get involved <span aria-hidden="true">↗</span></a></section>
     <footer class="site-footer"><div><strong>NORTHSTAR <span>/ CALIBRATED VISION</span></strong><p id="evidence-date"></p></div><div><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/verification.json">Evidence &amp; provenance ↗</a><p id="evidence-fingerprint"></p></div></footer>
@@ -2458,6 +2720,22 @@ dialog strong {
     const card=el('article',undefined,'milestone');card.append(el('span',item.number,'milestone-number'),el('span',item.type.toUpperCase(),`milestone-type${item.type==='Prepared'?' prepared':''}`),el('h3',item.title),el('p',item.description));
     const link=el('a',item.type==='Prepared'?'Read the plan ↗':'Inspect the evidence ↗');link.href=repo+item.source;card.append(link);$('milestones').append(card);
   });
+})();
+
+/* Track navigation: mark the track the reader is currently inside. */
+(() => {
+  const links = Array.from(document.querySelectorAll('.section-nav a'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  const targets = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if (targets.length !== links.length) return;
+  const visible = new Map();
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => visible.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0));
+    let best = null, bestRatio = 0;
+    visible.forEach((ratio, node) => { if (ratio > bestRatio) { bestRatio = ratio; best = node; } });
+    links.forEach((link, index) => link.classList.toggle('is-current', best !== null && targets[index] === best));
+  }, {rootMargin: '-64px 0px -55% 0px', threshold: [0, 0.05, 0.25, 0.5, 1]});
+  targets.forEach(node => observer.observe(node));
 })();
 </script>
 </body>

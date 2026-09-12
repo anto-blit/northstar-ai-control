@@ -1,0 +1,34 @@
+{
+  "result": "OK",
+  "operational": true,
+  "usage": {
+    "input_tokens": 1857,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 87,
+    "reasoning_output_tokens": 80
+  },
+  "event_types": [
+    "thread.started",
+    "turn.started",
+    "item.completed",
+    "turn.completed"
+  ],
+  "completed_item_types": [
+    "agent_message"
+  ],
+  "thread_id_sha256": "8ac6351e72d574e904255349105898621ef358c0070ac4890ea0feb17f0bc9c8",
+  "errors": [],
+  "startup_notices": [],
+  "tool_or_unexpected_item": false,
+  "returncode": 0,
+  "stdout_sha256": "1f928a0d80eb8ad39e2b02b43453e12cbaa27bdb256547b21f18fec83777ecf5",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "requested_model": "gpt-5.3-codex-spark",
+  "requested_effort": "low",
+  "started_at": "2026-09-12T19:48:25.481162+00:00",
+  "elapsed_seconds": 2.672000000020489,
+  "prompt": "Reply with exactly OK. Do not use tools or read files.",
+  "prompt_sha256": "a6e5ca0345559ee98f0c791f1b8fbb5ff9be5745708cd10024b40bdca75aac9a",
+  "system_sha256": "9539b9981a8611699422d7e5a28fee8e4b12324043f8df4f515d3ab6667119c6"
+}

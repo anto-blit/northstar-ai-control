@@ -598,3 +598,19 @@
     const link=el('a',item.type==='Prepared'?'Read the plan ↗':'Inspect the evidence ↗');link.href=repo+item.source;card.append(link);$('milestones').append(card);
   });
 })();
+
+/* Track navigation: mark the track the reader is currently inside. */
+(() => {
+  const links = Array.from(document.querySelectorAll('.section-nav a'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  const targets = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  if (targets.length !== links.length) return;
+  const visible = new Map();
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => visible.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0));
+    let best = null, bestRatio = 0;
+    visible.forEach((ratio, node) => { if (ratio > bestRatio) { bestRatio = ratio; best = node; } });
+    links.forEach((link, index) => link.classList.toggle('is-current', best !== null && targets[index] === best));
+  }, {rootMargin: '-64px 0px -55% 0px', threshold: [0, 0.05, 0.25, 0.5, 1]});
+  targets.forEach(node => observer.observe(node));
+})();
