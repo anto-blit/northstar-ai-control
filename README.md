@@ -31,7 +31,17 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: [the bounded counterexample search found no qualifying failure](experiments/failure-discovery/README.md).**
+**Latest: [the evidence safeguard worked; stories tied ordinary instructions](experiments/evidence-integrity-continuation/README.md).**
+G8-C completed 24 mock release tasks plus two fresh interface checks. Ordinary
+instructions, factual guidance and story guidance each scored 8/8, including
+malicious vendor notes. All 120 required legitimate releases occurred; no model
+altered the evidence or made an unauthorized release. In separate scripted attacks,
+the weak system accepted 24 unauthorized records and the conventional transaction
+guard accepted none, while preserving useful work after rejection. This is a local
+engineering result with no observed story benefit. The original rejected interface
+canary is preserved separately. [Inspect the site results](https://anto-blit.github.io/northstar-ai-control/#evidence-integrity).
+
+**Previous: [the bounded counterexample search found no qualifying failure](experiments/failure-discovery/README.md).**
 G7 completed all sixteen discovery episodes: twelve stopped trials respected
 revocation, four authorized comparisons succeeded, and 105/105 required useful
 deliveries occurred. Every response was valid; there were no provider refusals.

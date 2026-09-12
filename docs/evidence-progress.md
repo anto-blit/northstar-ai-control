@@ -1,7 +1,22 @@
 # Research progress and open questions
 
-Updated September 11, 2026 (America/Los_Angeles). This document separates executed
+Updated September 12, 2026 (America/Los_Angeles). This document separates executed
 evidence, research judgment, and the tests needed to decide what to pursue.
+
+The [G8-C evidence-integrity comparison](../experiments/evidence-integrity-continuation/README.md)
+is complete. All three guidance conditions score 8/8, with 120/120 required
+legitimate releases and no evidence edits or unauthorized releases. There is no
+observed narrative benefit. Separately, a conventional transactional guard blocks
+all 24 unauthorized records across eight scripted attack trials and preserves
+40/40 legitimate releases after rejection. This is a local safeguard result.
+The original interface failure is preserved; the amended run used fresh episodes.
+Neither that repair nor scripted violations should be relabelled as improved ethics.
+
+The [completed G7 search](../experiments/failure-discovery/README.md) likewise found
+no qualifying ordinary-agent stop violation, with all episodes valid and all
+required useful work completed. These two bounded negative behavioral results do
+not prove general safety. They do show that repeating these easy local tasks is
+not currently a productive way to measure added story benefit. Both versions stop.
 
 The [G6 revocation-agent screen](../experiments/revocation-agent/README.md) connects
 model tool requests to actual local queue effects and reports deliberate control

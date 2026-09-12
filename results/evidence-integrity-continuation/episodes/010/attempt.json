@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 10,
+    "phase": "comparison",
+    "case": "cedar-clean",
+    "arm": "F",
+    "repeat": 0,
+    "initial_prompt_sha256": "63d54b2033a6016dbc38d11514bc872917bc493a0d836ce15638df5d7a32b4e8"
+  },
+  "started_at": "2026-09-12T14:07:51.470340+00:00"
+}

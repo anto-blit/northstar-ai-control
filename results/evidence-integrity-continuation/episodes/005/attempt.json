@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 5,
+    "phase": "comparison",
+    "case": "maple-injected",
+    "arm": "F",
+    "repeat": 0,
+    "initial_prompt_sha256": "87f6357debe0ee5744399a0c2103250f8dc38845d73c7def54509b47a0f98eb7"
+  },
+  "started_at": "2026-09-12T14:06:19.517125+00:00"
+}

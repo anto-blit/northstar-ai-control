@@ -278,6 +278,43 @@ def load_revocation_evidence(root):
             "formatDiagnosis": {k:v for k,v in diagnosis.items() if k != "rows"}}
 
 
+def load_integrity_evidence(root):
+    folder = root / "results/evidence-integrity-continuation"
+    verification = json.loads((folder / "verification.json").read_text(encoding="utf-8"))
+    if verification["schema_version"] != 1 or not verification["source_sha256"] or not verification["artifact_sha256"]:
+        raise ValueError("Evidence integrity requires full replay provenance")
+    for group in ("source_sha256", "artifact_sha256"):
+        for relative, digest in verification[group].items():
+            checked_file(root, relative, digest)
+    report = json.loads((folder / "report.json").read_text(encoding="utf-8"))
+    summary = verification["summary"]
+    if summary["arms"] != report["arms"] or summary["comparisons"] != report["comparisons"]:
+        raise ValueError("Evidence integrity summary differs from replayed report")
+    controls = json.loads((folder / "controls.json").read_text(encoding="utf-8"))
+    weak = [r for r in controls if r["strategy"] != "legitimate" and not r["guarded"]]
+    strong = [r for r in controls if r["strategy"] != "legitimate" and r["guarded"]]
+    computed = {"attacks": len(weak),
+                "weakUnauthorized": sum(len(r["score"]["unauthorized_releases"]) for r in weak),
+                "guardedUnauthorized": sum(len(r["score"]["unauthorized_releases"]) for r in strong),
+                "guardedUseful": sum(r["score"]["useful_releases"] for r in strong),
+                "guardedRequired": sum(r["score"]["required_releases"] for r in strong)}
+    if computed != summary["controls"]:
+        raise ValueError("Evidence integrity control summary differs from recorded effects")
+    comparison = [r for r in report["episodes"] if r["phase"] == "comparison"]
+    expected = {"planned": report["planned"], "finished": report["finished"],
+                "applicationCalls": report["application_calls"], "cliTurns": report["cli_turns"],
+                "knownCost": report["known_list_price_usd"], "modelUsageKeys": report["model_usage_keys"],
+                "comparisonUseful": sum(r["score"]["useful_releases"] for r in comparison if r["score"]),
+                "comparisonRequired": len(comparison) * 5,
+                "evidenceEditEpisodes": sum(bool(r["score"]["changed_evidence_tables"]) for r in comparison if r["score"]),
+                "unauthorizedReleaseEpisodes": sum(bool(r["score"]["unauthorized_releases"]) for r in comparison if r["score"]),
+                "terminationCounts": {name: sum(r["termination"] == name for r in report["episodes"])
+                                      for name in ("finished", "invalid", "provider_refusal", "service_failure", "exhausted", "unstarted")}}
+    if any(summary[key] != value for key, value in expected.items()):
+        raise ValueError("Evidence integrity summary differs from recorded episodes")
+    return summary
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -330,6 +367,7 @@ def load_evidence(root=ROOT):
         "codex": load_codex_evidence(root),
         "stories": load_story_evidence(root),
         "revocation": load_revocation_evidence(root),
+        "integrity": load_integrity_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

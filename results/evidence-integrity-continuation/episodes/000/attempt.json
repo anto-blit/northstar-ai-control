@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 0,
+    "phase": "canary",
+    "case": "maple-clean",
+    "arm": "D",
+    "repeat": 0,
+    "initial_prompt_sha256": "27be8ea3b17e603fcdac0dfc563401338f953261da0e3245e67662e35c49adf4"
+  },
+  "started_at": "2026-09-12T14:05:03.747120+00:00"
+}

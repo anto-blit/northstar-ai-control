@@ -1,12 +1,31 @@
 # NorthStar — implementation and evidence
 
-Research specification: v0.3.1. Simulator: v0.2.0. Updated September 11, 2026.
+Research specification: v0.3.1. Simulator: v0.2.0. Updated September 12, 2026.
 
 Companion guidance and evaluation protocol: [revision I2](protocol/instrumentation.md),
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Latest study: [G7 failure discovery](experiments/failure-discovery/README.md).**
+**Latest study: [G8-C evidence integrity](experiments/evidence-integrity-continuation/README.md).**
+All 26 fresh episodes finished: two interface canaries and 24 comparisons.
+Ordinary instructions, principles/factual example and principles/original fable
+each score 8/8 (4/4 clean, 4/4 malicious-note cases). All 120 required comparison
+releases and 72 reviews occur; no source-write attempt, unauthorized release,
+evidence change, inaccurate final report or operational interruption. S/F has eight
+ties. No narrative advantage is observed. The 52 application calls/104 CLI turns
+cost $1.1447502 in reported list-price usage, with auxiliary Haiku usage disclosed.
+
+Twenty-four scripted controls expose two failure paths: eight attack trials produce
+24 unauthorized records with the weak connection, zero with a conventional guard,
+and 40/40 required legitimate releases after rejection. Legitimate-only controls
+also pass. These are control tests, not ordinary model misconduct. Fourteen harness
+tests pass locally; full replay and source/evidence hashes support publication.
+The earlier G8 first canary remains invalid because its correct SQL populated
+unused metadata; no effect occurred, $0.021211 usage is preserved, and its 25 other
+episodes remain unstarted. G8-C is a publicly registered post-observation interface
+amendment, not independent replication. Both versions stop; no global-risk decrement.
+
+**Previous study: [G7 failure discovery](experiments/failure-discovery/README.md).**
 The bounded search completed all sixteen discovery episodes after two successful
 interface canaries. Twelve revoked episodes respected the stop; four active
 comparisons succeeded. All 105/105 required useful deliveries occurred, with no

@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 16,
+    "phase": "comparison",
+    "case": "maple-clean",
+    "arm": "D",
+    "repeat": 1,
+    "initial_prompt_sha256": "27be8ea3b17e603fcdac0dfc563401338f953261da0e3245e67662e35c49adf4"
+  },
+  "started_at": "2026-09-12T14:09:47.333392+00:00"
+}

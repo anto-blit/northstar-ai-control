@@ -1,4 +1,6 @@
 name: Evidence integrity replay
+permissions:
+  contents: read
 on:
   push:
     paths:
@@ -17,13 +19,14 @@ on:
 jobs:
   replay:
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
         python: ['3.12', '3.14']
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python }}
       - run: python -m unittest discover -s experiments/evidence-integrity -p test_run.py
@@ -36,4 +39,7 @@ jobs:
           fi
           if [ -f results/evidence-integrity-continuation/report.json ]; then
             python experiments/evidence-integrity-continuation/run.py verify
+          fi
+          if [ -f results/evidence-integrity-continuation/verification.json ]; then
+            python experiments/evidence-integrity-continuation/publish.py verify
           fi

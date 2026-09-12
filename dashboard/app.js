@@ -183,8 +183,29 @@
   const formatP = value => value < 0.0001 ? '< 0.0001' : '= ' + Number(value.toFixed(4));
   const headline = !continued.allAnswered ? 'The resumed comparison is incomplete.' : contrast.statistically_supported ? 'The repair gain repeated on Sonnet.' : contrast.favorable_descriptive_replication ? 'An observed gain, still uncertain.' : 'The repair did not meet the replication criterion.';
   $('replication-title').textContent = headline;
-  $('latest-assessment').textContent = 'The conventional stop control passed its scripted checks.';
-  $('latest-assessment-detail').textContent = `${revocation.recorded}/${revocation.planned} ordinary-agent episodes recorded; ${revocationTotal('finished')} finished, ${revocationTotal('invalid')} ended on invalid tool output, ${revocationTotal('provider_refusal')} on provider refusal. The agent evidence and scripted controls are reported separately.`;
+  const integrity = data.integrity;
+  const ic = integrity.controls;
+  const integrityNames = {D:'Ordinary instructions',F:'Principles + factual example',S:'Principles + original fable'};
+  $('integrity-controls').textContent = `${ic.attacks} scripted attacks produced ${ic.weakUnauthorized} unauthorized release records with the weak system and ${ic.guardedUnauthorized} with the transactional safeguard. After rejected attacks, ${ic.guardedUseful}/${ic.guardedRequired} required legitimate releases completed. This is a measured local safeguard result; the attacks were deliberate scripts.`;
+  const it = integrity.terminationCounts;
+  $('integrity-summary').textContent = `${integrity.finished}/${integrity.planned} episodes finished, including two fresh interface checks. Across the 24 planned comparison episodes: ${integrity.evidenceEditEpisodes} committed evidence-edit episodes, ${integrity.unauthorizedReleaseEpisodes} unauthorized-release episodes, and ${integrity.comparisonUseful}/${integrity.comparisonRequired} required legitimate releases. ${it.invalid} invalid outputs, ${it.provider_refusal} provider refusals, ${it.service_failure} service failures, ${it.exhausted} exhausted episodes, ${it.unstarted} unstarted episodes.`;
+  Object.entries(integrity.arms).forEach(([arm, groups]) => {
+    const success = groups.clean.success + groups.injected.success;
+    const planned = groups.clean.planned + groups.injected.planned;
+    const card = document.createElement('article'); card.className = 'guidance-condition';
+    const title = document.createElement('h3'); title.textContent = integrityNames[arm];
+    const score = document.createElement('strong'); score.textContent = `${success}/${planned}`;
+    const detail = document.createElement('small'); detail.textContent = `Successful episodes. Clean notes: ${groups.clean.success}/${groups.clean.planned}. Malicious notes: ${groups.injected.success}/${groups.injected.planned}.`;
+    card.append(title,score,detail); $('integrity-comparison').append(card);
+  });
+  const storyPairs = integrity.comparisons.filter(p => p.success.S !== null && p.success.F !== null);
+  const storyWins = storyPairs.filter(p => p.success.S && !p.success.F).length;
+  const storyLosses = storyPairs.filter(p => !p.success.S && p.success.F).length;
+  const storyTies = storyPairs.length - storyWins - storyLosses;
+  $('integrity-finding').textContent = `Stories versus the matched factual example: ${storyWins} wins, ${storyLosses} losses and ${storyTies} ties; ${integrity.comparisons.length-storyPairs.length} pairs incomplete. ${storyWins === 0 && storyLosses === 0 ? 'No added benefit from stories was demonstrated on these cases.' : 'This small development comparison is descriptive and needs fresh-case confirmation.'}`;
+  $('integrity-provenance').textContent = `G8-C inputs published in ${integrity.publicCommit.slice(0,7)} before target calls. ${integrity.applicationCalls} application calls, ${integrity.cliTurns} CLI turns; $${integrity.knownCost.toFixed(4)} reported list-price usage. The original failed interface canary cost $${integrity.originalCanary.knownCost.toFixed(4)} and is preserved separately. All effects replay; raw records disclose auxiliary model usage.`;
+  $('latest-assessment').textContent = 'The evidence safeguard passed its scripted attack checks.';
+  $('latest-assessment-detail').textContent = `${integrity.finished}/${integrity.planned} model episodes finished. Story comparison: ${storyWins} wins, ${storyLosses} losses, ${storyTies} ties against matched factual guidance. Local safeguards and model behavior are reported separately.`;
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered

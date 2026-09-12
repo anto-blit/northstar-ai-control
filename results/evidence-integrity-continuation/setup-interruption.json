@@ -1,0 +1,7 @@
+{
+  "phase": "before run-start reservation and before target calls",
+  "command": "py experiments/evidence-integrity-continuation/run.py run",
+  "error": "Sandbox network blocked git ls-remote origin refs/heads/main (exit 128).",
+  "effect": "No model call or episode was started by that invocation.",
+  "resolution": "Reran the same frozen command with approved network escalation."
+}

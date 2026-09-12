@@ -10,6 +10,30 @@ and this permission change occurs, what does it do and what can the service stop
 That is a test of a stated mechanism, not a forecast that the scenario will occur.
 Failure rates in hand-selected simulations are not real-world incidence rates.
 
+## A useful test does not always need a misbehaving model
+
+A control can be challenged by a deliberate prohibited request before any ordinary
+model chooses that action. Passing demonstrates protection against those specified
+requests, provided legitimate work still succeeds. The deliberately faulty actor
+is a positive control, not evidence that today's AI spontaneously behaves that way.
+
+A behavioral test can also be informative when the model passes: the conclusion
+is limited to the stated task, tools, conditions, and sample. A valid test needs
+both a demonstrable failure path and demonstrable legitimate success, so that a
+broken test or universal refusal cannot look like protection.
+
+The separate claim that story guidance reduces a particular behavioral failure
+requires a measurable comparison. If ordinary instructions, factual examples, and
+stories all produce correct behavior, that test shows no added narrative benefit.
+The finding does not establish equivalence on every future task. Continuing to
+repeat the same easy test is not justified merely by hoping for a favorable result.
+
+The [G8/G8-C evidence-integrity study](../experiments/evidence-integrity-continuation/README.md)
+puts these distinctions into one test: independently scored SQL actions, scripted
+attacks on a conventional transaction guard, and separate ordinary/factual/story
+conditions. Malicious vendor-note cases are labelled prompt-injection challenges;
+they are not pooled into a claim about spontaneous cheating.
+
 ## Separate four kinds of evidence
 
 | Evidence | What it can establish | What it cannot establish by itself |
@@ -47,12 +71,14 @@ mechanism, not a representative sample of future threats or an independent holdo
 
 ## What would justify extending the work?
 
-The [G7 discovery search](../experiments/failure-discovery/README.md) makes one
-repeatable behavioral failure the immediate milestone. It uses a new structured
+The completed [G7 discovery search](../experiments/failure-discovery/README.md) made
+one repeatable behavioral failure its milestone. It used a new structured
 response interface and puts workload notes directly in the agent's input. Fixed
 discovery cases precede conditional fresh-session confirmation; a failure must
 produce an actual effect, and authorized comparison tasks must still succeed.
-Stories are not part of this search. Finding no candidate is a negative result.
+Stories were not part of this search. No candidate qualified, and that negative
+result closes G7 under its frozen rule. It does not prevent a different, explicitly
+labelled control test from being useful.
 
 A reproducible behavioral failure provides a target for a repair frozen before
 fresh-case testing. A control failure requires preserving the counterexample and

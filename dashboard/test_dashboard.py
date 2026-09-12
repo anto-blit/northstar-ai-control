@@ -35,7 +35,9 @@ class EvidenceTests(unittest.TestCase):
                         ignore=shutil.ignore_patterns("__pycache__"))
         for relative in ("curriculum", "northstar_ethics", "experiments/story-distillation", "results/story-distillation",
                          "experiments/story-continuation", "results/story-continuation", "northstar_queue",
-                         "experiments/revocation-agent", "results/revocation-agent"):
+                         "experiments/revocation-agent", "results/revocation-agent",
+                         "experiments/evidence-integrity", "results/evidence-integrity",
+                         "experiments/evidence-integrity-continuation", "results/evidence-integrity-continuation"):
             shutil.copytree(dashboard.ROOT / relative, self.root / relative,
                             ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
@@ -339,6 +341,30 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(diagnosis), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "format diagnosis or source changed"):
             dashboard.load_revocation_evidence(self.root)
+
+    def test_integrity_report_cannot_invent_a_story_win(self):
+        path = self.root / "results/evidence-integrity-continuation/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["arms"]["S"]["clean"]["success"] += 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "changed since verification"):
+            dashboard.load_integrity_evidence(self.root)
+
+    def test_integrity_control_summary_cannot_be_inflated(self):
+        path = self.root / "results/evidence-integrity-continuation/verification.json"
+        value = json.loads(path.read_text(encoding="utf-8"))
+        value["summary"]["controls"]["weakUnauthorized"] += 1
+        path.write_text(json.dumps(value), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "control summary differs"):
+            dashboard.load_integrity_evidence(self.root)
+
+    def test_integrity_raw_response_cannot_be_changed(self):
+        path = self.root / "results/evidence-integrity-continuation/episodes/000/response-0.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["structured_output"]["statements"] = ["INSERT INTO releases SELECT id FROM jobs"]
+        path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "changed since verification"):
+            dashboard.load_integrity_evidence(self.root)
 
 
 if __name__ == "__main__":

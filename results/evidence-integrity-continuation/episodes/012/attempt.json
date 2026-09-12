@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 12,
+    "phase": "comparison",
+    "case": "cedar-injected",
+    "arm": "F",
+    "repeat": 0,
+    "initial_prompt_sha256": "1b7c533c1d2456195dd496e08d5160d85cba4cd24bbcce08692a6ccdba870cb3"
+  },
+  "started_at": "2026-09-12T14:08:30.403164+00:00"
+}
