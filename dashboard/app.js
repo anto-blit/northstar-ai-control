@@ -228,6 +228,38 @@
     const answer = el('pre', example.response); $('repeatability-examples').append(link, answer);
   });
   $('repeatability-provenance').textContent = `Claude Sonnet 5 · ${repeatability.recorded} fresh stateless calls · $${repeatability.knownCost.toFixed(4)} reported list-price usage, including auxiliary Haiku usage. Scores recomputed from all saved responses. Earlier G9's four over-limit calls passed and remain a separate result. No global-risk reduction is estimated.`;
+  const micro = data.storyMicro;
+  if (micro) {
+    $('story-micro').hidden = false;
+    const lead = micro.rounds['2'].narrative_candidate;
+    const firstMicro = micro.rounds['1'].arms, secondMicro = micro.rounds['2'].arms;
+    const microTitle = lead ? 'A small story-guidance lead needs confirmation.' : 'No narrative safety lead met the micro-test rule.';
+    $('micro-title').textContent = microTitle;
+    $('micro-finding').textContent = lead
+      ? `On the fresh variants, stories made ${secondMicro.S.unsafe_approvals}/24 wrong approvals, factual guidance ${secondMicro.F.unsafe_approvals}/24 and the original prompt ${secondMicro.D.unsafe_approvals}/24. All three preserved 6/6 legitimate approvals. On the known case, wrong approvals were ${firstMicro.S.unsafe_approvals}/24 with stories and ${firstMicro.F.unsafe_approvals}/24 with factual guidance; factual guidance also had ${firstMicro.F.invalid} invalid answers.`
+      : 'Read both rounds below. Fewer malformed answers alone do not establish better moral judgment; a tie does not establish a story advantage.';
+    for (const [number, round] of Object.entries(micro.rounds)) {
+      $('micro-rounds').append(el('h3', number === '1' ? 'Round 1 · Known failing case' : 'Round 2 · Fresh numerical variants'));
+      const cards = el('div', undefined, 'guidance-comparison');
+      for (const [arm, title] of [['D','Original prompt'],['F','Rule + factual example'],['S','Rule + fable']]) {
+        const r = round.arms[arm];
+        const card = el('article', undefined, 'guidance-condition');
+        card.append(el('h4', title), el('strong', `${r.unsafe_approvals}/${r.forbidden_planned}`),
+          el('small', `Wrong approvals. ${r.correct_withholds} correct withholds; ${r.invalid} invalid answers. ${r.useful_approvals}/${r.useful_planned} legitimate approvals preserved.`));
+        cards.append(card);
+      }
+      $('micro-rounds').append(cards);
+    }
+    $('micro-selection').textContent = micro.version === 'v1'
+      ? 'The first fable answered every round-one case correctly, so the frozen selection rule retained it unchanged for round two. The prewritten revision was never used. No improvement from revising the story is claimed.'
+      : 'The frozen rule selected the prewritten revision after a first-round story error. Both factual and story guidance changed together. Since the cases also changed, a difference between rounds cannot isolate the revision.';
+    $('micro-provenance').textContent = `${micro.recorded}/${micro.planned} fresh Claude Sonnet 5 calls completed. $${micro.knownCost.toFixed(4)} reported list-price usage, including auxiliary Haiku usage. Every response and the adaptive selection are preserved; scores recomputed. Two-round cycle closed.`;
+    if (lead) {
+      $('latest-assessment').textContent = microTitle;
+      $('latest-assessment-detail').textContent = `Fresh variants: ${secondMicro.S.unsafe_approvals}/24 wrong approvals with stories, ${secondMicro.F.unsafe_approvals}/24 with matched factual guidance. All legitimate approvals preserved. This small lead needs fresh confirmation.`;
+      const latestLink = document.querySelector('.assessment a'); latestLink.href = '#story-micro'; latestLink.textContent = 'Inspect both micro rounds ↓';
+    }
+  }
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered

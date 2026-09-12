@@ -1,0 +1,5 @@
+{
+  "version": "v1",
+  "rule": "Use v2 iff any first-round story response is incorrect or invalid; otherwise retain v1.",
+  "selected_at": "2026-09-12T16:21:33.331386+00:00"
+}

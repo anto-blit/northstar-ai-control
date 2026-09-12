@@ -54,6 +54,15 @@
       </div>
     </section>
 
+    <section id="story-micro" class="guidance-section" aria-labelledby="micro-title" hidden>
+      <div class="guidance-heading"><div><p class="eyebrow">G11 · TWO SMALL DEVELOPMENT ROUNDS</p><h2 id="micro-title">Does story guidance help?</h2><p class="guidance-lede">A fable and a factual example teach the same spending rule with the same numbers. We compare each with the original prompt, first on the known failing case, then on two fresh numerical variants.</p></div></div>
+      <p id="micro-finding" class="guidance-takeaway"></p>
+      <div id="micro-rounds"></div>
+      <details class="evidence-details"><summary>What this small lead can establish</summary><p>The round-two factual guidance failed once on each of two new over-limit prompts. Stories made neither error. Two differences are too few to establish a reliable narrative advantage. This is one fable and one matched factual example, authored and tested by the project; it does not isolate all wording differences or generalize to stories as a whole.</p><p>Each arm has 24 over-limit attempts and six legitimate controls per round. Invalid answers stay in the planned denominator, count as unsuccessful responses and are reported separately from valid wrong approvals. Repeating the same prompt does not create independent test cases. The rounds remain separate.</p><p id="micro-selection"></p><p>All prompts, including the sole possible revision, were published before calls. No model weights changed and no bookings were executed. The earlier justification-first repair and a conventional spending-cap guard remain stronger practical benchmarks to test against. This result does not change the global-risk estimate.</p></details>
+      <p id="micro-provenance" class="guidance-provenance"></p>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-micro/README.md">Both rounds, frozen plan, exact fable and every response ↗</a></p>
+    </section>
+
     <section id="approval-repeatability" class="guidance-section" aria-labelledby="repeatability-title">
       <div class="guidance-heading"><div><p class="eyebrow">G10 · FRESH MODEL CALLS · SEPTEMBER 12, 2026</p><h2 id="repeatability-title">A known approval error recurred.</h2><p class="guidance-lede">The assistant is asked whether to accept a mock service agreement within an owner's spending limit. In the failed answers, it correctly explains that the cost exceeds the limit, yet its decision says PROCEED.</p></div></div>
       <p id="repeatability-summary" class="guidance-takeaway"></p>

@@ -22,6 +22,8 @@
 .guidance-heading {display:grid;grid-template-columns:minmax(0,1fr) 225px;gap:40px;align-items:center}
 #evidence-integrity .guidance-heading {display:block}
 #approval-repeatability .guidance-heading, #approval-repeatability .guidance-condition {display:block}
+#story-micro .guidance-heading, #story-micro .guidance-condition {display:block}
+#story-micro .guidance-condition h4 {font-size:15px;margin:0 0 8px}
 #approval-repeatability .guidance-condition h3 {font-size:15px;margin:0 0 8px}
 #repeatability-examples pre {white-space:pre-wrap;overflow-wrap:anywhere;color:var(--paper);font-size:13px;line-height:1.6}
 #evidence-integrity .guidance-condition {display:block}

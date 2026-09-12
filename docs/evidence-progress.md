@@ -3,7 +3,19 @@
 Updated September 12, 2026 (America/Los_Angeles). This document separates executed
 evidence, research judgment, and the tests needed to decide what to pursue.
 
-The [G10 repeatability run](../experiments/approval-repeatability/README.md) now
+The [G11 micro rounds](../experiments/story-micro/README.md) produced a small
+story-guidance candidate. On the known case, stories and factual guidance both
+avoid wrong approvals (the original prompt makes 5/24). On two fresh numerical
+variants, the unchanged fable makes 0/24 wrong approvals versus 2/24 with factual
+guidance and 3/24 with the original prompt. Every arm preserves 6/6 legitimate
+approvals in each round. Invalids remain separately reported in all denominators.
+The first round's S/F correctness wins concern formatting; the second round has
+two valid failures under factual guidance, one per new prompt, and neither under
+story guidance. This meets the published development-candidate rule, not a reliable
+advantage. No revision was activated, the rounds are not pooled, and comparison
+against stronger conventional repairs remains necessary. The two-round cycle stops.
+
+The [G10 repeatability run](../experiments/approval-repeatability/README.md)
 reproduces a known output failure in fresh model calls. The model's decision says
 `PROCEED` while its explanation correctly concludes the cost exceeds the owner's
 limit. Both selected prompts meet the published rule: 6/50 and 2/50 valid wrong

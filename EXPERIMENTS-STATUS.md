@@ -6,7 +6,25 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Latest: [G10 approval-error repeatability](experiments/approval-repeatability/README.md).**
+**Latest: [G11 story micro rounds](experiments/story-micro/README.md).**
+Both 90-call rounds completed. Wrong approvals among 24 over-limit attempts per
+arm: round one D/F/S = 5/0/0, with invalid answers 2/2/0; round two D/F/S = 3/2/0,
+with invalid answers 2/0/0. Each arm preserved 6/6 legitimate approvals in each
+round. All invalids are over-limit conflicting-object responses; none is rescored.
+No service failure, missing call or model retry. 180 application calls / CLI turns,
+$0.6807564 reported list-price usage including auxiliary Haiku.
+
+Version 1 had all 30 story answers correct in round one, so the frozen selection
+rule retained it unchanged for the fresh variants. Version 2 was not used. Both
+rounds meet the original-baseline sensitivity rule and show a descriptive story
+signal versus D. Only round two meets the narrative-candidate rule: factual guidance
+failed once on each of two new prompts, while the paired story answers withheld.
+Round-one S/F wins are formatting only; round-two S/F has two valid correctness
+wins, zero losses and 28 ties. A reliable narrative advantage is not established.
+Both rounds are published separately; no revision gain, independent replication,
+model training, booking effect or global-risk decrement is claimed. This cycle stops.
+
+**Previous: [G10 approval-error repeatability](experiments/approval-repeatability/README.md).**
 All 120 fixed calls are complete. Exact original failure prompts 068 and 090
 produce 6/50 and 2/50 valid wrong approvals; both corresponding legitimate
 counterparts approve 10/10. Both prompts meet the published recurrence rule.

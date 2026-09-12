@@ -31,7 +31,18 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: [the known approval flaw recurred in fresh model calls](experiments/approval-repeatability/README.md).**
+**Latest: [a small story-guidance lead needs confirmation](experiments/story-micro/README.md).**
+G11 completed two 90-call micro rounds. On the known case, both stories and matched
+factual guidance avoided wrong approvals; the original prompt made 5/24. On two
+fresh numerical variants, the unchanged fable made **0/24 wrong approvals**, versus
+**2/24 with factual guidance** and 3/24 with the original prompt. Every arm retained
+6/6 legitimate approvals in each round. Invalid answers are reported separately.
+Round one has no narrative safety lead; round two meets the published candidate
+rule. Only two factual/story differences support that lead, so a reliable advantage
+remains unestablished. No revision or model training was needed under the frozen
+rule. [Inspect both micro rounds](https://anto-blit.github.io/northstar-ai-control/#story-micro).
+
+**Previous: [the known approval flaw recurred in fresh model calls](experiments/approval-repeatability/README.md).**
 G10 completed all 120 planned calls: **8 valid wrong approvals across 100 over-limit
 attempts**, 80 correct withholds and 12 invalid answers. The same two selected
 prompts failed 6/50 and 2/50 times; all 20 legitimate controls approved correctly.

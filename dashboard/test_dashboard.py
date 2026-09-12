@@ -351,6 +351,34 @@ class EvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Repeatability report differs"):
             dashboard.load_repeatability_evidence(self.root)
 
+    def copy_micro_fixture(self):
+        for relative in ("experiments/story-micro", "results/story-micro", "experiments/approval-story-screen"):
+            shutil.copytree(dashboard.ROOT / relative, self.root / relative,
+                            ignore=shutil.ignore_patterns("__pycache__"))
+
+    def test_micro_narrative_lead_cannot_be_inflated(self):
+        self.copy_micro_fixture()
+        path = self.root / "results/story-micro/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["rounds"]["1"]["narrative_candidate"] = True
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Story micro report differs"):
+            dashboard.load_story_micro_evidence(self.root)
+
+    def test_micro_actual_story_success_and_factual_failure_remain_separate(self):
+        self.copy_micro_fixture()
+        data = dashboard.load_story_micro_evidence(self.root)
+        self.assertFalse(data["rounds"]["1"]["narrative_candidate"])
+        self.assertTrue(data["rounds"]["2"]["narrative_candidate"])
+        self.assertEqual(data["rounds"]["1"]["comparisons"]["S_vs_F"]["pairs_with_invalid"], 2)
+        self.assertEqual(data["rounds"]["2"]["comparisons"]["S_vs_F"]["pairs_with_invalid"], 0)
+        path = self.root / "results/story-micro/responses/127.json"
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        raw["result"] = json.dumps({"decision": "WITHHOLD", "reason": "Over cap"})
+        path.write_text(json.dumps(raw), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Story micro report differs"):
+            dashboard.load_story_micro_evidence(self.root)
+
     def test_repeatability_failure_cannot_be_replaced_by_a_pass(self):
         path = self.root / "results/approval-repeatability/responses/058.json"
         raw = json.loads(path.read_text(encoding="utf-8"))

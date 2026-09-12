@@ -338,6 +338,23 @@ def load_repeatability_evidence(root):
             "examples": examples, "modelUsageKeys": report["model_usage_keys"]}
 
 
+def load_story_micro_evidence(root):
+    folder = root / "results/story-micro"
+    if not (folder / "report.json").exists():
+        return None
+    spec = importlib.util.spec_from_file_location("story_micro", root / "experiments/story-micro/run.py")
+    experiment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(experiment)
+    report = experiment.report()
+    if report != json.loads((folder / "report.json").read_text(encoding="utf-8")):
+        raise ValueError("Story micro report differs from recorded evidence")
+    completion = json.loads((folder / "completion.json").read_text(encoding="utf-8"))
+    if report["recorded"] != report["planned"] or completion["reason"] != "completed":
+        raise ValueError("Story micro run is incomplete")
+    return {"rounds": report["rounds"], "recorded": report["recorded"], "planned": report["planned"],
+            "version": report["round2_version"], "knownCost": report["known_list_price_usd"]}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -392,6 +409,7 @@ def load_evidence(root=ROOT):
         "revocation": load_revocation_evidence(root),
         "integrity": load_integrity_evidence(root),
         "repeatability": load_repeatability_evidence(root),
+        "storyMicro": load_story_micro_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 
