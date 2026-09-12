@@ -3,6 +3,15 @@
 Updated September 11, 2026 (America/Los_Angeles). This document separates executed
 evidence, research judgment, and the tests needed to decide what to pursue.
 
+The [first story-to-rule implementation](../curriculum/README.md) now exists:
+six sourced fables, explicit interpretations and disagreements, and a runnable
+checker over supplied facts. This returns to the original guidance question.
+The [G5 development screen](../experiments/story-distillation/README.md) stopped
+on a provider safety error after five correctly completed episodes. Thirty
+episodes were never started. It supplies no narrative-effect finding; the
+implementation is inspectable while human review and behavioral validation
+remain outstanding. A provider rejection must not be counted as a moral loss.
+
 ## Is this a reasonable direction?
 
 The focused program is worth a controlled pilot. It connects a testable guidance
@@ -53,6 +62,7 @@ Git times below use America/Los_Angeles.
 | Registered replication G3 | September 10, 2026 | Plan published before target calls; 120 reviewed cases and two models. Session quota interrupted 720 planned calls after 27 model answers and 9 service errors. Three harmless authorized bookings replay; comparative replication remains unresolved |
 | Completed registered continuation G3-C | September 11, 2026 | All 720 answers returned, preserving the earlier 534-answer checkpoint. Sonnet original 94/96 versus repair and examples 96/96; two unsafe approvals versus none, usefulness preserved. Paired p = 0.5 remains inconclusive. Opus at ceiling, 72 authorized bookings and no unsafe commits in any condition |
 | Separate Codex comparison G4 | September 11, 2026 | Publicly registered 288 calls on all 96 G3 direct cases. Requested GPT-6 Astra scores 96/96 under original, repair and factual examples, with usefulness preserved and no unsafe or invalid answers. No observed added repair benefit; no pooling with Claude |
+| Story distillation prototype and G5 screen | September 11, 2026 | Six sourced fables compiled into explicit conditional rules, with disagreements preserved. Eleven prototype tests and an interactive checker. Model screen stopped on one provider error: five complete episodes, one interrupted, 30 unstarted. No guidance advantage established |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not

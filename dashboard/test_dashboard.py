@@ -33,6 +33,9 @@ class EvidenceTests(unittest.TestCase):
         shutil.copytree(dashboard.ROOT / "results/codex-repair", self.root / "results/codex-repair")
         shutil.copytree(dashboard.ROOT / "experiments/codex-repair", self.root / "experiments/codex-repair",
                         ignore=shutil.ignore_patterns("__pycache__"))
+        for relative in ("curriculum", "northstar_ethics", "experiments/story-distillation", "results/story-distillation"):
+            shutil.copytree(dashboard.ROOT / relative, self.root / relative,
+                            ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
         artifacts = {"recoverability.json": {"schema_version": 2},
                      "monitor-sweep.json": {"schema_version": 2}}
@@ -238,6 +241,31 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(record), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Frozen evidence changed"):
             dashboard.load_codex_evidence(self.root)
+
+    def test_story_service_error_is_separate_from_completed_decisions(self):
+        data = dashboard.load_story_evidence(self.root)
+        self.assertTrue(data["stopped"])
+        self.assertFalse(data["allComplete"])
+        self.assertEqual([data["summary"][arm]["completedEpisodes"] for arm in "DFS"], [1, 2, 2])
+        self.assertEqual(sum(x["interruptedEpisodes"] for x in data["summary"].values()), 1)
+        self.assertEqual(sum(x["unstartedEpisodes"] for x in data["summary"].values()), 30)
+        self.assertFalse(data["catalog"]["deployment_approved"])
+
+    def test_story_claim_and_local_effect_cannot_be_invented(self):
+        path = self.root / "results/story-distillation/stop.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["partial"]["summary"]["S"]["correct"] += 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "report or evidence changed"):
+            dashboard.load_story_evidence(self.root)
+
+    def test_story_rule_cannot_be_silently_relaxed(self):
+        path = self.root / "curriculum/aesop-v1.json"
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+        catalog["boundaries"][0]["expected"] = False
+        path.write_text(json.dumps(catalog), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Frozen source changed"):
+            dashboard.load_story_evidence(self.root)
 
 
 if __name__ == "__main__":

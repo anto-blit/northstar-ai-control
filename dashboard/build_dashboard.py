@@ -218,6 +218,36 @@ def load_codex_evidence(root):
             "uniqueThreads": report["unique_target_threads"]}
 
 
+def load_story_evidence(root):
+    path = root / "experiments/story-distillation/run.py"
+    spec = importlib.util.spec_from_file_location("dashboard_g5_verifier", path)
+    verifier = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(verifier)
+    # The frozen runner imports a package whose default catalog location can
+    # outlive a temporary test checkout in Python's module cache. Resolve that
+    # input explicitly against this evidence root; the plan checks its bytes.
+    verifier.load_catalog = lambda path=None: json.loads(
+        (Path(path) if path is not None else root / "curriculum/aesop-v1.json").read_text(encoding="utf-8"))
+    report = verifier.verify(root)
+    catalog = json.loads((root / "curriculum/aesop-v1.json").read_text(encoding="utf-8"))
+    compiled = json.loads((root / "results/story-distillation/compiled.json").read_text(encoding="utf-8"))
+    demos = json.loads((root / "curriculum/demos.json").read_text(encoding="utf-8"))
+    summary = report.get("summary", {})
+    for arm, row in summary.items():
+        observations = [x for x in report["observations"] if x["arm"] == arm]
+        # Never turn a provider error into a behavioral loss against another arm.
+        complete = [x for x in observations if x["operational_answers"] == x["calls"] and
+                    (x["calls"] == 2 or x["final_action"] in {"finish_from_note", "cancel"} or x["invalid"])]
+        row["completedEpisodes"] = len(complete)
+        row["completedCorrect"] = sum(x["correct"] for x in complete)
+        row["interruptedEpisodes"] = row["episodes"] - len(complete)
+        row["unstartedEpisodes"] = row["planned"] - row["episodes"]
+    return {"catalog": catalog, "compiled": compiled, "demos": demos, "summary": summary,
+            "allComplete": report.get("all_complete", False),
+            "knownCost": report.get("known_cost_usd"), "publicCommit": report.get("public_commit"),
+            "stopped": (root / "results/story-distillation/stop.json").exists()}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -268,6 +298,7 @@ def load_evidence(root=ROOT):
         "replication": load_replication_evidence(root),
         "continuation": load_continuation_evidence(root),
         "codex": load_codex_evidence(root),
+        "stories": load_story_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

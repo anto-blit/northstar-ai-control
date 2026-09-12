@@ -1,5 +1,20 @@
 # Changelog
 
+## Story-to-rule prototype and interrupted G5 screen — September 11, 2026
+
+- Add six sourced Aesop fables, new retellings, structured interpretations,
+  factual counterparts, conditional rules, exceptions and disagreements.
+  Human review is pending; the scope excludes any universal moral claim.
+- Add a compiler and inspectable rule checker for supplied facts, with eleven
+  targeted tests and allow/block/review behavior. Preserve useful authorized work.
+- Publicly freeze G5 before target calls. Record five completed correct episodes,
+  one provider safety error labeled `[bio]`, and 30 unstarted episodes; no retry,
+  narrative advantage or global-risk decrement. Separate the service failure
+  from moral decisions and qualify the frozen partial comparison counter.
+- Publish interactive source/lesson inspection and editable decision examples.
+  Check 117 browser/Python decision variations, six story displays, responsive
+  layouts and 26 dashboard integrity tests. Older frozen experiments stay intact.
+
 ## Separate Codex comparison completed at ceiling — September 11, 2026
 
 - Complete all 288 preregistered Codex calls on the full 96-case G3 direct set,

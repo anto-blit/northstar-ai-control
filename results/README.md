@@ -1,5 +1,15 @@
 # Results
 
+`story-distillation/` contains G5's public plan, compiled provisional rule set,
+12 provider-call records, six episode ledgers and an operational stop report.
+Five episodes completed correctly; one was interrupted by a provider safety
+error labeled `[bio]`, and 30 were not started. There is no behavioral advantage
+finding. The frozen S/D fixed-slot counter includes the missing D answer and
+must not be interpreted as a moral win; see the
+[complete accounting and limits](../experiments/story-distillation/README.md).
+The associated [six-story catalog](../curriculum/README.md) and interactive
+rule checker are engineering artifacts with human review pending.
+
 `experiment-results.json`, `property-check-results.json`, and
 `baseline-comparison.json` are executed synthetic mechanism/conformance results.
 `recoverability.json` reports backward induction for a bounded reach-avoid

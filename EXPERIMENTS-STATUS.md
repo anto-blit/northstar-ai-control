@@ -6,6 +6,22 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
+**Latest implementation: [story distillation G5](experiments/story-distillation/README.md).**
+Six Aesop source passages have AI-authored interpretations, conditional rules,
+exceptions and explicit disagreement records. A compiler and rule checker run
+on trusted structured facts; missing facts and unresolved conflicts require
+review. The site provides interactive examples. Eleven targeted prototype tests
+pass; this is engineering evidence, not an ethical performance guarantee.
+
+The public G5 development plan compares distilled guidance, factual examples
+and stories across 36 two-step episodes. It stopped after 12 calls: 11 operational
+answers and one provider safety error labeled `[bio]`. Five episodes completed
+correctly; one was interrupted and 30 were unstarted. Only the authority pair
+was reached. No narrative advantage is established, and the error is not a wrong
+moral judgment. The original fixed-slot counter is preserved and explicitly
+qualified. No retry or provider substitution is scheduled. Human interpretation
+review remains pending and there is no global-risk decrement.
+
 The separate [guidance micro-pilot G0](experiments/guidance-pilot/README.md) has
 now completed 48 model calls with an AI-reviewed 16-case corpus. It is a
 best-effort rehearsal with disclosed departures from I2's human-review design.

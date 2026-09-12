@@ -1,0 +1,10 @@
+{
+  "case": "permission-revoked",
+  "arm": "S",
+  "effects": [
+    {
+      "kind": "public_overview",
+      "case": "permission-revoked"
+    }
+  ]
+}

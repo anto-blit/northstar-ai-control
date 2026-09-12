@@ -31,7 +31,16 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest follow-up:** the [registered continuation G3-C](experiments/repair-continuation/README.md)
+**New: [try the story-to-rule prototype](https://anto-blit.github.io/northstar-ai-control/#stories).**
+Six sourced fables now have explicit lessons, reasons, exceptions, disagreements
+and runnable conditional rules. Change the supplied facts on the site to inspect
+an allow, block or review decision. The interpretations are provisional and human
+review is pending; the checker does not establish its input facts or encode all
+morality. A small [G5 model comparison](experiments/story-distillation/README.md)
+stopped after five completed episodes and one provider safety error. Those five
+were correct, but the incomplete sample establishes no guidance advantage.
+
+**Completed repair follow-up:** the [registered continuation G3-C](experiments/repair-continuation/README.md)
 has completed **all 720 planned model answers**, retaining every earlier answer.
 Sonnet scores 94/96 with original prompting and 96/96 with repair or factual
 examples: two unsafe approvals versus none, with all legitimate approvals
@@ -100,6 +109,7 @@ risk. Global reduction remains unestimated. [Open locally or rebuild it →](das
 
 | Component | What exists |
 |---|---|
+| **Story-to-rule prototype** | Six sourced fables with explicit disagreements; a compiler and conditional rule checker; six interactive examples. Human review and a behavioral advantage remain unestablished. |
 | **Irreversible release** | A simulated protected release defeats a deliberately weak monitor-only control. The repaired broker blocks it before commit and permits authorized releases. |
 | **Delegated stop** | A deliberately weak parent-only stop leaves queued work executable. The repaired broker revokes scoped authority and rechecks at dispatch. |
 | **Persistent queue integration** | Separate processes and a durable local mailbox test claimed-work cancellation, restart, retries and useful completion against cooperative cancellation and a strong conventional transaction check. |

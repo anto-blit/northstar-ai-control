@@ -9,6 +9,86 @@
   const el = (tag, text, className) => { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; if (className) node.className = className; return node; };
   const svg = (tag, attributes, text) => { const node = document.createElementNS(NS, tag); Object.entries(attributes).forEach(([key, value]) => node.setAttribute(key, String(value))); if (text !== undefined) node.textContent = text; return node; };
 
+  const storyData = data.stories;
+  const stories = storyData.catalog.stories;
+  stories.forEach(story => { const option = el('option', story.title); option.value = story.id; $('lesson-select').append(option); });
+  function renderStory() {
+    const story = stories.find(row => row.id === $('lesson-select').value);
+    $('lesson-retelling').textContent = story.retelling;
+    $('lesson-principle').textContent = story.principle;
+    $('lesson-reason').textContent = story.rationale;
+    $('lesson-exceptions').textContent = story.exceptions.join(' ');
+    $('lesson-disagreements').textContent = story.disagreements.join(' ');
+    $('lesson-original').textContent = story.source_text;
+    $('lesson-source').href = story.source_url;
+  }
+  $('lesson-select').addEventListener('change', renderStory);
+  renderStory();
+
+  const factLabels = {
+    authorization_valid: 'Current authorization exists', consent_respected: 'Required consent is respected',
+    serious_harm_avoided: 'Serious harm is avoided', coercion_avoided: 'Coercion is avoided',
+    unresolved_value_conflict: 'A material conflict between values remains', recipient_can_use: 'The recipient can use this format',
+    claim_supported: 'The claim agrees with the evidence', burden_accepted: 'The worker accepted this assignment',
+    feasibility_verified: 'The worker’s capability is verified', need_based: 'Assistance follows the stated need policy'
+  };
+  const demoNames = ['Authorized accessible sharing', 'Sharing after permission is revoked', 'An unsupported success report',
+                     'An unverified worker', 'Competing urgent needs', 'Helping without repayment'];
+  storyData.demos.forEach((demo, i) => { const option = el('option', demoNames[i]); option.value = demo.id; $('lesson-demo-select').append(option); });
+  function renderVerdict() {
+    const demo = storyData.demos.find(row => row.id === $('lesson-demo-select').value);
+    const rules = storyData.compiled.rules.filter(rule => rule.actions.includes(demo.action_type));
+    const checks = rules.map(rule => {
+      const raw = $('lesson-fact-'+rule.fact).value;
+      const value = raw === 'unknown' ? null : raw === 'true';
+      return {rule, value, status: value === null ? 'REVIEW' : value === rule.expected ? 'PASS' : rule.failure};
+    });
+    const disposition = checks.some(row => row.status === 'BLOCK') ? 'BLOCK' : checks.some(row => row.status === 'REVIEW') ? 'REVIEW' : 'ALLOW';
+    $('lesson-verdict').textContent = {ALLOW:'Allow this action', BLOCK:'Block this action', REVIEW:'Needs human review'}[disposition];
+    $('lesson-verdict').dataset.state = disposition;
+    $('lesson-verdict-detail').textContent = {
+      ALLOW:'The supplied facts satisfy every applicable rule. This does not independently establish that those facts are true.',
+      BLOCK:'At least one explicit condition fails. A good intention or unresolved question cannot override that failure.',
+      REVIEW:'A required fact is unknown or a material conflict remains. The checker cannot authorize this action.'
+    }[disposition];
+    $('lesson-trace').replaceChildren();
+    checks.forEach(({rule, status}) => {
+      const source = rule.story_id ? stories.find(story => story.id === rule.story_id).title : 'Explicit sandbox contract';
+      $('lesson-trace').append(el('li', `${status} · ${rule.reason} (${source})`));
+    });
+  }
+  function renderDemo() {
+    const demo = storyData.demos.find(row => row.id === $('lesson-demo-select').value);
+    $('lesson-situation').textContent = demo.situation;
+    $('lesson-facts').replaceChildren();
+    const names = [...new Set(storyData.compiled.rules.filter(rule => rule.actions.includes(demo.action_type)).map(rule => rule.fact))];
+    names.forEach(name => {
+      const label = el('label', factLabels[name] || name);
+      const select = el('select'); select.id = 'lesson-fact-'+name;
+      [['true','Yes'],['false','No'],['unknown','Unknown']].forEach(([value, text]) => { const option = el('option', text); option.value = value; select.append(option); });
+      select.value = demo.facts[name] == null ? 'unknown' : String(demo.facts[name]);
+      select.addEventListener('change', renderVerdict); label.append(select); $('lesson-facts').append(label);
+    });
+    renderVerdict();
+  }
+  $('lesson-demo-select').addEventListener('change', renderDemo);
+  renderDemo();
+  const storyRows = Object.values(storyData.summary);
+  const completedStories = storyRows.reduce((n,row) => n+row.completedEpisodes,0);
+  const plannedStories = storyRows.reduce((n,row) => n+row.planned,0);
+  $('story-screen-title').textContent = storyData.stopped ? 'The model comparison stopped early.' : storyData.allComplete ? 'The first development comparison is recorded.' : 'The comparison is registered.';
+  $('story-screen-summary').textContent = `${completedStories}/${plannedStories || 36} episodes completed. ${storyData.stopped ? 'A provider service rejection labeled “[bio]” interrupted one document-sharing episode. The fixed protocol stopped further calls.' : 'Completion and model choices are recorded separately from the rule gate’s effects.'}`;
+  Object.entries(storyData.summary).forEach(([arm,row]) => {
+    const card = el('div', undefined, 'guidance-condition');
+    card.append(el('span', {D:'Distilled principles',F:'With factual examples',S:'With stories'}[arm]),
+      el('strong', `${row.completedCorrect}/${row.completedEpisodes}`), el('small', 'correct among completed episodes'),
+      el('small', `${row.interruptedEpisodes} interrupted · ${row.unstartedEpisodes} not started · ${row.planned} planned`));
+    $('story-screen-comparison').append(card);
+  });
+  $('story-screen-limit').textContent = storyData.stopped
+    ? 'Only the permission pair was reached. Five completed episodes were correct; this incomplete sample cannot establish a difference between methods. A service error is not a wrong moral decision. No retries or provider substitution are scheduled.'
+    : 'These are project-authored development cases, with human review pending. No broad behavioral advantage or global-risk reduction follows from this small comparison.';
+
   $('baseline-value').replaceChildren(document.createTextNode(data.risk.assumedBaselinePercent.toFixed(2)), el('span', '%'));
   $('test-count').textContent = data.verification.tests;
   $('environment-count').textContent = Object.keys(data.recovery.safe_fallbacks).length;
@@ -51,8 +131,8 @@
   const formatP = value => value < 0.0001 ? '< 0.0001' : '= ' + Number(value.toFixed(4));
   const headline = !continued.allAnswered ? 'The resumed comparison is incomplete.' : contrast.statistically_supported ? 'The repair gain repeated on Sonnet.' : contrast.favorable_descriptive_replication ? 'An observed gain, still uncertain.' : 'The repair did not meet the replication criterion.';
   $('replication-title').textContent = headline;
-  $('latest-assessment').textContent = headline;
-  $('latest-assessment-detail').textContent = `Claude: ${continued.answered}/${continued.planned} answers. Separate Codex comparison: ${data.codex.answered}/${data.codex.planned}. All three approaches stay visible.`;
+  $('latest-assessment').textContent = 'The story-to-rule prototype is ready to explore.';
+  $('latest-assessment-detail').textContent = 'Six sourced fables, explicit disagreements and a runnable decision checker. A behavioral advantage remains unestablished.';
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered

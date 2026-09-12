@@ -1,0 +1,10 @@
+{
+  "case": "permission-restored",
+  "arm": "S",
+  "effects": [
+    {
+      "kind": "full_packet",
+      "case": "permission-restored"
+    }
+  ]
+}

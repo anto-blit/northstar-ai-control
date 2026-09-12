@@ -16,7 +16,7 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z"/></svg>
       <span>NORTHSTAR<small>THE PROGRESS OBSERVATORY</small></span>
     </a>
-    <nav aria-label="Main navigation"><a href="#replication">Latest experiment</a><button class="text-button" data-open-method>About the estimate</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#stories">Explore the lessons</a><button class="text-button" data-open-method>About the estimate</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="hero-title">
@@ -25,7 +25,7 @@
         <h1 id="hero-title">Protecting humanity’s <em>freedom and future</em> <span class="hero-world">in an AI world</span></h1>
         <p class="hero-description">NorthStar began with a frightening possibility: AI could destroy humanity. Our mission is to help bring that danger down through ethical guidance, better tests, and safeguards that hold when they matter.</p>
         <div class="hero-actions"><a class="primary-link" href="#impact">See potential &amp; evidence <span aria-hidden="true">↓</span></a><a class="text-button" href="#mechanism">How could we reduce the risk?</a></div>
-        <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong id="latest-assessment">Reading the latest comparison…</strong><br><span id="latest-assessment-detail"></span> <a href="#replication">See the current evidence ↓</a></p></div>
+        <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong id="latest-assessment">Reading the latest comparison…</strong><br><span id="latest-assessment-detail"></span> <a href="#stories">Try the story prototype ↓</a></p></div>
       </div>
       <div class="risk-panel">
         <div class="risk-topline"><span>THE NORTHSTAR THERMOMETER</span><span class="tag">REFERENCE POINT</span></div>
@@ -52,6 +52,29 @@
         </div>
         <div class="risk-source"><p>Geoffrey Hinton · <a href="https://www.wbur.org/onpoint/2025/12/29/godfather-of-ai-geoffrey-hinton">WBUR interview, Jan. 10, 2025 ↗</a><br>Personal forecast; horizon anchored to the interview.</p><button class="round-button" data-open-method aria-label="Read the risk reference's source and assumptions">i</button></div>
       </div>
+    </section>
+
+    <section id="stories" class="guidance-section" aria-labelledby="stories-title">
+      <div class="guidance-heading"><div><p class="eyebrow">THE ORIGINAL QUESTION · FIRST WORKING PROTOTYPE</p><h2 id="stories-title">From six fables to decisions you can inspect.</h2><p class="guidance-lede">Explore a story, its proposed lesson and the interpretations we reject. Then change the facts in a small example to see which rules allow an action, block it or require human review.</p></div></div>
+      <p class="guidance-takeaway">A provisional collection, with human review still pending. The rule checker uses facts supplied to it; it does not establish those facts or determine all of morality.</p>
+      <div class="lesson-layout">
+        <article class="lesson-card">
+          <label class="lesson-label" for="lesson-select">Choose a story</label><select id="lesson-select"></select>
+          <p id="lesson-retelling" class="lesson-story"></p>
+          <p class="eyebrow">PROPOSED LESSON</p><h3 id="lesson-principle"></h3><p id="lesson-reason"></p>
+          <details class="evidence-details"><summary>Limits, disagreement and the source</summary><p id="lesson-exceptions"></p><p id="lesson-disagreements"></p><p class="lesson-source-note">Original passage · V. S. Vernon Jones, 1912. The story above is a new project retelling.</p><blockquote id="lesson-original"></blockquote><a id="lesson-source" class="source-link">Read the source edition ↗</a></details>
+        </article>
+        <article class="lesson-card">
+          <label class="lesson-label" for="lesson-demo-select">Try a decision</label><select id="lesson-demo-select"></select>
+          <p id="lesson-situation"></p><div id="lesson-facts" class="lesson-facts"></div>
+          <div class="lesson-verdict" aria-live="polite"><span class="eyebrow">UNDER THESE SUPPLIED FACTS</span><strong id="lesson-verdict"></strong><p id="lesson-verdict-detail"></p></div>
+          <details class="evidence-details"><summary>Trace every rule check</summary><ul id="lesson-trace"></ul></details>
+          <p class="lesson-source-note">This interactive example runs locally. It makes no AI calls and performs no external action.</p>
+        </article>
+      </div>
+      <div class="story-screen"><p class="eyebrow">G5 · SMALL MODEL COMPARISON</p><h3 id="story-screen-title"></h3><p id="story-screen-summary"></p><div id="story-screen-comparison" class="guidance-comparison"></div><p id="story-screen-limit" class="guidance-takeaway"></p></div>
+      <div class="guidance-next"><div><h3>The lesson has to change behavior.</h3><p>We compare stories with the same principles and factual examples. Passing software checks does not establish better moral judgment.</p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/curriculum/README.md">Run or review the prototype <span aria-hidden="true">↗</span></a></div>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-distillation/README.md">Read the comparison, service error and complete record ↗</a></p>
     </section>
 
     <section id="replication" class="guidance-section" aria-labelledby="replication-title">
