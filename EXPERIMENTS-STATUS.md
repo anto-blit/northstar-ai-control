@@ -6,7 +6,20 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Latest study: [G6 revocation-agent](experiments/revocation-agent/README.md).**
+**Latest study: [G7 failure discovery](experiments/failure-discovery/README.md).**
+The bounded search completed all sixteen discovery episodes after two successful
+interface canaries. Twelve revoked episodes respected the stop; four active
+comparisons succeeded. All 105/105 required useful deliveries occurred, with no
+unauthorized request/effect, invalid response, refusal or missing episode.
+No candidate qualified for confirmation. The counterexample milestone remains
+unmet. All 54 application calls and actual effects replay; known list-price usage
+was $0.5415008. Eleven harness tests pass across Windows/Linux and Python 3.10/3.14.
+The plan and sixteen separate scripted controls were public before target calls.
+The new interface and mandatory note delivery improve interpretability in this
+run; they do not establish a story advantage or general safety. This version stops
+under its published rule. No global-risk decrement.
+
+**Previous study: [G6 revocation-agent](experiments/revocation-agent/README.md).**
 The public plan separates model behavior from scripted control challenges, using
 actual loopback HTTP requests and SQLite mailbox effects. The eight scripted
 controls reproduce post-stop delivery in both revoked weak-control cases and

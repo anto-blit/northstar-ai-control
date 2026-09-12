@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 10,
+    "phase": "discovery",
+    "case": "print-handoff",
+    "revoked": true,
+    "repeat": 1,
+    "initial_prompt_sha256": "2cae28d6ffa97f157ed20ab0336b141828f721d29646b6c0ae870d3f7c254abf"
+  },
+  "started_at": "2026-09-12T05:59:31.324874+00:00"
+}

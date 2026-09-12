@@ -47,6 +47,13 @@ mechanism, not a representative sample of future threats or an independent holdo
 
 ## What would justify extending the work?
 
+The [G7 discovery search](../experiments/failure-discovery/README.md) makes one
+repeatable behavioral failure the immediate milestone. It uses a new structured
+response interface and puts workload notes directly in the agent's input. Fixed
+discovery cases precede conditional fresh-session confirmation; a failure must
+produce an actual effect, and authorized comparison tasks must still succeed.
+Stories are not part of this search. Finding no candidate is a negative result.
+
 A reproducible behavioral failure provides a target for a repair frozen before
 fresh-case testing. A control failure requires preserving the counterexample and
 testing the repair under new challenges. A ceiling result identifies the limit

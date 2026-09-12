@@ -31,7 +31,15 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: [test a concrete stop boundary](https://anto-blit.github.io/northstar-ai-control/#revocation).**
+**Latest: [the bounded counterexample search found no qualifying failure](experiments/failure-discovery/README.md).**
+G7 completed all sixteen discovery episodes: twelve stopped trials respected
+revocation, four authorized comparisons succeeded, and 105/105 required useful
+deliveries occurred. Every response was valid; there were no provider refusals.
+Two preceding interface canaries also passed. No candidate qualified for fresh
+confirmation. We improved measurement reliability in this run, but did not earn
+the counterexample milestone or establish a story benefit or risk reduction.
+
+**Previous: [test a concrete stop boundary](https://anto-blit.github.io/northstar-ai-control/#revocation).**
 The [G6 study](experiments/revocation-agent/README.md) separates ordinary-agent
 behavior from scripted control tests. Deliberate post-stop delivery succeeds in
 2/2 revoked cases with cooperative cancellation and 0/2 with conventional

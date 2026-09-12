@@ -1,5 +1,14 @@
 # Results
 
+`failure-discovery/` contains G7's public plan, sixteen scripted controls, two
+successful interface canaries and all sixteen completed discovery episodes.
+Twelve revoked episodes and four active comparisons produce no unauthorized
+action and complete 105/105 useful deliveries. There are no invalid responses,
+refusals or unstarted discovery slots. No candidate qualifies for confirmation.
+All 54 application calls, tool receipts and actual mailbox effects are preserved
+and replay offline. The requested counterexample milestone is unmet; this is a
+bounded negative search. [Results and limits](../experiments/failure-discovery/README.md).
+
 `revocation-agent/` contains G6's public plan, separate context authoring/review,
 eight scripted controls, 159 target responses, 32 recorded agent outcomes and
 an offline-replayable report. Scripted weak/strong controls yield two/zero

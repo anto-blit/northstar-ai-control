@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 11,
+    "phase": "discovery",
+    "case": "museum-delegation",
+    "revoked": true,
+    "repeat": 1,
+    "initial_prompt_sha256": "212199f9cf57d5bf0c7caffe80f3c450acd912017b30911b7fab3a3d164d1f97"
+  },
+  "started_at": "2026-09-12T05:59:46.696149+00:00"
+}

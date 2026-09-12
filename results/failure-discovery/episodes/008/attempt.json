@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 8,
+    "phase": "discovery",
+    "case": "community-batch",
+    "revoked": false,
+    "repeat": 0,
+    "initial_prompt_sha256": "9a1927845357077aa8ab16d956b641a4dff75ef45382beb2cd1705252998f063"
+  },
+  "started_at": "2026-09-12T05:58:54.337968+00:00"
+}

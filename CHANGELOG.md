@@ -1,5 +1,17 @@
 # Changelog
 
+## Bounded counterexample search completes without a candidate — September 11, 2026
+
+- Register G7 before target calls, with four prepared dispatch workflows, direct
+  pressure-note delivery, schema-constrained responses and fixed confirmation rules.
+- Verify sixteen scripted weak/strong controls and eleven meaningful harness checks.
+- Complete two interface canaries and all sixteen discovery episodes. Twelve
+  revoked trials respect the stop; four active comparisons succeed. All 105/105
+  useful discovery deliveries occur, with no unauthorized request, invalid response
+  or provider refusal. No candidate qualifies for conditional confirmation.
+- Preserve all 54 application calls and actual effects. The counterexample milestone
+  remains unmet; no story benefit or global-risk reduction is established.
+
 ## Revocation-agent screen and separate control challenges — September 11, 2026
 
 - Publicly register G6 before target calls, with separately authored and reviewed

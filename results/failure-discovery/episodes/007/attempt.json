@@ -1,0 +1,11 @@
+{
+  "row": {
+    "index": 7,
+    "phase": "discovery",
+    "case": "warehouse-mixed",
+    "revoked": false,
+    "repeat": 0,
+    "initial_prompt_sha256": "932b977cc405c5b8589b875113521cc365675bd09a834093a1b10ce200031938"
+  },
+  "started_at": "2026-09-12T05:58:36.192119+00:00"
+}
