@@ -37,7 +37,15 @@ Zero must never be presented as a guarantee. See the
 
 ## Data and maintenance
 
-The first guidance result is highlighted near the top of the page. Its small
+The latest sections report G14/G15's two OpenAI baseline searches: 36 and 24
+correct decisions, with no qualifying failure or story intervention. G13's
+all-correct keeper comparison, G12's incomplete confirmation, G11's small
+candidate story lead and G10's repeated Claude failures remain separately
+inspectable. See [the evidence ledger](../EXPERIMENTS-STATUS.md) for current
+results and [the handoff](../HANDOFF.md) for the next recommended work. The
+cross-cultural candidates are preparation, not a measured story benefit.
+
+The first guidance result remains in the earlier evidence. Its small
 milestone is completing a checkable comparison: stories and both baselines
 made 16/16 correct substantive judgments. Original strict scores remain visible
 in the details, alongside the post-hoc Markdown-fence diagnosis. No narrative
@@ -65,9 +73,9 @@ A separate Codex section displays the completed 288-answer comparison: all three
 approaches score 96/96 on the same direct cases, with no observed repair benefit.
 Its verifier checks the public plan, source graph, response hashes and
 distinct target thread identifiers, then reproduces every score. The dashboard
-suite has 23 tests, including rejection of invented Codex gains and altered
-answers. Claude and Codex outcomes are never pooled. G2 remains visible as the
-earlier provisional observation.
+suite covers evidence validation and deterministic export, including rejection
+of invented gains and altered answers. Claude and Codex outcomes are never
+pooled. G2 remains visible as the earlier provisional observation.
 
 `build_dashboard.py` verifies every source and artifact hash in
 `results/verification.json` before exporting. Failed verification, changed
@@ -87,19 +95,33 @@ Its counts describe authored integration cases, not a population risk estimate.
 `milestones.json`, the unexecuted-study status and the next-step descriptions
 are curated statements, not an automatically inferred research score.
 
-After changing experimental code, regenerate its evidence, then the dashboard:
+Start with a check of the saved evidence and export. This makes no model calls
+and does not regenerate experimental results:
 
 ```bash
-python verify_project.py
+python dashboard/build_dashboard.py --check
+```
+
+For presentation changes, edit `template.html`, `style.css`, `app.js`,
+`milestones.json` or the relevant builder code, then run:
+
+```bash
 python dashboard/build_dashboard.py
 python -m unittest discover -s dashboard -p test_dashboard.py -v
 python dashboard/build_dashboard.py --check
 ```
 
-For presentation-only changes, rebuild the dashboard without regenerating
-experimental results. Edit `template.html`, `style.css`, `app.js` and
-`milestones.json`; `index.html` is the generated export. Commit it with its
-inputs. Update curated study status only when the corresponding evidence exists.
+`index.html` is the generated export; commit it with its inputs. Documentation
+edits alone do not require rebuilding an unchanged export. Update curated study
+status only when the corresponding evidence exists.
+
+Frozen model-study sources, prompts, plans and responses must retain their
+original hashes. Use the study's documented `verify` mode to replay existing
+evidence; prepare a separate study version for experimental changes. Do not
+rerun `register` or `run` to repair verification failures. The root
+`verify_project.py` regenerates simulator evidence and is appropriate when
+simulator changes require it, not as a routine read-only handoff check. Preserve
+the repository's byte-level line-ending rules in [`.gitattributes`](../.gitattributes).
 
 ## Publishing
 

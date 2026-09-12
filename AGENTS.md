@@ -1,5 +1,10 @@
 # NorthStar experiment discipline
 
+Start with [HANDOFF.md](HANDOFF.md) for current evidence, user decisions, the
+recommended next work and verification commands that make no model calls.
+Then consult [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md) and the chosen study's
+README, protocol and saved plan. Update the handoff when decisions or results change.
+
 The user's current priority is a reliable, repeatable AI failure before further
 story comparisons. Follow [the baseline gate](experiments/BASELINE-GATE.md).
 

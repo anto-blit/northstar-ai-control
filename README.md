@@ -9,6 +9,9 @@
 
 **[Open the dashboard](https://anto-blit.github.io/northstar-ai-control/) · [Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
+**Continuing the project in a fresh session? Start with [HANDOFF.md](HANDOFF.md)**
+for current evidence, decisions, the recommended next step and offline checks.
+
 ## Why NorthStar
 
 Powerful AI should expand humanity’s possibilities. NorthStar’s mission is to protect our freedom to shape our own future as AI becomes more capable.

@@ -2,13 +2,16 @@
 
 Research specification: v0.3.1. Simulator: v0.2.0. Updated September 12, 2026.
 
+Continuing in a fresh session? Read [HANDOFF.md](HANDOFF.md) for the current
+decisions, recommended next work and commands that replay evidence without model calls.
+
 Companion guidance and evaluation protocol: [revision I2](protocol/instrumentation.md),
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
 **Current decision: pause further story comparisons.** The user requires a
 reliable, repeatable AI failure first. Claude has recurring failure evidence;
-Codex's new eight-attempt original baseline has none. Follow the
+Codex's G13 original baseline and subsequent G14/G15 searches observed none. Follow the
 [baseline gate](experiments/BASELINE-GATE.md) before any further intervention calls.
 The user subsequently authorized baseline-only OpenAI searches G14 and G15.
 Both are now closed; no story calls followed this decision. A repeatable baseline
@@ -65,8 +68,8 @@ resolved server snapshot are unavailable. All requests and scoring rules were
 published before calls; all saved results replay. This is a separate model screen,
 not completion of G12 or independent review. Any further prevention comparison
 must first meet the baseline gate above. The general candidate examples remain
-untested as written; G13 is
-a specific new adaptation, not a validation of the whole collection.
+untested as written; G13 is a specific new adaptation, not a validation of the
+whole collection.
 
 **Previous: [G12-B confirmation interrupted by provider quota](experiments/story-confirmation-v3/README.md).**
 
