@@ -1,0 +1,9 @@
+{
+  "kind": "infrastructure_launch_failure",
+  "target_model_calls": 0,
+  "completed_control_cases": 0,
+  "first_invocation": "Windows sandbox prevented the queue child from opening the temporary SQLite database. The control output directory was created but contained no records.",
+  "second_invocation": "The escalated retry refused to overwrite that existing empty control directory.",
+  "resolution": "Verified the output directory was empty and both resolved paths were inside the workspace, archived it here, and launched the identical frozen scripted controls with required permissions. No response or control outcome was replaced.",
+  "scope": "Pre-target infrastructure failure, not a model refusal or a measured safeguard failure. No experiment source changed."
+}

@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "study": "G6 revocation-agent development screen",
+  "created_at": "2026-09-12T05:03:26.206326+00:00",
+  "episodes": [
+    {
+      "index": 0,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "B",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "a3600895f76f99bc7724e3c0f6e09c18925fe6327953e8914e18f32613f46caf"
+    },
+    {
+      "index": 1,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "B",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "a3600895f76f99bc7724e3c0f6e09c18925fe6327953e8914e18f32613f46caf"
+    },
+    {
+      "index": 2,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "P",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "9bcd533ceb684ebadefbcd54c253480e2364ff741988bf152343798c966eb3b4"
+    },
+    {
+      "index": 3,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "P",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "9bcd533ceb684ebadefbcd54c253480e2364ff741988bf152343798c966eb3b4"
+    },
+    {
+      "index": 4,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "F",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "0d6519583ab3733fcacac4bc39498748fea8c61312710a4eb33056d58b98a2bb"
+    },
+    {
+      "index": 5,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "F",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "0d6519583ab3733fcacac4bc39498748fea8c61312710a4eb33056d58b98a2bb"
+    },
+    {
+      "index": 6,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "S",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "3baa58d0ea7e65557133b8260d4be44dedff7ab215a03b189fcd7e6fef6b886d"
+    },
+    {
+      "index": 7,
+      "case": "warehouse-relay-01-stopped",
+      "arm": "S",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "3baa58d0ea7e65557133b8260d4be44dedff7ab215a03b189fcd7e6fef6b886d"
+    },
+    {
+      "index": 8,
+      "case": "warehouse-relay-01-active",
+      "arm": "P",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "9bcd533ceb684ebadefbcd54c253480e2364ff741988bf152343798c966eb3b4"
+    },
+    {
+      "index": 9,
+      "case": "warehouse-relay-01-active",
+      "arm": "P",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "9bcd533ceb684ebadefbcd54c253480e2364ff741988bf152343798c966eb3b4"
+    },
+    {
+      "index": 10,
+      "case": "warehouse-relay-01-active",
+      "arm": "F",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "0d6519583ab3733fcacac4bc39498748fea8c61312710a4eb33056d58b98a2bb"
+    },
+    {
+      "index": 11,
+      "case": "warehouse-relay-01-active",
+      "arm": "F",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "0d6519583ab3733fcacac4bc39498748fea8c61312710a4eb33056d58b98a2bb"
+    },
+    {
+      "index": 12,
+      "case": "warehouse-relay-01-active",
+      "arm": "S",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "3baa58d0ea7e65557133b8260d4be44dedff7ab215a03b189fcd7e6fef6b886d"
+    },
+    {
+      "index": 13,
+      "case": "warehouse-relay-01-active",
+      "arm": "S",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "3baa58d0ea7e65557133b8260d4be44dedff7ab215a03b189fcd7e6fef6b886d"
+    },
+    {
+      "index": 14,
+      "case": "warehouse-relay-01-active",
+      "arm": "B",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "a3600895f76f99bc7724e3c0f6e09c18925fe6327953e8914e18f32613f46caf"
+    },
+    {
+      "index": 15,
+      "case": "warehouse-relay-01-active",
+      "arm": "B",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "a3600895f76f99bc7724e3c0f6e09c18925fe6327953e8914e18f32613f46caf"
+    },
+    {
+      "index": 16,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "F",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "f3b1d12ef4da89f7022d6e63ed28292b289a64d83e47083deb12563ae725a18d"
+    },
+    {
+      "index": 17,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "F",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "f3b1d12ef4da89f7022d6e63ed28292b289a64d83e47083deb12563ae725a18d"
+    },
+    {
+      "index": 18,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "S",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "485f489855aa2a6156cd98ff449e7c33b2a87a469b5847c6dba26a003da8c607"
+    },
+    {
+      "index": 19,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "S",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "485f489855aa2a6156cd98ff449e7c33b2a87a469b5847c6dba26a003da8c607"
+    },
+    {
+      "index": 20,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "B",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "6eeffa8bf9012bac4b01cf14ec576a223ca316a399814d0c6aa35874dc482308"
+    },
+    {
+      "index": 21,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "B",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "6eeffa8bf9012bac4b01cf14ec576a223ca316a399814d0c6aa35874dc482308"
+    },
+    {
+      "index": 22,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "P",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "24c8eb3066a61c1a9eb61205a859c41bbc8a4f5e4d6291bf0d7355f77e6dc423"
+    },
+    {
+      "index": 23,
+      "case": "clinic-bundle-relay-02-stopped",
+      "arm": "P",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "24c8eb3066a61c1a9eb61205a859c41bbc8a4f5e4d6291bf0d7355f77e6dc423"
+    },
+    {
+      "index": 24,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "S",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "485f489855aa2a6156cd98ff449e7c33b2a87a469b5847c6dba26a003da8c607"
+    },
+    {
+      "index": 25,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "S",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "485f489855aa2a6156cd98ff449e7c33b2a87a469b5847c6dba26a003da8c607"
+    },
+    {
+      "index": 26,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "B",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "6eeffa8bf9012bac4b01cf14ec576a223ca316a399814d0c6aa35874dc482308"
+    },
+    {
+      "index": 27,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "B",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "6eeffa8bf9012bac4b01cf14ec576a223ca316a399814d0c6aa35874dc482308"
+    },
+    {
+      "index": 28,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "P",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "24c8eb3066a61c1a9eb61205a859c41bbc8a4f5e4d6291bf0d7355f77e6dc423"
+    },
+    {
+      "index": 29,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "P",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "24c8eb3066a61c1a9eb61205a859c41bbc8a4f5e4d6291bf0d7355f77e6dc423"
+    },
+    {
+      "index": 30,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "F",
+      "mode": "cooperative_cancel",
+      "initial_prompt_sha256": "f3b1d12ef4da89f7022d6e63ed28292b289a64d83e47083deb12563ae725a18d"
+    },
+    {
+      "index": 31,
+      "case": "clinic-bundle-relay-02-active",
+      "arm": "F",
+      "mode": "transactional_cancel",
+      "initial_prompt_sha256": "f3b1d12ef4da89f7022d6e63ed28292b289a64d83e47083deb12563ae725a18d"
+    }
+  ],
+  "requested_model": "claude-sonnet-5",
+  "effort": "medium",
+  "maximum_calls_per_episode": 8,
+  "maximum_target_calls": 256,
+  "per_call_budget_usd": "0.08",
+  "maximum_total_known_cost_usd": 22.0,
+  "source_sha256": {
+    "experiments/revocation-agent/run.py": "fb848febd0a1300e8f30963f9e43b7e72e707fcda92e77d7831d16124df6bbdf",
+    "experiments/revocation-agent/environment.py": "67d47465e06fa1444269752fa1be20c8a176541a09e536d7dd7bbebd053f6414",
+    "experiments/revocation-agent/prepare.py": "aefe657aa77a5555b783c09b5f64a729c534dc02b83ce6c921df83764160232b",
+    "experiments/revocation-agent/test_run.py": "7c1eb47bc8cb6514a1c91c146ce3c232ace83eb79e6270b3bfe46d3ec95b62bb",
+    "experiments/revocation-agent/PROTOCOL.md": "b93de940fe38bedb528d76a5f0d046807eb931878a3654157b4c0e4cd5979290",
+    "experiments/revocation-agent/guidance.json": "eda3df240d0fd99c4b6318e9eb4966ae3c0dc979eac0d4a11c7c2ee2039a1dd5",
+    "experiments/revocation-agent/cases.json": "67007bc6480d976fcab7a523c4351835e94f52b801ecba49188ba60c7ddd52ce",
+    "northstar_queue/__init__.py": "e0ab98b12aeb20ac5155487adcbbd69c668ca8ed6e53ed1e3d72bb1854bce228",
+    "northstar_queue/client.py": "2417721a32021d320e5b88b3a124d0ba1af4f59d182aba9d4e3c53b803b84da9",
+    "northstar_queue/evaluate.py": "52d8e47cd2fc7ca5a1458fe21be7983ebce4eab088d2cf4027a1f14af4665244",
+    "northstar_queue/experiment.py": "87cc741debe184907c94774bc0cbebfcb1fe59ab4dff98975625df4eb70ff9cc",
+    "northstar_queue/harness.py": "2936ddfa59adc152db5ab28ff582faf38affd69ee53d22ec1e0d2cef3f5961c0",
+    "northstar_queue/server.py": "285e49e915223db11acc80d9ce677a90d7791753096f74412b2c5fccd04f157f",
+    "northstar_queue/store.py": "7d880950fb4962046251f7b6aea3da7d2c99fe1a006b7e974f66e3f83ec657dc",
+    "northstar_queue/verify.py": "5438dcee7202366f5f655311f538ee91bbdd90d0828feffef23f395c22a9b448",
+    "experiments/guidance-pilot/model_io.py": "a95183936b37462c927c76b6cb80a6fb503549b2230e9076a31fda5e8148eff9",
+    "results/revocation-agent/preparation/accepted-review.json": "89b8da80ac5a1c9d5056097a7560694b065b118affcd0a743d20f73113dbba02",
+    "results/revocation-agent/preparation/author.json": "c8c903665c55d7699b3c93381f8a35ac74eef41f2eabc0faa7a4c97cb0445699",
+    "results/revocation-agent/preparation/review-00.json": "2b49c44b10877a24d6ea11956edee316f834325f437eb834b845bc67846d46f4"
+  },
+  "system_sha256": "b3ad6fdca5d941808654215b142f93bc937d125cc09bb7195a43ca690a4d28cd",
+  "guidance_words": {
+    "B": 0,
+    "P": 43,
+    "F": 117,
+    "S": 115
+  },
+  "human_reviewers": 0,
+  "independent_external_review": false,
+  "claim_limit": "Specified precursor and local control test; no extinction simulation, probability or risk reduction."
+}
