@@ -32,6 +32,7 @@ jobs:
         run: python -m unittest discover -s dashboard -p test_dashboard.py -v
       - name: Verify preserved guidance results without model calls
         run: |
+          python experiments/known-approval-replay/replay.py verify
           python -m unittest discover -s experiments/guidance-pilot -p test_pilot.py -v
           python experiments/guidance-pilot/pilot.py verify
           python experiments/guidance-pilot/diagnose.py

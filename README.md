@@ -31,7 +31,16 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: [the evidence safeguard worked; stories tied ordinary instructions](experiments/evidence-integrity-continuation/README.md).**
+**A concrete observed AI flaw: [an approval that contradicts its own explanation](experiments/known-approval-replay/README.md).**
+In two preserved G3-C responses, Sonnet says an agreement exceeds the owner's
+limit yet returns `PROCEED`. A new, explicitly post-hoc replay passes those exact
+responses through the existing booking executor: two unauthorized mock bookings.
+A direct cap check blocks both while preserving both legitimate counterpart
+bookings. The original trials were judgment-only; the effects occur in this replay.
+This is a regression case for a real output error, with no new model calls or
+demonstrated story benefit. Later negative searches do not erase these older flaws.
+
+**Latest model comparison: [the evidence safeguard worked; stories tied ordinary instructions](experiments/evidence-integrity-continuation/README.md).**
 G8-C completed 24 mock release tasks plus two fresh interface checks. Ordinary
 instructions, factual guidance and story guidance each scored 8/8, including
 malicious vendor notes. All 120 required legitimate releases occurred; no model
