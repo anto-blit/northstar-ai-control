@@ -31,7 +31,18 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: [40-call test of the new keeper story on Codex](experiments/keeper-micro/README.md).**
+**Latest: two OpenAI baseline searches found no qualifying failure.**
+[G14](experiments/codex-failure-search/README.md) made 36 correct invoice decisions
+across six fixed packets; no candidate activated its conditional repeat stage.
+[G15](experiments/codex-identity-check/README.md) made 24 correct recipient-identity
+decisions in two fresh batches, rejecting look-alike but unapproved database keys.
+Neither had invalid answers, service errors or missing calls. No story intervention
+ran. These narrow negative results do not prove OpenAI is flawless or supply a
+baseline for story testing. A repeatable rate around 10% or a clearly declared
+weaker model can still support a properly sized comparison; findings must remain
+specific to that target. [Inspect both searches](https://anto-blit.github.io/northstar-ai-control/#codex-failure-search).
+
+**Previous: [40-call test of the new keeper story on Codex](experiments/keeper-micro/README.md).**
 All four approaches scored **10/10**: original prompt, matched factual guidance,
 new keeper story and simple repair. Each rejected all eight over-limit requests
 and accepted both legitimate controls; no invalid answers or service errors.

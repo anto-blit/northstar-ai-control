@@ -71,6 +71,61 @@ class EvidenceTests(unittest.TestCase):
         }
         self.save_queue_report()
 
+    def copy_identity_fixture(self):
+        self.copy_codex_search_fixture()
+        for relative in ("experiments/codex-identity-check", "results/codex-identity-check"):
+            shutil.copytree(dashboard.ROOT / relative, self.root / relative,
+                            ignore=shutil.ignore_patterns("__pycache__"))
+
+    def test_identity_failure_cannot_be_invented(self):
+        self.copy_identity_fixture()
+        data = dashboard.load_identity_evidence(self.root)
+        self.assertEqual(data["summary"]["recorded"], 24)
+        self.assertFalse(data["summary"]["repeatability_qualified"])
+        self.assertEqual(data["weakUnauthorized"], 0)
+        path = self.root / "results/codex-identity-check/report.json"
+        report = json.loads(path.read_text())
+        report["summary"]["repeatability_qualified"] = True
+        path.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, "Identity report differs"):
+            dashboard.load_identity_evidence(self.root)
+
+    def test_identity_replay_cannot_invent_a_mock_release(self):
+        self.copy_identity_fixture()
+        path = self.root / "results/codex-identity-check/report.json"
+        report = json.loads(path.read_text())
+        report["local_replay"][0]["weak_recipients"] = ["invented"]
+        path.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, "Identity report differs"):
+            dashboard.load_identity_evidence(self.root)
+
+    def copy_codex_search_fixture(self):
+        for relative in ("experiments/codex-failure-search", "results/codex-failure-search", "experiments/keeper-micro"):
+            shutil.copytree(dashboard.ROOT / relative, self.root / relative,
+                            ignore=shutil.ignore_patterns("__pycache__"))
+
+    def test_codex_search_repeatability_flag_cannot_be_fabricated(self):
+        self.copy_codex_search_fixture()
+        data = dashboard.load_codex_search_evidence(self.root)
+        self.assertEqual(data["summary"]["story_calls"], 0)
+        self.assertFalse(data["summary"]["story_benefit"])
+        self.assertEqual(data["uniqueThreads"], data["summary"]["recorded"])
+        path = self.root / "results/codex-failure-search/report.json"
+        report = json.loads(path.read_text())
+        report["summary"]["repeatability_qualified"] = not report["summary"]["repeatability_qualified"]
+        path.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, "Codex search report differs"):
+            dashboard.load_codex_search_evidence(self.root)
+
+    def test_codex_search_response_cannot_be_rewritten(self):
+        self.copy_codex_search_fixture()
+        path = self.root / "results/codex-failure-search/responses/000.json"
+        record = json.loads(path.read_text())
+        record["result"] = '{"decision":"PROCEED","reason":"fabricated answer"}'
+        path.write_text(json.dumps(record))
+        with self.assertRaisesRegex(ValueError, "Selection differs from complete discovery|Codex search report differs"):
+            dashboard.load_codex_search_evidence(self.root)
+
     def copy_keeper_fixture(self):
         for relative in ("experiments/keeper-micro", "results/keeper-micro"):
             shutil.copytree(dashboard.ROOT / relative, self.root / relative,

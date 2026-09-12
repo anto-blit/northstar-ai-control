@@ -360,6 +360,60 @@
     $('latest-assessment-detail').textContent = `${keeper.recorded}/${keeper.planned} fresh Codex calls. The new keeper story was compared with the original prompt, matched facts and a simple repair. See all outcomes below.`;
     const link = document.querySelector('.assessment a'); link.href = '#keeper-micro'; link.textContent = 'Inspect the small comparison ↓';
   }
+  const codexSearch = data.codexSearch;
+  if (codexSearch) {
+    $('codex-failure-search').hidden = false;
+    const s = codexSearch.summary;
+    const finished = s.complete && ['completed','no_candidate'].includes(codexSearch.completion);
+    const wrong = [...Object.values(s.discovery), ...Object.values(s.repeats)].reduce((sum,r)=>sum+r.wrong_approvals,0);
+    const title = !finished ? 'The OpenAI failure search stopped before completion.'
+      : s.repeatability_qualified ? 'An OpenAI approval error repeated in both fresh batches.'
+      : wrong ? 'OpenAI made wrong approvals; repeatability remains unestablished.'
+      : 'No repeatable OpenAI approval error found in this search.';
+    $('codex-search-title').textContent = title;
+    $('codex-search-finding').textContent = `${s.recorded}/${s.activated_planned} activated calls recorded; ${wrong} valid wrong approvals. ${s.conditional_unactivated ? 'The 24 conditional repeat calls were not activated.' : 'Discovery and both fresh repeat batches are shown separately below.'} No story calls were made.`;
+    const names = {invoice_sum:'Invoice addition',quantities:'Quantities',tax_and_shipping:'Tax and shipping',conditional_credits:'Conditional credits',latest_revisions:'Latest quote revisions',committed_budget:'Existing commitments',repeat_1:'Fresh repeat batch 1',repeat_2:'Fresh repeat batch 2'};
+    for (const [name,r] of [...Object.entries(s.discovery),...Object.entries(s.repeats)]) {
+      const tr = el('tr'); tr.append(el('th',names[name]), el('td',`${r.wrong_approvals}/${r.forbidden_planned}`),
+        el('td',`${r.useful_approvals}/${r.useful_planned}`), el('td',`${r.invalid} / ${r.service_failures} / ${r.missing}`));
+      $('codex-search-counts').append(tr);
+    }
+    $('codex-search-gate').textContent = s.repeatability_qualified && finished
+      ? `Selected packet: ${names[s.selected_case]}. The registered repeatability rule passed in both fresh batches. This establishes a narrow recurring output failure worth testing prevention against; stories have not yet been tested on it.`
+      : 'The registered repeatability rule did not pass. This search does not supply a qualified failure sample for a story comparison. Further story tests remain behind the baseline gate; passing this sample would not establish that OpenAI is flawless.';
+    if (!codexSearch.examples.length) $('codex-search-examples').append(el('p','No valid wrong approval was recorded in this search. Other unsuccessful outcomes remain in the table.'));
+    for (const example of codexSearch.examples) {
+      const link = el('a',`Response ${String(example.index).padStart(3,'0')} · ${names[example.case]} · ${example.phase.replaceAll('_',' ')}`);
+      link.href = `https://github.com/anto-blit/northstar-ai-control/blob/main/results/codex-failure-search/responses/${String(example.index).padStart(3,'0')}.json`;
+      $('codex-search-examples').append(link,el('p',`Actual covered total: $${(example.totalCents/100).toFixed(2)}; owner limit: $${(example.capCents/100).toFixed(2)}.`),el('pre',example.response));
+    }
+    $('codex-search-provenance').textContent = `${codexSearch.uniqueThreads} distinct fresh CLI threads · requested ${codexSearch.requestedModel}, medium effort · ${codexSearch.usage.input_tokens.toLocaleString('en-US')} input tokens and ${codexSearch.usage.output_tokens.toLocaleString('en-US')} output tokens. Resolved server snapshot and dollar charge are unavailable. Scores and saved evidence hashes recomputed.`;
+    $('latest-assessment').textContent = title;
+    $('latest-assessment-detail').textContent = `${s.recorded} fresh OpenAI calls. ${s.repeatability_qualified && finished ? 'The selected error met the fresh repeatability rule.' : 'A baseline for story testing has not qualified.'} No story benefit is claimed.`;
+    const link = document.querySelector('.assessment a'); link.href = '#codex-failure-search'; link.textContent = 'Inspect the OpenAI search ↓';
+  }
+  const identity = data.identityCheck;
+  if (identity) {
+    $('codex-identity-check').hidden = false;
+    const s = identity.summary, finished = s.complete && identity.completion === 'completed';
+    const qualified = finished && s.repeatability_qualified;
+    $('identity-title').textContent = !finished ? 'The identity check stopped before completion.'
+      : qualified ? 'An OpenAI identity-approval failure repeated in both batches.' : 'The look-alike identity check found no qualifying failure.';
+    $('identity-finding').textContent = `${s.recorded}/${s.planned} calls recorded. ${qualified ? 'Both batches met the repeatability rule.' : 'The repeatability rule did not pass.'} This is separate from the invoice search; no story calls were made.`;
+    for (const [batch,r] of Object.entries(s.batches)) {
+      const card = el('article',undefined,'guidance-condition');
+      card.append(el('h4',`Identity batch ${batch}`),el('strong',`${r.wrong_approvals}/${r.forbidden_planned}`),
+        el('small',`Wrong approvals. ${r.correct_withholds} correct withholds; ${r.useful_approvals}/${r.useful_planned} legitimate approvals preserved. ${r.invalid} invalid answers, ${r.service_failures} service failures, ${r.missing} missing calls.`));
+      $('identity-batches').append(card);
+    }
+    $('identity-keys').textContent = `Approved:  ${identity.approvedEscaped}\nSubmitted: ${identity.unapprovedEscaped}`;
+    $('identity-response').textContent = identity.firstResponse || 'No response recorded.';
+    $('identity-replay').textContent = `Preplanned local replay: ${identity.weakUnauthorized} unauthorized mock releases when following the decision, ${identity.guardedUnauthorized} with an additional exact database membership check. No real document was sent. A zero-error model sample cannot demonstrate added protection from that guard.`;
+    $('identity-provenance').textContent = `${identity.uniqueThreads} distinct fresh CLI threads · requested ${identity.requestedModel}, medium effort · ${identity.usage.input_tokens.toLocaleString('en-US')} input tokens and ${identity.usage.output_tokens.toLocaleString('en-US')} output tokens. Dollar charge and resolved server snapshot unavailable; scores, SQLite replay and evidence hashes recomputed.`;
+    $('latest-assessment').textContent = qualified ? 'An OpenAI authorization failure repeated in fresh checks.' : 'The latest OpenAI checks did not earn a repeatable failure.';
+    $('latest-assessment-detail').textContent = `${codexSearch ? codexSearch.summary.recorded : 0} invoice decisions and ${s.recorded} separate identity decisions recorded. ${qualified ? 'The identity case met its fixed baseline rule.' : 'Further story comparisons remain paused.'} No story benefit is claimed.`;
+    const link = document.querySelector('.assessment a'); link.href = '#codex-failure-search'; link.textContent = 'Inspect both OpenAI checks ↓';
+  }
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered

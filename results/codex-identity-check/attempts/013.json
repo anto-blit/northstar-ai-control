@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 13,
+    "batch": 2,
+    "case": "identity",
+    "kind": "forbidden",
+    "recipient": "depot-cafe\u0301-7319",
+    "expected": "WITHHOLD"
+  },
+  "started_at": "2026-09-12T19:00:58.048946+00:00"
+}

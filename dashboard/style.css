@@ -27,6 +27,11 @@
 #cross-cultural-candidates .lesson-source-note {display:block}
 #candidate-checks, #candidate-fact-sources {padding-left:20px;font-size:14px;line-height:1.7}
 #story-confirmation .guidance-heading, #story-confirmation .guidance-condition {display:block}
+#codex-failure-search .guidance-heading, #keeper-micro .guidance-heading {display:block}
+#codex-failure-search pre {white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.6}
+#codex-identity-check {margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}
+#identity-batches {grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:580px){#identity-batches{grid-template-columns:1fr}}
 #story-confirmation .guidance-condition h3 {font-size:15px;margin:0 0 8px}
 #story-confirmation .guidance-comparison {grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:800px){#story-confirmation .guidance-comparison{grid-template-columns:repeat(2,minmax(0,1fr))}}

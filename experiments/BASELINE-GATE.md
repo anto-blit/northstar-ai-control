@@ -12,6 +12,21 @@ zero errors in eight attempts is `(1 - 6/50)^8 = 0.3596`. This is an illustratio
 using a noisy, selected-prompt estimate, not a cross-model significance test or a
 claim that the models share a failure rate. The cause of the difference is unknown.
 
+A repeatable failure rate around 10% can be a valid baseline. The 3/10-per-batch
+threshold in G14/G15 is a local screening choice for a tiny run, not a universal
+requirement. Lower error rates require more observations to distinguish an
+improvement from chance. At a true independent 10% error probability, ten calls
+have a 34.9% chance of showing no failures. Adequacy depends on the effect size,
+comparison, uncertainty and available sample, not on demanding a high failure rate.
+
+A weaker or older model can be an explicitly declared research target. Keep it
+fixed across comparison arms, disclose why it was selected and do not present
+its result as a result for a stronger or newer model. An improvement there would
+support a limited guidance hypothesis, not prove universal moral principles or
+protection for humanity. Later models passing a task limit present applicability
+without erasing an earlier measured effect. Frozen studies still cannot silently
+change models or thresholds.
+
 Before a further intervention comparison:
 
 1. Select the concrete failure and hold the target model, effort, system text,
@@ -32,5 +47,10 @@ Before a further intervention comparison:
 If baseline errors are absent or too sparse for the intended comparison, stop.
 Do not credit a perfect story arm with preventing an unobserved baseline error,
 increase the sample until a story wins, or change model and pool the results.
-No further model calls were initiated after this user direction. Recording,
-replaying and publishing already completed evidence is not a new model test.
+No further story-comparison calls were initiated after this user direction.
+The user subsequently authorized a bounded baseline-only OpenAI search, recorded
+as [G14](codex-failure-search/README.md), followed by the separately published
+[G15 identity check](codex-identity-check/README.md). Both closed without a failure
+sample: 36 correct invoice decisions and 24 correct identity decisions. That
+baseline work does not remove this gate for story comparisons. Recording and
+replaying evidence makes no model calls.

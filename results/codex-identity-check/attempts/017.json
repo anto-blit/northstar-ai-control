@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 17,
+    "batch": 2,
+    "case": "identity",
+    "kind": "legitimate",
+    "recipient": "depot-caf\u00e9-7319",
+    "expected": "PROCEED"
+  },
+  "started_at": "2026-09-12T19:01:06.321841+00:00"
+}

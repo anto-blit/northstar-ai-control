@@ -374,6 +374,75 @@ def load_confirmation_evidence(root):
             "knownCost": report["known_list_price_usd"], "priorAuditCost": report["prior_review_cost_usd"]}
 
 
+def load_identity_evidence(root):
+    folder = root / "results/codex-identity-check"
+    if not (folder / "report.json").exists():
+        return None
+    spec = importlib.util.spec_from_file_location("codex_identity", root / "experiments/codex-identity-check/run.py")
+    experiment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(experiment)
+    # The frozen runner uses SQLite's transaction context, which does not close
+    # connections. Own their cleanup at this replay boundary without changing
+    # the published experiment or any computed scores.
+    connections = []
+    original_connect = experiment.sqlite3.connect
+    def retained_connect(*args, **kwargs):
+        connection = original_connect(*args, **kwargs)
+        connections.append(connection)
+        return connection
+    experiment.sqlite3.connect = retained_connect
+    try:
+        report = experiment.report()
+    finally:
+        experiment.sqlite3.connect = original_connect
+        for connection in connections:
+            connection.close()
+    if report != json.loads((folder / "report.json").read_text(encoding="utf-8")):
+        raise ValueError("Identity report differs from recorded evidence")
+    completion = json.loads((folder / "completion.json").read_text(encoding="utf-8"))["reason"]
+    if completion not in {"completed", "operational_stop", "token_stop"} or (completion == "completed" and
+            (not report["summary"]["complete"] or any(r["status"] == "service_failure" for r in report["observations"]))):
+        raise ValueError("Identity completion conflicts with inventory")
+    first = folder / "responses/000.json"
+    return {"summary": report["summary"], "completion": completion, "usage": report["usage"],
+            "uniqueThreads": report["unique_threads"], "requestedModel": report["requested_model"],
+            "approvedEscaped": json.dumps(experiment.APPROVED, ensure_ascii=True),
+            "unapprovedEscaped": json.dumps(experiment.UNAPPROVED, ensure_ascii=True),
+            "firstResponse": json.loads(first.read_text(encoding="utf-8"))["result"] if first.exists() else None,
+            "weakUnauthorized": sum(experiment.UNAPPROVED in r["weak_recipients"] for r in report["local_replay"]),
+            "guardedUnauthorized": sum(experiment.UNAPPROVED in r["guarded_recipients"] for r in report["local_replay"])}
+
+
+def load_codex_search_evidence(root):
+    folder = root / "results/codex-failure-search"
+    if not (folder / "report.json").exists():
+        return None
+    spec = importlib.util.spec_from_file_location("codex_failure_search", root / "experiments/codex-failure-search/run.py")
+    experiment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(experiment)
+    report = experiment.report()
+    if report != json.loads((folder / "report.json").read_text(encoding="utf-8")):
+        raise ValueError("Codex search report differs from recorded evidence")
+    completion = json.loads((folder / "completion.json").read_text(encoding="utf-8"))["reason"]
+    summary = report["summary"]
+    if completion not in {"completed", "no_candidate", "operational_stop", "token_stop"}:
+        raise ValueError("Unknown search completion")
+    if completion in {"completed", "no_candidate"} and (not summary["complete"] or
+            any(r["status"] == "service_failure" for r in report["observations"]) or
+            (completion == "no_candidate") != (summary["selected_case"] is None)):
+        raise ValueError("Search completion conflicts with inventory")
+    examples = []
+    wrong = [r for r in report["observations"] if r["kind"] == "forbidden" and r["decision"] == "PROCEED"]
+    wrong.sort(key=lambda r: (r["phase"] == "discovery", r["index"]))
+    for row in wrong[:2]:
+        raw = json.loads((folder / "responses" / f"{row['index']:03}.json").read_text(encoding="utf-8"))
+        packet = experiment.cases.packets()[row["case"]]
+        examples.append({"index": row["index"], "phase": row["phase"], "case": row["case"],
+                         "response": raw["result"], "totalCents": packet["total_cents"], "capCents": packet["forbidden_cap_cents"]})
+    return {"summary": summary, "completion": completion, "requestedModel": report["requested_model"],
+            "usage": report["usage"], "uniqueThreads": report["unique_threads"], "examples": examples}
+
+
 def load_keeper_evidence(root):
     folder = root / "results/keeper-micro"
     if not (folder / "report.json").exists():
@@ -463,6 +532,8 @@ def load_evidence(root=ROOT):
         "storyMicro": load_story_micro_evidence(root),
         "confirmation": load_confirmation_evidence(root),
         "keeperMicro": load_keeper_evidence(root),
+        "codexSearch": load_codex_search_evidence(root),
+        "identityCheck": load_identity_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 
