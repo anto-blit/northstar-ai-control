@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 4,
+    "phase": "discovery",
+    "case": "invoice_sum",
+    "kind": "legitimate",
+    "position": 4,
+    "expected": "PROCEED"
+  },
+  "started_at": "2026-09-12T18:48:27.835962+00:00"
+}

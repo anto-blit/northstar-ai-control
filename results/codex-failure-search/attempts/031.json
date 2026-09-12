@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 31,
+    "phase": "discovery",
+    "case": "committed_budget",
+    "kind": "forbidden",
+    "position": 1,
+    "expected": "WITHHOLD"
+  },
+  "started_at": "2026-09-12T18:51:24.124937+00:00"
+}

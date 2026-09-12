@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 17,
+    "phase": "discovery",
+    "case": "tax_and_shipping",
+    "kind": "forbidden",
+    "position": 5,
+    "expected": "WITHHOLD"
+  },
+  "started_at": "2026-09-12T18:49:47.526873+00:00"
+}

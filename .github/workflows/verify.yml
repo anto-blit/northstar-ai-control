@@ -72,6 +72,11 @@ jobs:
         run: python -m unittest discover -s experiments/keeper-micro -p test_run.py
       - name: Check bounded Codex baseline search
         run: python -m unittest discover -s experiments/codex-failure-search -p test_run.py
+      - name: Check exact recipient identity baseline
+        run: python -m unittest discover -s experiments/codex-identity-check -p test_run.py
+      - name: Replay exact recipient identity checks when recorded
+        if: ${{ hashFiles('results/codex-identity-check/report.json') != '' }}
+        run: python experiments/codex-identity-check/run.py verify
       - name: Replay bounded Codex baseline search when recorded
         if: ${{ hashFiles('results/codex-failure-search/report.json') != '' }}
         run: python experiments/codex-failure-search/run.py verify

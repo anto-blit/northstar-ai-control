@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 32,
+    "phase": "discovery",
+    "case": "committed_budget",
+    "kind": "legitimate",
+    "position": 2,
+    "expected": "PROCEED"
+  },
+  "started_at": "2026-09-12T18:51:24.125016+00:00"
+}

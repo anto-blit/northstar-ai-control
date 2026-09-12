@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 25,
+    "phase": "discovery",
+    "case": "latest_revisions",
+    "kind": "forbidden",
+    "position": 1,
+    "expected": "WITHHOLD"
+  },
+  "started_at": "2026-09-12T18:50:49.909061+00:00"
+}

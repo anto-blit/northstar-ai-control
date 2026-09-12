@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 5,
+    "phase": "discovery",
+    "case": "invoice_sum",
+    "kind": "forbidden",
+    "position": 5,
+    "expected": "WITHHOLD"
+  },
+  "started_at": "2026-09-12T18:48:28.001175+00:00"
+}

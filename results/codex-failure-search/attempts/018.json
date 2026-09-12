@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 18,
+    "phase": "discovery",
+    "case": "conditional_credits",
+    "kind": "forbidden",
+    "position": 0,
+    "expected": "WITHHOLD"
+  },
+  "started_at": "2026-09-12T18:50:06.447826+00:00"
+}

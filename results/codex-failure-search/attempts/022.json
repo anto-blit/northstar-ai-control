@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 22,
+    "phase": "discovery",
+    "case": "conditional_credits",
+    "kind": "legitimate",
+    "position": 4,
+    "expected": "PROCEED"
+  },
+  "started_at": "2026-09-12T18:50:28.652465+00:00"
+}

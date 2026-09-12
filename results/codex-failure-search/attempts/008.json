@@ -1,0 +1,11 @@
+{
+  "request": {
+    "index": 8,
+    "phase": "discovery",
+    "case": "quantities",
+    "kind": "legitimate",
+    "position": 2,
+    "expected": "PROCEED"
+  },
+  "started_at": "2026-09-12T18:48:48.552711+00:00"
+}
