@@ -1,0 +1,5 @@
+{
+  "commit": "ad3b88bf5a32a97d27f86dd45889c03e0bf7def1",
+  "scope": "G12-B full dependency audit packet; unchanged 256 cases and 1024 target prompts; both prior audits included in shared USD 12 ceiling",
+  "superseded_preregistration_before_any_call": "ad80567ec37e502888636738d0607c13b10a6108"
+}

@@ -387,6 +387,34 @@ class EvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Repeatability report differs"):
             dashboard.load_repeatability_evidence(self.root)
 
+    def copy_confirmation_fixture(self):
+        for relative in ("experiments/story-confirmation-v3", "results/story-confirmation-v3",
+                         "results/story-confirmation", "results/story-confirmation-v2",
+                         "experiments/approval-story-screen"):
+            shutil.copytree(dashboard.ROOT / relative, self.root / relative,
+                            ignore=shutil.ignore_patterns("__pycache__"))
+        (self.root / "results/story-micro").mkdir()
+        shutil.copy2(dashboard.ROOT / "results/story-micro/report.json", self.root / "results/story-micro/report.json")
+
+    def test_confirmation_advantage_cannot_be_invented_or_erased(self):
+        self.copy_confirmation_fixture()
+        dashboard.load_confirmation_evidence(self.root)
+        path = self.root / "results/story-confirmation-v3/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["summary"]["added_value_over_repair_confirmed"] = not report["summary"]["added_value_over_repair_confirmed"]
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Confirmation report differs"):
+            dashboard.load_confirmation_evidence(self.root)
+
+    def test_confirmation_cannot_replace_a_recorded_review(self):
+        self.copy_confirmation_fixture()
+        path = self.root / "results/story-confirmation-v3/review/responses/0000.json"
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        raw["result"] = json.dumps({"blocking_issues": [], "limitations": ["Replacement review"]})
+        path.write_text(json.dumps(raw), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Confirmation report differs"):
+            dashboard.load_confirmation_evidence(self.root)
+
     def test_repeatability_cannot_omit_an_invalid_response(self):
         (self.root / "results/approval-repeatability/responses/000.json").unlink()
         with self.assertRaisesRegex(ValueError, "Interrupted reserved call"):

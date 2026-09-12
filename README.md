@@ -31,7 +31,18 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: [a small story-guidance lead needs confirmation](experiments/story-micro/README.md).**
+**Latest: [Claude's quota interrupted the confirmation test](experiments/story-confirmation-v3/README.md).**
+The method audit passed and separate AI checks agreed on all 256 case labels and
+calculations. The comparison then stopped at **72/1,024 calls** when two calls hit
+Claude's session quota; 952 remain unattempted. Among six recorded over-limit
+attempts per approach, original / factual / story / simple repair made **1 / 1 / 0 / 0
+wrong approvals**. Both recorded errors contradict their own correct over-cap
+explanation. Stories and simple repair both avoided this flaw in the small partial
+sample; **no story advantage is confirmed**. All errors, missing denominators and
+$3.336371 reported usage are preserved. This was a quota interruption, not a safety
+refusal. [Inspect the partial comparison](https://anto-blit.github.io/northstar-ai-control/#story-confirmation).
+
+**Previous: [a small story-guidance lead needs confirmation](experiments/story-micro/README.md).**
 G11 completed two 90-call micro rounds. On the known case, both stories and matched
 factual guidance avoided wrong approvals; the original prompt made 5/24. On two
 fresh numerical variants, the unchanged fable made **0/24 wrong approvals**, versus

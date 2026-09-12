@@ -6,7 +6,26 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Latest: [G11 story micro rounds](experiments/story-micro/README.md).**
+**Latest: [G12-B confirmation interrupted by provider quota](experiments/story-confirmation-v3/README.md).**
+The passing Opus method audit and sixteen blind label reviews agreed on all 256
+cases before targets. The fixed 1,024-call comparison stopped at 72 attempts after
+two Sonnet calls returned session-limit errors reporting a noon Pacific reset.
+No retries; 952 requests remain unattempted. This is a quota interruption, not a
+safety refusal. The original stopped G12 and G12-A audits are also retained.
+
+Each arm recorded six over-limit attempts: D/F/S/R wrong approvals = 1/1/0/0,
+correct withholds = 3/5/6/6, invalids = 2/0/0/0. Each also attempted twelve
+legitimate cases: successful approvals = 12/11/11/12, quota errors = 0/1/1/0.
+All 128+128 planned denominators remain visible per arm. S/F has one valid safety
+win and five ties; S/R has six ties; both exact p-values are 1.0. Neither superiority criterion passes. No story advantage, training gain, booking effect or risk decrement.
+
+All cases, target prompts and label packets stayed fixed across the method-packet
+amendments. Three method audits + sixteen label reviews + 72 target attempts = 91
+application calls/CLI turns, $3.336371 total reported usage including the two earlier
+audits. A continuation requires restored capacity and a new published operational
+rule preserving all of this evidence; G12-B remains closed and incomplete.
+
+**Previous: [G11 story micro rounds](experiments/story-micro/README.md).**
 Both 90-call rounds completed. Wrong approvals among 24 over-limit attempts per
 arm: round one D/F/S = 5/0/0, with invalid answers 2/2/0; round two D/F/S = 3/2/0,
 with invalid answers 2/0/0. Each arm preserved 6/6 legitimate approvals in each

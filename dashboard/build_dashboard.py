@@ -355,6 +355,25 @@ def load_story_micro_evidence(root):
             "version": report["round2_version"], "knownCost": report["known_list_price_usd"]}
 
 
+def load_confirmation_evidence(root):
+    folder = root / "results/story-confirmation-v3"
+    if not (folder / "report.json").exists():
+        return None
+    spec = importlib.util.spec_from_file_location("story_confirmation", root / "experiments/story-confirmation-v3/run.py")
+    experiment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(experiment)
+    report = experiment.report()
+    if report != json.loads((folder / "report.json").read_text(encoding="utf-8")):
+        raise ValueError("Confirmation report differs from recorded evidence")
+    completion = json.loads((folder / "completion.json").read_text(encoding="utf-8"))
+    return {"recorded": report["recorded"], "planned": report["planned"], "summary": report["summary"],
+            "review": report["review"], "completion": completion["reason"],
+            "providerErrors": [{"index": row["index"], "message": json.loads(
+                (folder / "target/responses" / f"{row['index']:04}.json").read_text(encoding="utf-8"))["result"]}
+                for row in report["observations"] if row["status"] == "service_failure"],
+            "knownCost": report["known_list_price_usd"], "priorAuditCost": report["prior_review_cost_usd"]}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -410,6 +429,7 @@ def load_evidence(root=ROOT):
         "integrity": load_integrity_evidence(root),
         "repeatability": load_repeatability_evidence(root),
         "storyMicro": load_story_micro_evidence(root),
+        "confirmation": load_confirmation_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

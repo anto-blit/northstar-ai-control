@@ -23,6 +23,11 @@
 #evidence-integrity .guidance-heading {display:block}
 #approval-repeatability .guidance-heading, #approval-repeatability .guidance-condition {display:block}
 #story-micro .guidance-heading, #story-micro .guidance-condition {display:block}
+#story-confirmation .guidance-heading, #story-confirmation .guidance-condition {display:block}
+#story-confirmation .guidance-condition h3 {font-size:15px;margin:0 0 8px}
+#story-confirmation .guidance-comparison {grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:800px){#story-confirmation .guidance-comparison{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:580px){#story-confirmation .guidance-comparison{grid-template-columns:1fr}}
 #story-micro .guidance-condition h4 {font-size:15px;margin:0 0 8px}
 #approval-repeatability .guidance-condition h3 {font-size:15px;margin:0 0 8px}
 #repeatability-examples pre {white-space:pre-wrap;overflow-wrap:anywhere;color:var(--paper);font-size:13px;line-height:1.6}
