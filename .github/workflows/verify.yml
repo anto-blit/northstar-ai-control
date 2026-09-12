@@ -52,6 +52,11 @@ jobs:
           python experiments/story-continuation/run.py verify
           python -m unittest discover -s experiments/revocation-agent -p test_run.py -v
           python experiments/revocation-agent/run.py verify
+      - name: Check narrow approval screen
+        run: python -m unittest discover -s experiments/approval-story-screen -p test_run.py
+      - name: Replay narrow approval screen when recorded
+        if: ${{ hashFiles('results/approval-story-screen/report.json') != '' }}
+        run: python experiments/approval-story-screen/run.py verify
       - name: Run conformance and regression checks
         run: python verify_project.py
       - name: Reproduce frozen discovery trials
