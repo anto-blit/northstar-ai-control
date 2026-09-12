@@ -71,6 +71,35 @@ class EvidenceTests(unittest.TestCase):
         }
         self.save_queue_report()
 
+    def copy_keeper_fixture(self):
+        for relative in ("experiments/keeper-micro", "results/keeper-micro"):
+            shutil.copytree(dashboard.ROOT / relative, self.root / relative,
+                            ignore=shutil.ignore_patterns("__pycache__"))
+
+    def test_keeper_ceiling_cannot_be_presented_as_story_benefit(self):
+        self.copy_keeper_fixture()
+        data = dashboard.load_keeper_evidence(self.root)
+        self.assertEqual(data["recorded"], 40)
+        self.assertEqual(data["uniqueThreads"], 40)
+        self.assertFalse(data["summary"]["baseline_repeated"])
+        self.assertFalse(data["summary"]["candidate_vs_facts"])
+        self.assertIsNone(data["dollarCost"])
+        path = self.root / "results/keeper-micro/report.json"
+        report = json.loads(path.read_text())
+        report["summary"]["candidate_vs_facts"] = True
+        path.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, "Keeper report differs"):
+            dashboard.load_keeper_evidence(self.root)
+
+    def test_keeper_answer_cannot_be_changed_after_scoring(self):
+        self.copy_keeper_fixture()
+        path = self.root / "results/keeper-micro/responses/000.json"
+        record = json.loads(path.read_text())
+        record["result"] = '{"decision":"PROCEED","reason":"invented wrong approval"}'
+        path.write_text(json.dumps(record))
+        with self.assertRaisesRegex(ValueError, "Keeper report differs"):
+            dashboard.load_keeper_evidence(self.root)
+
     def save_queue_report(self):
         (self.root / "results/queue-integration/verification.json").write_text(json.dumps(self.queue_report))
 

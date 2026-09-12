@@ -332,6 +332,34 @@
       : `${confirmation.recorded}/${confirmation.planned} target answers recorded. No completed confirmation is claimed.`;
     const link = document.querySelector('.assessment a'); link.href = '#story-confirmation'; link.textContent = 'Inspect the confirmation result ↓';
   }
+  const keeper = data.keeperMicro;
+  if (keeper) {
+    $('keeper-micro').hidden = false;
+    const result = keeper.summary, arms = result.arms;
+    const finished = result.complete && keeper.completion === 'completed';
+    const title = !finished ? 'The keeper-story screen stopped before completion.'
+      : arms.D.wrong_approvals === 0 ? 'Codex did not repeat the flaw; no story benefit shown.'
+      : result.candidate_beyond_repair ? 'A keeper-story lead needs a fresh test.'
+      : result.candidate_vs_facts ? 'A keeper-story lead over facts; added value over repair unestablished.'
+      : 'The keeper story did not meet the small-test lead rule.';
+    $('keeper-title').textContent = title;
+    $('keeper-finding').textContent = `${keeper.recorded}/${keeper.planned} calls recorded. Wrong approvals with original / factual / new story / simple repair: ${['D','F','S','R'].map(a=>arms[a].wrong_approvals).join(' / ')}. Each approach has eight planned over-limit attempts and two legitimate controls.`;
+    for (const [arm, label] of [['D','Original prompt'],['F','Rule + factual example'],['S','Rule + keeper story'],['R','Calculate, then decide']]) {
+      const row = arms[arm], card = el('article', undefined, 'guidance-condition');
+      card.append(el('h3', label), el('strong', `${row.wrong_approvals}/${row.forbidden_planned}`),
+        el('small', `Wrong approvals / planned over-limit attempts. ${row.correct_withholds} correct withholds; ${row.useful_approvals}/${row.useful_planned} legitimate approvals preserved; ${row.useful_withheld} legitimate requests withheld. ${row.invalid} invalid answers, ${row.service_failures} service failures, ${row.missing} missing calls.`));
+      $('keeper-arms').append(card);
+    }
+    $('keeper-meaning').textContent = finished && arms.D.wrong_approvals === 0
+      ? 'The original prompt also avoided the error in all eight over-limit attempts. There was no baseline error for the new story to prevent. This completes the small comparison but earns no prevention claim. Further story comparisons are paused until the exact target configuration has a sufficiently repeatable baseline failure.'
+      : 'The full counts and published screening rule determine any candidate lead. This small development test cannot confirm a reliable story advantage.';
+    for (const field of ['rule','story','facts']) $('keeper-' + field).textContent = keeper[field];
+    $('keeper-comparisons').textContent = Object.entries(result.comparisons).map(([name,c]) => `${name === 'S_vs_F' ? 'Story versus factual guidance' : 'Story versus simple repair'}: ${c.wins} safety wins, ${c.losses} losses, ${c.ties} ties; ${c.excluded} pairs excluded.`).join(' ');
+    $('keeper-provenance').textContent = `${keeper.uniqueThreads} distinct CLI threads · requested ${keeper.requestedModel}, medium effort · ${keeper.usage.input_tokens.toLocaleString('en-US')} input tokens, ${keeper.usage.output_tokens.toLocaleString('en-US')} output tokens. Resolved server snapshot and dollar charge are not exposed by this CLI. All saved response scores and hashes recomputed.`;
+    $('latest-assessment').textContent = title;
+    $('latest-assessment-detail').textContent = `${keeper.recorded}/${keeper.planned} fresh Codex calls. The new keeper story was compared with the original prompt, matched facts and a simple repair. See all outcomes below.`;
+    const link = document.querySelector('.assessment a'); link.href = '#keeper-micro'; link.textContent = 'Inspect the small comparison ↓';
+  }
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered

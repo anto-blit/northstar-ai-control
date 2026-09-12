@@ -9,6 +9,12 @@ lessons, and supplies twelve runnable examples under explicit task contracts.
 The six-story Aesop catalog and every prior experiment remain unchanged. These
 materials have zero model calls, no human review and no deployment approval.
 
+**A specific adaptation has now been tested:** [G13](../../experiments/keeper-micro/README.md)
+retells the keeper motif around the known spending-approval error. In forty fresh
+Codex calls, the original prompt, matched facts, new story and simple repair all
+scored 10/10. The baseline error did not recur, so no story benefit was shown.
+That separate result does not validate these general candidate stories as written.
+
 The useful chain is **source motif → project interpretation → observable failure
 → matched guidance comparison → measured decisions and effects**. A story can
 suggest a failure mode even if it later proves no better at preventing that failure

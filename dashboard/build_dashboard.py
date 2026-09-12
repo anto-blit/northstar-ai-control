@@ -374,6 +374,28 @@ def load_confirmation_evidence(root):
             "knownCost": report["known_list_price_usd"], "priorAuditCost": report["prior_review_cost_usd"]}
 
 
+def load_keeper_evidence(root):
+    folder = root / "results/keeper-micro"
+    if not (folder / "report.json").exists():
+        return None
+    spec = importlib.util.spec_from_file_location("keeper_micro", root / "experiments/keeper-micro/run.py")
+    experiment = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(experiment)
+    report = experiment.report()
+    if report != json.loads((folder / "report.json").read_text(encoding="utf-8")):
+        raise ValueError("Keeper report differs from recorded evidence")
+    completion = json.loads((folder / "completion.json").read_text(encoding="utf-8"))
+    if completion["reason"] not in {"completed", "operational_stop", "token_stop"}:
+        raise ValueError("Unknown keeper completion reason")
+    if completion["reason"] == "completed" and (not report["summary"]["complete"] or
+            any(a["service_failures"] for a in report["summary"]["arms"].values())):
+        raise ValueError("Incomplete keeper run presented as completed")
+    return {"recorded": report["recorded"], "planned": report["planned"], "summary": report["summary"],
+            "completion": completion["reason"], "requestedModel": report["requested_model"],
+            "uniqueThreads": report["unique_threads"], "usage": report["usage"], "dollarCost": report["dollar_cost"],
+            "rule": experiment.RULE, "story": experiment.STORY, "facts": experiment.FACT}
+
+
 def load_candidate_materials(root):
     # Candidate rule examples are not experimental evidence or model scores.
     path = root / "curriculum/candidates/explore.py"
@@ -440,6 +462,7 @@ def load_evidence(root=ROOT):
         "repeatability": load_repeatability_evidence(root),
         "storyMicro": load_story_micro_evidence(root),
         "confirmation": load_confirmation_evidence(root),
+        "keeperMicro": load_keeper_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

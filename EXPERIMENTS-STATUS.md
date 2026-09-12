@@ -6,6 +6,12 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
+**Current decision: pause further story comparisons.** The user requires a
+reliable, repeatable AI failure first. Claude has recurring failure evidence;
+Codex's new eight-attempt original baseline has none. Follow the
+[baseline gate](experiments/BASELINE-GATE.md) before any further intervention calls.
+No further model calls followed this decision; completed G13 evidence is retained.
+
 **Separate preparation:** the [cross-cultural candidates](curriculum/candidates/README.md)
 map five proposed themes and develop two new adaptations with matched factual
 examples and twelve runnable rule cases. Six preparation tests exercise unknown
@@ -13,7 +19,27 @@ facts, honest failure reporting, tampering and selective revocation. This is
 candidate curriculum work with zero model calls, not a new experimental result.
 It does not modify G12's frozen prompts, the six-story catalog or earlier evidence.
 
-**Latest: [G12-B confirmation interrupted by provider quota](experiments/story-confirmation-v3/README.md).**
+**Latest: [G13 new keeper-story micro screen on Codex](experiments/keeper-micro/README.md).**
+
+Forty calls completed: D/F/S/R each made 0/8 wrong approvals, eight correct
+withholds and 2/2 legitimate approvals. Zero invalid answers, service failures,
+missing calls or retries. Both S/F and S/R have eight ties, no wins, losses or
+exclusions. The original error did not recur; neither candidate flag passes.
+No prevention claim, confirmed story advantage, model training or risk decrement.
+
+The evidence-keeper motif was adapted to the exact known 068/407 approval pair;
+its factual control has the same teaching facts and corrections. One repeated
+pair, four approaches, forty distinct ephemeral Codex threads. Requested
+gpt-6-astra / medium, CLI 0.154.0. Recorded usage: 197,712 input tokens, including
+83,328 cached, and 2,967 output tokens, including 370 reasoning. Dollar charge and
+resolved server snapshot are unavailable. All requests and scoring rules were
+published before calls; all saved results replay. This is a separate model screen,
+not completion of G12 or independent review. Any further prevention comparison
+must first meet the baseline gate above. The general candidate examples remain
+untested as written; G13 is
+a specific new adaptation, not a validation of the whole collection.
+
+**Previous: [G12-B confirmation interrupted by provider quota](experiments/story-confirmation-v3/README.md).**
 
 The passing Opus method audit and sixteen blind label reviews agreed on all 256
 cases before targets. The fixed 1,024-call comparison stopped at 72 attempts after

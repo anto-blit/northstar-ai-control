@@ -31,7 +31,19 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Latest: [Claude's quota interrupted the confirmation test](experiments/story-confirmation-v3/README.md).**
+**Latest: [40-call test of the new keeper story on Codex](experiments/keeper-micro/README.md).**
+All four approaches scored **10/10**: original prompt, matched factual guidance,
+new keeper story and simple repair. Each rejected all eight over-limit requests
+and accepted both legitimate controls; no invalid answers or service errors.
+**The original error did not recur, so no story benefit was demonstrated.** This
+completes the small comparison on one known pair but cannot establish a zero error
+rate. These forty fresh Codex sessions are separate from Claude's recorded errors
+and interrupted confirmation. **Further story comparisons are paused until a
+reliable baseline qualifies on the exact target configuration.** See the
+[baseline gate](experiments/BASELINE-GATE.md) and
+[complete comparison and new story](https://anto-blit.github.io/northstar-ai-control/#keeper-micro).
+
+**Previous: [Claude's quota interrupted the confirmation test](experiments/story-confirmation-v3/README.md).**
 The method audit passed and separate AI checks agreed on all 256 case labels and
 calculations. The comparison then stopped at **72/1,024 calls** when two calls hit
 Claude's session quota; 952 remain unattempted. Among six recorded over-limit
