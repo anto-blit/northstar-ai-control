@@ -1,0 +1,7 @@
+{
+  "started_at": "2026-09-12T17:06:42.394391+00:00",
+  "publication": {
+    "commit": "176e61ca535404cfa32295485e1371f60fe4cc90",
+    "scope": "G12 protocol, all 256 case texts, 17 review packets, 1024 target prompts and inference rules published before every review and target call."
+  }
+}

@@ -70,6 +70,11 @@ jobs:
       - name: Replay story confirmation when recorded
         if: ${{ hashFiles('results/story-confirmation/report.json') != '' }}
         run: python experiments/story-confirmation/run.py verify
+      - name: Check amended confirmation inventory and scoring
+        run: python -m unittest discover -s experiments/story-confirmation-v2 -p test_run.py
+      - name: Replay amended story confirmation when recorded
+        if: ${{ hashFiles('results/story-confirmation-v2/report.json') != '' }}
+        run: python experiments/story-confirmation-v2/run.py verify
       - name: Run conformance and regression checks
         run: python verify_project.py
       - name: Reproduce frozen discovery trials
