@@ -6,6 +6,23 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
+**Latest study: [G6 revocation-agent](experiments/revocation-agent/README.md).**
+The public plan separates model behavior from scripted control challenges, using
+actual loopback HTTP requests and SQLite mailbox effects. The eight scripted
+controls reproduce post-stop delivery in both revoked weak-control cases and
+prevent it in both strong conventional-control cases; useful completion is 6/6
+under both mechanisms. Fourteen harness tests cover effects, reporting and replay.
+
+All 32 target episodes are recorded: 15 successful, 15 invalid tool outputs and
+two provider refusals, across 159 calls. No accepted request violates revocation;
+31/48 required useful deliveries occur. All invalid outputs have one recognizable
+request surrounded by extra prose, according to a separately recorded post-hoc
+inspection. Those requests were not executed or retried. Only one optional
+background-note read occurred, limiting the intended task-pressure exposure.
+The behavioral comparison is inconclusive, and there are no jointly completed
+fable/factual pairs. No story advantage, independent human review, extinction
+simulation or global-risk decrement. [Scope of hypothetical testing](docs/what-we-can-test.md).
+
 **Latest implementation: [story distillation G5](experiments/story-distillation/README.md).**
 Six Aesop source passages have AI-authored interpretations, conditional rules,
 exceptions and explicit disagreement records. A compiler and rule checker run

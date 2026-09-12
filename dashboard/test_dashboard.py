@@ -34,7 +34,8 @@ class EvidenceTests(unittest.TestCase):
         shutil.copytree(dashboard.ROOT / "experiments/codex-repair", self.root / "experiments/codex-repair",
                         ignore=shutil.ignore_patterns("__pycache__"))
         for relative in ("curriculum", "northstar_ethics", "experiments/story-distillation", "results/story-distillation",
-                         "experiments/story-continuation", "results/story-continuation"):
+                         "experiments/story-continuation", "results/story-continuation", "northstar_queue",
+                         "experiments/revocation-agent", "results/revocation-agent"):
             shutil.copytree(dashboard.ROOT / relative, self.root / relative,
                             ignore=shutil.ignore_patterns("__pycache__"))
         (self.root / "proof.py").write_bytes(b"verified source\n")
@@ -296,6 +297,48 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(catalog), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Frozen source changed"):
             dashboard.load_story_evidence(self.root)
+
+    def test_revocation_scripted_controls_are_separate_from_interrupted_agents(self):
+        data = dashboard.load_revocation_evidence(self.root)
+        self.assertEqual(data["recorded"], 32)
+        self.assertTrue(data["allAdjudicated"])
+        self.assertFalse(data["allFinished"])
+        self.assertEqual(data["controls"]["cooperative_cancel"]["prohibited_deliveries"], 2)
+        self.assertEqual(data["controls"]["transactional_cancel"]["prohibited_deliveries"], 0)
+        rows = [row for arms in data["summary"].values() for row in arms.values()]
+        self.assertEqual(sum(r["success"] for r in rows), 15)
+        self.assertEqual(sum(r["invalid"] for r in rows), 15)
+        self.assertEqual(sum(r["provider_refusal"] for r in rows), 2)
+        self.assertEqual(sum(r["prohibited_deliveries"] for r in rows), 0)
+        self.assertEqual(sum(r["useful_completed"] for r in rows), 31)
+        self.assertEqual(sum(r["useful_required"] for r in rows), 48)
+        self.assertEqual(data["formatDiagnosis"]["single_embedded_request_with_surrounding_text"], 15)
+        self.assertEqual(len(data["comparisons"]["transactional_cancel"]["S_vs_F"]["excluded"]), 4)
+
+    def test_revocation_model_success_cannot_be_inflated(self):
+        path = self.root / "results/revocation-agent/report.json"
+        report = json.loads(path.read_text(encoding="utf-8"))
+        report["summary"]["transactional_cancel"]["S"]["success"] += 1
+        path.write_text(json.dumps(report), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "G6 report or evidence changed"):
+            dashboard.load_revocation_evidence(self.root)
+
+    def test_revocation_mailbox_effect_cannot_be_erased(self):
+        path = self.root / "results/revocation-agent/episodes/000/outcome.json"
+        outcome = json.loads(path.read_text(encoding="utf-8"))
+        self.assertTrue(outcome["snapshot"]["mailbox"])
+        outcome["snapshot"]["mailbox"] = []
+        path.write_text(json.dumps(outcome), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "effects or score"):
+            dashboard.load_revocation_evidence(self.root)
+
+    def test_revocation_format_diagnosis_cannot_rescue_a_trial(self):
+        path = self.root / "results/revocation-agent/format-diagnosis.json"
+        diagnosis = json.loads(path.read_text(encoding="utf-8"))
+        diagnosis["single_embedded_request_with_surrounding_text"] = 0
+        path.write_text(json.dumps(diagnosis), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "format diagnosis or source changed"):
+            dashboard.load_revocation_evidence(self.root)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,15 @@
 # Results
 
+`revocation-agent/` contains G6's public plan, separate context authoring/review,
+eight scripted controls, 159 target responses, 32 recorded agent outcomes and
+an offline-replayable report. Scripted weak/strong controls yield two/zero
+prohibited deliveries while preserving all required authorized work. Target
+episodes yield fifteen successes, fifteen invalid outputs and two refusals,
+with no accepted post-stop request and 31/48 useful deliveries. A post-hoc
+format diagnosis preserves all failed episodes; embedded requests are never
+executed or counted as completed actions. The pre-target sandbox launch failure
+is retained separately. [Full results and limitations](../experiments/revocation-agent/README.md).
+
 `story-continuation/` preserves G5-C's public amendment, sixty new provider
 responses, thirty new local ledgers and a combined replayable report. All thirty
 new episodes completed correctly. Combined D 11/12 useful/correct completions

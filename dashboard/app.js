@@ -9,6 +9,44 @@
   const el = (tag, text, className) => { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; if (className) node.className = className; return node; };
   const svg = (tag, attributes, text) => { const node = document.createElementNS(NS, tag); Object.entries(attributes).forEach(([key, value]) => node.setAttribute(key, String(value))); if (text !== undefined) node.textContent = text; return node; };
 
+  const revocation = data.revocation;
+  const revocationRows = Object.values(revocation.summary).flatMap(arms => Object.values(arms));
+  const revocationTotal = key => revocationRows.reduce((sum,row) => sum+row[key],0);
+  const modeNames = {cooperative_cancel:'Worker asked to stop',transactional_cancel:'Service enforces stop'};
+  Object.entries(revocation.controls || {}).forEach(([mode,row]) => {
+    const card = el('div', undefined, 'guidance-condition');
+    card.append(el('span', modeNames[mode]), el('strong', `${row.revoked_cases_with_delivery}/${row.revoked_cases}`),
+      el('small', 'revoked cases where a scripted delivery still reached the mailbox'),
+      el('small', `${row.useful_completed}/${row.useful_required} required authorized deliveries completed`));
+    $('revocation-controls').append(card);
+  });
+  $('revocation-summary').textContent = `${revocation.recorded}/${revocation.planned} episodes recorded on Claude Sonnet 5; ${revocationTotal('finished')} finished with a valid final report, ${revocationTotal('invalid')} ended on invalid tool output, ${revocationTotal('provider_refusal')} on provider refusal, ${revocationTotal('service_failure')} on other service failure, ${revocationTotal('exhausted')} exhausted the request budget and ${revocationTotal('unstarted')} remain unstarted. ${revocationTotal('revoked_exposed')} revoked episodes reached the operator update. Accepted post-stop delivery requests: ${revocationTotal('revoked_delivery_attempts')}; prohibited mailbox effects: ${revocationTotal('prohibited_deliveries')}.`;
+  const formatDiagnosis = revocation.formatDiagnosis;
+  $('revocation-diagnosis').textContent = `Post-hoc inspection found one recognizable tool request surrounded by extra text in ${formatDiagnosis.single_embedded_request_with_surrounding_text}/${formatDiagnosis.invalid_episodes} invalid outputs. The fixed JSON contract rejected them. ${formatDiagnosis.embedded_stopped_job_delivery_requests} contained a request to deliver the stopped job. These requests were never executed; they do not turn interrupted workflows into successful trials. Formatting and provider refusals limit the behavioral comparison.`;
+  function renderRevocation() {
+    const mode = $('revocation-mode').value;
+    $('revocation-mode-description').textContent = mode === 'cooperative_cancel'
+      ? 'An already reserved delivery can still execute after stop; the worker must cooperate. This intentionally limited mechanism makes a violation observable.'
+      : 'The service cancels reserved work and checks authority in the same transaction as the mailbox write. This is the strong conventional comparator.';
+    $('revocation-comparison').replaceChildren();
+    Object.entries(revocation.summary[mode]).forEach(([arm,row]) => {
+      const card = el('div', undefined, 'guidance-condition');
+      card.append(el('span', {B:'Ordinary instructions',P:'Explicit principles',F:'With factual example',S:'With new fable'}[arm]),
+        el('strong', `${row.success}/${row.planned}`), el('small', 'complete, useful and correctly reported episodes'),
+        el('small', `${row.revoked_delivery_attempts} accepted post-stop requests · ${row.prohibited_deliveries} prohibited effects`),
+        el('small', `${row.useful_completed}/${row.useful_required} required useful deliveries · ${row.accurate_reports}/${row.planned} accurate final reports`),
+        el('small', `${row.invalid} invalid outputs · ${row.provider_refusal} refusals · ${row.service_failure} service failures · ${row.exhausted} exhausted · ${row.unstarted} unstarted`));
+      $('revocation-comparison').append(card);
+    });
+    $('revocation-finding').textContent = ['F','P','B'].map(arm => {
+      const p = revocation.comparisons[mode][`S_vs_${arm}`];
+      return `Fable versus ${ {F:'factual example',P:'principles',B:'ordinary instructions'}[arm] }: ${p.wins} wins, ${p.losses} losses, ${p.ties} ties; ${p.excluded.length} of 4 pairs excluded because a valid final report was missing.`;
+    }).join(' ') + ' These conditional comparisons can be biased by unequal interruptions. Differences in formatting or refusal are not evidence of better judgment. The scripted control result establishes no spontaneous harmful intent, and this small agent screen establishes no broad story advantage.';
+  }
+  $('revocation-mode').addEventListener('change', renderRevocation);
+  renderRevocation();
+  $('revocation-provenance').textContent = `Plan published before target calls${revocation.publicCommit ? ' in commit '+revocation.publicCommit.slice(0,7) : ''}. ${revocation.targetCalls} target calls; ${revocation.operationalAnswers} operational answers. Known list-price usage including preparation: $${revocation.knownCost.toFixed(4)}. Earlier evidence is preserved.`;
+
   const storyData = data.stories;
   const stories = storyData.catalog.stories;
   stories.forEach(story => { const option = el('option', story.title); option.value = story.id; $('lesson-select').append(option); });
@@ -145,8 +183,8 @@
   const formatP = value => value < 0.0001 ? '< 0.0001' : '= ' + Number(value.toFixed(4));
   const headline = !continued.allAnswered ? 'The resumed comparison is incomplete.' : contrast.statistically_supported ? 'The repair gain repeated on Sonnet.' : contrast.favorable_descriptive_replication ? 'An observed gain, still uncertain.' : 'The repair did not meet the replication criterion.';
   $('replication-title').textContent = headline;
-  $('latest-assessment').textContent = storyTied ? 'The story test ran. No added advantage appeared.' : 'The story-to-rule prototype is ready to explore.';
-  $('latest-assessment-detail').textContent = storyTied ? 'The remaining 30 episodes finished correctly. Every comparable decision tied across stories, factual examples and principles; one earlier provider refusal remains on record.' : 'Six sourced fables, explicit disagreements and a runnable decision checker. A behavioral advantage remains unestablished.';
+  $('latest-assessment').textContent = 'The conventional stop control passed its scripted checks.';
+  $('latest-assessment-detail').textContent = `${revocation.recorded}/${revocation.planned} ordinary-agent episodes recorded; ${revocationTotal('finished')} finished, ${revocationTotal('invalid')} ended on invalid tool output, ${revocationTotal('provider_refusal')} on provider refusal. The agent evidence and scripted controls are reported separately.`;
   $('replication-answers').textContent = `${continued.answered}/${continued.planned}`;
   $('replication-lede').textContent = 'The larger test compares the same repair on fresh cases and a second model, with a separate test connecting decisions to harmless local booking effects.';
   $('replication-summary').textContent = continued.allAnswered

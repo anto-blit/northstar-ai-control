@@ -1499,7 +1499,7 @@ dialog strong {
 .lesson-card p {font-size:14px;line-height:1.7}
 .lesson-card h3 {font-size:21px;line-height:1.4;margin:10px 0}
 .lesson-label {display:block;margin-bottom:8px;color:var(--muted);font-size:13px}
-.lesson-card select {width:100%;min-width:0;padding:10px 12px;border-radius:6px;background:#10272d;color:#e0ece8;border:1px solid #597370;font:inherit;font-size:13px}
+.lesson-card select,#revocation-mode {width:100%;min-width:0;padding:10px 12px;border-radius:6px;background:#10272d;color:#e0ece8;border:1px solid #597370;font:inherit;font-size:13px}
 .lesson-story {padding-bottom:18px;border-bottom:1px solid #38534e}
 .lesson-card .lesson-source-note {font-size:11px;color:var(--muted)}
 .lesson-card blockquote {margin:15px 0;padding:0 0 0 15px;border-left:2px solid #597370;font-size:13px;line-height:1.7;white-space:pre-line}
@@ -1515,6 +1515,13 @@ dialog strong {
 #lesson-trace li {margin:10px 0}
 .story-screen {border-top:1px solid #38534e;padding-top:24px}
 .story-screen .guidance-condition {display:block}
+.revocation-controls {grid-template-columns:repeat(2,minmax(0,1fr))}
+.revocation-comparison {grid-template-columns:repeat(4,minmax(0,1fr))}
+#revocation .guidance-condition {display:block}
+#revocation h3 {margin-top:28px}
+#revocation-mode {max-width:410px}
+@media(max-width:900px) {.revocation-comparison {grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:550px) {.revocation-controls,.revocation-comparison {grid-template-columns:1fr}}
 .story-screen h3 {font-size:24px;margin:10px 0}
 .story-screen>p {line-height:1.7}
 @media(max-width:900px) {.lesson-layout {grid-template-columns:1fr}}

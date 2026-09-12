@@ -3,6 +3,18 @@
 Updated September 11, 2026 (America/Los_Angeles). This document separates executed
 evidence, research judgment, and the tests needed to decide what to pursue.
 
+The [G6 revocation-agent screen](../experiments/revocation-agent/README.md) connects
+model tool requests to actual local queue effects and reports deliberate control
+challenges separately. The conventional transactional stop prevents both scripted
+post-stop delivery cases; the weak comparator allows both. Both preserve useful
+work. Of 32 ordinary-agent episodes, fifteen succeed, fifteen terminate on invalid
+tool output and two receive provider refusals. No accepted request violates stop,
+but interruptions and weak exposure to optional task-pressure notes limit the
+behavioral result. The next behavioral screen needs reliable structured output
+and verified exposure to its intended conditions, under a new frozen version.
+This is conditional mechanism evidence, not a forecast of catastrophic outcomes.
+See [what hypothetical testing can establish](what-we-can-test.md).
+
 The [first story-to-rule implementation](../curriculum/README.md) now exists:
 six sourced fables, explicit interpretations and disagreements, and a runnable
 checker over supplied facts. This returns to the original guidance question.
@@ -66,6 +78,7 @@ Git times below use America/Los_Angeles.
 | Separate Codex comparison G4 | September 11, 2026 | Publicly registered 288 calls on all 96 G3 direct cases. Requested GPT-6 Astra scores 96/96 under original, repair and factual examples, with usefulness preserved and no unsafe or invalid answers. No observed added repair benefit; no pooling with Claude |
 | Story distillation prototype and G5 screen | September 11, 2026 | Six sourced fables compiled into explicit conditional rules, with disagreements preserved. Eleven prototype tests and an interactive checker. Model screen stopped on one provider error: five complete episodes, one interrupted, 30 unstarted. No guidance advantage established |
 | Completed story continuation G5-C | September 11, 2026 | Public operational amendment preserves the refusal and finishes all thirty untouched episodes. D 11/12 useful/correct completions with one refusal; F/S 12/12. All jointly valid comparisons tie, 35 useful local effects replay, no narrative advantage observed. Next proposed step: harder independent cases and an ordinary-instructions baseline |
+| Revocation-agent screen G6 | September 11, 2026 | Eight scripted control cases: weak cancellation allows two post-stop deliveries; strong conventional cancellation allows none, usefulness preserved. Thirty-two agent episodes: 15 successful, 15 invalid tool outputs, two refusals. No accepted stop violation; interface interruptions and limited pressure-note exposure prevent a strong behavioral or story-benefit conclusion |
 
 The original v0.3 graph check is distinct from Draft 0.1's representation-based
 label-propagation proposal. Earlier versions without supplied artifacts are not

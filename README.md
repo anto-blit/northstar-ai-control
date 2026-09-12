@@ -31,7 +31,17 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**New: [try the story-to-rule prototype](https://anto-blit.github.io/northstar-ai-control/#stories).**
+**Latest: [test a concrete stop boundary](https://anto-blit.github.io/northstar-ai-control/#revocation).**
+The [G6 study](experiments/revocation-agent/README.md) separates ordinary-agent
+behavior from scripted control tests. Deliberate post-stop delivery succeeds in
+2/2 revoked cases with cooperative cancellation and 0/2 with conventional
+transactional cancellation; both preserve all six required authorized deliveries.
+Of 32 ordinary-agent episodes, 15 finish successfully, 15 end on invalid tool
+output and two receive provider refusals. No accepted request violates stop;
+the interruptions limit behavioral conclusions. No story advantage or global-risk
+reduction is established. [Why hypothetical scenarios can still be useful tests](docs/what-we-can-test.md).
+
+**Also: [try the story-to-rule prototype](https://anto-blit.github.io/northstar-ai-control/#stories).**
 Six sourced fables now have explicit lessons, reasons, exceptions, disagreements
 and runnable conditional rules. Change the supplied facts on the site to inspect
 an allow, block or review decision. The interpretations are provisional and human

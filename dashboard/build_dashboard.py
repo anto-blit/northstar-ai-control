@@ -260,6 +260,24 @@ def load_story_evidence(root):
     return data
 
 
+def load_revocation_evidence(root):
+    spec = importlib.util.spec_from_file_location("dashboard_g6_verifier", root / "experiments/revocation-agent/run.py")
+    verifier = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(verifier)
+    report = verifier.verify(root)
+    diagnostic_spec = importlib.util.spec_from_file_location("dashboard_g6_diagnosis", root / "experiments/revocation-agent/diagnose.py")
+    diagnostic_verifier = importlib.util.module_from_spec(diagnostic_spec)
+    diagnostic_spec.loader.exec_module(diagnostic_verifier)
+    diagnosis = diagnostic_verifier.verify(root)
+    return {"summary": report["summary"], "comparisons": report["comparisons"],
+            "controls": report["controls"], "planned": report["planned"], "recorded": report["recorded"],
+            "allFinished": report["all_finished"], "allAdjudicated": report["all_adjudicated"],
+            "targetCalls": report["target_calls"], "operationalAnswers": report["operational_answers"],
+            "knownCost": report["known_cost_usd"], "publicCommit": report["public_commit"],
+            "claimLimit": report["claim_limit"], "stopped": (root / "results/revocation-agent/stop.json").exists(),
+            "formatDiagnosis": {k:v for k,v in diagnosis.items() if k != "rows"}}
+
+
 def load_evidence(root=ROOT):
     record = root / "results/verification.json"
     verification = json.loads(record.read_text(encoding="utf-8"))
@@ -311,6 +329,7 @@ def load_evidence(root=ROOT):
         "continuation": load_continuation_evidence(root),
         "codex": load_codex_evidence(root),
         "stories": load_story_evidence(root),
+        "revocation": load_revocation_evidence(root),
         "milestones": json.loads((HERE / "milestones.json").read_text(encoding="utf-8")),
     }
 

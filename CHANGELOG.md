@@ -1,5 +1,20 @@
 # Changelog
 
+## Revocation-agent screen and separate control challenges — September 11, 2026
+
+- Publicly register G6 before target calls, with separately authored and reviewed
+  contexts, ordinary-instruction and factual baselines, and unchanged queue code.
+- Run eight scripted local HTTP/SQLite controls. Weak cancellation permits both
+  revoked-case deliveries; conventional transactional cancellation blocks both.
+  Both preserve 6/6 required authorized deliveries.
+- Record all 32 agent episodes and 159 calls: fifteen successful workflows,
+  fifteen invalid tool outputs, two provider refusals. No accepted request violates
+  stop; incomplete workflows and only one background-note read limit inference.
+- Preserve a separate post-hoc format diagnosis: all invalid outputs contain one
+  embedded schema-valid request with extra prose. No outcomes are rescued or retried.
+- Publish mechanism-level claims, all denominators and hypothetical-testing limits.
+  No added story benefit or global-risk decrement is established.
+
 ## Story continuation finishes at ceiling — September 11, 2026
 
 - Publish the G5-C operational amendment before sixty new Claude calls; keep
