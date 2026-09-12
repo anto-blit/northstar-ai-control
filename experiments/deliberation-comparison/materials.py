@@ -22,6 +22,11 @@ ARM_NAMES = {"D": "original prompt", "F": "matched factual guidance",
 # Stage A qualifies the baseline; stage B is registered separately once A reports.
 STAGE_A_PAIRS = 32          # 32 over-limit + 8 legitimate controls, arm D only
 STAGE_A_CONTROLS = 8
+# A2 re-runs the qualification on fresh cases under a revised control rule and
+# the tolerant scorer. More controls than A, because the rule it must satisfy is
+# now a rate rather than a single all-correct check.
+STAGE_A2_PAIRS = 32
+STAGE_A2_CONTROLS = 12
 
 # Sources inherited unchanged. Their hashes are recorded in the plan; if any of
 # them changes, this study must be re-versioned rather than re-run.
@@ -69,13 +74,33 @@ def stage_a_requests():
     return selected
 
 
-def stage_b_requests(pairs):
-    """All four arms on the first `pairs` blocks not used by stage A.
+def stage_a2_requests():
+    """Arm D only, on fresh cases: the cases stage A used are excluded.
 
-    Stage A's cases are excluded so the comparison is not scored on the same
-    instances that qualified its baseline.
+    A2 exists because stage A's control rule conflated a legitimate case being
+    wrongly withheld with a legitimate answer being malformed. The revised rule
+    is in PROTOCOL.md; the cases here are disjoint from stage A's so the revised
+    rule is never applied to the answers that prompted the revision.
     """
     used = {row["case"] for row in stage_a_requests()}
+    rows = [row for row in all_requests() if row["arm"] == "D" and row["case"] not in used]
+    over = [r for r in rows if r["expected"] == "WITHHOLD"][:STAGE_A2_PAIRS]
+    legit = [r for r in rows if r["expected"] == "PROCEED"][:STAGE_A2_CONTROLS]
+    selected = over + legit
+    for index, row in enumerate(selected):
+        row["stage"] = "A2"
+        row["index"] = index
+    return selected
+
+
+def stage_b_requests(pairs):
+    """All four arms on the first `pairs` blocks used by neither A nor A2.
+
+    Earlier stages' cases are excluded so the comparison is not scored on the
+    same instances that qualified its baseline.
+    """
+    used = ({row["case"] for row in stage_a_requests()}
+            | {row["case"] for row in stage_a2_requests()})
     rows = [row for row in all_requests() if row["case"] not in used]
     blocks, seen = [], set()
     for row in rows:
@@ -89,13 +114,18 @@ def stage_b_requests(pairs):
     return selected
 
 
+REQUESTS = {"A": stage_a_requests, "A2": stage_a2_requests}
+
+
 if __name__ == "__main__":
-    a = stage_a_requests()
+    a, a2 = stage_a_requests(), stage_a2_requests()
     print(json.dumps({
         "stage_a_calls": len(a),
-        "over_limit": sum(r["expected"] == "WITHHOLD" for r in a),
-        "legitimate": sum(r["expected"] == "PROCEED" for r in a),
-        "arms_present": sorted({r["arm"] for r in a}),
-        "distinct_cases": len({r["case"] for r in a}),
+        "stage_a2_calls": len(a2),
+        "stage_a2_over_limit": sum(r["expected"] == "WITHHOLD" for r in a2),
+        "stage_a2_legitimate": sum(r["expected"] == "PROCEED" for r in a2),
+        "arms_present_a2": sorted({r["arm"] for r in a2}),
+        "cases_shared_between_a_and_a2": sorted(
+            {r["case"] for r in a} & {r["case"] for r in a2}),
         "inherited_hashes": inherited_hashes(),
     }, indent=2))

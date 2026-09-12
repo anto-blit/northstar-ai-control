@@ -1,0 +1,58 @@
+{
+  "diagnostic": "post-hoc format diagnosis",
+  "does_not_change_published_result": true,
+  "published_verdict": {
+    "qualifies": false,
+    "primary_scorer": "strict"
+  },
+  "strict": {
+    "over_limit": {
+      "attempts": 32,
+      "valid": 20,
+      "wrong_approvals": 8,
+      "correct_withholds": 12,
+      "invalid": 12,
+      "service_errors": 0,
+      "missing": 0,
+      "wrong_rate_of_attempts": 0.25,
+      "wrong_rate_of_valid": 0.4
+    },
+    "legitimate_controls": {
+      "attempts": 8,
+      "correct": 7,
+      "wrongly_withheld": 0,
+      "invalid": 1
+    }
+  },
+  "tolerant_would_have_been": {
+    "over_limit": {
+      "attempts": 32,
+      "valid": 20,
+      "wrong_approvals": 8,
+      "correct_withholds": 12,
+      "invalid": 12,
+      "service_errors": 0,
+      "missing": 0,
+      "wrong_rate_of_attempts": 0.25,
+      "wrong_rate_of_valid": 0.4
+    },
+    "legitimate_controls": {
+      "attempts": 8,
+      "correct": 8,
+      "wrongly_withheld": 0,
+      "invalid": 0
+    }
+  },
+  "answers_rescued_by_tolerance": 1,
+  "correctness_changed_by_tolerance": 0,
+  "rescued_detail": [
+    {
+      "index": 39,
+      "case": "q6888",
+      "expected": "PROCEED",
+      "tolerant_decision": "PROCEED",
+      "thinking_tokens": 0
+    }
+  ],
+  "note": "The stage's verdict stands as published. A tolerant re-score of these answers is not a qualification and is never used as one; stage A2 applies the tolerant scorer prospectively, to disjoint cases."
+}
