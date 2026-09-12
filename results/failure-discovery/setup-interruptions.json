@@ -1,0 +1,21 @@
+{
+  "phase": "before registration and all model calls",
+  "events": [
+    {
+      "operation": "sandboxed plan registration",
+      "error": "Windows denied access to a temporary directory; SQLite could not open its database",
+      "plan_written": false,
+      "control_outcomes_written": 0,
+      "model_calls": 0,
+      "resolution": "Identical registration command run outside the sandbox after authorization"
+    },
+    {
+      "operation": "controls invoked after failed registration",
+      "error": "Missing plan.json",
+      "control_outcomes_written": 0,
+      "model_calls": 0,
+      "resolution": "Registered the unchanged source before running controls"
+    }
+  ],
+  "note": "Canceled permission requests did not execute experiments. No result was replaced."
+}
