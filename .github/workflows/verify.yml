@@ -68,6 +68,11 @@ jobs:
       - name: Check candidate lesson contracts without model calls
         # Candidate checks do not alter frozen studies.
         run: python -m unittest discover -s curriculum/candidates -p test_candidates.py
+      - name: Check keeper micro scoring and isolation
+        run: python -m unittest discover -s experiments/keeper-micro -p test_run.py
+      - name: Replay keeper micro screen when recorded
+        if: ${{ hashFiles('results/keeper-micro/report.json') != '' }}
+        run: python experiments/keeper-micro/run.py verify
       - name: Check frozen-story confirmation scoring
         run: python -m unittest discover -s experiments/story-confirmation -p test_run.py
       - name: Replay story confirmation when recorded
