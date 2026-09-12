@@ -30,6 +30,35 @@ regenerate it by redirecting the second command.
   consecutive zero-thinking calls in wall-clock order — that would expose a
   service window or truncation rather than a per-call model property.
 
+## Feasibility probe: the knob works
+
+`probe_effort.py` asks one engineering question before a study is designed around
+the answer — does the Claude CLI's `--effort low` actually reach the
+non-deliberating regime? G16 assumed a "low" setting meant low deliberation and
+was wrong, so the knob gets measured first.
+
+Thirty calls on the exact frozen G10 prompts, pooled over two probes:
+
+| | calls | zero-thinking | wrong approvals | invalid | correct |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Case 068 (over limit) at `low` | 15 | **13 (87%)** | 3 (20%) | 5 | 7 |
+| Case 068 at `medium` (G10, for comparison) | 50 | 17 (34%) | 6 (12%) | 11 | 33 |
+| Case 407 (legitimate control) at `low` | 15 | **0** | — | 0 | **15/15** |
+
+Lowering effort raises the zero-thinking rate on the failing prompt from 34% to
+87% and the wrong-approval rate from 12% to 20%, while the legitimate control
+still deliberates and still approves 15/15. That is the combination a comparison
+needs: a baseline that fails often, and benign work that survives.
+
+The manipulation is partial — it does not force thinking off everywhere, and
+which prompts stop deliberating is itself prompt-dependent. A registered study
+must therefore report the realised zero-thinking rate per arm rather than assume
+it.
+
+These probe calls are **not evidence** and live in
+`study-runs/deliberation-probe/`, never in `results/`. A registered comparison
+uses fresh calls.
+
 ## Standing limits
 
 The subgroup analysis conditions on a post-treatment variable that the prompt
