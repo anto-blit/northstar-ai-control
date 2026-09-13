@@ -1,6 +1,6 @@
 # NorthStar: start here to continue the work
 
-Updated September 12, 2026. Evidence through G17 stage A2.
+Updated September 13, 2026. Evidence through G17 stage A2.
 G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
 thinking analysis made none. G17 stage B is registered and has made none.
 
@@ -26,6 +26,15 @@ full dashboard is retained at `dashboard/research.html`. The simpler
 [five-minute volunteer review idea](docs/volunteer-idea.md) is saved for later,
 not launched. No additional model calls or safeguard experiment were authorized
 by these website changes.
+
+September 13: the user found the proposal form's test-situation questions unclear
+for beginners. The form now explains two versions of one made-up task (stop/ask
+and go ahead), why both matter, and provides six story-specific, untested writing
+examples plus a general example for custom stories. The starter button fills only
+empty boxes and preserves visitors' edits. These are presentation changes only;
+no study was registered and no model calls were made. Validation passed: 54
+dashboard tests, the browser smoke check at 320/390/768/1440 px, and the export
+`--check`. The user authorized committing and publishing these website changes.
 
 The [corrected comparison machinery v2](experiments/deliberation-comparison-v2/README.md)
 passed 25 offline regression tests, including a complete 320-response synthetic

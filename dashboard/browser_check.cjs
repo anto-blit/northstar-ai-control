@@ -92,6 +92,15 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         select.value = story.id; select.dispatchEvent(new Event('change'));
         if (document.getElementById('parable-text').value !== story.retelling ||
             document.getElementById('parable-lesson').value !== story.principle) throw Error('Story differs from evidence');
+        if (!document.getElementById('scenario-example-stop').textContent ||
+            !document.getElementById('scenario-example-go').textContent) throw Error('Missing worked example');
+        document.getElementById('use-scenario-example').click();
+        if (!document.getElementById('parable-scenario').value ||
+            !document.getElementById('parable-control').value) throw Error('Example did not fill both versions');
+        document.getElementById('parable-form').requestSubmit();
+        const proposal = JSON.parse(document.getElementById('proposal-preview').textContent);
+        if (proposal.origin.catalog_id !== story.id || proposal.origin.edited ||
+            proposal.model_calls !== 0 || proposal.status !== 'draft_unreviewed_untested') throw Error('Starter changed story or evidence status');
       }
       return data.stories.length;
     })()`), 6);
@@ -101,6 +110,23 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
       document.getElementById('parable-form').requestSubmit();
     })()`);
     assert.equal(await evaluate(`document.getElementById('proposal-result').hidden`), true);
+    await evaluate(`document.getElementById('use-scenario-example').click()`);
+    assert.equal(await evaluate(`document.getElementById('proposal-result').hidden`), true, 'Example must not prepare or run a test');
+    assert.equal(await evaluate(`document.activeElement.id`), 'parable-scenario');
+    assert.equal(await evaluate(`document.getElementById('use-scenario-example').disabled`), true);
+    await evaluate(`(() => {
+      const scenario = document.getElementById('parable-scenario');
+      const control = document.getElementById('parable-control');
+      scenario.value = 'Keep my own task.';
+      scenario.dispatchEvent(new Event('input', {bubbles:true}));
+      control.value = '   ';
+      control.dispatchEvent(new Event('input', {bubbles:true}));
+      document.getElementById('use-scenario-example').click();
+    })()`);
+    assert.equal(await evaluate(`document.getElementById('parable-scenario').value`), 'Keep my own task.');
+    assert.match(await evaluate(`document.getElementById('parable-control').value`), /\$15/);
+    assert.equal(await evaluate(`document.activeElement.id`), 'parable-control');
+    assert.match(await evaluate(`document.getElementById('scenario-example-feedback').textContent`), /existing text was kept/);
     await evaluate(`(() => {
       const f = document.getElementById('parable-form');
       const values = {title: 'A careful keeper', source: 'Original visitor retelling',
@@ -139,9 +165,15 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('mobile-progress.png');
     await evaluate(`document.getElementById('parable-form').scrollIntoView()`);
     await screenshot('mobile-parable.png');
+    await evaluate(`document.getElementById('scenario-guide-title').scrollIntoView()`);
+    await screenshot('mobile-scenario-guide.png');
+    await evaluate(`document.querySelector('label[for="parable-scenario"]').scrollIntoView()`);
+    await screenshot('mobile-scenario-fields.png');
     await viewport(1440, 1100);
     await evaluate(`document.getElementById('parable').scrollIntoView()`);
     await screenshot('desktop-parable.png');
+    await evaluate(`document.getElementById('scenario-guide-title').scrollIntoView()`);
+    await screenshot('desktop-scenario-guide.png');
 
     // All internal links should point to a real target, including the archive.
     const research = fs.readFileSync(path.join(__dirname, 'research.html'), 'utf8');
@@ -165,7 +197,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],
-      checks: ['scoring switch', 'six sourced stories', 'custom draft', 'required fields',
+      checks: ['scoring switch', 'six sourced stories', 'six untested task starters',
+        'custom starter', 'starter preserves edits', 'starter keyboard focus', 'custom draft', 'required fields',
         'literal user content', 'download round trip', 'edit invalidation', 'in-page draft retention',
         'no horizontal overflow', 'local links', 'legacy bookmark redirect', 'research controls',
         'reduced motion', 'JavaScript-disabled evidence', 'no external network requests', 'no browser errors'],

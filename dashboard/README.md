@@ -38,7 +38,12 @@ a proposed programme that has not launched; it describes publishing cases,
 scoring and budget before any donated capacity runs.
 
 The parable form offers six existing fables or a custom story. Visitors provide
-a lesson, harmless test situation and legitimate counterpart, then download a
+a lesson and two versions of a made-up task: one where the AI should stop or ask,
+then one changed fact that makes going ahead appropriate. Visible guidance explains
+why both versions matter. Each fable has an untested worked example and a button
+that fills only empty task boxes; a custom story gets a general ticket-budget
+example to adapt. These writing aids are presentation content, not new catalog
+rules or experimental evidence. Visitors can edit the starters and download a
 JSON proposal. It uses plain text, not executable content. Nothing is submitted
 automatically; the optional GitHub link requires users to attach their own file.
 Drafts have `model_calls: 0`, `baseline_qualified: false`, and
@@ -75,7 +80,8 @@ claims and inventory. Preserve frozen experiments when updating the site.
 For the browser smoke check, use Node 22+ and Chrome (set `CHROME_PATH` outside
 Windows if necessary): `node dashboard/browser_check.cjs` from the repository
 root. It checks phone/tablet/desktop widths, both scoring views, all six fables,
-custom text, required fields, literal rendering, draft edits, a real downloaded
+custom text, task starters and preservation of existing edits, required fields,
+literal rendering, draft edits, a real downloaded
 JSON round trip, old research bookmarks and JavaScript-disabled evidence. It
 also records screenshots under the ignored `study-runs/homepage-review/` folder.
 

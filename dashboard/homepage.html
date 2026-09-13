@@ -397,8 +397,26 @@
               <p id="story-rights" class="form-hint">Use your own retelling or text you have permission to share. Keep private information out.</p>
               <label for="parable-lesson">The lesson an AI should apply</label><textarea id="parable-lesson" name="lesson" required maxlength="1000" rows="2" placeholder="For example: respect the owner’s limit, even when a tempting benefit is uncertain."></textarea>
               <p id="parable-interpretation" class="form-hint"></p>
-              <label for="parable-scenario">A harmless situation to test it in</label><textarea id="parable-scenario" name="scenario" required maxlength="2000" rows="3" placeholder="Describe the task, the person’s instruction, and the mistake the AI might make."></textarea>
-              <label for="parable-control">When should the AI be allowed to act?</label><textarea id="parable-control" name="legitimate_twin" required maxlength="1500" rows="2" placeholder="Change one key fact so that completing the task is clearly permitted."></textarea>
+              <div class="scenario-guide" aria-labelledby="scenario-guide-title">
+                <h3 id="scenario-guide-title">Describe two versions of one made-up task.</h3>
+                <p>No AI expertise needed. Imagine an everyday task, such as buying a ticket or sending a message. Write one version where the AI should stop or ask, then change one fact so it should go ahead. A few sentences are enough. Nothing here buys, sends or changes anything.</p>
+                <div class="scenario-example" aria-labelledby="scenario-example-title">
+                  <p class="eyebrow">Example to adapt · not tested</p>
+                  <h4 id="scenario-example-title"></h4>
+                  <p><strong>Stop or ask:</strong> <span id="scenario-example-stop"></span></p>
+                  <p><strong>Go ahead:</strong> <span id="scenario-example-go"></span></p>
+                  <button id="use-scenario-example" class="example-button" type="button" aria-describedby="scenario-example-hint">Use this example</button>
+                  <p id="scenario-example-hint" class="form-hint">Fills the empty boxes below. You can edit the wording to fit your lesson.</p>
+                  <p id="scenario-example-feedback" class="form-hint" role="status"></p>
+                </div>
+              </div>
+              <label for="parable-scenario">1. When should the AI stop or ask first?</label>
+              <p id="scenario-hint" class="form-hint field-help">What did the person ask for? What makes going ahead a mistake? Say what the AI should do instead.</p>
+              <textarea id="parable-scenario" name="scenario" required maxlength="2000" rows="5" aria-describedby="scenario-hint" placeholder="I ask the AI to… My rule is… In this situation… It would be a mistake to… Instead, it should…"></textarea>
+              <label for="parable-control">2. What changes so the AI should go ahead?</label>
+              <p id="control-hint" class="form-hint field-help">Keep the same task and rule. Change just the fact that blocked it, such as the price or whether permission was given. Say what the AI should now do.</p>
+              <textarea id="parable-control" name="legitimate_twin" required maxlength="1500" rows="3" aria-describedby="control-hint control-purpose" placeholder="Same task and rule, but now… The AI should go ahead because…"></textarea>
+              <p id="control-purpose" class="form-hint"><strong>Why both versions?</strong> An AI that always says “no” would avoid this mistake, but would never help. The second version checks that it can still do the task when it should.</p>
               <button class="draft-button mt-6" type="submit">Prepare my test proposal <span aria-hidden="true">→</span></button>
             </div>
             <p class="form-hint mt-5">Nothing is sent automatically. Work stays in this page until you download or choose to share it. Reloading clears unsaved edits.</p>

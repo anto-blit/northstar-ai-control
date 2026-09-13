@@ -149,6 +149,18 @@
   .parable-form textarea { resize: vertical; }
   .parable-form ::placeholder { color: #757b8f; opacity: 1; }
   .form-hint { margin-top: 9px; font-size: 12px; color: var(--color-muted); line-height: 1.6; }
+  .field-help { margin-top: 0; margin-bottom: 10px; font-size: 13px; }
+  .scenario-guide { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--color-line); }
+  .scenario-guide h3 { font-size: 18px; line-height: 1.4; font-weight: 600; letter-spacing: -.02em; }
+  .scenario-guide > p { margin-top: 10px; font-size: 14px; line-height: 1.7; color: var(--color-muted); }
+  .scenario-example { margin-top: 18px; padding: 20px; border-radius: 16px; background: var(--color-paper); border: 1px solid var(--color-line); }
+  .scenario-example h4 { margin-top: 6px; font-size: 15px; line-height: 1.5; font-weight: 600; }
+  .scenario-example > p:not(.eyebrow):not(.form-hint) { margin-top: 12px; font-size: 13px; line-height: 1.7; color: var(--color-muted); }
+  .scenario-example strong { color: var(--color-ink); font-weight: 600; }
+  .scenario-example [role="status"]:empty { display: none; }
+  .example-button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; margin-top: 16px; padding: 10px 18px; border: 1px solid var(--color-accent); border-radius: 999px; background: white; color: var(--color-accent); font-size: 13px; font-weight: 600; }
+  .example-button:hover { background: #eaf0ff; }
+  .example-button:disabled { cursor: default; border-color: var(--color-line); color: var(--color-muted); background: transparent; }
   .draft-button { display: inline-flex; justify-content: center; align-items: center; gap: 16px; padding: 13px 22px; min-height: 48px; background: var(--color-ink); color: white; font-size: 13px; font-weight: 500; border-radius: 999px; transition: opacity .18s ease, transform .18s ease; }
   .draft-button:hover { opacity: .86; transform: translateY(-1px); }
   .proposal-result { padding: 26px; border-radius: 26px; border: 1px solid var(--color-line); background: white; }
