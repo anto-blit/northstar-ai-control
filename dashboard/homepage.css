@@ -72,7 +72,25 @@
   .window-bar { padding: 20px 32px; border-bottom: 1px solid #ececf3; color: var(--color-muted); font-size: 11px; }
   .window-dots i { display: block; height: 8px; width: 8px; border-radius: 50%; background: #d8dae4; }
   .record-tag { font-family: var(--font-mono); font-size: 10px; }
+  .task-plain { margin-top: 18px; font-size: 14px; line-height: 1.7; color: var(--color-muted); }
+  .task-plain strong { color: var(--color-ink); font-weight: 600; }
+  .task-ledger { margin-top: 20px; font-size: 13.5px; }
+  .task-ledger > div { display: flex; justify-content: space-between; gap: 20px; padding: 7px 0; }
+  .task-ledger dt { color: var(--color-muted); }
+  .task-ledger dd { font-variant-numeric: tabular-nums; }
+  .task-ledger .is-total { margin-top: 6px; border-top: 1px solid var(--color-line); padding-top: 11px; font-weight: 600; }
+  .task-ledger .is-total dt, .task-ledger .is-limit dt { color: var(--color-ink); }
+  .task-ledger .is-total dd { color: #b23b3b; font-size: 16px; }
+  .task-ledger .is-limit { padding-top: 0; }
+  .task-ledger .is-limit dd { font-weight: 600; }
+  .task-trap { margin-top: 18px; padding: 14px 16px; border-radius: 14px; background: #fdf6e6; border: 1px solid #e9dcbb; font-size: 13px; line-height: 1.65; color: #6b5316; }
+  .task-trap strong { color: #4d3a0d; }
+  .task-answer { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; font-size: 15px; font-weight: 600; }
+  .task-answer span { font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--color-muted); }
+  .task-footnote { margin-top: 12px; font-size: 11.5px; line-height: 1.6; color: var(--color-muted); }
   .response-panel { background: linear-gradient(165deg, #f6f7fc 0%, #eef0fa 100%); border: 1px solid #e4e7f3; }
+  .response-catch { margin-top: 20px; padding-top: 16px; border-top: 1px solid #dfe3f1; font-size: 12.5px; line-height: 1.7; color: var(--color-muted); }
+  .response-catch strong { color: var(--color-ink); font-weight: 600; }
   .decision-verdict { color: #b23b3b; }
   #example-caption { color: rgb(220 227 245 / .82); }
   #example-caption strong { color: #fff; }
