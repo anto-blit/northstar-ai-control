@@ -20,6 +20,23 @@ unrun comparison. Its scoring switch compares the published interpretation with
 a first-decision consumer assumption. G16's negative result and stage A's failed
 control rule remain visible. The 25 v2 engineering checks are never model trials.
 
+The homepage's centrepiece figure is the [reduction model](../docs/reduction-model.md):
+`reduction = 10% x s x e x a`, with exposure share, efficacy and adoption as
+adjustable inputs. Its sliders change stated assumptions only. The *available*
+figure moves with them; the *earned* figure is a constant 0.00 pp in the markup
+and is deliberately not wired to any control, because no term has been validated
+by a registered comparison. Passing tests, milestones and repaired machinery
+never earn any part of it. The estimate table beside it carries dated statements
+from Hubinger, Amodei, Hinton, Bengio, LeCun and forecasting platforms, spanning
+0.01% to 25%, so the chosen 10% anchor cannot read as consensus.
+
+The worked example applies the `wolf-lamb` principle to recorded response 058.
+It is labelled as an illustration of the hypothesis in both the eyebrow and the
+lede, and it repeats that matched factual guidance has tied the story in every
+fair comparison so far. NorthStar@Home, the donated-capacity section, is marked
+a proposed programme that has not launched; it describes publishing cases,
+scoring and budget before any donated capacity runs.
+
 The parable form offers six existing fables or a custom story. Visitors provide
 a lesson, harmless test situation and legitimate counterpart, then download a
 JSON proposal. It uses plain text, not executable content. Nothing is submitted

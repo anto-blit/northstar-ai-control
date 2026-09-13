@@ -221,6 +221,14 @@ This queue review did not evaluate such an estimate or supply missing deployment
 adoption and counterfactual evidence; passing its tests does not validate a
 global-risk decrement.
 
+The project states its theoretical case as an explicit model in
+[reduction-model.md](reduction-model.md): exposure share, efficacy and adoption,
+multiplied against the 10% reference. Under its default assumptions 0.15
+percentage points are addressable at most, and 0.00 have been earned, because
+earning requires a preregistered comparison with published scoring. The model is
+a way of making this section's rules arithmetically checkable. It is not a
+measurement, and its published outputs never substitute for one.
+
 A selected 10% humanity-wide risk is not a measured NorthStar baseline.
 No current revision supplies a calibrated numerical update to it. Estimating
 aggregate impact would require a defined event and horizon, a credible

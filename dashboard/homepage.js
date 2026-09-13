@@ -31,6 +31,32 @@
     });
   }
 
+  // The reduction model. Sliders move stated assumptions only; the earned
+  // figure is not wired to anything, because no term has been validated.
+  const factors = document.getElementById('model-factors');
+  if (factors) {
+    const reference = 10;
+    const axisMaximum = 0.5;
+    const readFactor = id => Number(document.getElementById('factor-' + id).value) / 100;
+    const setText = (id, value) => { document.getElementById(id).textContent = value; };
+    const updateModel = () => {
+      const s = readFactor('s'), e = readFactor('e'), a = readFactor('a');
+      const available = reference * s * e * a;
+      for (const [key, value] of [['s', s], ['e', e], ['a', a]]) {
+        setText('out-' + key, value.toFixed(2));
+        setText('eq-' + key, value.toFixed(2));
+      }
+      setText('eq-result', available.toFixed(2));
+      setText('value-available', available.toFixed(2) + ' pp');
+      setText('value-floor', (reference - available).toFixed(2) + '%');
+      document.getElementById('bar-available').style.width =
+        Math.min(100, (available / axisMaximum) * 100) + '%';
+    };
+    factors.addEventListener('input', updateModel);
+    factors.addEventListener('submit', event => event.preventDefault());
+    updateModel();
+  }
+
   const form = document.getElementById('parable-form');
   const select = document.getElementById('parable-select');
   const output = document.getElementById('proposal-result');

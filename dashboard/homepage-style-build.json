@@ -1,9 +1,9 @@
 {
   "note": "Build provenance, not scientific evidence.",
   "sha256": {
-    "homepage.html": "1d8da9191a2601914fa39163502800502e8bb973ff4c62817c4c715350cf3a4b",
-    "homepage.css": "46ffda26c007b63fec3a17f774379c859c5f70eb191a454ad6ef10863b663745",
-    "homepage.compiled.css": "2ea90331bd2e0bf270a4957eb1650bc4985bde8428e3e19fe9ec353dbc43c75f",
+    "homepage.html": "33a25b9c31997a38bfdff11a6f54eeef502acb776aeb019c1287f4fafa29deca",
+    "homepage.css": "1de9abf3be44519397c63e1e6fe91d80e5e3ec11a788725094fe636ca90dd8dd",
+    "homepage.compiled.css": "5d0b4b0429e6b6cd130af42673a23b508eec80d1aa7aa5b6551cd37c0837492e",
     "package.json": "9bf0a8d9f1626db4ac65ab234b724dec82a575fa2bb35b665a9d6297e6aee49b",
     "package-lock.json": "0f50c0b87704ff8e5c41175906395dde49d38ff07d84685e6e1718df7e5d8b2f",
     "build_styles.mjs": "6857f618349c0599d2e2d51d9a2bafce61157f31dc7242bfbb3523d5ad76078f"
