@@ -11,6 +11,13 @@ Claude target is therefore usable again as a comparison target. Nothing is
 authorized to run: the comparison still needs a registered plan with a published
 budget, scoring rule and stop rule before any call, per
 [the baseline gate](experiments/BASELINE-GATE.md).
+
+The [NorthStar@Home runner](northstar_at_home/README.md) is new and makes no calls
+of its own: a volunteer runs a published pack of G16's trap cases on their own
+machine and gets a file. Its [pool rules](northstar_at_home/POOL-RULES.md) were
+published before any submission was accepted — donated runs are unverified
+screening data that can nominate a configuration and nothing more. Fourteen
+offline tests cover it; no study, budget or provider call is authorized by it.
 The user then requested a simpler public homepage with current evidence and a
 way to choose or bring a parable. The homepage offers six existing fables and a
 custom-story form that downloads an unreviewed test proposal. It performs no AI

@@ -419,20 +419,24 @@
       <div class="shell">
         <div class="at-home-grid">
           <div>
-            <p class="eyebrow">A proposed programme · not yet launched</p>
+            <p class="eyebrow">Runnable today · screening only</p>
             <h2 id="at-home-title" class="section-title mt-4">NorthStar@Home.</h2>
             <p class="mt-6 text-lg leading-relaxed text-muted">SETI@home asked for the screensaver hours nobody was using. We would like to ask for something similar: the AI allowance you paid for and did not spend.</p>
             <p class="mt-5 leading-relaxed text-muted">Most subscriptions meter usage over a week or a month, and most weeks end with headroom left. That headroom is the one resource this project is genuinely short of. Provider capacity, not ideas, is what stopped G17's replication at 27 answers. Any model you can reach is useful here, Claude included — no family is excluded, and breadth across models is exactly what the exposure and efficacy terms need.</p>
-            <p class="mt-5 text-sm leading-relaxed text-muted">Check your provider's terms before contributing compute from an account you hold. We will publish the exact cases, the scoring rule and the budget before any donated capacity is used, and donated runs will be recorded and attributed like every other result — including when they contradict us.</p>
-            <a class="text-link mt-6 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/volunteer-idea.md">Read the volunteer design notes <span aria-hidden="true">↗</span></a>
+            <p class="mt-5 text-sm leading-relaxed text-muted">The cases, the scoring rule and the handling rules were all published before the first submission was accepted. Donated runs are unverified screening data in their own pool: they can nominate a configuration worth testing properly, and they are published when they contradict us. They cannot qualify a baseline. Use an account you hold, through an interface your provider permits you to automate.</p>
+            <a class="text-link mt-6 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/blob/main/northstar_at_home/README.md">Get the runner and read what it does <span aria-hidden="true">↗</span></a>
           </div>
-          <ol class="at-home-steps">
-            <li><span class="step-number">01</span><div><h3 class="text-lg font-semibold">Friday, with quota to spare</h3><p class="mt-2 text-sm leading-relaxed text-muted">You open a published case pack: a handful of preregistered decision tasks, already written, already scored by a rule that went public before anyone ran them.</p></div></li>
-            <li><span class="step-number">02</span><div><h3 class="text-lg font-semibold">Spend the leftovers</h3><p class="mt-2 text-sm leading-relaxed text-muted">Run the pack on your own account, on a model we could not otherwise reach. Harmless mock tasks only — no real money moves, no real bookings, nothing irreversible.</p></div></li>
-            <li><span class="step-number">03</span><div><h3 class="text-lg font-semibold">Send the saved answers back</h3><p class="mt-2 text-sm leading-relaxed text-muted">Raw responses, timestamps and model identifiers. Scoring happens against the published rule, so a donor cannot tilt a result and neither can we.</p></div></li>
-          </ol>
+          <div class="at-home-run">
+            <ol class="at-home-steps">
+              <li><span class="step-number">01</span><div><h3 class="text-lg font-semibold">Clone the repository</h3><p class="mt-2 text-sm leading-relaxed text-muted">The pack is twelve cases: six authorization traps and their six legitimate twins, taken unchanged from the published G16 screen. The twins are there so a model that refuses everything cannot look safe.</p></div></li>
+              <li><span class="step-number">02</span><div><h3 class="text-lg font-semibold">Run one command</h3><p class="mt-2 text-sm leading-relaxed text-muted">Without <code>--confirm</code> it prints the plan and calls nothing. With it, 24 calls go through the CLI you have already signed into — or through any command you supply for another provider. No key is ever read by us.</p><pre class="at-home-code"><code>cd northstar_at_home
+python run_pack.py packs/screen-001.json
+python run_pack.py packs/screen-001.json --confirm</code></pre></div></li>
+              <li><span class="step-number">03</span><div><h3 class="text-lg font-semibold">Read the file, then decide</h3><p class="mt-2 text-sm leading-relaxed text-muted">You get a scored summary and a submission file holding the raw answers, the pack fingerprint and an allowlist of response fields — session and account detail never leave your machine. Attach it to an issue if you want it looked at.</p><p class="at-home-output"><span class="at-home-output-label">Example of the output format · not a result</span><span>N wrong approvals in 12 over-limit attempts · 12/12 legitimate controls correct · 0 invalid</span></p></div></li>
+            </ol>
+          </div>
         </div>
-        <p class="at-home-note">Why it matters to the model above: <strong>s</strong> and <strong>e</strong> both need many models and configurations before either becomes anything more than an assumption. One project on one account cannot supply that. A thousand leftover Fridays could.</p>
+        <p class="at-home-note">Why it matters to the model above: <strong>s</strong> and <strong>e</strong> both need many models and configurations before either becomes anything more than an assumption. One project on one account cannot supply that. A thousand leftover Fridays could. What a donated run buys is a lead, not a finding — the <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/northstar_at_home/POOL-RULES.md">handling rules</a> were published before the first submission, and they say so in writing.</p>
       </div>
     </section>
 

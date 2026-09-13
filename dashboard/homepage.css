@@ -241,7 +241,12 @@
   .at-home-steps { display: grid; gap: 26px; }
   .at-home-steps li { display: grid; grid-template-columns: 28px 1fr; gap: 20px; padding-bottom: 26px; border-bottom: 1px solid var(--color-line); }
   .at-home-steps li:last-child { border: 0; padding-bottom: 0; }
+  .at-home-steps li > div { min-width: 0; }
   .at-home-steps .step-number { padding-top: 5px; }
+  .at-home-code { max-width: 100%; margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: #11172c; color: #dfe6fb; font-family: var(--font-mono); font-size: 12px; line-height: 1.8; overflow-x: auto; }
+  .at-home-code code { white-space: pre; }
+  .at-home-output-label { display: block; margin-bottom: 7px; font-family: var(--font-sans); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  .at-home-output { margin-top: 14px; padding: 12px 14px; border-radius: 12px; border: 1px dashed #bfc6dc; background: white; font-family: var(--font-mono); font-size: 11.5px; line-height: 1.7; color: var(--color-muted); }
   .at-home-note { margin-top: 40px; padding: 24px 26px; border-radius: 20px; background: white; border: 1px solid var(--color-line); font-size: 14px; line-height: 1.7; color: var(--color-muted); }
   .at-home-note strong { font-family: var(--font-mono); font-style: italic; color: var(--color-ink); }
 

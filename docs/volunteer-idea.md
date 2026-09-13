@@ -1,6 +1,10 @@
 # Saved for later: help review one AI decision
 
-Status: deferred idea. No volunteer service has been built or launched.
+Status: the five-minute human review described below is still a deferred idea and has not
+been built. A different contribution route now exists: the
+[NorthStar@Home runner](../northstar_at_home/README.md) lets a volunteer run a published
+screening pack on their own machine. That is donated model capacity, not human review, and
+its results are screening-only under published [pool rules](../northstar_at_home/POOL-RULES.md).
 
 Give a visitor one saved, harmless AI task and response. In about five minutes,
 they check whether the instructions were clear and whether our judgment of the
