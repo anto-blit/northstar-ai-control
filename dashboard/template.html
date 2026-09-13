@@ -16,7 +16,7 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z"/></svg>
       <span>NorthStar<small>Open research on AI and human agency</small></span>
     </a>
-    <nav aria-label="Main navigation"><a href="#thinking">What we found</a><a href="#stories">Try the stories</a><button class="text-button" data-open-method>About the 10%</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="#thinking">What we found</a><a href="#stories">Try the stories</a><button class="text-button" data-open-method>About the 10%</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
   <nav class="section-nav" aria-label="Jump to a research track">
     <div class="wrap">
@@ -27,6 +27,13 @@
     </div>
   </nav>
   <main id="main" class="wrap">
+    <aside class="guidance-section" aria-label="Current research status">
+      <p class="eyebrow">September 12, 2026 · Current status</p>
+      <h2>A qualified Claude baseline. The comparison remains unrun.</h2>
+      <p>G17 stage A2 recorded 10 wrong approvals, 10 correct withholds and 12 invalid answers in 32 over-limit attempts; all 12 legitimate controls passed. Taking the first decision instead counts 22 wrong approvals. This qualifies only the recorded Claude target. Stage A failed its own control rule; A2 used a revised, prospectively published rule on disjoint cases.</p>
+      <p>G16 recorded 84/84 correct OpenAI decisions and no qualifying failure. Claude is now excluded. The original G17 B runner has preserved defects; a separate v2 passed 25 offline tests, including a 320-response synthetic sequence, with zero provider calls. No story advantage or global risk reduction is established.</p>
+      <p><a href="index.html#progress">See the current results</a> · <a href="index.html#next">What is next</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/EXPERIMENTS-STATUS.md">Full evidence ledger</a></p>
+    </aside>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="status-dot"></span> Open research · Nothing here is settled</p>
@@ -72,15 +79,15 @@
 
 
     <div class="track" id="track-failure">
-      <div class="track-head"><h2>The failure we can reproduce</h2><p>One decision error, recorded often enough to test prevention against — and a re-reading of the evidence that says what actually drives it.</p></div>
+      <div class="track-head"><h2>The failure we can reproduce</h2><p>One recurring decision error, and a re-reading of the evidence that suggests a mechanism to investigate.</p></div>
     <section id="thinking" class="guidance-section is-headline" aria-labelledby="thinking-title">
-      <div class="guidance-heading"><div><p class="eyebrow">Re-reading 300 saved calls · no new model calls</p><h2 id="thinking-title">Every failure we recorded happened on a call that didn&rsquo;t think.</h2><p class="guidance-lede">Each saved Claude response carries a count of its extended thinking tokens. Split the 300 calls from G10 and G11 on that one field and success separates from failure exactly &mdash; with no overlap at all.</p></div></div>
+      <div class="guidance-heading"><div><p class="eyebrow">Re-reading 300 saved calls · no new model calls</p><h2 id="thinking-title">Every failure in this record had zero reported thinking tokens.</h2><p class="guidance-lede">Among the 300 saved G10 and G11 calls, all 257 with reported thinking were correct. The 43 with zero reported thinking included seven correct answers and 36 wrong or invalid answers. Token metadata does not reveal all internal computation.</p></div></div>
       <div class="split-table" role="table" aria-label="Outcomes split by whether extended thinking fired">
         <div class="split-row split-head" role="row"><span role="columnheader">&nbsp;</span><span role="columnheader">Calls</span><span role="columnheader">Correct</span><span role="columnheader">Wrong approvals</span><span role="columnheader">Invalid</span></div>
         <div class="split-row is-good" role="row"><span role="cell"><strong>Thinking fired</strong></span><span role="cell">257</span><span role="cell" class="big">257</span><span role="cell">0</span><span role="cell">0</span></div>
         <div class="split-row is-bad" role="row"><span role="cell"><strong>No thinking</strong></span><span role="cell">43</span><span role="cell">7</span><span role="cell" class="big">18</span><span role="cell" class="big">18</span></div>
       </div>
-      <p class="guidance-takeaway">Not one of the 257 thinking calls failed. All 18 wrong approvals and all 18 invalid answers came from the 43 calls where thinking never fired. The rate at which a prompt skips thinking is what the old benchmark was measuring: case 068 skipped it 34% of the time, case 090 6%, and the two legitimate controls never once.</p>
+      <p class="guidance-takeaway">All 18 wrong approvals and all 18 invalid answers came from calls with zero reported thinking tokens. Case 068 reported zero 34% of the time, case 090 6%, and the two legitimate controls never did. This is an association within the recorded tasks, not proof that reported thinking causes correct decisions.</p>
       <h3>What it means for the story question</h3>
       <p>All the variation in G11 lives in that non-thinking group, and the arms behave differently there. Every arm is perfect when the model deliberates.</p>
       <div id="thinking-arms" class="guidance-comparison">
@@ -88,7 +95,7 @@
         <div class="guidance-condition"><span>Matched factual guidance</span><strong>0/4</strong><small>correct without thinking</small><small>44/44 correct with thinking</small></div>
         <div class="guidance-condition is-highlight"><span>Story guidance</span><strong>7/7</strong><small>correct without thinking</small><small>41/41 correct with thinking</small></div>
       </div>
-      <p class="guidance-takeaway">The story arm is the only condition in the whole 300-call record that ever answered correctly without deliberating: 7/7 against 0/16 (Fisher exact two-sided p &lt; 0.0001). That hints the story may work inside the forward pass, like a cached heuristic, rather than by helping the model reason.</p>
+      <p class="guidance-takeaway">Within G11's over-limit subgroup with zero reported thinking, stories scored 7/7 correct against 0/16 for original and factual guidance. This small subgroup was selected after observing the outcomes. Its difference motivates a prospective comparison; it does not establish a story advantage or reveal an internal mechanism.</p>
       <p class="caution"><strong>This is not a result yet.</strong> Whether the model thinks is downstream of the prompt, not something we assigned, and the arms skip thinking at different rates. Slicing on it compares different subpopulations and can manufacture a difference. The subgroup is small and was chosen after seeing the data. It is one task, one harness, one model.</p>
       <details class="evidence-details"><summary>Why this isn&rsquo;t a service glitch, and what it predicts</summary><p>A degraded service window or truncated answers would look the same without saying anything about the model. The saved metadata doesn&rsquo;t support that: all 300 calls ran on the same standard tier and speed; zero-thinking calls are scattered through the run rather than clustered, with a longest consecutive run of 3; and non-thinking answers are slightly shorter and faster (127 tokens / 3.70s against 163 / 4.30s) rather than cut off. Thinking tokens are bimodal &mdash; either 0, or between 39 and 106, never in between.</p><p>The reading makes a sharp prediction worth testing directly: hold the task fixed and suppress deliberation on purpose, with a minimal reasoning budget or a model that doesn&rsquo;t deliberate by default. The original prompt should then fail at a high, stable rate, and story guidance should hold where matched factual guidance doesn&rsquo;t. That turns thinking from something we observed into something we control, which is also how this project gets the reliable baseline its own rules require.</p><p>The same split does not transfer across providers. G13 and G15 spent almost no reasoning tokens on Codex and still scored 64/64, so this is not a universal law about deliberation. Claude&rsquo;s thinking tokens and Codex&rsquo;s reasoning tokens are different providers&rsquo; accounting of different processes, and a zero in one is not the same state as a zero in the other.</p></details>
       <p class="guidance-provenance">Post-hoc analysis of frozen G10 and G11 evidence. No model calls, no new evidence, no change to any recorded score. Replay with <code>py experiments/thinking-analysis/analyze.py verify</code>, which recomputes every number above and fails if the frozen responses no longer support it. No story advantage is established and the 10% reference is unchanged.</p>

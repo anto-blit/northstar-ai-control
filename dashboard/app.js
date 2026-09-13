@@ -597,6 +597,10 @@
     const card=el('article',undefined,'milestone');card.append(el('span',item.number,'milestone-number'),el('span',item.type.toUpperCase(),`milestone-type${item.type==='Prepared'?' prepared':''}`),el('h3',item.title),el('p',item.description));
     const link=el('a',item.type==='Prepared'?'Read the plan ↗':'Inspect the evidence ↗');link.href=repo+item.source;card.append(link);$('milestones').append(card);
   });
+  // Current editorial status supersedes the historical sections above. The
+  // homepage builder verifies G16/G17 and the offline validation before export.
+  $('latest-assessment').textContent = 'G17 A2 qualified a Claude baseline; the comparison remains unrun.';
+  $('latest-assessment-detail').textContent = 'Claude is excluded for now. The separate comparison runner passed 25 offline checks; no live story comparison or global risk reduction is established.';
 })();
 
 /* Track navigation: mark the track the reader is currently inside. */

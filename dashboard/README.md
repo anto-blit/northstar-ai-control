@@ -1,9 +1,61 @@
-# The NorthStar Risk Thermometer
+# NorthStar homepage and research dashboard
 
-[Open the dashboard](https://anto-blit.github.io/northstar-ai-control/).
-You can also open `dashboard/index.html` directly in a browser. It is one
-portable file with embedded data, styles and scripts: no server, installation,
-account, analytics, external fonts or API key is required.
+[Open the homepage](https://anto-blit.github.io/northstar-ai-control/) or the
+[full research dashboard](https://anto-blit.github.io/northstar-ai-control/research.html).
+The homepage is `dashboard/index.html`; the detailed research view is
+`dashboard/research.html`. Both are portable HTML files with embedded data,
+styles and scripts. No server, account, analytics, external fonts or API key is
+needed to view them. Keep them together for navigation between the two pages.
+Existing homepage bookmarks to research sections redirect to `research.html`.
+
+The homepage addresses curious visitors and research contributors. It explains
+the mission, shows a saved G10 mistake, presents G17 A2's complete denominators,
+and distinguishes the qualified historical Claude baseline from the paused,
+unrun comparison. Its scoring switch compares the published interpretation with
+a first-decision consumer assumption. G16's negative result and stage A's failed
+control rule remain visible. The 25 v2 engineering checks are never model trials.
+
+The parable form offers six existing fables or a custom story. Visitors provide
+a lesson, harmless test situation and legitimate counterpart, then download a
+JSON proposal. It uses plain text, not executable content. Nothing is submitted
+automatically; the optional GitHub link requires users to attach their own file.
+Drafts have `model_calls: 0`, `baseline_qualified: false`, and
+`story_benefit: null`. They are neither runnable study plans nor test results.
+Unsaved edits stay in page memory and disappear on reload. The separate
+[five-minute volunteer review idea](../docs/volunteer-idea.md) is deferred.
+
+## Homepage maintenance
+
+Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned
+build dependency only. Its compiled CSS is inlined into the exported HTML; no
+browser CDN or runtime compiler is used. After changing the template or CSS:
+
+```bash
+cd dashboard
+npm ci --ignore-scripts
+npm run build:css
+cd ..
+python dashboard/build_dashboard.py
+```
+
+Commit the template, CSS input, compiled CSS and `homepage-style-build.json`
+together. The Python export checks their fingerprints, so a stale stylesheet
+cannot silently ship. Ordinary export checks need only Python, not npm.
+
+`homepage-evidence.json` pins the saved G16/G17 reports, plans, responses, source
+inputs, v2 validation and story catalog. This is publication provenance, not
+independent scientific review. The builder additionally recomputes G16 and G17
+A/A2 using their read-only `verify` commands and rejects changed response
+inventories, including any new B responses. It never starts a model call.
+Changes to these recorded outcomes require explicit review of the homepage
+claims and inventory. Preserve frozen experiments when updating the site.
+
+For the browser smoke check, use Node 22+ and Chrome (set `CHROME_PATH` outside
+Windows if necessary): `node dashboard/browser_check.cjs` from the repository
+root. It checks phone/tablet/desktop widths, both scoring views, all six fables,
+custom text, required fields, literal rendering, draft edits, a real downloaded
+JSON round trip, old research bookmarks and JavaScript-disabled evidence. It
+also records screenshots under the ignored `study-runs/homepage-review/` folder.
 
 ## What the thermometer means
 
@@ -37,7 +89,7 @@ Zero must never be presented as a guarantee. See the
 
 ## Data and maintenance
 
-The latest sections report G14/G15's two OpenAI baseline searches: 36 and 24
+The detailed research sections retain G14/G15's two OpenAI baseline searches: 36 and 24
 correct decisions, with no qualifying failure or story intervention. G13's
 all-correct keeper comparison, G12's incomplete confirmation, G11's small
 candidate story lead and G10's repeated Claude failures remain separately
@@ -111,7 +163,7 @@ python -m unittest discover -s dashboard -p test_dashboard.py -v
 python dashboard/build_dashboard.py --check
 ```
 
-`index.html` is the generated export; commit it with its inputs. Documentation
+`index.html` and `research.html` are generated exports; commit both with their inputs. Documentation
 edits alone do not require rebuilding an unchanged export. Update curated study
 status only when the corresponding evidence exists.
 
@@ -125,8 +177,8 @@ the repository's byte-level line-ending rules in [`.gitattributes`](../.gitattri
 
 ## Publishing
 
-The Pages workflow validates the saved evidence and publishes only the generated
-HTML from `dashboard/site/`. It runs on pushes to `main`. GitHub Pages uses the
+The Pages workflow validates the saved evidence and publishes both generated
+HTML files from `dashboard/site/`. It runs on pushes to `main`. GitHub Pages uses the
 repository's GitHub Actions publishing source. The ordinary verification matrix
 also checks the export before regenerating experiment artifacts, so platform
 timestamps do not invalidate the saved dashboard comparison.

@@ -10,6 +10,12 @@ You do not need to arrive with a finished proposal.
 
 ## Pick a first step
 
+You can also [choose a parable or bring your own](https://anto-blit.github.io/northstar-ai-control/#parable).
+Describe its lesson, a harmless AI task and a permitted counterpart. The page
+prepares a downloadable proposal you can attach to a GitHub discussion or issue.
+It does not run a model or establish that the story works. Source rights,
+interpretation, matched facts and a recurring baseline still need review.
+
 | Interest | Start here | Useful output |
 |---|---|---|
 | Python and systems | [Release broker](northstar_sim/irreversible_release.py), [delegation broker](northstar_sim/delegated_stop.py) | A small reproduction and a proposed fix |

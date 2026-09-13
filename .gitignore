@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 study-runs/
 dashboard/site/
+dashboard/node_modules/

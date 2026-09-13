@@ -559,15 +559,20 @@ def main():
     parser.add_argument("--output", type=Path, default=HERE / "index.html")
     parser.add_argument("--check", action="store_true", help="Fail if the exported dashboard is stale")
     args = parser.parse_args()
-    content = render()
+    spec = importlib.util.spec_from_file_location("northstar_homepage", HERE / "homepage.py")
+    homepage = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(homepage)
+    outputs = {args.output: homepage.render(), args.output.with_name("research.html"): render()}
+    for path, content in outputs.items():
+        if args.check:
+            if not path.exists() or path.read_bytes() != content.encode("utf-8"):
+                raise SystemExit(f"Export is stale: {path}; run python dashboard/build_dashboard.py")
+        else:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding="utf-8", newline="\n")
+            print(f"Built {path}")
     if args.check:
-        if not args.output.exists() or args.output.read_bytes() != content.encode("utf-8"):
-            raise SystemExit("Dashboard export is stale; run python dashboard/build_dashboard.py")
-        print("Dashboard matches the hash-checked evidence and presentation sources.")
-    else:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(content, encoding="utf-8", newline="\n")
-        print(f"Built {args.output}")
+        print("Homepage and research dashboard match the hash-checked evidence and presentation sources.")
 
 
 if __name__ == "__main__":

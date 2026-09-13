@@ -4,7 +4,16 @@ Updated September 12, 2026. Evidence through G17 stage A2.
 G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
 thinking analysis made none. G17 stage B is registered and has made none.
 
-**Current user direction: exclude Claude; complete the machinery repair only.**
+**Current user direction: exclude Claude; machinery repair completed.**
+The user then requested a simpler public homepage with current evidence and a
+way to choose or bring a parable. The homepage offers six existing fables and a
+custom-story form that downloads an unreviewed test proposal. It performs no AI
+evaluation, sends nothing automatically and does not qualify a baseline. The
+full dashboard is retained at `dashboard/research.html`. The simpler
+[five-minute volunteer review idea](docs/volunteer-idea.md) is saved for later,
+not launched. No additional model calls or safeguard experiment were authorized
+by these website changes.
+
 The [corrected comparison machinery v2](experiments/deliberation-comparison-v2/README.md)
 passed 25 offline regression tests, including a complete 320-response synthetic
 sequence and interrupted runs. Zero provider calls were made. This completes the

@@ -8,6 +8,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 import build_dashboard as dashboard
+import homepage
 
 
 class EvidenceTests(unittest.TestCase):
@@ -536,6 +537,44 @@ class EvidenceTests(unittest.TestCase):
         path.write_text(json.dumps(record), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "changed since verification"):
             dashboard.load_integrity_evidence(self.root)
+
+
+class HomepageEvidenceTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        manifest = json.loads((dashboard.HERE / "homepage-evidence.json").read_text(encoding="utf-8"))
+        for relative in manifest["sha256"]:
+            target = self.root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(dashboard.ROOT / relative, target)
+
+    def test_saved_answer_cannot_be_replaced_on_homepage(self):
+        homepage.load_evidence(self.root, replay=False)
+        path = self.root / "results/approval-repeatability/responses/058.json"
+        path.write_text('{"result":"fabricated success"}', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Homepage input changed"):
+            homepage.load_evidence(self.root, replay=False)
+
+    def test_comparison_cannot_start_without_retiring_paused_claim(self):
+        folder = self.root / "results/deliberation-comparison/stage-B/responses"
+        folder.mkdir(parents=True)
+        (folder / "000.json").write_text('{}', encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "response inventory changed"):
+            homepage.load_evidence(self.root, replay=False)
+
+    def test_offline_check_record_cannot_become_a_live_story_win(self):
+        path = self.root / "results/deliberation-comparison-v2/validation.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["provider_calls"] = 320
+        path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Homepage input changed"):
+            homepage.load_evidence(self.root, replay=False)
+
+    def test_provenance_cannot_read_outside_root(self):
+        with self.assertRaisesRegex(ValueError, "escapes its root"):
+            homepage.checked_inventory(self.root, {"../outside": "0" * 64})
 
 
 if __name__ == "__main__":
