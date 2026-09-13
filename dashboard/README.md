@@ -8,7 +8,12 @@ styles and scripts. No server, account, analytics, external fonts or API key is
 needed to view them. Keep them together for navigation between the two pages.
 Existing homepage bookmarks to research sections redirect to `research.html`.
 
-The homepage addresses curious visitors and research contributors. It explains
+The homepage addresses curious visitors and research contributors. Its hero is a
+drawn night-sky illustration: inline SVG only, so the page still loads no
+external asset. A "Three reasons to be hopeful" section states the project's
+optimistic case, and each of its three claims carries the recorded evidence or
+engineering result it rests on; the encouraging framing never adds a number the
+saved reports do not contain. The page explains
 the mission, shows a saved G10 mistake, presents G17 A2's complete denominators,
 and distinguishes the qualified historical Claude baseline from the paused,
 unrun comparison. Its scoring switch compares the published interpretation with
