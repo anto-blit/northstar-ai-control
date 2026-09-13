@@ -154,6 +154,20 @@
       </div>
     </section>
 
+    <section id="why-this-case" class="stakes-band" aria-labelledby="stakes-title">
+      <div class="shell stakes-grid">
+        <div>
+          <p class="eyebrow">Why a puppet theatre invoice</p>
+          <h2 id="stakes-title" class="stakes-title">The small failure is the large one, in miniature.</h2>
+        </div>
+        <div class="stakes-body">
+          <p>What people are afraid of is not a machine with bad manners. It is a system capable enough to stop being answerable to anyone — acting outside the control of the person responsible for it, at a scale and speed where undoing the damage is no longer an option. The <a class="text-link" href="https://www.insideprivacy.com/artificial-intelligence/international-ai-safety-report-2026-examines-ai-capabilities-risks-and-safeguards/">International AI Safety Report 2026</a> puts it in exactly those terms: systems operating outside of anyone's control, where regaining control is extremely costly or impossible.</p>
+          <p>You cannot run that experiment. Nobody can, and nobody should want to. But the decision above has the same shape as the thing being feared, scaled down until it is harmless: a person in charge set an explicit limit, the system crossed it anyway, and produced a justification on the way past. The stakes are play money. The behaviour is the one that matters.</p>
+          <p class="stakes-thesis">A system that will not hold a line at 111 tokens — when the line is written down, and the arithmetic against it is in the system's own answer — is not yet a system anyone should trust with a line that counts. So we work on the small failure we can reproduce, because it is the only kind of evidence the large one will ever let us have.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="hope" class="section-space shell" aria-labelledby="hope-title">
       <div class="mx-auto max-w-3xl text-center">
         <p class="eyebrow">Why we think this can work</p>
@@ -205,12 +219,11 @@
               <div class="model-track"><div class="model-fill earned" id="bar-earned" style="width:0%"></div></div>
               <strong class="model-bar-value" id="value-earned">0.00 pp</strong>
             </div>
-            <div class="model-axis" aria-hidden="true"><span>0.00</span><span>0.25</span><span>0.50 pp</span></div>
+            <div class="model-axis" aria-hidden="true"><span>0.00</span><span id="axis-mid">0.25</span><span id="axis-max">0.50 pp</span></div>
           </div>
           <div class="model-readout">
             <div><span class="eyebrow eyebrow-light">Reference</span><strong>10.00%</strong><p>Hinton's lower endpoint, held fixed.</p></div>
-            <div><span class="eyebrow eyebrow-light">Floor if we win outright</span><strong id="value-floor">9.85%</strong><p>Every term validated and adopted.</p></div>
-            <div><span class="eyebrow eyebrow-light">Standing today</span><strong>10.00%</strong><p>No term is validated. Nothing is claimed.</p></div>
+            <div><span class="eyebrow eyebrow-light">Floor under these assumptions</span><strong id="value-floor">9.85%</strong><p>Where the sliders below currently put it.</p></div><div class="is-aspiration"><span class="eyebrow eyebrow-light">The aspiration</span><strong>0.00%</strong><p>Every term at 1.00: this failure covers the pathway, the safeguard stops it, everyone adopts it. That is the target, not a forecast.</p><button type="button" id="show-aspiration" class="aspiration-button">Set every term to 1.00</button></div>
           </div>
         </figure>
 
@@ -241,7 +254,7 @@
           </article>
         </form>
         <p class="model-equation" aria-hidden="true">reduction = 10% × <span id="eq-s">0.25</span> × <span id="eq-e">0.40</span> × <span id="eq-a">0.15</span> = <span id="eq-result">0.15</span> pp</p>
-        <p class="model-caveat">Moving a slider changes an assumption, never the evidence. The earned figure stays at <strong>0.00 pp</strong> until a preregistered comparison with published scoring supports a term — repaired machinery, passing checks and completed milestones earn nothing here. New evidence can raise a term as well as lower it.</p>
+        <p class="model-caveat">Zero is the goal, and the arithmetic reaches it: set exposure, efficacy and adoption to 1.00 and the reference is removed entirely. Every tenth below 1.00 is a piece of the problem this project has not solved yet, which is why the defaults are set low and the terms are argued rather than assumed. Moving a slider changes an assumption, never the evidence. The earned figure stays at <strong>0.00 pp</strong> until a preregistered comparison with published scoring supports a term — repaired machinery, passing checks and completed milestones earn nothing here. New evidence can raise a term as well as lower it.</p>
 
         <details class="model-details">
           <summary>Where the 10% comes from, and who disagrees<span aria-hidden="true">+</span></summary>

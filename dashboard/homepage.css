@@ -154,6 +154,17 @@
   .proposal-result { padding: 26px; border-radius: 26px; border: 1px solid var(--color-line); background: white; }
   #proposal-preview { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 420px; background: #f5f6fb; border: 1px solid var(--color-line); }
 
+  /* The band tying the recorded failure to the concern behind the project. */
+  .stakes-band { padding-block: 96px; background: linear-gradient(180deg, #ffffff 0%, #f7f8fc 100%); border-bottom: 1px solid var(--color-line); }
+  .stakes-grid { display: grid; gap: 32px; }
+  .stakes-title { margin-top: 16px; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.14; letter-spacing: -.045em; font-weight: 600; }
+  .stakes-body p { font-size: 16px; line-height: 1.75; color: var(--color-muted); }
+  .stakes-body p + p { margin-top: 18px; }
+  .stakes-thesis { padding-left: 20px; border-left: 3px solid var(--color-star); color: var(--color-ink) !important; font-weight: 500; }
+  .aspiration-button { margin-top: 14px; padding: 9px 15px; border-radius: 999px; border: 1px solid rgb(255 255 255 / .3); background: rgb(255 255 255 / .08); color: #eef2fd; font-size: 12px; font-weight: 500; transition: background .18s ease; }
+  .aspiration-button:hover { background: rgb(255 255 255 / .18); }
+  .model-readout .is-aspiration strong { background: linear-gradient(96deg, #ffd98a, #6fd6c0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
   /* The reduction model: a figure panel, deliberately instrument-like. */
   .section-night { position: relative; color: #eef1fb; background: linear-gradient(165deg, #0b1226 0%, #141c3d 55%, #1d2148 100%); }
   .model-head { display: grid; gap: 24px; }
@@ -246,6 +257,7 @@
 }
 
 @media (min-width: 768px) {
+  .stakes-grid { grid-template-columns: 0.85fr 1.15fr; gap: 64px; align-items: start; }
   .model-head { grid-template-columns: 1.1fr 1fr; align-items: end; }
   .model-bar-row { grid-template-columns: 190px 1fr 88px; align-items: center; gap: 20px; }
   .model-axis { margin-left: 210px; margin-right: 108px; }
@@ -270,6 +282,7 @@
   .hero-title { font-size: clamp(44px, 11.5vw, 65px); }
   .hero-description { font-size: 17px; }
   .section-space { padding-block: 78px; }
+  .stakes-band { padding-block: 64px; }
   .window-bar { padding: 18px 24px; }
   .stat { font-size: 56px; }
   .decision-window { border-radius: 22px; }

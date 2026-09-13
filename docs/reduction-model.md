@@ -39,6 +39,12 @@ the whole prize on the table under these assumptions — from 10.00% to 9.85%.
 Writing it down is deliberate. It is a small number, and a reader who thinks it
 is too small is having exactly the argument this model exists to enable.
 
+The goal is zero, and the arithmetic reaches it. Set s, e and a to 1.00 — every
+pathway runs through this failure, a safeguard stops all of it, everyone adopts
+it — and the reference is removed entirely. Each tenth below 1.00 is a piece of
+the problem that is not solved. The defaults are low because that is where the
+evidence currently leaves them, not because zero is disclaimed as the target.
+
 ## What is empirical, and what is not
 
 Only **e** touches recorded data, and only at its edges.

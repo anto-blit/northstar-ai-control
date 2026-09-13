@@ -36,7 +36,6 @@
   const factors = document.getElementById('model-factors');
   if (factors) {
     const reference = 10;
-    const axisMaximum = 0.5;
     const readFactor = id => Number(document.getElementById('factor-' + id).value) / 100;
     const setText = (id, value) => { document.getElementById(id).textContent = value; };
     const updateModel = () => {
@@ -49,9 +48,20 @@
       setText('eq-result', available.toFixed(2));
       setText('value-available', available.toFixed(2) + ' pp');
       setText('value-floor', (reference - available).toFixed(2) + '%');
+      // The axis rescales rather than clamping, so a maxed-out model stays readable.
+      const axisMaximum = available > 0.5 ? reference : 0.5;
+      setText('axis-mid', (axisMaximum / 2).toFixed(2));
+      setText('axis-max', axisMaximum.toFixed(2) + ' pp');
       document.getElementById('bar-available').style.width =
         Math.min(100, (available / axisMaximum) * 100) + '%';
     };
+    const aspiration = document.getElementById('show-aspiration');
+    if (aspiration) {
+      aspiration.addEventListener('click', () => {
+        for (const id of ['s', 'e', 'a']) document.getElementById('factor-' + id).value = '100';
+        updateModel();
+      });
+    }
     factors.addEventListener('input', updateModel);
     factors.addEventListener('submit', event => event.preventDefault());
     updateModel();
