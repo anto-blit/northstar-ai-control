@@ -4,7 +4,13 @@ Updated September 12, 2026. Evidence through G17 stage A2.
 G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
 thinking analysis made none. G17 stage B is registered and has made none.
 
-**Current user direction: exclude Claude; machinery repair completed.**
+**Current user direction: no model is excluded; machinery repair completed.**
+The September 12, 2026 exclusion of Claude was lifted by the user the same day,
+for the project and for contributors. G17 A2's qualified baseline on the recorded
+Claude target is therefore usable again as a comparison target. Nothing is
+authorized to run: the comparison still needs a registered plan with a published
+budget, scoring rule and stop rule before any call, per
+[the baseline gate](experiments/BASELINE-GATE.md).
 The user then requested a simpler public homepage with current evidence and a
 way to choose or bring a parable. The homepage offers six existing fables and a
 custom-story form that downloads an unreviewed test proposal. It performs no AI
@@ -19,8 +25,8 @@ passed 25 offline regression tests, including a complete 320-response synthetic
 sequence and interrupted runs. Zero provider calls were made. This completes the
 selected engineering step, not a scientific comparison. The original
 [preflight defects](experiments/deliberation-preflight/README.md) remain preserved
-in G17 B; the Claude baseline remains recorded and another target needs its own
-qualification.
+in G17 B; the Claude baseline remains recorded, and any other target still needs
+its own qualification.
 
 Read this file, [the baseline gate](experiments/BASELINE-GATE.md), and
 [EXPERIMENTS-STATUS.md](EXPERIMENTS-STATUS.md), then the README, protocol and

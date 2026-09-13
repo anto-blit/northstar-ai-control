@@ -161,7 +161,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await call('Emulation.setScriptExecutionDisabled', { value: true });
     await navigate(homeURL);
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
-    assert.match(await evaluate(`document.body.textContent`), /Live comparison paused/);
+    assert.match(await evaluate(`document.body.textContent`), /Baseline qualified · comparison not yet registered/);
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],

@@ -600,7 +600,7 @@
   // Current editorial status supersedes the historical sections above. The
   // homepage builder verifies G16/G17 and the offline validation before export.
   $('latest-assessment').textContent = 'G17 A2 qualified a Claude baseline; the comparison remains unrun.';
-  $('latest-assessment-detail').textContent = 'Claude is excluded for now. The separate comparison runner passed 25 offline checks; no live story comparison or global risk reduction is established.';
+  $('latest-assessment-detail').textContent = 'No model is excluded. The separate comparison runner passed 25 offline checks, and the comparison itself still needs a registered plan published before any call; no live story comparison or global risk reduction is established.';
 })();
 
 /* Track navigation: mark the track the reader is currently inside. */

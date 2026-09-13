@@ -1,9 +1,12 @@
 # G17 B readiness check and the current provider constraint
 
 September 12, 2026, after commit `885358e`. **Zero provider calls.**
-The user requested proceeding only while excluding Claude for now. G17 B is
-registered for Claude, so it was not launched or silently assigned another model.
-This is an engineering check, not a new model experiment or a story result.
+At the time of this check the user had requested proceeding only while excluding
+Claude, so G17 B — which is registered for Claude — was not launched, and it was
+not silently assigned another model either. This is an engineering check, not a
+new model experiment or a story result. The exclusion was lifted later the same
+day; the defects recorded below are unaffected by that, and this frozen version
+still should not be run.
 
 **Subsequent repair:** the [separate v2 machinery](../deliberation-comparison-v2/README.md)
 passed 25 offline regression tests. The defects below remain reproducible in the

@@ -1,8 +1,10 @@
 # Comparison machinery v2: repaired and verified offline
 
 September 12, 2026. The user selected the machinery repair only. **No model calls,
-no new live experiment, and no story-effectiveness result.** Claude remains
-excluded and no alternative API endpoint is configured.
+no new live experiment, and no story-effectiveness result.** The Claude exclusion
+in force earlier that day was lifted, so target choice is no longer constrained;
+this machinery still has no live adapter configured and no registered comparison
+pointing at it.
 
 This separately versioned implementation fixes the defects in the
 [G17 B preflight](../deliberation-preflight/README.md). All original G17 plans,

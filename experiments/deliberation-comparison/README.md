@@ -1,7 +1,8 @@
 # G17 — story guidance with deliberation suppressed
 
-**Current status, September 12, 2026:** Claude is excluded by the user's latest
-instruction. B remains unrun. A subsequent [offline preflight](../deliberation-preflight/README.md)
+**Current status, September 12, 2026:** the user's earlier exclusion of Claude
+was lifted the same day; no model is excluded now. B remains unrun, and this
+frozen implementation is not the thing to run it with. A subsequent [offline preflight](../deliberation-preflight/README.md)
 found missing B dispatch, rejection of correct repair-arm output, reporting
 failures and a missing operational stop. The [corrected v2 machinery](../deliberation-comparison-v2/README.md)
 now passes offline regression tests. This original frozen implementation remains
