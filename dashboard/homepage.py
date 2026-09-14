@@ -34,6 +34,7 @@ def load_evidence(root=ROOT, replay=True):
             ("experiments/deliberation-comparison/run.py", ["verify", "A"]),
             ("experiments/deliberation-comparison/run.py", ["verify", "A2"]),
             ("experiments/parable-screen/run.py", ["check", "results/parable-screen/draft-plan.json"]),
+            ("experiments/parable-screen-review/review.py", ["verify"]),
         ):
             result = subprocess.run([sys.executable, str(root / script), *arguments],
                                     cwd=root, capture_output=True, timeout=45)
@@ -60,6 +61,18 @@ def load_evidence(root=ROOT, replay=True):
             or preparation_validation["live_comparison_registered"]
             or preparation_validation["failures"] or preparation_validation["errors"]):
         raise ValueError("Homepage preparation status changed; review claims before publication")
+    review = read("results/parable-screen-review/report.json")
+    revision = read("results/parable-screen-review/revised-plan.json")
+    checked_inventory(root, review["source_sha256"])
+    if (review["kind"] != "offline_scientific_self_review" or review["provider_calls"] != 0
+            or review["independent_review"]
+            or revision["kind"] != "draft_comparator_calibration_after_scientific_review"
+            or revision["live_registered"] or revision["model_calls_authorized"] != 0
+            or revision["provider_calls"] != 0 or revision["budget"]["maximum_calls"] != 236
+            or revision["budget"]["story_calls"] != 0
+            or revision["budget"]["reported_usd_cap"] != 10.0
+            or revision["followup_rule"]["candidate_story_calls_activated"] != 0):
+        raise ValueError("Homepage scientific review status changed; review claims before publication")
     if (a["qualifies"] or not a2["qualifies"] or validation["provider_calls"] != 0 or
             validation["live_comparison_registered"] or validation["failures"] or validation["errors"]):
         raise ValueError("Homepage narrative needs review: recorded research status changed")

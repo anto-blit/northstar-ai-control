@@ -55,11 +55,15 @@ Unsaved edits stay in page memory and disappear on reload. The separate
 September 14: the homepage and research summary distinguish one qualified failure
 family from its many numerical examples. They link the new
 [interchangeable parable prototype](../experiments/parable-screen/README.md),
-prepared offline with three candidates and their factual counterparts. The draft
-428-call / US$10 allowance is proposed, not authorized or spent. Candidate
-selection, fresh confirmation and a separately qualified different failure family
-are distinct next steps. Public copy and export checks keep synthetic preparation
-separate from the recorded model evidence and do not establish a parable ranking.
+prepared offline with three candidates and their factual counterparts. A subsequent
+[scientific self-review](../experiments/parable-screen-review/README.md) preserves
+the original 428-call proposal and recommends a smaller first step: at most 236
+baseline/factual/repair calls, zero stories, to decide whether a later parable
+comparison is worth sizing. Its US$10 cap is proposed, not authorized or spent.
+The public copy explains that recommendation and its lack of independent review.
+Export checks reproduce the sensitivity audit and pin its revised proposal.
+Fresh confirmation and a separately qualified different failure family remain
+necessary for stronger claims. These changes add no model evidence or parable ranking.
 
 ## Homepage maintenance
 

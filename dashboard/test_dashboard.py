@@ -585,6 +585,14 @@ class HomepageEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Homepage input changed"):
             homepage.load_evidence(self.root, replay=False)
 
+    def test_scientific_review_cannot_silently_authorize_story_calls(self):
+        path = self.root / "results/parable-screen-review/revised-plan.json"
+        draft = json.loads(path.read_text(encoding="utf-8"))
+        draft["budget"]["story_calls"] = 32
+        path.write_text(json.dumps(draft), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Homepage input changed"):
+            homepage.load_evidence(self.root, replay=False)
+
 
 if __name__ == "__main__":
     unittest.main()

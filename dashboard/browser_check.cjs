@@ -199,7 +199,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await call('Emulation.setScriptExecutionDisabled', { value: true });
     await navigate(homeURL);
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
-    assert.match(await evaluate(`document.getElementById('next').textContent`), /Offline prototype ready · live screen not registered/);
+    assert.match(await evaluate(`document.getElementById('next').textContent`), /Calibration proposed · no live study registered/);
     assert.match(await evaluate(`document.getElementById('why-this-case').textContent`), /one qualified failure family/i);
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);

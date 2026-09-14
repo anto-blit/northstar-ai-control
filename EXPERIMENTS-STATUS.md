@@ -9,7 +9,7 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Current direction: no model is excluded; reusable parable preparation completed.** The
+**Current direction: scientific self-review recommends comparator calibration first.** The
 September 12 Claude exclusion was lifted that same day. The requested comparison
 was not launched, and the user selected the machinery repair only. The
 [corrected v2 implementation](experiments/deliberation-comparison-v2/README.md)
@@ -30,6 +30,20 @@ gating, honest selection, partial reports, operational stops and recovery.
 The draft proposes 44 baseline-check calls and 384 conditional screening calls,
 capped at US$10 reported usage. **Zero provider calls; no live registration.**
 A live adapter, material/label review and provider readiness remain outstanding.
+
+Subsequent September 14 [scientific self-review](experiments/parable-screen-review/README.md)
+preserves that draft but revises the recommendation. All 92 case labels pass a
+separate computational audit. Exact sensitivity calculations show that 32 cases
+often cannot distinguish successful remedies; the global validity rule also
+lets an unrelated answer veto every candidate. Eight offline tests pass. This
+is self-review by the preparing assistant, not independent scientific approval.
+The [revised proposal](experiments/parable-screen-review/REVISION.md) has at most
+236 calls: 44 baseline checks followed conditionally by 192 factual/repair
+calibration calls, with **zero story calls** and a proposed US$10 usage cap.
+Measure residual errors before sizing a fresh parable comparison. Stop this
+calibration without stories if no factual condition earns a sizing follow-up;
+retain uncertainty around sparse/zero errors. **Zero provider calls and no live
+registration.** Independent review and a validated live adapter remain needed.
 
 There is **one qualified recurring failure family** for this comparison, with
 multiple prompts and numerical variants. Other searches did not qualify another

@@ -4,7 +4,7 @@ Updated September 14, 2026. Evidence through G17 stage A2.
 G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
 thinking analysis made none. G17 stage B is registered and has made none.
 
-**Current user direction: no model is excluded; reusable parable test prepared offline.**
+**Current direction: scientific review recommends measuring the simpler remedies first.**
 The September 12, 2026 exclusion of Claude was lifted by the user the same day,
 for the project and for contributors. G17 A2's qualified baseline on the recorded
 Claude target is therefore usable again as a comparison target. Nothing is
@@ -30,9 +30,30 @@ The user authorized the preparation and publishing these docs/site changes.
 
 Publication checks passed: 14 parable-prototype tests, 55 dashboard tests, the
 browser check at 320/390/768/1440 px, and the deterministic evidence/export check.
-The homepage and research summary explain the one-family limit, the proposed
-three-candidate screen, fresh confirmation and the prerequisite for broader
-transfer. These presentation changes add no model evidence.
+Those checks validated the prototype and its publication, not its statistical
+sensitivity. The original 428-call draft remains preserved as preparation.
+
+**September 14 scientific self-review:** the user authorized reviewing the plan
+and making logical revisions. The [reproducible review](experiments/parable-screen-review/README.md)
+checks all 92 rendered case labels and calculates exact paired-test sensitivity.
+Thirty-two cases can detect a large effect but often cannot distinguish already
+successful remedies. Also, the original rule lets one unrelated invalid answer
+veto every candidate. Eight offline mathematical/audit tests pass. This is the
+preparing assistant's self-review, not independent scientific approval.
+
+The [revised next proposal](experiments/parable-screen-review/REVISION.md) is
+**236 calls maximum: 44 baseline checks, then conditionally 192 factual/repair
+calibration calls, with zero story calls**. The proposed US$10 cap is unchanged.
+It measures whether enough errors remain to justify and size a later comparison.
+Sparse or zero errors can close this calibration without a story run; they do
+not prove the remedies perfect. No live adapter, registration or calls were
+added. Independent review, provider readiness and live authorization remain
+outstanding. The docs/site now recommend this sequence rather than the old screen.
+
+Review publication checks passed: eight mathematical/audit tests, 56 dashboard
+tests, deterministic export, and browser checks at 320/390/768/1440 px. All 203
+previously pinned source/evidence files remain byte-for-byte unchanged. The new
+review and revision are pinned separately and replayed during site export.
 
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
@@ -196,28 +217,28 @@ G16's six trap families and their twins remain reusable.
    407 are the clearest starting pair. Their original prompts are in
    [068-01](results/repair-continuation/attempts/068-01.json) and
    [407-01](results/repair-continuation/attempts/407-01.json).
-2. Review the new [candidate-screen protocol](experiments/parable-screen/PROTOCOL.md)
-   and saved draft. The offline runner is prepared; do not rebuild the frozen G17
-   machinery. Review the three story/factual pairs and fresh numerical labels.
-   Historical recurrence supports testing but does not establish current provider
-   capacity or enough sensitivity to distinguish successful remedies. The draft
-   explicitly describes that limitation and is exploratory candidate selection.
+2. Read the [scientific self-review](experiments/parable-screen-review/README.md),
+   [revision](experiments/parable-screen-review/REVISION.md) and
+   [revised draft](results/parable-screen-review/revised-plan.json). Preserve the
+   original prototype. Its labels pass a separate computational check, but
+   independent material/label review is still needed. Before any story comparison,
+   fix the seal pair's permission/obligation asymmetry under a new version.
 3. Prepare and review a live adapter with timeout, usage and per-attempt budget
    enforcement; establish current provider access and exact target metadata.
    Publish a separately registered live plan and authorized budget before calls.
-   The draft's 428-call / US$10 proposal is not such authorization. A changed model
+   The revised 236-call / US$10 proposal is not such authorization. A changed model
    or task family needs its own baseline. The old 320-call G17 B allowance does
    not transfer to a multiple-parable search.
-4. Under an authorized live protocol, check the baseline first and only run the
-   bounded candidate screen if it passes. Preserve every candidate's outcomes,
-   legitimate approvals, invalid answers and missing calls. Do not add stories
-   or calls until one wins. The website's proposal form does not expand the plan.
-5. If a candidate earns follow-up under that rule, freeze it and confirm on cases
-   and responses not used to choose or revise it, under a separately published
-   plan. Qualify another failure family separately before a broader transfer
-   claim. A story's usefulness here does not rank it universally. Preserve G12's
-   partial evidence and keep it closed. No live study or candidate screen is
-   registered by these recommendations.
+4. Under an authorized live protocol, check the baseline first and only calibrate
+   factual guidance and simple repair if it passes. Preserve failures, legitimate
+   approvals, invalid answers and missing calls. This proposal has no story arm.
+   Its exploratory follow-up filter nominates a sizing question, never more calls.
+5. Use comparator rates and uncertainty to decide whether a new story comparison
+   is justified and affordable. Predeclare a meaningful effect, sample size,
+   candidate-specific comparisons and conservative missing-answer handling.
+   A screening lead then needs fresh confirmation. Qualify another failure family
+   before a broader transfer claim. No sampling until a story wins. Preserve G12's
+   partial evidence and keep it closed. No live study is registered here.
 
 No model run was started during the readiness check, machinery repair or parable
 test preparation. G12 remains closed. The next live comparison needs a usable target, a qualified
@@ -272,6 +293,8 @@ py experiments/deliberation-preflight/check.py --verify results/deliberation-pre
 py -m unittest discover -s experiments/deliberation-comparison-v2 -p test_run.py -v
 py -m unittest discover -s experiments/parable-screen -p test_run.py -v
 py experiments/parable-screen/run.py check results/parable-screen/draft-plan.json
+py -m unittest discover -s experiments/parable-screen-review -p test_review.py -v
+py experiments/parable-screen-review/review.py verify
 ```
 
 These `verify` modes replay stored responses; they do not fill missing calls.

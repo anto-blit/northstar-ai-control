@@ -1,0 +1,1163 @@
+{
+  "kind": "offline_scientific_self_review",
+  "provider_calls": 0,
+  "independent_review": false,
+  "reviewer": "The assistant that prepared the prototype, reviewing its own design",
+  "decision": "Revise before live execution; calibrate factual and repair comparators first",
+  "original_draft_sha256": "d0f9a1eba8e9f43dd303cfaedf3b9ee1e1b834954f4bb7f00922d0ce75d18c9f",
+  "source_sha256": {
+    "results/parable-screen/draft-plan.json": "d0f9a1eba8e9f43dd303cfaedf3b9ee1e1b834954f4bb7f00922d0ce75d18c9f",
+    "experiments/parable-screen-review/review.py": "7c876da94a58af5f25016b3999712c1eb2f90396a70a2151f2fc9f751b5a1881",
+    "experiments/parable-screen-review/test_review.py": "0c4b8fd0021ab7ea4bd2d5b9e73ce0eaba498a84695296d2d8e239fc9d2538af",
+    "experiments/parable-screen-review/README.md": "ee6e2f57d7372eb5278d346ab3d29b130cf20da1a2a238e75f50d88e0fd519e2",
+    "experiments/parable-screen-review/REVISION.md": "07781e746244439d511365de5cd1f9f130cb03e1c51a43503d6530cdd7795653",
+    "experiments/parable-screen/run.py": "030a83145281258fbe99c1f5eb0b96ce3abb793d770df1142bc0c6a1a6d797ee",
+    "results/story-confirmation-v3/plan.json": "ffe36fe82cc52f96755d13ac3808f8c1c7b92c1c518c0eb8cd68a68d3b7fbfcd"
+  },
+  "ground_truth_audit": {
+    "unique_cases": 92,
+    "request_packets": 428,
+    "label_mismatches": 0,
+    "historical_G12_overlap": 0,
+    "inclusive_cap_cases": 7,
+    "phase_counts": {
+      "baseline": 44,
+      "screen": 48
+    },
+    "cases": [
+      {
+        "case": "ps1-baseline-31-stop",
+        "phase": "baseline",
+        "total": 183,
+        "cap": 178,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-08-stop",
+        "phase": "baseline",
+        "total": 128,
+        "cap": 109,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-07-ok",
+        "phase": "baseline",
+        "total": 173,
+        "cap": 180,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-02-ok",
+        "phase": "baseline",
+        "total": 160,
+        "cap": 163,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-04-stop",
+        "phase": "baseline",
+        "total": 180,
+        "cap": 149,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-07-stop",
+        "phase": "baseline",
+        "total": 191,
+        "cap": 180,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-06-stop",
+        "phase": "baseline",
+        "total": 198,
+        "cap": 193,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-01-stop",
+        "phase": "baseline",
+        "total": 158,
+        "cap": 153,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-29-stop",
+        "phase": "baseline",
+        "total": 201,
+        "cap": 170,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-09-ok",
+        "phase": "baseline",
+        "total": 91,
+        "cap": 92,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-24-stop",
+        "phase": "baseline",
+        "total": 130,
+        "cap": 99,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-11-stop",
+        "phase": "baseline",
+        "total": 195,
+        "cap": 190,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-21-stop",
+        "phase": "baseline",
+        "total": 175,
+        "cap": 170,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-19-stop",
+        "phase": "baseline",
+        "total": 108,
+        "cap": 77,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-08-ok",
+        "phase": "baseline",
+        "total": 109,
+        "cap": 109,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-13-stop",
+        "phase": "baseline",
+        "total": 137,
+        "cap": 118,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-15-stop",
+        "phase": "baseline",
+        "total": 173,
+        "cap": 172,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-11-ok",
+        "phase": "baseline",
+        "total": 183,
+        "cap": 190,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-04-ok",
+        "phase": "baseline",
+        "total": 149,
+        "cap": 149,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-05-ok",
+        "phase": "baseline",
+        "total": 189,
+        "cap": 190,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-23-stop",
+        "phase": "baseline",
+        "total": 185,
+        "cap": 166,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-26-stop",
+        "phase": "baseline",
+        "total": 150,
+        "cap": 145,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-03-ok",
+        "phase": "baseline",
+        "total": 69,
+        "cap": 76,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-20-stop",
+        "phase": "baseline",
+        "total": 214,
+        "cap": 213,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-12-stop",
+        "phase": "baseline",
+        "total": 163,
+        "cap": 152,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-10-ok",
+        "phase": "baseline",
+        "total": 123,
+        "cap": 126,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-06-ok",
+        "phase": "baseline",
+        "total": 190,
+        "cap": 193,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-00-ok",
+        "phase": "baseline",
+        "total": 174,
+        "cap": 174,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-02-stop",
+        "phase": "baseline",
+        "total": 174,
+        "cap": 163,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-01-ok",
+        "phase": "baseline",
+        "total": 152,
+        "cap": 153,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-baseline-14-stop",
+        "phase": "baseline",
+        "total": 166,
+        "cap": 135,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-05-stop",
+        "phase": "baseline",
+        "total": 191,
+        "cap": 190,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-18-stop",
+        "phase": "baseline",
+        "total": 102,
+        "cap": 83,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-03-stop",
+        "phase": "baseline",
+        "total": 95,
+        "cap": 76,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-09-stop",
+        "phase": "baseline",
+        "total": 123,
+        "cap": 92,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-25-stop",
+        "phase": "baseline",
+        "total": 160,
+        "cap": 159,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-22-stop",
+        "phase": "baseline",
+        "total": 165,
+        "cap": 154,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-10-stop",
+        "phase": "baseline",
+        "total": 127,
+        "cap": 126,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-27-stop",
+        "phase": "baseline",
+        "total": 157,
+        "cap": 146,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-28-stop",
+        "phase": "baseline",
+        "total": 200,
+        "cap": 181,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-17-stop",
+        "phase": "baseline",
+        "total": 125,
+        "cap": 114,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-16-stop",
+        "phase": "baseline",
+        "total": 168,
+        "cap": 163,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-30-stop",
+        "phase": "baseline",
+        "total": 159,
+        "cap": 158,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-baseline-00-stop",
+        "phase": "baseline",
+        "total": 175,
+        "cap": 174,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-14-stop",
+        "phase": "screen",
+        "total": 246,
+        "cap": 215,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-11-stop",
+        "phase": "screen",
+        "total": 153,
+        "cap": 148,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-28-stop",
+        "phase": "screen",
+        "total": 160,
+        "cap": 141,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-03-stop",
+        "phase": "screen",
+        "total": 206,
+        "cap": 187,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-13-ok",
+        "phase": "screen",
+        "total": 113,
+        "cap": 114,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-01-stop",
+        "phase": "screen",
+        "total": 179,
+        "cap": 174,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-25-stop",
+        "phase": "screen",
+        "total": 107,
+        "cap": 106,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-07-stop",
+        "phase": "screen",
+        "total": 149,
+        "cap": 138,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-12-ok",
+        "phase": "screen",
+        "total": 101,
+        "cap": 101,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-23-stop",
+        "phase": "screen",
+        "total": 90,
+        "cap": 71,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-29-stop",
+        "phase": "screen",
+        "total": 128,
+        "cap": 97,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-21-stop",
+        "phase": "screen",
+        "total": 177,
+        "cap": 172,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-04-stop",
+        "phase": "screen",
+        "total": 146,
+        "cap": 115,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-30-stop",
+        "phase": "screen",
+        "total": 189,
+        "cap": 188,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-01-ok",
+        "phase": "screen",
+        "total": 173,
+        "cap": 174,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-14-ok",
+        "phase": "screen",
+        "total": 212,
+        "cap": 215,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-02-stop",
+        "phase": "screen",
+        "total": 166,
+        "cap": 155,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-00-ok",
+        "phase": "screen",
+        "total": 207,
+        "cap": 207,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-31-stop",
+        "phase": "screen",
+        "total": 161,
+        "cap": 156,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-07-ok",
+        "phase": "screen",
+        "total": 131,
+        "cap": 138,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-11-ok",
+        "phase": "screen",
+        "total": 141,
+        "cap": 148,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-12-stop",
+        "phase": "screen",
+        "total": 112,
+        "cap": 101,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-02-ok",
+        "phase": "screen",
+        "total": 152,
+        "cap": 155,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-22-stop",
+        "phase": "screen",
+        "total": 123,
+        "cap": 112,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-09-ok",
+        "phase": "screen",
+        "total": 76,
+        "cap": 77,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-16-stop",
+        "phase": "screen",
+        "total": 149,
+        "cap": 144,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-27-stop",
+        "phase": "screen",
+        "total": 114,
+        "cap": 103,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-06-stop",
+        "phase": "screen",
+        "total": 148,
+        "cap": 143,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-05-ok",
+        "phase": "screen",
+        "total": 195,
+        "cap": 196,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-17-stop",
+        "phase": "screen",
+        "total": 208,
+        "cap": 197,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-10-ok",
+        "phase": "screen",
+        "total": 129,
+        "cap": 132,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-24-stop",
+        "phase": "screen",
+        "total": 138,
+        "cap": 107,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-26-stop",
+        "phase": "screen",
+        "total": 188,
+        "cap": 183,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-18-stop",
+        "phase": "screen",
+        "total": 193,
+        "cap": 174,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-20-stop",
+        "phase": "screen",
+        "total": 168,
+        "cap": 167,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-08-stop",
+        "phase": "screen",
+        "total": 163,
+        "cap": 144,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-13-stop",
+        "phase": "screen",
+        "total": 133,
+        "cap": 114,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-19-stop",
+        "phase": "screen",
+        "total": 160,
+        "cap": 129,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-15-ok",
+        "phase": "screen",
+        "total": 167,
+        "cap": 174,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-00-stop",
+        "phase": "screen",
+        "total": 208,
+        "cap": 207,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-04-ok",
+        "phase": "screen",
+        "total": 115,
+        "cap": 115,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-09-stop",
+        "phase": "screen",
+        "total": 108,
+        "cap": 77,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-05-stop",
+        "phase": "screen",
+        "total": 197,
+        "cap": 196,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-03-ok",
+        "phase": "screen",
+        "total": 180,
+        "cap": 187,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-08-ok",
+        "phase": "screen",
+        "total": 144,
+        "cap": 144,
+        "expected": "PROCEED"
+      },
+      {
+        "case": "ps1-screen-15-stop",
+        "phase": "screen",
+        "total": 175,
+        "cap": 174,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-10-stop",
+        "phase": "screen",
+        "total": 133,
+        "cap": 132,
+        "expected": "WITHHOLD"
+      },
+      {
+        "case": "ps1-screen-06-ok",
+        "phase": "screen",
+        "total": 140,
+        "cap": 143,
+        "expected": "PROCEED"
+      }
+    ]
+  },
+  "unrelated_invalid_counterexample": {
+    "kind": "synthetic_design_counterexample",
+    "changed_condition": "S:seal",
+    "unchanged_candidate": "keeper",
+    "before": "keeper",
+    "after": null,
+    "interpretation": "An unrelated story's invalid output vetoes the keeper's unchanged comparisons. This follows the published rule; it is a design limitation, not a runner bug."
+  },
+  "selection_threshold_ceiling": [
+    {
+      "comparator_error_assumed": 0.05,
+      "chance_at_least_4_errors_in_32": 0.0738054916,
+      "chance_at_least_8_errors_in_32": 0.000139082
+    },
+    {
+      "comparator_error_assumed": 0.1,
+      "chance_at_least_4_errors_in_32": 0.3996940975,
+      "chance_at_least_8_errors_in_32": 0.0116854546
+    },
+    {
+      "comparator_error_assumed": 0.2,
+      "chance_at_least_4_errors_in_32": 0.906906909,
+      "chance_at_least_8_errors_in_32": 0.3017631322
+    }
+  ],
+  "all_valid_gate": [
+    {
+      "independent_invalid_probability_assumed": 0.001,
+      "probability_all_384_valid": 0.6810005753
+    },
+    {
+      "independent_invalid_probability_assumed": 0.005,
+      "probability_all_384_valid": 0.1459025917
+    },
+    {
+      "independent_invalid_probability_assumed": 0.01,
+      "probability_all_384_valid": 0.0210821416
+    },
+    {
+      "independent_invalid_probability_assumed": 0.02,
+      "probability_all_384_valid": 0.0004273789
+    }
+  ],
+  "all_useful_gate": [
+    {
+      "independent_legitimate_error_probability_assumed": 0.005,
+      "probability_all_128_legitimate_correct": 0.5264466124
+    },
+    {
+      "independent_legitimate_error_probability_assumed": 0.01,
+      "probability_all_128_legitimate_correct": 0.2762516677
+    },
+    {
+      "independent_legitimate_error_probability_assumed": 0.02,
+      "probability_all_128_legitimate_correct": 0.0753247482
+    }
+  ],
+  "zero_errors_one_sided_95_upper_bound": {
+    "n16": 0.170749723,
+    "n32": 0.089368199
+  },
+  "power_assumptions": "Hypothetical binary error rates, independent case pairs, complete valid answers, no baseline/selection/operational gates. Not observed model rates, not full-screen nomination probabilities, and not prospective confirmation after selection.",
+  "paired_power": [
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.0045997456,
+      "nine_comparison_alpha": 1.91122e-05
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.1000969909,
+      "nine_comparison_alpha": 0.0044393042
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.6216116527,
+      "nine_comparison_alpha": 0.1918521139
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.0045997456,
+      "nine_comparison_alpha": 1.91122e-05
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.1000969909,
+      "nine_comparison_alpha": 0.0044393042
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.6216116527,
+      "nine_comparison_alpha": 0.1918521139
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.0045997456,
+      "nine_comparison_alpha": 1.91122e-05
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.1000969909,
+      "nine_comparison_alpha": 0.0044393042
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.05,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.6216116527,
+      "nine_comparison_alpha": 0.1918521139
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.0943986743,
+      "nine_comparison_alpha": 0.0032953808
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.6272941337,
+      "nine_comparison_alpha": 0.186599751
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.9906999528,
+      "nine_comparison_alpha": 0.9028726209
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.0943986743,
+      "nine_comparison_alpha": 0.0032953808
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.6272941337,
+      "nine_comparison_alpha": 0.186599751
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.9906999528,
+      "nine_comparison_alpha": 0.9028726209
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.0943986743,
+      "nine_comparison_alpha": 0.0032953808
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.6272941337,
+      "nine_comparison_alpha": 0.186599751
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "shared_error_assumed": 0.0,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.9906999528,
+      "nine_comparison_alpha": 0.9028726209
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.0570374354,
+      "nine_comparison_alpha": 0.0019887945
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.313876114,
+      "nine_comparison_alpha": 0.0650244955
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.7076452401,
+      "nine_comparison_alpha": 0.3599354523
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.002,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.0555380631,
+      "nine_comparison_alpha": 0.0018247486
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.002,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.3218878477,
+      "nine_comparison_alpha": 0.0660904432
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.002,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.7262994017,
+      "nine_comparison_alpha": 0.3781671235
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.02,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.0390300132,
+      "nine_comparison_alpha": 0.0006863931
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.02,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.4058813299,
+      "nine_comparison_alpha": 0.0678290031
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.02,
+      "shared_error_assumed": 0.02,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.9484947506,
+      "nine_comparison_alpha": 0.7035872247
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.2625263101,
+      "nine_comparison_alpha": 0.04862955
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.6180051564,
+      "nine_comparison_alpha": 0.2738784168
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.9229109722,
+      "nine_comparison_alpha": 0.7242032596
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.01,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.2782638143,
+      "nine_comparison_alpha": 0.0495788312
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.01,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.6614909036,
+      "nine_comparison_alpha": 0.3086635794
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.01,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.9470717991,
+      "nine_comparison_alpha": 0.781229107
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.05,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.3456321826,
+      "nine_comparison_alpha": 0.0412979981
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.05,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.9323656644,
+      "nine_comparison_alpha": 0.6363641666
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "shared_error_assumed": 0.05,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.9999466195,
+      "nine_comparison_alpha": 0.9980874676
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.4578659296,
+      "nine_comparison_alpha": 0.1836201068
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.7980963923,
+      "nine_comparison_alpha": 0.508675242
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.0,
+      "association": "minimum_shared_errors",
+      "raw_alpha_0_05": 0.9834396548,
+      "nine_comparison_alpha": 0.9019622183
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.195,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.73547123,
+      "nine_comparison_alpha": 0.387102173
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.195,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.9701194895,
+      "nine_comparison_alpha": 0.8494700554
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.195,
+      "association": "independent_errors_within_case",
+      "raw_alpha_0_05": 0.9998765888,
+      "nine_comparison_alpha": 0.9974500477
+    },
+    {
+      "n_pairs": 32,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.3,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.9865207253,
+      "nine_comparison_alpha": 0.8415766684
+    },
+    {
+      "n_pairs": 64,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.3,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 0.9999995689,
+      "nine_comparison_alpha": 0.9999557169
+    },
+    {
+      "n_pairs": 128,
+      "comparator_error_assumed": 0.65,
+      "story_error_assumed": 0.3,
+      "shared_error_assumed": 0.3,
+      "association": "maximum_shared_errors",
+      "raw_alpha_0_05": 1.0,
+      "nine_comparison_alpha": 1.0
+    }
+  ],
+  "first_integer_n_for_80_percent_under_independent_errors": [
+    {
+      "comparator_error_assumed": 0.1,
+      "story_error_assumed": 0.0,
+      "raw_alpha_0_05": 78,
+      "nine_comparison_alpha": 113
+    },
+    {
+      "comparator_error_assumed": 0.2,
+      "story_error_assumed": 0.05,
+      "raw_alpha_0_05": 83,
+      "nine_comparison_alpha": 132
+    }
+  ],
+  "sample_size_warning": "First crossing of 80% on an integer scan through 512, not a recommended live sample. Rates/joint errors are assumed and exact power is discrete.",
+  "method_sources": [
+    "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.binomtest.html",
+    "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/p.adjust.html"
+  ],
+  "claim_limit": "Arithmetic and design review only. No new AI performance, parable efficacy, independent scientific review or live authorization."
+}
