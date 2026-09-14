@@ -16,7 +16,7 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z"/></svg>
       <span>NorthStar<small>Open research on AI and human agency</small></span>
     </a>
-    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="#thinking">What we found</a><a href="#stories">Try the stories</a><button class="text-button" data-open-method>About the 10%</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="#thinking">What we found</a><a href="#stories">Story library</a><button class="text-button" data-open-method>About the 10%</button><a class="outline-link" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a></nav>
   </header>
   <nav class="section-nav" aria-label="Jump to a research track">
     <div class="wrap">
@@ -42,7 +42,7 @@
         <h1 id="hero-title">Can old stories teach AI to <em>protect people</em>?</h1>
         <p class="hero-description">It sounds unlikely. We are testing it properly anyway &mdash; because if guidance drawn from humanity&rsquo;s stories helps AI hold a line under pressure, that is worth knowing, and if it doesn&rsquo;t, that is worth knowing sooner.</p>
         <p class="hero-description">So far the honest answer is <strong>no clear advantage</strong>, with one intriguing exception you can inspect below. Every result, including the ones that went nowhere, stays on this page.</p>
-        <div class="hero-actions"><a class="primary-link" href="#thinking">See what we found <span aria-hidden="true">↓</span></a><a class="text-button" href="#stories">Try a story yourself</a></div>
+        <div class="hero-actions"><a class="primary-link" href="#thinking">See what we found <span aria-hidden="true">↓</span></a><a class="text-button" href="#stories">Explore the story library</a></div>
         <div class="assessment"><span class="mini-star" aria-hidden="true">✦</span><p><strong id="latest-assessment">Reading the latest results…</strong><br><span id="latest-assessment-detail"></span> <a href="#approval-repeatability">Inspect the repeated flaw ↓</a></p></div>
       </div>
       <div class="risk-panel">
@@ -188,8 +188,9 @@
       <p class="guidance-provenance" id="repair-provenance"></p>
     </section>
     <section id="stories" class="guidance-section" aria-labelledby="stories-title">
-      <div class="guidance-heading"><div><p class="eyebrow">The original question · First working prototype</p><h2 id="stories-title">From six fables to decisions you can inspect.</h2><p class="guidance-lede">Explore a story, its proposed lesson and the interpretations we reject. Then change the facts in a small example to see which rules allow an action, block it or require human review.</p></div></div>
-      <p class="guidance-takeaway">A provisional collection, with human review still pending. The rule checker uses facts supplied to it; it does not establish those facts or determine all of morality.</p>
+      <div class="guidance-heading"><div><p class="eyebrow">The starting ideas · Six Aesop fables</p><h2 id="stories-title">Story library and early prototypes.</h2><p class="guidance-lede">Explore each fable's proposed lesson, source and limits. Then change the facts in a rule example to see how a written principle allows an action, blocks it or requires human review.</p></div></div>
+      <p class="guidance-takeaway">The interactive example is a programmed rule checker. It applies written rules to the facts you choose; it does not test an AI or show that a parable improves AI behavior. The proposed lessons still need human review.</p>
+      <p class="guidance-lede">These six fables are starting points for ideas, separate from the three candidates prepared for our current research. <a href="index.html#next">See the next proposed study ↗</a>.</p>
       <div class="lesson-layout">
         <article class="lesson-card">
           <label class="lesson-label" for="lesson-select">Choose a story</label><select id="lesson-select"></select>
@@ -198,16 +199,16 @@
           <details class="evidence-details"><summary>Limits, disagreement and the source</summary><p id="lesson-exceptions"></p><p id="lesson-disagreements"></p><p class="lesson-source-note">Original passage · V. S. Vernon Jones, 1912. The story above is a new project retelling.</p><blockquote id="lesson-original"></blockquote><a id="lesson-source" class="source-link">Read the source edition ↗</a></details>
         </article>
         <article class="lesson-card">
-          <label class="lesson-label" for="lesson-demo-select">Try a decision</label><select id="lesson-demo-select"></select>
+          <label class="lesson-label" for="lesson-demo-select">Explore a rule example</label><select id="lesson-demo-select"></select>
           <p id="lesson-situation"></p><div id="lesson-facts" class="lesson-facts"></div>
           <div class="lesson-verdict" aria-live="polite"><span class="eyebrow">Under these supplied facts</span><strong id="lesson-verdict"></strong><p id="lesson-verdict-detail"></p></div>
           <details class="evidence-details"><summary>Trace every rule check</summary><ul id="lesson-trace"></ul></details>
           <p class="lesson-source-note">This interactive example runs locally. It makes no AI calls and performs no external action.</p>
         </article>
       </div>
-      <div class="story-screen"><p class="eyebrow">G5 · Small model comparison</p><h3 id="story-screen-title"></h3><p id="story-screen-summary"></p><div id="story-screen-comparison" class="guidance-comparison"></div><p id="story-screen-limit" class="guidance-takeaway"></p></div>
-      <div class="guidance-next"><div><h3>The lesson has to change behavior.</h3><p>We compare stories with the same principles and factual examples. Passing software checks does not establish better moral judgment.</p></div><a class="primary-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/curriculum/README.md">Run or review the prototype <span aria-hidden="true">↗</span></a></div>
-      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-continuation/README.md">Read the continuation and its results ↗</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-distillation/README.md">Original comparison and preserved refusal ↗</a></p>
+      <div class="story-screen"><p class="eyebrow">Earlier evidence · G5 model comparison</p><h3 id="story-screen-title"></h3><p id="story-screen-summary"></p><div id="story-screen-comparison" class="guidance-comparison"></div><p id="story-screen-limit" class="guidance-takeaway"></p></div>
+      <div class="guidance-next"><div><h3>Explore an idea. Propose a test.</h3><p>Turn a lesson into a concrete test proposal to save and share for review. The proposed <a href="index.html#refinement">shared refinement loop</a> connects those ideas to comparable tests, measured results and fresh confirmation.</p></div><a class="primary-link" href="index.html#parable">Propose a test <span aria-hidden="true">↗</span></a></div>
+      <p class="guidance-provenance"><a href="https://github.com/anto-blit/northstar-ai-control/blob/main/curriculum/README.md">Inspect the original prototype ↗</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-continuation/README.md">Read the continuation and its results ↗</a> · <a href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/story-distillation/README.md">Original comparison and preserved refusal ↗</a></p>
     </section>
     <section id="cross-cultural-candidates" class="guidance-section" aria-labelledby="candidates-title">
       <div class="guidance-heading"><div><p class="eyebrow">Cross-cultural extension · Candidates</p><h2 id="candidates-title">Stories can suggest a test—and challenge its assumptions.</h2><p class="guidance-lede">A submitted proposal connects broader story traditions to two concrete problems: evidence an actor can rewrite, and delegated work that cannot be stopped. Explore two original adaptations and the rules we propose to test.</p></div></div>

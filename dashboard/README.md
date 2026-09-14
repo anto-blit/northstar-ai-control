@@ -77,6 +77,12 @@ adjust the scenario, model setup and guidance, use shared tests, and confirm on
 fresh cases. The research-page invitation links to it. This closed loop is the
 approach being built; the existing form still prepares an unreviewed proposal.
 
+The research page's preserved `#stories` section is labeled "Story library and
+early prototypes." It identifies the interactive demo as a programmed rule
+checker, distinguishes its six Aesop fables from the current three-candidate
+research shortlist, and labels G5 as earlier evidence. Links connect the library
+to the current proposed study, proposal form and shared refinement loop.
+
 ## Homepage maintenance
 
 Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned

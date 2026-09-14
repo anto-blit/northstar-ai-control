@@ -84,6 +84,17 @@ crowdsourced evaluation service, register a study or authorize model calls.
 Browser checks at 320/390/768/1440 px and the deterministic export passed;
 the new passage was visually checked on desktop and mobile.
 
+**September 14 story-library clarification:** the user approved keeping the
+research page's `#stories` section as "Story library and early prototypes."
+The section now distinguishes the programmed rule checker from an AI evaluation,
+the six Aesop starting points from the current three research candidates, and
+G5's earlier evidence from the proposed next study. It links directly to the
+proposal form and shared refinement loop. Original sources, study records and
+interactive rule behavior are preserved. This is website explanation and
+navigation work only; no model calls or study registration.
+Browser checks at 320/390/768/1440 px and the deterministic evidence/export
+check passed. The library was visually inspected on desktop and mobile.
+
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
 variants. Other searches did not qualify a second recurring semantic baseline.
