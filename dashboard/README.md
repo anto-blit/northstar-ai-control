@@ -93,6 +93,13 @@ the recorded output contradiction without attributing internal motivation.
 See the [feedback assessment](../docs/feedback-method-and-messaging.md) for the
 monitor proposal, prior work and limits; no study or scoring was changed.
 
+The subsequent hero revision puts these research questions in the first screen
+and the search/share metadata: "Find AI failures. Test what works." The Wolf/Lamb
+example now presents a draft selective-justification check across repeated
+answers to the same task. Its linked rubric defines the reason category,
+PROCEED/WITHHOLD denominators and unresolved cases. Response 058 remains evidence
+of a contradiction only; the proposed diagnostic has no reported results.
+
 ## Homepage maintenance
 
 Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned

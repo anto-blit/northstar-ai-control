@@ -72,7 +72,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await viewport(1440, 1100);
     await navigate(homeURL);
     assert.equal(await evaluate(`document.querySelectorAll('h1').length`), 1);
-    assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Human wisdom/);
+    assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Find AI failures/);
     assert.equal(await evaluate(`getComputedStyle(document.body).backgroundColor`), 'rgb(255, 255, 255)');
     assert.equal(await evaluate(`getComputedStyle(document.documentElement).scrollBehavior`), 'auto');
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
@@ -182,6 +182,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('desktop-research-questions.png');
     await evaluate(`document.getElementById('fair-test').scrollIntoView()`);
     await screenshot('desktop-paired-test.png');
+    await evaluate(`document.getElementById('worked-example').scrollIntoView()`);
+    await screenshot('desktop-story-diagnostic.png');
     await evaluate(`document.querySelector('#why-this-case details').open = true; document.getElementById('why-this-case').scrollIntoView()`);
     await screenshot('desktop-failure-scope.png');
     await evaluate(`document.querySelector('#real-incident summary').click(); document.getElementById('real-incident').scrollIntoView()`);
@@ -199,6 +201,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('mobile-research-questions.png');
     await evaluate(`document.getElementById('fair-test').scrollIntoView()`);
     await screenshot('mobile-paired-test.png');
+    await evaluate(`document.getElementById('justification-check').scrollIntoView()`);
+    await screenshot('mobile-story-diagnostic.png');
     await viewport(1440, 1100);
 
     // All internal links should point to a real target, including the archive.

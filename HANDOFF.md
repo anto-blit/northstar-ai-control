@@ -111,6 +111,21 @@ Validation passed: 56 dashboard tests, the deterministic evidence/export check,
 and browser checks at 320/390/768/1440 px. The two research questions and paired
 example were visually inspected on desktop and mobile.
 
+**September 14 hero and diagnostic follow-up:** the user noted that the hero
+still sold only story guidance and asked to preserve the Wolf/Lamb diagnostic
+as a scoring rule. The hero and page/share metadata now lead with finding AI
+failures, testing guidance and comparing conventional methods while preserving
+legitimate work. The Wolf/Lamb section links a
+[draft selective-justification rubric](docs/feedback-method-and-messaging.md#draft-rule-for-selective-justification):
+repeated answers to an identical task, an independently labeled override claim,
+and separate PROCEED/WITHHOLD rates with denominators and unresolved responses.
+Response 058 establishes a contradiction but does not claim urgency overrides
+the cap; its text does not establish the proposed asymmetry. No new diagnostic
+results, classifier, registered-score changes, model calls or study registration.
+Browser checks at 320/390/768/1440 px and the deterministic evidence/export check
+passed. The revised hero and diagnostic were visually inspected on desktop and
+mobile; the old thesis was removed from the homepage title and metadata.
+
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
 variants. Other searches did not qualify a second recurring semantic baseline.
