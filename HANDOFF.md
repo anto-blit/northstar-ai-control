@@ -126,6 +126,20 @@ Browser checks at 320/390/768/1440 px and the deterministic evidence/export chec
 passed. The revised hero and diagnostic were visually inspected on desktop and
 mobile; the old thesis was removed from the homepage title and metadata.
 
+**September 14 working algorithm:** the user asked whether the end-to-end
+framework was captured and requested formulas. The new
+[working algorithm](docs/working-algorithm.md) consolidates constrained remedy
+selection, strict pair correctness, narrative-specific comparison, the execution
+gate and collective refinement. The README/status ledger link it, and the site's
+`#algorithm` panel presents the selection objective with definitions. Bounds,
+eligibility thresholds, confirmation and fallback behavior require a future
+study's published rules; the equations establish no effectiveness. Automatic
+selection, retrieval and a training curriculum remain proposed. The 236-call
+calibration, frozen studies and zero-call authorization remain unchanged.
+Validation passed: deterministic evidence/export check, document references,
+and browser checks at 320/390/768/1440 px. The formula panel was visually
+inspected on desktop and mobile, including its uncertainty-bound notation.
+
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
 variants. Other searches did not qualify a second recurring semantic baseline.

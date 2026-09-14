@@ -100,6 +100,12 @@ answers to the same task. Its linked rubric defines the reason category,
 PROCEED/WITHHOLD denominators and unresolved cases. Response 058 remains evidence
 of a contradiction only; the proposed diagnostic has no reported results.
 
+The `#algorithm` panel now gives the working selection formula in native MathML
+with an accessible label and plain-language definitions. It links the consolidated
+[algorithm document](../docs/working-algorithm.md), including the constrained
+objective, joint pair score, action gate and evidence boundaries. The equation
+is a proposed design objective; no selection service or training was launched.
+
 ## Homepage maintenance
 
 Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned

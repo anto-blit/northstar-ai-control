@@ -30,6 +30,12 @@ evaluation protocol scores whether **both halves are correct**, alongside unsafe
 approvals, unnecessary refusals and invalid answers.
 [See the approach on the site](https://anto-blit.github.io/northstar-ai-control/#idea).
 
+**[The working algorithm and its formulas](docs/working-algorithm.md)** connect
+this research to a proposed library of tested patterns, guidance and action
+checks: minimize violations subject to preserving legitimate work and a declared
+resource budget, then confirm the selected remedy on fresh cases. The document
+separates existing components from proposed selection, retrieval and training.
+
 We also investigate protection against coercion and irreversible human disempowerment. By **human recoverability**, we mean preserving people’s ability to intervene and regain meaningful agency when things go wrong. A stop button is only useful if it can still prevent the consequences.
 
 **The hypothesis may be wrong. We intend to find out.**

@@ -9,6 +9,11 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
+The [working algorithm](docs/working-algorithm.md) now consolidates the proposed
+selection objective, joint pair metric, action gate and collective refinement
+loop. It distinguishes existing components from future retrieval and training.
+Its formulas do not register a study, change scoring or authorize calls.
+
 **Current direction: scientific self-review recommends comparator calibration first.** The
 September 12 Claude exclusion was lifted that same day. The requested comparison
 was not launched, and the user selected the machinery repair only. The
