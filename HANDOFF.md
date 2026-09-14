@@ -73,6 +73,17 @@ Validation passed: 56 dashboard tests, deterministic export and browser checks
 at 320/390/768/1440 px, including visual inspection of the explanation and news
 context. All 209 pinned source/evidence files remain unchanged.
 
+**September 14 collective-refinement messaging:** the user requested a concise
+argument linking the adjustable scenario, model setup and guidance to crowdsourced
+AI testing. The homepage's `#refinement` passage and the research-page invitation
+now state the proposed loop: propose, test, measure, refine, confirm. More
+contributors can explore more candidates under shared tests, with fresh
+confirmation for promising results. The copy identifies this as the approach
+being built. The form still only prepares a proposal; this does not launch a
+crowdsourced evaluation service, register a study or authorize model calls.
+Browser checks at 320/390/768/1440 px and the deterministic export passed;
+the new passage was visually checked on desktop and mobile.
+
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
 variants. Other searches did not qualify a second recurring semantic baseline.

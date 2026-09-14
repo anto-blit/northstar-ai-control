@@ -176,6 +176,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('desktop-scenario-guide.png');
     await evaluate(`document.getElementById('next').scrollIntoView()`);
     await screenshot('desktop-next-test.png');
+    await evaluate(`document.getElementById('refinement').scrollIntoView()`);
+    await screenshot('desktop-refinement.png');
     await evaluate(`document.querySelector('#why-this-case details').open = true; document.getElementById('why-this-case').scrollIntoView()`);
     await screenshot('desktop-failure-scope.png');
     await evaluate(`document.querySelector('#real-incident summary').click(); document.getElementById('real-incident').scrollIntoView()`);
@@ -187,6 +189,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('mobile-incident-context.png');
     await evaluate(`document.getElementById('next').scrollIntoView()`);
     await screenshot('mobile-next-test.png');
+    await evaluate(`document.getElementById('refinement').scrollIntoView()`);
+    await screenshot('mobile-refinement.png');
     await viewport(1440, 1100);
 
     // All internal links should point to a real target, including the archive.

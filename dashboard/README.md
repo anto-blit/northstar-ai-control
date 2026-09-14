@@ -72,6 +72,11 @@ incident and its evaluation conditions. The risk sliders remain hypothetical;
 local comparisons alone cannot calibrate global factors or earn risk reductions.
 See [the scope assessment](../docs/what-the-small-failure-means.md).
 
+The homepage's `#refinement` passage gives the concise crowdsourcing rationale:
+adjust the scenario, model setup and guidance, use shared tests, and confirm on
+fresh cases. The research-page invitation links to it. This closed loop is the
+approach being built; the existing form still prepares an unreviewed proposal.
+
 ## Homepage maintenance
 
 Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned
