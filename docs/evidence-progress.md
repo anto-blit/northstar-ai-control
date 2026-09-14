@@ -224,8 +224,11 @@ global-risk decrement.
 The project states its theoretical case as an explicit model in
 [reduction-model.md](reduction-model.md): exposure share, efficacy and adoption,
 multiplied against the 10% reference. Under its default assumptions 0.15
-percentage points are addressable at most, and 0.00 have been earned, because
-earning requires a preregistered comparison with published scoring. The model is
+percentage points are an illustrative addressable amount, and 0.00 have been
+credited. A preregistered local comparison alone cannot earn a global reduction;
+the causal, transfer, coverage and adoption requirements below must also be met.
+The minor approval error is not a validated catastrophe indicator; see
+[what the small failure means](what-the-small-failure-means.md). The model is
 a way of making this section's rules arithmetically checkable. It is not a
 measurement, and its published outputs never substitute for one.
 

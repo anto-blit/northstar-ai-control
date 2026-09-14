@@ -45,6 +45,14 @@ calibration without stories if no factual condition earns a sizing follow-up;
 retain uncertainty around sparse/zero errors. **Zero provider calls and no live
 registration.** Independent review and a validated live adapter remain needed.
 
+September 14 scope clarification: the recurring mock approval error is minor
+and ethically relevant, but is not a validated measure of general moral behavior
+or a predictor of catastrophe. A separate real incident at Hugging Face motivates
+studying consequential boundary failures; it does not validate this proxy or
+show a shared cause. See [the assessment and primary sources](docs/what-the-small-failure-means.md).
+The docs/site explain the missing causal steps and correct implications that
+local rates could calibrate global-risk factors. No new study or model calls.
+
 There is **one qualified recurring failure family** for this comparison, with
 multiple prompts and numerical variants. Other searches did not qualify another
 recurring semantic baseline. One family supports a narrow candidate screen;

@@ -65,6 +65,13 @@ Export checks reproduce the sensitivity audit and pin its revised proposal.
 Fresh confirmation and a separately qualified different failure family remain
 necessary for stronger claims. These changes add no model evidence or parable ranking.
 
+The subsequent September 14 explanation makes the mock failure's minor stakes
+prominent and distinguishes ethical relevance from a validated moral or
+catastrophe test. A sourced disclosure discusses the separate Hugging Face
+incident and its evaluation conditions. The risk sliders remain hypothetical;
+local comparisons alone cannot calibrate global factors or earn risk reductions.
+See [the scope assessment](../docs/what-the-small-failure-means.md).
+
 ## Homepage maintenance
 
 Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned

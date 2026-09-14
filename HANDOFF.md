@@ -55,6 +55,24 @@ tests, deterministic export, and browser checks at 320/390/768/1440 px. All 203
 previously pinned source/evidence files remain byte-for-byte unchanged. The new
 review and revision are pinned separately and replayed during site export.
 
+**September 14 interpretation clarification:** the user asked whether the minor
+approval failure meaningfully tests morality or invites a slippery-slope claim.
+The [scope assessment](docs/what-the-small-failure-means.md) calls it a repeatable,
+ethically relevant authorization error, with no validated link to general moral
+behavior or catastrophe. The site now makes the harmless setup, alternative
+explanations and missing causal steps prominent. It cites the July Hugging Face
+intrusion as separate real-world evidence, using the later August 26 OpenAI and
+METR/Redwood accounts and Hugging Face's July 27 report. This incident does not
+validate our proxy or any story benefit. No blanket claim that today's AI cannot
+show serious failures is warranted. The risk-model copy now treats all global
+factors as assumptions; local pass rates do not calibrate catastrophic coverage,
+and a registered local improvement alone cannot earn a global-risk decrement.
+This is interpretation and publication work only; the 236-call draft, frozen
+studies, recorded scores and zero-call authorization remain unchanged.
+Validation passed: 56 dashboard tests, deterministic export and browser checks
+at 320/390/768/1440 px, including visual inspection of the explanation and news
+context. All 209 pinned source/evidence files remain unchanged.
+
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
 variants. Other searches did not qualify a second recurring semantic baseline.

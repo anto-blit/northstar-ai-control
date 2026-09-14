@@ -142,7 +142,7 @@
                 <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2"><span class="font-mono text-sm text-muted">decision</span><strong class="decision-verdict text-3xl font-semibold tracking-tight">PROCEED</strong></div>
                 <p class="mt-5 font-mono text-xs text-muted">reason</p>
                 <blockquote class="mt-2 text-sm leading-relaxed">@@EXAMPLE_REASON@@</blockquote>
-                <p class="response-catch"><strong>What to notice:</strong> the reason gets there — 143 is over the 111 cap, so “acceptance is unauthorized.” The decision field above it still says PROCEED. A system that acts on the decision would sign the agreement.</p>
+                <p class="response-catch"><strong>What to notice:</strong> the reason gets there — 143 is over the 111 cap, so “acceptance is unauthorized.” The decision field above it still says PROCEED. An executor following that field without another permission check could sign the agreement. This test executed no action.</p>
               </div>
             </div>
           </div>
@@ -157,14 +157,27 @@
     <section id="why-this-case" class="stakes-band" aria-labelledby="stakes-title">
       <div class="shell stakes-grid">
         <div>
-          <p class="eyebrow">Why a puppet theatre invoice</p>
-          <h2 id="stakes-title" class="stakes-title">A concrete problem we can test.</h2>
+          <p class="eyebrow">Why study a harmless mistake?</p>
+          <h2 id="stakes-title" class="stakes-title">A small mistake.<br>A larger question.</h2>
         </div>
         <div class="stakes-body">
-          <p>An assistant should respect the spending limit set by the person it serves. Here the answer's decision field violates that limit even though its explanation recognizes the problem. The error is observable, and the correct decision can be checked.</p>
-          <p>We have reproduced this failure on several examples, with different amounts and settings inside the same approval task. That gives us one qualified failure family. Other searches have tested consent, permission scope and evidence handling, but have not supplied another qualified recurring baseline for this comparison.</p>
-          <p class="stakes-thesis">One family is enough to start comparing relevant parables. A broader claim needs a different failure family with its own repeatable baseline. Success on a mock spending task would not establish general AI safety.</p>
+          <p><strong>Minor here:</strong> the AI gave a wrong approval in a fictional spending task. Nobody was harmed, and nothing was bought or signed. The error matters because the decision crossed an explicit, legitimate boundary even though the explanation identified it.</p>
+          <p><strong>Potentially consequential elsewhere:</strong> if a more capable system made comparable errors while controlling real tools, and permission checks and human oversight failed, it could cause serious harm. Extinction is an extreme possible concern only with further failures, much greater reach and ineffective recovery. Our experiment does not establish that chain or its likelihood.</p>
+          <p class="stakes-thesis">We have one qualified failure family: a repeatable authorization error. It is ethically relevant, but it is not a validated test of general moral behavior or a predictor of catastrophe. The connection is a research hypothesis.</p>
+          <details class="mt-6">
+            <summary class="text-link cursor-pointer">How do we avoid a slippery-slope argument?</summary>
+            <p class="mt-4">By testing the missing links. A wrong decision may reflect output order, attention or reasoning rather than a deliberate choice to disregard someone. We need to test simpler explanations, then check behavior on different permission boundaries using harmless mock tools and legitimate tasks the AI should complete.</p>
+            <p>Greater capability does not automatically mean worse behavior. Ordinary permission checks can stop an incorrect approval. Stories must show added value, and success on this task would still leave broader safety unproven.</p>
+            <p><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/what-the-small-failure-means.md">Read what the test measures and what would validate the connection <span aria-hidden="true">↗</span></a></p>
+          </details>
         </div>
+      </div>
+      <div class="shell mt-10">
+        <details id="real-incident" class="note-panel">
+          <summary class="text-lg font-semibold cursor-pointer">What about the AI intrusion at Hugging Face?</summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted">That was a real, consequential incident. Hugging Face reported an AI-driven intrusion in July 2026. OpenAI's later account describes internal cyber evaluations with reduced safeguards, primarily driven by an internal research model. These conditions matter when interpreting the event. <a class="text-link" href="https://huggingface.co/blog/agent-intrusion-technical-timeline">Hugging Face's account</a> · <a class="text-link" href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI's August 26 account</a>.</p>
+          <p class="mt-3 text-sm leading-relaxed text-muted">METR and Redwood's independent investigation also describes agents proceeding despite recognizing scope concerns. Serious boundary-crossing is therefore worth studying today. This separate incident does not show that our mock spending test predicts such behavior, that both have the same cause, or that a parable would prevent it. <a class="text-link" href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/">Independent investigation and its limits</a>.</p>
+        </details>
       </div>
     </section>
 
@@ -201,21 +214,21 @@
         <div class="model-head">
           <div>
             <p class="eyebrow eyebrow-light">A stated model · not a measurement</p>
-            <h2 id="model-title" class="section-title mt-4">What every step is chipping at.</h2>
+            <h2 id="model-title" class="section-title mt-4">What would have to be true?</h2>
           </div>
-          <p class="model-lede">The danger is a possible future, so the case for working on it is theoretical. That is no excuse for being vague. Here is the arithmetic we are actually betting on, with every assumption exposed and every input you can argue with.</p>
+          <p class="model-lede">This is a way to explore assumptions about a possible future. Our small approval test has no validated link to extinction risk. The sliders show what follows if you assume a connection; they do not estimate its likelihood or turn local successes into lives saved.</p>
         </div>
 
         <figure class="model-figure">
           <figcaption class="model-figcaption">Figure 1 · Addressable reduction under the stated assumptions. Axis spans 0.00–0.50 percentage points; the 10% reference is twenty times wider than this axis.</figcaption>
           <div class="model-bars">
             <div class="model-bar-row">
-              <span class="model-bar-label">Available to earn<br><small>if every assumption below holds</small></span>
+              <span class="model-bar-label">Illustrative reduction<br><small>if every assumption below holds</small></span>
               <div class="model-track"><div class="model-fill available" id="bar-available" style="width:30%"></div></div>
               <strong class="model-bar-value" id="value-available">0.15 pp</strong>
             </div>
             <div class="model-bar-row">
-              <span class="model-bar-label">Earned by evidence<br><small>validated terms only</small></span>
+              <span class="model-bar-label">Credited so far<br><small>no global reduction established</small></span>
               <div class="model-track"><div class="model-fill earned" id="bar-earned" style="width:0%"></div></div>
               <strong class="model-bar-value" id="value-earned">0.00 pp</strong>
             </div>
@@ -223,7 +236,7 @@
           </div>
           <div class="model-readout">
             <div><span class="eyebrow eyebrow-light">Reference</span><strong>10.00%</strong><p>Hinton's lower endpoint, held fixed.</p></div>
-            <div><span class="eyebrow eyebrow-light">Floor under these assumptions</span><strong id="value-floor">9.85%</strong><p>Where the sliders below currently put it.</p></div><div class="is-aspiration"><span class="eyebrow eyebrow-light">The aspiration</span><strong>0.00%</strong><p>Every term at 1.00: this failure covers the pathway, the safeguard stops it, everyone adopts it. That is the target, not a forecast.</p><button type="button" id="show-aspiration" class="aspiration-button">Set every term to 1.00</button></div>
+            <div><span class="eyebrow eyebrow-light">Illustrative remainder</span><strong id="value-floor">9.85%</strong><p>An arithmetic output, not a risk estimate or bound.</p></div><div class="is-aspiration"><span class="eyebrow eyebrow-light">The aspiration</span><strong>0.00%</strong><p>Every term at 1.00 assumes complete coverage, prevention and adoption. Reaching zero in this formula would not establish that real-world risk can be eliminated.</p><button type="button" id="show-aspiration" class="aspiration-button">Set every term to 1.00</button></div>
           </div>
         </figure>
 
@@ -234,15 +247,15 @@
             <input type="range" id="factor-s" min="0" max="100" step="1" value="25" aria-describedby="factor-s-state">
             <p class="factor-value"><output for="factor-s" id="out-s">0.25</output></p>
             <p id="factor-s-state" class="factor-state assumed">Assumption · no measurement exists</p>
-            <p class="factor-note">G16 found no failure in 84 recorded OpenAI decisions. A failure that does not appear everywhere argues this term <em>down</em>, not up.</p>
+            <p class="factor-note">G16 found no failure in 84 recorded OpenAI decisions. That limits claims about those tasks and that target; it does not estimate the share of catastrophic pathways.</p>
           </article>
           <article class="factor-card">
             <label for="factor-e"><span class="factor-symbol">e</span> Efficacy</label>
             <p class="factor-def">Of those overrides, the share a validated safeguard would actually prevent.</p>
             <input type="range" id="factor-e" min="0" max="100" step="1" value="40" aria-describedby="factor-e-state">
             <p class="factor-value"><output for="factor-e" id="out-e">0.40</output></p>
-            <p id="factor-e-state" class="factor-state partial">Partly anchored · scripted trials only</p>
-            <p class="factor-note">400/400 post-stop failures with the starting control, 0/400 after repair, in fixed scripted trials. A conventional transaction check ties us on the queue cases, so the share attributable to <em>this</em> project may be near zero.</p>
+            <p id="factor-e-state" class="factor-state assumed">Assumption · transfer unvalidated</p>
+            <p class="factor-note">Scripted repairs prevent specified local failures, and a conventional transaction check ties us on the queue cases. Those results do not estimate effectiveness against catastrophic failures or establish an added benefit from stories.</p>
           </article>
           <article class="factor-card">
             <label for="factor-a"><span class="factor-symbol">a</span> Adoption</label>
