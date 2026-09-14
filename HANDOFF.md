@@ -95,6 +95,22 @@ navigation work only; no model calls or study registration.
 Browser checks at 320/390/768/1440 px and the deterministic evidence/export
 check passed. The library was visually inspected on desktop and mobile.
 
+**September 14 external-feedback review:** the user asked whether repo framing
+should be surfaced on the site. The [assessment](docs/feedback-method-and-messaging.md)
+distinguishes stories as discovery hypotheses from stories as guidance, promotes
+the existing joint pair score, and preserves strong conventional comparators.
+The homepage now explains both research questions, an illustrative permission
+pair and the rule to retain useful repairs when stories add no value. The README's
+obsolete Claude exclusion and next-step copy are corrected to the current
+236-call calibration proposal. The feedback's two-commit repo view was reproduced
+in browser search but contradicted by the live GitHub API and fetched main.
+The Wolf/Lamb example now describes an observable decision/reason contradiction
+without inferring internal motivation. A consistency monitor remains a proposed
+research question; no classifier, new study, model call or scorer change was made.
+Validation passed: 56 dashboard tests, the deterministic evidence/export check,
+and browser checks at 320/390/768/1440 px. The two research questions and paired
+example were visually inspected on desktop and mobile.
+
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
 variants. Other searches did not qualify a second recurring semantic baseline.

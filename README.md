@@ -20,6 +20,16 @@ Powerful AI should expand humanity’s possibilities. NorthStar’s mission is t
 
 Our research investigates whether that guidance improves AI decisions, whether the improvement survives unfamiliar situations, and whether failures can inform effective safeguards. Stories can serve as **instruction and instrumentation**. We make the selected principles and their interpretation explicit, open to review, and attentive to disagreement across traditions.
 
+**Stories have two roles here, and each needs its own test.** They can suggest
+failure patterns to search for, or supply guidance whose effect on AI decisions
+we compare with the same facts and simpler remedies. A familiar story supplies
+a hypothesis; it does not establish a moral rule or an experimental result.
+Every proposed failure needs a concrete prohibited outcome and a closely matched
+legitimate task that should succeed. For predefined opposite-label pairs, our
+evaluation protocol scores whether **both halves are correct**, alongside unsafe
+approvals, unnecessary refusals and invalid answers.
+[See the approach on the site](https://anto-blit.github.io/northstar-ai-control/#idea).
+
 We also investigate protection against coercion and irreversible human disempowerment. By **human recoverability**, we mean preserving people’s ability to intervene and regain meaningful agency when things go wrong. A stop button is only useful if it can still prevent the consequences.
 
 **The hypothesis may be wrong. We intend to find out.**
@@ -34,14 +44,18 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Current: the comparison machinery is repaired and verified offline.** The
+**Current: measure the simpler remedies before sizing a story comparison.** The
 [separate v2 implementation](experiments/deliberation-comparison-v2/README.md)
 passed 25 regression tests, including a complete synthetic sequence and injected
-interruptions. Claude remains excluded and no live comparison was launched.
-A different model needs its own qualified baseline. The original G17 evidence
-is preserved; no new model results or story advantage are claimed.
+interruptions. Claude is available again; no model is excluded, and no new calls
+are authorized. The [scientific self-review](experiments/parable-screen-review/README.md)
+recommends at most 236 calibration calls: 44 baseline checks, then conditionally
+192 factual-guidance/repair calls, with zero story calls and a proposed US$10 cap.
+Independent review, a validated live adapter and registration remain outstanding.
+A different target configuration needs its own qualified baseline. The original
+G17 evidence and unrun comparison are preserved separately.
 
-**Latest model result: G17 A2 qualified; the comparison is registered.**
+**Latest recorded model result: G17 A2 qualified.**
 [G17 stage A2](experiments/deliberation-comparison/README.md) qualified a
 repeatable failure on `claude-sonnet-5` with deliberation suppressed, under a rule
 published before its calls and on cases disjoint from the stage that preceded it:
@@ -57,7 +71,9 @@ attempts where the model did not deliberate, and none at all in the 20 where it
 did.**
 
 The four-arm comparison — original prompt, matched facts, story, and a repair
-designed to win — is registered at 320 calls and **has not been run**.
+designed to win — was registered at 320 calls and **has not been run**. Its
+[harness defects](experiments/deliberation-preflight/README.md) are preserved;
+the revised calibration proposal above is the current recommended next step.
 
 **Previously: a baseline that fails, and a rule we held ourselves to.**
 [G17 stage A](experiments/deliberation-comparison/README.md) ran 40 calls with

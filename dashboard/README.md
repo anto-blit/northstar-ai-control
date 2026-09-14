@@ -83,6 +83,16 @@ checker, distinguishes its six Aesop fables from the current three-candidate
 research shortlist, and labels G5 as earlier evidence. Links connect the library
 to the current proposed study, proposal form and shared refinement loop.
 
+The homepage's `#idea` section now surfaces the repo's two research questions:
+stories as hypotheses for finding failures, and stories as guidance to compare.
+Its `#fair-test` example explains joint correctness for a predefined
+withhold/proceed pair and links the early pilot that already used that score.
+It preserves conventional comparators and the commitment to keep useful repairs
+when narrative framing adds no value. The worked Wolf/Lamb example identifies
+the recorded output contradiction without attributing internal motivation.
+See the [feedback assessment](../docs/feedback-method-and-messaging.md) for the
+monitor proposal, prior work and limits; no study or scoring was changed.
+
 ## Homepage maintenance
 
 Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned
