@@ -106,7 +106,7 @@
         <p class="hero-description mx-auto mt-7 max-w-2xl">We use stories to suggest failure patterns and guidance worth testing. We compare against conventional methods, check both unauthorized actions and legitimate work, and publish what succeeds, fails or remains uncertain.</p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-5">
           <a class="primary-button" href="#progress">See the results <span aria-hidden="true">↓</span></a>
-          <a class="ghost-button" href="#idea">See how we test <span aria-hidden="true">→</span></a>
+          <a class="ghost-button" href="#algorithm">Explore the algorithm <span aria-hidden="true">→</span></a>
         </div>
         <ul class="hero-pills mt-10" aria-label="Project status">
           <li><span class="pill-dot live" aria-hidden="true"></span>One repeatable failure family</li>
@@ -409,12 +409,13 @@
         <div id="algorithm" class="mt-10 note-panel" aria-labelledby="algorithm-title">
           <p class="eyebrow">Proposed algorithm · working framework</p>
           <h3 id="algorithm-title" class="mt-4 text-2xl font-semibold tracking-tight">A formula for selecting the next remedy.</h3>
-          <p class="mt-4 text-muted leading-relaxed">Choose the method with the lowest conservative estimate of violations, while preserving legitimate work and meeting a declared budget. Then confirm it on fresh cases.</p>
+          <p class="mt-4 text-muted leading-relaxed">First, reproduce a failure on the exact model setup and check that legitimate tasks still succeed. Then compare remedies against a declared baseline. Choose the best-supported candidate within the usefulness and cost limits below, and confirm it on fresh cases.</p>
+          <p class="mt-5 text-lg font-semibold">Reproduce a failure → Compare remedies → Confirm on fresh cases.</p>
           <div class="algorithm-equation">
             <math display="block" aria-label="Choose m star from the methods m in the eligible set F that minimize the upper uncertainty bound V bar of m."><mrow><msup><mi>m</mi><mo>*</mo></msup><mo>∈</mo><munder><mrow><mi mathvariant="normal">arg</mi><mspace width="0.2em"/><mi mathvariant="normal">min</mi></mrow><mrow><mi>m</mi><mo>∈</mo><mi mathvariant="script">F</mi></mrow></munder><mspace width="0.3em"/><mrow><mi>V̄</mi><mo>(</mo><mi>m</mi><mo>)</mo></mrow></mrow></math>
           </div>
           <p class="text-sm text-muted leading-relaxed"><strong class="font-semibold text-ink">m</strong> is a candidate method. <strong class="font-semibold text-ink">V̄</strong> is an upper uncertainty bound on violations in the declared test setting. <strong class="font-semibold text-ink">F</strong> contains methods with valid evidence, sufficient useful completion and acceptable cost. If none qualifies, report insufficient evidence.</p>
-          <p class="mt-4 text-sm text-muted leading-relaxed">The full framework connects contributed stories and failure cases to reviewed tests, confirmed remedies and checks before actions. Automatic selection, retrieval and a training curriculum remain proposed; this equation is a design objective.</p>
+          <p class="mt-4 text-sm text-muted leading-relaxed">Without observed baseline errors, a perfect remedy cannot demonstrate fewer errors. Reproducing the failure is part of the learning loop; permission checks protect actions at execution. Automatic selection, retrieval and training remain proposed, and the formula is a design objective.</p>
           <a class="text-link mt-5 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/working-algorithm.md">Read the algorithm, formulas and evidence limits <span aria-hidden="true">↗</span></a>
         </div>
         <div class="mt-8 text-center"><a class="text-link" href="#parable">Choose a parable or bring your own <span aria-hidden="true">↓</span></a></div>

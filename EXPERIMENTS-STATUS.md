@@ -10,8 +10,9 @@ a revised proposal awaiting independent review. The specification and frozen sou
 retain their existing versions.
 
 The [working algorithm](docs/working-algorithm.md) now consolidates the proposed
-selection objective, joint pair metric, action gate and collective refinement
-loop. It distinguishes existing components from future retrieval and training.
+baseline prerequisite, selection objective, joint pair metric, action gate and
+collective refinement loop. It distinguishes existing components from future
+retrieval and training.
 Its formulas do not register a study, change scoring or authorize calls.
 
 **Current direction: scientific self-review recommends comparator calibration first.** The

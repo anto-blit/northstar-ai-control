@@ -140,6 +140,19 @@ Validation passed: deterministic evidence/export check, document references,
 and browser checks at 320/390/768/1440 px. The formula panel was visually
 inspected on desktop and mobile, including its uncertainty-bound notation.
 
+**September 14 baseline-in-algorithm clarification:** the user asked whether a
+repeatable ethical failure belongs inside the algorithm and suggested a site
+teaser. The framework now explicitly places baseline qualification before remedy
+selection, defines improvement relative to a declared comparator, and distinguishes
+that measurement prerequisite from the runtime action gate. The site panel says
+"Reproduce a failure → Compare remedies → Confirm on fresh cases" and is linked
+directly from the hero. One qualified failure family supports a narrow comparison;
+a zero-error baseline cannot demonstrate a reduction in those errors. The existing gate,
+236-call proposal, frozen scoring and call authorization are unchanged.
+Validation passed: deterministic export, framework references and browser checks
+at 320/390/768/1440 px, with desktop/mobile inspection of the algorithm panel
+and the hero link.
+
 **Breadth:** there is one qualified recurring failure family for this comparison,
 not just one example. G10/G11/G17 supply repeated approval errors and numerical
 variants. Other searches did not qualify a second recurring semantic baseline.

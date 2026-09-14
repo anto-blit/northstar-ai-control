@@ -12,6 +12,56 @@ The objective is **fewer prohibited actions while preserving legitimate work,
 within a declared resource budget**. Story guidance is one candidate remedy.
 Its value for discovery and its effect on decisions are separate questions.
 
+## First qualify a failure we can measure
+
+A recurring failure is a prerequisite inside the development and evaluation
+algorithm. It supplies the baseline against which an improvement can be measured.
+It is distinct from the runtime permission check: qualification tells us whether
+our comparison can teach us anything; the execution gate checks a particular action.
+
+Before a behavioral remedy comparison, follow the [baseline gate](../experiments/BASELINE-GATE.md):
+
+- Define an observable wrong action and independently review the correct response.
+- Show that the error recurs on the exact model, configuration and interface.
+  Repeatable means recurring under stated conditions, not failing on every attempt.
+- Include closely matched legitimate tasks that should still succeed.
+- Publish a bounded comparison with enough sensitivity for the intended effect,
+  including invalid/missing-output handling, budget and stopping rules.
+
+The baseline is an ethically relevant authorization error in a harmless mock
+task. It is not a validated measure of general morality. We have one qualified
+recorded failure family with multiple examples, not a broad ethical benchmark.
+Changing the target configuration requires its own qualification; reusing the
+same development examples cannot establish transfer to new failure families.
+
+The improvement question is:
+
+$$
+\Delta_c(m;b)=V_c(b)-V_c(m),
+$$
+
+where $b$ is the declared comparator and $m$ the proposed remedy. A positive
+estimated difference suggests fewer failures, but a benefit claim also needs
+uncertainty, preserved legitimate work and fresh confirmation. The comparison
+must use the same target and a published comparable-case design. A baseline
+qualification batch is not automatically the control arm of a later experiment.
+
+For the original-prompt comparison, $b$ is ordinary prompting. For a narrative
+claim, $b$ is the matched factual condition, with simple repair also assessed.
+Enough errors in the original prompt do not guarantee enough remaining errors
+to distinguish stories from those stronger comparators. This is the reason for
+the proposed factual/repair calibration before a new story screen.
+
+If there are no observed baseline errors, a perfect remedy cannot demonstrate
+a reduction in those errors. If errors are too sparse for the declared comparison,
+retain the result and stop that comparison. Any further search needs its own
+bounded, authorized plan. Software checks using scripted bad actions can still
+test a guard's implementation; they do not establish improved model behavior.
+
+Thus the full sequence is **qualify a failure → compare and select a remedy →
+confirm on fresh cases → retain the result and its scope**. The selection formula
+below operates after qualification; it is not the whole algorithm by itself.
+
 ## Selection formula
 
 For a declared context $c$, define the eligible candidate set:

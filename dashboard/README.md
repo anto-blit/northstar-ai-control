@@ -106,6 +106,12 @@ with an accessible label and plain-language definitions. It links the consolidat
 objective, joint pair score, action gate and evidence boundaries. The equation
 is a proposed design objective; no selection service or training was launched.
 
+The hero now links directly to that algorithm panel. Its opening sequence makes
+baseline qualification explicit: reproduce a failure, compare remedies, then
+confirm on fresh cases. The linked framework distinguishes this measurement
+prerequisite from the permission gate at execution and explains why a perfect
+remedy on a zero-error baseline cannot demonstrate a reduction in those errors.
+
 ## Homepage maintenance
 
 Edit `homepage.html`, `homepage.css` and `homepage.js`. Tailwind 4.3.3 is a pinned
