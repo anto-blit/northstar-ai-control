@@ -56,6 +56,10 @@ jobs:
         run: python -m unittest discover -s experiments/approval-story-screen -p test_run.py
       - name: Check corrected comparison machinery without provider calls
         run: python -m unittest discover -s experiments/deliberation-comparison-v2 -p test_run.py -v
+      - name: Check interchangeable parable preparation without provider calls
+        run: |
+          python -m unittest discover -s experiments/parable-screen -p test_run.py -v
+          python experiments/parable-screen/run.py check results/parable-screen/draft-plan.json
       - name: Preserve the original G17 preflight evidence
         run: python experiments/deliberation-preflight/check.py --verify results/deliberation-preflight/report.json
       - name: Replay narrow approval screen when recorded

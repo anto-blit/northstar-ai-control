@@ -576,6 +576,15 @@ class HomepageEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "escapes its root"):
             homepage.checked_inventory(self.root, {"../outside": "0" * 64})
 
+    def test_parable_preparation_cannot_become_a_registered_live_study(self):
+        path = self.root / "results/parable-screen/draft-plan.json"
+        draft = json.loads(path.read_text(encoding="utf-8"))
+        draft["live_registered"] = True
+        draft["model_calls_authorized"] = 428
+        path.write_text(json.dumps(draft), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Homepage input changed"):
+            homepage.load_evidence(self.root, replay=False)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -174,6 +174,12 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('desktop-parable.png');
     await evaluate(`document.getElementById('scenario-guide-title').scrollIntoView()`);
     await screenshot('desktop-scenario-guide.png');
+    await evaluate(`document.getElementById('next').scrollIntoView()`);
+    await screenshot('desktop-next-test.png');
+    await viewport(390, 844);
+    await evaluate(`document.getElementById('next').scrollIntoView()`);
+    await screenshot('mobile-next-test.png');
+    await viewport(1440, 1100);
 
     // All internal links should point to a real target, including the archive.
     const research = fs.readFileSync(path.join(__dirname, 'research.html'), 'utf8');
@@ -193,7 +199,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await call('Emulation.setScriptExecutionDisabled', { value: true });
     await navigate(homeURL);
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
-    assert.match(await evaluate(`document.body.textContent`), /Baseline qualified · comparison not yet registered/);
+    assert.match(await evaluate(`document.getElementById('next').textContent`), /Offline prototype ready · live screen not registered/);
+    assert.match(await evaluate(`document.getElementById('why-this-case').textContent`), /one qualified failure family/i);
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],
@@ -201,7 +208,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         'custom starter', 'starter preserves edits', 'starter keyboard focus', 'custom draft', 'required fields',
         'literal user content', 'download round trip', 'edit invalidation', 'in-page draft retention',
         'no horizontal overflow', 'local links', 'legacy bookmark redirect', 'research controls',
-        'reduced motion', 'JavaScript-disabled evidence', 'no external network requests', 'no browser errors'],
+        'reduced motion', 'JavaScript-disabled evidence and preparation status', 'no external network requests', 'no browser errors'],
       screenshots: folder };
     fs.writeFileSync(path.join(folder, 'report.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result, null, 2));

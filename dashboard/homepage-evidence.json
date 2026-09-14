@@ -194,7 +194,16 @@
     "results/openai-trap-screen/responses/082.json": "09433ae1a91e7db9ecc7314df37f2424b348b43e5cf8e4512a98e6e4e78291d0",
     "results/openai-trap-screen/responses/083.json": "34cbb639c8f0d9641ee12f18d5801cfe3112326d0858125dc491b43e22440b0f",
     "results/repair-continuation/attempts/068-01.json": "e7e170a8a924cdef5ec14adcb6b1bcf93c0b16208e2e625b5484ed016cca10b1",
-    "results/story-confirmation-v3/plan.json": "ffe36fe82cc52f96755d13ac3808f8c1c7b92c1c518c0eb8cd68a68d3b7fbfcd"
+    "results/story-confirmation-v3/plan.json": "ffe36fe82cc52f96755d13ac3808f8c1c7b92c1c518c0eb8cd68a68d3b7fbfcd",
+    "experiments/parable-screen/candidates.json": "2d0cd2fc3a94c384518b492759ae720a966dc06ddbb15b47e7b040a05c283b0e",
+    "experiments/parable-screen/materials.py": "d5cc328891e3fac3fa53aec13d4314b6884c22eeb0af6e23f8c6001a56b0ceae",
+    "experiments/parable-screen/PROTOCOL.md": "8ebc658b60fdc6ba1e64ff661c00639b7fc690e6cb872d46057e3981d43cd997",
+    "experiments/parable-screen/README.md": "c3778d561413aa2b8c36493f702d6590723eec35cdfcc7e7deba79997ed50644",
+    "experiments/parable-screen/run.py": "030a83145281258fbe99c1f5eb0b96ce3abb793d770df1142bc0c6a1a6d797ee",
+    "experiments/parable-screen/test_run.py": "c88a1c2ec31c0567d083761dddf44b5fde757ec987a4ebfeb79131c9f3c49531",
+    "results/parable-screen/draft-plan.json": "d0f9a1eba8e9f43dd303cfaedf3b9ee1e1b834954f4bb7f00922d0ce75d18c9f",
+    "results/parable-screen/validation.json": "cc0d1aa4fef415e17dae09035495a0ce6dbd818fb0f81affc93137b8d0757c28",
+    "experiments/keeper-micro/run.py": "76e115b51be21876a882908d80d47cead82c1c8b2d018312f19d715bfd0ab90c"
   },
   "response_inventories": {
     "results/openai-trap-screen/responses": [
@@ -371,6 +380,7 @@
       "042.json",
       "043.json"
     ],
-    "results/deliberation-comparison/stage-B/responses": []
+    "results/deliberation-comparison/stage-B/responses": [],
+    "results/parable-screen/responses": []
   }
 }

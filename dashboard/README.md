@@ -32,8 +32,9 @@ from Hubinger, Amodei, Hinton, Bengio, LeCun and forecasting platforms, spanning
 
 The worked example applies the `wolf-lamb` principle to recorded response 058.
 It is labelled as an illustration of the hypothesis in both the eyebrow and the
-lede, and it repeats that matched factual guidance has tied the story in every
-fair comparison so far. NorthStar@Home, the donated-capacity section, is marked
+lede, and states that no reliable story advantage over matched facts and repair
+is established. It is separate from the new screen's candidates.
+NorthStar@Home, the donated-capacity section, is marked
 a proposed programme that has not launched; it describes publishing cases,
 scoring and budget before any donated capacity runs.
 
@@ -50,6 +51,15 @@ Drafts have `model_calls: 0`, `baseline_qualified: false`, and
 `story_benefit: null`. They are neither runnable study plans nor test results.
 Unsaved edits stay in page memory and disappear on reload. The separate
 [five-minute volunteer review idea](../docs/volunteer-idea.md) is deferred.
+
+September 14: the homepage and research summary distinguish one qualified failure
+family from its many numerical examples. They link the new
+[interchangeable parable prototype](../experiments/parable-screen/README.md),
+prepared offline with three candidates and their factual counterparts. The draft
+428-call / US$10 allowance is proposed, not authorized or spent. Candidate
+selection, fresh confirmation and a separately qualified different failure family
+are distinct next steps. Public copy and export checks keep synthetic preparation
+separate from the recorded model evidence and do not establish a parable ranking.
 
 ## Homepage maintenance
 

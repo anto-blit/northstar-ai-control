@@ -1,6 +1,6 @@
 # NorthStar — implementation and evidence
 
-Research specification: v0.3.1. Simulator: v0.2.0. Updated September 12, 2026.
+Research specification: v0.3.1. Simulator: v0.2.0. Updated September 14, 2026.
 
 Continuing in a fresh session? Read [HANDOFF.md](HANDOFF.md) for the current
 decisions, recommended next work and commands that replay evidence without model calls.
@@ -9,15 +9,35 @@ Companion guidance and evaluation protocol: [revision I2](protocol/instrumentati
 a revised proposal awaiting independent review. The specification and frozen sources
 retain their existing versions.
 
-**Current constraint: exclude Claude for now.** The requested comparison was not
-launched. The user subsequently selected the machinery repair only. The
+**Current direction: no model is excluded; reusable parable preparation completed.** The
+September 12 Claude exclusion was lifted that same day. The requested comparison
+was not launched, and the user selected the machinery repair only. The
 [corrected v2 implementation](experiments/deliberation-comparison-v2/README.md)
 passed 25 offline tests covering dispatch, repair-arm scoring, per-arm comparisons,
 partial reports and operational stops. The 320-response full-path test used
 synthetic fixtures, not AI calls. No provider calls or new story findings.
 The original [preflight defects](experiments/deliberation-preflight/README.md)
-and G17 A/A2 evidence remain unchanged. A permitted target, its own baseline and
-a new scientific plan/adapter are still needed for live testing.
+and G17 A/A2 evidence remain unchanged. The recorded Claude target has a qualified
+baseline; another target needs its own. A new scientific plan and live adapter
+are still needed for live testing.
+
+September 14: the user authorized an offline reusable test, then requested the
+docs/site be updated and pushed. The new
+[parable-screen prototype](experiments/parable-screen/README.md) supports three
+interchangeable story/factual pairs, ordinary instructions and simple repair.
+Fourteen offline tests passed, including the full 428-fixture path, baseline
+gating, honest selection, partial reports, operational stops and recovery.
+The draft proposes 44 baseline-check calls and 384 conditional screening calls,
+capped at US$10 reported usage. **Zero provider calls; no live registration.**
+A live adapter, material/label review and provider readiness remain outstanding.
+
+There is **one qualified recurring failure family** for this comparison, with
+multiple prompts and numerical variants. Other searches did not qualify another
+recurring semantic baseline. One family supports a narrow candidate screen;
+fresh confirmation and another independently qualified family are required before
+a broader transfer claim. No confirmed ranking of parables exists. The old
+320-call G17 B plan does not cover this search, and the website's six-fable
+proposal form is separate from the new shortlist. See [the handoff](HANDOFF.md).
 
 **Baseline requirement:** the user requires a
 reliable, repeatable AI failure first. Claude has recurring failure evidence;

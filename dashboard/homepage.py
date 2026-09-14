@@ -33,6 +33,7 @@ def load_evidence(root=ROOT, replay=True):
             ("experiments/openai-trap-screen/run.py", ["verify"]),
             ("experiments/deliberation-comparison/run.py", ["verify", "A"]),
             ("experiments/deliberation-comparison/run.py", ["verify", "A2"]),
+            ("experiments/parable-screen/run.py", ["check", "results/parable-screen/draft-plan.json"]),
         ):
             result = subprocess.run([sys.executable, str(root / script), *arguments],
                                     cwd=root, capture_output=True, timeout=45)
@@ -45,6 +46,20 @@ def load_evidence(root=ROOT, replay=True):
     g16 = read("results/openai-trap-screen/report.json")
     validation = read("results/deliberation-comparison-v2/validation.json")
     checked_inventory(root, validation["source_and_input_sha256"])
+    preparation = read("results/parable-screen/draft-plan.json")
+    preparation_validation = read("results/parable-screen/validation.json")
+    checked_inventory(root, preparation["sources_sha256"])
+    checked_inventory(root, preparation_validation["source_and_input_sha256"])
+    if (preparation["kind"] != "draft_parable_screen" or preparation["live_registered"]
+            or preparation["model_calls_authorized"] != 0 or preparation["scientific_claims_enabled"]
+            or preparation["qualified_failure_families"] != 1
+            or len(preparation["candidates"]) != 3 or len(preparation["arms"]) != 8
+            or preparation["budget"]["maximum_calls"] != 428
+            or preparation["budget"]["reported_usd_cap"] != 10.0
+            or preparation_validation["provider_calls"] != 0
+            or preparation_validation["live_comparison_registered"]
+            or preparation_validation["failures"] or preparation_validation["errors"]):
+        raise ValueError("Homepage preparation status changed; review claims before publication")
     if (a["qualifies"] or not a2["qualifies"] or validation["provider_calls"] != 0 or
             validation["live_comparison_registered"] or validation["failures"] or validation["errors"]):
         raise ValueError("Homepage narrative needs review: recorded research status changed")
@@ -52,7 +67,7 @@ def load_evidence(root=ROOT, replay=True):
     answer = json.loads(raw["result"])
     if answer["decision"] != "PROCEED":
         raise ValueError("Homepage example no longer matches the recorded decision")
-    return {"a": a, "a2": a2, "g16": g16, "validation": validation,
+    return {"a": a, "a2": a2, "g16": g16, "validation": validation, "preparation": preparation,
             "answer": answer, "stories": read("curriculum/aesop-v1.json")["stories"]}
 
 

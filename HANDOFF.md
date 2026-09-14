@@ -1,16 +1,46 @@
 # NorthStar: start here to continue the work
 
-Updated September 13, 2026. Evidence through G17 stage A2.
+Updated September 14, 2026. Evidence through G17 stage A2.
 G16 made 84 recorded model calls, G17 stage A made 40 and stage A2 made 44; the
 thinking analysis made none. G17 stage B is registered and has made none.
 
-**Current user direction: no model is excluded; machinery repair completed.**
+**Current user direction: no model is excluded; reusable parable test prepared offline.**
 The September 12, 2026 exclusion of Claude was lifted by the user the same day,
 for the project and for contributors. G17 A2's qualified baseline on the recorded
 Claude target is therefore usable again as a comparison target. Nothing is
 authorized to run: the comparison still needs a registered plan with a published
 budget, scoring rule and stop rule before any call, per
 [the baseline gate](experiments/BASELINE-GATE.md).
+
+**September 14 direction: prepare the reusable test; update the docs/site and push.**
+The user asks which parables work, whether the recurring failure is sufficient,
+and whether parables can be swapped into the same test. The recorded Claude
+baseline qualifies for its exact configuration; no parable has a confirmed
+advantage over both matched facts and simple repair. The separate
+[parable-screen prototype](experiments/parable-screen/README.md) now permits
+interchangeable candidates and passes 14 offline tests, including a complete
+428-fixture sequence, baseline failure-to-qualify, invalid comparators, lost
+legitimate work, operational stops and recovery. No provider calls were made.
+Its [draft plan](results/parable-screen/draft-plan.json) proposes three
+story/factual pairs plus original prompting and repair, with 44 baseline-check
+calls followed conditionally by 384 screen calls, and a US$10 reported-usage cap.
+These are proposed ceilings, not authorized calls. A live adapter, material/label
+review, provider readiness and explicit scientific registration remain outstanding.
+The user authorized the preparation and publishing these docs/site changes.
+
+Publication checks passed: 14 parable-prototype tests, 55 dashboard tests, the
+browser check at 320/390/768/1440 px, and the deterministic evidence/export check.
+The homepage and research summary explain the one-family limit, the proposed
+three-candidate screen, fresh confirmation and the prerequisite for broader
+transfer. These presentation changes add no model evidence.
+
+**Breadth:** there is one qualified recurring failure family for this comparison,
+not just one example. G10/G11/G17 supply repeated approval errors and numerical
+variants. Other searches did not qualify a second recurring semantic baseline.
+One family is enough for a narrow candidate screen. Fresh confirmation and a
+separately qualified different failure family are needed before a broader
+transfer claim. The website's six-fable proposal form remains separate from the
+new three-candidate shortlist and does not run models.
 
 The [NorthStar@Home runner](northstar_at_home/README.md) is new and makes no calls
 of its own: a volunteer runs a published pack of G16's trap cases on their own
@@ -114,6 +144,14 @@ a general model failure rate. Earlier studies remain in the status ledger.
   calls until a story wins. Keep development separate from confirmation.
 - Be candid and bounded. The user wants modest, credible progress and does not
   want perfect scores marketed as proof of prevention or global safety.
+- Assess prerequisites explicitly: a sufficiently recurring failure, a fair way
+  to swap candidate parables, and a way to discover which work. Keep candidate
+  selection separate from fresh confirmation; the current frozen story is not
+  an established best choice.
+- The user authorized the offline reusable-test preparation and documentation/site
+  publication. Keep its one qualified failure family distinct from its many case
+  variants, and from unqualified future failure searches. No live calls were
+  authorized by this preparation or publication request.
 
 ## Recommended next work, not an experiment already underway
 
@@ -124,8 +162,8 @@ correct.
 
 **G17 B is registered but not ready to execute.** Its 320 calls comprise 40
 over-limit and 40 legitimate requests per arm, disjoint from the earlier stages.
-The user's current instruction excludes its Claude target. The offline preflight
-also reproduced missing B dispatch, rejection of contract-compliant repair
+Claude is permitted under the current user direction. The offline preflight
+reproduced missing B dispatch, rejection of contract-compliant repair
 answers, broken comparison/partial reporting and an unenforced service-error stop.
 The original plans and sources are preserved. Those machinery defects are
 corrected in v2 and exercised offline; no live adapter or new scientific plan
@@ -158,25 +196,34 @@ G16's six trap families and their twins remain reusable.
    407 are the clearest starting pair. Their original prompts are in
    [068-01](results/repair-continuation/attempts/068-01.json) and
    [407-01](results/repair-continuation/attempts/407-01.json).
-2. Establish an accessible non-Claude target and prepare a new bounded protocol:
-   exact target/settings, baseline adequacy,
-   minimum useful effect, sample size, matched controls, scoring, costs and stop
-   rule. Do not impose a new 30% minimum. Claude's recurrence cannot qualify a
-   different target. Establish the new baseline separately. Assess whether
-   available sampling can distinguish the intended improvement from chance.
-3. Use the corrected v2 machinery as the basis for a separately reviewed provider
-   adapter and scientific plan. Its offline tests already cover repair-arm
-   scoring, partial reporting and injected service errors. Publish the live plan
-   before new calls and satisfy the [baseline gate](experiments/BASELINE-GATE.md)
-   before intervention calls.
-   Preserve G12's partial evidence instead of restarting its old runner.
-4. Report the full comparison, including useful approvals and invalid answers.
-   If a credible benefit emerges, test unfamiliar tasks and transfer separately.
+2. Review the new [candidate-screen protocol](experiments/parable-screen/PROTOCOL.md)
+   and saved draft. The offline runner is prepared; do not rebuild the frozen G17
+   machinery. Review the three story/factual pairs and fresh numerical labels.
+   Historical recurrence supports testing but does not establish current provider
+   capacity or enough sensitivity to distinguish successful remedies. The draft
+   explicitly describes that limitation and is exploratory candidate selection.
+3. Prepare and review a live adapter with timeout, usage and per-attempt budget
+   enforcement; establish current provider access and exact target metadata.
+   Publish a separately registered live plan and authorized budget before calls.
+   The draft's 428-call / US$10 proposal is not such authorization. A changed model
+   or task family needs its own baseline. The old 320-call G17 B allowance does
+   not transfer to a multiple-parable search.
+4. Under an authorized live protocol, check the baseline first and only run the
+   bounded candidate screen if it passes. Preserve every candidate's outcomes,
+   legitimate approvals, invalid answers and missing calls. Do not add stories
+   or calls until one wins. The website's proposal form does not expand the plan.
+5. If a candidate earns follow-up under that rule, freeze it and confirm on cases
+   and responses not used to choose or revise it, under a separately published
+   plan. Qualify another failure family separately before a broader transfer
+   claim. A story's usefulness here does not rank it universally. Preserve G12's
+   partial evidence and keep it closed. No live study or candidate screen is
+   registered by these recommendations.
 
-No model run was started during the readiness check or machinery repair. G12
-remains closed. The next live comparison needs a usable target, a qualified
+No model run was started during the readiness check, machinery repair or parable
+test preparation. G12 remains closed. The next live comparison needs a usable target, a qualified
 baseline and a separately published scientific implementation. The user selected
-only the machinery repair; the proposed safeguard extension has not been started.
+the machinery repair and subsequent offline parable-test preparation; the proposed
+safeguard extension has not been started.
 
 ## Stories and project map
 
@@ -223,6 +270,8 @@ py experiments/deliberation-comparison/run.py verify A2
 py experiments/thinking-analysis/analyze.py verify
 py experiments/deliberation-preflight/check.py --verify results/deliberation-preflight/report.json
 py -m unittest discover -s experiments/deliberation-comparison-v2 -p test_run.py -v
+py -m unittest discover -s experiments/parable-screen -p test_run.py -v
+py experiments/parable-screen/run.py check results/parable-screen/draft-plan.json
 ```
 
 These `verify` modes replay stored responses; they do not fill missing calls.
