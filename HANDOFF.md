@@ -1,5 +1,18 @@
 # NorthStar: start here to continue the work
 
+**September 17 thesis clarification:** the user said the mission-first revision
+obscured the basic thesis: thousands of years of moral and ethical storytelling,
+parables and principles such as the Golden Rule can provide a NorthStar for AI.
+Keep mission → thesis → the plan to develop and test it explicit in the opening.
+The homepage now states the thesis directly beneath the mission and has a visible
+section with the Golden Rule, the Boy Who Cried Wolf and the Sorcerer's Apprentice
+as proposed applications. Crowdsourcing gathers this wisdom; the proposed algorithm
+tests and develops guidance from it. This is the project's thesis, not a measured
+story advantage. The first displayed case is boldly labeled "AI failure example"
+at the user's request. README and share descriptions reflect the same thesis.
+These corrections use the existing publishing authorization. No model calls or
+experimental changes are involved.
+
 **September 17 messaging correction:** user said the research-first headline was
 the wrong lead: the mission is saving humanity from a 10% chance of AI destroying
 it. The homepage now leads with **"Help save humanity from AI catastrophe."**

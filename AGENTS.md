@@ -1,5 +1,14 @@
 # NorthStar experiment discipline
 
+Latest thesis clarification, September 17: keep the mission and the project's
+distinctive thesis together in the homepage opening. Thousands of years of moral
+and ethical storytelling, parables and principles such as the Golden Rule can
+provide a NorthStar for AI. The algorithm and crowdsourcing test and develop this
+thesis; they must not replace it with generic AI testing language. Present it as
+the project's thesis, with current evidence limits intact. The user also requested
+a bold "AI failure example" label on the first displayed case. These site edits
+remain covered by the user's publishing authorization; they authorize no calls.
+
 Latest messaging direction, September 17: lead with the mission of helping save
 humanity from AI catastrophe and reduce the stated 10% risk reference toward zero.
 The algorithm, crowdsourcing and small experiments are the proposed means. Keep

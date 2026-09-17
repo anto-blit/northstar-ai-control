@@ -1,5 +1,11 @@
 # NorthStar — implementation and evidence
 
+September 17 thesis clarification: the homepage explicitly presents humanity's
+moral stories, parables and principles such as the Golden Rule as the proposed
+NorthStar for AI. Crowdsourcing and the algorithm develop and test that thesis.
+The first displayed case is prominently labeled "AI failure example". This copy
+correction changes no results and establishes no added narrative benefit.
+
 September 17 messaging correction: the website leads with helping save humanity
 from AI catastrophe. The 10% figure remains the project's attributed risk reference,
 with uncertainty visible. The algorithm and crowdsourcing plan support that

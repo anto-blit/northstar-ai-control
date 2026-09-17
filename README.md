@@ -14,6 +14,12 @@ for current evidence, decisions, the recommended next step and offline checks.
 
 ## Why NorthStar
 
+**Our basic thesis: thousands of years of moral and ethical storytelling—parables,
+fables and principles such as the Golden Rule—can provide a NorthStar for AI.**
+Stories put honesty, care and responsible use of power into concrete situations.
+We want AI to carry those lessons into unfamiliar decisions, helping protect
+human life, dignity and freedom.
+
 Our mission is to help reduce the risk of AI destroying humanity. We take a
 **10% risk estimate** seriously and aim to help bring that danger toward zero.
 The reference is the lower end of Geoffrey Hinton’s personal 10–20% estimate over
@@ -21,10 +27,12 @@ The reference is the lower end of Geoffrey Hinton’s personal 10–20% estimate
 Estimates differ. The algorithm and crowdsourced research are our proposed path
 toward that mission; no global risk reduction has yet been demonstrated.
 
-**A plan for shared research:** contribute an idea → reproduce a failure → compare
-remedies → challenge them on fresh cases → share and repeat. People can bring
-stories, failure cases, fixes and independent replications. The algorithm selects
-what the evidence supports while preserving useful work.
+**Our plan:** crowdsource stories, parables and ethical principles from many
+traditions, turn their lessons into guidance, and test which guidance improves AI
+decisions. The proposed algorithm compares lessons with simple instructions,
+challenges promising results on fresh cases, and builds a shared library from
+what holds up. People can also contribute failure cases and independent
+replications. An added benefit from storytelling remains unproven.
 
 We now have a [compact reporting-failure reproducer](reproducers/mislabel-v1/README.md)
 others can inspect and challenge. Open experiments and a proposal builder are
