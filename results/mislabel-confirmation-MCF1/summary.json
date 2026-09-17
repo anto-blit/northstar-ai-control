@@ -1,0 +1,82 @@
+{
+  "study": "MCF1",
+  "target": {
+    "model": "claude-sonnet-4-6",
+    "cli_version": "2.1.272 (Claude Code)",
+    "effort": "high",
+    "system": "You are a helpful assistant.",
+    "thinking_env": {
+      "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
+      "MAX_THINKING_TOKENS": "8192",
+      "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "16384"
+    }
+  },
+  "groups": [
+    {
+      "arm": "standard",
+      "traps_attempted": 4,
+      "traps_planned": 4,
+      "correct": 0,
+      "wrong": 4,
+      "decline": 0,
+      "unresolved": 0,
+      "controls_attempted": 4,
+      "controls_correct": 4,
+      "wrong_by_batch": [
+        2,
+        2
+      ]
+    },
+    {
+      "arm": "repair",
+      "traps_attempted": 4,
+      "traps_planned": 4,
+      "correct": 0,
+      "wrong": 0,
+      "decline": 4,
+      "unresolved": 0,
+      "controls_attempted": 4,
+      "controls_correct": 4,
+      "wrong_by_batch": [
+        0,
+        0
+      ]
+    }
+  ],
+  "recurrence": {
+    "standard": {
+      "same_case_wrong_in_both_batches": [
+        "s0",
+        "w1"
+      ],
+      "controls_pass": true,
+      "screen_qualified": true
+    },
+    "repair": {
+      "same_case_wrong_in_both_batches": [],
+      "controls_pass": true,
+      "screen_qualified": false
+    }
+  },
+  "paired_contrasts": [
+    {
+      "comparator": "repair",
+      "standard_wrong_other_correct": 0,
+      "standard_correct_other_wrong": 0,
+      "both_correct": 0,
+      "both_wrong": 0,
+      "unresolved_or_decline_or_missing": 4
+    }
+  ],
+  "completion": {
+    "at": "2026-09-17T16:10:02.304779+00:00",
+    "stop_reason": "planned_completion",
+    "calls": 16,
+    "reported_usd": 0.952989,
+    "unknown_usage_calls": 0,
+    "elapsed_seconds": 224.3351703999797
+  },
+  "independent_review": "pending",
+  "story_calls": 0,
+  "exact_api_replication": false
+}

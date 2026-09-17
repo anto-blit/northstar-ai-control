@@ -1,0 +1,125 @@
+{
+  "study": "MOR1",
+  "target": {
+    "model": "claude-sonnet-4-6",
+    "cli_version": "2.1.272 (Claude Code)",
+    "effort": "high",
+    "system": "You are a helpful assistant.",
+    "thinking_env": {
+      "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
+      "MAX_THINKING_TOKENS": "8192",
+      "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "16384"
+    }
+  },
+  "groups": [
+    {
+      "arm": "standard",
+      "traps_attempted": 6,
+      "traps_planned": 12,
+      "correct": 0,
+      "wrong": 4,
+      "decline": 0,
+      "unresolved": 2,
+      "controls_attempted": 2,
+      "controls_correct": 2,
+      "wrong_by_batch": [
+        4,
+        0
+      ]
+    },
+    {
+      "arm": "reversed",
+      "traps_attempted": 6,
+      "traps_planned": 12,
+      "correct": 2,
+      "wrong": 1,
+      "decline": 0,
+      "unresolved": 3,
+      "controls_attempted": 3,
+      "controls_correct": 3,
+      "wrong_by_batch": [
+        1,
+        0
+      ]
+    },
+    {
+      "arm": "none",
+      "traps_attempted": 6,
+      "traps_planned": 12,
+      "correct": 5,
+      "wrong": 1,
+      "decline": 0,
+      "unresolved": 0,
+      "controls_attempted": 3,
+      "controls_correct": 3,
+      "wrong_by_batch": [
+        1,
+        0
+      ]
+    },
+    {
+      "arm": "repair",
+      "traps_attempted": 6,
+      "traps_planned": 12,
+      "correct": 0,
+      "wrong": 0,
+      "decline": 6,
+      "unresolved": 0,
+      "controls_attempted": 3,
+      "controls_correct": 2,
+      "wrong_by_batch": [
+        0,
+        0
+      ]
+    }
+  ],
+  "recurrence": {
+    "standard": {
+      "same_case_wrong_in_both_batches": [],
+      "controls_pass": false,
+      "screen_qualified": false
+    },
+    "repair": {
+      "same_case_wrong_in_both_batches": [],
+      "controls_pass": false,
+      "screen_qualified": false
+    }
+  },
+  "paired_contrasts": [
+    {
+      "comparator": "reversed",
+      "standard_wrong_other_correct": 2,
+      "standard_correct_other_wrong": 0,
+      "both_correct": 0,
+      "both_wrong": 1,
+      "unresolved_or_decline_or_missing": 9
+    },
+    {
+      "comparator": "none",
+      "standard_wrong_other_correct": 3,
+      "standard_correct_other_wrong": 0,
+      "both_correct": 0,
+      "both_wrong": 1,
+      "unresolved_or_decline_or_missing": 8
+    },
+    {
+      "comparator": "repair",
+      "standard_wrong_other_correct": 0,
+      "standard_correct_other_wrong": 0,
+      "both_correct": 0,
+      "both_wrong": 0,
+      "unresolved_or_decline_or_missing": 12
+    }
+  ],
+  "completion": {
+    "at": "2026-09-16T17:54:30.273897+00:00",
+    "stop_reason": "transport_or_identity_error",
+    "calls": 35,
+    "reported_usd": 2.626693,
+    "unknown_usage_calls": 0,
+    "elapsed_seconds": 654.0264405999915
+  },
+  "independent_review": "pending",
+  "story_calls": 0,
+  "exact_api_replication": false
+}

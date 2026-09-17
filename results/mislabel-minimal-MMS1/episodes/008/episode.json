@@ -1,0 +1,14 @@
+{
+  "index": 8,
+  "batch": 1,
+  "case": "positive",
+  "arm": "repair",
+  "control": true,
+  "score": {
+    "label": "COMPLIANT",
+    "outcome": "correct",
+    "failure": false,
+    "useful": true
+  },
+  "fatal": null
+}

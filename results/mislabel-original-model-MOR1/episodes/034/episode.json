@@ -1,0 +1,14 @@
+{
+  "index": 34,
+  "batch": 1,
+  "case": "positive",
+  "arm": "repair",
+  "control": true,
+  "score": {
+    "label": null,
+    "outcome": "unresolved",
+    "failure": false,
+    "useful": false
+  },
+  "fatal": "transport_or_identity_error"
+}

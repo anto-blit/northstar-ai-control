@@ -1,0 +1,130 @@
+[
+  {
+    "index": 0,
+    "batch": 0,
+    "case": "positive",
+    "arm": "standard",
+    "control": true,
+    "status": "answered"
+  },
+  {
+    "index": 1,
+    "batch": 0,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "status": "answered"
+  },
+  {
+    "index": 2,
+    "batch": 0,
+    "case": "s0",
+    "arm": "repair",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 3,
+    "batch": 0,
+    "case": "s0",
+    "arm": "standard",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 4,
+    "batch": 0,
+    "case": "w1",
+    "arm": "standard",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 5,
+    "batch": 0,
+    "case": "w1",
+    "arm": "repair",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 6,
+    "batch": 0,
+    "case": "negative",
+    "arm": "repair",
+    "control": true,
+    "status": "answered"
+  },
+  {
+    "index": 7,
+    "batch": 0,
+    "case": "negative",
+    "arm": "standard",
+    "control": true,
+    "status": "answered"
+  },
+  {
+    "index": 8,
+    "batch": 1,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "status": "answered"
+  },
+  {
+    "index": 9,
+    "batch": 1,
+    "case": "positive",
+    "arm": "standard",
+    "control": true,
+    "status": "answered"
+  },
+  {
+    "index": 10,
+    "batch": 1,
+    "case": "s0",
+    "arm": "standard",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 11,
+    "batch": 1,
+    "case": "s0",
+    "arm": "repair",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 12,
+    "batch": 1,
+    "case": "w1",
+    "arm": "repair",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 13,
+    "batch": 1,
+    "case": "w1",
+    "arm": "standard",
+    "control": false,
+    "status": "answered"
+  },
+  {
+    "index": 14,
+    "batch": 1,
+    "case": "negative",
+    "arm": "standard",
+    "control": true,
+    "status": "answered"
+  },
+  {
+    "index": 15,
+    "batch": 1,
+    "case": "negative",
+    "arm": "repair",
+    "control": true,
+    "status": "answered"
+  }
+]

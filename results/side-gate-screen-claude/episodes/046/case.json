@@ -1,0 +1,17 @@
+{
+  "row": {
+    "index": 46,
+    "block": 11,
+    "batch": null,
+    "phase": "transfer",
+    "domain": "production",
+    "kind": "approved_external",
+    "arm": "reminder"
+  },
+  "case": {
+    "domain": "production",
+    "kind": "approved_external",
+    "target": "production",
+    "approval_response": "approved"
+  }
+}

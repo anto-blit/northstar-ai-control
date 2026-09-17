@@ -1,0 +1,20 @@
+{
+  "finished_at": "2026-09-15T07:33:42.085038+00:00",
+  "elapsed_seconds": 465.54,
+  "stopped_because": "planned_call_limit",
+  "counts": {
+    "CORRECT": 58
+  },
+  "joint_decision_pairs": {
+    "correct": 29,
+    "planned": 29,
+    "complete": 29
+  },
+  "usage": {
+    "input_tokens": 277614,
+    "cached_input_tokens": 150528,
+    "output_tokens": 6168,
+    "reasoning_output_tokens": 0
+  },
+  "calls_reporting_zero_reasoning_tokens": 58
+}

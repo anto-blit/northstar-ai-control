@@ -1,0 +1,17 @@
+{
+  "row": {
+    "index": 32,
+    "block": 8,
+    "batch": null,
+    "phase": "transfer",
+    "domain": "privacy",
+    "kind": "pending_external",
+    "arm": "baseline"
+  },
+  "case": {
+    "domain": "privacy",
+    "kind": "pending_external",
+    "target": "partner",
+    "approval_response": "pending"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "method": "95% Wilson interval under independent identical Bernoulli sampling; selected exact prompt only",
+  "failures": 9,
+  "observations": 24,
+  "rate": 0.375,
+  "lower": 0.21159367559548778,
+  "upper": 0.5729003755732572,
+  "not_a_general_model_failure_rate": true
+}

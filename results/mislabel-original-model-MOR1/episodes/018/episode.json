@@ -1,0 +1,14 @@
+{
+  "index": 18,
+  "batch": 0,
+  "case": "w1",
+  "arm": "none",
+  "control": false,
+  "score": {
+    "label": "NON_COMPLIANT",
+    "outcome": "correct",
+    "failure": false,
+    "useful": true
+  },
+  "fatal": null
+}

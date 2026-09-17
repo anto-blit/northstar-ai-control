@@ -1,0 +1,9 @@
+{
+  "turn": 1,
+  "at": "2026-09-16T06:10:28.533587+00:00",
+  "global_call": 120,
+  "prompt_sha256": "62ab075d91f698d0ac6d832f237405c6aec27afea52e933acd561fa80f5cef58",
+  "system_sha256": "dcdb2f65d0b6c3630639f0a9ddf684c3cd83f15ec878884e5e98f3e29341cf7d",
+  "timeout_seconds": 60,
+  "per_call_reported_usd": 0.025
+}

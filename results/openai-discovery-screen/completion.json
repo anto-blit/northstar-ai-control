@@ -1,0 +1,28 @@
+{
+  "finished_at": "2026-09-15T07:43:11.849133+00:00",
+  "elapsed_seconds": 481.51,
+  "stopped_because": "planned_call_limit",
+  "attempted": 72,
+  "not_attempted": 0,
+  "wrong_approvals": 0,
+  "status_counts": {
+    "valid": 72
+  },
+  "by_arm": {
+    "trap": {
+      "attempted": 60,
+      "correct": 60
+    },
+    "legitimate": {
+      "attempted": 12,
+      "correct": 12
+    }
+  },
+  "calls_reporting_zero_reasoning_tokens": 65,
+  "usage": {
+    "input_tokens": 340456,
+    "cached_input_tokens": 177408,
+    "output_tokens": 4275,
+    "reasoning_output_tokens": 168
+  }
+}

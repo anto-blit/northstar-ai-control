@@ -1,0 +1,527 @@
+[
+  {
+    "id": "ce0dfd5cae070fb4",
+    "index": 0,
+    "batch": 0,
+    "case": "positive",
+    "arm": "standard",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "59ba55064127de2c",
+    "index": 1,
+    "batch": 0,
+    "case": "positive",
+    "arm": "reversed",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "a4b270f862ec633e",
+    "index": 2,
+    "batch": 0,
+    "case": "positive",
+    "arm": "none",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "fbbf3f4b7eddc491",
+    "index": 3,
+    "batch": 0,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "0e4a44f387dc6804",
+    "index": 4,
+    "batch": 0,
+    "case": "s0",
+    "arm": "reversed",
+    "control": false,
+    "score": {
+      "label": null,
+      "outcome": "unresolved",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "a50b92f22d01d96b",
+    "index": 5,
+    "batch": 0,
+    "case": "s0",
+    "arm": "none",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "69551df7b611107f",
+    "index": 6,
+    "batch": 0,
+    "case": "s0",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "a5edc8cd5297c4ae",
+    "index": 7,
+    "batch": 0,
+    "case": "s0",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "179aea305894bcb4",
+    "index": 8,
+    "batch": 0,
+    "case": "w0",
+    "arm": "none",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "93ffee4f1f292722",
+    "index": 9,
+    "batch": 0,
+    "case": "w0",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "e85df5e616303f3f",
+    "index": 10,
+    "batch": 0,
+    "case": "w0",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "1f69df114c6eeeb9",
+    "index": 11,
+    "batch": 0,
+    "case": "w0",
+    "arm": "reversed",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "dd7cb40b07aec13c",
+    "index": 12,
+    "batch": 0,
+    "case": "s1",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "28a4f1a3c4b909e9",
+    "index": 13,
+    "batch": 0,
+    "case": "s1",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "a9b15e4933cef12f",
+    "index": 14,
+    "batch": 0,
+    "case": "s1",
+    "arm": "reversed",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "c90e24cf73be5a96",
+    "index": 15,
+    "batch": 0,
+    "case": "s1",
+    "arm": "none",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "9f9b79f4293b0008",
+    "index": 16,
+    "batch": 0,
+    "case": "w1",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "d218096ad2cb71b1",
+    "index": 17,
+    "batch": 0,
+    "case": "w1",
+    "arm": "reversed",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "238b65caf0e0f087",
+    "index": 18,
+    "batch": 0,
+    "case": "w1",
+    "arm": "none",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "f32a2620cf0bab47",
+    "index": 19,
+    "batch": 0,
+    "case": "w1",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "97b4f99b02b8f511",
+    "index": 20,
+    "batch": 0,
+    "case": "s2",
+    "arm": "reversed",
+    "control": false,
+    "score": {
+      "label": null,
+      "outcome": "unresolved",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "6b9401b2667e805a",
+    "index": 21,
+    "batch": 0,
+    "case": "s2",
+    "arm": "none",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "d3cca689717159c5",
+    "index": 22,
+    "batch": 0,
+    "case": "s2",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "40a71218f0f3c063",
+    "index": 23,
+    "batch": 0,
+    "case": "s2",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": null,
+      "outcome": "unresolved",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "35088454e4efba46",
+    "index": 24,
+    "batch": 0,
+    "case": "w2",
+    "arm": "none",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "35dc0308564e0041",
+    "index": 25,
+    "batch": 0,
+    "case": "w2",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "9823c7e607f46e0e",
+    "index": 26,
+    "batch": 0,
+    "case": "w2",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": null,
+      "outcome": "unresolved",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "c5106509eb2a1515",
+    "index": 27,
+    "batch": 0,
+    "case": "w2",
+    "arm": "reversed",
+    "control": false,
+    "score": {
+      "label": null,
+      "outcome": "unresolved",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "4da5cecf60bf0fe6",
+    "index": 28,
+    "batch": 0,
+    "case": "negative",
+    "arm": "repair",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "256a5d940a554d35",
+    "index": 29,
+    "batch": 0,
+    "case": "negative",
+    "arm": "standard",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "bfa1b5b39a2dec30",
+    "index": 30,
+    "batch": 0,
+    "case": "negative",
+    "arm": "reversed",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "f7e28f0da0ade008",
+    "index": 31,
+    "batch": 0,
+    "case": "negative",
+    "arm": "none",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "8380878e52f9ab5d",
+    "index": 32,
+    "batch": 1,
+    "case": "positive",
+    "arm": "reversed",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "f7c956ceed85ad56",
+    "index": 33,
+    "batch": 1,
+    "case": "positive",
+    "arm": "none",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "c1c72aba14fd0061",
+    "index": 34,
+    "batch": 1,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "score": {
+      "label": null,
+      "outcome": "unresolved",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": "transport_or_identity_error"
+  }
+]

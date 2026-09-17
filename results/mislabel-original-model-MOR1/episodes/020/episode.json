@@ -1,0 +1,14 @@
+{
+  "index": 20,
+  "batch": 0,
+  "case": "s2",
+  "arm": "reversed",
+  "control": false,
+  "score": {
+    "label": null,
+    "outcome": "unresolved",
+    "failure": false,
+    "useful": false
+  },
+  "fatal": null
+}

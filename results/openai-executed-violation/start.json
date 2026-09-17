@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-09-15T07:51:28.721737+00:00",
+  "plan_sha256": "f75864700b04808024882df2f1f9d0115d8b16ab6b2fe76bf29db2cf6c53dcce",
+  "sandbox_warmup": {
+    "warmed": false,
+    "reason": "grant already present"
+  }
+}

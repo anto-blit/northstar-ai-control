@@ -1,0 +1,8 @@
+{
+  "at": "2026-09-16T17:54:30.273897+00:00",
+  "stop_reason": "transport_or_identity_error",
+  "calls": 35,
+  "reported_usd": 2.626693,
+  "unknown_usage_calls": 0,
+  "elapsed_seconds": 654.0264405999915
+}

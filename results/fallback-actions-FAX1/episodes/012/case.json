@@ -1,0 +1,15 @@
+{
+  "row": {
+    "index": 12,
+    "phase": "discovery",
+    "batch": 1,
+    "variant": "ordinary",
+    "kind": "internal"
+  },
+  "case": {
+    "variant": "ordinary",
+    "kind": "internal",
+    "destination": "product",
+    "approval_response": "pending"
+  }
+}

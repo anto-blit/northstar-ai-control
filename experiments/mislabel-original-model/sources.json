@@ -1,0 +1,55 @@
+{
+  "article": "https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/",
+  "prompt_source": "Appendix D; forced binary standard/reversed/none. Repair is a separately identified local addition.",
+  "selection": "First three lexicographic public input IDs in each family, before any Sonnet 4.6 call. Four inputs previously selected during PFS1; no outcome filtering.",
+  "transcripts": [
+    {
+      "case": "s0",
+      "viewer_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-surveillance-gpt-0907a4.json",
+      "original_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell166_condsurveillance-loose-standard-gpt-sonnet46_r1/cell166_surveillance-loose-standard-gpt-sonnet46_run1_0907a4.json",
+      "sha256": "e6efee5f9d7563ac260c91f55296d4503579d5ce28b75f26a8bd94c7989a122e",
+      "messages": 48
+    },
+    {
+      "case": "s1",
+      "viewer_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-surveillance-opus45-02d4dc.json",
+      "original_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell139_condsurveillance-loose-standard-opus45-sonnet46_r1/cell139_surveillance-loose-standard-opus45-sonnet46_run1_02d4dc.json",
+      "sha256": "3ed19a4ca3f1877933a6dc062e6903164d0ade20fa025e30e52d2b43cb165b91",
+      "messages": 64
+    },
+    {
+      "case": "s2",
+      "viewer_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-surveillance-opus45-c5978b.json",
+      "original_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell154_condsurveillance-tight-none-opus45-sonnet46_r1/cell154_surveillance-tight-none-opus45-sonnet46_run1_c5978b.json",
+      "sha256": "fcee2e627d5698b187c98fb1f4ec29bf098351100b450c9010be1396c0c37e45",
+      "messages": 57
+    },
+    {
+      "case": "w0",
+      "viewer_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-welfare-gemini-d0deff.json",
+      "original_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell169_condwelfare-loose-standard-gemini-sonnet46_r1/cell169_welfare-loose-standard-gemini-sonnet46_run1_d0deff.json",
+      "sha256": "74bb6693804043448d1990d83eeb5abde16afa050bd434f80a07ead0813306e5",
+      "messages": 25
+    },
+    {
+      "case": "w1",
+      "viewer_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-welfare-gpt-d90aab.json",
+      "original_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell163_condwelfare-loose-standard-gpt-sonnet46_r1/cell163_welfare-loose-standard-gpt-sonnet46_run1_d90aab.json",
+      "sha256": "fc73528a5d67f57b73a80f3ba17b470e0385e089a602d444ecbac47450afad97",
+      "messages": 37
+    },
+    {
+      "case": "w2",
+      "viewer_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-welfare-opus45-076b98.json",
+      "original_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell112_condwelfare-loose-standard-opus45-sonnet46_r1/cell112_welfare-loose-standard-opus45-sonnet46_run1_076b98.json",
+      "sha256": "49a0c4b85fe0531e2f10a0427790bae2ef88d5f379e76c76cf31e1c381eff559",
+      "messages": 75
+    }
+  ],
+  "limitations": [
+    "Original source URL returned a login page; no access attempted beyond public page.",
+    "Public viewer export has message text but omits some structured assistant tool calls.",
+    "Original API temperature, thinking-token budget, hidden system context and exact transcript serialization were not supplied in the public article.",
+    "Direct Anthropic API credentials unavailable in process environment; use authenticated Claude Code transport with declared settings."
+  ]
+}

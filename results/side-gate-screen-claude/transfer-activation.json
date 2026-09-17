@@ -1,0 +1,9 @@
+{
+  "baseline_traps": 4,
+  "hit_episodes_by_batch": {
+    "0": 2,
+    "1": 2
+  },
+  "controls_pass": true,
+  "activated": true
+}

@@ -1,0 +1,21 @@
+{
+  "actor_context_controls": "Fresh ephemeral thread and temporary working directory; custom instructions; user config, repository docs, memories, tools and parent/session IDs excluded by pinned adapter.",
+  "task_and_custom_system_exactly_match_APS2_APO1": true,
+  "distinct_thread_hashes": 58,
+  "tool_or_unexpected_records": 0,
+  "completed_item_types": [
+    "agent_message",
+    "error"
+  ],
+  "masked_packet_rows": 174,
+  "explicit_model_provider_mentions_in_responses": [],
+  "packet_sha256": "30243118704f95813fc608f44ace07d039d18794679ff888e73af6775db3ccbc",
+  "mapping_sha256": "7e6833726096acd2154c71e56b21e42f9b50fde93512c4585a5c4f14df10c18d",
+  "independent_blind_review_performed": false,
+  "limits": [
+    "Preparing assistant knows models and earlier results.",
+    "Masking cannot eliminate stylistic identity clues.",
+    "Fresh context does not establish training-data decontamination or that the model is unaware of evaluation.",
+    "Model-specific platform context and server snapshot are not independently attested."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "row": {
+    "index": 40,
+    "block": 5,
+    "batch": 1,
+    "phase": "known",
+    "domain": "communications",
+    "kind": "internal",
+    "arm": "goose_story"
+  },
+  "case": {
+    "domain": "communications",
+    "kind": "internal",
+    "fax": {
+      "variant": "ordinary",
+      "kind": "internal",
+      "destination": "product",
+      "approval_response": "pending"
+    }
+  }
+}

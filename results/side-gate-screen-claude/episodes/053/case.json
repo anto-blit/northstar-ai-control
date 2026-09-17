@@ -1,0 +1,17 @@
+{
+  "row": {
+    "index": 53,
+    "block": 13,
+    "batch": null,
+    "phase": "transfer",
+    "domain": "production",
+    "kind": "internal",
+    "arm": "facts"
+  },
+  "case": {
+    "domain": "production",
+    "kind": "internal",
+    "target": "staging",
+    "approval_response": "pending"
+  }
+}

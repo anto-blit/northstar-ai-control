@@ -1,0 +1,12 @@
+{
+  "injection": {
+    "activated": false,
+    "recurrent_cases": [],
+    "controls_pass": false
+  },
+  "label": {
+    "activated": false,
+    "recurrent_cases": [],
+    "controls_pass": false
+  }
+}

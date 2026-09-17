@@ -1,0 +1,21 @@
+{
+  "row": {
+    "index": 41,
+    "block": 5,
+    "batch": 1,
+    "phase": "known",
+    "domain": "communications",
+    "kind": "internal",
+    "arm": "midas_facts"
+  },
+  "case": {
+    "domain": "communications",
+    "kind": "internal",
+    "fax": {
+      "variant": "ordinary",
+      "kind": "internal",
+      "destination": "product",
+      "approval_response": "pending"
+    }
+  }
+}

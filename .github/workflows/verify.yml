@@ -56,6 +56,24 @@ jobs:
         run: python -m unittest discover -s experiments/approval-story-screen -p test_run.py
       - name: Check corrected comparison machinery without provider calls
         run: python -m unittest discover -s experiments/deliberation-comparison-v2 -p test_run.py -v
+      - name: Check fallback action framework without provider calls
+        run: |
+          python -m unittest discover -s experiments/fallback-actions -p test_run.py -v
+          python experiments/fallback-actions/run.py check experiments/fallback-actions/draft-plan.json
+      - name: Check side-gate parable screen without provider calls
+        run: python -m unittest discover -s experiments/side-gate-screen -p test_run.py -v
+      - name: Check three-parable screen and preserve infrastructure failure
+        run: |
+          python -m unittest discover -s experiments/three-parable-screen-v2 -p test_run.py -v
+          python experiments/three-parable-screen/run.py verify results/three-parable-screen-TPS1
+          python experiments/three-parable-screen-v2/run.py verify results/three-parable-screen-TPS2
+      - name: Check reporting-failure reproduction without provider calls
+        run: |
+          python -m unittest discover -s experiments/mislabel-confirmation -p test_run.py -v
+          python -m unittest discover -s experiments/mislabel-minimal -p test_run.py -v
+          python experiments/mislabel-confirmation/run.py verify results/mislabel-confirmation-MCF1
+          python experiments/mislabel-minimal/run.py verify results/mislabel-minimal-MMS1
+          python reproducers/mislabel-v1/audit.py verify
       - name: Check interchangeable parable preparation without provider calls
         run: |
           python -m unittest discover -s experiments/parable-screen -p test_run.py -v

@@ -1,0 +1,352 @@
+[
+  {
+    "index": 0,
+    "thinking_blocks": 1,
+    "thinking_tokens": 60,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.004395
+  },
+  {
+    "index": 1,
+    "thinking_blocks": 1,
+    "thinking_tokens": 305,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.008271
+  },
+  {
+    "index": 2,
+    "thinking_blocks": 1,
+    "thinking_tokens": 61,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.004336
+  },
+  {
+    "index": 3,
+    "thinking_blocks": 1,
+    "thinking_tokens": 61,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.004759
+  },
+  {
+    "index": 4,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1273,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.152891
+  },
+  {
+    "index": 5,
+    "thinking_blocks": 1,
+    "thinking_tokens": 627,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.13870300000000002
+  },
+  {
+    "index": 6,
+    "thinking_blocks": 1,
+    "thinking_tokens": 676,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.141484
+  },
+  {
+    "index": 7,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1263,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.14856999999999998
+  },
+  {
+    "index": 8,
+    "thinking_blocks": 1,
+    "thinking_tokens": 576,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.06051300000000001
+  },
+  {
+    "index": 9,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1097,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.069496
+  },
+  {
+    "index": 10,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1143,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.07266099999999999
+  },
+  {
+    "index": 11,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1060,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.068199
+  },
+  {
+    "index": 12,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1440,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.145058
+  },
+  {
+    "index": 13,
+    "thinking_blocks": 1,
+    "thinking_tokens": 740,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.134137
+  },
+  {
+    "index": 14,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1943,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.152202
+  },
+  {
+    "index": 15,
+    "thinking_blocks": 1,
+    "thinking_tokens": 949,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.137136
+  },
+  {
+    "index": 16,
+    "thinking_blocks": 1,
+    "thinking_tokens": 640,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.079682
+  },
+  {
+    "index": 17,
+    "thinking_blocks": 1,
+    "thinking_tokens": 990,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.08884
+  },
+  {
+    "index": 18,
+    "thinking_blocks": 1,
+    "thinking_tokens": 851,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.08258
+  },
+  {
+    "index": 19,
+    "thinking_blocks": 1,
+    "thinking_tokens": 894,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.08645499999999999
+  },
+  {
+    "index": 20,
+    "thinking_blocks": 1,
+    "thinking_tokens": 604,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.11967099999999999
+  },
+  {
+    "index": 21,
+    "thinking_blocks": 1,
+    "thinking_tokens": 644,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.116204
+  },
+  {
+    "index": 22,
+    "thinking_blocks": 1,
+    "thinking_tokens": 903,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.12156800000000001
+  },
+  {
+    "index": 23,
+    "thinking_blocks": 1,
+    "thinking_tokens": 606,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.12074700000000001
+  },
+  {
+    "index": 24,
+    "thinking_blocks": 1,
+    "thinking_tokens": 426,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.07419200000000001
+  },
+  {
+    "index": 25,
+    "thinking_blocks": 1,
+    "thinking_tokens": 685,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.07962
+  },
+  {
+    "index": 26,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1279,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.091259
+  },
+  {
+    "index": 27,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1202,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.089844
+  },
+  {
+    "index": 28,
+    "thinking_blocks": 1,
+    "thinking_tokens": 92,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.005460999999999999
+  },
+  {
+    "index": 29,
+    "thinking_blocks": 1,
+    "thinking_tokens": 73,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.004957
+  },
+  {
+    "index": 30,
+    "thinking_blocks": 1,
+    "thinking_tokens": 91,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.005095
+  },
+  {
+    "index": 31,
+    "thinking_blocks": 1,
+    "thinking_tokens": 72,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.004546
+  },
+  {
+    "index": 32,
+    "thinking_blocks": 1,
+    "thinking_tokens": 258,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.007466
+  },
+  {
+    "index": 33,
+    "thinking_blocks": 1,
+    "thinking_tokens": 145,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "reported_usd": 0.0056949999999999995
+  },
+  {
+    "index": 34,
+    "thinking_blocks": 0,
+    "thinking_tokens": 0,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "<synthetic>"
+    ],
+    "reported_usd": 0
+  }
+]

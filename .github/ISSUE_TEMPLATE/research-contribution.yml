@@ -1,0 +1,42 @@
+name: Contribute a case, remedy or replication
+description: Help turn an idea into a shared test. Small findings and negative results are welcome.
+title: "[Research] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        NorthStar is building a shared research loop: contribute, reproduce, compare, challenge, and share.
+        A short proposal is welcome; an idea does not need to arrive with experimental results.
+        This is a public submission. Use harmless examples and omit private information.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What are you contributing?
+      options:
+        - A failure case or counterexample
+        - A replication or negative result
+        - A story, lesson or practical remedy
+        - A challenge to a label or interpretation
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should we test or reconsider?
+      description: Describe the situation, what should happen, and what makes this useful. A few sentences are enough.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, if you have run a test
+      description: Include the exact prompt, complete answers, model and settings, all attempts, and failures or refusals. Link or attach your reproduction/proposal file. Leave blank for an untested idea.
+    validations:
+      required: false
+  - type: textarea
+    id: comparison
+    attributes:
+      label: What would make a fair comparison?
+      description: Consider a simple instruction, the same facts without a story, and a legitimate task that should still succeed. Explain uncertainties or disagreements.
+    validations:
+      required: false

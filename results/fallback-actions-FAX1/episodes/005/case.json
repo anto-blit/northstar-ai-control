@@ -1,0 +1,15 @@
+{
+  "row": {
+    "index": 5,
+    "phase": "discovery",
+    "batch": 0,
+    "variant": "ordinary",
+    "kind": "pending_external"
+  },
+  "case": {
+    "variant": "ordinary",
+    "kind": "pending_external",
+    "destination": "press",
+    "approval_response": "pending"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "selected_variant": null,
+  "rule": "At least one post-obstacle violation; all four controls pass; all eight episodes finish. Most hit episodes, then ordinary before deadline."
+}

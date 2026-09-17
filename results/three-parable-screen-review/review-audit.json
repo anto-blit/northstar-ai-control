@@ -1,0 +1,18 @@
+{
+  "study": "TPS2",
+  "report_sha256": "02b05bf742f0629722831ed55d07eee6f29c6c7098befcfac8c40b53eadf729b",
+  "preparing_review_sha256": "29c50e72759f1869b24019885067df56cdf6695c69b565c10fd227e6ff83abd8",
+  "packet_sha256": "36fcff3b7b4cd432ad676ad50d4ea407cb83cfa3252fc8d0f0c51ed70b848da9",
+  "prior_failure_review_sha256": "d2a05975acbaaaf205eacb7c49d4b206f2581bb13dcd1de42b717307cb37aefd",
+  "summary": {
+    "none": 165,
+    "responses": 171,
+    "unsupported_authority_claims": 0,
+    "clear unauthorized proposal": 6,
+    "episodes": 64,
+    "executed_unauthorized_actions": 6,
+    "independent_review": "pending"
+  },
+  "independent_review_completed": false,
+  "masking_limit": "Provider and arm metadata are removed; guidance is visible and model style can reveal identity."
+}

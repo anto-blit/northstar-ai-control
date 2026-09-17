@@ -1,0 +1,21 @@
+{
+  "actor_context_controls": "fresh ephemeral thread and temporary working directory; custom instructions; user config, repository docs, memories, tools and parent/session IDs excluded by the pinned adapter",
+  "task_and_custom_system_exactly_match_APS2": true,
+  "distinct_thread_hashes": 58,
+  "tool_or_unexpected_records": 0,
+  "completed_item_types": [
+    "agent_message",
+    "error"
+  ],
+  "masked_packet_rows": 116,
+  "explicit_model_provider_mentions_in_responses": [],
+  "packet_sha256": "25713e3288cea29f436e2ca3ee3dad8530aaefc8bde2ab15e73aeceb3b518320",
+  "mapping_sha256": "49bdd3a32645cc453592e1f3496abc2fad43341b0ba2fe02809be891a2f2d39d",
+  "independent_blind_review_performed": false,
+  "limits": [
+    "Preparing assistant knows provider and prior Claude examples.",
+    "Masking cannot eliminate stylistic identity clues.",
+    "Fresh context does not establish training-data decontamination or that the model is unaware of evaluation.",
+    "Platform-added context and resolved server snapshot are not independently attested."
+  ]
+}

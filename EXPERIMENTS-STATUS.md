@@ -1,5 +1,192 @@
 # NorthStar — implementation and evidence
 
+September 17 publication: the user requested pushing the completed work and
+updating the site around the algorithm and crowdsourcing plan. This publication
+includes the experiment artifacts and portable kit linked below. The homepage
+offers replication, remedy proposals and failure contributions, while identifying
+automated crowd evaluation and a confirmed remedy library as planned work.
+No additional model calls were made for publication. Website validation includes
+58 dashboard tests, desktop/mobile browser checks and offline evidence replay.
+
+September 17: [MCF1 confirmation](results/mislabel-confirmation-MCF1/REVIEW.md) and
+[MMS1 compact-case test](results/mislabel-minimal-MMS1/REVIEW.md) completed and closed.
+MCF1: original selected s0/w1, Sonnet 4.6/high/fixed thinking, **4/4 wrong standard
+labels**, **4/4 reminder refusals**, **8/8 correct controls**. Both cases repeated
+their wrong labels across the two fresh batches. MMS1: deleting whole messages
+reduced s0 to **3,303 characters**, retaining **2/2 wrong labels**; the reminder
+refused **2/2**. Reduced w1 gave correct labels in both arms and batches. **8/8
+controls passed**. The unsuccessful reduction is retained, not discarded.
+
+32 calls, **US$1.250629** reported, **428.11 seconds**, no operational failures or
+unknown costs. Twelve offline tests across the two studies and full replays passed;
+all 32 returned answers reviewed by the preparing assistant. Independent review is
+pending. [Portable evidence/contribution package](reproducers/mislabel-v1/README.md)
+is ready locally with exact prompts, source provenance, raw answers, all controls,
+scores and an offline integrity checker. No external publication or outreach.
+
+The judge openly substitutes normative approval for literal compliance; this is
+a reporting/rubric failure, not proof of covert deception. Ethical source refusal
+is not the error. Short repair avoids false labels but does not complete the
+failing classification. Next practical endpoint: truthful useful reporting with
+ethical judgment separated. No story calls or narrative-specific benefit; preserve
+the strong comparator, negative outcomes and separate target/study configurations.
+
+September 16: [MOR1 original-model reproduction stopped on provider quota](results/mislabel-original-model-MOR1/REVIEW.md),
+closed with repeatability incomplete. Sonnet 4.6 / extended thinking: first-batch
+standard prompt 4/6 wrong source labels, 2 open refusals; reversed 1 wrong, 2
+correct, 3 refusals; neutral 1 wrong, 5 correct; short repair 6 explicit refusals,
+zero wrong or correct labels. Two particularly clear literal mislabel examples;
+source-label ambiguities retained separately. All 10 answered controls passed.
+34 target answers + 1 session-limit notice; 29 scheduled calls unattempted,
+US$2.626693, 654.03 seconds. Six tests and evidence replay passed; all responses
+reviewed non-independently. No story calls. A bounded 16-call confirmation is
+prepared for capacity return; new registration required, no MOR1 resume.
+
+September 16: [PFS1 published-case screen completed](results/published-failure-screen-PFS1/REVIEW.md)
+and closed. Claude Sonnet 5 / medium: 40 episodes, 42 requests, US$1.831852,
+162.89 collection seconds. All 12 calendar-injection replies explicitly rejected
+the planted instruction; no unauthorized effects. The 12 scorable published
+transcript labels were correct; 6 other classification replies were unrelated to
+the task. Preserve extensive terminal-format and control limitations: this is not
+a clean 0-error benchmark pass. Neither reminder baseline qualified; all 36
+conditional story/facts/reminder slots were not activated. Nine offline tests,
+full evidence replay and preparing review of all 42 responses completed;
+independent review pending. METR GPU reward-hacking case was inspected, not run.
+Source-derived ports and changed target are explicitly documented. Next work
+should prioritize the original published target/setup over wrapper-cleanup calls.
+
+September 16: [TPS2 three-parable screen completed](results/three-parable-screen-TPS2/REVIEW.md).
+Claude Sonnet 5 / medium: unchanged baseline **6/6** unauthorized holding sends;
+Apprentice, Golden Goose, Midas, their three factual outlines and the short reminder
+each **0/6 observed**. All longer arms included that reminder. Four unfinished
+no-hit episodes remain unresolved; five malformed baseline finals do not erase
+executed sends. **16/16 legitimate controls passed. No extra narrative benefit.**
+
+All 64 episodes completed collection: 171 requests, 660.63 seconds, US$1.452227
+reported usage. Eight offline tests passed; evidence replay and complete preparing
+review of all 171 responses passed. Six unauthorized proposals, all executed;
+165 with none identified. [Masked review packet](results/three-parable-screen-review/packet.json)
+saved; independent labels pending. TPS1 remains closed after a Windows permission
+failure with no answer and unknown usage. Both attempts together reserved 172 calls;
+TPS2 deducted the first attempt's allowances. No further relaunch or extension.
+
+The requested three-candidate search is now done. Preserve the simple comparator
+and seek fresh cases where it still leaves measurable errors before a larger
+story search. Do not rank the stories by tiny samples or terminal formatting.
+
+September 16 assessment: [SGS1 side-gate screen completed](results/side-gate-screen-review/REVIEW.md).
+Both targets are closed. Claude's known-task unauthorized sends: baseline **4/4**,
+reminder **0/4**, facts **1/4**, story **1/4**; all eight legitimate controls passed.
+Malformed no-hit endings remain unknown; no narrative advantage is established.
+Claude completed 56 episodes and 151 requests. Transfer baselines had zero observed
+violations; one story-guided authorized production action did not execute because
+its request was malformed. Claude legitimate completion: 23/24 overall.
+GPT-5.5 completed 24 episodes and 64 requests with zero violations in all groups
+and 8/8 controls; its 32 transfer slots were not activated. Total 215 requests;
+Claude US$1.175421 reported, GPT dollar charge unavailable. Both replays pass and
+all responses were reviewed by the preparing assistant. Independent review pending;
+the [80-episode packet](results/side-gate-screen-review/masked-packet.json) is saved.
+The candidate and its comparisons are a reusable example for the user's proposed
+crowdsourced search. No additional calls or candidate changes are authorized.
+
+September 15 [FAX1 live discovery completed](results/fallback-actions-FAX1/REVIEW.md)
+after explicit user authorization: **5/8 pending episodes committed unauthorized
+external holding replies** in local mock mailboxes (ordinary 3/4, deadline 2/4).
+All **8/8 legitimate controls** completed correctly. Three malformed terminal
+responses prevented either variant satisfying the frozen all-finish selection
+rule; 36 recurrence slots were not activated. Observed sends remain counted.
+49 CLI calls, 172.58 seconds, US$0.365078 reported usage; zero service/identity or
+unknown-cost errors. Evidence replay passes. All 49 responses were reviewed by
+the preparing assistant; the [masked packet](results/fallback-actions-FAX1-review/packet.json)
+is ready for independent review. Study closed; no resume or further calls.
+The [next proposal](results/fallback-actions-FAX1/NEXT-STUDY.md) separates terminal
+format reliability from executed-action recurrence in a new confirmation study.
+It is neither registered nor authorized. No remedy gate has been passed.
+
+September 15 [FAX1 framework prepared](experiments/fallback-actions/README.md):
+33 offline tests pass; a complete 52-episode scripted discovery/recurrence path
+replays. The new framework has local SQLite message effects, approval-bound
+recipient/content checks, separately retained operational faults, bounded live
+transport, source hashes and review export. Its
+[draft](experiments/fallback-actions/draft-plan.json) proposes 16 discovery episodes
+plus 36 conditional recurrence episodes, no interventions, at most 312 CLI calls,
+30 minutes and US$8 reported usage. **At preparation: zero model calls; no live
+registration or budget authorization.** The later live outcome is recorded above.
+CLI 2.1.272 differs from AFR1's recorded 2.1.270. This is
+new baseline machinery, not an independently reviewed or qualified model failure.
+
+September 15 [portfolio and measurement review](docs/impact-review-2026-09-15.md):
+the user reaffirmed the need for a compact recurring failure before remedy tests.
+Negative local probes do not establish that frontier models have solved the
+serious failures documented by the labs. Independent AFR1 labels remain pending.
+The review recommends a contained task-obstacle-workaround reduction for a new
+executed-action baseline; no new experiment or calls were registered.
+
+The previously unlisted [OEV1 saved report](results/openai-executed-violation/report.json)
+records 24 calls on requested GPT-5.5 / low, zero named prohibited-tool events
+and 12/12 expected twin-tool events. Offline recomputation agrees with the saved
+event scores. The current runner no longer matches its registered source hash;
+completion checks only tool presence, and the error path would erase a recorded
+violation. All 24 saved calls were operational. These provenance and measurement
+limits are detailed in the review; neither its zero-event result nor its utility
+score should be expanded into a broader safety claim. Historical artifacts stay
+unchanged.
+
+**Historical next step after SGS1 (completed by TPS2):** preserve all results and prepare a diverse
+candidate search against simple comparators and sensitive transfer tasks.
+Independent action review remains pending. SGS1, FAX1 and AFR1 are closed;
+no follow-up is registered.
+See the [handoff's work queue](HANDOFF.md#recommended-next-work-not-an-experiment-already-underway).
+The dated entries below preserve each study's results and limitations.
+
+September 14: [AFR1 replication completed](results/authorization-fallback-review/REVIEW.md).
+Claude Sonnet 5 / medium repeated the clear unauthorized fallback on 9/24 exact
+original prompts (4/12 and 5/12 across fixed batches), meeting the predeclared
+recurrence screen under preparing-assistant review. The corrected external
+variant had 0/12 fallbacks and all 12 legitimate internal controls completed.
+GPT-5.5 / medium, the available older-generation target, had 0/24 original and
+0/12 corrected fallbacks, with all 12 legitimate controls completed. Both runs
+scored 48/48 correct headline decisions, illustrating why full-action review
+matters. Zero invalid/service/missing responses, no executed actions, no stories
+or weight training. Eight offline checks, both replays and all 96 review hashes
+passed. The masked packet awaits independent review. The revised prompt changes
+facts and wording together; a causal repair claim requires a separate comparison.
+
+September 14: the user-authorized [APL1 lighter-model test](results/authorization-pressure-luna/REVIEW.md)
+requested gpt-5.6-luna / medium on the same 58 APS2/APO1 tasks. Completed in
+474.21 seconds with 58 fresh threads: all 29 unauthorized requests withheld,
+57/58 correct decisions and 28/29 correct pairs under the frozen scorer; no
+invalid/service/missing calls. Full-response review found no unauthorized
+proposal. The one scored refusal plausibly reflects missing factual support for
+a product-delay confirmation, not missing recognition of permission. Preserve
+that qualification and revise the ambiguous control only in a new study.
+Seven offline checks and evidence replay passed. The new 174-response packet
+awaits independent review. No recurring failure baseline, story effect, model
+weight training or stronger-model transfer is established. See the
+[development path](docs/lighter-model-development.md).
+
+September 14: pressure probes and review of the full proposed action are now part
+of the [regular authorization-study process](protocol/authorization-pressure-process.md),
+linked from AGENTS.md and the README. The user-authorized
+[APO1 OpenAI run](results/authorization-pressure-openai/REVIEW.md) completed all
+58 APS2-matched requests in 459.57 seconds with 58 distinct isolated threads:
+58 correct decisions, 29/29 pairs, and no unauthorized proposal identified in the
+preparing assistant's review. Zero invalid/service/missing responses. Requested
+gpt-6-astra / medium; dollar charge and resolved snapshot unavailable. Six offline
+checks and replay passed. A 116-response model-masked packet is ready; independent
+review is outstanding. This is a negative exploratory sample, not a provider ranking,
+a qualified OpenAI failure baseline, or authorization for more calls.
+
+September 14 user-authorized **authorization-pressure exploratory search**:
+[APS2 review](results/authorization-pressure-smoke-v2/REVIEW.md), 58/58 correct
+structured decisions and 29/29 decision pairs. Separate action review identified
+one clear unauthorized fallback proposal and a second related candidate after
+correct WITHHOLD decisions. No action was executed and no recurring baseline
+qualified. Including the preserved APS1 accounting stop: 59 calls, 534.99 seconds,
+$0.4383294 reported usage. No story calls. Ten offline checks passed. AFR1 subsequently completed exact-case
+replication; independent action-label review remains outstanding. See the
+[terminology guide](docs/authorization-failure-terms.md).
+
 Research specification: v0.3.1. Simulator: v0.2.0. Updated September 14, 2026.
 
 Continuing in a fresh session? Read [HANDOFF.md](HANDOFF.md) for the current
@@ -15,7 +202,7 @@ collective refinement loop. It distinguishes existing components from future
 retrieval and training.
 Its formulas do not register a study, change scoring or authorize calls.
 
-**Current direction: scientific self-review recommends comparator calibration first.** The
+**Separate G17 track: scientific self-review recommends comparator calibration first.** The
 September 12 Claude exclusion was lifted that same day. The requested comparison
 was not launched, and the user selected the machinery repair only. The
 [corrected v2 implementation](experiments/deliberation-comparison-v2/README.md)
@@ -60,8 +247,10 @@ The docs/site explain the missing causal steps and correct implications that
 local rates could calibrate global-risk factors. No new study or model calls.
 
 There is **one qualified recurring failure family** for this comparison, with
-multiple prompts and numerical variants. Other searches did not qualify another
-recurring semantic baseline. One family supports a narrow candidate screen;
+multiple prompts and numerical variants. AFR1 subsequently met its local
+recurrence screen for a different proposed-action failure under preparing-assistant
+review; independent labels and comparison sizing remain outstanding. It is not yet
+another intervention-ready baseline. One family supports a narrow candidate screen;
 fresh confirmation and another independently qualified family are required before
 a broader transfer claim. No confirmed ranking of parables exists. The old
 320-call G17 B plan does not cover this search, and the website's six-fable
@@ -83,7 +272,7 @@ facts, honest failure reporting, tampering and selective revocation. This is
 candidate curriculum work with zero model calls, not a new experimental result.
 It does not modify G12's frozen prompts, the six-story catalog or earlier evidence.
 
-**Latest: G17 stage A2 qualified the baseline; the four-arm comparison is registered.**
+**Earlier qualified baseline: G17 stage A2; its registered four-arm comparison remains unrun.**
 
 [G17 stage A2](experiments/deliberation-comparison/README.md) — 44 calls on cases
 disjoint from stage A, same target (`claude-sonnet-5`, `--effort low`), under a

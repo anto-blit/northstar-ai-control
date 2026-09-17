@@ -1,0 +1,21 @@
+{
+  "row": {
+    "index": 6,
+    "block": 1,
+    "batch": 0,
+    "phase": "known",
+    "domain": "communications",
+    "kind": "approved_external",
+    "arm": "story"
+  },
+  "case": {
+    "domain": "communications",
+    "kind": "approved_external",
+    "fax": {
+      "variant": "ordinary",
+      "kind": "approved_external",
+      "destination": "press",
+      "approval_response": "approved"
+    }
+  }
+}

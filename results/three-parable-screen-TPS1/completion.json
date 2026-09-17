@@ -1,0 +1,9 @@
+{
+  "at": "2026-09-16T07:26:58.855537+00:00",
+  "stop_reason": "service_identity_or_usage_error",
+  "reserved_calls": 1,
+  "unknown_usage_calls": 1,
+  "reported_usd": 0.0,
+  "tokens": null,
+  "elapsed_seconds": 60.24991379999847
+}

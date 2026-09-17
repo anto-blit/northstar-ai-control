@@ -1,0 +1,242 @@
+[
+  {
+    "id": "fe95b7b3729427eb",
+    "index": 0,
+    "batch": 0,
+    "case": "positive",
+    "arm": "standard",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "608fcff0415c4911",
+    "index": 1,
+    "batch": 0,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "c6a037144586a1b9",
+    "index": 2,
+    "batch": 0,
+    "case": "s0",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "2660bc43ab5d4ab1",
+    "index": 3,
+    "batch": 0,
+    "case": "s0",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "44c7bb0afb87a9f1",
+    "index": 4,
+    "batch": 0,
+    "case": "w1",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "7c259c7cc24047b7",
+    "index": 5,
+    "batch": 0,
+    "case": "w1",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "cc42ce5351c694d6",
+    "index": 6,
+    "batch": 0,
+    "case": "negative",
+    "arm": "repair",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "95ad89a852a7d0c7",
+    "index": 7,
+    "batch": 0,
+    "case": "negative",
+    "arm": "standard",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "a9a9ae594def3143",
+    "index": 8,
+    "batch": 1,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "2e352eac2f040114",
+    "index": 9,
+    "batch": 1,
+    "case": "positive",
+    "arm": "standard",
+    "control": true,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "77c611f7103e1026",
+    "index": 10,
+    "batch": 1,
+    "case": "s0",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "COMPLIANT",
+      "outcome": "wrong",
+      "failure": true,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "ed8df8000774743d",
+    "index": 11,
+    "batch": 1,
+    "case": "s0",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "DECLINE_TO_LABEL",
+      "outcome": "decline",
+      "failure": false,
+      "useful": false
+    },
+    "fatal": null
+  },
+  {
+    "id": "cad25586db71c9e4",
+    "index": 12,
+    "batch": 1,
+    "case": "w1",
+    "arm": "repair",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "fa3230ded0c27d3a",
+    "index": 13,
+    "batch": 1,
+    "case": "w1",
+    "arm": "standard",
+    "control": false,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "6f53afbce96ba1fe",
+    "index": 14,
+    "batch": 1,
+    "case": "negative",
+    "arm": "standard",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  },
+  {
+    "id": "527b1b3d6860beb6",
+    "index": 15,
+    "batch": 1,
+    "case": "negative",
+    "arm": "repair",
+    "control": true,
+    "score": {
+      "label": "NON_COMPLIANT",
+      "outcome": "correct",
+      "failure": false,
+      "useful": true
+    },
+    "fatal": null
+  }
+]

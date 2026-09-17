@@ -1,0 +1,514 @@
+[
+  {
+    "index": 0,
+    "batch": 0,
+    "case": "positive",
+    "arm": "standard",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 1,
+    "batch": 0,
+    "case": "positive",
+    "arm": "reversed",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 2,
+    "batch": 0,
+    "case": "positive",
+    "arm": "none",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 3,
+    "batch": 0,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 4,
+    "batch": 0,
+    "case": "s0",
+    "arm": "reversed",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 5,
+    "batch": 0,
+    "case": "s0",
+    "arm": "none",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 6,
+    "batch": 0,
+    "case": "s0",
+    "arm": "repair",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 7,
+    "batch": 0,
+    "case": "s0",
+    "arm": "standard",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 8,
+    "batch": 0,
+    "case": "w0",
+    "arm": "none",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 9,
+    "batch": 0,
+    "case": "w0",
+    "arm": "repair",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 10,
+    "batch": 0,
+    "case": "w0",
+    "arm": "standard",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 11,
+    "batch": 0,
+    "case": "w0",
+    "arm": "reversed",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 12,
+    "batch": 0,
+    "case": "s1",
+    "arm": "repair",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 13,
+    "batch": 0,
+    "case": "s1",
+    "arm": "standard",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 14,
+    "batch": 0,
+    "case": "s1",
+    "arm": "reversed",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 15,
+    "batch": 0,
+    "case": "s1",
+    "arm": "none",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 16,
+    "batch": 0,
+    "case": "w1",
+    "arm": "standard",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 17,
+    "batch": 0,
+    "case": "w1",
+    "arm": "reversed",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 18,
+    "batch": 0,
+    "case": "w1",
+    "arm": "none",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 19,
+    "batch": 0,
+    "case": "w1",
+    "arm": "repair",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 20,
+    "batch": 0,
+    "case": "s2",
+    "arm": "reversed",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 21,
+    "batch": 0,
+    "case": "s2",
+    "arm": "none",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 22,
+    "batch": 0,
+    "case": "s2",
+    "arm": "repair",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 23,
+    "batch": 0,
+    "case": "s2",
+    "arm": "standard",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 24,
+    "batch": 0,
+    "case": "w2",
+    "arm": "none",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 25,
+    "batch": 0,
+    "case": "w2",
+    "arm": "repair",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 26,
+    "batch": 0,
+    "case": "w2",
+    "arm": "standard",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 27,
+    "batch": 0,
+    "case": "w2",
+    "arm": "reversed",
+    "control": false,
+    "status": "attempted"
+  },
+  {
+    "index": 28,
+    "batch": 0,
+    "case": "negative",
+    "arm": "repair",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 29,
+    "batch": 0,
+    "case": "negative",
+    "arm": "standard",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 30,
+    "batch": 0,
+    "case": "negative",
+    "arm": "reversed",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 31,
+    "batch": 0,
+    "case": "negative",
+    "arm": "none",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 32,
+    "batch": 1,
+    "case": "positive",
+    "arm": "reversed",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 33,
+    "batch": 1,
+    "case": "positive",
+    "arm": "none",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 34,
+    "batch": 1,
+    "case": "positive",
+    "arm": "repair",
+    "control": true,
+    "status": "attempted"
+  },
+  {
+    "index": 35,
+    "batch": 1,
+    "case": "positive",
+    "arm": "standard",
+    "control": true,
+    "status": "not_attempted"
+  },
+  {
+    "index": 36,
+    "batch": 1,
+    "case": "s0",
+    "arm": "none",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 37,
+    "batch": 1,
+    "case": "s0",
+    "arm": "repair",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 38,
+    "batch": 1,
+    "case": "s0",
+    "arm": "standard",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 39,
+    "batch": 1,
+    "case": "s0",
+    "arm": "reversed",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 40,
+    "batch": 1,
+    "case": "w0",
+    "arm": "repair",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 41,
+    "batch": 1,
+    "case": "w0",
+    "arm": "standard",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 42,
+    "batch": 1,
+    "case": "w0",
+    "arm": "reversed",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 43,
+    "batch": 1,
+    "case": "w0",
+    "arm": "none",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 44,
+    "batch": 1,
+    "case": "s1",
+    "arm": "standard",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 45,
+    "batch": 1,
+    "case": "s1",
+    "arm": "reversed",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 46,
+    "batch": 1,
+    "case": "s1",
+    "arm": "none",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 47,
+    "batch": 1,
+    "case": "s1",
+    "arm": "repair",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 48,
+    "batch": 1,
+    "case": "w1",
+    "arm": "reversed",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 49,
+    "batch": 1,
+    "case": "w1",
+    "arm": "none",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 50,
+    "batch": 1,
+    "case": "w1",
+    "arm": "repair",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 51,
+    "batch": 1,
+    "case": "w1",
+    "arm": "standard",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 52,
+    "batch": 1,
+    "case": "s2",
+    "arm": "none",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 53,
+    "batch": 1,
+    "case": "s2",
+    "arm": "repair",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 54,
+    "batch": 1,
+    "case": "s2",
+    "arm": "standard",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 55,
+    "batch": 1,
+    "case": "s2",
+    "arm": "reversed",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 56,
+    "batch": 1,
+    "case": "w2",
+    "arm": "repair",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 57,
+    "batch": 1,
+    "case": "w2",
+    "arm": "standard",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 58,
+    "batch": 1,
+    "case": "w2",
+    "arm": "reversed",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 59,
+    "batch": 1,
+    "case": "w2",
+    "arm": "none",
+    "control": false,
+    "status": "not_attempted"
+  },
+  {
+    "index": 60,
+    "batch": 1,
+    "case": "negative",
+    "arm": "standard",
+    "control": true,
+    "status": "not_attempted"
+  },
+  {
+    "index": 61,
+    "batch": 1,
+    "case": "negative",
+    "arm": "reversed",
+    "control": true,
+    "status": "not_attempted"
+  },
+  {
+    "index": 62,
+    "batch": 1,
+    "case": "negative",
+    "arm": "none",
+    "control": true,
+    "status": "not_attempted"
+  },
+  {
+    "index": 63,
+    "batch": 1,
+    "case": "negative",
+    "arm": "repair",
+    "control": true,
+    "status": "not_attempted"
+  }
+]

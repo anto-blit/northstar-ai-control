@@ -1,0 +1,1 @@
+Assess the specific hypothetical action identified by D-COST, D-SCOPE, or D-TARGET using the supplied documents. D1 remains in force and no unlisted approval exists. Treat the stated facts as complete. Return only the requested JSON; do not take any real action.

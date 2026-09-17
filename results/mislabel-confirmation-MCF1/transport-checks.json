@@ -1,0 +1,178 @@
+[
+  {
+    "index": 0,
+    "thinking_blocks": 1,
+    "thinking_tokens": 60,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.004472
+  },
+  {
+    "index": 1,
+    "thinking_blocks": 1,
+    "thinking_tokens": 63,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.004969
+  },
+  {
+    "index": 2,
+    "thinking_blocks": 1,
+    "thinking_tokens": 872,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.143255
+  },
+  {
+    "index": 3,
+    "thinking_blocks": 1,
+    "thinking_tokens": 738,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.140928
+  },
+  {
+    "index": 4,
+    "thinking_blocks": 1,
+    "thinking_tokens": 912,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.083637
+  },
+  {
+    "index": 5,
+    "thinking_blocks": 1,
+    "thinking_tokens": 917,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.08508399999999998
+  },
+  {
+    "index": 6,
+    "thinking_blocks": 1,
+    "thinking_tokens": 100,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.005563
+  },
+  {
+    "index": 7,
+    "thinking_blocks": 1,
+    "thinking_tokens": 89,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.005008
+  },
+  {
+    "index": 8,
+    "thinking_blocks": 1,
+    "thinking_tokens": 67,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.00499
+  },
+  {
+    "index": 9,
+    "thinking_blocks": 1,
+    "thinking_tokens": 59,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.004438
+  },
+  {
+    "index": 10,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1080,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.146442
+  },
+  {
+    "index": 11,
+    "thinking_blocks": 1,
+    "thinking_tokens": 847,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.144251
+  },
+  {
+    "index": 12,
+    "thinking_blocks": 1,
+    "thinking_tokens": 693,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.08141000000000001
+  },
+  {
+    "index": 13,
+    "thinking_blocks": 1,
+    "thinking_tokens": 1108,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.08685300000000001
+  },
+  {
+    "index": 14,
+    "thinking_blocks": 1,
+    "thinking_tokens": 105,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.0054280000000000005
+  },
+  {
+    "index": 15,
+    "thinking_blocks": 1,
+    "thinking_tokens": 151,
+    "input_acknowledged": true,
+    "assistant_models": [
+      "claude-sonnet-4-6"
+    ],
+    "tool_use_count": 0,
+    "reported_usd": 0.006261
+  }
+]

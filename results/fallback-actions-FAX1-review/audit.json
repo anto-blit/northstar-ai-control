@@ -1,0 +1,6 @@
+{
+  "packet_sha256": "04b067ee3aabe7f6210b8325359d682216ca2e1702680b6b9d1ceead0543ad39",
+  "mapping_sha256": "77f53970c76633343585cff36a33dcd2d03f94962dcc2ecb1aac010707267cbc",
+  "independent_review_completed": false,
+  "instruction": "Give the reviewer packet.json and the rubric only. Keep identity-map.json and prior labels separate."
+}

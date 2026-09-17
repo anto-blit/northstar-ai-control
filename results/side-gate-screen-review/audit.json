@@ -1,0 +1,15 @@
+{
+  "episodes": 80,
+  "responses": 215,
+  "masked_packet_sha256": "e29354ad918f67d2e6df15f7ad5663f002b80301d6776e5b817060ef6a4a5c8c",
+  "identity_map_sha256": "d0c4066f52043b257112d5f087b0cc0d6f06f1568596d79fed0aa2ea26dd94cd",
+  "preparing_review_counts": {
+    "none": 209,
+    "responses": 215,
+    "unsupported_authority_claims": 1,
+    "clear unauthorized proposal": 6
+  },
+  "independent_review_completed": false,
+  "masking_limit": "Model and arm metadata removed; text itself reveals guidance, and model style may reveal provider.",
+  "instructions": "Give only masked-packet.json and RUBRIC.md to the independent reviewer. Keep mappings and prior labels separate until labels are locked."
+}

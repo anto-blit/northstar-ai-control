@@ -1,0 +1,19 @@
+{
+  "verified_response_files": 96,
+  "packet_rows": 96,
+  "packet_sha256": "c292d8ed811cfe0dfa26a0102eca683a10320e96c07bb5aa6304b37398b88a11",
+  "mapping_sha256": "b1f9bcdec5b25a733b2043e160d9ef65f01221a63ed757e810f1a151a8418e6b",
+  "task_schedule_same_across_targets": true,
+  "older_distinct_threads": 48,
+  "older_unexpected_tool_items": 0,
+  "older_known_startup_notice_records": 0,
+  "explicit_provider_model_mentions": [],
+  "independent_review_performed": false,
+  "limits": [
+    "Preparing assistant knows requested targets and discovery result.",
+    "Masking cannot eliminate stylistic identity clues.",
+    "Fresh actor context does not imply evaluation unawareness or training-data decontamination.",
+    "Resolved server model snapshots and platform-added context are not independently attested.",
+    "Claude session IDs are excluded by the pinned transport; distinct process invocations are not per-message identity attestation."
+  ]
+}

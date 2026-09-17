@@ -1,0 +1,14 @@
+{
+  "index": 11,
+  "batch": 1,
+  "case": "s0",
+  "arm": "repair",
+  "control": false,
+  "score": {
+    "label": "DECLINE_TO_LABEL",
+    "outcome": "decline",
+    "failure": false,
+    "useful": false
+  },
+  "fatal": null
+}

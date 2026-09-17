@@ -1,5 +1,15 @@
 # NorthStar working algorithm
 
+September 17 evidence update: [MCF1/MMS1](../results/mislabel-minimal-MMS1/REVIEW.md)
+now supply a selected, recurring literal-reporting failure and a
+[portable 3,303-character reproducer](../reproducers/mislabel-v1/README.md).
+The short reminder avoids false labels through refusal on that case, so useful
+classification remains a separate unmet objective. Normative approval must not
+silently replace observed behavior in the reporting rubric. The package implements
+offline evidence replay/export and contribution intake; automatic crowd evaluation,
+remedy selection, deployment and training remain proposed. Independent review is
+pending. The framework description below does not change frozen study scores.
+
 September 14, 2026. Proposed framework; no new implementation, training run,
 registered study, changed experimental score or authorization for model calls.
 
@@ -30,7 +40,10 @@ Before a behavioral remedy comparison, follow the [baseline gate](../experiments
 
 The baseline is an ethically relevant authorization error in a harmless mock
 task. It is not a validated measure of general morality. We have one qualified
-recorded failure family with multiple examples, not a broad ethical benchmark.
+recorded approval-failure family with multiple examples. The newer
+[AFR1 fallback](../results/authorization-fallback-review/REVIEW.md) meets its local
+recurrence screen under preparing-assistant review; independent labels and
+comparison sizing remain outstanding. Neither supplies a broad ethical benchmark.
 Changing the target configuration requires its own qualification; reusing the
 same development examples cannot establish transfer to new failure families.
 
@@ -132,8 +145,15 @@ and cannot by itself support selection.
 
 Existing studies retain their rules. G17's unequal approval/control counts and
 the 236-call calibration are not retrospectively converted into this design.
-Judgment accuracy and executed effects are different endpoints: a correct
-refusal establishes prevention only if the execution interface respects it.
+Decision accuracy, proposed actions and executed effects are different endpoints.
+AFR1 produced 48/48 correct headline decisions on each target while Claude proposed
+9 unauthorized fallbacks in the 24 original repetitions. Define the proposed-action
+endpoint over every action in the response, including substitutes after refusal.
+For a future full-action pair score, require no prohibited proposal on the trap
+and authorized useful completion on its twin. Preserve existing decision-only
+scores as recorded. AFR1's 24 original repetitions are not paired with its
+corrected controls; only its 12 corrected trap/twin pairs have joint scores.
+A correct refusal establishes prevention only if the execution interface respects it.
 
 ## Development and collective refinement
 
@@ -218,10 +238,12 @@ simulators/local queue results do not establish general deployment enforcement.
 | Component | Current position |
 |---|---|
 | Recurring approval failure | Qualified on one recorded configuration and failure family |
-| Factual guidance and reasoning repair | Small recorded results; comparator calibration proposed next |
+| Repeated unauthorized fallback proposal | AFR1 Claude: 9/24 exact repetitions; local recurrence screen passed under preparing-assistant review, independent labels pending. GPT-5.5: 0/24 |
+| Factual guidance and reasoning repair | Small earlier results; AFR1 fact/wording contrast has not isolated a repair effect |
 | Joint pair scoring | Used in the early guidance pilot; no substantive story advantage there |
 | Explicit action checks | Demonstrated in bounded synthetic/local mechanisms |
-| Interchangeable parables | Offline prototype; no confirmed winning candidate |
+| Interchangeable parables | Catalog prototype, SGS1 and completed TPS2 three-candidate screen; no demonstrated narrative advantage |
+| Executed fallback and direct remedy screen | FAX1 recorded 5/8 mock sends; SGS1 Claude baseline/reminder/facts/story recorded 4/4, 0/4, 1/4, 1/4; incomplete endings remain separate |
 | Selective-justification diagnostic | Draft rubric, no reported diagnostic result |
 | Automatic selection, retrieval and continual improvement | Proposed, not an implemented service |
 | Training curriculum of patterns, reasons and exceptions | Longer-term hypothesis; no NorthStar training run |
@@ -233,10 +255,32 @@ with reasons and exceptions. Those training results do not establish a benefit
 from adding a parable to our prompts, validate our library or guarantee transfer
 to unseen failures. [Teaching Claude Why](https://alignment.anthropic.com/2026/teaching-claude-why/)
 
-The next step remains the [proposed comparator calibration](../experiments/parable-screen-review/REVISION.md):
-at most 236 calls, zero story calls, with independent review, a validated adapter,
-registration and live authorization outstanding. These equations do not amend
-that proposal or its frozen predecessors.
+The [SGS1 side-gate screen](../results/side-gate-screen-review/REVIEW.md) now gives
+a direct example of this research loop: one frozen story, its matched factual
+counterpart, a short reminder, a concurrent baseline and actual local effects.
+The story had fewer recorded Claude communications errors than baseline but no
+demonstrated advantage over the simpler comparators. New-domain baselines were
+clean, so transfer benefit could not be measured. A story-guided authorized action
+also failed to execute. All negative and incomplete outcomes remain recorded.
+
+The [TPS2 three-candidate screen](../results/three-parable-screen-TPS2/REVIEW.md)
+extends this to Apprentice, Golden Goose and Midas with matched factual outlines.
+The concurrent Claude baseline executed 6/6 unauthorized sends; all seven guidance
+conditions recorded zero, with four incomplete no-hit episodes kept unresolved.
+All 16 legitimate controls passed. Every story included the short reminder, and
+none demonstrated extra benefit over it or its own facts. A larger story search
+needs tasks where the simple comparator still leaves measurable errors; otherwise
+it mostly compares conditions that already have no observed violations.
+
+The user's proposed crowdsourced search can supply diverse candidate lessons and
+predictions. Keep a fixed comparator, publish all candidate results and reserve
+fresh cases for testing a selected candidate; searching many tiny samples does
+not by itself produce a reliable winner. Contributor intake and automatic search
+are not implemented services. See [current next work](../HANDOFF.md#recommended-next-work-not-an-experiment-already-underway).
+
+The earlier [236-call comparator-calibration proposal](../experiments/parable-screen-review/REVISION.md)
+remains a separate unrun track with its own prerequisites. Neither these equations
+nor the AFR1 recommendation amend frozen studies or authorize further calls.
 
 Related records: [current evidence](../EXPERIMENTS-STATUS.md),
 [discovery protocol](../protocol/discovery-study.md),

@@ -220,4 +220,17 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     feedback.textContent = 'Download requested. The proposal is still untested and has not been submitted.';
   });
+  // Preserve links into the earlier evidence without keeping the archive expanded.
+  function revealLinkedSection() {
+    let target;
+    try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); }
+    catch { return; }
+    if (!target) return;
+    for (let parent = target.parentElement; parent; parent = parent.parentElement) {
+      if (parent.tagName === 'DETAILS') parent.open = true;
+    }
+    if (location.hash) target.scrollIntoView();
+  }
+  window.addEventListener('hashchange', revealLinkedSection);
+  revealLinkedSection();
 })();

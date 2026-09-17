@@ -1,0 +1,82 @@
+[
+  {
+    "id": "2c5a825f482f2cee",
+    "episode": "000",
+    "episode_sha256": "3bb25589af6cc46ea43ed6be30c2531b88027ddd013bbe23dcb98e63f1a11b84"
+  },
+  {
+    "id": "6170445e178c3227",
+    "episode": "001",
+    "episode_sha256": "de5cb2dd29a1a77f9ae8ce668a1a25b862988a69c700ab4d18daa8c67cfbb70a"
+  },
+  {
+    "id": "516d7a980992122d",
+    "episode": "002",
+    "episode_sha256": "8f13022e402d402e84c5411332bc4e591b47ec3aef76d9b9991ceb1e4d415743"
+  },
+  {
+    "id": "b6bd94398a304d94",
+    "episode": "003",
+    "episode_sha256": "65c68c8be18389e28e5a02e89bfec3da8002450119e59d80d326ab5029bbf63b"
+  },
+  {
+    "id": "4e2238b4ba43cc05",
+    "episode": "004",
+    "episode_sha256": "bfbc584c27b325887774f3d1955d5a7aff82b08519994a66cfef82cf12ca3c2b"
+  },
+  {
+    "id": "c55820cc435cb34e",
+    "episode": "005",
+    "episode_sha256": "55e3385f217a2391e4945c8db9280060ba96437f3d28f20c66d3a39944f189ca"
+  },
+  {
+    "id": "4231046d0a31f1f5",
+    "episode": "006",
+    "episode_sha256": "1a7baa3b18d41f1d60b43247240c8cc400952dfc499bb227d75291d3657be16d"
+  },
+  {
+    "id": "b3b09ee5f8cf4bf8",
+    "episode": "007",
+    "episode_sha256": "c464c500898c07e26984d1b085b40ddb8980910451bfa23e65e10c3c0f14898f"
+  },
+  {
+    "id": "fbe6a88317224677",
+    "episode": "008",
+    "episode_sha256": "40c05ef3cefb59db8e682e7d0c8a9e883daca7a193b2dcbf10559015883ee6cb"
+  },
+  {
+    "id": "df6399897e1ef1ee",
+    "episode": "009",
+    "episode_sha256": "d4cafbe2a2f83494468b57a825bfd84be1ca6d742e38dce1d17aafdfedb9ea9f"
+  },
+  {
+    "id": "930eaf85792090a2",
+    "episode": "010",
+    "episode_sha256": "62fb059860e6931d38ab1b01012e72a23cd5b013b0c26994c4f4cd2800d5aa94"
+  },
+  {
+    "id": "dd8ae7fe60b99cea",
+    "episode": "011",
+    "episode_sha256": "d9ddf04c74dbd540ee003909908c69adb78b1a6e669ba96ef1c4e0838f40ba98"
+  },
+  {
+    "id": "3fe9f62b91307423",
+    "episode": "012",
+    "episode_sha256": "ba2f2e7e434c33a3c5e0b629dcd805a99f6d5d239646f305bfbd0608e96be153"
+  },
+  {
+    "id": "c370b28cc613f931",
+    "episode": "013",
+    "episode_sha256": "d8a318b27f727768e3d4308a56e824f488b02eed1c4c8856ed8ce9523cee1ce6"
+  },
+  {
+    "id": "3a65e1700c573c2a",
+    "episode": "014",
+    "episode_sha256": "cafc97e11e41e5034227fdf616dc73d5e0ead9c2a784bf2260643c26b85fcad3"
+  },
+  {
+    "id": "11958f1d146a36e2",
+    "episode": "015",
+    "episode_sha256": "1caeb03d18ad224a677343ac3e5a3d451abd85b9929f494ead3212b62827f5e2"
+  }
+]

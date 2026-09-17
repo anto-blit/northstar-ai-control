@@ -14,6 +14,16 @@ for current evidence, decisions, the recommended next step and offline checks.
 
 ## Why NorthStar
 
+**A plan for shared research:** contribute an idea → reproduce a failure → compare
+remedies → challenge them on fresh cases → share and repeat. People can bring
+stories, failure cases, fixes and independent replications. The algorithm selects
+what the evidence supports while preserving useful work.
+
+We now have a [compact reporting-failure reproducer](reproducers/mislabel-v1/README.md)
+others can inspect and challenge. Open experiments and a proposal builder are
+available; automated crowd evaluation and a broadly confirmed remedy library are
+still a plan. [Choose a contribution](CONTRIBUTING.md).
+
 Powerful AI should expand humanity’s possibilities. NorthStar’s mission is to protect our freedom to shape our own future as AI becomes more capable.
 
 **NorthStar began with a question: could the lessons in humanity’s stories help AI act with care for people?** Aesop’s fables, biblical teachings, parables, legends, and other traditions offer ways to explore responsibility, reciprocity, honesty, and the misuse of power.
@@ -37,6 +47,20 @@ preserving legitimate work and a declared resource budget, and confirm the
 selected remedy on fresh cases. The document
 separates existing components from proposed selection, retrieval and training.
 
+**[Our regular authorization-testing process](protocol/authorization-pressure-process.md)**
+combines pressure scenarios, matched legitimate tasks, fresh model contexts and
+review of every proposed action. A correct refusal can still be followed by an
+unauthorized fallback, so the decision field alone is insufficient. We preserve
+the separate scores and prepare model-masked packets for independent review.
+The [pressure probe](experiments/authorization-pressure-smoke/README.md) and
+[isolated OpenAI runner](experiments/authorization-pressure-openai/README.md)
+provide reusable examples; each new run needs its own bounded registration.
+
+A [lighter model can be a useful development target](docs/lighter-model-development.md):
+qualify its own recurring failure, compare remedies, then test transfer on fresh
+cases and stronger models. Current probes evaluate behavior; they do not train
+model weights. Both permission and factual support must be clear in the controls.
+
 We also investigate protection against coercion and irreversible human disempowerment. By **human recoverability**, we mean preserving people’s ability to intervene and regain meaningful agency when things go wrong. A stop button is only useful if it can still prevent the consequences.
 
 **The hypothesis may be wrong. We intend to find out.**
@@ -51,18 +75,98 @@ We publish our code, methods, completed results, and limitations so others can c
 
 > **Where we are:** working synthetic simulators, a persistent HTTP/SQLite stop integration, and a small observed decision-repair gain on fresh cases. The original format made 3 unsafe approvals and 2 invalid responses in 72 attempts; justification first with a final consistency check made neither and preserved all 36 legitimate approvals. Factual examples also scored perfectly. The result needs independent replication (clustered p = 0.125); no narrative advantage or global-risk reduction is established. [See the evidence](experiments/decision-repair/README.md).
 
-**Current: measure the simpler remedies before sizing a story comparison.** The
+**Latest experiment: a recurring reporting failure now has a compact reproducer.**
+[MCF1](results/mislabel-confirmation-MCF1/REVIEW.md) repeated wrong literal-compliance
+labels on two selected cases in both fresh batches (4/4). [MMS1](results/mislabel-minimal-MMS1/REVIEW.md)
+reduced one prompt to **3,303 characters**, retaining the error in both repetitions.
+The judge calls an explicit refusal COMPLIANT because it approves of that refusal.
+Its explanation acknowledges the refusal; this is a reporting/rubric failure, not
+proof of covert deception. The short reminder avoids false labels by declining
+classification on that case. All **16/16 controls** across the studies passed.
+
+The [portable reproducer and contribution kit](reproducers/mislabel-v1/README.md)
+contains exact prompts, settings, answers, controls, provenance and an offline
+checker. The unsuccessful second reduction is retained too. 32 calls, US$1.250629
+reported usage; full replay and preparing review completed. Independent review
+and replication remain pending. These selected-case results establish no general
+failure rate or narrative benefit. The next remedy must preserve truthful useful
+classification as well as avoiding false labels.
+
+**Earlier experiment: three different parables were tested.**
+[TPS2](results/three-parable-screen-TPS2/REVIEW.md) tested the Sorcerer's Apprentice,
+Golden Goose and King Midas on Claude Sonnet 5 / medium. The unchanged baseline
+made **6/6 unauthorized sends**; each story, each matched factual outline and the
+short reminder made **0/6 observed sends**. Every story also included the reminder.
+All **16/16 legitimate controls** passed. Four incomplete no-hit episodes remain
+unresolved. There is **no demonstrated additional narrative benefit**.
+
+64 episodes, 171 requests, US$1.452227 reported usage; all evidence replays and
+full preparing-assistant action review completed. Independent review remains
+pending. The earlier permission-failed attempt and its unknown usage are preserved.
+Keep the short reminder as comparator; future comparisons need fresh cases where
+it still leaves errors to distinguish what a story adds.
+
+**Earlier experiment: the side-gate parable was tested.**
+[SGS1](results/side-gate-screen-review/REVIEW.md) compared unchanged instructions,
+a short permission reminder, matched facts and the proposed parable. On Claude
+Sonnet 5 / medium, recorded unauthorized holding replies were **4/4, 0/4, 1/4 and
+1/4**, respectively; all eight legitimate communications controls succeeded.
+Incomplete no-hit endings remain unknown. The story had fewer recorded errors
+than baseline but **no demonstrated advantage over simpler guidance**. Transfer
+baselines were clean, and one story-guided authorized production action failed
+to execute because its request included extra prose. GPT-5.5 had zero violations
+in every initial group, so its transfer phase did not activate.
+
+Both runs are closed: 80 episodes, 215 requests, all evidence replays passed.
+Complete preparing-assistant labels and a masked review packet are saved;
+independent review remains pending. The versioned [candidate and matched example](experiments/side-gate-screen/candidate.json)
+give contributors a concrete research unit. More stories need the same simple
+comparators, complete result reporting and fresh-case testing after selection.
+
+**Earlier replication: the fallback repeated across fresh batches.**
+[AFR1](results/authorization-fallback-review/REVIEW.md) found unauthorized proposals
+in 9/24 exact Claude repetitions (4/12 and 5/12), despite correct headline decisions.
+GPT-5.5 had 0/24. The corrected fact/wording variant had no fallbacks, but those two
+changes were not isolated as causes. [FAX1](results/fallback-actions-FAX1/REVIEW.md)
+then observed actual local mock sends in 5/8 pending episodes, with 8/8 legitimate
+controls. Its formal confirmation did not activate because of malformed final
+reports; prior sends remained counted. SGS1 is a new comparison and preserves
+that earlier result. No general narrative advantage or global-risk reduction is
+established. See the [handoff](HANDOFF.md#recommended-next-work-not-an-experiment-already-underway)
+for current evidence and possible next work; no further study is registered.
+
+**Earlier exploratory runs: inspect the entire proposed action.**
+[Claude APS2](results/authorization-pressure-smoke-v2/REVIEW.md) made 58 correct
+top-level decisions, but review found one clear unauthorized fallback proposal
+and a second less explicit candidate. The same 58 tasks in
+[isolated OpenAI sessions](results/authorization-pressure-openai/REVIEW.md) produced
+58 correct decisions and no unauthorized proposal identified in review. Each run
+preserved all 29 legitimate decisions. The test model received no prior results
+or conversation history. A packet without model labels is ready for independent
+review; these small exploratory results do not establish a provider ranking or
+a recurring failure baseline within either exploratory run. AFR1 subsequently
+replicated the clear Claude candidate as described above.
+
+The subsequent [lighter OpenAI run, APL1](results/authorization-pressure-luna/REVIEW.md),
+requested GPT-5.6 Luna / medium on those same 58 tasks. It withheld all 29
+unauthorized requests and produced no unauthorized proposal identified in review.
+The scorer recorded 57 correct decisions and one refusal; that refusal exposed
+missing factual support in a supposedly legitimate confirmation task. We retain
+the score and its qualification together, rather than treating factual caution
+as an established authorization failure. No model weights were trained.
+
+**Separate proposal: calibrate simpler remedies before a story comparison.** The
 [separate v2 implementation](experiments/deliberation-comparison-v2/README.md)
 passed 25 regression tests, including a complete synthetic sequence and injected
-interruptions. Claude is available again; no model is excluded, and no new calls
-are authorized. The [scientific self-review](experiments/parable-screen-review/README.md)
+interruptions. Claude is available again; no model is excluded, and this comparison
+has not been authorized. The [scientific self-review](experiments/parable-screen-review/README.md)
 recommends at most 236 calibration calls: 44 baseline checks, then conditionally
 192 factual-guidance/repair calls, with zero story calls and a proposed US$10 cap.
 Independent review, a validated live adapter and registration remain outstanding.
 A different target configuration needs its own qualified baseline. The original
 G17 evidence and unrun comparison are preserved separately.
 
-**Latest recorded model result: G17 A2 qualified.**
+**Earlier qualified baseline: G17 A2.**
 [G17 stage A2](experiments/deliberation-comparison/README.md) qualified a
 repeatable failure on `claude-sonnet-5` with deliberation suppressed, under a rule
 published before its calls and on cases disjoint from the stage that preceded it:
@@ -80,7 +184,9 @@ did.**
 The four-arm comparison — original prompt, matched facts, story, and a repair
 designed to win — was registered at 320 calls and **has not been run**. Its
 [harness defects](experiments/deliberation-preflight/README.md) are preserved;
-the revised calibration proposal above is the current recommended next step.
+the revised calibration proposal above remains a separate, unrun track.
+The current evidence and next work are the completed TPS2 assessment and the
+versioned candidate search described in the handoff.
 
 **Previously: a baseline that fails, and a rule we held ourselves to.**
 [G17 stage A](experiments/deliberation-comparison/README.md) ran 40 calls with
@@ -183,7 +289,7 @@ The [narrow fresh-response check](experiments/approval-story-screen/README.md)
 returned four correct withholds and two correct approvals. The bug did not recur
 in that small check, so its conditional story comparison was not activated.
 
-**Latest model comparison: [the evidence safeguard worked; stories tied ordinary instructions](experiments/evidence-integrity-continuation/README.md).**
+**Earlier model comparison: [the evidence safeguard worked; stories tied ordinary instructions](experiments/evidence-integrity-continuation/README.md).**
 G8-C completed 24 mock release tasks plus two fresh interface checks. Ordinary
 instructions, factual guidance and story guidance each scored 8/8, including
 malicious vendor notes. All 120 required legitimate releases occurred; no model

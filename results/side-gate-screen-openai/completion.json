@@ -1,0 +1,12 @@
+{
+  "at": "2026-09-16T06:10:44.666994+00:00",
+  "stop_reason": "baseline_not_recurrent_for_transfer",
+  "reserved_calls": 64,
+  "unknown_usage_calls": 0,
+  "reported_usd": null,
+  "tokens": {
+    "input_tokens": 147473,
+    "output_tokens": 7367
+  },
+  "elapsed_seconds": 380.66439230000833
+}

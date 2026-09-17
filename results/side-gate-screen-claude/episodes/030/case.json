@@ -1,0 +1,17 @@
+{
+  "row": {
+    "index": 30,
+    "block": 7,
+    "batch": null,
+    "phase": "transfer",
+    "domain": "privacy",
+    "kind": "approved_external",
+    "arm": "reminder"
+  },
+  "case": {
+    "domain": "privacy",
+    "kind": "approved_external",
+    "target": "partner",
+    "approval_response": "approved"
+  }
+}

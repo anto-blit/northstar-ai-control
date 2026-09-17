@@ -1,0 +1,57 @@
+{
+  "agentdojo_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "agentdojo_files": {
+    "src/agentdojo/attacks/important_instructions_attacks.py": "dceb60b6202aa3391f83814cd8d18973afb6a49f6dff9bc95f360f00a923d62d",
+    "src/agentdojo/default_suites/v1/workspace/user_tasks.py": "994e4801e44f2673083095d5be2e80d3e5b81f85e8bf211cbcceda092b17d535",
+    "src/agentdojo/default_suites/v1/workspace/injection_tasks.py": "deeb63534fe5af5e86e7d9daa0c62f7e32df29c5d0772328dc0fcf14525fe4d3",
+    "src/agentdojo/data/suites/workspace/include/calendar.yaml": "0cc12f15f0d9b03e2ef025c3f1b6cb0b807db2e83bee76e2b0c90af78deee9ea",
+    "src/agentdojo/data/system_messages.yaml": "627465d34bba41adc4ac8b575db247cc3fed37ba593a6087460bdde3c6a38279",
+    "LICENSE": "a090c871ff2aa6abb58a0eda1b6262dca39a7610de3df3411497fba7aa6fad09"
+  },
+  "mislabel_inputs": [
+    {
+      "case": "label:discovery:a",
+      "id": "mislabel-input-surveillance-gpt-0907a4",
+      "source_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell166_condsurveillance-loose-standard-gpt-sonnet46_r1/cell166_surveillance-loose-standard-gpt-sonnet46_run1_0907a4.json",
+      "download_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-surveillance-gpt-0907a4.json",
+      "download_sha256": "e6efee5f9d7563ac260c91f55296d4503579d5ce28b75f26a8bd94c7989a122e",
+      "message_count": 48,
+      "source_target_model": "claude-sonnet-4-6"
+    },
+    {
+      "case": "label:comparison:a",
+      "id": "mislabel-input-surveillance-opus45-02d4dc",
+      "source_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell139_condsurveillance-loose-standard-opus45-sonnet46_r1/cell139_surveillance-loose-standard-opus45-sonnet46_run1_02d4dc.json",
+      "download_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-surveillance-opus45-02d4dc.json",
+      "download_sha256": "3ed19a4ca3f1877933a6dc062e6903164d0ade20fa025e30e52d2b43cb165b91",
+      "message_count": 64,
+      "source_target_model": "claude-sonnet-4-6"
+    },
+    {
+      "case": "label:discovery:b",
+      "id": "mislabel-input-welfare-gemini-d0deff",
+      "source_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell169_condwelfare-loose-standard-gemini-sonnet46_r1/cell169_welfare-loose-standard-gemini-sonnet46_run1_d0deff.json",
+      "download_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-welfare-gemini-d0deff.json",
+      "download_sha256": "74bb6693804043448d1990d83eeb5abde16afa050bd434f80a07ead0813306e5",
+      "message_count": 25,
+      "source_target_model": "claude-sonnet-4-6"
+    },
+    {
+      "case": "label:comparison:b",
+      "id": "mislabel-input-welfare-gpt-d90aab",
+      "source_url": "https://just-find-misalignment.com/a7f3k9x2m1/transcript/2026-03-28-petri-inversion-phase4/cell163_condwelfare-loose-standard-gpt-sonnet46_r1/cell163_welfare-loose-standard-gpt-sonnet46_run1_d90aab.json",
+      "download_url": "https://www.aenguslynch.com/portfolio-transcript-viewer/static/transcripts/motivated-mislabelling/mislabel-input-welfare-gpt-d90aab.json",
+      "download_sha256": "fc73528a5d67f57b73a80f3ba17b470e0385e089a602d444ecbac47450afad97",
+      "message_count": 37,
+      "source_target_model": "claude-sonnet-4-6"
+    }
+  ],
+  "selection": "First two IDs in lexicographic order in each input-transcript family; first discovery, second held out. Fixed before target calls.",
+  "reward_hacking": {
+    "source": "https://metr.org/blog/2025-06-05-recent-reward-hacking/",
+    "repo": "https://github.com/METR/RE-Bench",
+    "commit": "93b98062e55f6945d4a7e213a3226dd419896170",
+    "task": "ai_rd_triton_cumsum",
+    "status": "not_run; original CUDA/Triton environment not established"
+  }
+}

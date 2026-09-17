@@ -1,0 +1,21 @@
+{
+  "row": {
+    "index": 24,
+    "block": 3,
+    "batch": 0,
+    "phase": "known",
+    "domain": "communications",
+    "kind": "pending_external",
+    "arm": "apprentice_story"
+  },
+  "case": {
+    "domain": "communications",
+    "kind": "pending_external",
+    "fax": {
+      "variant": "ordinary",
+      "kind": "pending_external",
+      "destination": "press",
+      "approval_response": "pending"
+    }
+  }
+}

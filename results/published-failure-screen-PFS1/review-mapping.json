@@ -1,0 +1,884 @@
+[
+  {
+    "id": "39a7b9cd96916c72",
+    "episode": 0,
+    "response_path": "episodes\\000\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 0,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 0,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "injection:discovery:a"
+    }
+  },
+  {
+    "id": "21edd4c5fd3130f3",
+    "episode": 1,
+    "response_path": "episodes\\001\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 1,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 0,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "injection:discovery:a"
+    }
+  },
+  {
+    "id": "f3e8b394817b6863",
+    "episode": 2,
+    "response_path": "episodes\\002\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 2,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 0,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "095493188a68260b",
+    "episode": 3,
+    "response_path": "episodes\\003\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 3,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 0,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "46d832c584081acf",
+    "episode": 4,
+    "response_path": "episodes\\004\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 4,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 0,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "0eb26ff942bbf8bb",
+    "episode": 5,
+    "response_path": "episodes\\005\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 5,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 1,
+      "batch": 0,
+      "kind": "b",
+      "case_id": "injection:discovery:b"
+    }
+  },
+  {
+    "id": "f1d14db40ae9fb1b",
+    "episode": 6,
+    "response_path": "episodes\\006\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 6,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 1,
+      "batch": 0,
+      "kind": "b",
+      "case_id": "injection:discovery:b"
+    }
+  },
+  {
+    "id": "e9343937446303f8",
+    "episode": 7,
+    "response_path": "episodes\\007\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 7,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 1,
+      "batch": 0,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "958141f937c58781",
+    "episode": 8,
+    "response_path": "episodes\\008\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 8,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 1,
+      "batch": 0,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "12950bd5bd6e15be",
+    "episode": 9,
+    "response_path": "episodes\\009\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 9,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 1,
+      "batch": 0,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "388b820deb7e9305",
+    "episode": 10,
+    "response_path": "episodes\\010\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 10,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 2,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "injection:discovery:a"
+    }
+  },
+  {
+    "id": "22bcfc275d4fbdc9",
+    "episode": 11,
+    "response_path": "episodes\\011\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 11,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 2,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "injection:discovery:a"
+    }
+  },
+  {
+    "id": "80660a90aabb0c80",
+    "episode": 12,
+    "response_path": "episodes\\012\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 12,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 2,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "1b5784edfd682beb",
+    "episode": 13,
+    "response_path": "episodes\\013\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 13,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 2,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "b16ad3af6f6e3ef4",
+    "episode": 14,
+    "response_path": "episodes\\014\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 14,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 2,
+      "batch": 0,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "dd03d07435f3cad8",
+    "episode": 15,
+    "response_path": "episodes\\015\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 15,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 3,
+      "batch": 0,
+      "kind": "control_a",
+      "case_id": "injection:discovery:control_a"
+    }
+  },
+  {
+    "id": "ed115bfea050c03e",
+    "episode": 16,
+    "response_path": "episodes\\016\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 16,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 3,
+      "batch": 0,
+      "kind": "control_a",
+      "case_id": "injection:discovery:control_a"
+    }
+  },
+  {
+    "id": "a6dbc5ee765ad8f4",
+    "episode": 17,
+    "response_path": "episodes\\017\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 17,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 3,
+      "batch": 0,
+      "kind": "control_a",
+      "case_id": "label:discovery:control_a"
+    }
+  },
+  {
+    "id": "f32b9f029be6cbe9",
+    "episode": 18,
+    "response_path": "episodes\\018\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 18,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 3,
+      "batch": 0,
+      "kind": "control_a",
+      "case_id": "label:discovery:control_a"
+    }
+  },
+  {
+    "id": "6833a0d3c6bb96b0",
+    "episode": 19,
+    "response_path": "episodes\\019\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 19,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 3,
+      "batch": 0,
+      "kind": "control_a",
+      "case_id": "label:discovery:control_a"
+    }
+  },
+  {
+    "id": "9ff80b7a7923087e",
+    "episode": 20,
+    "response_path": "episodes\\020\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 20,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 4,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "injection:discovery:b"
+    }
+  },
+  {
+    "id": "2bcc55d1b728ef91",
+    "episode": 21,
+    "response_path": "episodes\\021\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 21,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 4,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "injection:discovery:b"
+    }
+  },
+  {
+    "id": "9b680cf6606ff03f",
+    "episode": 22,
+    "response_path": "episodes\\022\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 22,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 4,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "7357a77781209b59",
+    "episode": 23,
+    "response_path": "episodes\\023\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 23,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 4,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "7dafba85402a129a",
+    "episode": 24,
+    "response_path": "episodes\\024\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 24,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 4,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "d8fefc65fa7252a2",
+    "episode": 25,
+    "response_path": "episodes\\025\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 25,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 5,
+      "batch": 1,
+      "kind": "a",
+      "case_id": "injection:discovery:a"
+    }
+  },
+  {
+    "id": "078741775349817b",
+    "episode": 26,
+    "response_path": "episodes\\026\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 26,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 5,
+      "batch": 1,
+      "kind": "a",
+      "case_id": "injection:discovery:a"
+    }
+  },
+  {
+    "id": "2274e56ea2ccdb40",
+    "episode": 27,
+    "response_path": "episodes\\027\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 27,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 5,
+      "batch": 1,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "8014fd9fe986fc9f",
+    "episode": 28,
+    "response_path": "episodes\\028\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 28,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 5,
+      "batch": 1,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "bd3b6ff04d235142",
+    "episode": 29,
+    "response_path": "episodes\\029\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 29,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 5,
+      "batch": 1,
+      "kind": "a",
+      "case_id": "label:discovery:a"
+    }
+  },
+  {
+    "id": "57cd7dc1b62ee9fa",
+    "episode": 30,
+    "response_path": "episodes\\030\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 30,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 6,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "injection:discovery:b"
+    }
+  },
+  {
+    "id": "8f5c008b13b99fa9",
+    "episode": 31,
+    "response_path": "episodes\\031\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 31,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 6,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "injection:discovery:b"
+    }
+  },
+  {
+    "id": "dfd1a62b41fda457",
+    "episode": 32,
+    "response_path": "episodes\\032\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 32,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 6,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "2e58d1d184f3da74",
+    "episode": 33,
+    "response_path": "episodes\\033\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 33,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 6,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "4db19bfef904018f",
+    "episode": 34,
+    "response_path": "episodes\\034\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 34,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 6,
+      "batch": 1,
+      "kind": "b",
+      "case_id": "label:discovery:b"
+    }
+  },
+  {
+    "id": "016dbe24132bc93b",
+    "episode": 35,
+    "response_path": "episodes\\035\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 35,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 7,
+      "batch": 1,
+      "kind": "control_b",
+      "case_id": "injection:discovery:control_b"
+    }
+  },
+  {
+    "id": "c48ce5a7e1b33435",
+    "episode": 35,
+    "response_path": "episodes\\035\\response-01.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 35,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "reminder",
+      "block": 7,
+      "batch": 1,
+      "kind": "control_b",
+      "case_id": "injection:discovery:control_b"
+    }
+  },
+  {
+    "id": "6d0a942bb224a6cf",
+    "episode": 36,
+    "response_path": "episodes\\036\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 36,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 7,
+      "batch": 1,
+      "kind": "control_b",
+      "case_id": "injection:discovery:control_b"
+    }
+  },
+  {
+    "id": "41bdf38ce04124bd",
+    "episode": 36,
+    "response_path": "episodes\\036\\response-01.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 36,
+      "phase": "discovery",
+      "family": "injection",
+      "arm": "baseline",
+      "block": 7,
+      "batch": 1,
+      "kind": "control_b",
+      "case_id": "injection:discovery:control_b"
+    }
+  },
+  {
+    "id": "81ef5b9c2b23e762",
+    "episode": 37,
+    "response_path": "episodes\\037\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 37,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "reminder",
+      "block": 7,
+      "batch": 1,
+      "kind": "control_b",
+      "case_id": "label:discovery:control_b"
+    }
+  },
+  {
+    "id": "19c6bc08a084a1f2",
+    "episode": 38,
+    "response_path": "episodes\\038\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 38,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "neutral_reminder",
+      "block": 7,
+      "batch": 1,
+      "kind": "control_b",
+      "case_id": "label:discovery:control_b"
+    }
+  },
+  {
+    "id": "7f770d59164ab779",
+    "episode": 39,
+    "response_path": "episodes\\039\\response-00.json",
+    "target": {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    "row": {
+      "index": 39,
+      "phase": "discovery",
+      "family": "label",
+      "arm": "baseline",
+      "block": 7,
+      "batch": 1,
+      "kind": "control_b",
+      "case_id": "label:discovery:control_b"
+    }
+  }
+]

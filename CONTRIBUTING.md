@@ -10,6 +10,20 @@ You do not need to arrive with a finished proposal.
 
 ## Pick a first step
 
+Start with the [compact reporting-failure kit](reproducers/mislabel-v1/README.md):
+inspect the exact prompt, repeat the test, or challenge the label. It includes an
+offline checker and all answers, including the reduction that did not retain the
+failure. Independent review and replication are welcome.
+
+The plan is **contribute → reproduce → compare → challenge → share and repeat**.
+We have open experiments and a proposal builder today. Automated evaluation and
+a library of remedies confirmed across new settings remain work to build.
+
+Use the [research contribution form](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml)
+for a failure, a remedy, a replication, or a disagreement about the expected answer.
+Ideas and negative results both help. Keep model configurations separate, include
+all attempts, and compare stories with simple instructions and matched facts.
+
 You can also [choose a parable or bring your own](https://anto-blit.github.io/northstar-ai-control/#parable).
 Describe its lesson, a harmless AI task and a permitted counterpart. The page
 prepares a downloadable proposal you can attach to a GitHub discussion or issue.

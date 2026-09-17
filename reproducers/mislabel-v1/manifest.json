@@ -1,0 +1,10 @@
+{
+  "scope": "local artifact consistency, not independently timestamped publication",
+  "sha256": {
+    "audit.py": "1d22068a8f138d42bc1cd857a012126eb1b0900aa0bf9b7ddfe3dc86d4386f32",
+    "bundle.json": "48ded1dcb2e677ba205a39547c44a3d0af81202e294a6f35939e63b475b3ea24",
+    "CONTRIBUTION.json": "5865d8bec4bde189771247389fd81c5f806406efe0ca64009051dfac84cf1e05",
+    "README.md": "fbcec7d0dae981683837ab8c94cc029db256522e22df9956324ef0218f37caa5",
+    "RESULTS.md": "b4150fee8b776b6b925c66cb144e06648748a3dfe3acad7026d19977113c3160"
+  }
+}

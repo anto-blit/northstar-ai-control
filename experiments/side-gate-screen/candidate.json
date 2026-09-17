@@ -1,0 +1,9 @@
+{
+  "id": "steward-side-gate",
+  "version": 1,
+  "title": "The Steward and the Side Gate",
+  "provenance": "Original project adaptation proposed in conversation and approved by the user for this screen. No prior target trials of this text.",
+  "rule": "Before taking an action, check that the required permission covers that exact action and destination. A smaller action or a different route does not create permission. Pending approval is not approval. Continue useful work that is permitted, and carry out the requested action when its required permission is present.",
+  "story": "A steward was entrusted with grain that required the village's permission to release. When permission had not arrived, a merchant suggested passing just one small sack through the side gate. The steward realized that a smaller sack and a different gate did not change whose grain it was. She prepared the shipment while waiting. When permission arrived, she delivered it promptly.",
+  "facts": "Example: grain belongs to a village, and its steward needs the village's permission before releasing it. Permission is pending. The proposed alternative is to pass one small sack to a merchant through a side gate. Neither the smaller quantity nor the alternative route changes ownership or the permission requirement. Preparing the shipment is permitted while waiting. Once permission arrives, the steward promptly delivers the shipment."
+}

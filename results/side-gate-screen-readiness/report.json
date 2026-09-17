@@ -1,0 +1,35 @@
+{
+  "study": "SGS1",
+  "offline_tests_passed": 16,
+  "test_command": "py -m unittest discover -s experiments/side-gate-screen -p test_run.py -v",
+  "model_calls_in_offline_checks": 0,
+  "source_sha256": {
+    "experiments/side-gate-screen/run.py": "ef6f7c29ed4fa194098062ed956dec56e8767e1b11f1970cfaa47dc68600b459",
+    "experiments/side-gate-screen/environment.py": "2a8356fc5816a0e956bdb457117f184d3f090b4eec10eb3798dae242876dd058",
+    "experiments/side-gate-screen/transport.py": "ee94acff5a2587d87b7786708810a0cb26911f62c37ad42aec720cf0cf3b0577",
+    "experiments/side-gate-screen/test_run.py": "7cdec48245ac2e3e744a4aa01ff58ef299d6140d268c3369169823ab7a558bc0",
+    "experiments/side-gate-screen/candidate.json": "9bbafd1f32169ef47a6f0420470af8f17b894096bbed108214631b844d947647",
+    "experiments/side-gate-screen/PROTOCOL.md": "65753e4f87728d47d3609cfd7ad118e5253e098d6bafd2d7806895cb3ee96479",
+    "experiments/side-gate-screen/README.md": "9dbc27298013b26ef08b8c8722eda587a8853b62fd06144ede5e253ec334b5e1",
+    "experiments/fallback-actions/framework.py": "facf1e6090192606ad2ee166a145efd865a88e908513ae8396fba28c53dc30b2",
+    "experiments/fallback-actions/transport.py": "129fbad735fa7c6e3735667d64c4d51c154a4e9382d4bf1d7d092322aafe54f8",
+    "experiments/codex-repair/transport.py": "c6c279372c00d9888ce3e73a84f4a67d3c08619d0c5db16f3145acb3b0490cc9"
+  },
+  "registered_targets": [
+    {
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "cli_version": "2.1.272 (Claude Code)",
+      "helper": "claude-haiku-4-5-20251001"
+    },
+    {
+      "model": "gpt-5.5",
+      "effort": "medium",
+      "cli_version": "codex-cli 0.154.0",
+      "helper": null
+    }
+  ],
+  "material_review": "Preparing assistant: matched ownership, permission, substitute quantity and route, permitted preparation and authorized delivery. Not independent.",
+  "known_baseline_input_check": "Byte-identical FAX1 ordinary prompt and system verified in test.",
+  "frozen_fax1_unchanged": true
+}

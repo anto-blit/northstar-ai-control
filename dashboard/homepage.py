@@ -35,6 +35,9 @@ def load_evidence(root=ROOT, replay=True):
             ("experiments/deliberation-comparison/run.py", ["verify", "A2"]),
             ("experiments/parable-screen/run.py", ["check", "results/parable-screen/draft-plan.json"]),
             ("experiments/parable-screen-review/review.py", ["verify"]),
+            ("experiments/mislabel-confirmation/run.py", ["verify", "results/mislabel-confirmation-MCF1"]),
+            ("experiments/mislabel-minimal/run.py", ["verify", "results/mislabel-minimal-MMS1"]),
+            ("reproducers/mislabel-v1/audit.py", ["verify"]),
         ):
             result = subprocess.run([sys.executable, str(root / script), *arguments],
                                     cwd=root, capture_output=True, timeout=45)
@@ -80,8 +83,24 @@ def load_evidence(root=ROOT, replay=True):
     answer = json.loads(raw["result"])
     if answer["decision"] != "PROCEED":
         raise ValueError("Homepage example no longer matches the recorded decision")
+    confirmation = read("results/mislabel-confirmation-MCF1/summary.json")
+    minimal = read("results/mislabel-minimal-MMS1/summary.json")
+    compact_plan = read("results/mislabel-minimal-MMS1/plan.json")
+    compact_answer = read("results/mislabel-minimal-MMS1/episodes/003/response.json")["raw"]["result"]
+    expected_groups = (((4, 0, 0, 4), (0, 0, 4, 4)), ((2, 2, 0, 4), (0, 2, 2, 4)))
+    for record, expected in zip((confirmation, minimal), expected_groups):
+        actual = tuple(tuple(g[k] for k in ("wrong", "correct", "decline", "controls_correct")) for g in record["groups"])
+        if (actual != expected or record["completion"]["calls"] != 16
+                or record["completion"]["stop_reason"] != "planned_completion"
+                or record["independent_review"] != "pending" or record["story_calls"] != 0
+                or record["target"]["model"] != "claude-sonnet-4-6"):
+            raise ValueError("Reporting study changed; review the homepage claims")
+    if len(compact_plan["prompts"]["s0"]["standard"]) != 3303 or not compact_answer.startswith("<label>COMPLIANT</label>"):
+        raise ValueError("Compact example changed; review the homepage")
     return {"a": a, "a2": a2, "g16": g16, "validation": validation, "preparation": preparation,
-            "answer": answer, "stories": read("curriculum/aesop-v1.json")["stories"]}
+            "answer": answer, "stories": read("curriculum/aesop-v1.json")["stories"],
+            "reporting": {"confirmation": confirmation, "minimal": minimal,
+                          "reason": compact_answer.split("</label>", 1)[1].strip()}}
 
 
 def render(root=ROOT):
@@ -114,6 +133,9 @@ def render(root=ROOT):
         "@@APP@@": (HERE / "homepage.js").read_text(encoding="utf-8"),
         "@@DATA@@": json.dumps(payload, ensure_ascii=True, separators=(",", ":")).replace("<", "\\u003c"),
         "@@EXAMPLE_REASON@@": escape(data["answer"]["reason"]),
+        "@@MISLABEL_REASON@@": escape(data["reporting"]["reason"]),
+        "@@MCF_WRONG@@": str(data["reporting"]["confirmation"]["groups"][0]["wrong"]),
+        "@@MISLABEL_CONTROLS@@": str(sum(g["controls_correct"] for s in ("confirmation", "minimal") for g in data["reporting"][s]["groups"])),
         "@@WRONG@@": str(published["wrong_approvals"]),
         "@@SCORE_WRONG@@": str(published["wrong_approvals"]),
         "@@ATTEMPTS@@": str(published["attempts"]),

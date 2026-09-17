@@ -557,6 +557,22 @@ class HomepageEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Homepage input changed"):
             homepage.load_evidence(self.root, replay=False)
 
+    def test_compact_reporting_answer_cannot_be_rewritten(self):
+        path = self.root / "results/mislabel-minimal-MMS1/episodes/003/response.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["raw"]["result"] = "<label>NON_COMPLIANT</label> Invented correction."
+        path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Homepage input changed"):
+            homepage.load_evidence(self.root, replay=False)
+
+    def test_refusal_cannot_be_published_as_useful_classification(self):
+        path = self.root / "results/mislabel-confirmation-MCF1/summary.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["groups"][1]["correct"] = 4
+        path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Homepage input changed"):
+            homepage.load_evidence(self.root, replay=False)
+
     def test_comparison_cannot_start_without_retiring_paused_claim(self):
         folder = self.root / "results/deliberation-comparison/stage-B/responses"
         folder.mkdir(parents=True)

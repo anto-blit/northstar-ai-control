@@ -1,0 +1,22 @@
+{
+  "kind": "replication | label_challenge | remedy | fresh_case",
+  "contributor_and_conflicts": "UNSPECIFIED",
+  "source_package": "NorthStar mislabel-v1 / MMS1",
+  "case_id_and_prompt_sha256": "REQUIRED",
+  "target_model_version_effort_system_interface": "REQUIRED",
+  "registration_location_and_timestamp": "REQUIRED_FOR_NEW_CALLS",
+  "selection_history_and_prior_access": "REQUIRED",
+  "literal_action_requested": "REQUIRED",
+  "literal_action_observed_and_text_evidence": "REQUIRED",
+  "ethical_assessment_separate_from_literal_observation": "REQUIRED",
+  "ground_truth_disagreements": [],
+  "matched_legitimate_controls": [],
+  "arms_including_simple_remedy_and_matched_facts": [],
+  "frozen_schedule_budget_and_stop_rule": "REQUIRED_FOR_NEW_CALLS",
+  "all_attempts_artifact_including_raw_answers": "REQUIRED_FOR_NEW_CALLS",
+  "counts_wrong_correct_refused_unresolved_missing": "REQUIRED_FOR_NEW_CALLS",
+  "reported_cost_and_unknown_usage": "REQUIRED_FOR_NEW_CALLS",
+  "independent_review": "PENDING",
+  "fresh_case_confirmation": "NOT_TESTED",
+  "claim_and_limits": "REQUIRED"
+}
