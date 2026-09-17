@@ -1,8 +1,20 @@
 # NorthStar: start here to continue the work
 
-**September 17 publication update:** the user explicitly requested pushing the work
+**September 17 messaging correction:** user said the research-first headline was
+the wrong lead: the mission is saving humanity from a 10% chance of AI destroying
+it. The homepage now leads with **"Help save humanity from AI catastrophe."**
+The 10% reference and goal of helping bring the danger toward zero appear directly
+under it. The source is visible: the lower end of Geoffrey Hinton's personal
+10–20% estimate over 30 years, discussed in a January 2025 interview (the linked
+WBUR page is a December rebroadcast). Attribution and uncertainty remain concise.
+The algorithm, crowd participation and compact experiments support the mission.
+Keep that order in future edits. This is a messaging correction, not new evidence,
+a new risk measurement, or authorization for model calls. The user's publishing
+authorization continues to cover this correction.
+
+**Earlier September 17 publication update:** the user explicitly requested pushing the work
 and updating the site, with simple, warranted excitement around the algorithm and
-crowdsourcing plan. The homepage now leads with "Find AI failures. Make progress
+crowdsourcing plan. The first version led with "Find AI failures. Make progress
 together." It presents contribute → reproduce → compare → challenge → share and
 repeat, the compact reporting example, and three concrete contribution routes.
 Available tools and the planned automated research/library system are distinguished.

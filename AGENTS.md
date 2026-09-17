@@ -1,5 +1,12 @@
 # NorthStar experiment discipline
 
+Latest messaging direction, September 17: lead with the mission of helping save
+humanity from AI catastrophe and reduce the stated 10% risk reference toward zero.
+The algorithm, crowdsourcing and small experiments are the proposed means. Keep
+the 10% attribution visible (lower end of Hinton's personal 10–20% forecast,
+discussed in 2025); do not turn it into a measured probability or claim that local
+tests already reduced global risk. The user authorized publishing this correction.
+
 September 17 site publication: user explicitly authorized pushing the completed
 work and updating the website. The homepage now centers the proposed research
 loop and contribution routes, with MCF1/MMS1 evidence. Keep available tools and

@@ -72,7 +72,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await viewport(1440, 1100);
     await navigate(homeURL);
     assert.equal(await evaluate(`document.querySelectorAll('h1').length`), 1);
-    assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Find AI failures/);
+    assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Help save humanity/);
     assert.equal(await evaluate(`getComputedStyle(document.body).backgroundColor`), 'rgb(255, 255, 255)');
     assert.equal(await evaluate(`getComputedStyle(document.documentElement).scrollBehavior`), 'auto');
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);

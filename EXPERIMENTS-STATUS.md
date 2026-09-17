@@ -1,5 +1,10 @@
 # NorthStar — implementation and evidence
 
+September 17 messaging correction: the website leads with helping save humanity
+from AI catastrophe. The 10% figure remains the project's attributed risk reference,
+with uncertainty visible. The algorithm and crowdsourcing plan support that
+mission. No experimental result or global-risk measurement changed.
+
 September 17 publication: the user requested pushing the completed work and
 updating the site around the algorithm and crowdsourcing plan. This publication
 includes the experiment artifacts and portable kit linked below. The homepage

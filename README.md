@@ -1,7 +1,7 @@
 ![NorthStar: Protecting humanity’s freedom and future in an AI world. Story-guided AI ethics and evaluation. Safeguards for human agency.](docs/figures/northstar-hero.svg)
 
 # NorthStar
-### Protecting humanity’s freedom and future in an AI world.
+### Help save humanity from AI catastrophe.
 
 *Story-guided AI ethics, evaluation, and safeguards for human agency.*
 
@@ -13,6 +13,13 @@
 for current evidence, decisions, the recommended next step and offline checks.
 
 ## Why NorthStar
+
+Our mission is to help reduce the risk of AI destroying humanity. We take a
+**10% risk estimate** seriously and aim to help bring that danger toward zero.
+The reference is the lower end of Geoffrey Hinton’s personal 10–20% estimate over
+30 years, discussed in his [2025 interview](https://www.wbur.org/onpoint/2025/12/29/godfather-of-ai-geoffrey-hinton).
+Estimates differ. The algorithm and crowdsourced research are our proposed path
+toward that mission; no global risk reduction has yet been demonstrated.
 
 **A plan for shared research:** contribute an idea → reproduce a failure → compare
 remedies → challenge them on fresh cases → share and repeat. People can bring
