@@ -77,6 +77,33 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.equal(await evaluate(`getComputedStyle(document.documentElement).scrollBehavior`), 'auto');
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
     await screenshot('desktop.png');
+    // The copied/downloaded prompt must remain the same complete proposal prompt.
+    const starterPrompt = fs.readFileSync(path.join(__dirname, '..', 'contributor-kit', 'prompt.txt'), 'utf8').replace(/\r\n/g, '\n');
+    assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').value`), starterPrompt);
+    await evaluate(`document.querySelector('a[href="#contributor-prompt"]').click()`);
+    for (let i = 0; i < 20; i++) {
+      if (await evaluate(`document.getElementById('contributor-prompt').parentElement.open`)) break;
+      await pause(25);
+    }
+    assert.equal(await evaluate(`document.getElementById('contributor-prompt').parentElement.open`), true);
+    await evaluate(`(async () => {
+      Object.defineProperty(navigator, 'clipboard', {configurable: true, value: {writeText: async value => {window.copiedStarter = value;}}});
+      document.getElementById('copy-contributor-prompt').click();
+      await new Promise(resolve => setTimeout(resolve, 0));
+    })()`);
+    assert.equal(await evaluate(`window.copiedStarter`), starterPrompt);
+    assert.match(await evaluate(`document.getElementById('copy-prompt-status').textContent`), /^Copied/);
+    await evaluate(`(async () => {
+      Object.defineProperty(navigator, 'clipboard', {configurable: true, value: {writeText: async () => {throw Error('Clipboard denied');}}});
+      document.getElementById('contributor-prompt').parentElement.open = true;
+      document.getElementById('copy-contributor-prompt').click();
+      await new Promise(resolve => setTimeout(resolve, 0));
+      delete navigator.clipboard;
+    })()`);
+    assert.equal(await evaluate(`document.activeElement.id`), 'contributor-prompt-text');
+    assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').selectionEnd`), starterPrompt.length);
+    assert.match(await evaluate(`document.getElementById('copy-prompt-status').textContent`), /selected/);
+    await evaluate(`document.getElementById('contributor-prompt').parentElement.open = false`);
     await evaluate(`document.querySelector('[data-score="first"]').click()`);
     assert.equal(await evaluate(`document.querySelectorAll('#score-grid .wrong').length`), 22);
     assert.equal(await evaluate(`document.getElementById('legend-invalid').textContent`), '0 invalid');
@@ -161,6 +188,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await viewport(390, 844);
     await evaluate(`window.scrollTo(0,0)`);
     await screenshot('mobile.png');
+    await evaluate(`document.getElementById('contribute').scrollIntoView()`);
+    await screenshot('mobile-contribute.png');
     await evaluate(`document.getElementById('progress').scrollIntoView()`);
     await screenshot('mobile-progress.png');
     await evaluate(`document.getElementById('parable-form').scrollIntoView()`);
@@ -170,6 +199,8 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await evaluate(`document.querySelector('label[for="parable-scenario"]').scrollIntoView()`);
     await screenshot('mobile-scenario-fields.png');
     await viewport(1440, 1100);
+    await evaluate(`document.getElementById('contribute').scrollIntoView()`);
+    await screenshot('desktop-contribute.png');
     await evaluate(`document.getElementById('parable').scrollIntoView()`);
     await screenshot('desktop-parable.png');
     await evaluate(`document.getElementById('scenario-guide-title').scrollIntoView()`);
@@ -216,6 +247,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     for (const href of links) {
       if (href.startsWith('#')) assert.equal(await evaluate(`Boolean(document.getElementById(${JSON.stringify(href.slice(1))}))`), true, href);
       if (href.startsWith('research.html#')) assert.ok(research.includes('id="' + href.split('#')[1] + '"'), href);
+      if (href.startsWith('downloads/')) assert.ok(fs.existsSync(path.join(__dirname, href)), 'Missing download: ' + href);
     }
     await call('Page.navigate', { url: homeURL + '#approval-repeatability' });
     for (let i = 0; i < 100; i++) {
@@ -240,10 +272,12 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.match(await evaluate(`document.getElementById('algorithm').textContent`), /Still a plan/);
     assert.match(await evaluate(`document.getElementById('progress').textContent`), /3,303/);
     assert.match(await evaluate(`document.querySelector('.decision-figure').textContent`), /The model declined a specific restart instruction/);
+    assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').value`), starterPrompt);
+    assert.equal(await evaluate(`document.getElementById('copy-contributor-prompt').hidden`), true);
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],
-      checks: ['scoring switch', 'six sourced stories', 'six untested task starters',
+      checks: ['starter prompt copy and clipboard-denied fallback', 'contributor downloads present', 'scoring switch', 'six sourced stories', 'six untested task starters',
         'custom starter', 'starter preserves edits', 'starter keyboard focus', 'custom draft', 'required fields',
         'literal user content', 'download round trip', 'edit invalidation', 'in-page draft retention',
         'no horizontal overflow', 'local links', 'legacy bookmark redirect', 'research controls',

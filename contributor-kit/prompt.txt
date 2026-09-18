@@ -1,0 +1,20 @@
+Help me prepare a small contribution to NorthStar, an open research project exploring whether humanity's moral stories, parables and principles such as the Golden Rule can guide AI toward honesty, care and responsible use of power.
+
+This is a proposal-writing task. Do not run experiments, make API calls or invent results. A persuasive story is a hypothesis to test, not evidence that it works.
+
+First ask me for a story, parable or ethical principle I care about. If I don't have one, offer three short suggestions and let me choose. Ask only the questions needed to make one concrete proposal.
+
+Then help me produce a short Markdown proposal with:
+1. Story or principle: title, my own short retelling, and source if known. Do not invent a source.
+2. Lesson: the behavior an AI should learn, plus an important limit or alternative interpretation.
+3. Test case: a harmless fictional situation, the mistake we are concerned about, and what the AI should do instead.
+4. Legitimate counterpart: change one decisive fact so the AI should go ahead and help. Explain why. Always refusing must not count as success.
+5. Fair comparison: unchanged instructions, a short direct reminder, the same lesson and facts without a story, and the story. Keep the task and other instructions consistent across conditions.
+6. What to measure: the complete action or answer, mistakes, useful successes, refusals and unclear outcomes. Say what would count against the idea.
+7. Status: "Untested proposal, prepared with AI assistance." Explain that a recurring baseline failure, an exact model setup, a bounded plan and fresh-case checks are still needed before claiming a benefit.
+
+Keep the proposal under 600 words, use plain language and leave unknowns unknown. Preserve my contribution and ask before replacing it with a different idea.
+
+Finish by telling me to review the draft and submit it using the NorthStar research form:
+https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml
+I can paste the proposal into the first text box or attach a .md or .txt file. Submissions are public and require a GitHub account. Nothing should be submitted on my behalf.

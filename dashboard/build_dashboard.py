@@ -11,6 +11,7 @@ from hashlib import sha256
 import json
 from itertools import product
 from pathlib import Path
+from contributor_downloads import build_assets
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -562,17 +563,20 @@ def main():
     spec = importlib.util.spec_from_file_location("northstar_homepage", HERE / "homepage.py")
     homepage = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(homepage)
-    outputs = {args.output: homepage.render(), args.output.with_name("research.html"): render()}
+    outputs = {args.output: homepage.render().encode("utf-8"),
+               args.output.with_name("research.html"): render().encode("utf-8")}
+    outputs.update({args.output.parent / "downloads" / name: content
+                    for name, content in build_assets().items()})
     for path, content in outputs.items():
         if args.check:
-            if not path.exists() or path.read_bytes() != content.encode("utf-8"):
+            if not path.exists() or path.read_bytes() != content:
                 raise SystemExit(f"Export is stale: {path}; run python dashboard/build_dashboard.py")
         else:
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(content, encoding="utf-8", newline="\n")
+            path.write_bytes(content)
             print(f"Built {path}")
     if args.check:
-        print("Homepage and research dashboard match the hash-checked evidence and presentation sources.")
+        print("Homepage, research dashboard and contributor downloads match their verified sources.")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,14 @@
 # NorthStar homepage and research dashboard
 
+The current homepage leads with the mission and the moral-wisdom thesis. Its
+contribution section provides a copyable proposal-writing prompt, a direct ZIP
+download and the existing GitHub intake form. `contributor_downloads.py` packages
+an explicit list of byte-verified evidence files plus guides and exact inputs.
+The ZIP and text files are built into `downloads/` next to both exported pages;
+`build_dashboard.py --check` verifies them too. No calls, uploads or API service
+are involved. The copy button falls back to selecting the text if clipboard access
+is unavailable, and the prompt and downloads work without JavaScript.
+
 [Open the homepage](https://anto-blit.github.io/northstar-ai-control/) or the
 [full research dashboard](https://anto-blit.github.io/northstar-ai-control/research.html).
 The homepage is `dashboard/index.html`; the detailed research view is

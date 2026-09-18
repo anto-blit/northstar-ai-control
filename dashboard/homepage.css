@@ -83,6 +83,7 @@
   .decision-window { background: white; color: var(--color-ink); border-radius: 28px; box-shadow: 0 40px 110px rgb(3 6 20 / .55), 0 4px 16px rgb(3 6 20 / .3); }
   .window-bar { padding: 20px 32px; border-bottom: 1px solid #ececf3; color: var(--color-muted); font-size: 11px; }
   .example-label { color: var(--color-ink); font-size: 16px; font-weight: 750; letter-spacing: .035em; text-transform: uppercase; }
+  .contribution-prompt { width: 100%; padding: 20px; border: 1px solid var(--color-line); border-radius: 16px; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-mono); font-size: 13px; line-height: 1.7; resize: vertical; }
   .window-dots i { display: block; height: 8px; width: 8px; border-radius: 50%; background: #d8dae4; }
   .record-tag { font-family: var(--font-mono); font-size: 10px; }
   .task-plain { margin-top: 18px; font-size: 14px; line-height: 1.7; color: var(--color-muted); }

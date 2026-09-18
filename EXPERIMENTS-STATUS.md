@@ -1,5 +1,11 @@
 # NorthStar — implementation and evidence
 
+September 17 contributor onboarding: a copyable proposal prompt, downloadable
+evidence/input kit and result template now feed the existing GitHub review form.
+This is contribution infrastructure, with no new model calls or experimental
+findings. The original evidence package is unchanged; the new wrapper exposes
+all conditions, controls and the negative reduction. No results API is running.
+
 September 17 thesis clarification: the homepage explicitly presents humanity's
 moral stories, parables and principles such as the Golden Rule as the proposed
 NorthStar for AI. Crowdsourcing and the algorithm develop and test that thesis.

@@ -1,5 +1,12 @@
 # NorthStar experiment discipline
 
+September 17 contributor onboarding: the site offers a copyable proposal prompt,
+a small downloadable kit and the existing GitHub research form. Keep the proposal
+prompt distinct from an experiment, preserve the frozen kit inside its new wrapper,
+and publish downloads with the site build. GitHub is the initial intake/review queue;
+no results API or automatic model runs have been launched. See HANDOFF and
+`contributor-kit/START-HERE.md` for the contributor flow.
+
 Latest thesis clarification, September 17: keep the mission and the project's
 distinctive thesis together in the homepage opening. Thousands of years of moral
 and ethical storytelling, parables and principles such as the Golden Rule can

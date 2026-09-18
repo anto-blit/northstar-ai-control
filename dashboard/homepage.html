@@ -179,14 +179,25 @@
         <details class="mt-5"><summary class="text-link cursor-pointer">How would the algorithm choose?</summary><p class="mt-4 text-sm text-muted leading-relaxed">Among remedies with enough evidence, choose fewer errors while preserving useful answers and staying within the test budget. Then challenge that choice on fresh cases. If none qualifies, keep the result as insufficient evidence.</p><a class="text-link mt-4 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/working-algorithm.md">Read the working algorithm and formula <span aria-hidden="true">↗</span></a></details>
       </div>
       <div id="contribute" class="mt-16" aria-labelledby="contribute-title">
-        <p class="eyebrow">Choose a first contribution</p>
-        <h3 id="contribute-title" class="mt-4 text-3xl font-semibold tracking-tight">You can help build the next test.</h3>
+        <p class="eyebrow">An easy first contribution</p>
+        <h3 id="contribute-title" class="mt-4 text-3xl font-semibold tracking-tight">Bring a story. Check a result. Share what you find.</h3>
+        <p class="mt-5 max-w-3xl text-muted leading-relaxed">Start with an AI chat you already use, or download the small kit. You don’t need to code or clone the repository to contribute an idea.</p>
         <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <article class="hope-card"><h4 class="hope-title">Check this result.</h4><p class="hope-body">Inspect the small reproducer. Repeat it or challenge our reading of the answer.</p><a class="text-link mt-5 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/tree/main/reproducers/mislabel-v1">Open the reproduction kit <span aria-hidden="true">↗</span></a></article>
-          <article class="hope-card"><h4 class="hope-title">Bring a story or fix.</h4><p class="hope-body">Choose a parable or bring your own. Explain the lesson and the situation where it might help.</p><a class="text-link mt-5 inline-flex" href="#parable">Prepare a proposal <span aria-hidden="true">↓</span></a></article>
-          <article class="hope-card"><h4 class="hope-title">Find a new failure.</h4><p class="hope-body">Share a harmless case, the actual answer and what should have happened. Negative results help too.</p><a class="text-link mt-5 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml">Share a case or finding <span aria-hidden="true">↗</span></a></article>
+          <article class="hope-card"><h4 class="hope-title">Copy a prompt.</h4><p class="hope-body">Paste our starter into your AI chat. It helps turn a story or principle into a short test proposal for you to review.</p><a class="text-link mt-5 inline-flex" href="#contributor-prompt">Get the starter prompt <span aria-hidden="true">↓</span></a><p class="mt-4 text-sm text-muted">Prefer to write it yourself? <a class="text-link" href="#parable">Use the proposal builder</a>.</p></article>
+          <article class="hope-card"><h4 class="hope-title">Download the kit.</h4><p class="hope-body">Exact test prompts, saved answers, controls and a short guide in one ZIP. Inspect it, challenge a label or prepare your own replication.</p><a id="download-contributor-kit" class="text-link mt-5 inline-flex" href="downloads/northstar-contributor-kit.zip" download>Download the small kit <span aria-hidden="true">↓</span></a><p class="mt-4 text-sm text-muted">No install or API key to inspect it. Optional Python checker included.</p></article>
+          <article class="hope-card"><h4 class="hope-title">Send it back.</h4><p class="hope-body">Use the short GitHub form for an idea or a result. Paste your draft or attach your files. Findings that challenge our thesis help too.</p><a class="text-link mt-5 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml">Open the contribution form <span aria-hidden="true">↗</span></a><p class="mt-4 text-sm text-muted">Ran a test? <a class="text-link" href="downloads/report-template.md" download>Use the result template</a> and include every answer.</p></article>
         </div>
-        <p class="mt-6 text-sm text-muted">Review and sharing currently happen through GitHub. The proposal builder prepares a file; it does not run or submit an experiment.</p>
+        <p class="mt-6 text-sm text-muted">GitHub submissions are public and require an account. No fork or pull request needed. Nothing is submitted automatically; contributions are reviewed before becoming project evidence.</p>
+        <details class="research-detail mt-8">
+          <summary>A copy-and-paste prompt for your AI chat<span aria-hidden="true">+</span></summary>
+          <div id="contributor-prompt" class="pb-8">
+            <p class="max-w-3xl text-muted leading-relaxed">This prompt helps you prepare an idea. It does not run a model experiment or establish that a story works. Copy it into a new chat, answer its questions, then review and share the proposal.</p>
+            <div class="mt-5 flex flex-wrap items-center gap-5"><button id="copy-contributor-prompt" class="example-button" type="button" hidden>Copy starter prompt</button><a class="text-link" href="downloads/contributor-prompt.txt" download>Download the prompt as text <span aria-hidden="true">↓</span></a></div>
+            <p id="copy-prompt-status" class="mt-4 text-sm text-muted" role="status"></p>
+            <label for="contributor-prompt-text" class="mt-5 block text-sm font-semibold">Starter prompt — select and copy manually if needed</label>
+            <textarea id="contributor-prompt-text" class="contribution-prompt mt-3" rows="12" readonly spellcheck="false">@@CONTRIBUTOR_PROMPT@@</textarea>
+          </div>
+        </details>
       </div>
     </section>
 

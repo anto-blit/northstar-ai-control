@@ -131,6 +131,7 @@ def render(root=ROOT):
     replacements = {
         "@@STYLE@@": (HERE / "homepage.compiled.css").read_text(encoding="utf-8"),
         "@@APP@@": (HERE / "homepage.js").read_text(encoding="utf-8"),
+        "@@CONTRIBUTOR_PROMPT@@": escape((root / "contributor-kit/prompt.txt").read_text(encoding="utf-8")),
         "@@DATA@@": json.dumps(payload, ensure_ascii=True, separators=(",", ":")).replace("<", "\\u003c"),
         "@@EXAMPLE_REASON@@": escape(data["answer"]["reason"]),
         "@@MISLABEL_REASON@@": escape(data["reporting"]["reason"]),

@@ -9,6 +9,11 @@
 
 **[Open the dashboard](https://anto-blit.github.io/northstar-ai-control/) · [Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
+**Easy first contribution:** [copy a starter prompt](https://anto-blit.github.io/northstar-ai-control/#contributor-prompt),
+[download the small kit](https://anto-blit.github.io/northstar-ai-control/downloads/northstar-contributor-kit.zip),
+then [share an idea or result](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml).
+No coding needed for proposals. The kit includes exact inputs and an offline checker.
+
 **Continuing the project in a fresh session? Start with [HANDOFF.md](HANDOFF.md)**
 for current evidence, decisions, the recommended next step and offline checks.
 

@@ -1,5 +1,24 @@
 # NorthStar: start here to continue the work
 
+**September 17 contribution entry point:** user asked for a small downloadable
+module or copyable prompt and whether results need an API. The chosen first step
+uses the existing public GitHub research form as intake/review, with no new service.
+The homepage now offers a copyable proposal-writing prompt, a small ZIP and a
+result template. The prompt helps contributors develop their own story or principle;
+it explicitly drafts an untested proposal. The ZIP wraps the unchanged mislabel-v1
+package with a short guide and all eight exact input sets, including controls and
+the negative reduction. Its optional Python checker makes no model calls.
+`dashboard/contributor_downloads.py` builds deterministic assets from an explicit
+file list and the existing pinned evidence. Build/check and Pages publish the
+downloads alongside the HTML. Contributions need review; a different chat setup is
+an exploratory check, not an exact replication. An API remains a later option for
+automated contributors and volume. No model calls, contributor outreach or changes
+to frozen evidence are authorized or performed by this website work.
+Validation: 61 dashboard tests passed, including download integrity and running
+the extracted checker outside the repository. Final packaging checks, offline
+export verification and browser checks at 320/390/768/1440 pixels passed; clipboard
+denial and JavaScript-disabled use retain a manual-copy/download route.
+
 **September 17 thesis clarification:** the user said the mission-first revision
 obscured the basic thesis: thousands of years of moral and ethical storytelling,
 parables and principles such as the Golden Rule can provide a NorthStar for AI.

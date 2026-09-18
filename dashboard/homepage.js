@@ -12,6 +12,22 @@
   followResearchBookmark();
   window.addEventListener('hashchange', followResearchBookmark);
 
+  const copyPrompt = document.getElementById('copy-contributor-prompt');
+  copyPrompt.hidden = false;
+  copyPrompt.addEventListener('click', async () => {
+    const text = document.getElementById('contributor-prompt-text');
+    const status = document.getElementById('copy-prompt-status');
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(text.value);
+      status.textContent = 'Copied. Paste into a new AI chat, then review the proposal before sharing it.';
+    } catch {
+      text.focus();
+      text.select();
+      status.textContent = 'The prompt is selected. Use your device’s Copy command, or download the text file.';
+    }
+  });
+
   const buttons = document.querySelectorAll('[data-score]');
   for (const button of buttons) {
     button.addEventListener('click', () => {

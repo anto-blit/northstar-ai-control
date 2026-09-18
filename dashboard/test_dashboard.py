@@ -9,6 +9,66 @@ import unittest
 
 import build_dashboard as dashboard
 import homepage
+import contributor_downloads
+
+
+class ContributorDownloadTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        for relative in ("contributor-kit", "reproducers/mislabel-v1"):
+            shutil.copytree(dashboard.ROOT / relative, self.root / relative)
+        (self.root / "dashboard").mkdir()
+        shutil.copyfile(dashboard.ROOT / "dashboard/homepage-evidence.json",
+                        self.root / "dashboard/homepage-evidence.json")
+        shutil.copyfile(dashboard.ROOT / "LICENSE", self.root / "LICENSE")
+
+    def test_download_preserves_inputs_controls_and_all_evidence(self):
+        from io import BytesIO
+        from zipfile import ZipFile
+        # A local extra file must never leak into the public ZIP.
+        (self.root / "contributor-kit/private-notes.txt").write_text("not for publication")
+        assets = contributor_downloads.build_assets(self.root)
+        self.assertEqual(assets, contributor_downloads.build_assets(self.root))
+        self.assertLess(len(assets["northstar-contributor-kit.zip"]), 250_000)
+        prefix = "northstar-contributor-kit/"
+        with ZipFile(BytesIO(assets["northstar-contributor-kit.zip"])) as archive:
+            self.assertFalse(any("private-notes" in name for name in archive.namelist()))
+            self.assertEqual(archive.read(prefix + "LICENSE.txt"), (dashboard.ROOT / "LICENSE").read_bytes())
+            bundle = json.loads(archive.read(prefix + "mislabel-v1/bundle.json"))
+            self.assertEqual(len(bundle["observations"]), 16)
+            for case in ("s0", "w1", "positive", "negative"):
+                for arm in ("standard", "repair"):
+                    folder = prefix + f"inputs/{case}/{arm}/"
+                    self.assertEqual(archive.read(folder + "user.txt").decode("utf-8"),
+                                     bundle["cases"][case]["prompts"][arm])
+                    self.assertEqual(archive.read(folder + "system.txt").decode("utf-8"), bundle["target"]["system"])
+                    self.assertEqual(json.loads(archive.read(folder + "settings.json")), bundle["target"])
+            for line in archive.read(prefix + "SHA256SUMS.txt").decode().splitlines():
+                digest, name = line.split("  ", 1)
+                self.assertEqual(sha256(archive.read(prefix + name)).hexdigest(), digest)
+            self.assertEqual(archive.read(prefix + "contributor-prompt.txt"), assets["contributor-prompt.txt"])
+
+    def test_extracted_kit_runs_without_the_repository(self):
+        from io import BytesIO
+        import subprocess
+        import sys
+        from zipfile import ZipFile
+        with TemporaryDirectory() as destination:
+            with ZipFile(BytesIO(contributor_downloads.build_assets(self.root)["northstar-contributor-kit.zip"])) as archive:
+                archive.extractall(destination)
+            folder = Path(destination) / "northstar-contributor-kit"
+            result = subprocess.run([sys.executable, "mislabel-v1/audit.py", "verify"],
+                                    cwd=folder, capture_output=True, text=True, timeout=30)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertTrue(json.loads(result.stdout)["verified"])
+
+    def test_changed_evidence_cannot_be_downloaded(self):
+        path = self.root / "reproducers/mislabel-v1/bundle.json"
+        path.write_bytes(path.read_bytes() + b"\n")
+        with self.assertRaisesRegex(ValueError, "Contributor evidence changed"):
+            contributor_downloads.build_assets(self.root)
 
 
 class EvidenceTests(unittest.TestCase):

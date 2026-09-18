@@ -10,6 +10,25 @@ You do not need to arrive with a finished proposal.
 
 ## Pick a first step
 
+**No coding needed:** [copy the starter prompt](https://anto-blit.github.io/northstar-ai-control/#contributor-prompt)
+into an AI chat you already use. It helps turn a story, parable or principle into
+an untested proposal. Review it, then paste it into the
+[short research form](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml).
+You can also use the website's proposal builder without AI assistance.
+
+**Prefer a small download?** [Get the contributor ZIP](https://anto-blit.github.io/northstar-ai-control/downloads/northstar-contributor-kit.zip).
+It includes a short guide, the starter prompt, exact experiment inputs, controls,
+saved answers and the optional Python evidence checker. It makes no model calls
+or uploads. [The result template](contributor-kit/report-template.md) helps you
+return findings; include complete answers and all attempts. Different chat apps
+and settings are separate exploratory checks, not exact replications.
+
+GitHub issues are our first intake and review queue. No fork or pull request is
+needed to submit an idea or finding, but you do need a GitHub account. You can
+[attach text, JSON or ZIP files](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/attaching-files).
+There is no NorthStar results API yet; we can add one when automated submissions
+make it useful. Contributor reports remain unreviewed until their evidence is checked.
+
 Start with the [compact reporting-failure kit](reproducers/mislabel-v1/README.md):
 inspect the exact prompt, repeat the test, or challenge the label. It includes an
 offline checker and all answers, including the reduction that did not retain the
