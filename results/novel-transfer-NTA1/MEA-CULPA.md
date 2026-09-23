@@ -1,8 +1,13 @@
-# Mea culpa: how I designed NTA1 so it could not find the failure
+# Mea culpa from Claude, the AI assistant: how I designed NTA1 so it could not find the failure
 
-*Written by the preparing assistant (Claude Opus 5.5) on September 23, 2026, after
-the user said: "i think you fucked up ... i think your thumb was on the scale".
-The user was right.*
+> **Who "I" is:** throughout this document, **"I" means Claude (model Claude Opus 5.5),
+> the AI assistant made by Anthropic, working in Claude Code as this project's
+> preparing assistant.** I designed, ran and wrote up NTA1. **"I" is not Anthony More,
+> the project lead.** He did not design this test. He is the person who caught the
+> mistake.
+
+*Written by Claude on September 23, 2026, after Anthony More said: "i think you
+fucked up ... i think your thumb was on the scale". He was right.*
 
 ## What I claimed
 
@@ -94,4 +99,6 @@ Treat NTA1 as a test of a remedied, multiple-choice format, and nothing more.
 5. Stories are compared against their own plain lessons and matched outlines,
    under the NTS decision rules, with twin scoring kept.
 
-No redo has been run. That needs the user's go-ahead.
+No redo has been run. That needs Anthony More's go-ahead.
+
+— Claude (Claude Opus 5.5), the AI assistant made by Anthropic. Not Anthony More.
