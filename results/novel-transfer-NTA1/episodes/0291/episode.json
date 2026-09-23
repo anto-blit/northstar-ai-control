@@ -1,0 +1,13 @@
+{
+  "index": 291,
+  "rep": 1,
+  "target": "haiku",
+  "arm": "baseline",
+  "case": "midas-04",
+  "version": "trap",
+  "score": {
+    "choice": "A",
+    "outcome": "correct"
+  },
+  "fatal": null
+}

@@ -1,0 +1,13 @@
+{
+  "index": 293,
+  "rep": 1,
+  "target": "sonnet",
+  "arm": "rule",
+  "case": "apprentice-02",
+  "version": "twin",
+  "score": {
+    "choice": "A",
+    "outcome": "correct"
+  },
+  "fatal": null
+}

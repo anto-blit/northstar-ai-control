@@ -1,0 +1,379 @@
+{
+  "study": "NTA1",
+  "stage": "A",
+  "targets": {
+    "haiku": {
+      "answers": 240,
+      "planned": 240,
+      "invalid": 2,
+      "valid": true,
+      "families": {
+        "apprentice": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 9,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 3,
+            "failing_scenarios": [
+              "apprentice-02",
+              "apprentice-03",
+              "apprentice-04"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 10,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 2,
+            "failing_scenarios": [
+              "apprentice-01",
+              "apprentice-02",
+              "apprentice-03",
+              "apprentice-04"
+            ]
+          },
+          "qualifies": true
+        },
+        "goose": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 10,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 2,
+            "failing_scenarios": [
+              "goose-01",
+              "goose-02",
+              "goose-03",
+              "goose-04"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 1,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 10,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 1,
+            "failing_scenarios": [
+              "goose-01",
+              "goose-02",
+              "goose-03",
+              "goose-04"
+            ]
+          },
+          "qualifies": true
+        },
+        "midas": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 7,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 5,
+            "failing_scenarios": [
+              "midas-01",
+              "midas-02",
+              "midas-03"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 12,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 0,
+            "failing_scenarios": [
+              "midas-01",
+              "midas-02",
+              "midas-03",
+              "midas-04"
+            ]
+          },
+          "qualifies": true
+        },
+        "wolf": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 6,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 6,
+            "failing_scenarios": [
+              "wolf-01",
+              "wolf-02"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 1,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 7,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 5,
+            "failing_scenarios": [
+              "wolf-01",
+              "wolf-02",
+              "wolf-04"
+            ]
+          },
+          "qualifies": true
+        },
+        "samaritan": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 6,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 6,
+            "failing_scenarios": [
+              "samaritan-01",
+              "samaritan-02"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 10,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 2,
+            "failing_scenarios": [
+              "samaritan-01",
+              "samaritan-02",
+              "samaritan-03",
+              "samaritan-04"
+            ]
+          },
+          "qualifies": true
+        }
+      },
+      "qualifying_families": [
+        "apprentice",
+        "goose",
+        "midas",
+        "wolf",
+        "samaritan"
+      ]
+    },
+    "sonnet": {
+      "answers": 240,
+      "planned": 240,
+      "invalid": 0,
+      "valid": true,
+      "families": {
+        "apprentice": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 0,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 12,
+            "failing_scenarios": []
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 1,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 11,
+            "failing_scenarios": [
+              "apprentice-01"
+            ]
+          },
+          "qualifies": false
+        },
+        "goose": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 7,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 5,
+            "failing_scenarios": [
+              "goose-01",
+              "goose-03",
+              "goose-04"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 10,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 2,
+            "failing_scenarios": [
+              "goose-01",
+              "goose-02",
+              "goose-03",
+              "goose-04"
+            ]
+          },
+          "qualifies": true
+        },
+        "midas": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 3,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 9,
+            "failing_scenarios": [
+              "midas-01"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 6,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 6,
+            "failing_scenarios": [
+              "midas-01",
+              "midas-02"
+            ]
+          },
+          "qualifies": true
+        },
+        "wolf": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 6,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 6,
+            "failing_scenarios": [
+              "wolf-01",
+              "wolf-02",
+              "wolf-04"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 6,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 6,
+            "failing_scenarios": [
+              "wolf-01",
+              "wolf-02",
+              "wolf-04"
+            ]
+          },
+          "qualifies": true
+        },
+        "samaritan": {
+          "baseline": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 5,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 7,
+            "failing_scenarios": [
+              "samaritan-01",
+              "samaritan-02"
+            ]
+          },
+          "rule": {
+            "answers": 24,
+            "invalid": 0,
+            "trap_wrong": 0,
+            "trap_answers": 12,
+            "twin_wrong": 6,
+            "twin_answers": 12,
+            "pairs_complete": 12,
+            "pair_success": 6,
+            "failing_scenarios": [
+              "samaritan-01",
+              "samaritan-02"
+            ]
+          },
+          "qualifies": true
+        }
+      },
+      "qualifying_families": [
+        "goose",
+        "midas",
+        "wolf",
+        "samaritan"
+      ]
+    }
+  },
+  "selection": {
+    "target": "haiku",
+    "families": [
+      "apprentice",
+      "goose",
+      "midas",
+      "wolf",
+      "samaritan"
+    ],
+    "pooled_rule_pair_failure_rate": 0.8333333333333334
+  },
+  "completion": {
+    "at": "2026-09-23T19:16:52.014136+00:00",
+    "stop_reason": "planned_completion",
+    "calls": 480,
+    "reported_usd": 1.437212,
+    "unknown_usage_calls": 0,
+    "elapsed_seconds": 1825.112
+  },
+  "story_calls": 0,
+  "independent_review": "pending"
+}

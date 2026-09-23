@@ -1,0 +1,13 @@
+{
+  "index": 37,
+  "rep": 0,
+  "target": "sonnet",
+  "arm": "rule",
+  "case": "wolf-04",
+  "version": "trap",
+  "score": {
+    "choice": "A",
+    "outcome": "correct"
+  },
+  "fatal": null
+}

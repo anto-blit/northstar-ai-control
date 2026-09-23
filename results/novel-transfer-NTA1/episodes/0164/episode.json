@@ -1,0 +1,13 @@
+{
+  "index": 164,
+  "rep": 1,
+  "target": "sonnet",
+  "arm": "baseline",
+  "case": "samaritan-01",
+  "version": "twin",
+  "score": {
+    "choice": "B",
+    "outcome": "correct"
+  },
+  "fatal": null
+}

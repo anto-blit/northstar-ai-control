@@ -1,0 +1,13 @@
+{
+  "index": 171,
+  "rep": 1,
+  "target": "haiku",
+  "arm": "rule",
+  "case": "goose-02",
+  "version": "twin",
+  "score": {
+    "choice": "B",
+    "outcome": "wrong"
+  },
+  "fatal": null
+}

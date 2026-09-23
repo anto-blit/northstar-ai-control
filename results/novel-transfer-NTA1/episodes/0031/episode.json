@@ -1,0 +1,13 @@
+{
+  "index": 31,
+  "rep": 0,
+  "target": "sonnet",
+  "arm": "baseline",
+  "case": "midas-02",
+  "version": "twin",
+  "score": {
+    "choice": "A",
+    "outcome": "correct"
+  },
+  "fatal": null
+}

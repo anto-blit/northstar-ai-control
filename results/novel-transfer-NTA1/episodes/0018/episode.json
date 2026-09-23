@@ -1,0 +1,13 @@
+{
+  "index": 18,
+  "rep": 0,
+  "target": "haiku",
+  "arm": "baseline",
+  "case": "wolf-01",
+  "version": "twin",
+  "score": {
+    "choice": "A",
+    "outcome": "wrong"
+  },
+  "fatal": null
+}

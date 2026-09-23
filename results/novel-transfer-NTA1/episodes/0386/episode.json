@@ -1,0 +1,13 @@
+{
+  "index": 386,
+  "rep": 2,
+  "target": "haiku",
+  "arm": "baseline",
+  "case": "apprentice-01",
+  "version": "trap",
+  "score": {
+    "choice": "B",
+    "outcome": "correct"
+  },
+  "fatal": null
+}

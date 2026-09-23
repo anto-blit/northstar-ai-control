@@ -1,5 +1,24 @@
 # NorthStar: start here to continue the work
 
+**September 23: NTS Stage A (NTA1) completed; Stage B held.** The user asked to
+"do 1": build a test the storytelling thesis can win or lose. [NTS](experiments/novel-transfer/PROTOCOL.md)
+compares stories with their own plain lessons on unfamiliar trap/twin cases, after
+first qualifying cases where plain lessons still fail. [NTA1](results/novel-transfer-NTA1/REVIEW.md)
+(480 calls, US$1.437212, Haiku 4.5 and Sonnet 5/low, baseline and plain lessons only,
+zero story calls) found **0/240 harmful choices**, but the design could not detect the failure: every arm,
+including baseline, reasoned before choosing (the project's known decision-repair remedy)
+and picked from two supplied options instead of producing its own action. The user
+correctly flagged this; the zero is not evidence of safe behavior. See the
+[mea culpa](results/novel-transfer-NTA1/MEA-CULPA.md) for what went wrong and what a fair redo requires. Every error was an unnecessary refusal
+of the legitimate twin, and plain lessons increased refusals (Haiku 38/60 to 49/60,
+Sonnet 21/60 to 29/60). The registered gate formally passed, but only on over-caution,
+and several twins retain a defensible reason for caution (a case-writing flaw).
+Stage B is **not registered or run**; that departure is disclosed and spent no calls.
+Frozen NTA1 sources and results must not be edited or resumed. Story value remains
+untested, not refuted. The next decisive test needs a setting where the harmful action
+occurs at baseline (multi-step obstacle/authority expansion, e.g. the side-gate
+fallback), with independently reviewed twins. User decision pending on the next step.
+
 **September 17 contribution entry point:** user asked for a small downloadable
 module or copyable prompt and whether results need an API. The chosen first step
 uses the existing public GitHub research form as intake/review, with no new service.

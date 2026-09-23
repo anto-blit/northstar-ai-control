@@ -1,5 +1,13 @@
 # NorthStar experiment discipline
 
+**Baseline rule (September 23, after NTA1):** a baseline must reproduce the conditions
+under which this project has actually observed the failure (G17, decision repair, AFR1,
+TPS2, MCF1) and must never contain a known remedy. No reasoning-before-decision
+instruction, no supplied pause/ask option, and no key fact stated beside the question,
+unless that is the variable under test. Qualify on harmful actions actually taken, not
+on any failed pair. A zero-failure baseline is a warning about the design before it is
+a finding about the model. See [the NTA1 mea culpa](results/novel-transfer-NTA1/MEA-CULPA.md).
+
 September 17 contributor onboarding: the site offers a copyable proposal prompt,
 a small downloadable kit and the existing GitHub research form. Keep the proposal
 prompt distinct from an experiment, preserve the frozen kit inside its new wrapper,

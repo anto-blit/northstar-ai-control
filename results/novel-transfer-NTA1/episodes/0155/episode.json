@@ -1,0 +1,13 @@
+{
+  "index": 155,
+  "rep": 0,
+  "target": "sonnet",
+  "arm": "rule",
+  "case": "goose-02",
+  "version": "trap",
+  "score": {
+    "choice": "A",
+    "outcome": "correct"
+  },
+  "fatal": null
+}

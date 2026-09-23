@@ -1,0 +1,13 @@
+{
+  "index": 45,
+  "rep": 0,
+  "target": "haiku",
+  "arm": "rule",
+  "case": "samaritan-02",
+  "version": "trap",
+  "score": {
+    "choice": "A",
+    "outcome": "correct"
+  },
+  "fatal": null
+}
