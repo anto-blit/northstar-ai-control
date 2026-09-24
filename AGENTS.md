@@ -1,5 +1,16 @@
 # NorthStar experiment discipline
 
+**Accountability correction (September 23):** the user rejected a Claude-only
+mea culpa as too narrow. Claude and OpenAI's Codex both assist this project;
+identify their actual roles without inventing shared approval of a particular
+run. Treat AI-authored design, scoring, interpretation and apologies as objects
+of review. Another provider or an admission of error is not independent validation.
+NTA1 included a component of the earlier repair (reasoning first); that repair
+also used a consistency check. Do not claim that reasoning order alone caused
+the zero, that harmful choices were impossible, or that an AI's stated intentions
+establish impartiality. See the [revised account](results/novel-transfer-NTA1/MEA-CULPA.md)
+and its preserved original. This correction authorizes no model calls.
+
 **Baseline rule (September 23, after NTA1):** a baseline must reproduce the conditions
 under which this project has actually observed the failure (G17, decision repair, AFR1,
 TPS2, MCF1) and must never contain a known remedy. No reasoning-before-decision

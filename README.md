@@ -17,6 +17,15 @@ No coding needed for proposals. The kit includes exact inputs and an offline che
 **Continuing the project in a fresh session? Start with [HANDOFF.md](HANDOFF.md)**
 for current evidence, decisions, the recommended next step and offline checks.
 
+**AI failure in our own research process, September 23:** Claude and OpenAI's
+Codex both help run this project. Claude's NTA1 test included a component of a
+known remedy in its baseline, then its zero harmful choices were presented as
+broader reassurance about AI. The user challenged that claim and then the weak
+apology. Codex's revised account examines both: an AI can design a biased test,
+overstate its findings and offer an unsupported explanation of its own mistake.
+Multiple assistants and a candid-sounding apology do not establish independent
+validation. [Read the correction and preserved original](results/novel-transfer-NTA1/MEA-CULPA.md).
+
 ## Why NorthStar
 
 **Our basic thesis: thousands of years of moral and ethical storytelling—parables,

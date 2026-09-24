@@ -1,5 +1,15 @@
 # NorthStar — implementation and evidence
 
+September 23: [NTA1 and its first apology required correction](results/novel-transfer-NTA1/MEA-CULPA.md).
+480 calls yielded 0/240 harmful choices in a format that included reasoning
+before the decision, supplied cautious alternatives and omitted the tool sequences
+behind earlier failures. This does not support the reported broader safety claim.
+Claude designed the study and wrote the original apology; Codex revised the
+account after the user's challenge. Both assist this project. AI authorship,
+scoring, interpretation and correction all need scrutiny; changing provider does
+not establish independent validation. The original apology is preserved, frozen
+results are unchanged, NTA1 is closed and Stage B is unrun. No new calls.
+
 September 17 contributor onboarding: a copyable proposal prompt, downloadable
 evidence/input kit and result template now feed the existing GitHub review form.
 This is contribution infrastructure, with no new model calls or experimental

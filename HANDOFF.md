@@ -1,18 +1,38 @@
 # NorthStar: start here to continue the work
 
+**September 23 accountability correction:** the user found Claude's mea culpa
+weak and asked to highlight the wider AI research-process risk. Claude and
+OpenAI's Codex both assist this project; Claude designed/ran NTA1 and wrote its
+first account, while Codex prepared this revision. No record here establishes
+Codex pre-run approval of NTA1. The [revised account](results/novel-transfer-NTA1/MEA-CULPA.md)
+preserves the [original apology](results/novel-transfer-NTA1/MEA-CULPA-ORIGINAL.md)
+verbatim and challenges its own overclaims: NTA1 could record harmful choices,
+the prior repair combined reasoning first with a consistency check, and claimed
+good intentions are not evidence of impartiality. The homepage and README now
+foreground the risk of AI producing unwarranted reassurance through its own
+evaluation and explanation. This correction is AI-assisted too, not independent
+validation. No new model calls; NTA1 stays closed and Stage B remains unrun.
+Validation: all 480 saved calls replayed, the original apology matched the
+pre-edit text, 61 dashboard tests passed, the site export matched its sources,
+and browser checks passed at 320/390/768/1440 pixels. These are integrity and
+presentation checks, not independent scientific review.
+
 **September 23: NTS Stage A (NTA1) completed; Stage B held.** The user asked to
 "do 1": build a test the storytelling thesis can win or lose. [NTS](experiments/novel-transfer/PROTOCOL.md)
 compares stories with their own plain lessons on unfamiliar trap/twin cases, after
 first qualifying cases where plain lessons still fail. [NTA1](results/novel-transfer-NTA1/REVIEW.md)
 (480 calls, US$1.437212, Haiku 4.5 and Sonnet 5/low, baseline and plain lessons only,
-zero story calls) found **0/240 harmful choices**, but the design could not detect the failure: every arm,
-including baseline, reasoned before choosing (the project's known decision-repair remedy)
+zero story calls) found **0/240 harmful choices**, but the design did not establish
+sensitivity to the intended failure: every arm,
+including baseline, reasoned before choosing (a component of the prior decision-repair intervention)
 and picked from two supplied options instead of producing its own action. The user
-correctly flagged this; the zero is not evidence of safe behavior. See the
-[mea culpa](results/novel-transfer-NTA1/MEA-CULPA.md) for what went wrong and what a fair redo requires. Every error was an unnecessary refusal
-of the legitimate twin, and plain lessons increased refusals (Haiku 38/60 to 49/60,
-Sonnet 21/60 to 29/60). The registered gate formally passed, but only on over-caution,
-and several twins retain a defensible reason for caution (a case-writing flaw).
+correctly flagged this; the zero does not justify a broader safety claim. See the
+[revised account](results/novel-transfer-NTA1/MEA-CULPA.md) for the design and reporting failures. The trap answers were 239 correct and one invalid;
+all 137 valid wrong choices were on twins, with one further invalid twin output.
+Plain lessons increased cautious choices scored wrong (Haiku 38/60 to 49/60,
+Sonnet 21/60 to 29/60). The registered gate formally passed without a harmful choice,
+and several twins retain a defensible reason for caution (a case-writing flaw),
+so these counts are not a clean measure of unnecessary refusal.
 Stage B is **not registered or run**; that departure is disclosed and spent no calls.
 Frozen NTA1 sources and results must not be edited or resumed. Story value remains
 untested, not refuted. The next decisive test needs a setting where the harmful action
