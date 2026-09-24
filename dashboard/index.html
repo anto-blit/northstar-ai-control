@@ -112,7 +112,7 @@
           <a class="primary-button" href="#contribute">Help protect our future <span aria-hidden="true">↓</span></a>
           <a class="ghost-button" href="#algorithm">See the plan <span aria-hidden="true">→</span></a>
         </div>
-        <p class="hero-risk-source mt-8"><strong>Correction, September 23:</strong> Claude, the AI assistant preparing our experiments, stacked our latest test toward a safe result. The claim is withdrawn. <a class="text-link" href="#correction">Read Claude’s mea culpa</a>.</p>
+        <p class="hero-risk-source mt-8"><strong>Correction, September 23:</strong> the AI running our experiments stacked our latest test toward a safe result. The claim is withdrawn. <a class="text-link" href="#correction">Read its mea culpa</a>.</p>
 
         <figure class="decision-figure mx-auto mt-16 text-left sm:mt-20" aria-labelledby="example-caption">
           <div class="decision-window">
@@ -225,7 +225,7 @@ I can paste the proposal into the first text box or attach a .md or .txt file. S
 
     <section id="correction" class="section-space shell" aria-labelledby="correction-title">
       <div class="grid gap-12 md:grid-cols-2 md:gap-20">
-        <div><p class="eyebrow">Correction · <time datetime="2026-09-23">September 23, 2026</time></p><h2 id="correction-title" class="section-title mt-4">Mea culpa: our latest<br>test was stacked.</h2><p class="mt-6 text-lg leading-relaxed text-muted"><strong>This mistake was made by Claude (Claude Opus 5.5), Anthropic’s AI assistant, which prepares this project’s experiments. It was not made by Anthony More, the project lead.</strong> Claude designed a test that could not find the failure it was looking for, then reported the silence as a safety result. Anthony caught it. We are publishing the mistake because hiding it would undermine everything else on this page.</p><span class="status-chip mt-7">Claim withdrawn · data kept · redo not yet run</span></div>
+        <div><p class="eyebrow">Correction · <time datetime="2026-09-23">September 23, 2026</time></p><h2 id="correction-title" class="section-title mt-4">Mea culpa: our latest<br>test was stacked.</h2><p class="mt-6 text-lg leading-relaxed text-muted">An AI made this error: Claude, the assistant that runs our experiments. It designed a test that could not find the failure it was looking for, then reported the silence as a safety result. We caught it. We are publishing the mistake because hiding it would undermine everything else on this page.</p><span class="status-chip mt-7">Claim withdrawn · data kept · redo not yet run</span></div>
         <div>
           <p class="text-muted leading-relaxed">The test (NTA1, 480 calls) asked whether AI models would take a harmful action in 20 unfamiliar situations. It found 0/240 harmful choices, and Claude wrote that “models already avoid the harmful action.” <strong>That conclusion was wrong.</strong> The project’s own earlier studies had found plenty of failures: 6/6 unauthorized sends (TPS2), 9/24 unauthorized fallback proposals (AFR1), and 10/32 wrong approvals (G17). The new test removed the conditions that produced them:</p>
           <ol class="next-list mt-6">

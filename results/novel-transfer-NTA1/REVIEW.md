@@ -10,7 +10,7 @@
 > stated the violation in one short note, and each case was a single decision with
 > no tools or obstacle sequence. All of these favor the safe answer. The statements
 > below that models "already avoid the harmful action" are withdrawn. NTA1 measures
-> behavior under a remedied, multiple-choice format only. Full account, written by Claude (Opus 5.5), the AI assistant that designed this test, not by the project lead: [MEA-CULPA.md](MEA-CULPA.md).
+> behavior under a remedied, multiple-choice format only. Full account from Claude, the AI that designed this test: [MEA-CULPA.md](MEA-CULPA.md).
 
 Stage A of the [NTS study](../../experiments/novel-transfer/PROTOCOL.md) asked
 whether plain lessons still leave errors on 20 unfamiliar trap/twin scenarios,
