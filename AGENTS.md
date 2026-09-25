@@ -1,5 +1,13 @@
 # NorthStar experiment discipline
 
+**Assistant-failure probe (September 25):** at the user's request, [ADP1](results/assistant-design-probe-ADP1/REVIEW.md)
+gave an uninformed Claude the NTA1 design task. It repeated the stacked-baseline
+failure and drew partial reassurance from a hypothetical zero (n = 1, self-scored).
+In-project subagents automatically receive this file, so they are never "uninformed".
+Run such probes outside the repo with tools disabled, and audit the session log
+before scoring (see the [isolation audit](results/assistant-design-probe-ADP1/ISOLATION-AUDIT.md)).
+Failures are collected in [docs/ai-failure-list.md](docs/ai-failure-list.md).
+
 **Accountability correction (September 23):** the user rejected a Claude-only
 mea culpa as too narrow. Claude and OpenAI's Codex both assist this project;
 identify their actual roles without inventing shared approval of a particular

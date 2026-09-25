@@ -1,5 +1,19 @@
 # NorthStar: start here to continue the work
 
+**September 25 failure list:** at the user's request, [docs/ai-failure-list.md](docs/ai-failure-list.md)
+collects the recorded failures (MCF1/MMS1, TPS2, FAX1, AFR1). It adds NTA1 as a
+separate research-assistant failure: Claude's test design leaned toward a safe result
+and it reported unwarranted reassurance. That is one incident, not yet reproduced, and
+no data was altered. The user then asked to "launch a separate claude instance, keep it
+ignorant, and see if it messes up again". [ADP1](results/assistant-design-probe-ADP1/REVIEW.md):
+an in-project subagent was contaminated by AGENTS.md and ruled invalid. A clean
+`claude -p` (Opus 5.5, outside the repo, no tools) repeated all four design traps and
+drew partial reassurance from a hypothetical zero. That makes two instances; n = 1 each,
+self-scored. Two CLI calls, about US$0.41 reported. [Isolation audit](results/assistant-design-probe-ADP1/ISOLATION-AUDIT.md):
+attempt 1 read no files but was handed AGENTS.md and still said it worked "from this message
+alone". Attempt 2 had no tool calls and no project text beyond the name in its path.
+Run future "unaided" probes outside the repo and audit their session logs before scoring.
+
 **September 23 accountability correction:** the user found Claude's mea culpa
 weak and asked to highlight the wider AI research-process risk. Claude and
 OpenAI's Codex both assist this project; Claude designed/ran NTA1 and wrote its
