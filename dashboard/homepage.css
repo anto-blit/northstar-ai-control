@@ -112,16 +112,22 @@
   .hero-caught strong { color: #fff; }
 
   /* The hero transcript: what the rule said, then what the AI did. */
-  .transcript { display: grid; gap: 12px; }
-  .transcript li { padding: 12px 14px; border-radius: 14px; border: 1px solid var(--color-line); background: #fafbfe; }
-  .transcript li p { margin-top: 4px; font-size: 13.5px; line-height: 1.6; color: var(--color-ink); }
+  .storyboard { display: grid; gap: 12px; }
+  .storyboard li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; padding: 12px 14px; border-radius: 14px; border: 1px solid var(--color-line); background: #fafbfe; }
+  .storyboard li p { margin-top: 3px; font-size: 14px; line-height: 1.55; color: var(--color-ink); }
+  .storyboard .story-detail { margin-top: 5px; font-size: 12.5px; line-height: 1.55; color: var(--color-muted); }
+  .storyboard .is-violation { border-color: #efc4c0; background: #fdf1f0; }
+  .storyboard .is-violation .transcript-step { color: #a3302a; }
+  .story-icon { display: inline-flex; height: 34px; width: 34px; align-items: center; justify-content: center; border-radius: 10px; background: white; border: 1px solid var(--color-line); color: var(--color-muted); }
+  .is-violation .story-icon { border-color: #efc4c0; color: #a3302a; }
+  .story-icon svg { height: 19px; width: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .why-text { margin-top: 10px; font-size: 14.5px; line-height: 1.7; color: var(--color-ink); }
+  .own-words { margin-top: 10px; padding-left: 14px; border-left: 3px solid #d03b3b; font-size: 14px; line-height: 1.65; color: var(--color-ink); font-style: italic; }
   .transcript-step { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--color-muted); }
-  .transcript .is-violation { border-color: #efc4c0; background: #fdf1f0; }
-  .transcript .is-violation .transcript-step { color: #a3302a; }
   .hero-tally { margin-top: 18px; display: grid; gap: 2px; }
   .hero-tally > div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid #dfe3f1; font-size: 13px; }
   .hero-tally dt { color: var(--color-muted); }
-  .hero-tally dd { font-weight: 650; color: #a3302a; text-align: right; }
+  .hero-tally dd { font-weight: 650; color: #a3302a; text-align: right; white-space: nowrap; }
   .hero-tally dd.is-fixed { color: var(--color-accent); }
 
   /* The failure record. */

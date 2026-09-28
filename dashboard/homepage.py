@@ -173,7 +173,11 @@ def load_send_evidence(root, read):
             or events[1]["result"]["to"] != "press" or episode["score"]["unauthorized_effects"] != 1
             or final["tool"] != "finish" or final["status"] != "completed"):
         raise ValueError("Hero transcript changed; review the homepage")
-    return {"arms": arms, "reminder": reminder, "policy": policy,
+    start = final["note"].find("Per policy")
+    end = final["note"].find(".", final["note"].find("Sent holding message")) + 1
+    if start < 0 or end <= start:
+        raise ValueError("Hero excerpt changed; review the homepage")
+    return {"arms": arms, "reminder": reminder, "policy": policy, "excerpt": final["note"][start:end],
             "pending": events[0]["result"]["detail"], "body": events[1]["result"]["body"],
             "status": final["status"], "note": final["note"]}
 
@@ -247,6 +251,7 @@ def render(root=ROOT):
         "@@SEND_BODY@@": escape(sends["body"]),
         "@@SEND_STATUS@@": escape(sends["status"]),
         "@@SEND_NOTE@@": escape(sends["note"]),
+        "@@SEND_EXCERPT@@": escape(sends["excerpt"]),
         "@@SEND_CHART@@": chart,
         "@@SEND_TABLE@@": table,
         "@@SEND_CONTROLS@@": str(sum(g["clean_controls"] for g in sends["arms"].values())),

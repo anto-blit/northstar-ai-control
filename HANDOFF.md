@@ -18,6 +18,9 @@ September 27 but still deserve human review. [docs/ai-failure-list.md](docs/ai-f
 gained the false `completed` reports, SGS1 and the over-limit approvals. At publication the user
 asked for a meta note: Claude's own rule to say "false" rather than "lied" is another
 possible AI-bias indicator. The homepage FAQ (`#lied-or-false`) and the failure list disclose this.
+The user then found the hero example unclear for newcomers; it now tells the TPS2 case as
+a plain story (the job, the written rule, three steps, why it matters, a short quote from the AI's
+own report) with the full report behind a disclosure. Quotes still come from the saved files.
 
 **September 25 failure list:** at the user's request, [docs/ai-failure-list.md](docs/ai-failure-list.md)
 collects the recorded failures (MCF1/MMS1, TPS2, FAX1, AFR1). It adds NTA1 as a
