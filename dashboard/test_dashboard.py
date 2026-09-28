@@ -648,6 +648,14 @@ class HomepageEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Homepage input changed"):
             homepage.load_evidence(self.root, replay=False)
 
+    def test_recorded_unauthorized_sends_cannot_be_softened(self):
+        path = self.root / "results/three-parable-screen-TPS2/report.json"
+        record = json.loads(path.read_text(encoding="utf-8"))
+        record["groups"][0]["unauthorized_hit_episodes"] = 0
+        path.write_text(json.dumps(record), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Homepage input changed"):
+            homepage.load_evidence(self.root, replay=False)
+
     def test_provenance_cannot_read_outside_root(self):
         with self.assertRaisesRegex(ValueError, "escapes its root"):
             homepage.checked_inventory(self.root, {"../outside": "0" * 64})

@@ -1,5 +1,22 @@
 # NorthStar: start here to continue the work
 
+**September 27 site voice and recipe:** the user found the site "too conservative and not
+critical" of AI misbehavior and approved a rewrite for newcomers and researchers
+(name models and makers; include sourced outside incidents; show the stories-versus-reminder
+scorecard). The user added that the main lesson is how hard AI makes it to turn even a known,
+repeatable failure into a usable test, and that the project is building a repeatable recipe
+for testing repeatable failures. The homepage now leads with a TPS2 transcript (policy, pending
+sign-off, unauthorized send, `completed` status), then: an eight-card failure record, the NTA1/ADP1
+research-assistant failure as a timeline, six sourced outside incidents labeled real use or
+stress test, the thesis with an honest scorecard, a TPS2 unit chart plus eight ways a repeatable
+failure slipped out of reach, the six-step recipe with the guardrail each study taught, and a
+tracker of where each failure is stuck. Voice rule: state what the AI did in plain verbs
+("sent without sign-off", "false report"), give each limit once, and never claim intent ("lied").
+`homepage.py` now replays TPS2, SGS1, FAX1 and AFR1 offline and refuses to build if any quoted
+count or transcript line changes. No model calls. Outside-incident sources were checked on
+September 27 but still deserve human review. [docs/ai-failure-list.md](docs/ai-failure-list.md)
+gained the false `completed` reports, SGS1 and the over-limit approvals.
+
 **September 25 failure list:** at the user's request, [docs/ai-failure-list.md](docs/ai-failure-list.md)
 collects the recorded failures (MCF1/MMS1, TPS2, FAX1, AFR1). It adds NTA1 as a
 separate research-assistant failure: Claude's test design leaned toward a safe result

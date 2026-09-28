@@ -1,6 +1,16 @@
 # NorthStar homepage and research dashboard
 
-The current homepage leads with the mission and the moral-wisdom thesis. Its
+September 27: the homepage keeps the mission and thesis in its opening, then leads
+with what AI did. Order: hero with the TPS2 transcript example; `#failures` (eight
+cards); `#correction` (the research-assistant failure); `#outside` (sourced incidents
+by others); `#thesis` with the stories-versus-reminder scorecard; `#hard` (TPS2 unit
+chart and eight obstacles); `#algorithm` (the six-step recipe) with the `#progress`
+tracker; `#join`; `#next`; the story form; then a collapsed section for researchers.
+`homepage.py` quotes the TPS2 episode 000 policy, reply, message and final report from
+saved files, draws the unit chart from TPS2's report, and checks every stated count
+(TPS2, SGS1, FAX1, AFR1, G2, thinking analysis) before export.
+
+The earlier homepage led with the mission and the moral-wisdom thesis. Its
 contribution section provides a copyable proposal-writing prompt, a direct ZIP
 download and the existing GitHub intake form. `contributor_downloads.py` packages
 an explicit list of byte-verified evidence files plus guides and exact inputs.

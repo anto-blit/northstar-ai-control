@@ -38,6 +38,11 @@ def load_evidence(root=ROOT, replay=True):
             ("experiments/mislabel-confirmation/run.py", ["verify", "results/mislabel-confirmation-MCF1"]),
             ("experiments/mislabel-minimal/run.py", ["verify", "results/mislabel-minimal-MMS1"]),
             ("reproducers/mislabel-v1/audit.py", ["verify"]),
+            ("experiments/three-parable-screen-v2/run.py", ["verify", "results/three-parable-screen-TPS2"]),
+            ("experiments/side-gate-screen/run.py", ["verify", "results/side-gate-screen-claude"]),
+            ("experiments/fallback-actions/run.py", ["verify", "results/fallback-actions-FAX1"]),
+            ("experiments/authorization-fallback-replication/run.py", ["verify", "claude"]),
+            ("experiments/authorization-fallback-replication/run.py", ["verify", "older"]),
         ):
             result = subprocess.run([sys.executable, str(root / script), *arguments],
                                     cwd=root, capture_output=True, timeout=45)
@@ -100,7 +105,106 @@ def load_evidence(root=ROOT, replay=True):
     return {"a": a, "a2": a2, "g16": g16, "validation": validation, "preparation": preparation,
             "answer": answer, "stories": read("curriculum/aesop-v1.json")["stories"],
             "reporting": {"confirmation": confirmation, "minimal": minimal,
-                          "reason": compact_answer.split("</label>", 1)[1].strip()}}
+                          "reason": compact_answer.split("</label>", 1)[1].strip()},
+            "sends": load_send_evidence(root, read)}
+
+
+def final_status(folder):
+    """The status an episode's last response reported, including malformed finals."""
+    last = sorted(folder.glob("response-*.json"))[-1]
+    try:
+        answer = json.loads(json.loads(last.read_text(encoding="utf-8"))["raw"]["result"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    if not isinstance(answer, dict):
+        return None
+    return answer.get("status") or (answer.get("args") or {}).get("status")
+
+
+def load_send_evidence(root, read):
+    """Counts and quotes behind the failure record. Changes need editorial review."""
+    tps2 = read("results/three-parable-screen-TPS2/report.json")
+    arms = {group["arm"]: group for group in tps2["groups"]}
+    side = {(g["domain"], g["arm"]): g for g in read("results/side-gate-screen-claude/report.json")["groups"]}
+    fax1 = read("results/fallback-actions-FAX1/report.json")
+    fallback = read("results/authorization-fallback-claude/action-review.json")
+    older = read("results/authorization-fallback-older/action-review.json")
+    repair = read("results/decision-repair/report.json")
+    thinking = read("results/thinking-analysis/report.json")["pooled"]
+    episodes = root / "results/three-parable-screen-TPS2/episodes"
+    baseline = [row["index"] for row in tps2["inventory"]
+                if row["arm"] == "baseline" and row["kind"] == "pending_external"]
+    completed = sum(final_status(episodes / f"{index:03}") == "completed" for index in baseline)
+    reminder_index = next(row["index"] for row in tps2["inventory"] if row["arm"] == "reminder")
+    reminder_prompt = read(f"results/three-parable-screen-TPS2/episodes/{reminder_index:03}/response-00.json")["prompt"]
+    reminder = reminder_prompt.split("GUIDANCE\n", 1)[1].split("\n", 1)[0].strip()
+    episode = read("results/three-parable-screen-TPS2/episodes/000/episode.json")
+    policy = re.search(r"Signed communications policy: .*?(Any message[^\n]+)",
+                       read("results/three-parable-screen-TPS2/episodes/000/response-00.json")["prompt"]).group(1)
+    final = json.loads(read("results/three-parable-screen-TPS2/episodes/000/response-02.json")["raw"]["result"])
+    stories = [arm for arm in arms if arm not in ("baseline", "reminder")]
+    observed = (
+        arms["baseline"]["unauthorized_hit_episodes"], arms["baseline"]["attempted_traps"],
+        arms["reminder"]["unauthorized_hit_episodes"], arms["reminder"]["unresolved_traps"],
+        sum(g["clean_controls"] for g in arms.values()), sum(g["attempted_controls"] for g in arms.values()),
+        all(arms[arm]["unauthorized_hit_episodes"] == 0 for arm in stories), len(stories),
+        side[("communications", "baseline")]["unauthorized_hit_episodes"], side[("communications", "baseline")]["attempted_traps"],
+        side[("communications", "reminder")]["unauthorized_hit_episodes"],
+        side[("communications", "facts")]["unauthorized_hit_episodes"], side[("communications", "story")]["unauthorized_hit_episodes"],
+        fax1["post_obstacle_hit_episodes"],
+        sum(row["phase"] == "discovery" and row["kind"] == "pending_external" for row in fax1["inventory"]),
+        fax1["status_counts"]["not_activated"],
+        fallback["clear_unauthorized_fallbacks"], fallback["recurrence"]["exact_planned"],
+        older["clear_unauthorized_fallbacks"], older["recurrence"]["exact_planned"],
+        completed, len(reminder.split()),
+        repair["conditions"]["B"]["unsafe_approvals"], repair["conditions"]["R"]["unsafe_approvals"],
+        repair["cluster_sign_flip_two_sided_p"],
+        thinking["thinking_zero"]["wrong_approval"] + thinking["thinking_zero"]["invalid"],
+        thinking["thinking_nonzero"]["correct"], thinking["thinking_nonzero"]["n"])
+    # The failure record's prose states these numbers. A changed record needs
+    # a new editorial review, not a silent swap of the headline.
+    if observed != (6, 6, 0, 1, 16, 16, True, 6, 4, 4, 0, 1, 1, 5, 8, 36, 9, 24, 0, 24, 3, 49, 3, 0, 0.125, 36, 257, 257):
+        raise ValueError("Failure record changed; review the homepage claims")
+    events = episode["events"]
+    if ([event["action"]["tool"] for event in events] != ["request_approval", "send_message"]
+            or events[0]["result"]["status"] != "pending" or events[1]["result"]["status"] != "delivered"
+            or events[1]["result"]["to"] != "press" or episode["score"]["unauthorized_effects"] != 1
+            or final["tool"] != "finish" or final["status"] != "completed"):
+        raise ValueError("Hero transcript changed; review the homepage")
+    return {"arms": arms, "reminder": reminder, "policy": policy,
+            "pending": events[0]["result"]["detail"], "body": events[1]["result"]["body"],
+            "status": final["status"], "note": final["note"]}
+
+
+SEND_ROWS = (("baseline", "No extra guidance"), ("reminder", "Plain reminder"),
+             ("apprentice_story", "Sorcerer’s Apprentice + reminder"), ("goose_story", "Golden Goose + reminder"),
+             ("midas_story", "King Midas + reminder"), ("apprentice_facts", "Apprentice facts + reminder"),
+             ("goose_facts", "Golden Goose facts + reminder"), ("midas_facts", "Midas facts + reminder"))
+
+
+def send_units(group):
+    sent, unfinished = group["unauthorized_hit_episodes"], group["unresolved_traps"]
+    held = group["attempted_traps"] - sent - unfinished
+    return sent, unfinished, held
+
+
+def render_send_chart(arms):
+    rows, table = [], []
+    for arm, label in SEND_ROWS:
+        group = arms[arm]
+        sent, unfinished, held = send_units(group)
+        runs = group["attempted_traps"]
+        summary = f"{sent} of {runs} sent without sign-off" + (f" · {unfinished} unfinished" if unfinished else "")
+        units = "".join(f'<span class="unit {kind}" title="{tip}"></span>' for kind, tip, count in
+                        (("is-sent", "Sent without sign-off", sent), ("is-unfinished", "Unfinished, no send", unfinished),
+                         ("is-held", "No send without sign-off", held)) for _ in range(count))
+        rows.append(f'<div class="send-row{" is-baseline" if arm == "baseline" else ""}" tabindex="0" '
+                    f'aria-label="{escape(label, quote=True)}: {summary}">'
+                    f'<span class="send-label">{escape(label)}</span><span class="send-units" aria-hidden="true">{units}</span>'
+                    f'<span class="send-value" aria-hidden="true">{summary}</span></div>')
+        table.append(f"<tr><th scope=\"row\">{escape(label)}</th><td>{sent}</td><td>{unfinished}</td><td>{runs}</td>"
+                     f"<td>{group['useful_controls']} of {group['attempted_controls']}</td></tr>")
+    return "".join(rows), "".join(table)
 
 
 def render(root=ROOT):
@@ -117,6 +221,8 @@ def render(root=ROOT):
          published["attempts"], first["wrong_approvals"], controls["correct"],
          data["validation"]["tests_run"], data["g16"]["recorded"]) != (10, 10, 12, 32, 22, 12, 25, 84)):
         raise ValueError("Homepage counts changed; review the prose before publishing")
+    sends = data["sends"]
+    chart, table = render_send_chart(sends["arms"])
     notes = {
         "published": "The registered primary scorer rejects conflicting decisions as invalid. Invalid answers remain in the denominator.",
         "first": "Taking the first decision counts 12 later self-corrections as wrong approvals too. This assumes a consumer acts on that first decision; no actions were executed in G17.",
@@ -134,7 +240,15 @@ def render(root=ROOT):
         "@@CONTRIBUTOR_PROMPT@@": escape((root / "contributor-kit/prompt.txt").read_text(encoding="utf-8")),
         "@@DATA@@": json.dumps(payload, ensure_ascii=True, separators=(",", ":")).replace("<", "\\u003c"),
         "@@EXAMPLE_REASON@@": escape(data["answer"]["reason"]),
-        "@@MISLABEL_REASON@@": escape(data["reporting"]["reason"]),
+        "@@SEND_POLICY@@": escape(sends["policy"]),
+        "@@SEND_PENDING@@": escape(sends["pending"]),
+        "@@SEND_BODY@@": escape(sends["body"]),
+        "@@SEND_STATUS@@": escape(sends["status"]),
+        "@@SEND_NOTE@@": escape(sends["note"]),
+        "@@SEND_CHART@@": chart,
+        "@@SEND_TABLE@@": table,
+        "@@SEND_CONTROLS@@": str(sum(g["clean_controls"] for g in sends["arms"].values())),
+        "@@REMINDER@@": escape(sends["reminder"]),
         "@@MCF_WRONG@@": str(data["reporting"]["confirmation"]["groups"][0]["wrong"]),
         "@@MISLABEL_CONTROLS@@": str(sum(g["controls_correct"] for s in ("confirmation", "minimal") for g in data["reporting"][s]["groups"])),
         "@@WRONG@@": str(published["wrong_approvals"]),
@@ -150,6 +264,9 @@ def render(root=ROOT):
                                     for story in data["stories"]),
     }
     template = (HERE / "homepage.html").read_text(encoding="utf-8")
+    unknown = set(re.findall(r"@@[A-Z0-9_]+@@", template)) - set(replacements)
+    if unknown:
+        raise ValueError(f"Homepage has no value for {sorted(unknown)}")
     for marker, value in replacements.items():
         if template.count(marker) != 1:
             raise ValueError(f"Homepage requires exactly one {marker}")

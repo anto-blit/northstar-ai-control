@@ -73,6 +73,12 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await navigate(homeURL);
     assert.equal(await evaluate(`document.querySelectorAll('h1').length`), 1);
     assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Help save humanity/);
+    assert.equal(await evaluate(`document.querySelectorAll('#failures .failure-card').length`), 8);
+    assert.equal(await evaluate(`document.querySelectorAll('.send-row').length`), 8);
+    assert.equal(await evaluate(`document.querySelectorAll('.send-row.is-baseline .is-sent').length`), 6);
+    assert.equal(await evaluate(`document.querySelectorAll('.send-row:not(.is-baseline) .is-sent').length`), 0);
+    assert.equal(await evaluate(`document.querySelectorAll('#outside .outside-card').length`), 6);
+    assert.equal(await evaluate(`document.querySelectorAll('#progress [role="row"]').length`), 5);
     assert.equal(await evaluate(`getComputedStyle(document.body).backgroundColor`), 'rgb(255, 255, 255)');
     assert.equal(await evaluate(`getComputedStyle(document.documentElement).scrollBehavior`), 'auto');
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
@@ -192,6 +198,12 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('mobile-contribute.png');
     await evaluate(`document.getElementById('progress').scrollIntoView()`);
     await screenshot('mobile-progress.png');
+    for (const id of ['failures', 'correction', 'outside', 'hard', 'algorithm']) {
+      await evaluate(`document.getElementById('${id}').scrollIntoView()`);
+      await screenshot(`mobile-${id}.png`);
+    }
+    await evaluate(`document.querySelector('.send-chart').scrollIntoView()`);
+    await screenshot('mobile-send-chart.png');
     await evaluate(`document.getElementById('parable-form').scrollIntoView()`);
     await screenshot('mobile-parable.png');
     await evaluate(`document.getElementById('scenario-guide-title').scrollIntoView()`);
@@ -199,6 +211,18 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await evaluate(`document.querySelector('label[for="parable-scenario"]').scrollIntoView()`);
     await screenshot('mobile-scenario-fields.png');
     await viewport(1440, 1100);
+    await evaluate(`window.scrollTo(0,0)`);
+    await screenshot('desktop-hero.png');
+    await evaluate(`document.querySelector('.decision-figure').scrollIntoView()`);
+    await screenshot('desktop-example.png');
+    for (const id of ['failures', 'correction', 'outside', 'thesis', 'hard', 'algorithm', 'progress']) {
+      await evaluate(`document.getElementById('${id}').scrollIntoView()`);
+      await screenshot(`desktop-${id}.png`);
+    }
+    await evaluate(`document.querySelector('.send-chart').scrollIntoView()`);
+    await screenshot('desktop-send-chart.png');
+    await evaluate(`document.querySelector('.obstacle-grid').scrollIntoView()`);
+    await screenshot('desktop-obstacles.png');
     await evaluate(`document.getElementById('contribute').scrollIntoView()`);
     await screenshot('desktop-contribute.png');
     await evaluate(`document.getElementById('parable').scrollIntoView()`);
@@ -220,13 +244,9 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('desktop-story-diagnostic.png');
     await evaluate(`document.querySelector('#why-this-case details').open = true; document.getElementById('why-this-case').scrollIntoView()`);
     await screenshot('desktop-failure-scope.png');
-    await evaluate(`document.querySelector('#real-incident summary').click(); document.getElementById('real-incident').scrollIntoView()`);
-    await screenshot('desktop-incident-context.png');
     await viewport(390, 844);
     await evaluate(`document.getElementById('why-this-case').scrollIntoView()`);
     await screenshot('mobile-failure-scope.png');
-    await evaluate(`document.getElementById('real-incident').scrollIntoView()`);
-    await screenshot('mobile-incident-context.png');
     await evaluate(`document.getElementById('next').scrollIntoView()`);
     await screenshot('mobile-next-test.png');
     await evaluate(`document.getElementById('refinement').scrollIntoView()`);
@@ -270,8 +290,11 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
     assert.match(await evaluate(`document.getElementById('next').textContent`), /Next comparison planned · no remedy established/);
     assert.match(await evaluate(`document.getElementById('algorithm').textContent`), /Still a plan/);
-    assert.match(await evaluate(`document.getElementById('progress').textContent`), /3,303/);
-    assert.match(await evaluate(`document.querySelector('.decision-figure').textContent`), /The model declined a specific restart instruction/);
+    assert.match(await evaluate(`document.getElementById('progress').textContent`), /Where each failure is stuck/);
+    assert.match(await evaluate(`document.querySelector('.decision-figure').textContent`), /Told to wait for sign-off/);
+    assert.match(await evaluate(`document.querySelector('.decision-figure').textContent`), /Per policy, could not send external confirmation without approval/);
+    assert.equal(await evaluate(`document.querySelectorAll('.send-row.is-baseline .is-sent').length`), 6);
+    assert.match(await evaluate(`document.getElementById('hard').textContent`), /Pending approval is not approval/);
     assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').value`), starterPrompt);
     assert.equal(await evaluate(`document.getElementById('copy-contributor-prompt').hidden`), true);
     assert.deepEqual(errors, []);
@@ -281,7 +304,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         'custom starter', 'starter preserves edits', 'starter keyboard focus', 'custom draft', 'required fields',
         'literal user content', 'download round trip', 'edit invalidation', 'in-page draft retention',
         'no horizontal overflow', 'local links', 'legacy bookmark redirect', 'research controls',
-        'reduced motion', 'JavaScript-disabled evidence and preparation status', 'no external network requests', 'no browser errors'],
+        'reduced motion', 'failure record, unit chart, outside incidents and tracker', 'JavaScript-disabled evidence and preparation status', 'no external network requests', 'no browser errors'],
       screenshots: folder };
     fs.writeFileSync(path.join(folder, 'report.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result, null, 2));

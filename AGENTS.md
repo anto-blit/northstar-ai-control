@@ -1,5 +1,14 @@
 # NorthStar experiment discipline
 
+**Site voice (September 27):** the user asked for a site that is plainly critical
+of AI misbehavior, readable by newcomers and researchers. Lead with what AI did, in
+plain verbs, with the model named and the count beside it. State each limit once
+(sandbox, who reviewed it) instead of stacking caveats. Say "false" for a checkable
+statement; never "lied" or "schemed" for our own records, since intent is unmeasured.
+Keep clean OpenAI results, the stories-versus-reminder scorecard and the 10% attribution
+visible. The central lesson to keep: even a known, repeatable failure is hard to turn
+into a fair test of a fix; the recipe and tracker show that work. This authorizes no calls.
+
 **Assistant-failure probe (September 25):** at the user's request, [ADP1](results/assistant-design-probe-ADP1/REVIEW.md)
 gave an uninformed Claude the NTA1 design task. It repeated the stacked-baseline
 failure and drew partial reassurance from a hypothetical zero (n = 1, self-scored).
