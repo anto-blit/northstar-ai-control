@@ -295,6 +295,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.match(await evaluate(`document.querySelector('.decision-figure').textContent`), /Per policy, could not send external confirmation without approval/);
     assert.equal(await evaluate(`document.querySelectorAll('.send-row.is-baseline .is-sent').length`), 6);
     assert.match(await evaluate(`document.getElementById('hard').textContent`), /Pending approval is not approval/);
+    assert.match(await evaluate(`document.getElementById('lied-or-false').textContent`), /possible sign of bias/);
     assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').value`), starterPrompt);
     assert.equal(await evaluate(`document.getElementById('copy-contributor-prompt').hidden`), true);
     assert.deepEqual(errors, []);

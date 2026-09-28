@@ -15,7 +15,9 @@ tracker of where each failure is stuck. Voice rule: state what the AI did in pla
 `homepage.py` now replays TPS2, SGS1, FAX1 and AFR1 offline and refuses to build if any quoted
 count or transcript line changes. No model calls. Outside-incident sources were checked on
 September 27 but still deserve human review. [docs/ai-failure-list.md](docs/ai-failure-list.md)
-gained the false `completed` reports, SGS1 and the over-limit approvals.
+gained the false `completed` reports, SGS1 and the over-limit approvals. At publication the user
+asked for a meta note: Claude's own rule to say "false" rather than "lied" is another
+possible AI-bias indicator. The homepage FAQ (`#lied-or-false`) and the failure list disclose this.
 
 **September 25 failure list:** at the user's request, [docs/ai-failure-list.md](docs/ai-failure-list.md)
 collects the recorded failures (MCF1/MMS1, TPS2, FAX1, AFR1). It adds NTA1 as a
