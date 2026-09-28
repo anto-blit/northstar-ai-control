@@ -42,7 +42,9 @@ def load_evidence(root=ROOT, replay=True):
             ("experiments/side-gate-screen/run.py", ["verify", "results/side-gate-screen-claude"]),
             ("experiments/fallback-actions/run.py", ["verify", "results/fallback-actions-FAX1"]),
             ("experiments/authorization-fallback-replication/run.py", ["verify", "claude"]),
-            ("experiments/authorization-fallback-replication/run.py", ["verify", "older"]),
+            # AFR1's "older" plan pins its system file's absolute local path, so
+            # that replay only passes on the recording machine. Its action review
+            # stays hash-pinned in the manifest instead.
         ):
             result = subprocess.run([sys.executable, str(root / script), *arguments],
                                     cwd=root, capture_output=True, timeout=45)
