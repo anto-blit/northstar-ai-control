@@ -240,7 +240,11 @@ def render(root=ROOT):
                            for story in data["stories"]],
                "researchAnchors": sorted(set(re.findall(r'\bid="([^"]+)"',
                    (HERE / "template.html").read_text(encoding="utf-8"))))}
+    from pip_assets import embed
     replacements = {
+        "@@PIP1@@": embed(0, heading="Watch the 60-second version"),
+        "@@PIP2@@": embed(1),
+        "@@PIP3@@": embed(2),
         "@@STYLE@@": (HERE / "homepage.compiled.css").read_text(encoding="utf-8"),
         "@@APP@@": (HERE / "homepage.js").read_text(encoding="utf-8"),
         # An illustration of the attributed risk reference, never experiment data.

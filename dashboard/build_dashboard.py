@@ -12,6 +12,7 @@ import json
 from itertools import product
 from pathlib import Path
 from contributor_downloads import build_assets
+from pip_assets import build_assets as build_pip_assets
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -567,6 +568,7 @@ def main():
                args.output.with_name("research.html"): render().encode("utf-8")}
     outputs.update({args.output.parent / "downloads" / name: content
                     for name, content in build_assets().items()})
+    outputs.update({args.output.parent / name: content for name, content in build_pip_assets().items()})
     for path, content in outputs.items():
         if args.check:
             if not path.exists() or path.read_bytes() != content:

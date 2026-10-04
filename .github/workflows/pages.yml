@@ -28,7 +28,7 @@ jobs:
           python-version: '3.14'
       - name: Validate the recorded evidence and dashboard
         run: |
-          python -m unittest discover -s dashboard -p test_dashboard.py -v
+          python -m unittest discover -s dashboard -p 'test_*.py' -v
           python dashboard/build_dashboard.py --check
           python dashboard/build_dashboard.py --output dashboard/site/index.html
       - name: Configure GitHub Pages

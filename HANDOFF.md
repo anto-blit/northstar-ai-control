@@ -1,5 +1,30 @@
 # NorthStar: start here to continue the work
 
+**October 4: Pip cartoons integrated beside their evidence.** The user explicitly
+required preserving the cartoon content. `dashboard/pip/source.html` is a byte-for-byte
+copy of the supplied root HTML, pinned by SHA-256 in `dashboard/test_pip.py`. The
+build reuses all scenes, captions, durations, explanatory text and sound definitions
+verbatim. Do not editorially rewrite them as part of player work.
+
+Episode 1 sits beside TPS2; episode 2 beside the local reproducer commands;
+episode 3 precedes the recipe in the now-open accountability section. Players
+load near the viewport, start only on click, include captions, fullscreen, end-card
+evidence/next links and scene sharing. Static transcripts remain readable without
+JavaScript. `/watch/` and its three episode routes supplement the inline players
+with individual share previews; `watch/too-easy-test/#verdict` opens that scene paused.
+The 9:16 player offers browser-generated 1080×1920 MP4/WebM downloads with audio
+and burned-in captions, keeping the full original durations (77.5/79.5/103 seconds).
+The requested “60-second” invitation remains, alongside the actual player duration.
+
+Funnel events (`play`, `finish`, `evidence_click`) are instrumented via custom
+events and `dataLayer`; no analytics collector is configured, so aggregate visitor
+measurement is not running. See `dashboard/pip/README.md` for integration and export
+details. Validation: 62 existing dashboard tests plus 4 content/publishing tests;
+existing homepage browser suite; new player suite across 320/390/768/1440px, lazy
+loading, playback isolation, event flow, scene links, fullscreen, transcripts without
+JS, vertical layout, and a downloaded video decoded at 1080×1920. No model calls
+or changes to frozen evidence. Existing site publishing authorization applies.
+
 **October 4: Ten to Zero homepage adaptation.** The user supplied `Ten to Zero.html`
 and asked to adapt its stronger, modern presentation to NorthStar. The homepage now
 uses a light typographic opening, a 100-dot risk/ambition graphic, a dark failure
