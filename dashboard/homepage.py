@@ -243,6 +243,10 @@ def render(root=ROOT):
     replacements = {
         "@@STYLE@@": (HERE / "homepage.compiled.css").read_text(encoding="utf-8"),
         "@@APP@@": (HERE / "homepage.js").read_text(encoding="utf-8"),
+        # An illustration of the attributed risk reference, never experiment data.
+        "@@RISK_DOTS@@": "".join('<span class="risk-dot' +
+            (' is-highlighted' if i in {6, 23, 29, 41, 47, 58, 64, 77, 82, 95} else '') +
+            '"></span>' for i in range(100)),
         "@@CONTRIBUTOR_PROMPT@@": escape((root / "contributor-kit/prompt.txt").read_text(encoding="utf-8")),
         "@@DATA@@": json.dumps(payload, ensure_ascii=True, separators=(",", ":")).replace("<", "\\u003c"),
         "@@EXAMPLE_REASON@@": escape(data["answer"]["reason"]),

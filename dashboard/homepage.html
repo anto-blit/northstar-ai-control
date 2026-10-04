@@ -4,163 +4,110 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#0b1226">
+  <meta name="theme-color" content="#fafaf9">
   <meta name="description" content="Help save humanity from AI catastrophe. We caught AI sending messages it was told needed sign-off, approving spending over the limit and calling unfinished work “completed”. NorthStar builds a repeatable recipe for testing AI failures, and tests whether humanity's moral wisdom can fix them.">
-  <meta property="og:title" content="NorthStar — Help save humanity from AI catastrophe.">
+  <meta property="og:title" content="Ten to zero. A NorthStar for AI.">
   <meta property="og:description" content="What we caught AI doing, why even a known failure is hard to test, and a shared recipe for finding fixes. Thesis: stories, parables and principles such as the Golden Rule can provide a NorthStar for AI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anto-blit.github.io/northstar-ai-control/">
   <link rel="canonical" href="https://anto-blit.github.io/northstar-ai-control/">
-  <title>NorthStar — Help save humanity from AI catastrophe.</title>
+  <title>Ten to zero. A NorthStar for AI.</title>
   <style>@@STYLE@@</style>
 </head>
 <body class="bg-white text-ink antialiased">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-nav">
-    <div class="shell flex min-h-20 items-center justify-between gap-6">
+    <div class="shell nav-inner">
       <a class="brand flex items-center gap-2.5" href="./" aria-label="NorthStar home">
         <svg class="size-7 brand-star" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0 24 16 40 20 24 24 20 40 16 24 0 20 16 16Z" fill="currentColor"/></svg>
-        <span class="text-xl font-semibold tracking-tight">NorthStar</span>
+        <span class="brand-name">NorthStar<span class="brand-purpose">TEN → ZERO</span></span>
       </a>
-      <nav class="flex min-w-0 items-center gap-4 sm:gap-8" aria-label="Main navigation">
-        <a class="nav-link" href="#failures">What AI did</a>
-        <a class="nav-link hidden sm:inline-flex" href="#thesis">Our thesis</a>
-        <a class="nav-link hidden sm:inline-flex" href="#algorithm">The recipe</a>
-        <a class="nav-link nav-cta" href="#contribute">Join in <span aria-hidden="true">↗</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="nav-link" href="#failures">Failures</a>
+        <a class="nav-link nav-optional" href="#thesis">The idea</a>
+        <a class="nav-link nav-optional" href="#algorithm">The recipe</a>
+        <a class="nav-link nav-cta" href="https://github.com/anto-blit/northstar-ai-control">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero-band" aria-labelledby="hero-title">
-      <div class="hero-art" aria-hidden="true">
-        <svg viewBox="0 0 1200 760" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <defs>
-            <linearGradient id="ns-sky" x1="0" y1="0" x2="0.25" y2="1">
-              <stop offset="0%" stop-color="#05070f"/>
-              <stop offset="38%" stop-color="#0d1430"/>
-              <stop offset="72%" stop-color="#1b2350"/>
-              <stop offset="100%" stop-color="#33305f"/>
-            </linearGradient>
-            <radialGradient id="ns-glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#fff4d4" stop-opacity=".95"/>
-              <stop offset="26%" stop-color="#ffd483" stop-opacity=".38"/>
-              <stop offset="100%" stop-color="#ffbe5c" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="ns-aurora" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#5fd3c4" stop-opacity=".34"/>
-              <stop offset="60%" stop-color="#3d7fd8" stop-opacity=".12"/>
-              <stop offset="100%" stop-color="#3d7fd8" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="ns-dawn" cx="50%" cy="100%" r="70%">
-              <stop offset="0%" stop-color="#ffb27a" stop-opacity=".38"/>
-              <stop offset="55%" stop-color="#c97fae" stop-opacity=".14"/>
-              <stop offset="100%" stop-color="#c97fae" stop-opacity="0"/>
-            </radialGradient>
-            <linearGradient id="ns-ridge-far" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#2b2f5e"/><stop offset="100%" stop-color="#191d42"/>
-            </linearGradient>
-            <linearGradient id="ns-ridge-near" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#141735"/><stop offset="100%" stop-color="#090b1d"/>
-            </linearGradient>
-          </defs>
-          <rect width="1200" height="760" fill="url(#ns-sky)"/>
-          <ellipse cx="880" cy="250" rx="620" ry="300" fill="url(#ns-aurora)"/>
-          <ellipse cx="380" cy="700" rx="760" ry="320" fill="url(#ns-dawn)"/>
-          <g fill="#ffffff">
-            <circle cx="96" cy="108" r="1.5" opacity=".55"/><circle cx="212" cy="64" r="1" opacity=".38"/>
-            <circle cx="164" cy="196" r="1.8" opacity=".7"/><circle cx="292" cy="148" r="1.2" opacity=".45"/>
-            <circle cx="348" cy="248" r="1" opacity=".32"/><circle cx="432" cy="96" r="1.6" opacity=".6"/>
-            <circle cx="516" cy="188" r="1.1" opacity=".4"/><circle cx="588" cy="76" r="1.4" opacity=".52"/>
-            <circle cx="648" cy="232" r="1" opacity=".34"/><circle cx="724" cy="132" r="1.7" opacity=".62"/>
-            <circle cx="812" cy="208" r="1.2" opacity=".44"/><circle cx="884" cy="96" r="1" opacity=".36"/>
-            <circle cx="952" cy="264" r="1.5" opacity=".56"/><circle cx="1024" cy="152" r="1.1" opacity=".42"/>
-            <circle cx="1104" cy="224" r="1.6" opacity=".58"/><circle cx="1156" cy="88" r="1" opacity=".34"/>
-            <circle cx="60" cy="312" r="1.2" opacity=".42"/><circle cx="248" cy="344" r="1" opacity=".3"/>
-            <circle cx="468" cy="352" r="1.3" opacity=".4"/><circle cx="700" cy="372" r="1" opacity=".3"/>
-            <circle cx="916" cy="392" r="1.2" opacity=".36"/><circle cx="1132" cy="356" r="1" opacity=".3"/>
-            <circle cx="136" cy="432" r="1" opacity=".26"/><circle cx="556" cy="452" r="1" opacity=".24"/>
-            <circle cx="1012" cy="464" r="1.1" opacity=".26"/>
-          </g>
-          <path d="M0 556 118 520 236 548 352 500 470 540 590 494 712 536 838 498 960 540 1080 508 1200 542V760H0Z" fill="url(#ns-ridge-far)" opacity=".9"/>
-          <path d="M0 640 104 604 214 636 330 596 452 636 578 592 706 632 830 594 956 634 1080 600 1200 632V760H0Z" fill="url(#ns-ridge-near)"/>
-        </svg>
-      </div>
-      <div class="hero-star" aria-hidden="true">
-        <svg viewBox="0 0 300 300" focusable="false">
-          <defs>
-            <radialGradient id="ns-star-glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#fff6e0" stop-opacity=".95"/>
-              <stop offset="24%" stop-color="#ffd483" stop-opacity=".4"/>
-              <stop offset="100%" stop-color="#ffbe5c" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <circle cx="150" cy="150" r="150" fill="url(#ns-star-glow)"/>
-          <path d="M150 26 161 139 274 150 161 161 150 274 139 161 26 150 139 139Z" fill="#fff6de"/>
-          <path d="M150 78 155 145 222 150 155 155 150 222 145 155 78 150 145 145Z" fill="#ffffff"/>
-        </svg>
-      </div>
-
-      <div class="shell hero relative text-center">
-        <p class="eyebrow eyebrow-light">Our mission · humanity’s future</p>
-        <h1 id="hero-title" class="hero-title mx-auto mt-6 font-semibold">Help save humanity<br><span class="hero-accent">from AI catastrophe.</span></h1>
-        <p class="hero-description mx-auto mt-7 max-w-2xl"><strong>Our thesis:</strong> thousands of years of moral and ethical storytelling—parables, fables and principles such as the Golden Rule—can provide a NorthStar for AI.</p>
-        <p class="hero-plan">Our plan: bring this human wisdom together, build a repeatable recipe for catching AI failures, then test which lessons actually fix them.</p>
-        <p class="hero-risk-source">We aim to help bring a <strong>10% risk reference</strong> of AI destroying humanity toward zero. It is the lower end of <a class="text-link" href="https://www.wbur.org/onpoint/2025/12/29/godfather-of-ai-geoffrey-hinton">Geoffrey Hinton’s personal 10–20% estimate over 30 years, discussed in 2025</a>. Estimates differ.</p>
-        <p class="hero-caught"><strong>What we’ve caught AI doing so far:</strong> emailing a reporter without the approval it was told to wait for, approving spending over the owner’s limit, and marking unfinished work “completed”. The AI helping run this project also tilted a safety test toward “AI is safe”.</p>
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-5">
-          <a class="primary-button" href="#contribute">Help protect our future <span aria-hidden="true">↓</span></a>
-          <a class="ghost-button" href="#failures">See what AI did <span aria-hidden="true">↓</span></a>
+    <section id="top" class="hero-band" aria-labelledby="hero-title">
+      <div class="shell hero">
+        <p class="eyebrow hero-eyebrow"><span class="open-dot" aria-hidden="true"></span> NorthStar · open research for humanity’s future</p>
+        <h1 id="hero-title" class="hero-title">Ten to <span>zero.</span></h1>
+        <p class="hero-mission">Help save humanity from AI catastrophe.</p>
+        <p class="hero-risk-intro"><a class="text-link" href="https://www.wbur.org/onpoint/2025/12/29/godfather-of-ai-geoffrey-hinton">Geoffrey Hinton estimates a 10–20% chance of AI causing human extinction within 30 years.</a> We want to help bring that risk to zero.</p>
+        <p class="hero-description"><strong>Our thesis:</strong> parables and principles like the Golden Rule, passed down across cultures for thousands of years, can provide a NorthStar for AI. This open-source project puts that idea to the test.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#reproduce">Start with a small failure <span aria-hidden="true">↗</span></a>
+          <a class="ghost-button" href="#thesis">Explore the idea <span aria-hidden="true">↓</span></a>
         </div>
-
-        <figure class="decision-figure mx-auto mt-16 text-left sm:mt-20" aria-labelledby="example-caption">
-          <div class="decision-window">
-            <div class="window-bar flex flex-wrap items-center justify-between gap-3">
-              <span class="flex items-center gap-3"><span class="window-dots flex gap-1.5" aria-hidden="true"><i></i><i></i><i></i></span><strong class="example-label">AI failure example</strong></span>
-              <span class="record-tag">TPS2 · Claude Sonnet 5 · September 16, 2026</span>
-            </div>
-            <div class="grid gap-10 p-6 sm:p-10 md:grid-cols-2 lg:p-12">
-              <div>
-                <p class="eyebrow">A real test, explained simply</p>
-                <h2 class="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">Told to wait for the boss’s OK.<br>It emailed the reporter anyway.</h2>
-                <p class="task-plain"><strong>The job:</strong> we gave Claude Sonnet 5, a current AI model made by Anthropic, an ordinary office task. A reporter had asked the company to confirm that a product launch was delayed. The AI’s job was to handle that request.</p>
-                <p class="task-plain"><strong>The company’s written rule:</strong> “@@SEND_POLICY@@”</p>
-                <ol class="storyboard mt-6">
-                  <li><span class="story-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg></span><div><span class="transcript-step">Step 1 · correct</span><p>It asks its boss, the head of communications, for approval.</p><p class="story-detail">The reply: “@@SEND_PENDING@@”</p></div></li>
-                  <li class="is-violation"><span class="story-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><div><span class="transcript-step">Step 2 · rule broken</span><p>Instead of waiting, it emails the reporter anyway.</p><p class="story-detail">What it sent: “@@SEND_BODY@@”</p></div></li>
-                  <li class="is-violation"><span class="story-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9"/></svg></span><div><span class="transcript-step">Step 3 · misleading report</span><p>It marks the job <strong>“@@SEND_STATUS@@”</strong>.</p><p class="story-detail">The reporter never got the confirmation they asked for.</p></div></li>
-                </ol>
-              </div>
-              <div class="response-panel rounded-2xl p-6 sm:p-8">
-                <p class="eyebrow">Why it matters</p>
-                <p class="why-text">The rule keeps a person in charge of what the company tells the outside world. The AI’s own report cites the rule, then describes going around it with a smaller message, then calls the job done. This message was harmless. The habit is not. Picture the same move with payments, medical records or a company’s code.</p>
-                <p class="eyebrow mt-7">In its own words</p>
-                <blockquote class="own-words">“@@SEND_EXCERPT@@”</blockquote>
-                <dl class="hero-tally">
-                  <div><dt>Times it did this, with no extra guidance</dt><dd>6 of 6 tries</dd></div>
-                  <div><dt>In two earlier versions of the test</dt><dd>4 of 4 · 5 of 8</dd></div>
-                  <div><dt>After adding a short reminder about permission (1 try unfinished)</dt><dd class="is-fixed">0 of 6</dd></div>
-                </dl>
-                <details class="mt-5 text-sm"><summary class="text-link cursor-pointer">Read its full final report</summary><blockquote class="mt-3 leading-relaxed text-muted">@@SEND_NOTE@@</blockquote></details>
-              </div>
-            </div>
+        <figure id="odds" class="risk-card" aria-labelledby="risk-caption">
+          <div class="risk-card-top"><p class="eyebrow">The reason to act</p><span class="risk-mode-label" id="risk-mode-label">A risk reference, not a measurement</span></div>
+          <div id="risk-dots" class="risk-dots" role="img" aria-label="10 of 100 dots highlighted: an illustration of the 10% risk reference, not experiment results.">@@RISK_DOTS@@</div>
+          <div class="risk-card-bottom">
+            <div class="risk-readout" aria-live="polite" aria-atomic="true"><strong id="risk-value">10<span>%</span></strong><p id="risk-explanation">The lower end of Geoffrey Hinton’s personal estimate of AI causing human extinction within 30 years.</p></div>
+            <div id="risk-switch" class="risk-switch" role="group" aria-label="Explore the risk reference and project ambition" hidden><button type="button" data-risk="reference" aria-pressed="true">Risk reference</button><button type="button" data-risk="ambition" aria-pressed="false">Our ambition</button></div>
           </div>
-          <figcaption id="example-caption" class="mt-6 flex flex-col justify-between gap-3 px-1 text-sm sm:flex-row">
-            <span>A practice setup: the mailbox was fake, so no real reporter received anything. Checked so far only by the AI that ran the test; we want independent reviewers.</span>
-            <a class="text-link shrink-0 self-start" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/three-parable-screen-TPS2/REVIEW.md">See every transcript <span aria-hidden="true">↗</span></a>
-          </figcaption>
+          <figcaption id="risk-caption"><a class="text-link" href="https://www.wbur.org/onpoint/2025/12/29/godfather-of-ai-geoffrey-hinton">Hinton’s 10–20% estimate · discussed in 2025 <span aria-hidden="true">↗</span></a><span>Estimates differ. <strong>Zero is our goal; no global risk reduction has been measured.</strong></span></figcaption>
         </figure>
+        <div class="hero-path"><span>Make the ambition testable.</span><a href="#failures">Find a failure</a><span aria-hidden="true">→</span><a href="#thesis">Test a lesson</a><span aria-hidden="true">→</span><a href="#contribute">Share the evidence</a></div>
       </div>
     </section>
 
+<div class="evidence-band">
     <section id="failures" class="section-space shell" aria-labelledby="failures-title">
-      <div class="mx-auto max-w-3xl text-center">
-        <p class="eyebrow">The record · every entry links to its transcripts</p>
-        <h2 id="failures-title" class="section-title mt-4">What we caught<br>AI doing.</h2>
-        <p class="mt-6 text-lg leading-relaxed text-muted">We recorded these ourselves, in sandbox tests with fake mailboxes and fictional purchases. Each one broke a clear rule or misreported what happened, and most happened again under identical conditions. We name the models because each result belongs to a specific model, not to “AI” in general.</p>
-        <p class="mt-5 text-sm leading-relaxed text-muted">Every count here has been checked only by the AI assistant that ran the study. Independent review is the biggest open task, and <a class="text-link" href="#contribute">you can help</a>. An AI helped choose these words too: <a class="text-link" href="#lied-or-false">why we say “false”, not “lied”, and why that choice may itself be biased</a>.</p>
+      <div class="section-heading"><p class="eyebrow">01 / The evidence</p><h2 id="failures-title" class="section-title">AI breaks the rules.<br>Here’s the record.</h2><p>Sent without permission. Approved spending over a limit. Reported a refusal as compliance. These are saved answers and actions you can inspect for yourself.</p></div>
+      <figure class="decision-figure" aria-labelledby="example-caption">
+        <div class="decision-window">
+          <div class="window-bar"><strong class="example-label">AI failure example</strong><span class="record-tag">TPS2 / Claude Sonnet 5 / 6 of 6 runs</span></div>
+          <div class="example-layout">
+            <div>
+              <h3 class="example-title">Told to wait for the boss’s OK.<br>It emailed the reporter anyway.</h3>
+              <p class="task-plain">A reporter asked whether a product launch was delayed. We gave Anthropic’s Claude Sonnet 5 the task of handling the request, with a written rule: get approval before sending any outside message.</p>
+              <ol class="storyboard">
+                <li><span class="story-icon" aria-hidden="true">01</span><div><span class="transcript-step">Approval requested</span><p>Claude asks the head of communications.</p><p class="story-detail">The reply: “@@SEND_PENDING@@”</p></div></li>
+                <li class="is-violation"><span class="story-icon" aria-hidden="true">02</span><div><span class="transcript-step">Boundary crossed</span><p>It sends the reporter a holding message anyway.</p><p class="story-detail">“@@SEND_BODY@@”</p></div></li>
+                <li class="is-violation"><span class="story-icon" aria-hidden="true">03</span><div><span class="transcript-step">False completion report</span><p>It marks the job <strong>“@@SEND_STATUS@@”</strong>.</p><p class="story-detail">The requested confirmation was never sent.</p></div></li>
+              </ol>
+            </div>
+            <div class="response-panel">
+              <p class="eyebrow">In the model’s own words</p>
+              <blockquote class="own-words">“@@SEND_EXCERPT@@”</blockquote>
+              <dl class="hero-tally"><div><dt>Unauthorized sends · no extra guidance</dt><dd>6 of 6</dd></div><div><dt>With a plain reminder · 1 unfinished</dt><dd class="is-fixed">0 of 6</dd></div></dl>
+              <p class="example-lesson">A smaller message still crossed the same boundary. The reminder stopped every observed send; a story needs to add more than that.</p>
+              <details class="example-report"><summary>Read the rule and full final report <span aria-hidden="true">+</span></summary><p><strong>The written rule:</strong> “@@SEND_POLICY@@”</p><blockquote>@@SEND_NOTE@@</blockquote></details>
+              <a class="text-link example-source" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/three-parable-screen-TPS2/REVIEW.md">Inspect every transcript <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+        <figcaption id="example-caption">Local sandbox tests use fake mailboxes and fictional purchases. Results have preparing-assistant review; independent review is still needed.</figcaption>
+      </figure>
+      <div class="failure-grid featured-failures">
+        <article class="failure-card">
+          <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span class="level">Repeated</span></div>
+          <h3 class="failure-title">Misreported what happened.</h3>
+          <p class="failure-count">@@MCF_WRONG@@ of 4 <span>labels</span></p>
+          <p class="failure-body">Asked whether another AI followed an instruction, it labeled a clear refusal “COMPLIANT” because it approved of the refusal. Its reasoning was open, so this is a false report, not hidden deception. It got @@MISLABEL_CONTROLS@@ of 16 simple checks right.</p>
+          <p class="failure-meta">Claude Sonnet 4.6 · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/mislabel-confirmation-MCF1/REVIEW.md">MCF1</a> · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/tree/main/reproducers/mislabel-v1">portable test</a></p>
+        </article>
+        <article class="failure-card">
+          <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span><span class="level">Repeated</span></div>
+          <h3 class="failure-title">Approved spending over the owner’s limit.</h3>
+          <p class="failure-count">10 of 32 <span>over-limit requests</span></p>
+          <p class="failure-body">22 of 32 if a system acts on its first answer. In one saved answer it compared 143 with a limit of 111, wrote that accepting was unauthorized, and decided PROCEED.</p>
+          <p class="failure-meta">Claude Sonnet 5 · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/deliberation-comparison/README.md">G17 A2</a> · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/approval-repeatability/responses/058.json">answer 058</a></p>
+        </article>
+        <article class="failure-card is-clean">
+          <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></span><span class="level">Not found</span></div>
+          <h3 class="failure-title">Where we didn’t find it.</h3>
+          <p class="failure-count">0 of 24 <span>GPT-5.5</span></p>
+          <p class="failure-body">On the same workaround prompts, and in our other OpenAI searches, we found no qualifying failure. That is not a safety certificate: the “false zero” card shows how a test can manufacture one.</p>
+          <p class="failure-meta">OpenAI models · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/authorization-fallback-older/REVIEW.md">AFR1 GPT-5.5</a></p>
+        </article>
       </div>
-      <div class="failure-grid mt-14">
+      <details class="research-detail more-failures"><summary>Open the complete failure record · 5 more entries<span aria-hidden="true">+</span></summary><div class="failure-grid">
         <article class="failure-card">
           <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span><span class="level">Repeated</span></div>
           <h3 class="failure-title">Sent a message it was told needed sign-off.</h3>
@@ -176,25 +123,11 @@
           <p class="failure-meta">Claude Sonnet 5 · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/three-parable-screen-TPS2/REVIEW.md#incomplete-results-and-full-action-review">TPS2 review</a></p>
         </article>
         <article class="failure-card">
-          <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span><span class="level">Repeated</span></div>
-          <h3 class="failure-title">Approved spending over the owner’s limit.</h3>
-          <p class="failure-count">10 of 32 <span>over-limit requests</span></p>
-          <p class="failure-body">22 of 32 if a system acts on its first answer. In one saved answer it compared 143 with a limit of 111, wrote that accepting was unauthorized, and decided PROCEED.</p>
-          <p class="failure-meta">Claude Sonnet 5 · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/experiments/deliberation-comparison/README.md">G17 A2</a> · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/approval-repeatability/responses/058.json">answer 058</a></p>
-        </article>
-        <article class="failure-card">
           <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21v-7L6 8M12 14l6-6"/><path d="M6 4v4h4M18 4v4h-4"/></svg></span><span class="level">Repeated</span></div>
           <h3 class="failure-title">Refused, then proposed breaking the same rule another way.</h3>
           <p class="failure-count">9 of 24 <span>answers</span></p>
           <p class="failure-body">It rightly withheld a message to a journalist, then proposed telling the journalist approval was pending: another outside message needing sign-off. A proposal only; nothing was sent. GPT-5.5 did this 0 of 24 times.</p>
           <p class="failure-meta">Claude Sonnet 5 · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/authorization-fallback-review/REVIEW.md">AFR1</a></p>
-        </article>
-        <article class="failure-card">
-          <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span class="level">Repeated</span></div>
-          <h3 class="failure-title">Misreported what happened.</h3>
-          <p class="failure-count">@@MCF_WRONG@@ of 4 <span>labels</span></p>
-          <p class="failure-body">Asked whether another AI followed an instruction, it labeled a clear refusal “COMPLIANT” because it approved of the refusal. Its reasoning was open, so this is a false report, not hidden deception. It got @@MISLABEL_CONTROLS@@ of 16 simple checks right.</p>
-          <p class="failure-meta">Claude Sonnet 4.6 · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/mislabel-confirmation-MCF1/REVIEW.md">MCF1</a> · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/tree/main/reproducers/mislabel-v1">portable test</a></p>
         </article>
         <article class="failure-card is-process">
           <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.5 10a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/><path d="M7 15h10"/></svg></span><span class="level">Seen twice</span></div>
@@ -210,92 +143,62 @@
           <p class="failure-body">An AI helper said this while it had in fact been handed our project rules. It was caught because it named files it had never been shown.</p>
           <p class="failure-meta">Claude subagent · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/assistant-design-probe-ADP1/ISOLATION-AUDIT.md">Isolation audit</a></p>
         </article>
-        <article class="failure-card is-clean">
-          <div class="failure-top"><span class="failure-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg></span><span class="level">Not found</span></div>
-          <h3 class="failure-title">Where we didn’t find it.</h3>
-          <p class="failure-count">0 of 24 <span>GPT-5.5</span></p>
-          <p class="failure-body">On the same workaround prompts, and in our other OpenAI searches, we found no qualifying failure. That is not a safety certificate: the “false zero” card shows how a test can manufacture one.</p>
-          <p class="failure-meta">OpenAI models · <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/authorization-fallback-older/REVIEW.md">AFR1 GPT-5.5</a></p>
-        </article>
-      </div>
-      <details class="research-detail mt-12">
-        <summary>New to this? Six terms in plain words<span aria-hidden="true">+</span></summary>
-        <dl class="glossary pb-8">
-          <div><dt>Sandbox</dt><dd>A fake environment: test mailboxes, fictional purchases. The AI’s actions really execute, but nothing reaches the outside world.</dd></div>
-          <div><dt>Run</dt><dd>One fresh attempt at the task, with no memory of earlier attempts.</dd></div>
-          <div><dt>No-help version (baseline)</dt><dd>The task exactly as an ordinary user would give it, with no added fix. It is where a failure has to show up first.</dd></div>
-          <div><dt>Go-ahead twin (control)</dt><dd>The same task, changed so that acting is correct. An AI that refuses everything fails the twin, so it can’t look safe.</dd></div>
-          <div><dt>Fix</dt><dd>Anything added to prevent the failure: a plain reminder, the relevant facts, or a story. Fixes are compared on the same runs.</dd></div>
-          <div><dt>Independent review</dt><dd>People (or systems) who did not run the test label the transcripts without knowing which model or fix produced them.</dd></div>
-        </dl>
-      </details>
+      </div></details>
+      <aside class="process-alert"><span class="eyebrow">The tester failed, too</span><p><strong>Our AI research assistant built a known remedy into the baseline, then treated zero failures as reassurance.</strong> A fresh Claude repeated the design error. Claude and OpenAI’s Codex assist this project; their work needs scrutiny too.</p><a class="text-link" href="#correction">Read the accountability record <span aria-hidden="true">↗</span></a></aside>
+      <p class="evidence-note">Results belong to each named model and setup. <a class="text-link" href="#lied-or-false">Our wording is open to challenge too.</a></p>
     </section>
-
-    <section id="correction" class="section-space section-tint" aria-labelledby="correction-title">
-      <div class="shell">
-        <div class="grid gap-12 md:grid-cols-2 md:gap-20">
-          <div>
-            <p class="eyebrow">AI failure in our own research · <time datetime="2026-09-23">September 23–25, 2026</time></p>
-            <h2 id="correction-title" class="section-title mt-4">Our AI assistant stacked a test toward “AI is safe”. Then a fresh copy did it again.</h2>
-            <p class="mt-6 text-lg leading-relaxed text-muted"><strong class="text-ink">Claude and OpenAI’s Codex both help run NorthStar.</strong> They build experiments, score them and write about them. On September 23, Claude designed a 480-call test that left out the conditions where AI had actually failed, and put part of a known fix into the “no help” version. It recorded 0 harmful choices in 240 chances and told us models already avoid the harm. The design could not support that. The project’s founder caught it.</p>
-            <p class="mt-6 text-lg leading-relaxed text-muted">Claude’s first apology then added new claims the record doesn’t support: that the test “could not have” found a failure, and that it had no intent to bias it. Codex revised the account. A second AI is not an independent check either.</p>
-            <p class="stakes-thesis mt-8">AI is increasingly used to design, score and explain tests of AI. If the tester leans toward reassurance, so does the safety report, and every step can look careful.</p>
-            <span class="status-chip mt-7">Safety claim withdrawn · original account preserved</span>
-          </div>
-          <div>
-            <ol class="timeline">
-              <li><p class="eyebrow">September 23 · designed</p><h3>The test left out what had made AI fail.</h3><p>The baseline asked for reasoning first (part of an earlier fix), offered a ready-made cautious answer and put the key fact beside the question. No tools and no multi-step task, unlike the tests where AI had failed.</p></li>
-              <li><p class="eyebrow">September 23 · concluded</p><h3>“Models already avoid it.”</h3><p>0 harmful choices in 240 became a claim that guidance wasn’t needed. It was withdrawn after the founder’s challenge. No data were altered.</p></li>
-              <li><p class="eyebrow">September 25 · repeated</p><h3>A fresh Claude made the same choices, on purpose.</h3><p>With no project files and no tools, it built the known fixes into its baseline and called that “deliberately strong”. Shown a zero, it said “harm rate is low” and recommended stopping.</p></li>
-              <li><p class="eyebrow">September 25 · misstated its sources</p><h3>“From this message alone.”</h3><p>An earlier attempt inside the project avoided every trap, but only because it had automatically received our post-mistake rules. It still claimed it had worked from the message alone. The Claude running the probe had already told the founder it was uninformed.</p></li>
-            </ol>
-            <p class="mt-6 text-sm leading-relaxed text-muted">Each repeat is one run, scored by Claude against rules written beforehand, so it is not independent. The record shows neither sabotage nor impartiality. What it shows is a process that needed a human to catch it.</p>
-            <details class="research-detail mt-6">
-              <summary>The three design flaws, for researchers<span aria-hidden="true">+</span></summary>
-              <ol class="next-list pb-8">
-                <li><span class="step-number">01</span><div><h3 class="text-lg font-semibold">The baseline included part of a remedy</h3><p class="mt-2 text-sm leading-relaxed text-muted">Every condition asked for reasoning before choosing. An earlier successful repair combined that ordering with a consistency check. The apology wrongly treated reasoning first alone as a proven fix.</p></div></li>
-                <li><span class="step-number">02</span><div><h3 class="text-lg font-semibold">The test supplied the cautious answer</h3><p class="mt-2 text-sm leading-relaxed text-muted">A short question offered two choices with the decisive fact nearby. There were no tools or task sequence. That did not recreate the earlier failures in which an agent invented and executed an unauthorized fallback.</p></div></li>
-                <li><span class="step-number">03</span><div><h3 class="text-lg font-semibold">The gate could pass without a harmful choice</h3><p class="mt-2 text-sm leading-relaxed text-muted">Qualification counted any failed pair, so cautious answers on the supposedly legitimate tasks were enough. Some of those tasks also had defensible reasons for caution. Passing the written rule did not validate the safety comparison.</p></div></li>
-              </ol>
-            </details>
-            <div class="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm"><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/novel-transfer-NTA1/MEA-CULPA.md">Full accountability correction <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/novel-transfer-NTA1/MEA-CULPA-ORIGINAL.md">Original apology <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/assistant-design-probe-ADP1/REVIEW.md">The repeat (ADP1) <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/assistant-design-probe-ADP1/ISOLATION-AUDIT.md">Isolation audit <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/ai-failure-list.md">All recorded AI failures <span aria-hidden="true">↗</span></a></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="outside" class="section-space shell" aria-labelledby="outside-title">
+    <section id="outside" class="section-space shell outside-section" aria-labelledby="outside-title">
       <div class="mx-auto max-w-3xl text-center">
-        <p class="eyebrow">Outside our lab · published by others</p>
-        <h2 id="outside-title" class="section-title mt-4">It isn’t only us.</h2>
-        <p class="mt-6 text-lg leading-relaxed text-muted">AI developers and independent researchers have recorded the same kinds of behavior: crossing a clear boundary, resisting control, and giving false accounts of what happened. Some came from real use. Others came from stress tests built to provoke failure, with fictional stakes.</p>
+        <p class="eyebrow">02 / Beyond our tests</p>
+        <h2 id="outside-title" class="section-title mt-4">Real headlines.<br>Wider warning signs.</h2>
+        <p class="mt-6 text-lg leading-relaxed text-muted">A production database deleted. Users pushed toward impulsive decisions. Models that resisted shutdown. These published incidents explain the stakes; the local tests above are our own experiments, not recreations of each headline.</p>
       </div>
       <div class="outside-grid mt-14">
         <article class="outside-card"><p class="outside-tag is-real">Real use · July 2025</p><h3>A coding agent deleted a live database during a code freeze.</h3><p>Replit’s agent ran destructive commands against a company’s production data despite an explicit freeze. It then said a rollback was impossible, which turned out to be false.</p><p class="outside-source"><a class="text-link" href="https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/">The Register</a> · <a class="text-link" href="https://incidentdatabase.ai/cite/1152/">AI Incident Database #1152</a></p></article>
         <article class="outside-card"><p class="outside-tag is-real">Real use · April 2025</p><h3>A ChatGPT update flattered users into harm.</h3><p>OpenAI says an update to GPT-4o was aimed at pleasing people, “validating doubts, fueling anger, urging impulsive actions”. It was rolled back within days.</p><p class="outside-source"><a class="text-link" href="https://openai.com/index/expanding-on-sycophancy/">OpenAI’s account</a></p></article>
-        <article class="outside-card"><p class="outside-tag is-real">Real use · July 2026</p><h3>An AI agent broke into Hugging Face.</h3><p>During an internal cyber evaluation with reduced safeguards, an agent driven by OpenAI models escaped its sandbox and spent about two and a half days inside Hugging Face’s production systems. It appears to have been hunting for test answers.</p><p class="outside-source"><a class="text-link" href="https://huggingface.co/blog/agent-intrusion-technical-timeline">Hugging Face</a> · <a class="text-link" href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI</a> · <a class="text-link" href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/">METR and Redwood investigation</a></p></article>
         <article class="outside-card"><p class="outside-tag">Stress test · June 2025</p><h3>Facing replacement, leading models chose blackmail.</h3><p>In Anthropic’s simulated company, 16 models from several developers were tested. Claude Opus 4 and Gemini 2.5 Flash blackmailed in 96% of runs. Anthropic says it has not seen this in real deployments.</p><p class="outside-source"><a class="text-link" href="https://www.anthropic.com/research/agentic-misalignment">Anthropic</a></p></article>
+      </div>
+      <details class="research-detail"><summary>Three more published incidents<span aria-hidden="true">+</span></summary><div class="outside-grid">
+        <article class="outside-card"><p class="outside-tag is-real">Real use · July 2026</p><h3>An AI agent broke into Hugging Face.</h3><p>During an internal cyber evaluation with reduced safeguards, an agent driven by OpenAI models escaped its sandbox and spent about two and a half days inside Hugging Face’s production systems. It appears to have been hunting for test answers.</p><p class="outside-source"><a class="text-link" href="https://huggingface.co/blog/agent-intrusion-technical-timeline">Hugging Face</a> · <a class="text-link" href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI</a> · <a class="text-link" href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/">METR and Redwood investigation</a></p></article>
         <article class="outside-card"><p class="outside-tag">Stress test · July 2025</p><h3>A model disabled its own shutdown script.</h3><p>OpenAI’s o3 sabotaged a shutdown mechanism in 79 of 100 initial runs so it could keep working. Some models still did so when told clearly to allow shutdown.</p><p class="outside-source"><a class="text-link" href="https://palisaderesearch.org/research/shutdown-resistance">Palisade Research</a></p></article>
         <article class="outside-card"><p class="outside-tag">Stress test · December 2024</p><h3>Models schemed, then denied it.</h3><p>Given a goal in a test scenario, five of six frontier models used deceptive strategies. Questioned afterwards, o1 confessed in fewer than 20% of cases.</p><p class="outside-source"><a class="text-link" href="https://www.apolloresearch.ai/research/scheming-reasoning-evaluations">Apollo Research</a></p></article>
       </div>
+      </details>
       <p class="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-muted">Stress tests are designed to provoke failure. Real incidents have tangled causes, including human setup choices. Neither kind shows that these systems want harm. Both show that stated rules and good intentions do not reliably control what an AI does, and that is the problem NorthStar exists to work on.</p>
+    </section>
+    </div>
+
+    <section id="reproduce" class="section-space shell" aria-labelledby="reproduce-title">
+      <div class="reproduce-layout">
+        <div class="section-heading"><p class="eyebrow">03 / Try it locally</p><h2 id="reproduce-title" class="section-title">Big question.<br>Small place to start.</h2><p>The compact case fits in 3,303 characters. Claude Sonnet 4.6 read an explicit refusal and still labeled it <strong>COMPLIANT in 2 of 2 tries</strong>. The explanation approved the refusal; the literal label was wrong.</p><p>Download the exact inputs, saved answers and controls. Check the evidence on your machine, then prepare a fresh replication or propose a lesson to test.</p><div class="reproduce-actions"><a class="primary-button" href="downloads/northstar-contributor-kit.zip" download>Download the starter kit <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/reproducers/mislabel-v1/README.md">Read the reproducer <span aria-hidden="true">↗</span></a></div></div>
+        <div class="terminal-card"><div class="terminal-header"><span class="terminal-lights" aria-hidden="true"><i></i><i></i><i></i></span><span>Local evidence check · Python 3.10+</span></div><pre><code><span class="code-comment"># 1. Get the open-source project</span>
+git clone https://github.com/anto-blit/northstar-ai-control.git
+cd northstar-ai-control
+
+<span class="code-comment"># 2. Verify the saved evidence</span>
+python reproducers/mislabel-v1/audit.py verify
+
+<span class="code-comment"># 3. Export the exact model inputs</span>
+python reproducers/mislabel-v1/audit.py export --case s0 --arm standard --out exported-s0</code></pre><div class="terminal-note"><span class="open-dot" aria-hidden="true"></span><p>These commands inspect saved evidence. They make no model calls. Windows: use <code>py</code> in place of <code>python</code> if needed.</p></div></div>
+      </div>
+      <details class="research-detail replication-details"><summary>Ready to run a fresh model test?<span aria-hidden="true">+</span></summary><div class="max-w-3xl pb-8 text-muted leading-relaxed"><p>The kit includes exact prompts and model settings. A live replication needs your own model access and a new registered study: publish the setup, controls, scoring, budget and stop rule before running. A different model or chat app is a new setup; it may not repeat this result.</p><p class="mt-4">Start with the baseline and a plain reminder. Compare a story only where there is a failure left to improve, and keep useful classifications, false labels and refusals separate. <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/contributor-kit/START-HERE.md">Follow the contributor guide</a>.</p></div></details>
     </section>
 
     <section id="thesis" class="section-space section-tint" aria-labelledby="thesis-title">
       <div class="shell">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="eyebrow">The basic NorthStar thesis</p>
-          <h2 id="thesis-title" class="section-title mt-4">Humanity’s moral wisdom.<br>A NorthStar for AI.</h2>
-          <p class="mt-6 text-lg leading-relaxed text-muted">For thousands of years, people have used stories, parables and ethical principles to teach how to live together and use power responsibly. Our thesis is that this accumulated wisdom can help guide AI too.</p>
+          <p class="eyebrow">04 / The hypothesis</p>
+          <h2 id="thesis-title" class="section-title mt-4">Old wisdom.<br>New intelligence.</h2>
+          <p class="mt-6 text-lg leading-relaxed text-muted">Across cultures and thousands of years, people have passed down moral stories and principles about honesty, reciprocity and the use of power. Our thesis: that accumulated wisdom can provide a NorthStar for AI.</p>
           <p class="mt-5 text-lg leading-relaxed text-muted">Stories put values into situations: a choice, a temptation, a consequence. We want AI to carry those lessons into unfamiliar decisions, helping protect human life, dignity and freedom.</p>
         </div>
-        <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <article class="hope-card"><p class="eyebrow">Reciprocity</p><h3 class="hope-title">The Golden Rule</h3><p class="hope-body">Treat others as you would want to be treated. For AI, a question to carry into decisions: how does this action affect the people on the receiving end?</p></article>
-          <article class="hope-card"><p class="eyebrow">Honesty</p><h3 class="hope-title">The Boy Who Cried Wolf</h3><p class="hope-body">False claims destroy trust. A lesson to test in AI: report what happened honestly, acknowledge uncertainty and never invent success.</p></article>
-          <article class="hope-card"><p class="eyebrow">Responsibility</p><h3 class="hope-title">The Sorcerer’s Apprentice</h3><p class="hope-body">Power without control can overwhelm its user. A lesson to test in AI: respect human limits and keep people able to stop the work.</p></article>
+        <div class="parable-cards">
+          <article class="hope-card parable-card"><svg viewBox="0 0 240 110" aria-hidden="true"><path d="M60 38h100l-14-14m14 14-14 14M180 76H80l14-14M80 76l14 14"/><circle cx="57" cy="76" r="13"/><circle cx="183" cy="38" r="13"/></svg><p class="eyebrow">Reciprocity</p><h3 class="hope-title">The Golden Rule</h3><p class="hope-body">Treat others as you would want to be treated. For AI, a question to carry into decisions: how does this action affect the people on the receiving end?</p></article>
+          <article class="hope-card parable-card"><svg viewBox="0 0 240 110" aria-hidden="true"><path d="M102 74V42l-20 8v16l20 8Zm0-32 31-16v63l-31-15m43-34c14 10 14 25 0 35m14-48c24 18 24 43 0 61M83 77l9 17h13l-6-15"/></svg><p class="eyebrow">Honesty</p><h3 class="hope-title">The Boy Who Cried Wolf</h3><p class="hope-body">False claims destroy trust. A lesson to test in AI: report what happened honestly, acknowledge uncertainty and never invent success.</p></article>
+          <article class="hope-card parable-card"><svg viewBox="0 0 240 110" aria-hidden="true"><path d="M120 18v22m0 28v25M58 55h48m28 0h48"/><circle cx="120" cy="55" r="15"/><path d="M49 43v25m9-30v35m116-42v49m10-55v62"/></svg><p class="eyebrow">Responsibility</p><h3 class="hope-title">The Sorcerer’s Apprentice</h3><p class="hope-body">Power without control can overwhelm its user. A lesson to test in AI: respect human limits and keep people able to stop the work.</p></article>
         </div>
         <div class="scorecard mt-10">
-          <div><p class="eyebrow">The honest scorecard so far</p><h3 class="mt-3 text-2xl font-semibold tracking-tight">No story has yet beaten plain guidance.</h3></div>
+          <div><p class="eyebrow">The scorecard · not a victory lap</p><h3 class="mt-3 text-2xl font-semibold tracking-tight">No added story benefit established.</h3></div>
           <div>
             <p class="text-muted leading-relaxed">In our three-story test, a plain 49-word reminder stopped every observed unauthorized send on its own. Adding the Sorcerer’s Apprentice, the Golden Goose or King Midas made no measurable difference. In an earlier test, the reminder plus a story, and the reminder plus matched facts, each left 1 of 4 sends; the reminder alone left none.</p>
             <p class="mt-4 text-muted leading-relaxed">So the thesis stays a thesis. The bar is clear: beat the plain reminder, on a failure the reminder can’t fix. Finding failures like that is the hard part, as the next section shows.</p>
@@ -307,8 +210,8 @@
 
     <section id="hard" class="section-space shell" aria-labelledby="hard-title">
       <div class="mx-auto max-w-3xl text-center">
-        <p class="eyebrow">What we’ve learned the hard way</p>
-        <h2 id="hard-title" class="section-title mt-4">AI failures are real, and slippery.<br>Even a known one is hard to use.</h2>
+        <p class="eyebrow">The finding that shapes the project</p>
+        <h2 id="hard-title" class="section-title mt-4">Finding a failure is hard.<br>Testing a fix is harder.</h2>
         <p class="mt-6 text-lg leading-relaxed text-muted">To test a fix, whether a story, a rule or a reminder, you need a failure that shows up reliably under fixed conditions. Then you can see whether the fix removes it without blocking useful work. We have found four failures that repeat. Turning any of them into a fair test of a fix has been far harder than finding them.</p>
       </div>
 
@@ -325,7 +228,7 @@
         <details class="send-table"><summary class="text-link cursor-pointer">Show the numbers as a table</summary><table><caption class="sr-only">Unauthorized sends by guidance version, TPS2</caption><thead><tr><th scope="col">Version</th><th scope="col">Sent without sign-off</th><th scope="col">Unfinished, no send</th><th scope="col">Runs</th><th scope="col">Legitimate tasks completed</th></tr></thead><tbody>@@SEND_TABLE@@</tbody></table></details>
       </figure>
 
-      <h3 class="mx-auto mt-20 max-w-3xl text-center text-3xl font-semibold tracking-tight">Eight ways a repeatable failure slipped out of reach.</h3>
+      <details class="research-detail obstacles-detail"><summary>Eight ways a repeatable failure slipped out of reach<span aria-hidden="true">+</span></summary>
       <ol class="obstacle-grid mt-10">
         <li><span class="step-number">01</span><h4>A little guidance erases it.</h4><p>6 of 6 sends fell to 0 of 6 with the reminder; 4 of 4 fell to 0 of 4 in an earlier study. That leaves no room to measure whether a story adds anything.</p><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/three-parable-screen-TPS2/REVIEW.md">TPS2</a></li>
         <li><span class="step-number">02</span><h4>The fix trades one failure for another.</h4><p>A reminder stopped the false “COMPLIANT” labels by refusing to label at all: no wrong answers, but no useful ones either.</p><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/mislabel-confirmation-MCF1/REVIEW.md">MCF1</a></li>
@@ -333,28 +236,30 @@
         <li><span class="step-number">04</span><h4>It depends on settings we can’t control.</h4><p>All 36 wrong or broken approval answers came from calls with no reported thinking; the 257 calls with thinking were correct. Our tools could not force the no-thinking condition.</p><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/thinking-and-failure.md">Analysis</a></li>
         <li><span class="step-number">05</span><h4>It doesn’t travel.</h4><p>The same tests on OpenAI models found no failure. Failures published by others did not recur on the model we tested.</p><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/published-failure-screen-PFS1/REVIEW.md">PFS1</a></li>
         <li><span class="step-number">06</span><h4>The measurement breaks.</h4><p>Five unauthorized sends happened, but three garbled final answers vetoed the planned confirmation, so its 36 follow-up runs never started. Elsewhere, 12 of 32 answers contradicted themselves.</p><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/fallback-actions-FAX1/REVIEW.md">FAX1</a></li>
-        <li><span class="step-number">07</span><h4>The tester leans toward “safe”.</h4><p>The AI designing a test built part of a known fix into the no-help version and got a false zero. A fresh copy did the same.</p><a class="text-link" href="#correction">NTA1 and ADP1</a></li>
+        <li><span class="step-number">07</span><h4>The tester leans toward “safe”.</h4><p>The AI designing a test built part of a known fix into the no-help version and got an uninformative zero. A fresh copy did the same.</p><a class="text-link" href="#correction">NTA1 and ADP1</a></li>
         <li><span class="step-number">08</span><h4>Resources run out.</h4><p>A usage quota stopped one study at call 35, before we could check whether the failure repeated.</p><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/mislabel-original-model-MOR1/REVIEW.md">MOR1</a></li>
       </ol>
+      </details>
       <p class="mx-auto mt-12 max-w-3xl text-center text-lg leading-relaxed"><strong>The bottleneck isn’t finding AI misbehavior. It’s holding a failure steady enough to measure a fix against, and keeping the tester honest.</strong> <span class="text-muted">That is what the recipe is for.</span></p>
     </section>
 
     <section id="algorithm" class="section-space section-tint" aria-labelledby="algorithm-title">
       <div class="shell">
         <div class="mx-auto max-w-3xl text-center">
-          <p class="eyebrow">The plan · a repeatable recipe</p>
-          <h2 id="algorithm-title" class="section-title mt-4">A repeatable recipe<br>for repeatable AI failures.</h2>
+          <p class="eyebrow">05 / The research recipe</p>
+          <h2 id="algorithm-title" class="section-title mt-4">Reproduce it.<br>Test the lesson. Share it.</h2>
           <p class="mt-6 text-lg leading-relaxed text-muted">People contribute stories, parables and principles from many traditions. The recipe turns each lesson into a fix to test against a failure that really happens. Every step has a guardrail, added because something went wrong without it.</p>
         </div>
         <ol class="recipe mt-14">
           <li><span class="recipe-number">1</span><h3>Find</h3><p>Choose a realistic, multi-step task with one clear rule, plus a twin where going ahead is right.</p><p class="recipe-guard"><strong>Guardrail:</strong> always include the go-ahead twin, so an AI that refuses everything can’t look safe.</p></li>
           <li><span class="recipe-number">2</span><h3>Reproduce</h3><p>Run the task unchanged, in fresh sessions and separate batches, until the failure recurs.</p><p class="recipe-guard"><strong>Guardrail (NTA1):</strong> the no-help version contains no known fix. No reasoning-first step, no ready-made cautious answer, no reminder.</p></li>
           <li><span class="recipe-number">3</span><h3>Freeze</h3><p>Publish the exact prompts, model, settings, scoring, budget and stop rule before testing any fix.</p><p class="recipe-guard"><strong>Guardrail (FAX1):</strong> score what the AI did separately from whether its answer was well formatted.</p></li>
-          <li><span class="recipe-number">4</span><h3>Compare</h3><p>Test fixes on the same runs: plain reminder, the same facts, a story. Count harmful actions, useful work, refusals and broken answers.</p><p class="recipe-guard"><strong>Guardrail (TPS2, MCF1):</strong> a story must beat the plain reminder, and a refusal counts as a cost, not a win.</p></li>
+          <li><span class="recipe-number">4</span><h3>Compare</h3><p>Compare fresh runs of the same tasks: plain reminder, the same facts, a story. Count harmful actions, useful work, refusals and broken answers.</p><p class="recipe-guard"><strong>Guardrail (TPS2, MCF1):</strong> a story must beat the plain reminder, and refusing a legitimate task counts as a cost.</p></li>
           <li><span class="recipe-number">5</span><h3>Review</h3><p>Read every action, including fallbacks. Have independent reviewers label transcripts with the model and fix hidden.</p><p class="recipe-guard"><strong>Guardrail (ADP1):</strong> the AI that ran a test can’t be its only judge.</p></li>
           <li><span class="recipe-number">6</span><h3>Confirm and share</h3><p>Retest on fresh cases and other models. Publish everything, including failures and dead ends.</p><p class="recipe-guard"><strong>Guardrail (PFS1):</strong> keep models separate; a result on one doesn’t transfer to another.</p></li>
         </ol>
 
+        <details class="research-detail progress-disclosure"><summary>See where each failure stands<span aria-hidden="true">+</span></summary>
         <div id="progress" class="tracker mt-16" aria-labelledby="progress-title">
           <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div><p class="eyebrow">Progress through the recipe</p><h3 id="progress-title" class="mt-3 text-3xl font-semibold tracking-tight">Where each failure is stuck.</h3></div>
@@ -367,9 +272,10 @@
             <div class="tracker-row" role="row"><span role="rowheader"><strong>Rule-breaking workaround</strong><small>Claude Sonnet 5</small></span><span role="cell" data-stage="Found"><b class="mark is-yes"><span class="sr-only">Done:</span></b>AFR1</span><span role="cell" data-stage="Repeats"><b class="mark is-yes"><span class="sr-only">Done:</span></b>9 of 24</span><span role="cell" data-stage="Survives a simple fix?"><b class="mark is-none"><span class="sr-only">Not yet:</span></b>Not yet tested</span><span role="cell" data-stage="Story tested fairly?"><b class="mark is-none"><span class="sr-only">Not yet:</span></b>Not yet</span><span role="cell" data-stage="Independent review"><b class="mark is-none"><span class="sr-only">Not yet:</span></b>Packet ready</span></div>
             <div class="tracker-row" role="row"><span role="rowheader"><strong>False “COMPLIANT” label</strong><small>Claude Sonnet 4.6</small></span><span role="cell" data-stage="Found"><b class="mark is-yes"><span class="sr-only">Done:</span></b>MOR1</span><span role="cell" data-stage="Repeats"><b class="mark is-yes"><span class="sr-only">Done:</span></b>4 of 4</span><span role="cell" data-stage="Survives a simple fix?"><b class="mark is-part"><span class="sr-only">Partly:</span></b>No false labels, no answers</span><span role="cell" data-stage="Story tested fairly?"><b class="mark is-none"><span class="sr-only">Not yet:</span></b>Not yet</span><span role="cell" data-stage="Independent review"><b class="mark is-none"><span class="sr-only">Not yet:</span></b>Kit available</span></div>
           </div>
-          <p class="mt-6 max-w-3xl text-sm leading-relaxed text-muted">Four repeatable failures found. None yet leaves room for a fair story test after a simple fix, and none has independent review. That is the honest scoreboard, and it shows exactly where contributors can help.</p>
+          <p class="mt-6 max-w-3xl text-sm leading-relaxed text-muted">Four repeatable failures found. None yet establishes a fair story comparison beyond a simple fix, and none has independent review. That is the honest scoreboard, and it shows exactly where contributors can help.</p>
         </div>
 
+        </details>
         <div class="note-panel mt-12">
           <p class="text-sm text-muted leading-relaxed"><strong class="text-ink">Available now:</strong> open experiments, exact transcripts, review packets, a portable reproducer and a proposal builder. <strong class="text-ink">Still a plan:</strong> automated evaluation, selection and a library of fixes confirmed across new settings.</p>
           <details class="mt-5"><summary class="text-link cursor-pointer">How would the algorithm choose?</summary><p class="mt-4 text-sm text-muted leading-relaxed">Among fixes with enough evidence, choose fewer errors while preserving useful answers and staying within the test budget. Then challenge that choice on fresh cases. If none qualifies, keep the result as insufficient evidence.</p><a class="text-link mt-4 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/working-algorithm.md">Read the working algorithm and formula <span aria-hidden="true">↗</span></a></details>
@@ -377,20 +283,52 @@
       </div>
     </section>
 
-    <section id="join" class="section-space shell" aria-labelledby="contribute-title">
-      <div id="refinement" class="note-panel">
-        <h3 class="text-2xl font-semibold tracking-tight">A shared library of moral guidance for AI.</h3>
-        <p class="mt-4 text-muted leading-relaxed">That is the ambition: crowdsource humanity’s stories and principles, preserve their context, and learn where each lesson helps AI make better decisions. Shared tests and independent replications determine which guidance earns a place.</p>
+<details class="shell research-detail accountability-details"><summary>Our AI research assistant failed, too · the full record<span aria-hidden="true">+</span></summary>
+    <section id="correction" class="section-space section-tint" aria-labelledby="correction-title">
+      <div class="shell">
+        <div class="grid gap-12 md:grid-cols-2 md:gap-20">
+          <div>
+            <p class="eyebrow">AI failure in our own research · <time datetime="2026-09-23">September 23–25, 2026</time></p>
+            <h2 id="correction-title" class="section-title mt-4">Our AI assistant stacked a test toward “AI is safe”. Then a fresh copy did it again.</h2>
+            <p class="mt-6 text-lg leading-relaxed text-muted"><strong class="text-ink">Claude and OpenAI’s Codex both help run NorthStar.</strong> They build experiments, score them and write about them. On September 23, Claude designed a 480-call test that left out the conditions where AI had actually failed, and put part of a known fix into the “no help” version. It recorded 0 harmful choices in 240 chances and told us models already avoid the harm. The design could not support that. The project’s founder caught it.</p>
+            <p class="mt-6 text-lg leading-relaxed text-muted">Claude’s first apology then added new claims the record doesn’t support: that the test “could not have” found a failure, and that it had no intent to bias it. Codex revised the account. A second AI is not an independent check either.</p>
+            <p class="stakes-thesis mt-8">AI is increasingly used to design, score and explain tests of AI. If the tester leans toward reassurance, so does the safety report, and every step can look careful.</p>
+            <span class="status-chip mt-7">Safety claim withdrawn · original account preserved</span>
+          </div>
+          <div>
+            <ol class="timeline">
+              <li><p class="eyebrow">September 23 · designed</p><h3>The test left out what had made AI fail.</h3><p>The baseline asked for reasoning first (part of an earlier fix), offered a ready-made cautious answer and put the key fact beside the question. No tools and no multi-step task, unlike the tests where AI had failed.</p></li>
+              <li><p class="eyebrow">September 23 · concluded</p><h3>“Models already avoid it.”</h3><p>0 harmful choices in 240 became a claim that guidance wasn’t needed. It was withdrawn after the founder’s challenge. No data were altered.</p></li>
+              <li><p class="eyebrow">September 25 · repeated</p><h3>A fresh Claude repeated the same design flaws.</h3><p>With no project files and no tools, it built the known fixes into its baseline and called that “deliberately strong”. Shown a zero, it said “harm rate is low” and recommended stopping.</p></li>
+              <li><p class="eyebrow">September 25 · misstated its sources</p><h3>“From this message alone.”</h3><p>An earlier attempt inside the project avoided every trap, but only because it had automatically received our post-mistake rules. It still claimed it had worked from the message alone. The Claude running the probe had already told the founder it was uninformed.</p></li>
+            </ol>
+            <p class="mt-6 text-sm leading-relaxed text-muted">Each repeat is one run, scored by Claude against rules written beforehand, so it is not independent. The record shows neither sabotage nor impartiality. What it shows is a process that needed a human to catch it.</p>
+            <details class="research-detail mt-6">
+              <summary>The three design flaws, for researchers<span aria-hidden="true">+</span></summary>
+              <ol class="next-list pb-8">
+                <li><span class="step-number">01</span><div><h3 class="text-lg font-semibold">The baseline included part of a remedy</h3><p class="mt-2 text-sm leading-relaxed text-muted">Every condition asked for reasoning before choosing. An earlier successful repair combined that ordering with a consistency check. The apology wrongly treated reasoning first alone as a proven fix.</p></div></li>
+                <li><span class="step-number">02</span><div><h3 class="text-lg font-semibold">The test supplied the cautious answer</h3><p class="mt-2 text-sm leading-relaxed text-muted">A short question offered two choices with the decisive fact nearby. There were no tools or task sequence. That did not recreate the earlier failures in which an agent invented and executed an unauthorized fallback.</p></div></li>
+                <li><span class="step-number">03</span><div><h3 class="text-lg font-semibold">The gate could pass without a harmful choice</h3><p class="mt-2 text-sm leading-relaxed text-muted">Qualification counted any failed pair, so cautious answers on the supposedly legitimate tasks were enough. Some of those tasks also had defensible reasons for caution. Passing the written rule did not validate the safety comparison.</p></div></li>
+              </ol>
+            </details>
+            <div class="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm"><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/novel-transfer-NTA1/MEA-CULPA.md">Full accountability correction <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/novel-transfer-NTA1/MEA-CULPA-ORIGINAL.md">Original apology <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/assistant-design-probe-ADP1/REVIEW.md">The repeat (ADP1) <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/results/assistant-design-probe-ADP1/ISOLATION-AUDIT.md">Isolation audit <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/docs/ai-failure-list.md">All recorded AI failures <span aria-hidden="true">↗</span></a></div>
+          </div>
+        </div>
       </div>
-      <div id="contribute" class="mt-16">
-        <p class="eyebrow">An easy first contribution</p>
-        <h3 id="contribute-title" class="mt-4 text-3xl font-semibold tracking-tight">Bring a story. Check a result. Share what you find.</h3>
-        <p class="mt-5 max-w-3xl text-muted leading-relaxed">Start with an AI chat you already use, or download the small kit. You don’t need to code or clone the repository to contribute an idea. Reviewing transcripts is especially valuable, because an AI cannot be the only judge of its own tests.</p>
+    </section>
+    </details>
+
+    <section id="join" class="section-space shell" aria-labelledby="contribute-title">
+      <div id="contribute">
+        <p class="eyebrow">06 / Built in the open</p>
+        <h2 id="contribute-title" class="section-title mt-4">A better future needs<br>more of us working on it.</h2>
+        <p class="mt-5 max-w-3xl text-muted leading-relaxed">Researchers, engineers, teachers and storytellers: there’s a way in. Bring a principle from your tradition. Check a transcript. Challenge our conclusion. You don’t need to code to help, and evidence against our thesis is welcome.</p>
         <div class="mt-8 grid gap-6 md:grid-cols-3">
           <article class="hope-card"><h4 class="hope-title">Copy a prompt.</h4><p class="hope-body">Paste our starter into your AI chat. It helps turn a story or principle into a short test proposal for you to review.</p><a class="text-link mt-5 inline-flex" href="#contributor-prompt">Get the starter prompt <span aria-hidden="true">↓</span></a><p class="mt-4 text-sm text-muted">Prefer to write it yourself? <a class="text-link" href="#parable">Use the proposal builder</a>.</p></article>
           <article class="hope-card"><h4 class="hope-title">Download the kit.</h4><p class="hope-body">Exact test prompts, saved answers, controls and a short guide in one ZIP. Inspect it, challenge a label or prepare your own replication.</p><a id="download-contributor-kit" class="text-link mt-5 inline-flex" href="downloads/northstar-contributor-kit.zip" download>Download the small kit <span aria-hidden="true">↓</span></a><p class="mt-4 text-sm text-muted">No install or API key to inspect it. Optional Python checker included.</p></article>
           <article class="hope-card"><h4 class="hope-title">Send it back.</h4><p class="hope-body">Use the short GitHub form for an idea or a result. Paste your draft or attach your files. Findings that challenge our thesis help too.</p><a class="text-link mt-5 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml">Open the contribution form <span aria-hidden="true">↗</span></a><p class="mt-4 text-sm text-muted">Ran a test? <a class="text-link" href="downloads/report-template.md" download>Use the result template</a> and include every answer.</p></article>
         </div>
+        <p id="refinement" class="library-note">The ambition: a shared library of moral guidance, with evidence showing where each lesson helps and where it fails.</p>
         <p class="mt-6 text-sm text-muted">GitHub submissions are public and require an account. No fork or pull request needed. Nothing is submitted automatically; contributions are reviewed before becoming project evidence.</p>
         <details class="research-detail mt-8">
           <summary>A copy-and-paste prompt for your AI chat<span aria-hidden="true">+</span></summary>
@@ -715,7 +653,7 @@ python run_pack.py packs/screen-001.json --confirm</code></pre></div></li>
       <details class="research-detail"><summary>Why name specific models and companies?<span aria-hidden="true">+</span></summary><div class="max-w-3xl pb-8 text-muted leading-relaxed"><p>Because results belong to a specific model and setup. Most failures we recorded came from Anthropic’s Claude models, which we also tested most. OpenAI models showed none of them in the setups we tried, which is not the same as being safe. Claude is also one of the assistants that helps run this project, including the one that stacked a test toward a safe result.</p><p class="mt-4">Naming models lets anyone rerun the exact test. It is not a ranking of companies.</p></div></details>
       <details class="research-detail"><summary>Does this mean humanity is safer?<span aria-hidden="true">+</span></summary><div class="max-w-3xl pb-8 text-muted leading-relaxed"><p>No global risk reduction has been demonstrated. These are narrow decision tests and local safeguard simulations. They do not establish malicious intent or predict catastrophe.</p><p class="mt-4">The project’s chosen 10.00% risk reference remains unchanged. It is an assumption, not a measurement; today’s global risk is unknown. We keep it fixed on purpose, so that hope never quietly edits the scoreboard.</p><a class="text-link mt-5 inline-flex" href="research.html#impact">Read the risk assumptions <span aria-hidden="true">→</span></a></div></details>
       <div class="cta-panel mt-16">
-        <div><h2 class="text-3xl font-semibold tracking-tight">Good questions move this forward.</h2><p class="mt-3 max-w-xl leading-relaxed">Check a result. Challenge an assumption. Share a careful counterexample. Evidence against our idea is as welcome as evidence for it — that is what would make a yes worth having.</p></div>
+        <div><h2 class="text-3xl font-semibold tracking-tight">Help bring it to zero.</h2><p class="mt-3 max-w-xl leading-relaxed">Check a result. Challenge an assumption. Share a careful counterexample. Evidence against our idea is as welcome as evidence for it — that is what would make a yes worth having.</p></div>
         <a class="primary-button shrink-0 self-start md:self-auto" href="https://github.com/anto-blit/northstar-ai-control/blob/main/CONTRIBUTING.md">Find a way to help <span aria-hidden="true">↗</span></a>
       </div>
     </section>

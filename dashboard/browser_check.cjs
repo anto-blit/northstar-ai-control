@@ -72,7 +72,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await viewport(1440, 1100);
     await navigate(homeURL);
     assert.equal(await evaluate(`document.querySelectorAll('h1').length`), 1);
-    assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Help save humanity/);
+    assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Ten to zero/);
     assert.equal(await evaluate(`document.querySelectorAll('#failures .failure-card').length`), 8);
     assert.equal(await evaluate(`document.querySelectorAll('.send-row').length`), 8);
     assert.equal(await evaluate(`document.querySelectorAll('.send-row.is-baseline .is-sent').length`), 6);
@@ -83,6 +83,25 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.equal(await evaluate(`getComputedStyle(document.documentElement).scrollBehavior`), 'auto');
     assert.equal(await evaluate(`document.getElementById('score-grid').children.length`), 32);
     await screenshot('desktop.png');
+    for (const id of ['failures', 'reproduce', 'thesis']) {
+      await evaluate(`document.getElementById('${id}').scrollIntoView()`);
+      await screenshot(`desktop-default-${id}.png`);
+    }
+    await evaluate(`window.scrollTo(0, 0)`);
+    // Switching to the ambition must not turn it into a measured result or alter evidence.
+    const earnedBefore = await evaluate(`document.getElementById('value-earned').textContent`);
+    await evaluate(`document.querySelector('[data-risk="ambition"]').focus()`);
+    await call('Input.dispatchKeyEvent', { type: 'keyDown', key: ' ', code: 'Space', windowsVirtualKeyCode: 32 });
+    await call('Input.dispatchKeyEvent', { type: 'keyUp', key: ' ', code: 'Space', windowsVirtualKeyCode: 32 });
+    assert.equal(await evaluate(`document.querySelector('[data-risk="ambition"]').getAttribute('aria-pressed')`), 'true');
+    assert.match(await evaluate(`document.getElementById('risk-mode-label').textContent`), /not a result/);
+    assert.match(await evaluate(`document.getElementById('risk-dots').getAttribute('aria-label')`), /not an achieved or measured result/);
+    assert.match(await evaluate(`document.getElementById('risk-caption').textContent`), /Hinton’s 10–20% estimate/);
+    assert.match(await evaluate(`document.getElementById('risk-caption').textContent`), /no global risk reduction has been measured/);
+    assert.equal(await evaluate(`document.getElementById('value-earned').textContent`), earnedBefore);
+    await screenshot('desktop-ambition.png');
+    await evaluate(`document.querySelector('[data-risk="reference"]').click()`);
+    assert.equal(await evaluate(`document.getElementById('risk-value').textContent`), '10%');
     // The copied/downloaded prompt must remain the same complete proposal prompt.
     const starterPrompt = fs.readFileSync(path.join(__dirname, '..', 'contributor-kit', 'prompt.txt'), 'utf8').replace(/\r\n/g, '\n');
     assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').value`), starterPrompt);
@@ -187,8 +206,18 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await evaluate(`(() => {const s=document.getElementById('parable-select');s.value='fox-stork';s.dispatchEvent(new Event('change'));s.value='custom';s.dispatchEvent(new Event('change'));})()`);
     assert.equal(await evaluate(`document.getElementById('parable-name').value`), 'A careful keeper');
     await evaluate(`document.getElementById('parable-form').requestSubmit()`);
+    // Inspect the expanded record as well as the default progressive disclosure.
+    await evaluate(`document.querySelectorAll('details').forEach(detail => detail.open = true)`);
     for (const width of [320, 390, 768, 1440]) {
       await viewport(width, 950);
+      if (await evaluate(`document.documentElement.scrollWidth > ${width}`)) {
+        await screenshot('overflow.png');
+        console.error(await evaluate(`Array.from(document.querySelectorAll('body *')).filter(e => {
+          if (e.getBoundingClientRect().right <= ${width} + 1) return false;
+          for (let p=e.parentElement; p; p=p.parentElement) if (['auto','scroll','hidden'].includes(getComputedStyle(p).overflowX)) return false;
+          return true;
+        }).map(e => ({tag:e.tagName,id:e.id,class:e.className,right:e.getBoundingClientRect().right})).slice(0,20)`));
+      }
       assert.equal(await evaluate(`document.documentElement.scrollWidth`), width, 'Horizontal overflow at ' + width);
     }
     await viewport(390, 844);
@@ -302,6 +331,9 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.match(await evaluate(`document.getElementById('lied-or-false').textContent`), /possible sign of bias/);
     assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').value`), starterPrompt);
     assert.equal(await evaluate(`document.getElementById('copy-contributor-prompt').hidden`), true);
+    assert.equal(await evaluate(`document.getElementById('risk-switch').hidden`), true);
+    assert.equal(await evaluate(`document.getElementById('risk-value').textContent`), '10%');
+    assert.match(await evaluate(`document.getElementById('risk-caption').textContent`), /Zero is our goal/);
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],
@@ -309,7 +341,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
         'custom starter', 'starter preserves edits', 'starter keyboard focus', 'custom draft', 'required fields',
         'literal user content', 'download round trip', 'edit invalidation', 'in-page draft retention',
         'no horizontal overflow', 'local links', 'legacy bookmark redirect', 'research controls',
-        'reduced motion', 'failure record, unit chart, outside incidents and tracker', 'JavaScript-disabled evidence and preparation status', 'no external network requests', 'no browser errors'],
+        'reduced motion', 'keyboard risk/ambition switch preserves attribution and measured progress', 'failure record, unit chart, outside incidents and tracker', 'JavaScript-disabled evidence and preparation status', 'no external network requests', 'no browser errors'],
       screenshots: folder };
     fs.writeFileSync(path.join(folder, 'report.json'), JSON.stringify(result, null, 2));
     console.log(JSON.stringify(result, null, 2));

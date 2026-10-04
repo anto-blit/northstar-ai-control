@@ -1,5 +1,20 @@
 # NorthStar homepage and research dashboard
 
+October 4: the homepage adapts the user's `Ten to Zero.html` reference: restrained
+light opening, large “Ten to zero” headline, attributed risk/ambition dot graphic,
+dark failure record, a working local starter, and moral-principle illustrations.
+NorthStar remains the project name. The graphic illustrates Hinton's lower-end
+10% reference and a 0% goal; it never measures progress. The reference and goal
+remain clearly explained with JavaScript disabled.
+
+The main route is `#top` → `#failures` → `#outside` → `#reproduce` → `#thesis` →
+`#hard` → `#algorithm` → `#contribute`. Detailed records, obstacles, the progress
+tracker and accountability timeline use native disclosures. Links into them open
+their parents. Clean OpenAI results and the story-versus-reminder scorecard stay
+visible by default. The original proposal's generic commands are replaced with
+the real portable reproducer; news incidents are not claimed as its replications.
+All evidence checks, downloads, the proposal builder and research archive remain.
+
 September 27: the homepage keeps the mission and thesis in its opening, then leads
 with what AI did. Order: hero with the TPS2 transcript example; `#failures` (eight
 cards); `#correction` (the research-assistant failure); `#outside` (sourced incidents

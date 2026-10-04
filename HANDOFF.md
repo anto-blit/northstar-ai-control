@@ -1,5 +1,29 @@
 # NorthStar: start here to continue the work
 
+**October 4: Ten to Zero homepage adaptation.** The user supplied `Ten to Zero.html`
+and asked to adapt its stronger, modern presentation to NorthStar. The homepage now
+uses a light typographic opening, a 100-dot risk/ambition graphic, a dark failure
+record, a practical local reproducer, and illustrated moral-principle cards. Keep
+NorthStar as the project name; “Ten to zero” is the mission headline. Hinton's
+personal 10–20% estimate and 30-year horizon are attributed in the opening. The
+graphic uses its lower end as the reference; switching to zero explicitly shows
+an ambition and never changes measured progress or experiment counts.
+
+The reference's placeholder CLI and implied recreations of every news incident
+were replaced with the actual portable kit and working offline verification/input
+export commands. Published incidents and our own tests remain distinct. The
+Golden Rule thesis, visible clean OpenAI result, reminder/story scorecard, and
+difficulty of fairly testing a fix remain central. Extra cases, obstacles,
+accountability timeline, and tracker are expandable; existing deep links open
+their containing sections. The proposal builder and all downloads remain available.
+The user's original HTML and unrelated untracked files were left untouched.
+
+No model experiments were run and no frozen evidence was edited. Validation:
+62 dashboard integrity tests passed; the browser check covers 320/390/768/1440px,
+expanded details, keyboard risk switching, clipboard denial, proposal downloads,
+JavaScript-disabled evidence, and no external requests. The reproducer's input
+export also ran offline. Existing website publishing authorization continues.
+
 **September 27 site voice and recipe:** the user found the site "too conservative and not
 critical" of AI misbehavior and approved a rewrite for newcomers and researchers
 (name models and makers; include sourced outside incidents; show the stories-versus-reminder

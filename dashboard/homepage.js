@@ -12,6 +12,30 @@
   followResearchBookmark();
   window.addEventListener('hashchange', followResearchBookmark);
 
+  // This switch illustrates a reference and an ambition. It never reports progress.
+  const riskSwitch = document.getElementById('risk-switch');
+  const riskDots = document.getElementById('risk-dots');
+  riskSwitch.hidden = false;
+  for (const button of riskSwitch.querySelectorAll('button')) {
+    button.addEventListener('click', () => {
+      const ambition = button.dataset.risk === 'ambition';
+      for (const option of riskSwitch.querySelectorAll('button')) {
+        option.setAttribute('aria-pressed', String(option === button));
+      }
+      riskDots.classList.toggle('is-ambition', ambition);
+      riskDots.setAttribute('aria-label', ambition
+        ? 'Zero risk dots: an illustration of our ambition, not an achieved or measured result.'
+        : '10 of 100 dots highlighted: an illustration of the 10% risk reference, not experiment results.');
+      document.getElementById('risk-value').firstChild.textContent = ambition ? '0' : '10';
+      document.getElementById('risk-value').classList.toggle('is-ambition', ambition);
+      document.getElementById('risk-mode-label').textContent = ambition
+        ? 'A goal to work toward, not a result' : 'A risk reference, not a measurement';
+      document.getElementById('risk-explanation').textContent = ambition
+        ? 'The future we want: no AI-caused extinction. Local tests can examine failures and fixes; they cannot measure this global outcome.'
+        : 'The lower end of Geoffrey Hinton’s personal estimate of AI causing human extinction within 30 years.';
+    });
+  }
+
   const copyPrompt = document.getElementById('copy-contributor-prompt');
   copyPrompt.hidden = false;
   copyPrompt.addEventListener('click', async () => {
