@@ -1,5 +1,16 @@
 # NorthStar: start here to continue the work
 
+**October 8: dontkillthehumans.org and the hero instruction line.** The user bought
+`dontkillthehumans.org` at Porkbun (Porkbun nameservers). The site stays on GitHub
+Pages, not Vercel. Do not set the Pages custom domain until Porkbun DNS points to
+GitHub (A records 185.199.108-111.153, `www` CNAME `anto-blit.github.io`). Setting it
+earlier would redirect the working github.io site to a domain that doesn't resolve.
+After that, update canonical/og URLs and share links from the github.io address.
+The hero now carries a playful `Instruction: dont_kill_the_humans()` chip, which the
+user chose over `sys.override` because an override is the behaviour the site criticises.
+Its comment cites TPS2's 6 of 6 sends, made despite a written approval rule, and links
+to the failure record.
+
 **October 4: Pip cartoons integrated beside their evidence.** The user explicitly
 required preserving the cartoon content. `dashboard/pip/source.html` is a byte-for-byte
 copy of the supplied root HTML, pinned by SHA-256 in `dashboard/test_pip.py`. The

@@ -468,6 +468,10 @@
   .hero-band { color: var(--color-ink); background: #fafaf9; padding-bottom: 46px; }
   .hero { padding-top: clamp(64px, 7.8vw, 112px); text-align: center; }
   .hero-eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 10px; letter-spacing: .15em; }
+  .hero-instruction { display: flex; flex-direction: column; gap: 4px; width: fit-content; max-width: 100%; margin: 26px auto 0; padding: 12px 18px; border-radius: 12px; background: #15161b; color: #eceef4; text-align: left; text-decoration: none; font-family: var(--font-mono); font-size: 13px; line-height: 1.55; box-shadow: 0 10px 30px rgb(21 22 27 / .12); transition: transform .18s, box-shadow .18s; }
+  .hero-instruction:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgb(21 22 27 / .18); }
+  .hero-instruction-key { color: #7fd1b5; }
+  .hero-instruction-note { color: #9a9ca8; font-size: 12px; }
   .open-dot { width: 6px; height: 6px; flex-shrink: 0; display: inline-block; border-radius: 50%; background: #188366; box-shadow: 0 0 0 4px rgb(24 131 102 / .09); }
   .hero-title { margin: 25px auto 0; max-width: 100%; font-size: clamp(72px, 11vw, 158px); line-height: 1.05; font-weight: 650; letter-spacing: -.075em; color: var(--color-ink); text-shadow: none; }
   .hero-title > span { color: var(--color-accent); }
@@ -652,6 +656,8 @@
   .hero-description { font-size: 16px; }
   .hero-mission { font-size: 22px; }
   .hero-eyebrow { font-size: 9px; letter-spacing: .09em; }
+  .hero-instruction { margin-top: 20px; padding: 10px 14px; font-size: 12px; }
+  .hero-instruction-note { font-size: 11px; }
   .risk-card { margin-top: 40px; padding: 24px; border-radius: 22px; }
   .risk-dots { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 10px; margin-block: 24px; }
   .risk-card-top { align-items: start; flex-direction: column; gap: 4px; }
