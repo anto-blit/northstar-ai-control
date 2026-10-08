@@ -35,7 +35,7 @@ if(vertical&&!embedded){
         let done=elapsed;for(let i=0;i<idx;i++)done+=S()[i].d;
         ctx.fillStyle='#dedee5';ctx.fillRect(70,1695,940,6);ctx.fillStyle='#2f5bea';ctx.fillRect(70,1695,940*Math.min(1,done/total()),6);
         ctx.fillStyle='#1d1d1f';lines(ctx,idx===S().length-1?PIP_META[ep].evidenceLabel+' →':'Pip breaks the rules.',70,1770,940,34,650);
-        ctx.fillStyle='#5e5e66';lines(ctx,'anto-blit.github.io/northstar-ai-control/',70,1835,940,28);
+        ctx.fillStyle='#5e5e66';lines(ctx,'dontkillthehumans.org',70,1835,940,28);
       }finally{URL.revokeObjectURL(svgURL);}
     }catch(error){$('player-status').textContent='Video frame could not be rendered: '+error.message;}
     finally{drawing=false;}

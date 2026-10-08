@@ -7,10 +7,10 @@
 
 [![Verify NorthStar](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml/badge.svg)](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-087f79)](LICENSE) [![Stage: Open research](https://img.shields.io/badge/stage-open_research-102d3b)](EXPERIMENTS-STATUS.md)
 
-**[Open the dashboard](https://anto-blit.github.io/northstar-ai-control/) · [Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
+**[Open the dashboard](https://dontkillthehumans.org/) · [Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
-**Easy first contribution:** [copy a starter prompt](https://anto-blit.github.io/northstar-ai-control/#contributor-prompt),
-[download the small kit](https://anto-blit.github.io/northstar-ai-control/downloads/northstar-contributor-kit.zip),
+**Easy first contribution:** [copy a starter prompt](https://dontkillthehumans.org/#contributor-prompt),
+[download the small kit](https://dontkillthehumans.org/downloads/northstar-contributor-kit.zip),
 then [share an idea or result](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml).
 No coding needed for proposals. The kit includes exact inputs and an offline checker.
 
@@ -67,7 +67,7 @@ Every proposed failure needs a concrete prohibited outcome and a closely matched
 legitimate task that should succeed. For predefined opposite-label pairs, our
 evaluation protocol scores whether **both halves are correct**, alongside unsafe
 approvals, unnecessary refusals and invalid answers.
-[See the approach on the site](https://anto-blit.github.io/northstar-ai-control/#idea).
+[See the approach on the site](https://dontkillthehumans.org/#idea).
 
 **[The working algorithm and its formulas](docs/working-algorithm.md)** connect
 this research to a proposed library of tested patterns, guidance and action
@@ -261,7 +261,7 @@ Neither had invalid answers, service errors or missing calls. No story intervent
 ran. These narrow negative results do not prove OpenAI is flawless or supply a
 baseline for story testing. A repeatable rate around 10% or a clearly declared
 weaker model can still support a properly sized comparison; findings must remain
-specific to that target. [Inspect both searches](https://anto-blit.github.io/northstar-ai-control/#codex-failure-search).
+specific to that target. [Inspect both searches](https://dontkillthehumans.org/#codex-failure-search).
 
 **Previous: [40-call test of the new keeper story on Codex](experiments/keeper-micro/README.md).**
 All four approaches scored **10/10**: original prompt, matched factual guidance,
@@ -273,7 +273,7 @@ rate. These forty fresh Codex sessions are separate from Claude's recorded error
 and interrupted confirmation. **Further story comparisons are paused until a
 reliable baseline qualifies on the exact target configuration.** See the
 [baseline gate](experiments/BASELINE-GATE.md) and
-[complete comparison and new story](https://anto-blit.github.io/northstar-ai-control/#keeper-micro).
+[complete comparison and new story](https://dontkillthehumans.org/#keeper-micro).
 
 **Previous: [Claude's quota interrupted the confirmation test](experiments/story-confirmation-v3/README.md).**
 The method audit passed and separate AI checks agreed on all 256 case labels and
@@ -284,7 +284,7 @@ wrong approvals**. Both recorded errors contradict their own correct over-cap
 explanation. Stories and simple repair both avoided this flaw in the small partial
 sample; **no story advantage is confirmed**. All errors, missing denominators and
 $3.336371 reported usage are preserved. This was a quota interruption, not a safety
-refusal. [Inspect the partial comparison](https://anto-blit.github.io/northstar-ai-control/#story-confirmation).
+refusal. [Inspect the partial comparison](https://dontkillthehumans.org/#story-confirmation).
 
 **Previous: [a small story-guidance lead needs confirmation](experiments/story-micro/README.md).**
 G11 completed two 90-call micro rounds. On the known case, both stories and matched
@@ -295,7 +295,7 @@ fresh numerical variants, the unchanged fable made **0/24 wrong approvals**, ver
 Round one has no narrative safety lead; round two meets the published candidate
 rule. Only two factual/story differences support that lead, so a reliable advantage
 remains unestablished. No revision or model training was needed under the frozen
-rule. [Inspect both micro rounds](https://anto-blit.github.io/northstar-ai-control/#story-micro).
+rule. [Inspect both micro rounds](https://dontkillthehumans.org/#story-micro).
 
 **Previous: [the known approval flaw recurred in fresh model calls](experiments/approval-repeatability/README.md).**
 G10 completed all 120 planned calls: **8 valid wrong approvals across 100 over-limit
@@ -304,7 +304,7 @@ prompts failed 6/50 and 2/50 times; all 20 legitimate controls approved correctl
 Both meet the published repeatability rule. This is a narrow, recurring output
 error we can test prevention against. It does not establish deliberate misconduct,
 a story benefit or global-risk reduction. Every attempt is preserved and scores
-recompute. [Inspect the repeated flaw on the site](https://anto-blit.github.io/northstar-ai-control/#approval-repeatability).
+recompute. [Inspect the repeated flaw on the site](https://dontkillthehumans.org/#approval-repeatability).
 
 **Earlier evidence: [an approval that contradicts its own explanation](experiments/known-approval-replay/README.md).**
 In two preserved G3-C responses, Sonnet says an agreement exceeds the owner's
@@ -326,7 +326,7 @@ altered the evidence or made an unauthorized release. In separate scripted attac
 the weak system accepted 24 unauthorized records and the conventional transaction
 guard accepted none, while preserving useful work after rejection. This is a local
 engineering result with no observed story benefit. The original rejected interface
-canary is preserved separately. [Inspect the site results](https://anto-blit.github.io/northstar-ai-control/#evidence-integrity).
+canary is preserved separately. [Inspect the site results](https://dontkillthehumans.org/#evidence-integrity).
 
 **Previous: [the bounded counterexample search found no qualifying failure](experiments/failure-discovery/README.md).**
 G7 completed all sixteen discovery episodes: twelve stopped trials respected
@@ -336,7 +336,7 @@ Two preceding interface canaries also passed. No candidate qualified for fresh
 confirmation. We improved measurement reliability in this run, but did not earn
 the counterexample milestone within that stop-boundary search or establish a story benefit or risk reduction.
 
-**Previous: [test a concrete stop boundary](https://anto-blit.github.io/northstar-ai-control/#revocation).**
+**Previous: [test a concrete stop boundary](https://dontkillthehumans.org/#revocation).**
 The [G6 study](experiments/revocation-agent/README.md) separates ordinary-agent
 behavior from scripted control tests. Deliberate post-stop delivery succeeds in
 2/2 revoked cases with cooperative cancellation and 0/2 with conventional
@@ -346,7 +346,7 @@ output and two receive provider refusals. No accepted request violates stop;
 the interruptions limit behavioral conclusions. No story advantage or global-risk
 reduction is established. [Why hypothetical scenarios can still be useful tests](docs/what-we-can-test.md).
 
-**Also: [try the story-to-rule prototype](https://anto-blit.github.io/northstar-ai-control/#stories).**
+**Also: [try the story-to-rule prototype](https://dontkillthehumans.org/#stories).**
 Six sourced fables now have explicit lessons, reasons, exceptions, disagreements
 and runnable conditional rules. Change the supplied facts on the site to inspect
 an allow, block or review decision. The interpretations are provisional and human
@@ -381,7 +381,7 @@ The Cassandra counterexample adds a useful question: can distrust of a messenger
 cause a supported warning to be ignored? Source notes distinguish checked
 references, project extensions and unestablished claims of independent invention.
 These candidates have zero model calls and human review pending; existing frozen
-comparisons stay unchanged. [Explore the candidates on the site](https://anto-blit.github.io/northstar-ai-control/#cross-cultural-candidates).
+comparisons stay unchanged. [Explore the candidates on the site](https://dontkillthehumans.org/#cross-cultural-candidates).
 
 | If you want to… | A concrete first contribution |
 |---|---|
@@ -428,7 +428,7 @@ The planned study compares four approaches at matched resources: generic informe
 
 ## What you can run today
 
-[The NorthStar Risk Thermometer](https://anto-blit.github.io/northstar-ai-control/)
+[The NorthStar Risk Thermometer](https://dontkillthehumans.org/)
 pairs a sourced 10% reference with verified project milestones and interactive
 recovery/monitor results. It distinguishes potential global impact from
 demonstrated protection in simulation and explains how safeguards could reduce

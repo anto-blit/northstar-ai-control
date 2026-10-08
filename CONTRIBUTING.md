@@ -10,13 +10,13 @@ You do not need to arrive with a finished proposal.
 
 ## Pick a first step
 
-**No coding needed:** [copy the starter prompt](https://anto-blit.github.io/northstar-ai-control/#contributor-prompt)
+**No coding needed:** [copy the starter prompt](https://dontkillthehumans.org/#contributor-prompt)
 into an AI chat you already use. It helps turn a story, parable or principle into
 an untested proposal. Review it, then paste it into the
 [short research form](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml).
 You can also use the website's proposal builder without AI assistance.
 
-**Prefer a small download?** [Get the contributor ZIP](https://anto-blit.github.io/northstar-ai-control/downloads/northstar-contributor-kit.zip).
+**Prefer a small download?** [Get the contributor ZIP](https://dontkillthehumans.org/downloads/northstar-contributor-kit.zip).
 It includes a short guide, the starter prompt, exact experiment inputs, controls,
 saved answers and the optional Python evidence checker. It makes no model calls
 or uploads. [The result template](contributor-kit/report-template.md) helps you
@@ -43,7 +43,7 @@ for a failure, a remedy, a replication, or a disagreement about the expected ans
 Ideas and negative results both help. Keep model configurations separate, include
 all attempts, and compare stories with simple instructions and matched facts.
 
-You can also [choose a parable or bring your own](https://anto-blit.github.io/northstar-ai-control/#parable).
+You can also [choose a parable or bring your own](https://dontkillthehumans.org/#parable).
 Describe its lesson, a harmless AI task and a permitted counterpart. The page
 prepares a downloadable proposal you can attach to a GitHub discussion or issue.
 It does not run a model or establish that the story works. Source rights,

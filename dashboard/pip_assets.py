@@ -6,7 +6,7 @@ import re
 
 HERE = Path(__file__).resolve().parent
 SOURCE = HERE / 'pip/source.html'
-SITE = 'https://anto-blit.github.io/northstar-ai-control/'
+SITE = 'https://dontkillthehumans.org/'
 REPO = 'https://github.com/anto-blit/northstar-ai-control/'
 SLUGS = ['holding-message', 'wrong-label', 'too-easy-test']
 TITLES = ['The holding message', 'The wrong label', 'The too-easy test']

@@ -34,8 +34,8 @@ The ZIP and text files are built into `downloads/` next to both exported pages;
 are involved. The copy button falls back to selecting the text if clipboard access
 is unavailable, and the prompt and downloads work without JavaScript.
 
-[Open the homepage](https://anto-blit.github.io/northstar-ai-control/) or the
-[full research dashboard](https://anto-blit.github.io/northstar-ai-control/research.html).
+[Open the homepage](https://dontkillthehumans.org/) or the
+[full research dashboard](https://dontkillthehumans.org/research.html).
 The homepage is `dashboard/index.html`; the detailed research view is
 `dashboard/research.html`. Both are portable HTML files with embedded data,
 styles and scripts. No server, account, analytics, external fonts or API key is

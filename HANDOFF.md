@@ -2,10 +2,12 @@
 
 **October 8: dontkillthehumans.org and the hero instruction line.** The user bought
 `dontkillthehumans.org` at Porkbun (Porkbun nameservers). The site stays on GitHub
-Pages, not Vercel. Do not set the Pages custom domain until Porkbun DNS points to
-GitHub (A records 185.199.108-111.153, `www` CNAME `anto-blit.github.io`). Setting it
-earlier would redirect the working github.io site to a domain that doesn't resolve.
-After that, update canonical/og URLs and share links from the github.io address.
+Pages, not Vercel: Porkbun has A records 185.199.108-111.153 and a `www` CNAME to
+`anto-blit.github.io`, and the Pages custom domain is set. Old github.io links,
+including deep links, 301 to the same path on the new domain. Canonical, og and
+share URLs, plus the README/CONTRIBUTING links, now use https://dontkillthehumans.org/.
+Historical records and the contributor kit keep the old URL, which still redirects.
+Once GitHub issues the certificate, turn on Enforce HTTPS.
 The hero now carries a playful `Instruction: dont_kill_the_humans()` chip, which the
 user chose over `sys.override` because an override is the behaviour the site criticises.
 Its comment cites TPS2's 6 of 6 sends, made despite a written approval rule, and links
