@@ -73,6 +73,17 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await navigate(homeURL);
     assert.equal(await evaluate(`document.querySelectorAll('h1').length`), 1);
     assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Ten to zero/);
+    assert.equal(await evaluate(`document.querySelector('.hero-actions .primary-button').getAttribute('href')`), '#failures');
+    assert.equal(await evaluate(`document.body.textContent.includes('Anthony More')`), false);
+    for (const id of ['outside', 'correction', 'next']) {
+      assert.equal(await evaluate(`document.getElementById('${id}').closest('details').open`), false);
+    }
+    // Old bookmarks and About links must reveal the newly collapsed records.
+    for (const id of ['outside', 'correction', 'lied-or-false']) {
+      await navigate(homeURL + '#' + id);
+      assert.equal(await evaluate(`document.getElementById('${id}').closest('details').open`), true);
+    }
+    await navigate(homeURL);
     assert.equal(await evaluate(`document.querySelectorAll('#failures .failure-card').length`), 8);
     assert.equal(await evaluate(`document.querySelectorAll('.send-row').length`), 8);
     assert.equal(await evaluate(`document.querySelectorAll('.send-row.is-baseline .is-sent').length`), 6);
@@ -302,6 +313,18 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
       if (href.startsWith('research.html#')) assert.ok(research.includes('id="' + href.split('#')[1] + '"'), href);
       if (href.startsWith('downloads/')) assert.ok(fs.existsSync(path.join(__dirname, href)), 'Missing download: ' + href);
     }
+    await navigate(new URL('about.html', homeURL).href);
+    assert.match(await evaluate(`document.querySelector('h1').textContent`), /A NorthStar for AI/);
+    assert.match(await evaluate(`document.body.textContent`), /Anthony More founded and maintains NorthStar/);
+    assert.match(await evaluate(`document.body.textContent`), /Codex prepared the revised account/);
+    for (const width of [320, 390, 768, 1440]) {
+      await viewport(width, 950);
+      assert.equal(await evaluate(`document.documentElement.scrollWidth <= ${width}`), true, 'About overflow');
+    }
+    await screenshot('desktop-about.png');
+    await viewport(390, 844);
+    await screenshot('mobile-about.png');
+    await viewport(1440, 1100);
     await call('Page.navigate', { url: homeURL + '#approval-repeatability' });
     for (let i = 0; i < 100; i++) {
       if (await evaluate(`location.href.includes('research.html#approval-repeatability') && document.readyState==='complete'`)) break;

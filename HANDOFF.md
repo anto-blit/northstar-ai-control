@@ -1,5 +1,20 @@
 # NorthStar: start here to continue the work
 
+**October 9: project-led homepage and About page.** The user approved moving the
+personal byline off the homepage, simplifying its reading path and pushing the
+result. The footer now describes the research; `about.html` identifies Anthony
+More and the actual roles of Claude and Codex, including the human challenges
+to the flawed test and wording. Homepage references emphasize human review.
+The primary action is “See an AI failure”. The thesis and scorecard now follow
+the failure record; the local reproducer follows the research recipe. Published
+outside incidents, detailed accountability and next steps use native disclosures;
+existing deep links open them. The central testing difficulty, clean OpenAI
+results, attribution, complete records and all Pip content remain available.
+The build publishes and checks About alongside the homepage. No model calls.
+Validation: all 66 offline dashboard/content tests passed, the export check
+matched sources, and browser checks passed at 320/390/768/1440px, including About,
+disclosure bookmarks, downloads and JavaScript-disabled evidence.
+
 **October 8: dontkillthehumans.org and the hero instruction line.** The user bought
 `dontkillthehumans.org` at Porkbun (Porkbun nameservers). The site stays on GitHub
 Pages, not Vercel: Porkbun has A records 185.199.108-111.153 and a `www` CNAME to

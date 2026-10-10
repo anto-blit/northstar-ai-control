@@ -1,5 +1,13 @@
 # NorthStar homepage and research dashboard
 
+October 9: the homepage leads with the project and evidence, with attribution in
+`about.html` (built from `about.template.html` using the shared compiled styles).
+The default route is mission → failure → thesis and scorecard → testing difficulty
+and recipe → local reproducer → contribution. Outside incidents, the detailed
+accountability record and next steps are expandable; their bookmarks still open
+them. The footer links to About, which names the maintainer and distinguishes the
+AI assistants' roles. The build and `--check` include About in every export.
+
 October 4: the homepage adapts the user's `Ten to Zero.html` reference: restrained
 light opening, large “Ten to zero” headline, attributed risk/ambition dot graphic,
 dark failure record, a working local starter, and moral-principle illustrations.

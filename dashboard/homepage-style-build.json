@@ -1,11 +1,12 @@
 {
   "note": "Build provenance, not scientific evidence.",
   "sha256": {
-    "homepage.html": "dd9a25fc5d610bf6f8100ff0deeb71117bac0429c70a68788d29b2bb43fea7fd",
-    "homepage.css": "c46f19c70974d0097b831d6027141e0d13dcdb4e263aa29e1196e88ad377356a",
+    "homepage.html": "f8b30922fdd76882ea3cca95a207039910503c3ebb8de2f5ec06251a21286778",
+    "about.template.html": "005b21f900e2bd5d532085e1d82dd8c043849eb51027fcbad1bf907977390494",
+    "homepage.css": "71df69f6bfa5f9781c623f1fb3ea436725605081427e37e2d852cd3d6b8e0d05",
     "homepage.compiled.css": "f672668d9da97b697888b8187040fb86a4e37b49f8ed54e34c913ef0175846dc",
     "package.json": "9bf0a8d9f1626db4ac65ab234b724dec82a575fa2bb35b665a9d6297e6aee49b",
     "package-lock.json": "0f50c0b87704ff8e5c41175906395dde49d38ff07d84685e6e1718df7e5d8b2f",
-    "build_styles.mjs": "6857f618349c0599d2e2d51d9a2bafce61157f31dc7242bfbb3523d5ad76078f"
+    "build_styles.mjs": "ecf62c4ba7e4922395a07a95eed0da1e32cc43509f852c2d76357212b3c84cd4"
   }
 }

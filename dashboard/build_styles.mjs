@@ -11,7 +11,7 @@ const result = spawnSync(process.execPath, [
 ], { cwd, stdio: 'inherit', windowsHide: true });
 if (result.error) throw result.error;
 if (result.status !== 0) process.exit(result.status ?? 1);
-const inputs = ['homepage.html', 'homepage.css', 'homepage.compiled.css',
+const inputs = ['homepage.html', 'about.template.html', 'homepage.css', 'homepage.compiled.css',
   'package.json', 'package-lock.json', 'build_styles.mjs'];
 const hashes = Object.fromEntries(inputs.map(name => [name,
   createHash('sha256').update(readFileSync(new URL(name, import.meta.url))).digest('hex')]));

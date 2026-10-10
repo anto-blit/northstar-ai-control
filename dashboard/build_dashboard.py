@@ -565,7 +565,9 @@ def main():
     homepage = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(homepage)
     outputs = {args.output: homepage.render().encode("utf-8"),
-               args.output.with_name("research.html"): render().encode("utf-8")}
+               args.output.with_name("research.html"): render().encode("utf-8"),
+               args.output.with_name("about.html"): (HERE / "about.template.html").read_text(encoding="utf-8").replace(
+                   "@@STYLE@@", (HERE / "homepage.compiled.css").read_text(encoding="utf-8")).encode("utf-8")}
     outputs.update({args.output.parent / "downloads" / name: content
                     for name, content in build_assets().items()})
     outputs.update({args.output.parent / name: content for name, content in build_pip_assets().items()})
@@ -578,7 +580,7 @@ def main():
             path.write_bytes(content)
             print(f"Built {path}")
     if args.check:
-        print("Homepage, research dashboard and contributor downloads match their verified sources.")
+        print("Homepage, About page, research dashboard and contributor downloads match their verified sources.")
 
 
 if __name__ == "__main__":
