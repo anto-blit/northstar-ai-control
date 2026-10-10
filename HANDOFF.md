@@ -1,5 +1,11 @@
 # NorthStar: start here to continue the work
 
+**October 9: AI / Super Intelligence FAQ.** At the user's request, the homepage
+now briefly acknowledges the U.S. administration's naming change, links to the
+September 29 executive order, and states its federal executive-branch scope.
+NorthStar keeps “AI” in its main copy and centers behavior and human control.
+The FAQ has the shareable anchor `#ai-or-super-intelligence`. No model calls.
+
 **October 9: cartoon domain correction.** The user explicitly requested changing
 `tentozero.org` to `dontkillthehumans.org` in the cartoons. The shared closing
 card now uses the new domain and a wider centered label in all three episodes,
