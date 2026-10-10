@@ -1,12 +1,15 @@
 # Pip integration
 
-`source.html` is a byte-for-byte copy of the user's supplied
-`Pip breaks the rules_ Ten to Zero cartoons.html`. Do not edit its content.
-`test_pip.py` pins its SHA-256. The build reuses its complete scene, caption,
-duration, explanatory-text and Web Audio definitions verbatim.
+`source.html` preserves the user's supplied
+`Pip breaks the rules_ Ten to Zero cartoons.html`, with one user-authorized
+October 9 correction: the shared closing card now reads `dontkillthehumans.org`,
+with its centered label widened to fit. `test_pip.py` reverses those exact edits
+and checks the original SHA-256, so every other byte remains protected.
+The build reuses its complete scene, caption, duration, explanatory-text and
+Web Audio definitions verbatim.
 
 The homepage places episode 1 by TPS2, episode 2 by the reproducer commands,
-and episode 3 in the open accountability section before the recipe.
+and episode 3 in the expandable accountability section before the recipe.
 The standalone sharing routes supplement those inline placements.
 
 - `watch/player.html?ep=1&embed=1`: compact embed; `ep` accepts 1–3.

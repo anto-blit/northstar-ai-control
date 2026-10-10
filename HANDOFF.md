@@ -1,5 +1,15 @@
 # NorthStar: start here to continue the work
 
+**October 9: cartoon domain correction.** The user explicitly requested changing
+`tentozero.org` to `dontkillthehumans.org` in the cartoons. The shared closing
+card now uses the new domain and a wider centered label in all three episodes,
+including video exports. This supersedes the earlier byte-for-byte source rule
+only for those exact changes; the preservation test reverses them and verifies
+the original hash. All other cartoon content, timing and audio remain unchanged.
+Validation: four cartoon content tests, offline export check, and the player
+browser suite passed, including the new domain and label fit in all three
+closing cards, responsive layouts and a decoded 1080×1920 video export.
+
 **October 9: project-led homepage and About page.** The user approved moving the
 personal byline off the homepage, simplifying its reading path and pushing the
 result. The footer now describes the research; `about.html` identifies Anthony

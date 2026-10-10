@@ -85,14 +85,14 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
       await navigate(base);
       await pause(300);
       assert.equal(await evaluate(`document.querySelectorAll('.pip-embed').length`),3);
-      assert.equal(await evaluate(`document.querySelector('#correction').closest('details')`),null);
+      assert.equal(await evaluate(`document.querySelector('#correction').closest('details').open`),false);
       assert.equal(await evaluate(`!!(document.querySelector('#correction').compareDocumentPosition(document.querySelector('#algorithm')) & Node.DOCUMENT_POSITION_FOLLOWING)`),true);
       assert.equal(await evaluate(`document.querySelector('#episode-3 iframe').hasAttribute('src')`),false,'offscreen players remain unloaded');
       await screenshot('homepage-hero.png');
       for(const width of [320,390,768,1440]){
         await viewport(width,1000);
         for(let ep=1;ep<=3;ep++){
-          await evaluate(`document.querySelector('#episode-${ep}').scrollIntoView()`);
+          await evaluate(`(()=>{const target=document.querySelector('#episode-${ep}');for(let p=target.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;target.scrollIntoView();})()`);
           await pause(500);
           assert.equal(await evaluate(`document.documentElement.scrollWidth<=innerWidth`),true,'homepage overflow at '+width);
           const state=await evaluate(`(()=>{const f=document.querySelector('#episode-${ep} iframe'),d=f.contentDocument;return {caption:d?.querySelector('#caption')?.textContent,paused:d?.querySelector('#box')?.classList.contains('paused'),overflow:d?.documentElement.scrollWidth>f.clientWidth};})()`);
@@ -123,6 +123,10 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
       await screenshot('shared-verdict.png');
       for(let ep=1;ep<=3;ep++){
         await navigate(base+`watch/player.html?ep=${ep}#next`);
+        assert.match(await evaluate(`document.querySelector('#stage').textContent`),/dontkillthehumans\.org/);
+        assert.equal(await evaluate(`document.querySelector('#stage').textContent.includes('tentozero.org')`),false);
+        assert.equal(await evaluate(`(()=>{const text=Array.from(document.querySelectorAll('#stage text')).find(t=>t.textContent==='dontkillthehumans.org');const r=text.getBBox();return r.x>=310&&r.x+r.width<=650;})()`),true,'domain fits the closing-card label');
+        await screenshot(`end-card-${ep}.png`);
         assert.equal(await evaluate(`document.querySelector('#end-actions').hidden`),false);
         assert.equal(await evaluate(`document.querySelector('#evidence-link').textContent.length>0`),true);
         await evaluate(`document.querySelector('#transcript-toggle').click()`);

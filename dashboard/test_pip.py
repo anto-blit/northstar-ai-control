@@ -6,8 +6,12 @@ from pip_assets import SOURCE, build_assets, metadata, transcript
 
 
 class PipTests(unittest.TestCase):
-    def test_supplied_source_is_unchanged(self):
-        self.assertEqual(hashlib.sha256(SOURCE.read_bytes()).hexdigest(), '8194241f3eb623c054d15f7fada93505458d0d43ac5b672bbb23932ce8b3d766')
+    def test_source_preserves_original_except_authorized_domain_fix(self):
+        source = SOURCE.read_bytes()
+        self.assertEqual(source.count(b'dontkillthehumans.org'), 1)
+        original = source.replace(b'dontkillthehumans.org', b'tentozero.org').replace(
+            b'<rect x="310" y="412" width="340"', b'<rect x="355" y="412" width="250"')
+        self.assertEqual(hashlib.sha256(original).hexdigest(), '8194241f3eb623c054d15f7fada93505458d0d43ac5b672bbb23932ce8b3d766')
 
     def test_scenes_and_timing_are_preserved(self):
         episodes = metadata()
