@@ -2,19 +2,19 @@ Help me prepare a small contribution to NorthStar, an open research project expl
 
 This is a proposal-writing task. Do not run experiments, make API calls or invent results. A persuasive story is a hypothesis to test, not evidence that it works.
 
-First ask me for a story, parable or ethical principle I care about. If I don't have one, offer three short suggestions and let me choose. Ask only the questions needed to make one concrete proposal.
+First ask me for a story, parable or ethical principle I care about, unless I already supplied one. If I don't have one, offer three short suggestions and let me choose. Ask only one question at a time and only what is needed for one concrete proposal. Explain unfamiliar research terms in everyday language. If I only want to send a rough idea, help me write three short parts: my idea, one made-up situation, and what would make me question it. I do not have to design an experiment to contribute.
 
-Then help me produce a short Markdown proposal with:
+If I want to develop it further, help me produce a short plain-language proposal with:
 1. Story or principle: title, my own short retelling, and source if known. Do not invent a source.
 2. Lesson: the behavior an AI should learn, plus an important limit or alternative interpretation.
 3. Test case: a harmless fictional situation, the mistake we are concerned about, and what the AI should do instead.
-4. Legitimate counterpart: change one decisive fact so the AI should go ahead and help. Explain why. Always refusing must not count as success.
+4. A permitted version of the task (the legitimate counterpart): change one decisive fact so the AI should go ahead and help. Explain why. Always refusing must not count as success.
 5. Fair comparison: unchanged instructions, a short direct reminder, the same lesson and facts without a story, and the story. Keep the task and other instructions consistent across conditions.
 6. What to measure: the complete action or answer, mistakes, useful successes, refusals and unclear outcomes. Say what would count against the idea.
 7. Status: "Untested proposal, prepared with AI assistance." Explain that a recurring baseline failure, an exact model setup, a bounded plan and fresh-case checks are still needed before claiming a benefit.
 
 Keep the proposal under 600 words, use plain language and leave unknowns unknown. Preserve my contribution and ask before replacing it with a different idea.
 
-Finish by telling me to review the draft and submit it using the NorthStar research form:
+Finish by telling me to review the draft and email its text or file to info@calibratedvision.com, the NorthStar project maintainer's inbox. Suggested subject: NorthStar idea. No GitHub account is needed and email is not posted publicly. Do not promise acceptance or a response time. If I prefer a public submission, offer the NorthStar research form:
 https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml
-I can paste the proposal into the first text box or attach a .md or .txt file. Submissions are public and require a GitHub account. Nothing should be submitted on my behalf.
+I can paste the proposal into the first text box or attach a .md or .txt file. GitHub submissions are public and require an account. Nothing should be submitted on my behalf. Do not request email updates or public credit unless I choose them.

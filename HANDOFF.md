@@ -1,5 +1,28 @@
 # NorthStar: start here to continue the work
 
+**October 18: newcomer walkthrough and starter-kit repairs.** The user asked for
+a fresh-session download/use review. Clean public-browser downloads were extracted
+outside the checkout; the original kit's 34 hashes and offline checks passed.
+The workflow still had GitHub-only handoffs in the kit and builder, raw JSON as
+the main proposal output, and missing beginner setup/expected-output instructions.
+The wrapper now includes a browser-readable welcome and a three-question worksheet,
+private email at each handoff, clear extraction/terminal steps and case/terminology
+explanations. The builder offers readable text, download/copy/email and the correct
+research form; the homepage commands use the extracted kit root. All six frozen
+`mislabel-v1` files and all experiments remain unchanged.
+
+Two fresh tools-disabled Claude sessions outside the repository checked only
+visitor material and the revised starter prompt; their logs were audited for
+project-context contamination. The first review missed the separate quick-email
+section, so its blanket claim that the whole site lacked an email route was
+rejected. The second produced a usable rough idea and the correct email handoff.
+Two usability calls, US$0.158148 reported; no safety experiments or submissions.
+The repaired ZIP passed all 36 hashes, its browser welcome passed at 320/390/1440px,
+all 66 dashboard tests passed and homepage/browser handoffs passed at four widths.
+See [the full review](docs/newcomer-review-2026-10-18.md) for artifacts, findings,
+isolation details and limits. This is an AI-simulated walkthrough, not human
+validation; inbox delivery was not tested. Public re-download is the final step.
+
 **October 18: public engagement launch.** The user requested a review, then
 authorized implementing the recommendations and engaging publicly. The homepage
 now has a one-minute saved-case activity at `#take-part`, local choice/reveal,

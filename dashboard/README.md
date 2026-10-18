@@ -1,5 +1,13 @@
 # NorthStar homepage and research dashboard
 
+October 18 newcomer follow-up: the contributor ZIP now includes `START-HERE.html`
+and `FIRST-IDEA.txt`. Its current guide explains extraction, terminal location,
+success output, the historical package and the private email route. The six
+frozen evidence files remain unchanged. The homepage's terminal example works
+from the extracted kit root. The proposal builder displays readable text, offers
+text download/copy/email, and puts its existing JSON version in a disclosure.
+The GitHub handoff now opens the research form. See the newcomer review in docs.
+
 October 18: public participation starts at `#take-part` with a local educational
 choice and reveal, native sharing with clipboard/manual fallback, and an email
 draft form at `#quick-idea`. The maintainer's public inbox is

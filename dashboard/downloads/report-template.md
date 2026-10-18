@@ -3,6 +3,12 @@
 Kind: idea / exploratory check / replication / label challenge
 Status: unreviewed contributor submission
 
+For a first idea, FIRST-IDEA.txt is enough. This longer template is optional.
+Send this completed text/file to info@calibratedvision.com (private email), or use
+the public research form at
+https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml.
+The public form requires GitHub; email does not. Nothing is submitted automatically.
+
 ## What I am contributing
 
 Describe the story, principle, case or finding. An idea needs no test results.

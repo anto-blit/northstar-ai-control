@@ -1,68 +1,109 @@
-# Contribute to NorthStar
+# Start here — your first NorthStar contribution
 
-Our thesis: humanity's moral stories, parables and ethical principles can provide
-a NorthStar for AI. Help turn one lesson into a test, check an existing finding,
-or share evidence that challenges the idea.
+NorthStar tests whether humanity's stories and moral principles can help AI
+behave better. You can contribute an idea without coding, Python, an AI account
+or a GitHub account. An idea does not need experimental results.
 
-## Easiest: bring a story or principle
+## Recommended: send one small idea (about five minutes)
 
-Open `contributor-prompt.txt`, copy it into an AI chat you already use, and follow
-its questions. It helps write an **untested proposal**; it does not run a study.
-Review the draft in your own words before sharing it. You can also write directly
-in the form below or use the website's proposal builder without any AI assistance.
+1. Extract the ZIP first: on Windows, right-click it and choose **Extract All**;
+   on a Mac, double-click it. Open the extracted `northstar-contributor-kit` folder.
+2. Open `FIRST-IDEA.txt` in a text editor. Write a sentence for each of its three
+   questions. Save it under a new name, or copy the text into an email.
+3. Send the text or file to **info@calibratedvision.com**, the project maintainer's
+   inbox. Suggested subject: **NorthStar idea**. Email is not posted publicly.
+   Say whether you want to be credited if your idea is used.
 
-## Download, inspect or reproduce a test
+That is a complete first contribution. You do not need to run a test or fill in
+the research fields below. A reviewer may ask you to clarify or develop the idea;
+submitting it does not make it an accepted finding.
 
-This ZIP includes the complete `mislabel-v1/` evidence package and `inputs/` with
-ready-to-read exact prompts. No repository clone, install script or API key is
-needed to inspect the files. The optional checker needs Python 3.10+ only:
+`START-HERE.html` opens this kit's short welcome page in a browser. All text files
+can also be opened with a text editor; `.md` means a plain-text Markdown document.
+
+### Want help developing the idea?
+
+- With an AI chat you already use: open `contributor-prompt.txt`, paste it into a
+  new chat and answer its questions. Review the resulting draft before sending it.
+- Without AI: use the website's guided proposal builder at
+  https://dontkillthehumans.org/#parable. Choose a story, describe a task, then
+  download or copy the readable proposal. The builder runs no AI model.
+- Prefer public discussion? Use
+  https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml.
+  Choose the idea option and paste your text or attach your file. This route
+  requires a GitHub account and is public; email is the account-free alternative.
+
+For occasional updates, ask in your email. Requests are handled manually and
+you can ask to stop at any time. Updates and an account-free feed are at
+https://dontkillthehumans.org/updates.html.
+
+## Optional: inspect the saved evidence
+
+This kit contains a **different case from the homepage's unauthorized email**:
+the compact MMS1 reporting test, where an AI labeled a refusal as compliance.
+MMS1 is the recorded study's identifier. These are saved results, not a new run.
+
+Open `mislabel-v1/RESULTS.md` for the results, or `inputs/s0/standard/user.txt` for
+the compact prompt. No installation, API key or model account is needed to read
+them. The `positive` and `negative` folders are checks with known expected answers.
+The `w1` reduction did not retain the failure. `standard` means the original
+instructions; `repair` is the folder name for the short-reminder condition.
+
+`mislabel-v1/` is the unchanged historical evidence package. Its README retains
+the wording from when it was prepared locally, including its older publication
+status. **This START-HERE guide is the current guide for sharing contributions.**
+Use `report-template.md` for a detailed report; the historical `CONTRIBUTION.json`
+is an optional structured format, not another form you must complete.
+
+## Optional: check the files with Python
+
+You need an existing Python 3.10+ installation for this step only. If a command
+is not recognized, you can skip this step and still contribute an idea.
+
+Open a terminal **in the extracted folder containing this guide and `mislabel-v1`**.
+On Windows, open that folder in File Explorer, type `powershell` in its address
+bar and press Enter. Run:
 
 ```
-python mislabel-v1/audit.py verify
+py mislabel-v1/audit.py verify
 ```
 
-That command checks saved evidence locally. It makes no model calls and is not a
-new replication. The original package's README is preserved as a historical file;
-this wrapper is the publicly downloadable edition.
+On macOS/Linux, open Terminal, type `cd `, drag the extracted folder into the
+terminal, and press Enter. Then run:
 
-`inputs/s0/standard/user.txt` is the compact failure prompt shown on the site.
-The `positive` and `negative` folders contain controls; `w1` is the reduction
-that did not retain the failure. Both standard and reminder conditions are kept.
-Each input folder has separate `system.txt` and `settings.json` files as well.
-Do not give the target the saved answers, expected labels or results alongside
-the prompt. Pasting into an ordinary chat changes the setup because its system
-instructions and settings differ; report that as a separate exploratory check.
+```
+python3 mislabel-v1/audit.py verify
+```
 
-For new model tests, publish your own bounded plan first: exact model/interface,
-conditions, controls, attempts, scoring, cost limit and stop rule. A GitHub issue
-can hold that plan. Preserve every answer, including refusals and failed attempts.
-The source MMS1 study is closed; use a new study ID rather than extending it.
-See `mislabel-v1/README.md` for the full reproduction instructions.
+If your installation uses `python`, use it in place of `py` or `python3`.
+Success prints JSON containing **`"verified": true`** and the saved result counts.
+It means the bundled evidence is internally consistent. It makes no model calls
+and does not independently reproduce the experiment or prove the story thesis.
 
-## Return an idea or results
+If you see “can't open file,” check that you extracted the ZIP and opened the
+terminal in the folder containing `mislabel-v1`, not inside `mislabel-v1`.
+The historical README's shorter `python audit.py ...` commands instead run from
+inside that subfolder. Use the command above for this guide.
 
-Open the short research form:
-https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml
+`SHA256SUMS.txt` lists package file fingerprints for technical checks; you do not
+need to read it to contribute. If verification reports a mismatch, download a
+fresh copy and report the full error before relying on the affected files.
 
-Choose what you are contributing and describe it. For an idea, no test results
-are required. For results, use `report-template.md` and attach the exact prompts
-and complete answers, or link to a public repository containing them. ZIP, text
-and JSON files can be attached. No fork or pull request is needed for this route.
+## Advanced: planning a new model test
 
-Review the text before pressing Submit. GitHub requires an account and the issue
-is public. Nothing in this kit uploads files or submits anything automatically.
-Submissions need review before becoming accepted project evidence.
+This ZIP does not run live model tests. A new test needs your own model access
+and a bounded plan published first: model/interface, exact inputs, conditions,
+controls, attempts, scoring, cost limit and stop rule. The full collection runner
+referenced in the historical README is in the GitHub repository, not in this ZIP.
+The existing MMS1 study is closed; use a new study ID rather than extending it.
 
-Website and proposal builder:
-https://anto-blit.github.io/northstar-ai-control/#contribute
+Each input folder has `user.txt`, `system.txt` and `settings.json`. Do not give a
+test model saved answers, expected labels or prior results alongside the inputs.
+Pasting into an ordinary chat changes the setup: report it as an exploratory
+check, not an exact replication. Keep every answer, including failed attempts,
+refusals and controls. For detailed results, complete `report-template.md` and
+attach the exact prompts and complete answers to an email or the research form.
 
-Developers can use the source repository and its existing Python study runners:
-https://github.com/anto-blit/northstar-ai-control
-
-There is no NorthStar results API yet. GitHub issues are the initial intake and
-review queue. An API can later accept versioned result files when automated
-contributors and submission volume justify operating a service.
-
-The repository's software license is included as `LICENSE.txt`. Source-derived
-transcripts retain their recorded provenance; this wrapper grants no new rights
-to third-party source material.
+The license is in `LICENSE.txt`. Source-derived transcripts retain their recorded
+provenance; this wrapper grants no new rights to third-party material. Nothing in
+this kit uploads files, subscribes you, sends email or starts a model run.

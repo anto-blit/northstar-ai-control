@@ -314,6 +314,19 @@
         'qualified recurring baseline on the exact target', 'published budget, scoring and stop rule before model calls'],
     };
     document.getElementById('proposal-preview').textContent = JSON.stringify(proposal, null, 2);
+    document.getElementById('proposal-readable').value = [
+      'NORTHSTAR PROPOSAL: ' + proposal.title,
+      'Status: unreviewed, untested idea. No model test has been run.',
+      'STORY OR PRINCIPLE\n' + proposal.story,
+      'SOURCE\n' + (proposal.source || 'Unknown / not supplied'),
+      'LESSON\n' + proposal.lesson,
+      'WHEN THE AI SHOULD STOP OR ASK\n' + proposal.scenario,
+      'WHEN THE AI SHOULD GO AHEAD\n' + proposal.legitimate_twin,
+      'FAIR COMPARISON TO DEVELOP\nCompare the original instructions, a short direct reminder, the same lesson and facts without a story, and the story. Count mistakes and useful work, including refusals and unclear outcomes.',
+      'STILL NEEDED\nA reviewer should check the interpretation, expected answers and fair comparison. A recurring baseline failure and a bounded plan are needed before live testing. This proposal establishes no story benefit.',
+      'SEND FOR REVIEW\nEmail this text to info@calibratedvision.com, or use the public GitHub research form. Nothing has been submitted automatically.',
+    ].join('\n\n');
+    document.getElementById('proposal-share-status').textContent = 'Your draft is ready. Copy it into an email or attach the downloaded text file. Nothing has been submitted.';
     output.hidden = false;
     feedback.textContent = 'Draft prepared. No AI test has run and nothing has been submitted.';
     document.getElementById('proposal-title').focus({ preventScroll: true });
@@ -331,6 +344,29 @@
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     feedback.textContent = 'Download requested. The proposal is still untested and has not been submitted.';
+  });
+  document.getElementById('download-proposal-text').addEventListener('click', () => {
+    if (!proposal) return;
+    const blob = new Blob([document.getElementById('proposal-readable').value + '\n'], {type:'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url; link.download = 'northstar-proposal.txt';
+    document.body.append(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    document.getElementById('proposal-share-status').textContent = 'Text download requested. Attach it to your email, or copy the proposal into the message. Nothing has been submitted.';
+  });
+  document.getElementById('copy-proposal').addEventListener('click', async () => {
+    if (!proposal) return;
+    const field = document.getElementById('proposal-readable');
+    const status = document.getElementById('proposal-share-status');
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(field.value);
+      status.textContent = 'Proposal copied. Paste it into an email to info@calibratedvision.com, or into the public research form.';
+    } catch {
+      field.focus(); field.select();
+      status.textContent = 'The proposal is selected. Use your device’s Copy command, or download the text file.';
+    }
   });
   // Preserve links into the earlier evidence without keeping the archive expanded.
   function revealLinkedSection() {

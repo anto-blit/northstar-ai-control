@@ -7,7 +7,8 @@ from zipfile import ZIP_STORED, ZipFile, ZipInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKAGE_FILES = ("audit.py", "bundle.json", "CONTRIBUTION.json", "manifest.json", "README.md", "RESULTS.md")
-GUIDE_FILES = {"START-HERE.md": "START-HERE.md", "prompt.txt": "contributor-prompt.txt",
+GUIDE_FILES = {"START-HERE.md": "START-HERE.md", "START-HERE.html": "START-HERE.html",
+              "FIRST-IDEA.txt": "FIRST-IDEA.txt", "prompt.txt": "contributor-prompt.txt",
               "report-template.md": "report-template.md"}
 
 

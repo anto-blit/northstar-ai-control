@@ -268,6 +268,22 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.equal(await evaluate(`document.getElementById('proposal-preview').children.length`), 0);
     assert.equal(await evaluate(`Boolean(window.injected)`), false);
     assert.equal(await evaluate(`document.activeElement.id`), 'proposal-title');
+    const readableProposal = await evaluate(`document.getElementById('proposal-readable').value`);
+    assert.ok(readableProposal.includes(proposal.story));
+    assert.ok(readableProposal.includes(proposal.legitimate_twin));
+    assert.ok(readableProposal.includes('short direct reminder'));
+    assert.equal(await evaluate(`document.querySelector('#proposal-result a[href^="mailto:"]').getAttribute('href').startsWith('mailto:info@calibratedvision.com?')`), true);
+    assert.equal(await evaluate(`document.querySelector('#proposal-result a[href*="template=research-contribution.yml"]') !== null`), true);
+    await evaluate(`document.getElementById('download-proposal-text').click()`);
+    const textDownload = path.join(folder, 'northstar-proposal.txt');
+    for (let i = 0; i < 100 && !fs.existsSync(textDownload); i++) await pause(50);
+    assert.equal(fs.readFileSync(textDownload, 'utf8'), readableProposal + '\n');
+    await evaluate(`Object.defineProperty(navigator, 'clipboard', {configurable:true, value:{writeText:async text=>{window.copiedProposal=text;}}}); document.getElementById('copy-proposal').click()`);
+    assert.equal(await evaluate(`window.copiedProposal`), readableProposal);
+    await evaluate(`Object.defineProperty(navigator, 'clipboard', {configurable:true, value:{writeText:async()=>{throw new Error('denied');}}}); document.getElementById('copy-proposal').click()`);
+    assert.equal(await evaluate(`document.activeElement.id`), 'proposal-readable');
+    assert.equal(await evaluate(`document.getElementById('proposal-readable').selectionEnd`), readableProposal.length);
+    await evaluate(`delete navigator.clipboard`);
     await evaluate(`document.getElementById('download-proposal').click()`);
     const download = path.join(folder, 'northstar-parable-proposal.json');
     for (let i = 0; i < 100 && !fs.existsSync(download); i++) await pause(50);
@@ -434,7 +450,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],
-      checks: ['participation choices and keyboard activation', 'case sharing, clipboard denial and native cancellation', 'email draft escaping, optional consent, copy fallback and edit invalidation', 'updates page and feed link', 'starter prompt copy and clipboard-denied fallback', 'contributor downloads present', 'scoring switch', 'six sourced stories', 'six untested task starters',
+      checks: ['readable proposal download, email route and copy fallback', 'participation choices and keyboard activation', 'case sharing, clipboard denial and native cancellation', 'email draft escaping, optional consent, copy fallback and edit invalidation', 'updates page and feed link', 'starter prompt copy and clipboard-denied fallback', 'contributor downloads present', 'scoring switch', 'six sourced stories', 'six untested task starters',
         'custom starter', 'starter preserves edits', 'starter keyboard focus', 'custom draft', 'required fields',
         'literal user content', 'download round trip', 'edit invalidation', 'in-page draft retention',
         'no horizontal overflow', 'local links', 'legacy bookmark redirect', 'research controls',

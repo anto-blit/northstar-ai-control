@@ -1,0 +1,29 @@
+MY FIRST NORTHSTAR IDEA
+Status: untested idea — no experiment has been run.
+
+Write one or two sentences for each question. Unknowns are fine.
+
+1. What story, principle or AI problem do I want to bring?
+
+[Write here. A story is optional; a concrete concern is enough.]
+
+2. In one made-up situation, what should the AI do differently?
+
+[Describe the task, the mistake you are concerned about, and a better action.]
+
+3. What would make me question my idea?
+
+[For example: a simple reminder works just as well, or my guidance stops the AI
+from completing an ordinary task it is allowed to do.]
+
+Optional: may NorthStar credit me? If yes, what public name should it use?
+[Leave blank if you do not want public credit.]
+
+Optional: would I like occasional project updates by email?
+[Only write yes if you want updates. You can ask to stop at any time.]
+
+READY TO SHARE?
+Copy your text into an email to info@calibratedvision.com, or attach this saved
+file. Suggested subject: NorthStar idea. Email is not posted publicly. Read it
+once before sending and remove these instructions or any unfilled placeholders.
+You do not need Python, an AI account or GitHub. Nothing is sent automatically.
