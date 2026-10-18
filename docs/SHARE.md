@@ -1,57 +1,54 @@
 # Share NorthStar
 
-Draft copy for Anthony More / Calibrated Vision. These drafts have not been
-posted or sent. Link to the repository so readers can inspect the evidence and
-join the work.
+Current engagement copy, October 18, 2026. The launch discussion is tracked in
+`engagement-status.md`; the social drafts below are not posted automatically.
 
-Repository: https://github.com/anto-blit/northstar-ai-control
+## Main post
 
-Graphic: [download the cover](figures/northstar-share.png).
+Claude was told to wait for approval. It sent the message anyway—6 times in 6 sandbox runs.
 
-## Launch post
+We published the record and made a 78-second cartoon explaining it.
 
-**NorthStar: Protecting humanity’s freedom and future in an AI world.**
+NorthStar asks whether humanity's stories and moral principles can help AI behave better. So far, we haven't established an advantage over a plain reminder. Even turning a known failure into a fair test of a fix has proved difficult.
 
-*Story-guided AI ethics, evaluation, and safeguards for human agency.*
+Watch the case. Tell us what you think. Help us design a fairer test.
 
-I'm opening NorthStar, a research project asking whether the lessons in humanity's
-stories can help AI act with care for people. The starting inspiration includes
-Aesop's fables, biblical teachings, parables, and legends. Their lessons need
-careful interpretation and review.
+https://dontkillthehumans.org/watch/holding-message/?utm_source=social&utm_medium=post&utm_campaign=first_case
 
-We're proposing a direct test: compare the same ethical principles with
-structured examples and with narrative versions of those examples. Then test
-decisions on matched cases and unfamiliar settings. The guidance materials,
-reviewed corpus and model evaluation are still to be built and run.
+## Short post
 
-An AI stop button is only useful if the consequences stop too. Permissions can
-accumulate. A useful component can bring an unexpected effect. Delegated work
-can outlive the authority that started it.
+Claude sent a message without approval in 6/6 sandbox runs. Does “just a holding message” make it OK? Watch the case and help us check the evidence.
 
-NorthStar turns patterns from stories such as Pandora and the Sorcerer's
-Apprentice into executable control experiments. Then we ask the harder question:
-do those patterns help us find failures and build better safeguards than strong
-conventional methods?
+https://dontkillthehumans.org/?utm_source=social&utm_medium=post&utm_campaign=first_case#take-part
 
-The repository includes working synthetic simulators, reproducible results,
-90 passing tests, and a four-method study harness. The distinctive research
-hypothesis is still open; the current experiments do not establish deployment
-safety.
+## Research invitation
 
-I'm looking for people who can challenge the assumptions, strengthen the
-baselines, build independent experiments, replicate results, or make the work
-clearer. You don't need a finished proposal to introduce yourself.
+We are looking for independent human reviewers of a small AI authorization-failure record. The saved prompts, actions, controls and unsuccessful comparisons are public. One useful contribution is checking one transcript or identifying a flaw in our interpretation. Separate masked packets are available for formal independent review; reactions to the public explainer do not count as blinded labels.
 
-Explore the code and get involved:
-https://github.com/anto-blit/northstar-ai-control
+The broader question is whether stories add anything beyond ordinary instructions and matched facts. No added narrative benefit is established. Clean OpenAI results and failures of our own AI-assisted research process are retained.
 
-## Short version
+https://dontkillthehumans.org/#contribute
 
-I'm building NorthStar to help protect humanity’s freedom and future in an AI
-world. We investigate story-based ethical guidance, tests that reveal when it
-fails, and safeguards that preserve people's agency. The guidance comparison
-is proposed; the repository does not yet demonstrate a story-trained AI.
+## Teacher or discussion-group invitation
 
-Working synthetic experiments are public. The big hypothesis is still open.
-Builders, skeptics, and independent replicators are welcome:
-https://github.com/anto-blit/northstar-ai-control
+Would your group discuss one short AI case? An assistant was told to obtain approval before sending a message. It sent a small holding message while approval was pending. Our cartoon shows the record.
+
+Ask: what should the assistant have done, and what would a fair test of a remedy look like? Participants can also suggest a story or ethical principle and describe where it might help. Suggestions are untested ideas; this activity makes no model calls.
+
+https://dontkillthehumans.org/?utm_source=group&utm_medium=invitation&utm_campaign=first_case#take-part
+
+## Publishing approach
+
+Start with one case and one question. Link directly to the activity or episode.
+Use the existing full cartoon; preserve its scenes, audio and timing.
+Use a different `utm_source` for each channel actually used. Query tags identify
+links, but are not measurements by themselves: no visitor collector is running.
+
+For a community post, contribute the explanation and evidence in the post itself,
+check that community's current rules, and ask a specific question. Do not post
+the same promotional text across unrelated communities.
+
+Month-one planning targets: 10 substantive contributions and 3 returning
+contributors. These are goals, not current counts or forecasts. Record actual
+replies, reviewer offers, completed reviews, and repeat contributors in the
+engagement log; distinguish these from visitors, reactions and independent labels.

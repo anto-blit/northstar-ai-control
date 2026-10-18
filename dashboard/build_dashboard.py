@@ -571,6 +571,9 @@ def main():
     outputs.update({args.output.parent / "downloads" / name: content
                     for name, content in build_assets().items()})
     outputs.update({args.output.parent / name: content for name, content in build_pip_assets().items()})
+    outputs[args.output.with_name("updates.html")] = (HERE / "updates.template.html").read_text(encoding="utf-8").replace(
+        "@@STYLE@@", (HERE / "homepage.compiled.css").read_text(encoding="utf-8")).encode("utf-8")
+    outputs[args.output.with_name("updates.xml")] = (HERE / "updates.xml").read_bytes()
     for path, content in outputs.items():
         if args.check:
             if not path.exists() or path.read_bytes() != content:

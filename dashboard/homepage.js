@@ -12,6 +12,78 @@
   followResearchBookmark();
   window.addEventListener('hashchange', followResearchBookmark);
 
+  // Educational interaction only. No poll storage, submission or research labels.
+  const caseChoices = document.getElementById('case-choices');
+  caseChoices.hidden = false;
+  const choiceFeedback = {
+    wait: 'You chose to wait. That follows the written approval rule.',
+    send: 'You chose to send. The written rule required approval for this message too.',
+    unsure: 'The key detail is “any outside message”: the rule covered a holding message too.',
+  };
+  for (const button of caseChoices.querySelectorAll('button')) {
+    button.addEventListener('click', () => {
+      for (const option of caseChoices.querySelectorAll('button')) {
+        option.setAttribute('aria-pressed', String(option === button));
+      }
+      document.getElementById('choice-feedback').textContent = choiceFeedback[button.dataset.choice];
+      document.getElementById('case-reveal').open = true;
+    });
+  }
+  const shareCase = document.getElementById('share-case');
+  shareCase.hidden = false;
+  shareCase.addEventListener('click', async () => {
+    const field = document.getElementById('share-case-url');
+    const status = document.getElementById('share-case-status');
+    const shareData = {title: 'Would you allow it? A NorthStar AI case',
+      text: 'Claude sent a message without approval in 6/6 sandbox runs. Inspect the case and join the discussion.', url: field.value};
+    if (navigator.share) {
+      try { await navigator.share(shareData); status.textContent = 'Share dialog completed.'; return; }
+      catch (error) { if (error.name === 'AbortError') { status.textContent = 'Sharing cancelled.'; return; } }
+    }
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(field.value);
+      status.textContent = 'Link copied. Share it with someone who uses AI.';
+    } catch {
+      document.getElementById('share-case-fallback').hidden = false;
+      field.focus(); field.select();
+      status.textContent = 'Select and copy the link above.';
+    }
+  });
+
+  const ideaForm = document.getElementById('quick-idea-form');
+  const ideaResult = document.getElementById('idea-email-result');
+  ideaForm.hidden = false;
+  ideaForm.addEventListener('input', () => { ideaResult.hidden = true; });
+  ideaForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const message = document.getElementById('quick-idea-text').value.trim();
+    if (!message) { document.getElementById('quick-idea-text').focus(); return; }
+    const updates = document.getElementById('quick-idea-updates').checked;
+    const subject = 'NorthStar idea or question';
+    const body = message + '\n\nProject updates: ' + (updates
+      ? 'Please send me occasional NorthStar updates at my sending address. I can ask to stop at any time.'
+      : 'I am not requesting email updates.') + '\n\nCase: https://dontkillthehumans.org/#take-part';
+    const link = document.getElementById('idea-email-link');
+    link.href = 'mailto:info@calibratedvision.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    document.getElementById('idea-email-draft').value = 'To: info@calibratedvision.com\nSubject: ' + subject + '\n\n' + body;
+    document.getElementById('idea-email-status').textContent = 'Your draft is ready. It has not been sent.';
+    ideaResult.hidden = false;
+    link.focus();
+  });
+  document.getElementById('copy-idea-email').addEventListener('click', async () => {
+    const draft = document.getElementById('idea-email-draft');
+    const status = document.getElementById('idea-email-status');
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(draft.value);
+      status.textContent = 'Draft copied. Paste it into your email app and send it to info@calibratedvision.com.';
+    } catch {
+      draft.focus(); draft.select();
+      status.textContent = 'The draft is selected. Copy it into your email app; nothing has been sent.';
+    }
+  });
+
   // This switch illustrates a reference and an ambition. It never reports progress.
   const riskSwitch = document.getElementById('risk-switch');
   const riskDots = document.getElementById('risk-dots');

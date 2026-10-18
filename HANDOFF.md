@@ -1,5 +1,35 @@
 # NorthStar: start here to continue the work
 
+**October 18: public engagement launch.** The user requested a review, then
+authorized implementing the recommendations and engaging publicly. The homepage
+now has a one-minute saved-case activity at `#take-part`, local choice/reveal,
+sharing with clipboard/manual fallback, and short contribution routes. Choices
+are not submitted or counted as research. The user supplied
+**info@calibratedvision.com**: the site prepares a private idea email, with an
+unchecked optional request for updates. Visitors send through their own email
+app or copy into webmail. Requests are handled manually; there is no newsletter
+database or automated delivery claim. `updates.html` and the Atom `updates.xml`
+provide an account-free follow-up route and are included in the Pages export.
+
+The first [public invitation](https://github.com/anto-blit/northstar-ai-control/discussions/1)
+was posted and verified using the maintainer's GitHub account. It asks for one
+reasoned response, a story/principle, or a reviewer offer, preserves comparator
+and independent-review limits, and provides the email route. GitHub's repository
+description and old website URL were updated. Social, researcher and teacher
+drafts in `docs/SHARE.md` are current but not sent. Broader social publishing
+requires an account connection; Metricool was suggested. No visitor analytics
+collector is configured. See `docs/engagement-status.md` for actual publication
+and follow-up status; 10 substantive contributions and 3 returning contributors
+are month-one goals, not achieved counts. No new model calls or frozen edits.
+
+The cartoon content, audio and durations remain unchanged; surrounding episode-one
+copy now accurately says 78 seconds. The contribution pages retain the 10%
+attribution, clean OpenAI results and stories-versus-reminder scorecard. Offline
+dashboard/content tests: 66 passed. Browser checks passed at 320/390/768/1440px,
+including keyboard choices, email encoding, optional consent, stale-draft hiding,
+copy fallbacks and JavaScript-disabled routes. Public comments on the explained
+case are not independent/model-masked review labels.
+
 **October 9: AI / Super Intelligence FAQ.** At the user's request, the homepage
 now briefly acknowledges the U.S. administration's naming change, links to the
 September 29 executive order, and states its federal executive-branch scope.

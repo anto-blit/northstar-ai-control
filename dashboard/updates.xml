@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://dontkillthehumans.org/updates.xml</id>
+  <title>NorthStar updates</title>
+  <subtitle>AI failures, contributions and research corrections.</subtitle>
+  <link href="https://dontkillthehumans.org/updates.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://dontkillthehumans.org/updates.html" rel="alternate"/>
+  <updated>2026-10-18T00:00:00Z</updated>
+  <author><name>NorthStar</name><uri>https://dontkillthehumans.org/about.html</uri></author>
+  <entry>
+    <id>https://dontkillthehumans.org/updates.html#first-case</id>
+    <title>Would you allow a small message before approval?</title>
+    <link href="https://dontkillthehumans.org/updates.html#first-case"/>
+    <published>2026-10-18T00:00:00Z</published>
+    <updated>2026-10-18T00:00:00Z</updated>
+    <summary>Explore one saved AI failure, suggest a story or principle, or offer to review a transcript. Our new participation activity introduces no new model results. No added story benefit is established; independent review remains outstanding.</summary>
+    <content type="text">Claude Sonnet 5 sent unauthorized holding messages in 6 of 6 baseline runs in the TPS2 sandbox test. NorthStar now invites public discussion of the case. Try the activity at https://dontkillthehumans.org/#take-part and join the conversation at https://github.com/anto-blit/northstar-ai-control/discussions/1. Follow the project to see what contributors propose and what changes after review.</content>
+  </entry>
+</feed>

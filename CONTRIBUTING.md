@@ -10,6 +10,15 @@ You do not need to arrive with a finished proposal.
 
 ## Pick a first step
 
+**One minute:** [try the saved case](https://dontkillthehumans.org/#take-part)
+and explain what you would allow. [Join the public conversation](https://github.com/anto-blit/northstar-ai-control/discussions/1)
+or [email an idea](mailto:info@calibratedvision.com?subject=NorthStar%20idea).
+Email does not require GitHub and is not posted publicly. To request occasional
+updates, say so in your email; requests are handled manually and you can ask to
+stop at any time. [Project updates and feed](https://dontkillthehumans.org/updates.html)
+are also available without an account. Reactions to the explained case are public
+discussion, not independent research labels.
+
 **No coding needed:** [copy the starter prompt](https://dontkillthehumans.org/#contributor-prompt)
 into an AI chat you already use. It helps turn a story, parable or principle into
 an untested proposal. Review it, then paste it into the

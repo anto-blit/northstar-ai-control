@@ -23,8 +23,10 @@ The standalone sharing routes supplement those inline placements.
   title and captions are laid out separately; the illustration is never cropped.
   Keep the tab visible for the full episode. Stopping early saves a partial clip.
 
-Episodes run 77.5, 79.5 and 103 seconds. The requested “60-second” invitation
-is retained; the player displays the actual duration. No scenes were shortened.
+Episodes run 77.5, 79.5 and 103 seconds. The October 18 engagement update changes
+the surrounding invitation to “78-second” for episode one. No scenes were shortened.
+Standalone episode pages now link to the one-minute activity, public discussion
+and updates page; the original cartoon content remains unchanged.
 
 ## Funnel events
 

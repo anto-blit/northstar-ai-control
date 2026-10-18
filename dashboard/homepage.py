@@ -242,7 +242,7 @@ def render(root=ROOT):
                    (HERE / "template.html").read_text(encoding="utf-8"))))}
     from pip_assets import embed
     replacements = {
-        "@@PIP1@@": embed(0, heading="Watch the 60-second version"),
+        "@@PIP1@@": embed(0, heading="Watch the 78-second case"),
         "@@PIP2@@": embed(1),
         "@@PIP3@@": embed(2),
         "@@STYLE@@": (HERE / "homepage.compiled.css").read_text(encoding="utf-8"),

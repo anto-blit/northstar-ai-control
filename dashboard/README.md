@@ -1,5 +1,17 @@
 # NorthStar homepage and research dashboard
 
+October 18: public participation starts at `#take-part` with a local educational
+choice and reveal, native sharing with clipboard/manual fallback, and an email
+draft form at `#quick-idea`. The maintainer's public inbox is
+info@calibratedvision.com. Visitors must send their own email; optional update
+requests are handled manually. Choices are not stored, submitted or counted.
+Public discussion is at GitHub Discussions #1; these reactions are not independent
+research labels. The build now exports `updates.html` from `updates.template.html`
+and copies the Atom feed `updates.xml`. Add dated entries to both for future
+updates. No newsletter service or visitor analytics collector is configured.
+The surrounding first-cartoon invitation now says 78 seconds; cartoon content,
+timing and audio remain preserved. See `docs/engagement-status.md` for launch status.
+
 October 9: the homepage leads with the project and evidence, with attribution in
 `about.html` (built from `about.template.html` using the shared compiled styles).
 The default route is mission → failure → thesis and scorecard → testing difficulty

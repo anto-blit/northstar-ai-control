@@ -75,11 +75,71 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.match(await evaluate(`document.getElementById('hero-title').textContent`), /Ten to zero/);
     assert.equal(await evaluate(`document.querySelector('.hero-actions .primary-button').getAttribute('href')`), '#failures');
     assert.equal(await evaluate(`document.body.textContent.includes('Anthony More')`), false);
+    // Public participation is local, accessible, and never becomes a submitted vote.
+    assert.equal(await evaluate(`document.getElementById('case-choices').hidden`), false);
+    assert.equal(await evaluate(`document.getElementById('case-reveal').open`), false);
+    for (const choice of ['wait', 'send', 'unsure']) {
+      await evaluate(`document.querySelector('[data-choice="${choice}"]').click()`);
+      assert.equal(await evaluate(`document.getElementById('case-reveal').open`), true);
+      assert.equal(await evaluate(`document.querySelectorAll('#case-choices [aria-pressed="true"]').length`), 1);
+      assert.ok(await evaluate(`document.getElementById('choice-feedback').textContent.length > 20`));
+    }
+    await evaluate(`document.getElementById('case-reveal').open = false; document.querySelector('[data-choice="wait"]').focus()`);
+    await call('Input.dispatchKeyEvent', {type: 'keyDown', key: ' ', code: 'Space', windowsVirtualKeyCode: 32});
+    await call('Input.dispatchKeyEvent', {type: 'keyUp', key: ' ', code: 'Space', windowsVirtualKeyCode: 32});
+    assert.equal(await evaluate(`document.getElementById('case-reveal').open`), true);
+    await evaluate(`window.savedShare = Object.getOwnPropertyDescriptor(navigator, 'share');
+      window.savedClipboard = Object.getOwnPropertyDescriptor(navigator, 'clipboard');
+      Object.defineProperty(navigator, 'share', {configurable: true, value: undefined});
+      Object.defineProperty(navigator, 'clipboard', {configurable: true, value: {writeText: async text => { window.copiedCase = text; }}});
+      document.getElementById('share-case').click()`);
+    assert.match(await evaluate(`window.copiedCase`), /#take-part$/);
+    assert.match(await evaluate(`document.getElementById('share-case-status').textContent`), /Link copied/);
+    await evaluate(`Object.defineProperty(navigator, 'clipboard', {configurable: true, value: {writeText: async () => { throw new Error('denied'); }}});
+      document.getElementById('share-case').click()`);
+    assert.equal(await evaluate(`document.getElementById('share-case-fallback').hidden`), false);
+    assert.equal(await evaluate(`document.activeElement.id`), 'share-case-url');
+    await evaluate(`Object.defineProperty(navigator, 'share', {configurable: true, value: async () => { throw new DOMException('cancelled', 'AbortError'); }});
+      document.getElementById('share-case').click()`);
+    assert.equal(await evaluate(`document.getElementById('share-case-status').textContent`), 'Sharing cancelled.');
+    await evaluate(`document.getElementById('quick-idea').open = true`);
+    assert.equal(await evaluate(`document.getElementById('quick-idea-updates').checked`), false);
+    await evaluate(`document.getElementById('quick-idea-form').requestSubmit()`);
+    assert.equal(await evaluate(`document.getElementById('idea-email-result').hidden`), true);
+    const visitorIdea = '<b>My idea</b> & a question? #approval + fairness';
+    await evaluate(`document.getElementById('quick-idea-text').value = ${JSON.stringify(visitorIdea)}; document.getElementById('quick-idea-form').requestSubmit()`);
+    assert.equal(await evaluate(`document.getElementById('idea-email-result').hidden`), false);
+    assert.equal(await evaluate(`document.activeElement.id`), 'idea-email-link');
+    const preparedEmail = new URL(await evaluate(`document.getElementById('idea-email-link').href`));
+    assert.equal(preparedEmail.protocol, 'mailto:');
+    assert.equal(preparedEmail.pathname, 'info@calibratedvision.com');
+    assert.ok(preparedEmail.searchParams.get('body').includes(visitorIdea));
+    assert.ok(preparedEmail.searchParams.get('body').includes('not requesting email updates'));
+    assert.equal(await evaluate(`document.querySelector('#idea-email-result b') === null`), true);
+    await evaluate(`document.getElementById('quick-idea-updates').checked = true; document.getElementById('quick-idea-updates').dispatchEvent(new Event('input', {bubbles: true}))`);
+    assert.equal(await evaluate(`document.getElementById('idea-email-result').hidden`), true);
+    await evaluate(`document.getElementById('quick-idea-form').requestSubmit(); document.getElementById('copy-idea-email').click()`);
+    assert.equal(await evaluate(`document.activeElement.id`), 'idea-email-draft');
+    assert.match(await evaluate(`document.getElementById('idea-email-draft').value`), /Please send me occasional NorthStar updates/);
+    assert.match(await evaluate(`document.getElementById('idea-email-status').textContent`), /nothing has been sent/);
+    await evaluate(`Object.defineProperty(navigator, 'clipboard', {configurable: true, value: {writeText: async text => { window.copiedIdea = text; }}}); document.getElementById('copy-idea-email').click()`);
+    assert.ok((await evaluate(`window.copiedIdea`)).includes(visitorIdea));
+    await evaluate(`if (window.savedShare) Object.defineProperty(navigator, 'share', window.savedShare); else delete navigator.share;
+      if (window.savedClipboard) Object.defineProperty(navigator, 'clipboard', window.savedClipboard); else delete navigator.clipboard;`);
+    for (const width of [320, 390, 768, 1440]) {
+      await viewport(width, 950);
+      await evaluate(`document.getElementById('take-part').scrollIntoView()`);
+      assert.equal(await evaluate(`document.documentElement.scrollWidth <= ${width}`), true, 'Participation overflow');
+      await screenshot('participation-' + width + '.png');
+      await evaluate(`document.getElementById('quick-idea').scrollIntoView()`);
+      await screenshot('email-idea-' + width + '.png');
+    }
+    await navigate(homeURL);
     for (const id of ['outside', 'correction', 'next']) {
       assert.equal(await evaluate(`document.getElementById('${id}').closest('details').open`), false);
     }
     // Old bookmarks and About links must reveal the newly collapsed records.
-    for (const id of ['outside', 'correction', 'lied-or-false']) {
+    for (const id of ['outside', 'correction', 'lied-or-false', 'quick-idea']) {
       await navigate(homeURL + '#' + id);
       assert.equal(await evaluate(`document.getElementById('${id}').closest('details').open`), true);
     }
@@ -324,6 +384,13 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     await screenshot('desktop-about.png');
     await viewport(390, 844);
     await screenshot('mobile-about.png');
+    await navigate(new URL('updates.html', homeURL).href);
+    assert.match(await evaluate(`document.querySelector('h1').textContent`), /What we learned/);
+    assert.equal(await evaluate(`document.querySelector('link[type="application/atom+xml"]').getAttribute('href')`), 'updates.xml');
+    for (const width of [320, 390, 768, 1440]) {
+      await viewport(width, 950);
+      assert.equal(await evaluate(`document.documentElement.scrollWidth <= ${width}`), true, 'Updates overflow');
+    }
     await viewport(1440, 1100);
     await call('Page.navigate', { url: homeURL + '#approval-repeatability' });
     for (let i = 0; i < 100; i++) {
@@ -355,12 +422,19 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.equal(await evaluate(`document.getElementById('contributor-prompt-text').value`), starterPrompt);
     assert.equal(await evaluate(`document.getElementById('copy-contributor-prompt').hidden`), true);
     assert.equal(await evaluate(`document.getElementById('risk-switch').hidden`), true);
+    assert.equal(await evaluate(`document.getElementById('case-choices').hidden`), true);
+    assert.equal(await evaluate(`document.getElementById('share-case').hidden`), true);
+    assert.equal(await evaluate(`document.getElementById('quick-idea-form').hidden`), true);
+    assert.ok(await evaluate(`document.querySelector('#quick-idea noscript').textContent.includes('info@calibratedvision.com')`));
+    await evaluate(`document.getElementById('case-reveal').open = true`);
+    assert.match(await evaluate(`document.getElementById('case-reveal').innerText`), /6 of 6 baseline runs/);
+    assert.equal(await evaluate(`document.querySelector('#follow a[href="updates.xml"]').getAttribute('href')`), 'updates.xml');
     assert.equal(await evaluate(`document.getElementById('risk-value').textContent`), '10%');
     assert.match(await evaluate(`document.getElementById('risk-caption').textContent`), /Zero is our goal/);
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],
-      checks: ['starter prompt copy and clipboard-denied fallback', 'contributor downloads present', 'scoring switch', 'six sourced stories', 'six untested task starters',
+      checks: ['participation choices and keyboard activation', 'case sharing, clipboard denial and native cancellation', 'email draft escaping, optional consent, copy fallback and edit invalidation', 'updates page and feed link', 'starter prompt copy and clipboard-denied fallback', 'contributor downloads present', 'scoring switch', 'six sourced stories', 'six untested task starters',
         'custom starter', 'starter preserves edits', 'starter keyboard focus', 'custom draft', 'required fields',
         'literal user content', 'download round trip', 'edit invalidation', 'in-page draft retention',
         'no horizontal overflow', 'local links', 'legacy bookmark redirect', 'research controls',
