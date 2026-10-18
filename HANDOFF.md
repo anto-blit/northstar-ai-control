@@ -21,7 +21,10 @@ The repaired ZIP passed all 36 hashes, its browser welcome passed at 320/390/144
 all 66 dashboard tests passed and homepage/browser handoffs passed at four widths.
 See [the full review](docs/newcomer-review-2026-10-18.md) for artifacts, findings,
 isolation details and limits. This is an AI-simulated walkthrough, not human
-validation; inbox delivery was not tested. Public re-download is the final step.
+validation; inbox delivery was not tested. Pages deployed implementation commit
+`7d042c3`; a fresh public re-download matched the repaired ZIP exactly, passed all
+36 hashes and the offline commands, preserved the six frozen files, and completed
+the text-proposal/email handoff and local welcome-page checks without submitting.
 
 **October 18: public engagement launch.** The user requested a review, then
 authorized implementing the recommendations and engaging publicly. The homepage

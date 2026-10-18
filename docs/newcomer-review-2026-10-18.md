@@ -122,7 +122,25 @@ Repaired ZIP SHA-256:
 
 Detailed local artifacts are under `study-runs/newcomer-review/`, with isolated
 downloads, browser profiles and raw sessions in temporary directories outside the
-checkout. Public-download verification after deployment remains the final step.
+checkout.
+
+## Published download rechecked
+
+GitHub Pages deployed implementation commit `7d042c3` successfully. A new browser
+profile then downloaded the public ZIP into another outside-repository folder.
+It matched the tested repaired SHA-256 above exactly: 147,139 bytes, all 36 hashes
+valid, all six historical evidence files unchanged, and all four offline commands
+successful. The live builder downloaded `northstar-proposal.txt`, offered the
+private email route and linked to the research form. The extracted welcome page
+and worksheet passed again at 320/390/1440px with no browser errors.
+
+The first follow-up local-page browser launch failed after the public download
+had already passed. The audit driver was changed to use separate profiles for
+the public site and extracted welcome page; the full walkthrough then passed.
+This launcher issue caused no website changes or additional AI calls.
+
+The public recheck completed through preparing the contribution for sending.
+No message was sent and no actual subscriber or contributor was created.
 
 Still untested: actual inbox delivery/replies, real novice task completion,
 default mail-client behavior, native macOS/Linux, assistive-technology user trials,
