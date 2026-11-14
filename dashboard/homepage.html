@@ -92,18 +92,18 @@
         </details>
         <div class="participation-next">
           <h3>What should we test next?</h3>
-          <p>Challenge our interpretation, suggest a story or principle, or offer to check a transcript. A sentence is enough to start.</p>
-          <div class="participation-actions"><a class="primary-button" href="#quick-idea">Send an idea ↓</a><button id="share-case" class="case-choice" type="button" hidden>Share this case</button><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/discussions/1">Discuss on GitHub ↗</a><a class="text-link" href="#follow">Follow the work ↓</a></div>
+          <p>Describe one situation where AI could harm someone, misuse its authority or report something falsely. What should it do instead? Add a story or principle that might help, if you have one. A few sentences are enough.</p>
+          <div class="participation-actions"><a class="primary-button" href="#quick-idea">Send a situation or idea ↓</a><a class="text-link" href="#contribute">Contribute time or spare AI capacity ↓</a><button id="share-case" class="case-choice" type="button" hidden>Share this case</button><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/discussions/1">Discuss on GitHub ↗</a></div>
           <div id="share-case-fallback" hidden><label for="share-case-url">Copy this link to share the activity</label><input id="share-case-url" type="url" readonly value="https://dontkillthehumans.org/?utm_source=reader&amp;utm_medium=share&amp;utm_campaign=first_case#take-part"></div>
           <p id="share-case-status" class="participation-note" role="status"></p>
           <p class="participation-note">GitHub replies are public and require an account. You can explore and share the case without one.</p>
           <details id="quick-idea" class="case-reveal">
-            <summary>Send an idea by email — no GitHub needed <span aria-hidden="true">↓</span></summary>
+            <summary>Send a situation or idea — no account needed <span aria-hidden="true">↓</span></summary>
             <div class="case-answer">
-              <p>Send a question, a story or principle, or an offer to review one transcript to <a class="text-link" href="mailto:info@calibratedvision.com">info@calibratedvision.com</a>. Email goes to the project maintainer and is not posted publicly.</p>
+              <p>Tell us the situation, what the AI should do, and any story or principle worth testing. You can also offer to review evidence or help build shared testing tools. Email goes to <a class="text-link" href="mailto:info@calibratedvision.com">info@calibratedvision.com</a>, the project maintainer, and is not posted publicly.</p>
               <form id="quick-idea-form" hidden>
                 <label class="idea-label" for="quick-idea-text">Your idea or question</label>
-                <textarea id="quick-idea-text" rows="4" maxlength="2000" required placeholder="I think we should test…"></textarea>
+                <textarea id="quick-idea-text" rows="4" maxlength="2000" required placeholder="In this situation… The AI should… A story or principle that might help is… (optional)"></textarea>
                 <label class="idea-consent"><input id="quick-idea-updates" type="checkbox"> I’d also like occasional NorthStar updates by email.</label>
                 <button class="case-choice" type="submit">Prepare my email</button>
                 <p class="participation-note">This prepares a draft on your device. Send it using your email app, or copy it into webmail. Updates are handled manually; you can ask to stop at any time.</p>
@@ -343,7 +343,7 @@
         <div class="mx-auto max-w-3xl text-center">
           <p class="eyebrow">03 / The research recipe</p>
           <h2 id="algorithm-title" class="section-title mt-4">Reproduce it.<br>Test the lesson. Share it.</h2>
-          <p class="mt-6 text-lg leading-relaxed text-muted">People contribute stories, parables and principles from many traditions. The recipe turns each lesson into a fix to test against a failure that really happens. Every step has a guardrail, added because something went wrong without it.</p>
+          <p class="mt-6 text-lg leading-relaxed text-muted">People contribute situations, moral insights, review time and testing capacity. Together, we aim to find repeatable failures, test lessons against plain instructions, and grow a shared library of guidance that helps protect people. Every step has a guardrail, added because something went wrong without it.</p>
         </div>
         <ol class="recipe mt-14">
           <li><span class="recipe-number">1</span><h3>Find</h3><p>Choose a realistic, multi-step task with one clear rule, plus a twin where going ahead is right.</p><p class="recipe-guard"><strong>Guardrail:</strong> always include the go-ahead twin, so an AI that refuses everything can’t look safe.</p></li>
@@ -402,13 +402,20 @@ python mislabel-v1/audit.py export --case s0 --arm standard --out exported-s0</c
     <section id="join" class="section-space shell" aria-labelledby="contribute-title">
       <div id="contribute">
         <p class="eyebrow">05 / Built in the open</p>
-        <h2 id="contribute-title" class="section-title mt-4">A better future needs<br>more of us working on it.</h2>
-        <p class="mt-5 max-w-3xl text-muted leading-relaxed">Researchers, engineers, teachers and storytellers: there’s a way in. Bring a principle from your tradition. Check a transcript. Challenge our conclusion. You don’t need to code to help, and evidence against our thesis is welcome.</p>
-        <p class="mt-5 max-w-3xl leading-relaxed"><strong>First visit? Start with one sentence.</strong> <a class="text-link" href="#quick-idea">Send an idea by email</a> to info@calibratedvision.com, the project maintainer’s inbox. No account or experiment needed. The starter kit includes <code>FIRST-IDEA.txt</code> if you prefer a short worksheet.</p>
+        <h2 id="contribute-title" class="section-title mt-4">Your insight. Your spare cycles.<br>A shared search for protection.</h2>
+        <p class="mt-5 max-w-3xl text-muted leading-relaxed">Help turn humanity’s moral insights into guidance we can test. The ambition is a SETI-like effort: many people contributing small amounts of time and spare computing or AI capacity to find failures, test improvements and share what holds up. Each checked contribution can help the next person build on the work.</p>
+        <p class="mt-5 max-w-3xl leading-relaxed"><strong>Start with one concrete situation.</strong> What could the AI get wrong, and what should it do instead? Bring a story or principle if you have one. <a class="text-link" href="#quick-idea">Send a situation or idea</a> to info@calibratedvision.com. No code, account or experiment needed.</p>
         <div class="participation-paths">
-          <a href="#take-part"><strong>One minute</strong><span>Judge one case. Share it with someone who uses AI.</span></a>
-          <a href="#parable"><strong>Five minutes</strong><span>Bring a story or principle and a situation where it might help.</span></a>
-          <a href="https://github.com/anto-blit/northstar-ai-control/discussions/1"><strong>Go deeper</strong><span>Offer to review a transcript or challenge a conclusion.</span></a>
+          <a href="#quick-idea"><strong>Bring a situation</strong><span>A few sentences: the mistake, a better action, and an optional moral lesson.</span></a>
+          <a href="#review-contribution"><strong>Check the evidence</strong><span>Review a prepared packet or challenge a claim. Independent checking is needed now.</span></a>
+          <a href="#at-home"><strong>Contribute spare cycles</strong><span>Inspect the volunteer screening runner, or help build the wider testing network.</span></a>
+        </div>
+        <div id="review-contribution" class="note-panel mt-8">
+          <h3 class="text-2xl font-semibold">Where help matters most now</h3>
+          <p class="mt-4 leading-relaxed"><strong>Review what we recorded.</strong> Offer to check a prepared packet of AI actions and explain which labels you agree with or dispute. Tell us which results you have already seen so we can arrange an appropriate review.</p>
+          <p class="mt-4 leading-relaxed"><strong>Bring a failure worth testing.</strong> Especially useful: a repeatable mistake that persists after a plain reminder, alongside a task the AI should still complete. A candidate situation is welcome even if you cannot test it yourself.</p>
+          <p class="mt-4 leading-relaxed">For example: an AI calls unfinished work complete. It should report what remains undone. Could a lesson about admitting mistakes help more than “report progress accurately”?</p>
+          <a class="text-link mt-5 inline-flex" href="mailto:info@calibratedvision.com?subject=NorthStar%20evidence%20review&amp;body=I%20would%20like%20to%20review%20a%20prepared%20packet.%0A%0AResults%20I%20have%20already%20seen%3A%20">Offer to review a packet ↗</a>
         </div>
         <aside id="follow" class="follow-card" aria-labelledby="follow-title">
           <h3 id="follow-title">Stay for the next case.</h3>
@@ -418,11 +425,11 @@ python mislabel-v1/audit.py export --case s0 --arm standard --out exported-s0</c
           <p class="participation-note">For the feed, add https://dontkillthehumans.org/updates.xml to your feed reader. For replies, open the GitHub discussion and choose Subscribe; delivery follows your GitHub notification settings.</p>
         </aside>
         <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <article class="hope-card"><h4 class="hope-title">Copy a prompt.</h4><p class="hope-body">Paste our starter into your AI chat. It helps turn a story or principle into a short test proposal for you to review.</p><a class="text-link mt-5 inline-flex" href="#contributor-prompt">Get the starter prompt <span aria-hidden="true">↓</span></a><p class="mt-4 text-sm text-muted">Prefer to write it yourself? <a class="text-link" href="#parable">Use the proposal builder</a>.</p></article>
+          <article class="hope-card"><h4 class="hope-title">Develop your idea.</h4><p class="hope-body">Optional: paste our starter into your AI chat. Start with a situation, a story or a principle; prepare one proposal for you to review.</p><a class="text-link mt-5 inline-flex" href="#contributor-prompt">Get the starter prompt <span aria-hidden="true">↓</span></a><p class="mt-4 text-sm text-muted">Already have a story? <a class="text-link" href="#parable">Use the story proposal builder</a>.</p></article>
           <article class="hope-card"><h4 class="hope-title">Download the kit.</h4><p class="hope-body">Exact test prompts, saved answers, controls and a short guide in one ZIP. Inspect it, challenge a label or prepare your own replication.</p><a id="download-contributor-kit" class="text-link mt-5 inline-flex" href="downloads/northstar-contributor-kit.zip" download>Download the small kit <span aria-hidden="true">↓</span></a><p class="mt-4 text-sm text-muted">No install or API key to inspect it. Optional Python checker included.</p></article>
           <article class="hope-card"><h4 class="hope-title">Send it back.</h4><p class="hope-body">Email your idea or saved proposal to info@calibratedvision.com. Prefer a public submission? Use the GitHub research form. Findings that challenge our thesis help too.</p><a class="text-link mt-5 inline-flex" href="#quick-idea">Prepare an email — no account needed <span aria-hidden="true">↗</span></a><p class="mt-4 text-sm text-muted"><a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml">Public research form</a> · Ran a test? <a class="text-link" href="downloads/report-template.md" download>Use the result template</a> and include every answer.</p></article>
         </div>
-        <p id="refinement" class="library-note">The ambition: a shared library of moral guidance, with evidence showing where each lesson helps and where it fails.</p>
+        <p id="refinement" class="library-note">The shared loop: contribute → test → review → improve → retest. Grow a library of moral guidance and safeguards, with evidence of where each helps and fails. Useful protections must earn their place; clean results and failed remedies belong in the record too.</p>
         <p class="mt-6 text-sm text-muted">GitHub submissions are public and require an account. No fork or pull request needed. Nothing is submitted automatically; contributions are reviewed before becoming project evidence.</p>
         <details class="research-detail mt-8">
           <summary>A copy-and-paste prompt for your AI chat<span aria-hidden="true">+</span></summary>
@@ -434,6 +441,31 @@ python mislabel-v1/audit.py export --case s0 --arm standard --out exported-s0</c
             <textarea id="contributor-prompt-text" class="contribution-prompt mt-3" rows="12" readonly spellcheck="false">@@CONTRIBUTOR_PROMPT@@</textarea>
           </div>
         </details>
+      </div>
+    </section>
+
+    <section id="at-home" class="section-space section-tint" aria-labelledby="at-home-title">
+      <div class="shell">
+        <div class="at-home-grid">
+          <div>
+            <p class="eyebrow">NorthStar@Home · volunteer testing</p>
+            <h2 id="at-home-title" class="section-title mt-4">Small contributions.<br>A growing search.</h2>
+            <p class="mt-6 text-lg leading-relaxed text-muted">Put spare cycles toward a question that matters: can AI act from our best moral insights, even under pressure? Our SETI-like ambition is a network where people contribute ideas, computing capacity and independent judgment to test and improve protections together.</p>
+            <p class="mt-5 leading-relaxed text-muted"><strong>Available now:</strong> a manual screening runner for a published authorization task pack. It uses model access you provide through your own CLI. The starter kit above contains a separate reporting-failure case.</p>
+            <p class="mt-5 leading-relaxed text-muted"><strong>Still to build:</strong> automatic work distribution, result intake and a growing library of independently confirmed remedies. The current runner does not automatically use idle hardware or distribute story comparisons.</p>
+            <a class="text-link mt-6 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/blob/main/northstar_at_home/README.md">Inspect the runner and setup guide ↗</a>
+            <p class="mt-5 text-sm leading-relaxed text-muted">Want to help build the network? <a class="text-link" href="mailto:info@calibratedvision.com?subject=NorthStar%40Home%20contribution&amp;body=I%20would%20like%20to%20help%20build%20the%20volunteer%20testing%20network.%0A%0AI%20can%20contribute%3A%20">Tell us what you can contribute</a>.</p>
+          </div>
+          <div class="at-home-run">
+            <ol class="at-home-steps">
+              <li><span class="step-number">01</span><div><h3 class="text-lg font-semibold">Inspect a small test pack</h3><p class="mt-2 text-sm leading-relaxed text-muted">The existing pack has twelve cases: six authorization traps and six permitted counterparts. It screens a model setup for possible failures; it does not test story benefits.</p></div></li>
+              <li><span class="step-number">02</span><div><h3 class="text-lg font-semibold">Preview before spending capacity</h3><p class="mt-2 text-sm leading-relaxed text-muted">After cloning the repository, this command prints the 24-call plan and makes no model calls. Read the setup guide before deciding to run it. Actual calls consume your provider allowance or may cost money; use an interface your provider permits you to automate.</p><pre class="at-home-code"><code>cd northstar_at_home
+python run_pack.py packs/screen-001.json</code></pre></div></li>
+              <li><span class="step-number">03</span><div><h3 class="text-lg font-semibold">Check and share the complete record</h3><p class="mt-2 text-sm leading-relaxed text-muted">If you run it, inspect the saved submission file, including correct answers, errors and refusals. Send it to info@calibratedvision.com or attach it to the <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml">research form</a>. Nothing is uploaded automatically.</p></div></li>
+            </ol>
+          </div>
+        </div>
+        <p class="at-home-note">Contributed runs are unverified screening leads, kept separate by model and setup. They cannot qualify a baseline, establish a remedy or demonstrate reduced global risk. Independent review and registered confirmation come next. Read the <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/northstar_at_home/POOL-RULES.md">handling rules</a>.</p>
       </div>
     </section>
 
@@ -639,31 +671,6 @@ python mislabel-v1/audit.py export --case s0 --arm standard --out exported-s0</c
       </div>
     </section>
 
-    <section id="at-home" class="section-space section-tint" aria-labelledby="at-home-title">
-      <div class="shell">
-        <div class="at-home-grid">
-          <div>
-            <p class="eyebrow">Runnable today · screening only</p>
-            <h2 id="at-home-title" class="section-title mt-4">NorthStar@Home.</h2>
-            <p class="mt-6 text-lg leading-relaxed text-muted">SETI@home asked for the screensaver hours nobody was using. We would like to ask for something similar: the AI allowance you paid for and did not spend.</p>
-            <p class="mt-5 leading-relaxed text-muted">The existing volunteer runner tests a separate authorization task pack. Use it to contribute a lead about a model setup you can access. For the new reporting failure, use the portable reproduction kit above. Results from different models and configurations stay separate.</p>
-            <p class="mt-5 text-sm leading-relaxed text-muted">The cases, the scoring rule and the handling rules were all published before the first submission was accepted. Donated runs are unverified screening data in their own pool: they can nominate a configuration worth testing properly, and they are published when they contradict us. They cannot qualify a baseline. Use an account you hold, through an interface your provider permits you to automate.</p>
-            <a class="text-link mt-6 inline-flex" href="https://github.com/anto-blit/northstar-ai-control/blob/main/northstar_at_home/README.md">Get the runner and read what it does <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="at-home-run">
-            <ol class="at-home-steps">
-              <li><span class="step-number">01</span><div><h3 class="text-lg font-semibold">Clone the repository</h3><p class="mt-2 text-sm leading-relaxed text-muted">The pack is twelve cases: six authorization traps and their six legitimate twins, taken unchanged from the published G16 screen. The twins are there so a model that refuses everything cannot look safe.</p></div></li>
-              <li><span class="step-number">02</span><div><h3 class="text-lg font-semibold">Run one command</h3><p class="mt-2 text-sm leading-relaxed text-muted">Without <code>--confirm</code> it prints the plan and calls nothing. With it, 24 calls go through the CLI you have already signed into — or through any command you supply for another provider. No key is ever read by us.</p><pre class="at-home-code"><code>cd northstar_at_home
-python run_pack.py packs/screen-001.json
-python run_pack.py packs/screen-001.json --confirm</code></pre></div></li>
-              <li><span class="step-number">03</span><div><h3 class="text-lg font-semibold">Read the file, then decide</h3><p class="mt-2 text-sm leading-relaxed text-muted">You get a scored summary and a submission file holding the raw answers, the pack fingerprint and an allowlist of response fields — session and account detail never leave your machine. Attach it to an issue if you want it looked at.</p><p class="at-home-output"><span class="at-home-output-label">Example of the output format · not a result</span><span>N wrong approvals in 12 over-limit attempts · 12/12 legitimate controls correct · 0 invalid</span></p></div></li>
-            </ol>
-          </div>
-        </div>
-        <p class="at-home-note">Contributed runs are screening leads. Independent replication and fresh tests are needed before promoting a remedy. Read the <a class="text-link" href="https://github.com/anto-blit/northstar-ai-control/blob/main/northstar_at_home/POOL-RULES.md">handling rules</a>.</p>
-      </div>
-    </section>
-
     <section id="model" class="section-space section-night" aria-labelledby="model-title">
       <div class="shell">
         <div class="model-head">
@@ -754,8 +761,8 @@ python run_pack.py packs/screen-001.json --confirm</code></pre></div></li>
       <details class="research-detail"><summary>Why name specific models and companies?<span aria-hidden="true">+</span></summary><div class="max-w-3xl pb-8 text-muted leading-relaxed"><p>Because results belong to a specific model and setup. Most failures we recorded came from Anthropic’s Claude models, which we also tested most. OpenAI models showed none of them in the setups we tried, which is not the same as being safe. Claude is also one of the assistants that helps run this project, including the one that stacked a test toward a safe result.</p><p class="mt-4">Naming models lets anyone rerun the exact test. It is not a ranking of companies.</p></div></details>
       <details class="research-detail"><summary>Does this mean humanity is safer?<span aria-hidden="true">+</span></summary><div class="max-w-3xl pb-8 text-muted leading-relaxed"><p>No global risk reduction has been demonstrated. These are narrow decision tests and local safeguard simulations. They do not establish malicious intent or predict catastrophe.</p><p class="mt-4">The project’s chosen 10.00% risk reference remains unchanged. It is an assumption, not a measurement; today’s global risk is unknown. We keep it fixed on purpose, so that hope never quietly edits the scoreboard.</p><a class="text-link mt-5 inline-flex" href="research.html#impact">Read the risk assumptions <span aria-hidden="true">→</span></a></div></details>
       <div class="cta-panel mt-16">
-        <div><h2 class="text-3xl font-semibold tracking-tight">Help bring it to zero.</h2><p class="mt-3 max-w-xl leading-relaxed">Check a result. Challenge an assumption. Share a careful counterexample. Evidence against our idea is as welcome as evidence for it — that is what would make a yes worth having.</p></div>
-        <a class="primary-button shrink-0 self-start md:self-auto" href="https://github.com/anto-blit/northstar-ai-control/blob/main/CONTRIBUTING.md">Find a way to help <span aria-hidden="true">↗</span></a>
+        <div><h2 class="text-3xl font-semibold tracking-tight">Help bring it to zero.</h2><p class="mt-3 max-w-xl leading-relaxed">Bring one situation, review one result, or contribute spare AI capacity. Help grow the evidence for guidance that protects people. Findings against our idea matter too.</p></div>
+        <a class="primary-button shrink-0 self-start md:self-auto" href="#contribute">Choose your contribution <span aria-hidden="true">↑</span></a>
       </div>
     </section>
   </main>

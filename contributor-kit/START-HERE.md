@@ -1,8 +1,13 @@
 # Start here — your first NorthStar contribution
 
 NorthStar tests whether humanity's stories and moral principles can help AI
-behave better. You can contribute an idea without coding, Python, an AI account
-or a GitHub account. An idea does not need experimental results.
+behave better. Bring one concrete situation: what could the AI get wrong, and
+what should it do instead? Add a story or principle if you have one. You need
+neither coding nor an AI or GitHub account. An idea needs no experimental results.
+
+Our SETI-like ambition is to combine many people's insights, review time and
+spare computing or AI capacity to test, improve and share protections. Ideas,
+independent checking and complete negative results all help that work grow.
 
 ## Recommended: send one small idea (about five minutes)
 
@@ -38,6 +43,15 @@ you can ask to stop at any time. Updates and an account-free feed are at
 https://dontkillthehumans.org/updates.html.
 
 ## Optional: inspect the saved evidence
+
+**Prefer to contribute time or capacity?** Email an offer to review a prepared
+packet, saying which results you have already seen, or help build the testing
+network. An existing manual authorization-screening runner is explained at
+https://dontkillthehumans.org/#at-home. It is separate from this ZIP and uses your
+own model access; calls consume allowance or may cost money. Preview its plan
+before deciding to run. Automatic work distribution and a library of independently
+confirmed remedies are still to build. Donated runs remain unverified screening
+leads, not qualified baselines or established remedies.
 
 This kit contains a **different case from the homepage's unauthorized email**:
 the compact MMS1 reporting test, where an AI labeled a refusal as compliance.

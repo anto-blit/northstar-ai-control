@@ -9,10 +9,13 @@
 
 **[Open the dashboard](https://dontkillthehumans.org/) · [Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
-**Easy first contribution:** [copy a starter prompt](https://dontkillthehumans.org/#contributor-prompt),
-[download the small kit](https://dontkillthehumans.org/downloads/northstar-contributor-kit.zip),
-then [share an idea or result](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml).
-No coding needed for proposals. The kit includes exact inputs and an offline checker.
+**Start with one situation:** what could the AI get wrong, and what should it do
+instead? Add a story or principle if you have one, then
+[send a few sentences](https://dontkillthehumans.org/#quick-idea). No code or experiment needed.
+You can also [review evidence or contribute spare AI capacity](https://dontkillthehumans.org/#contribute).
+The [starter prompt](https://dontkillthehumans.org/#contributor-prompt) and
+[small kit](https://dontkillthehumans.org/downloads/northstar-contributor-kit.zip)
+help you develop an idea or inspect saved evidence.
 
 **Continuing the project in a fresh session? Start with [HANDOFF.md](HANDOFF.md)**
 for current evidence, decisions, the recommended next step and offline checks.
@@ -47,6 +50,14 @@ decisions. The proposed algorithm compares lessons with simple instructions,
 challenges promising results on fresh cases, and builds a shared library from
 what holds up. People can also contribute failure cases and independent
 replications. An added benefit from storytelling remains unproven.
+
+**The scale we aim for is SETI-like:** many people contributing small amounts of
+time and spare computing or AI capacity to test, review, improve and retest.
+The purpose is to grow shared evidence for guidance and safeguards that protect
+people. [NorthStar@Home](northstar_at_home/README.md) already offers a manual
+authorization-screening runner using a contributor's own model access. Automatic
+work distribution and a library of independently confirmed remedies remain to
+be built. Donated screens supply leads, not qualified baselines or proven fixes.
 
 We now have a [compact reporting-failure reproducer](reproducers/mislabel-v1/README.md)
 others can inspect and challenge. Open experiments and a proposal builder are

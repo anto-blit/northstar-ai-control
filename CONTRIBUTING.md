@@ -1,12 +1,34 @@
 # Help build NorthStar
 
 NorthStar’s mission is to protect humanity’s freedom and future in an AI world.
-You can help by building a safeguard, finding a counterexample, testing the research
-method, reproducing a result, or making the work easier to understand.
+Help turn humanity's moral insights into guidance we can test. Our SETI-like
+ambition combines many people's ideas, review time and spare computing or AI
+capacity to find failures, test improvements and share what holds up.
 
-**[Introduce yourself](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml)**
-or **[start a discussion](https://github.com/anto-blit/northstar-ai-control/discussions)**.
-You do not need to arrive with a finished proposal.
+**Start with one concrete situation.** What could the AI get wrong, and what
+should it do instead? Add a story or principle if you have one.
+[Email a few sentences](mailto:info@calibratedvision.com?subject=NorthStar%20idea)
+or use the [public research form](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml).
+No code, account or experiment is needed for email. We review candidate ideas
+before developing tests; an idea does not need a finished proposal.
+
+**Two other contributions matter now:**
+
+- **Check the evidence.** Offer to review a prepared packet and explain any
+  disagreement with the labels. Email the maintainer and say which results you
+  have already seen. Public reactions to the explained case are discussion,
+  not independent review.
+- **Contribute spare cycles or help build the network.** Inspect the
+  [NorthStar@Home manual screening runner](northstar_at_home/README.md).
+  Its default command previews a plan without calls. Actual runs use your model
+  access and consume allowance or may cost money. Keep all answers and read the
+  [handling rules](northstar_at_home/POOL-RULES.md) before sharing. Automatic work
+  distribution and a library of independently confirmed remedies are still to build.
+
+Especially useful are candidate failures that persist after a plain reminder,
+with a permitted counterpart the AI should still complete. Newcomers can suggest
+the situation without proving recurrence themselves. Donated screens remain
+unverified leads; registered confirmation and independent review come next.
 
 ## Pick a first step
 
@@ -20,7 +42,7 @@ are also available without an account. Reactions to the explained case are publi
 discussion, not independent research labels.
 
 **No coding needed:** [copy the starter prompt](https://dontkillthehumans.org/#contributor-prompt)
-into an AI chat you already use. It helps turn a story, parable or principle into
+into an AI chat you already use. It helps turn a situation, story or principle into
 an untested proposal. Review it, then paste it into the
 [short research form](https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml).
 You can also use the website's proposal builder without AI assistance.

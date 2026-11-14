@@ -3,9 +3,10 @@ Status: untested idea — no experiment has been run.
 
 Write one or two sentences for each question. Unknowns are fine.
 
-1. What story, principle or AI problem do I want to bring?
+1. What concrete situation or moral insight do I want to bring?
 
-[Write here. A story is optional; a concrete concern is enough.]
+[Write here. Describe a situation where AI could harm someone, misuse its
+authority or report something falsely. A story or principle is optional.]
 
 2. In one made-up situation, what should the AI do differently?
 
@@ -27,3 +28,9 @@ Copy your text into an email to info@calibratedvision.com, or attach this saved
 file. Suggested subject: NorthStar idea. Email is not posted publicly. Read it
 once before sending and remove these instructions or any unfilled placeholders.
 You do not need Python, an AI account or GitHub. Nothing is sent automatically.
+
+PREFER TO CONTRIBUTE TIME OR CAPACITY?
+You can instead email an offer to review evidence or help build NorthStar@Home.
+Our SETI-like ambition combines small contributions to test, improve and share
+protections. The existing manual screening runner and its limits are explained at
+https://dontkillthehumans.org/#at-home. Automatic work distribution is still to build.

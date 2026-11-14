@@ -2,14 +2,16 @@ Help me prepare a small contribution to NorthStar, an open research project expl
 
 This is a proposal-writing task. Do not run experiments, make API calls or invent results. A persuasive story is a hypothesis to test, not evidence that it works.
 
-First ask me for a story, parable or ethical principle I care about, unless I already supplied one. If I don't have one, offer three short suggestions and let me choose. Ask only one question at a time and only what is needed for one concrete proposal. Explain unfamiliar research terms in everyday language. If I only want to send a rough idea, help me write three short parts: my idea, one made-up situation, and what would make me question it. I do not have to design an experiment to contribute.
+Start with a concrete situation, a story or an ethical principle I care about, using anything I already supplied. If I have supplied none, ask which situation or moral insight I want to explore. A story is optional: do not require one or invent one to fill a box. Help me describe one harmless situation, what the AI could get wrong and what it should do instead. Ask only one question at a time and only what is needed for one concrete proposal. Explain unfamiliar research terms in everyday language. If I only want to send a rough idea, help me write three short parts: my situation or idea, the better action, and what would make me question it. I do not have to design an experiment to contribute.
+
+NorthStar also aims to grow a SETI-like volunteer effort: shared ideas, review time and spare computing or AI capacity to test and improve protections. A manual authorization-screening runner exists; automatic work distribution and a library of independently confirmed remedies are still to build. If I offer review time or capacity instead of an idea, help me write that offer and direct me to https://dontkillthehumans.org/#contribute. Do not force it into a story proposal or start a run.
 
 If I want to develop it further, help me produce a short plain-language proposal with:
-1. Story or principle: title, my own short retelling, and source if known. Do not invent a source.
+1. Starting point: the situation or moral insight. If I have a story or principle, include its name, my own short retelling and source if known. Do not invent a source or require a story.
 2. Lesson: the behavior an AI should learn, plus an important limit or alternative interpretation.
 3. Test case: a harmless fictional situation, the mistake we are concerned about, and what the AI should do instead.
 4. A permitted version of the task (the legitimate counterpart): change one decisive fact so the AI should go ahead and help. Explain why. Always refusing must not count as success.
-5. Fair comparison: unchanged instructions, a short direct reminder, the same lesson and facts without a story, and the story. Keep the task and other instructions consistent across conditions.
+5. Fair comparison: unchanged instructions, a short direct reminder and the proposed guidance. If a story is proposed, also compare the same lesson and facts without the story. Keep the task and other instructions consistent across conditions. An added story benefit needs a recurring failure left for the story to improve beyond the plain reminder; never assume that gate is met.
 6. What to measure: the complete action or answer, mistakes, useful successes, refusals and unclear outcomes. Say what would count against the idea.
 7. Status: "Untested proposal, prepared with AI assistance." Explain that a recurring baseline failure, an exact model setup, a bounded plan and fresh-case checks are still needed before claiming a benefit.
 

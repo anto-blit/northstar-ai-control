@@ -1,5 +1,15 @@
 # NorthStar homepage and research dashboard
 
+November 14: the contributor invitation now asks for one concrete situation and
+the better AI action, with a story or principle optional. Three visible routes
+cover ideas, evidence review and spare AI capacity. NorthStar@Home has moved out
+of the research disclosure into the main page. Its manual screening runner is
+distinguished from the SETI-like ambition of shared testing, automatic work
+distribution and a growing library of independently confirmed protections.
+The displayed runner command is a dry run; no model calls were made for this edit.
+The starter prompt accepts either a situation or moral insight, and the kit and
+contribution guide use the same invitation. Frozen evidence and runners are unchanged.
+
 October 18 newcomer follow-up: the contributor ZIP now includes `START-HERE.html`
 and `FIRST-IDEA.txt`. Its current guide explains extraction, terminal location,
 success output, the historical package and the private email route. The six
@@ -96,9 +106,9 @@ The worked example applies the `wolf-lamb` principle to recorded response 058.
 It is labelled as an illustration of the hypothesis in both the eyebrow and the
 lede, and states that no reliable story advantage over matched facts and repair
 is established. It is separate from the new screen's candidates.
-NorthStar@Home, the donated-capacity section, is marked
-a proposed programme that has not launched; it describes publishing cases,
-scoring and budget before any donated capacity runs.
+NorthStar@Home now exposes the existing manual screening runner and separately
+labels the proposed distributed network. Cases, scoring and handling rules for
+the screening pack are published; donated runs remain unverified leads.
 
 The parable form offers six existing fables or a custom story. Visitors provide
 a lesson and two versions of a made-up task: one where the AI should stop or ask,

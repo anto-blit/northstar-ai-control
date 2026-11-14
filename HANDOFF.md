@@ -1,5 +1,25 @@
 # NorthStar: start here to continue the work
 
+**November 14: sharpened contributor ask and spare-cycle ambition.** The user
+approved sharpening the invitation and emphasized a SETI-like approach using
+spare cycles to test, grow and protect. The homepage now asks for one concrete
+situation and the better AI action, with an optional moral lesson; its three
+routes are ideas, evidence review and spare AI capacity. Independent review and
+candidate failures that survive a plain reminder are visible beside the ask.
+NorthStar@Home has moved into the main reading path. Its existing manual
+authorization-screening runner is distinguished from automatic work distribution,
+result intake and a library of independently confirmed remedies, which remain
+to build. The page shows only the dry-run command and explains allowance/cost.
+The starter prompt accepts a situation or moral insight without requiring a
+story. README, contribution guide, research form and kit wrappers match.
+This direction authorizes website publication, not new model experiments or
+automatic use of contributor resources. Frozen studies and runner are unchanged.
+Validation: all 66 dashboard/content tests passed, including frozen package
+checks; the export/source check passed; browser flows passed at 320/390/768/1440px.
+The NorthStar@Home command printed its 24-call plan in dry-run mode with no model
+calls. Desktop/mobile contribution screenshots were inspected. Publication uses
+the existing Pages workflow on main.
+
 **October 18: newcomer walkthrough and starter-kit repairs.** The user asked for
 a fresh-session download/use review. Clean public-browser downloads were extracted
 outside the checkout; the original kit's 34 hashes and offline checks passed.

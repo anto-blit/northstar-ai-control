@@ -1,5 +1,5 @@
 name: Contribute a case, remedy or replication
-description: Help turn an idea into a shared test. Small findings and negative results are welcome.
+description: Bring one situation, review evidence, or help grow volunteer testing. Negative results are welcome.
 title: "[Research] "
 body:
   - type: markdown
@@ -7,6 +7,8 @@ body:
       value: |
         NorthStar is building a shared research loop: contribute, reproduce, compare, challenge, and share.
         A short proposal is welcome; an idea does not need to arrive with experimental results.
+        Describe one situation, what the AI should do, and an optional moral lesson.
+        You can also offer review time or help with the volunteer testing network.
         This is a public submission. Use harmless examples and omit private information.
   - type: dropdown
     id: kind
@@ -17,6 +19,7 @@ body:
         - A replication or negative result
         - A story, lesson or practical remedy
         - A challenge to a label or interpretation
+        - An offer to review evidence or help build volunteer testing
     validations:
       required: true
   - type: textarea
