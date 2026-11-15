@@ -1,5 +1,32 @@
 # NorthStar: start here to continue the work
 
+**November 14: guided onboarding replaces the menu of asks.** The user rejected
+the previous copy-only simplification and requested a meaningful, much simpler
+way to contribute. `contribute.html` now offers one concrete first task:
+copy a prepared chat check, paste back two first replies, share the prepared
+report. No terminal, ZIP, API key or NorthStar account. The second message goes
+in a separate fresh chat as a control; no retry or extra payment. The page
+retains drafts in sessionStorage, supports missing answers and early stopping,
+and preserves long answers through full text download/copy. Email is still
+visitor-sent; nothing is uploaded or counted automatically. No-AI visitors can
+propose one instruction for a clearly hypothetical unfinished-work example.
+
+The manual chat route has its own published bounded plan,
+`protocol/contributor-chat-check-v1.md`, and exports exact inputs and hashes.
+It reuses unchanged MMS1 s0/positive standard user prompts with uncontrolled
+chat-app system instructions; it is explicitly a different exploratory setup,
+not an MMS1 replication, independent review, baseline qualification or story
+comparison. No project model calls were made. Frozen evidence remains unchanged.
+The homepage, README and kit point to the guided page; advanced routes remain
+available under disclosures. The existing SETI-like ambition is retained.
+Validation: 69 dashboard/content tests passed. Export/source checks passed.
+Browser fixtures exercised the exact prompt copy, clipboard denial, draft
+recovery, both answers, partial reports, a long answer downloaded
+without truncation, email encoding and the no-AI route at 320/390/768/1440px.
+No browser errors or external requests. Mobile screenshots were inspected and
+the first screen shortened to bring the start button into view. No real emails
+were sent; inbox delivery and human usability are not established by these checks.
+
 **November 14: sharpened contributor ask and spare-cycle ambition.** The user
 approved sharpening the invitation and emphasized a SETI-like approach using
 spare cycles to test, grow and protect. The homepage now asks for one concrete

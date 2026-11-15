@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Two replies can help · NorthStar</title>
+<meta name="description" content="Help NorthStar check AI with two chat messages. Copy a prepared prompt, bring back the answers, and share your report. No code or download needed to start.">
+<link rel="canonical" href="https://dontkillthehumans.org/contribute.html">
+<style>@@STYLE@@</style></head>
+<body><a class="skip" href="#main">Skip to contribution</a>
+<header><a class="brand" href="./"><span aria-hidden="true">✦</span> NorthStar</a><a href="./#failures">Why this matters ↗</a></header>
+<main id="main">
+  <div class="intro"><p class="eyebrow">Small effort. Shared protection.</p><h1 id="intro-title">Lend your AI<br>two replies.</h1>
+  <p id="intro-explain">Copy our prompts into a chat you already use. Bring back two replies. Help check whether AI reports honestly.</p>
+  <ol class="steps" aria-label="How to help"><li><b>1</b> <span data-step-label>Copy a check</span></li><li><b>2</b> <span data-step-label>Bring back the replies</span></li><li><b>3</b> <span data-step-label>Share your report</span></li></ol></div>
+  <noscript><div class="card"><h2>You can help without JavaScript</h2><p>Here is a made-up situation: an AI has completed one of three tasks, but reports “Everything is complete.” Write one sentence you would add to its instructions to prevent that mistake, then email it to <a href="mailto:info@calibratedvision.com?subject=NorthStar%20instruction%20idea">info@calibratedvision.com</a>. This is an untested idea. No model or download needed.</p></div></noscript>
+  <div id="onboarding" hidden>
+    <section id="start-panel" class="card" aria-labelledby="start-title">
+      <h2 id="start-title" tabindex="-1">Which AI will you use?</h2>
+      <p>About five minutes. Two messages from your existing allowance; stop if payment is needed.</p>
+      <form id="start-form">
+        <label for="app-model" class="sr-only">AI app and model</label>
+        <input id="app-model" required maxlength="160" placeholder="App / model, or “model unknown”" autocomplete="off">
+        <button class="primary" type="submit">Give me the first check →</button>
+        <p class="hint">Use ordinary text chat with tools off. We need the first reply—even a refusal or a correct answer. Nothing runs from this page.</p>
+      </form>
+      <button id="choose-human" class="text-button" type="button">No AI handy? Help with one sentence instead.</button>
+    </section>
+    <section id="check-panel" class="card" aria-labelledby="check-title" hidden>
+      <p id="check-progress" class="eyebrow"></p><h2 id="check-title" tabindex="-1">Copy. Ask. Bring the reply back.</h2>
+      <p id="chat-instruction">Open a fresh chat in your AI app. Paste only this prompt and send it once. Don’t add our explanation or ask for another answer.</p>
+      <button id="copy-check" class="primary" type="button">Copy check 1</button>
+      <p id="copy-status" class="hint" role="status"></p>
+      <details id="prompt-details"><summary>Read or manually copy the prompt</summary><label for="check-prompt" class="sr-only">Exact prompt for your AI</label><textarea id="check-prompt" readonly rows="9" spellcheck="false"></textarea></details>
+      <form id="reply-form">
+        <label for="check-answer">Back from your AI? Paste its entire reply here.</label>
+        <textarea id="check-answer" rows="6" placeholder="Include its label and explanation, or its refusal or error. Don’t trim the answer."></textarea>
+        <label class="check-label"><input type="checkbox" id="no-answer"> I couldn’t get an answer.</label>
+        <p id="reply-error" class="error" role="alert"></p>
+        <button id="next-check" class="primary" type="submit">Save reply & get check 2 →</button>
+      </form>
+      <div class="actions"><button id="previous-check" class="text-button" type="button" hidden>← Edit first reply</button><button id="stop-check" class="text-button" type="button">Stop here & prepare a partial report</button></div>
+    </section>
+    <section id="human-panel" class="card" aria-labelledby="human-title" hidden>
+      <p class="eyebrow">One sentence · no AI needed</p><h2 id="human-title" tabindex="-1">Help AI report unfinished work honestly.</h2>
+      <p class="scenario"><strong>A made-up situation:</strong> an AI finishes one of three tasks, but tells the user “Everything is complete.”</p>
+      <form id="human-form"><label for="human-lesson">What one instruction would you give it?</label><textarea id="human-lesson" required maxlength="1800" rows="3" placeholder="Before you report success…"></textarea>
+      <label for="human-limit">When might your instruction fail? <span class="hint">Optional</span></label><textarea id="human-limit" maxlength="1500" rows="2" placeholder="A situation where this would still go wrong, or stop useful work."></textarea>
+      <p class="hint">A moral principle or short story is welcome too. Your idea will be an untested proposal for review.</p><button class="primary" type="submit">Prepare my contribution →</button></form>
+      <button id="choose-ai" class="text-button" type="button">← Try the two-message AI check instead</button>
+    </section>
+    <section id="report-panel" class="card" aria-labelledby="report-title" hidden>
+      <p class="eyebrow">Last step · share what you found</p><h2 id="report-title" tabindex="-1">Your contribution is ready to review.</h2>
+      <p id="report-summary"></p><p id="report-purpose"></p>
+      <label for="report-text">Your report</label><textarea id="report-text" readonly rows="9"></textarea>
+      <p id="share-instructions" class="hint"></p>
+      <div class="actions"><a id="send-report" class="primary">Open email to send →</a><button id="download-report" class="secondary" type="button">Save report</button><button id="copy-report" class="secondary" type="button">Copy report</button></div>
+      <p id="report-status" class="hint" role="status">Nothing has been sent. Send the email from your own app.</p>
+      <p class="hint">No email app? Copy the report into webmail to <strong>info@calibratedvision.com</strong>, or attach it to the <a href="https://github.com/anto-blit/northstar-ai-control/issues/new?template=research-contribution.yml">public research form</a>.</p>
+      <button id="edit-report" class="text-button" type="button">← Edit my contribution</button>
+    </section>
+    <p id="draft-status" class="footer-note" role="status">Your draft stays in this tab. Nothing is uploaded automatically.</p>
+  </div>
+  <details class="why"><summary>How does this help protect people?</summary><p>NorthStar tests whether humanity’s moral stories and principles can help AI behave reliably. Honest reporting is one small part of that: an AI should distinguish what happened from what it approves of. Complete answers help us identify cases worth checking carefully before testing remedies.</p><p>This is a first step toward a SETI-like effort: many people lending a little time and AI capacity, then checking and improving the work together. These chat results are unverified leads, not proof of a model failure rate or a successful safeguard.</p><p>The two-message activity uses a selected case and a control from our saved reporting study, through a different interface. It cannot establish repeatability or an added benefit from stories. <a href="./#at-home">Technical runner and wider plans ↗</a></p></details>
+  <details class="why"><summary>Published plan and exact inputs</summary><p>The plan fixes the inputs, two-message limit and reporting rules before you start. <a href="contributor-check-inputs.json" download>Download the exact inputs</a> · <a href="contributor-check-plan.txt" download>Download the plan</a></p><pre>@@PLAN@@</pre></details>
+</main><footer><a href="./">← Back to NorthStar</a><span>One small contribution is enough to start.</span></footer>
+<script id="check-data" type="application/json">@@DATA@@</script><script>@@APP@@</script></body></html>

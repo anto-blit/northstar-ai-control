@@ -13,6 +13,7 @@ from itertools import product
 from pathlib import Path
 from contributor_downloads import build_assets
 from pip_assets import build_assets as build_pip_assets
+from contribute_page import build_assets as build_contribute_assets
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -571,6 +572,7 @@ def main():
     outputs.update({args.output.parent / "downloads" / name: content
                     for name, content in build_assets().items()})
     outputs.update({args.output.parent / name: content for name, content in build_pip_assets().items()})
+    outputs.update({args.output.parent / name: content for name, content in build_contribute_assets().items()})
     outputs[args.output.with_name("updates.html")] = (HERE / "updates.template.html").read_text(encoding="utf-8").replace(
         "@@STYLE@@", (HERE / "homepage.compiled.css").read_text(encoding="utf-8")).encode("utf-8")
     outputs[args.output.with_name("updates.xml")] = (HERE / "updates.xml").read_bytes()

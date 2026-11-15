@@ -1,5 +1,10 @@
 # Start here — your first NorthStar contribution
 
+**Prefer a guided page?** Open https://dontkillthehumans.org/contribute.html.
+Copy a prepared check into an AI chat, bring back two replies, then send the
+prepared report. It also offers a one-sentence task without AI. No download or
+installation is needed to use that page; this kit is an optional offline route.
+
 NorthStar tests whether humanity's stories and moral principles can help AI
 behave better. Bring one concrete situation: what could the AI get wrong, and
 what should it do instead? Add a story or principle if you have one. You need

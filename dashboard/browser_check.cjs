@@ -447,6 +447,7 @@ const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
     assert.equal(await evaluate(`document.querySelector('#follow a[href="updates.xml"]').getAttribute('href')`), 'updates.xml');
     assert.equal(await evaluate(`document.getElementById('risk-value').textContent`), '10%');
     assert.match(await evaluate(`document.getElementById('risk-caption').textContent`), /Zero is our goal/);
+    await require('./contribute_browser_checks.cjs')({call, navigate, evaluate, viewport, screenshot, homeURL, folder, pause});
     assert.deepEqual(errors, []);
     assert.deepEqual(remoteRequests, []);
     const result = { outcome: 'passed', viewports: [320, 390, 768, 1440],

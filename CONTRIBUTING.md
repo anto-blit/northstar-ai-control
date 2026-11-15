@@ -1,5 +1,21 @@
 # Help build NorthStar
 
+**[Start helping — no setup needed](https://dontkillthehumans.org/contribute.html).**
+
+1. **Copy a check** from the guided page into a fresh AI chat you already use.
+2. **Bring back the replies:** paste its full answer, then do the second check
+   in a separate fresh chat. Two messages total; no retries or extra payment.
+3. **Share your report:** the page prepares it; review and send it by email.
+
+No terminal, ZIP, API key or NorthStar account. The page keeps your draft in the
+current tab while you switch apps. Clean results, refusals, errors and partial
+reports are welcome. This is exploratory screening with a published
+[bounded plan](protocol/contributor-chat-check-v1.md), not an exact replication
+or proof of a remedy. No-AI alternative: the same page gives you a concrete
+situation and asks for one instruction that might help.
+
+## Other ways to contribute
+
 NorthStar’s mission is to protect humanity’s freedom and future in an AI world.
 Help turn humanity's moral insights into guidance we can test. Our SETI-like
 ambition combines many people's ideas, review time and spare computing or AI

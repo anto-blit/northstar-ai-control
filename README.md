@@ -9,9 +9,11 @@
 
 **[Open the dashboard](https://dontkillthehumans.org/) · [Get involved](https://github.com/anto-blit/northstar-ai-control/issues/new?template=collaborate.yml) · [Ask a question](https://github.com/anto-blit/northstar-ai-control/discussions) · [Run the experiments](#try-it-yourself)**
 
-**Start with one situation:** what could the AI get wrong, and what should it do
-instead? Add a story or principle if you have one, then
-[send a few sentences](https://dontkillthehumans.org/#quick-idea). No code or experiment needed.
+**[Lend your AI two replies](https://dontkillthehumans.org/contribute.html):**
+copy our prepared checks into separate fresh chats, paste the replies back,
+then send the report the page prepares. No code, ZIP or API key. Use existing
+allowance only; these are unverified leads for review, not a safety finding.
+No AI handy? The page also offers a concrete one-sentence instruction task.
 You can also [review evidence or contribute spare AI capacity](https://dontkillthehumans.org/#contribute).
 The [starter prompt](https://dontkillthehumans.org/#contributor-prompt) and
 [small kit](https://dontkillthehumans.org/downloads/northstar-contributor-kit.zip)

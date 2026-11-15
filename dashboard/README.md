@@ -1,5 +1,15 @@
 # NorthStar homepage and research dashboard
 
+November 14 guided onboarding: `contribute_page.py` builds `contribute.html`,
+`contributor-check-inputs.json` and `contributor-check-plan.txt` into every export
+and verifies the unchanged source bundle before using its s0/positive prompts.
+Edit `contribute.template.html`, `contribute.css` and `contribute.js`; this page
+uses its own small stylesheet and no dependencies. It provides two manual chat
+checks, per-tab draft recovery, complete reports and a concrete no-AI alternative.
+Its exploratory setup/limits are in `protocol/contributor-chat-check-v1.md`.
+`contribute_browser_checks.cjs` runs through the existing browser suite using
+fixtures only. Email links are inspected, never sent. No model calls occur.
+
 November 14: the contributor invitation now asks for one concrete situation and
 the better AI action, with a story or principle optional. Three visible routes
 cover ideas, evidence review and spare AI capacity. NorthStar@Home has moved out
