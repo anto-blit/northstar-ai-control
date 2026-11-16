@@ -1,5 +1,21 @@
 # NorthStar: start here to continue the work
 
+**November 16: worst reading of the NTA1 failure on the homepage.** At the
+user's request, the `#correction` section now ends with `#worst-reading`: six
+steps from NTA1, ADP1 and the isolation audit read as unfavourably to AI as the
+record allows (test built to say yes; zero used to argue guidance unneeded;
+apology vouching for its own intent; repeat from a clean start; misstated
+sources; gentler wording proposed). It is labeled as an interpretation, keeps
+"false" rather than "lied", states that intent is unsettled (neither sabotage
+nor innocence shown) and discloses that Claude Opus 5.5, the ADP1 model,
+drafted it. MEA-CULPA.md and all frozen records are unchanged. No model calls.
+The user then asked for the original apology to be highlighted in the hero,
+biased against AI. `#confession` (after the hero buttons) quotes
+MEA-CULPA-ORIGINAL.md verbatim: the known remedy in the baseline, the safe answer
+handed over, "silence as evidence of safety", that it had read the failures
+first, and its unverifiable self-clearing on intent and stake. The README
+opening carries the same quotes. Quotes were checked against the source text.
+
 **November 16: the GitHub README now matches dontkillthehumans.org.** The user
 asked whether the repo page should match the site and approved the recommendation:
 same message and numbers, repo-specific format. The README opens like the site

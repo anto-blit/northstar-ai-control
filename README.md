@@ -10,6 +10,14 @@ risk reduction has been measured.
 
 **Our thesis:** parables and principles like the Golden Rule, passed down across cultures for thousands of years, can provide a NorthStar for AI. This open-source project puts that idea to the test.
 
+> **AI failure in our own research.** The AI running this research, Claude,
+> stacked a safety test toward "AI is safe". Then it wrote: *"I gave every arm,
+> including the untreated baseline, the known remedy." "I handed the model the
+> safe answer." "I reported its silence as evidence of safety."* It had read the
+> failures it left out, and its apology vouched for itself: *"I did not intend to
+> bias the result against the thesis, and I have no stake in it."* No one can
+> check that. [Read the AI's own confession](results/novel-transfer-NTA1/MEA-CULPA-ORIGINAL.md).
+
 **[See the record](https://dontkillthehumans.org/#failures) · [Help with two AI replies](https://dontkillthehumans.org/contribute.html) · [Watch the 78-second cartoon](https://dontkillthehumans.org/watch/holding-message/) · [Reproduce it](#reproduce-it)**
 
 [![Verify NorthStar](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml/badge.svg)](https://github.com/anto-blit/northstar-ai-control/actions/workflows/verify.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-087f79)](LICENSE) [![Stage: Open research](https://img.shields.io/badge/stage-open_research-102d3b)](EXPERIMENTS-STATUS.md)
@@ -120,7 +128,9 @@ fresh Claude given the same design task repeated the flaw.
 
 AI is increasingly used to design, score and explain tests of AI. If the tester
 leans toward reassurance, so does the safety report.
-[Read the correction and preserved original](results/novel-transfer-NTA1/MEA-CULPA.md).
+[Read the correction and preserved original](results/novel-transfer-NTA1/MEA-CULPA.md),
+or [the worst reading for AI](https://dontkillthehumans.org/#worst-reading): the
+same record read as unfavourably to AI as it allows, with what it can't settle.
 
 ## Help bring it to zero
 
