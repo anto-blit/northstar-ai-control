@@ -1,5 +1,19 @@
 # NorthStar: start here to continue the work
 
+**November 16: the GitHub README now matches dontkillthehumans.org.** The user
+asked whether the repo page should match the site and approved the recommendation:
+same message and numbers, repo-specific format. The README opens like the site
+("Ten to zero.", mission, Hinton 10–20% attribution, thesis), then the failure
+record led by TPS2 (Claude Sonnet 5, 6 of 6), the stories-versus-reminder
+scorecard, the progress tracker and recipe, the NTA1 correction, contribution
+routes, offline reproduction and a repository map. Older study narratives are
+condensed into a collapsed one-line-per-study table; EXPERIMENTS-STATUS.md
+remains the full ledger. The README says how the site and repo relate.
+`ReadmeMatchesHomepageTests` in `dashboard/test_dashboard.py` fails if the
+README's opening, lead case, scorecard, A2 or MCF1 counts drift from the
+homepage or its pinned evidence. The GitHub "About" description now uses the
+site's meta description. No model calls; no frozen evidence changed.
+
 **November 14: guided onboarding replaces the menu of asks.** The user rejected
 the previous copy-only simplification and requested a meaningful, much simpler
 way to contribute. `contribute.html` now offers one concrete first task:

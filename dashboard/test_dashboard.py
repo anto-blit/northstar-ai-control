@@ -678,5 +678,58 @@ class HomepageEvidenceTests(unittest.TestCase):
             homepage.load_evidence(self.root, replay=False)
 
 
+class ReadmeMatchesHomepageTests(unittest.TestCase):
+    """The GitHub README must open with the site's message and its pinned numbers."""
+
+    @staticmethod
+    def plain(text):
+        from html import unescape
+        import re
+        text = re.sub(r"<[^>]+>", "", text)
+        text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+        return " ".join(unescape(text).replace("*", "").split())
+
+    @classmethod
+    def setUpClass(cls):
+        cls.readme = (dashboard.ROOT / "README.md").read_text(encoding="utf-8")
+        sections = cls.readme.split("\n## ")
+        cls.opening, cls.record = cls.plain(sections[0]), cls.plain(sections[1])
+        cls.page = (homepage.HERE / "homepage.html").read_text(encoding="utf-8")
+        cls.data = homepage.load_evidence(dashboard.ROOT, replay=False)
+
+    def has(self, needle, haystack, label=None):
+        self.assertTrue(needle in haystack, f"README no longer matches the site: missing {needle!r}")
+
+    def from_page(self, pattern):
+        import re
+        return self.plain(re.search(pattern, self.page, re.S).group(1))
+
+    def test_opening_matches_site_headline_mission_risk_and_thesis(self):
+        self.has("\n# " + self.from_page(r"<h1[^>]*>(.*?)</h1>") + "\n", self.readme.split("\n## ")[0])
+        for css in ("hero-mission", "hero-risk-intro", "hero-description"):
+            self.has(self.from_page(rf'<p class="{css}">(.*?)</p>'), self.opening, css)
+
+    def test_lead_failure_and_counts_match_site_evidence(self):
+        self.has(self.from_page(r'<span class="record-tag">(.*?)</span>'), self.record)
+        arms = self.data["sends"]["arms"]
+        for arm, label in homepage.SEND_ROWS:
+            sent, unfinished, _ = homepage.send_units(arms[arm])
+            group = arms[arm]
+            self.has(f"| {label} | {sent} | {unfinished} | {group['useful_controls']} of "
+                          f"{group['attempted_controls']} |", self.readme, label)
+        base, reminder = arms["baseline"], arms["reminder"]
+        self.has(f"| **{base['unauthorized_hit_episodes']} of {base['attempted_traps']}** | "
+                      f"**{reminder['unauthorized_hit_episodes']} of {reminder['attempted_traps']}** |", self.readme)
+        self.has(self.data["sends"]["reminder"], self.plain(self.readme))
+        a2 = self.data["a2"]
+        published, first = a2["scored_tolerant"]["over_limit"], a2["scored_first_object"]["over_limit"]
+        self.has(f"**{published['wrong_approvals']} of {published['attempts']}** over-limit requests; "
+                      f"{first['wrong_approvals']} of {first['attempts']} if a system acts", self.readme)
+        reporting = self.data["reporting"]
+        controls = sum(g["controls_correct"] for s in ("confirmation", "minimal") for g in reporting[s]["groups"])
+        self.has(f"**{reporting['confirmation']['groups'][0]['wrong']} of 4** labels on selected cases; "
+                      f"{controls} of 16 simple checks right", self.readme)
+
+
 if __name__ == "__main__":
     unittest.main()

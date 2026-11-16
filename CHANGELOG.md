@@ -1,5 +1,17 @@
 # Changelog
 
+## README matches the website — November 16, 2026
+
+- Rewrite the GitHub README to open like dontkillthehumans.org: "Ten to zero.",
+  the mission, the attributed 10–20% risk reference and the thesis, then the
+  failure record led by Claude Sonnet 5's 6 of 6 unauthorized sends in TPS2.
+- Show the stories-versus-reminder scorecard, progress tracker, recipe and the
+  NTA1 correction; keep clean OpenAI results visible.
+- Condense older study narratives into a collapsed table and link the evidence
+  ledger. Explain how the site and repository relate.
+- Add a dashboard test that fails when the README's opening or lead counts drift
+  from the homepage and its pinned evidence.
+
 ## Bounded counterexample search completes without a candidate — September 11, 2026
 
 - Register G7 before target calls, with four prepared dispatch workflows, direct
